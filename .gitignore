@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node (备用)
+node_modules/
+
+# 临时文件
+*.log
+*.tmp
+.docs-shuttle/
