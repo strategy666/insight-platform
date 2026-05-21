@@ -17,6 +17,14 @@ if not SRC.exists():
 
 for raw in SRC.read_text(encoding='utf-8').splitlines():
     line = raw.strip()
+    if not line:
+        continue
+
+    if line.startswith('## '):
+        section = line.replace('## ', '').strip()
+        result.setdefault(section, [])
+        continue
+
     if line.startswith('### '):
         section = line.replace('### ', '').strip()
         result.setdefault(section, [])
@@ -47,7 +55,7 @@ for key, items in result.items():
         flat.append({'section': key, **item})
 
 payload = {
-    'source_of_truth': 'https://docs.corp.kuaishou.com/d/home/fcADd7EE875B_2CtnBVe3du0M',
+    'source_of_truth': 'https://docs.corp.kuaishou.com/d/home/fcADgltR6mo4dVoSk2JNjCcDS',
     'generated_from': 'sources.md',
     'sections': result,
     'flat': flat,

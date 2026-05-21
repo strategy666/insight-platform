@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # 固定信息源文档（Kim Doc）
-KIM_DOC_URL="https://docs.corp.kuaishou.com/d/home/fcADd7EE875B_2CtnBVe3du0M"
+KIM_DOC_URL="https://docs.corp.kuaishou.com/d/home/fcADgltR6mo4dVoSk2JNjCcDS"
 SKILL_DIR="/Users/jiayi/.codeflicker/internal/skills/docs-shuttle"
 PROJECT_DIR="/Users/jiayi/Desktop/Work/生服/trae/insight-platform"
 TMP_FILE="/tmp/sources_from_kim_raw.md"
