@@ -81,3 +81,17 @@
     // const d = new Date();
     // el.textContent = `最近更新：${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 })();
+
+// ---------- ⑤ 信息源展开/折叠 ----------
+function toggleSources(button) {
+    const sourceList = button.nextElementSibling;
+    const isVisible = sourceList.style.display !== 'none';
+    
+    if (isVisible) {
+        sourceList.style.display = 'none';
+        button.classList.remove('active');
+    } else {
+        sourceList.style.display = 'flex';
+        button.classList.add('active');
+    }
+}
