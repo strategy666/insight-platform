@@ -1,154 +1,141 @@
-# 📡 信息源文档（公开信息版）
+# 📡 商业化洞察平台信息源库（固定版）
 
-> 目标：确保网站每一条信息都可追溯、可复核。
-> 原则：**未核验不上线**。
-> 最近更新：2026-05-21
-
----
-
-## 1. 发布规则（必须遵守）
-
-### 1.1 证据链分级
-
-- **A级（可发布）**：官方公告/财报/官方平台更新 + 至少1个主流媒体交叉验证
-- **B级（可发布）**：2个及以上主流媒体交叉验证，且关键信息一致
-- **C级（不可发布）**：单一自媒体爆料、无原文链接、来源不明
-
-### 1.2 板块发布门槛
-
-- **今日洞察**：每条至少 2 个来源（A级优先）
-- **核心竞对动态**：每条至少 1 个来源；关键数据类必须 2 个来源
-- **重点行业赛道**：每个赛道结论至少挂 1 个来源；关键数字必须有可点击原文
-
-### 1.3 明确禁令
-
-- 任何“待核验”内容不得出现在网站正文
-- 任何“据传/听说/业内消息”不得单独作为依据
-- 没有URL的内容不得标记为“已核验”
+> 本文档是网站信息采集的**唯一上游来源**。  
+> 固定链接（请收藏）：https://docs.corp.kuaishou.com/d/home/fcADd7EE875B_2CtnBVe3du0M
 
 ---
 
-## 2. 本期已核验来源清单（2026-05-21）
+## 0. 使用规则（简版）
 
-## 2.1 今日洞察（已发布）
-
-### 洞察 A：抖音本地生活与「抖省省」
-
-- 36氪《抖音“分家”干美团》
-  - URL: https://m.36kr.com/p/3709581605580932
-  - 日期: 2026-03-05
-  - 用于支撑：抖音生服GMV 8500亿、抖省省上线、竞争逻辑变化
-
-- 消费者报道《抖省省入局团购》
-  - URL: https://m.xfb315.com/article/155665
-  - 日期: 2026-04-15
-  - 用于支撑：货补策略与本地生活竞争态势
-
-### 洞察 B：小红书组织升级 + AI 部门 Dots
-
-- 21经济网《小红书重大调整》
-  - URL: https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html
-  - 日期: 2026-05-01
-  - 用于支撑：整合社区/电商/商业化 + 成立AI一级部门Dots
-
-### 洞察 C：腾讯 2026Q1 财报与广告增长
-
-- 新浪财经《腾讯Q1营收近2000亿 视频号带动广告收入涨20%》
-  - URL: https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml
-  - 日期: 2026-05-14
-  - 用于支撑：营收规模、广告收入增速
-
-- 澎湃新闻《腾讯Q1财报，藏着AI商业的增长命题》
-  - URL: https://m.thepaper.cn/newsDetail_forward_33197379
-  - 日期: 2026-05-19
-  - 用于支撑：AI赋能广告与业务效率的解读
+1. 这里只维护“渠道级链接”（官网/栏目页/账号主页），不维护单条新闻链接。
+2. 每日更新时先从本表读取渠道，再去检索最新内容。
+3. 新增渠道：直接在对应板块补一行即可。
+4. 删除渠道：直接删行即可。
 
 ---
 
-## 2.2 核心竞对动态（已发布）
+## 1. 今日洞察（优先渠道）
 
-### 字节跳动（已核验）
-- 36氪：抖省省与本地生活竞争
-  - https://m.36kr.com/p/3709581605580932
-- 巨量引擎开放平台：4/27 更新日志（接口变更）
-  - https://open.oceanengine.com/changelog/1
+### 1.1 官方渠道（优先检索）
 
-### 小红书（已核验）
-- 21经济网：组织升级与AI战略
-  - https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html
+| 渠道 | 链接 | 备注 |
+|---|---|---|
+| 巨量引擎开放平台-更新日志 | https://open.oceanengine.com/changelog/1 | 字节广告产品/API变更 |
+| 巨量学-千川学堂 | https://school.oceanengine.com/page/academy-qianchuan | 字节投放产品文档 |
+| 腾讯广告官网 | https://e.qq.com/ | 腾讯广告官方入口 |
+| 微信广告最新动态 | https://ad.weixin.qq.com/news?type=promotion | 视频号/公众号商业化更新 |
+| 百度营销中心 | https://yingxiao.baidu.com/ | 百度广告规则与产品 |
+| 爱番番官网 | https://aifanfan.baidu.com/ | 线索营销工具更新 |
 
-### 腾讯（已核验）
-- 新浪财经：Q1营收与广告增速
-  - https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml
-- 澎湃新闻：Q1财报AI解读
-  - https://m.thepaper.cn/newsDetail_forward_33197379
+### 1.2 主流媒体渠道（交叉验证）
 
-### 美团（本期状态）
-- 暂无已核验且可公开引用的新条目（不发布）
-
-### 百度（本期状态）
-- 暂无已核验且可公开引用的新条目（不发布）
-
----
-
-## 2.3 重点行业赛道（已发布）
-
-### 生活服务（已核验）
-- 36氪：抖音生服与抖省省
-  - https://m.36kr.com/p/3709581605580932
-- 消费者报道：抖省省入局与竞争
-  - https://m.xfb315.com/article/155665
-
-### AI（已核验）
-- 21经济网：小红书AI组织升级
-  - https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html
-- 新浪财经 / 澎湃：腾讯财报与AI商业化
-  - https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml
-  - https://m.thepaper.cn/newsDetail_forward_33197379
-
-### 线索广告 / 医疗行业广告 / 本地服务行业广告（本期状态）
-- 暂无可公开引用且完成核验的增量信息（不发布）
+| 渠道 | 链接 | 备注 |
+|---|---|---|
+| 36氪 | https://36kr.com | 互联网商业化新闻 |
+| 晚点LatePost | https://www.latepost.com | 深度商业报道 |
+| 澎湃科技 | https://www.thepaper.cn/channel_36079 | 财报/平台动态 |
+| 新浪科技/财经 | https://finance.sina.com.cn/tech/ | 财报快讯 |
+| 21经济网 | https://www.21jingji.com/ | 产业与公司变动 |
 
 ---
 
-## 3. 每日更新执行模板（复制后填空）
+## 2. 核心竞对动态（按公司）
 
-### [日期] 更新记录
+### 2.1 字节跳动
 
-#### 今日洞察
-- 标题：
-- 来源1（必填URL）：
-- 来源2（必填URL）：
-- 核验结论：通过 / 不通过
+| 渠道 | 链接 |
+|---|---|
+| 巨量引擎开放平台 | https://open.oceanengine.com/changelog/1 |
+| 巨量学 | https://school.oceanengine.com |
+| 36氪（字节相关检索） | https://36kr.com/search/articles/%E5%AD%97%E8%8A%82 |
 
-#### 核心竞对动态
-- 竞对：字节 / 小红书 / 腾讯 / 美团 / 百度
-- 条目：
-- 来源URL：
-- 核验结论：通过 / 不通过
+### 2.2 小红书
 
-#### 重点行业赛道
-- 赛道：
-- 结论：
-- 来源URL：
-- 核验结论：通过 / 不通过
+| 渠道 | 链接 |
+|---|---|
+| 小红书商业动态 | https://ad.xiaohongshu.com |
+| 21经济网（小红书检索） | https://www.21jingji.com/search?keywords=%E5%B0%8F%E7%BA%A2%E4%B9%A6 |
+| 澎湃（小红书检索） | https://www.thepaper.cn/searchResult?id=%E5%B0%8F%E7%BA%A2%E4%B9%A6 |
+
+### 2.3 腾讯
+
+| 渠道 | 链接 |
+|---|---|
+| 腾讯广告 | https://e.qq.com |
+| 微信广告动态 | https://ad.weixin.qq.com/news?type=promotion |
+| 新浪财经（腾讯检索） | https://search.sina.com.cn/?q=%E8%85%BE%E8%AE%AF+%E8%B4%A2%E6%8A%A5 |
+
+### 2.4 美团
+
+| 渠道 | 链接 |
+|---|---|
+| 美团商家中心 | https://e.dianping.com |
+| 36氪（美团检索） | https://36kr.com/search/articles/%E7%BE%8E%E5%9B%A2 |
+| 晚点（美团检索） | https://www.latepost.com/search?keyword=%E7%BE%8E%E5%9B%A2 |
+
+### 2.5 百度
+
+| 渠道 | 链接 |
+|---|---|
+| 百度营销中心 | https://yingxiao.baidu.com |
+| 爱番番 | https://aifanfan.baidu.com |
+| 新浪财经（百度检索） | https://search.sina.com.cn/?q=%E7%99%BE%E5%BA%A6+%E8%90%A5%E9%94%80 |
 
 ---
 
-## 4. 推荐长期来源池（公开）
+## 3. 重点行业赛道（按赛道）
 
-- 36氪：https://36kr.com
-- 晚点 LatePost：https://www.latepost.com
-- 21经济网：https://www.21jingji.com
-- 澎湃新闻：https://www.thepaper.cn
-- 新浪科技/财经：https://finance.sina.com.cn
-- 巨量引擎开放平台：https://open.oceanengine.com/changelog/1
-- 腾讯广告：https://e.qq.com
-- 百度营销：https://yingxiao.baidu.com
+### 3.1 生活服务
+
+| 渠道 | 链接 |
+|---|---|
+| 36氪（本地生活） | https://36kr.com/search/articles/%E6%9C%AC%E5%9C%B0%E7%94%9F%E6%B4%BB |
+| 晚点（本地生活） | https://www.latepost.com/search?keyword=%E6%9C%AC%E5%9C%B0%E7%94%9F%E6%B4%BB |
+| 第一财经（本地生活） | https://www.yicai.com/search?k=%E6%9C%AC%E5%9C%B0%E7%94%9F%E6%B4%BB |
+
+### 3.2 线索广告
+
+| 渠道 | 链接 |
+|---|---|
+| 百度爱番番 | https://aifanfan.baidu.com |
+| 百度营销中心 | https://yingxiao.baidu.com |
+| 巨量引擎开放平台 | https://open.oceanengine.com/changelog/1 |
+
+### 3.3 医疗行业广告
+
+| 渠道 | 链接 |
+|---|---|
+| 百度医疗推广规范（通过百度营销中心检索） | https://yingxiao.baidu.com |
+| 国家卫健委（政策） | http://www.nhc.gov.cn |
+| 36氪（医疗广告检索） | https://36kr.com/search/articles/%E5%8C%BB%E7%96%97+%E5%B9%BF%E5%91%8A |
+
+### 3.4 本地服务行业广告
+
+| 渠道 | 链接 |
+|---|---|
+| 36氪（本地服务检索） | https://36kr.com/search/articles/%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1 |
+| 新榜数据 | https://data.newrank.cn |
+| 巨量学 | https://school.oceanengine.com |
+
+### 3.5 AI
+
+| 渠道 | 链接 |
+|---|---|
+| 36氪（AI检索） | https://36kr.com/search/articles/AI |
+| 澎湃科技（AI检索） | https://www.thepaper.cn/searchResult?id=AI |
+| 腾讯广告 / 巨量引擎 / 百度营销官方站 | https://e.qq.com / https://open.oceanengine.com / https://yingxiao.baidu.com |
 
 ---
 
-## 5. 版本声明
+## 4. 自动同步说明
 
-本文件仅维护**公开信息证据链**。
-任何内部资料、访谈纪要、公司内网信息，不进入此公开版本。
+- 本地同步脚本：`scripts/sync_sources_from_kim.sh`
+- 作用：从固定 Kim Doc 拉取最新版，覆盖本地 `sources.md`
+- 每日更新流程第一步：执行该脚本
+
+命令：
+
+```bash
+cd /Users/jiayi/Desktop/Work/生服/trae/insight-platform
+./scripts/sync_sources_from_kim.sh
+```
