@@ -386,6 +386,13 @@ body {
     border-color: var(--c-primary);
     color: var(--c-primary);
 }
+.source-toggle:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f9fafb;
+    border-color: #e5e7eb;
+    color: #9ca3af;
+}
 .source-toggle.active {
     background: #eff6ff;
     border-color: var(--c-primary);

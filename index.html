@@ -140,7 +140,7 @@
     <div class="container">
         <div class="section-head">
             <h2>🎯 核心竞对动态</h2>
-            <p>字节 / 小红书 / 腾讯 / 美团 / 百度 五大竞对每日更新</p>
+            <p>仅展示已核验的公开信息（未核验内容不展示）</p>
         </div>
 
         <div class="tabs">
@@ -155,47 +155,51 @@
 
             <div class="tab-panel active" id="bytedance">
                 <ul class="news-list">
-                    <li><span class="date">05-21</span> <span class="title">抖音推出独立团购App「抖省省」剥离主站交易流量</span> <span class="src">36氪</span></li>
-                    <li><span class="date">05-20</span> <span class="title">抖音生服2025年GMV达8500亿元，同比增长59%</span> <span class="src">21世纪商业评论</span></li>
-                    <li><span class="date">05-15</span> <span class="title">巨量千川「全域投放」产品手册更新</span> <span class="src">巨量学</span></li>
-                    <li><span class="date">05-12</span> <span class="title">巨量引擎商业开放平台API接口更新预通知</span> <span class="src">巨量引擎开放平台</span></li>
+                    <li><span class="date">05-21</span> <span class="title">抖音推出独立团购 App「抖省省」</span> <span class="src">36氪</span></li>
+                    <li><span class="date">05-20</span> <span class="title">抖音生活服务 2025 年支付 GMV 突破 8500 亿元（同比+59%）</span> <span class="src">36氪（援引多方报道）</span></li>
+                    <li><span class="date">04-27</span> <span class="title">巨量引擎开放平台发布 46 个接口 bp_id 入参下线预通知</span> <span class="src">巨量引擎开放平台</span></li>
                 </ul>
+                <button class="source-toggle" onclick="toggleSources(this)">📋 数据来源 (2)</button>
+                <div class="source-list" style="display:none;">
+                    <div class="source-item"><span class="source-icon">📰</span><a href="https://m.36kr.com/p/3709581605580932" target="_blank">36氪：抖音“分家”干美团</a><span class="source-date">2026-03-05</span></div>
+                    <div class="source-item"><span class="source-icon">📰</span><a href="https://open.oceanengine.com/changelog/1" target="_blank">巨量引擎开放平台：2026-04-27 更新日志</a><span class="source-date">2026-04-27</span></div>
+                </div>
             </div>
 
             <div class="tab-panel" id="xiaohongshu">
                 <ul class="news-list">
-                    <li><span class="date">05-21</span> <span class="title">小红书整合社区/电商/商业化三大业务，成立AI部门Dots</span> <span class="src">21经济网</span></li>
-                    <li><span class="date">05-19</span> <span class="title">小红书「商家百万跃迁计划」启动，重点扶持中小商家</span> <span class="src">东方财富研报</span></li>
-                    <li><span class="date">05-16</span> <span class="title">小红书本地生活类目搜索广告全量上线</span> <span class="src">刺猬公社</span></li>
-                    <li><span class="date">05-13</span> <span class="title">小红书月活用户超4亿，AI搜索产品「点点」持续迭代</span> <span class="src">澎湃新闻</span></li>
+                    <li><span class="date">05-01</span> <span class="title">小红书整合社区/电商/商业化三大业务，成立 AI 一级部门 Dots</span> <span class="src">21经济网</span></li>
                 </ul>
+                <button class="source-toggle" onclick="toggleSources(this)">📋 数据来源 (1)</button>
+                <div class="source-list" style="display:none;">
+                    <div class="source-item"><span class="source-icon">📰</span><a href="https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html" target="_blank">21经济网：小红书重大调整</a><span class="source-date">2026-05-01</span></div>
+                </div>
             </div>
 
             <div class="tab-panel" id="tencent">
                 <ul class="news-list">
-                    <li><span class="date">05-21</span> <span class="title">腾讯2026Q1营收1965亿元，视频号带动广告收入增长20%</span> <span class="src">腾讯财报</span></li>
-                    <li><span class="date">05-19</span> <span class="title">腾讯AI战略加速，元宝大模型能力持续升级</span> <span class="src">钛媒体</span></li>
-                    <li><span class="date">05-14</span> <span class="title">微信月活用户达14.02亿，视频号商业化生态成型</span> <span class="src">新浪财经</span></li>
-                    <li><span class="date">05-11</span> <span class="title">腾讯广告互选平台三大能力升级，汽车行业为主力</span> <span class="src">品玩</span></li>
+                    <li><span class="date">05-14</span> <span class="title">腾讯 2026Q1 营收约 1965 亿元，营销服务收入同比增长约 20%</span> <span class="src">新浪财经</span></li>
+                    <li><span class="date">05-19</span> <span class="title">腾讯 Q1 财报解读：AI 持续赋能广告与商业化效率</span> <span class="src">澎湃新闻</span></li>
                 </ul>
+                <button class="source-toggle" onclick="toggleSources(this)">📋 数据来源 (2)</button>
+                <div class="source-list" style="display:none;">
+                    <div class="source-item"><span class="source-icon">📰</span><a href="https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml" target="_blank">新浪财经：腾讯Q1营收近2000亿</a><span class="source-date">2026-05-14</span></div>
+                    <div class="source-item"><span class="source-icon">📰</span><a href="https://m.thepaper.cn/newsDetail_forward_33197379" target="_blank">澎湃新闻：腾讯Q1财报，藏着AI商业的增长命题</a><span class="source-date">2026-05-19</span></div>
+                </div>
             </div>
 
             <div class="tab-panel" id="meituan">
                 <ul class="news-list">
-                    <li><span class="date">05-19</span> <span class="title">美团广告业务架构调整：到店/到家广告团队合并</span> <span class="src">36氪</span></li>
-                    <li><span class="date">05-15</span> <span class="title">美团「神抢手」展位扩容，对标抖音生服补贴节奏</span> <span class="src">晚点LatePost</span></li>
-                    <li><span class="date">05-10</span> <span class="title">美团本地生服商家工具升级，新增AI素材+智能出价</span> <span class="src">美团商家学院</span></li>
-                    <li><span class="date">05-08</span> <span class="title">美团加大直播和短视频投入，对标抖音内容种草模式</span> <span class="src">36氪</span></li>
+                    <li><span class="date">--</span> <span class="title">暂无已核验更新</span> <span class="src">待补充</span></li>
                 </ul>
+                <button class="source-toggle" disabled>📋 数据来源 (0)</button>
             </div>
 
             <div class="tab-panel" id="baidu">
                 <ul class="news-list">
-                    <li><span class="date">05-17</span> <span class="title">百度搜索广告医疗行业新规：医美、口腔、男科类目门槛上调</span> <span class="src">百度营销中心</span></li>
-                    <li><span class="date">05-13</span> <span class="title">百度爱番番升级：电话录音AI摘要+线索质量评分功能上线</span> <span class="src">百度营销公众号</span></li>
-                    <li><span class="date">05-09</span> <span class="title">百度文心一格「广告创意助手」对客户开放</span> <span class="src">百度营销学堂</span></li>
-                    <li><span class="date">05-06</span> <span class="title">百度2026Q1财报发布在即，市场关注搜索广告增长</span> <span class="src">36氪</span></li>
+                    <li><span class="date">--</span> <span class="title">暂无已核验更新</span> <span class="src">待补充</span></li>
                 </ul>
+                <button class="source-toggle" disabled>📋 数据来源 (0)</button>
             </div>
 
         </div>
@@ -207,7 +211,7 @@
     <div class="container">
         <div class="section-head">
             <h2>📈 重点行业赛道</h2>
-            <p>覆盖 6 大重点赛道，每日更新核心数据与事件</p>
+            <p>仅展示有公开证据链的赛道判断（待核验内容不展示）</p>
         </div>
 
         <div class="industry-grid">
@@ -217,59 +221,67 @@
                 <h3>生活服务</h3>
                 <p class="industry-desc">到店餐饮、到店综合、酒旅</p>
                 <ul class="industry-points">
-                    <li>抖音2025年GMV 8500亿，2026年推独立App「抖省省」</li>
-                    <li>美团到店/到家合并应对抖音冲击</li>
-                    <li>本地生活进入"生态+供应链+服务"全维度博弈</li>
+                    <li>抖音 2025 年生服支付 GMV 突破 8500 亿元（同比 +59%）</li>
+                    <li>抖音上线独立团购 App「抖省省」，强化交易侧工具属性</li>
+                    <li>行业竞争从流量战转向生态与履约能力竞争</li>
                 </ul>
-                <span class="industry-tag">竞争白热化</span>
-            </div>
-
-            <div class="industry-card">
-                <div class="industry-icon">📞</div>
-                <h3>线索广告</h3>
-                <p class="industry-desc">表单收集 / 电话拨打 / 私信</p>
-                <ul class="industry-points">
-                    <li>百度爱番番AI摘要+线索评分功能上线</li>
-                    <li>巨量「线索通」内测电话AI质检</li>
-                    <li>AI技术提升线索质量评估效率</li>
-                </ul>
-                <span class="industry-tag">AI化提速</span>
-            </div>
-
-            <div class="industry-card">
-                <div class="industry-icon">⚕️</div>
-                <h3>医疗行业广告</h3>
-                <p class="industry-desc">男科、妇科、口腔、医美、植发</p>
-                <ul class="industry-points">
-                    <li>百度搜索医疗类目门槛上调（医美/口腔/男科）</li>
-                    <li>小红书医美/美护行业广告内审收紧</li>
-                    <li>监管趋严推动阳光科室转移趋势</li>
-                </ul>
-                <span class="industry-tag">监管收紧</span>
-            </div>
-
-            <div class="industry-card">
-                <div class="industry-icon">🏘️</div>
-                <h3>本地服务行业广告</h3>
-                <p class="industry-desc">生美、招盟、便民、民生、摄影、婚恋</p>
-                <ul class="industry-points">
-                    <li>本地生活类目搜索广告全量上线（小红书）</li>
-                    <li>便民服务（家政/维修）广告同比增长超60%</li>
-                    <li>招商加盟监管趋严，资质审核加码</li>
-                </ul>
-                <span class="industry-tag">细分机会多</span>
+                <span class="industry-tag">证据充分</span>
+                <button class="source-toggle" onclick="toggleSources(this)">📋 数据来源 (2)</button>
+                <div class="source-list" style="display:none;">
+                    <div class="source-item"><span class="source-icon">📰</span><a href="https://m.36kr.com/p/3709581605580932" target="_blank">36氪：抖音“分家”干美团</a><span class="source-date">2026-03-05</span></div>
+                    <div class="source-item"><span class="source-icon">📰</span><a href="https://m.xfb315.com/article/155665" target="_blank">消费者报道：抖省省入局团购</a><span class="source-date">2026-04-15</span></div>
+                </div>
             </div>
 
             <div class="industry-card">
                 <div class="industry-icon">🤖</div>
                 <h3>AI</h3>
-                <p class="industry-desc">AI素材、智能投放、AI Agent</p>
+                <p class="industry-desc">AI 素材、智能投放、AI Agent</p>
                 <ul class="industry-points">
-                    <li>小红书成立AI一级部门Dots，全面入局大模型</li>
-                    <li>腾讯元宝持续迭代，聚焦WorkBuddy生产力工具</li>
-                    <li>百度文心一格广告创意助手全量开放</li>
+                    <li>小红书成立 AI 一级部门 Dots，组织层面全面加码 AI</li>
+                    <li>腾讯 Q1 财报显示 AI 持续赋能广告与商业化效率</li>
+                    <li>AI 已从工具补充转向业务增长核心变量</li>
                 </ul>
-                <span class="industry-tag">战略升级</span>
+                <span class="industry-tag">证据充分</span>
+                <button class="source-toggle" onclick="toggleSources(this)">📋 数据来源 (3)</button>
+                <div class="source-list" style="display:none;">
+                    <div class="source-item"><span class="source-icon">📰</span><a href="https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html" target="_blank">21经济网：小红书重大调整</a><span class="source-date">2026-05-01</span></div>
+                    <div class="source-item"><span class="source-icon">📰</span><a href="https://m.thepaper.cn/newsDetail_forward_33197379" target="_blank">澎湃新闻：腾讯Q1财报，藏着AI商业增长命题</a><span class="source-date">2026-05-19</span></div>
+                    <div class="source-item"><span class="source-icon">📰</span><a href="https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml" target="_blank">新浪财经：腾讯Q1营收近2000亿</a><span class="source-date">2026-05-14</span></div>
+                </div>
+            </div>
+
+            <div class="industry-card industry-card-placeholder">
+                <div class="industry-icon">⏳</div>
+                <h3>线索广告</h3>
+                <p class="industry-desc">表单收集 / 电话拨打 / 私信</p>
+                <ul class="industry-points">
+                    <li>暂无可公开引用且完成核验的增量信息</li>
+                </ul>
+                <span class="industry-tag">待核验后发布</span>
+                <button class="source-toggle" disabled>📋 数据来源 (0)</button>
+            </div>
+
+            <div class="industry-card industry-card-placeholder">
+                <div class="industry-icon">⏳</div>
+                <h3>医疗行业广告</h3>
+                <p class="industry-desc">男科、妇科、口腔、医美、植发</p>
+                <ul class="industry-points">
+                    <li>暂无可公开引用且完成核验的增量信息</li>
+                </ul>
+                <span class="industry-tag">待核验后发布</span>
+                <button class="source-toggle" disabled>📋 数据来源 (0)</button>
+            </div>
+
+            <div class="industry-card industry-card-placeholder">
+                <div class="industry-icon">⏳</div>
+                <h3>本地服务行业广告</h3>
+                <p class="industry-desc">生美、招盟、便民、民生、摄影、婚恋</p>
+                <ul class="industry-points">
+                    <li>暂无可公开引用且完成核验的增量信息</li>
+                </ul>
+                <span class="industry-tag">待核验后发布</span>
+                <button class="source-toggle" disabled>📋 数据来源 (0)</button>
             </div>
 
             <div class="industry-card industry-card-placeholder">
