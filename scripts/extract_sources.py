@@ -55,7 +55,7 @@ for key, items in result.items():
         flat.append({'section': key, **item})
 
 payload = {
-    'source_of_truth': 'https://docs.corp.kuaishou.com/d/home/fcADgltR6mo4dVoSk2JNjCcDS',
+    'source_of_truth': 'https://docs.corp.kuaishou.com/d/home/fcAAoE2eWZ9oZFNrZB9qJaYpz',
     'generated_from': 'sources.md',
     'sections': result,
     'flat': flat,

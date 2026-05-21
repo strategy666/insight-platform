@@ -1,198 +1,278 @@
-📡 商业化洞察平台信息源库（固定版）
+📡 商业化洞察平台信息源库（渠道版）
 
-本文档是网站信息采集的唯一上游来源。固定链接（请收藏）：https://docs.corp.kuaishou.com/d/home/fcADd7EE875B_2CtnBVe3du0M
+用途：作为洞察网站每日更新时的固定检索渠道池。维护原则：只维护“渠道级链接”（官网 / 栏目页 / 账号主页），不维护单条新闻链接。
 
-0. 使用规则（简版）
+1) 核心竞对官方渠道
 
-这里只维护“渠道级链接”（官网/栏目页/账号主页），不维护单条新闻链接。
+1.1 字节跳动（巨量引擎）
 
-每日更新时先从本表读取渠道，再去检索最新内容。
+渠道类型
 
-新增渠道：直接在对应板块补一行即可。
-
-删除渠道：直接删行即可。
-
-1. 今日洞察（优先渠道）
-
-1.1 官方渠道（优先检索）
-
-渠道
+渠道名称
 
 链接
 
-备注
+说明
 
-巨量引擎开放平台-更新日志
+官方网站
+
+巨量引擎官网
+
+https://www.oceanengine.com/
+
+官方产品与政策入口
+
+官方文档
+
+巨量引擎开放平台更新日志
 
 https://open.oceanengine.com/changelog/1
 
-字节广告产品/API变更
+API/能力变更
 
-巨量学-千川学堂
+官方学习平台
 
-https://school.oceanengine.com/page/academy-qianchuan
+巨量学
 
-字节投放产品文档
+https://school.oceanengine.com/
 
-腾讯广告官网
+产品手册、课程
+
+官方公众号
+
+巨量引擎（微信）
+
+https://weixin.sogou.com/weixin?type=1&s_from=input&query=%E5%B7%A8%E9%87%8F%E5%BC%95%E6%93%8E
+
+公众号检索页
+
+官方公众号
+
+巨量学（微信）
+
+https://weixin.sogou.com/weixin?type=1&s_from=input&query=%E5%B7%A8%E9%87%8F%E5%AD%A6
+
+公众号检索页
+
+1.2 腾讯
+
+渠道类型
+
+渠道名称
+
+链接
+
+说明
+
+官方网站
+
+腾讯广告
 
 https://e.qq.com/
 
 腾讯广告官方入口
 
-微信广告最新动态
+官方动态
+
+微信广告最新动态
 
 https://ad.weixin.qq.com/news?type=promotion
 
-视频号/公众号商业化更新
+视频号/公众号商业化动态
 
-百度营销中心
+官方学习平台
 
-https://yingxiao.baidu.com/
+腾讯营销学堂
 
-百度广告规则与产品
+https://e.qq.com/ads/learning-center
 
-爱番番官网
+官方学习入口
 
-https://aifanfan.baidu.com/
+官方公众号
 
-线索营销工具更新
+腾讯广告（微信）
 
-1.2 主流媒体渠道（交叉验证）
+https://weixin.sogou.com/weixin?type=1&s_from=input&query=%E8%85%BE%E8%AE%AF%E5%B9%BF%E5%91%8A
 
-渠道
+公众号检索页
+
+1.3 百度
+
+渠道类型
+
+渠道名称
 
 链接
 
-备注
+说明
+
+官方网站
+
+百度营销中心
+
+https://yingxiao.baidu.com/
+
+百度广告政策与产品
+
+官方产品
+
+爱番番
+
+https://aifanfan.baidu.com/
+
+线索营销产品
+
+官方学习平台
+
+百度营销学堂
+
+https://yingxiao.baidu.com/home/help
+
+官方学习/帮助入口
+
+官方公众号
+
+百度营销（微信）
+
+https://weixin.sogou.com/weixin?type=1&s_from=input&query=%E7%99%BE%E5%BA%A6%E8%90%A5%E9%94%80
+
+公众号检索页
+
+1.4 小红书
+
+渠道类型
+
+渠道名称
+
+链接
+
+说明
+
+官方网站
+
+小红书商业平台
+
+https://ad.xiaohongshu.com/
+
+商业化官方入口
+
+官方公众号
+
+小红书商业动态（微信）
+
+https://weixin.sogou.com/weixin?type=1&s_from=input&query=%E5%B0%8F%E7%BA%A2%E4%B9%A6%E5%95%86%E4%B8%9A%E5%8A%A8%E6%80%81
+
+公众号检索页
+
+1.5 美团
+
+渠道类型
+
+渠道名称
+
+链接
+
+说明
+
+官方网站
+
+美团商家中心
+
+https://e.dianping.com/
+
+本地生活商家运营入口
+
+官方公众号
+
+美团商家平台（微信）
+
+https://weixin.sogou.com/weixin?type=1&s_from=input&query=%E7%BE%8E%E5%9B%A2%E5%95%86%E5%AE%B6
+
+公众号检索页
+
+*
+
+2) 行业媒体渠道（用于交叉验证）
+
+2.1 主流财经/科技媒体
+
+媒体
+
+链接
 
 36氪
 
-https://36kr.com
+https://36kr.com/
 
-互联网商业化新闻
+晚点 LatePost
 
-晚点LatePost
-
-https://www.latepost.com
-
-深度商业报道
-
-澎湃科技
-
-https://www.thepaper.cn/channel_36079
-
-财报/平台动态
-
-新浪科技/财经
-
-https://finance.sina.com.cn/tech/
-
-财报快讯
+https://www.latepost.com/
 
 21经济网
 
 https://www.21jingji.com/
 
-产业与公司变动
+澎湃新闻（科技）
+
+https://www.thepaper.cn/channel_36079
+
+新浪科技
+
+https://tech.sina.com.cn/
+
+新浪财经
+
+https://finance.sina.com.cn/
+
+第一财经
+
+https://www.yicai.com/
+
+虎嗅
+
+https://www.huxiu.com/
+
+钛媒体
+
+https://www.tmtpost.com/
+
+品玩
+
+https://www.pingwest.com/
+
+华尔街见闻
+
+https://wallstreetcn.com/
+
+2.2 行业垂类媒体/数据平台
+
+媒体/平台
+
+链接
+
+刺猬公社
+
+https://www.ciweigongshe.net/
+
+新榜有数
+
+https://data.newrank.cn/
+
+AppGrowing
+
+https://appgrowing.cn/
+
+QuestMobile
+
+https://www.questmobile.com.cn/
+
+艾瑞咨询
+
+https://www.iresearch.com.cn/
 
 *
 
-2. 核心竞对动态（按公司）
-
-2.1 字节跳动
-
-渠道
-
-链接
-
-巨量引擎开放平台
-
-https://open.oceanengine.com/changelog/1
-
-巨量学
-
-https://school.oceanengine.com
-
-36氪（字节相关检索）
-
-https://36kr.com/search/articles/%E5%AD%97%E8%8A%82
-
-2.2 小红书
-
-渠道
-
-链接
-
-小红书商业动态
-
-https://ad.xiaohongshu.com
-
-21经济网（小红书检索）
-
-https://www.21jingji.com/search?keywords=%E5%B0%8F%E7%BA%A2%E4%B9%A6
-
-澎湃（小红书检索）
-
-https://www.thepaper.cn/searchResult?id=%E5%B0%8F%E7%BA%A2%E4%B9%A6
-
-2.3 腾讯
-
-渠道
-
-链接
-
-腾讯广告
-
-https://e.qq.com
-
-微信广告动态
-
-https://ad.weixin.qq.com/news?type=promotion
-
-新浪财经（腾讯检索）
-
-https://search.sina.com.cn/?q=%E8%85%BE%E8%AE%AF+%E8%B4%A2%E6%8A%A5
-
-2.4 美团
-
-渠道
-
-链接
-
-美团商家中心
-
-https://e.dianping.com
-
-36氪（美团检索）
-
-https://36kr.com/search/articles/%E7%BE%8E%E5%9B%A2
-
-晚点（美团检索）
-
-https://www.latepost.com/search?keyword=%E7%BE%8E%E5%9B%A2
-
-2.5 百度
-
-渠道
-
-链接
-
-百度营销中心
-
-https://yingxiao.baidu.com
-
-爱番番
-
-https://aifanfan.baidu.com
-
-新浪财经（百度检索）
-
-https://search.sina.com.cn/?q=%E7%99%BE%E5%BA%A6+%E8%90%A5%E9%94%80
-
-*
-
-3. 重点行业赛道（按赛道）
+3) 赛道检索入口（按你当前关注）
 
 3.1 生活服务
 
@@ -200,15 +280,15 @@ https://search.sina.com.cn/?q=%E7%99%BE%E5%BA%A6+%E8%90%A5%E9%94%80
 
 链接
 
-36氪（本地生活）
+36氪（本地生活检索）
 
 https://36kr.com/search/articles/%E6%9C%AC%E5%9C%B0%E7%94%9F%E6%B4%BB
 
-晚点（本地生活）
+晚点（本地生活检索）
 
 https://www.latepost.com/search?keyword=%E6%9C%AC%E5%9C%B0%E7%94%9F%E6%B4%BB
 
-第一财经（本地生活）
+第一财经（本地生活检索）
 
 https://www.yicai.com/search?k=%E6%9C%AC%E5%9C%B0%E7%94%9F%E6%B4%BB
 
@@ -218,13 +298,13 @@ https://www.yicai.com/search?k=%E6%9C%AC%E5%9C%B0%E7%94%9F%E6%B4%BB
 
 链接
 
-百度爱番番
+爱番番
 
-https://aifanfan.baidu.com
+https://aifanfan.baidu.com/
 
 百度营销中心
 
-https://yingxiao.baidu.com
+https://yingxiao.baidu.com/
 
 巨量引擎开放平台
 
@@ -236,13 +316,13 @@ https://open.oceanengine.com/changelog/1
 
 链接
 
-百度医疗推广规范（通过百度营销中心检索）
+百度营销中心（医疗规则检索）
 
-https://yingxiao.baidu.com
+https://yingxiao.baidu.com/
 
-国家卫健委（政策）
+国家卫健委
 
-http://www.nhc.gov.cn
+http://www.nhc.gov.cn/
 
 36氪（医疗广告检索）
 
@@ -258,13 +338,13 @@ https://36kr.com/search/articles/%E5%8C%BB%E7%96%97+%E5%B9%BF%E5%91%8A
 
 https://36kr.com/search/articles/%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1
 
-新榜数据
+新榜有数
 
-https://data.newrank.cn
+https://data.newrank.cn/
 
 巨量学
 
-https://school.oceanengine.com
+https://school.oceanengine.com/
 
 3.5 AI
 
@@ -276,23 +356,21 @@ https://school.oceanengine.com
 
 https://36kr.com/search/articles/AI
 
-澎湃科技（AI检索）
+澎湃（AI检索）
 
 https://www.thepaper.cn/searchResult?id=AI
 
-腾讯广告 / 巨量引擎 / 百度营销官方站
+钛媒体（AI频道）
 
-https://e.qq.com / https://open.oceanengine.com / https://yingxiao.baidu.com
+https://www.tmtpost.com/tag/AI
 
 *
 
-4. 自动同步说明
+4) 更新说明
 
-本地同步脚本：scripts/sync_sources_from_kim.sh
+你可随时在本 Kim Doc 增删渠道。
 
-作用：从固定 Kim Doc 拉取最新版，覆盖本地 sources.md
+每天自动同步任务会读取本文件并更新网站侧渠道池。
 
-每日更新流程第一步：执行该脚本
-
-命令：
+若新增渠道后当天未生效，可手动触发一次同步。
 
