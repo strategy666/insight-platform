@@ -19,13 +19,13 @@
             <span class="logo-sub">Market &amp; Competitor Insight</span>
         </a>
         <nav class="nav">
-            <a href="#today">今日洞察</a>
-            <a href="#competitors">核心竞对</a>
-            <a href="#industries">行业赛道</a>
-            <a href="#reports">行研报告</a>
+            <a href="#search">🔍 市场检索</a>
+            <a href="#competitors">🎯 竞对动态</a>
+            <a href="#industries">📈 行业赛道</a>
+            <a href="#reports">📄 行研报告</a>
         </nav>
         <div class="meta">
-            <span class="last-update" id="lastUpdate">最近更新：2026-05-21</span>
+            <span class="last-update" id="lastUpdate">最近更新：2026-05-26</span>
         </div>
     </div>
 </header>
@@ -34,115 +34,84 @@
 <section class="hero">
     <div class="container">
         <h1>洞察先于决策，数据驱动战略</h1>
-        <p class="subtitle">追踪 5 大核心竞对 · 6 大重点行业赛道 · 每日更新</p>
+        <p class="subtitle">追踪 5 大核心竞对 · 5 大重点行业赛道 · 每周更新</p>
         <div class="hero-stats">
-            <div class="stat"><div class="num" id="statIssues">1</div><div class="label">已发布期数</div></div>
+            <div class="stat"><div class="num" id="statIssues">4</div><div class="label">情报条目</div></div>
             <div class="stat"><div class="num" id="statCompetitors">5</div><div class="label">核心竞对</div></div>
-            <div class="stat"><div class="num" id="statIndustries">6</div><div class="label">行业赛道</div></div>
+            <div class="stat"><div class="num" id="statIndustries">5</div><div class="label">行业赛道</div></div>
             <div class="stat"><div class="num" id="statReports">0</div><div class="label">行研报告</div></div>
         </div>
+        <!-- 快速搜索入口 -->
+        <div class="hero-search">
+            <input type="text" id="heroSearchInput" placeholder="🔍 快速检索：输入公司名、行业或关键词..." autocomplete="off" />
+            <button onclick="heroSearch()">搜索</button>
+        </div>
     </div>
 </section>
 
-<!-- ============== 今日洞察 ============== -->
-<section id="today" class="section">
+<!-- ============== Part1 市场信息检索 ============== -->
+<section id="search" class="section">
     <div class="container">
         <div class="section-head">
-            <h2>🔥 今日洞察</h2>
-            <p>每日精选 3 条最值得关注的核心事件</p>
+            <h2>🔍 市场信息检索</h2>
+            <p>按公司或行业赛道筛选，每条含 So What 商业视角解读</p>
         </div>
 
-        <div class="insight-list">
-
-            <article class="insight-card">
-                <div class="insight-tag">核心竞对 · 字节</div>
-                <h3>抖音推出独立团购 App「抖省省」，本地生活 2025 年 GMV 达 8500 亿</h3>
-                <p class="insight-body">
-                    2026年2月，抖音上线独立团购App「抖省省」，剥离主站交易流量。2025全年抖音生服GMV突破8500亿元（同比+59%），但核销率不足50%（携程同类90%）。抖省省采用纯工具属性，无短视频流，主打"人找货"搜索逻辑，对标美团早期极简团购模式。
-                </p>
-                <p class="insight-sowhat">
-                    <strong>So What：</strong>字节承认"内容流与交易流打架"，用独立App分流高意向用户，让主站回归内容纯度。美团vs抖音从流量战升级为"生态构建+供应链+服务体验"全维度博弈，本地生活进入下半场。
-                </p>
-                <button class="source-toggle" onclick="toggleSources(this)">📋 信息源 (2)</button>
-                <div class="source-list" style="display:none;">
-                    <div class="source-item">
-                        <span class="source-icon">📰</span>
-                        <a href="https://m.36kr.com/p/3709581605580932" target="_blank">36氪 - 抖音"分家"干美团</a>
-                        <span class="source-date">2026-03-05</span>
-                    </div>
-                    <div class="source-item">
-                        <span class="source-icon">📰</span>
-                        <a href="https://m.xfb315.com/article/155665" target="_blank">消费者报道 - 抖省省入局团购</a>
-                        <span class="source-date">2026-04-15</span>
-                    </div>
+        <!-- 筛选区 -->
+        <div class="search-panel">
+            <div class="search-row">
+                <input type="text" id="intelSearchInput" class="intel-search-input" placeholder="输入关键词搜索..." autocomplete="off" />
+            </div>
+            <div class="filter-row">
+                <div class="filter-group">
+                    <span class="filter-label">公司</span>
+                    <button class="filter-btn active" data-filter="company" data-value="all">全部</button>
+                    <button class="filter-btn" data-filter="company" data-value="字节">字节</button>
+                    <button class="filter-btn" data-filter="company" data-value="小红书">小红书</button>
+                    <button class="filter-btn" data-filter="company" data-value="腾讯">腾讯</button>
+                    <button class="filter-btn" data-filter="company" data-value="美团">美团</button>
+                    <button class="filter-btn" data-filter="company" data-value="百度">百度</button>
                 </div>
-            </article>
-
-            <article class="insight-card">
-                <div class="insight-tag">核心竞对 · 小红书</div>
-                <h3>小红书重大组织升级：整合三大业务，成立 AI 一级部门 Dots</h3>
-                <p class="insight-body">
-                    4月30日小红书发布全员内部信：全面整合社区/电商/商业化三大业务及技术体系，柯南任总裁统管；重磅成立AI一级部门Dots（从模型研发到产品的完整体系）+ 企业智能部 + 海外部门Rednote。小红书月活超4亿，从"慢公司"转向全面竞速。
-                </p>
-                <p class="insight-sowhat">
-                    <strong>So What：</strong>小红书终于打破"社区/电商/商业化"三块板各自为政的局面，柯南统一指挥意味着商业化提速。AI升格为一级战略（对标抗衡字节/美团），标志其从后台工具转向前台产品化。用户与广告增长见顶倒逼转型。
-                </p>
-                <button class="source-toggle" onclick="toggleSources(this)">📋 信息源 (2)</button>
-                <div class="source-list" style="display:none;">
-                    <div class="source-item">
-                        <span class="source-icon">📰</span>
-                        <a href="https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html" target="_blank">21经济网 - 小红书重大调整</a>
-                        <span class="source-date">2026-05-01</span>
-                    </div>
-                    <div class="source-item">
-                        <span class="source-icon">📰</span>
-                        <a href="https://m.thepaper.cn/newsDetail_forward_33121074" target="_blank">澎湃新闻 - 小红书拔剑斩自己</a>
-                        <span class="source-date">2026-05-08</span>
-                    </div>
+                <div class="filter-group">
+                    <span class="filter-label">赛道</span>
+                    <button class="filter-btn active" data-filter="industry" data-value="all">全部</button>
+                    <button class="filter-btn" data-filter="industry" data-value="生活服务">生活服务</button>
+                    <button class="filter-btn" data-filter="industry" data-value="AI">AI</button>
+                    <button class="filter-btn" data-filter="industry" data-value="线索广告">线索广告</button>
+                    <button class="filter-btn" data-filter="industry" data-value="医疗">医疗</button>
+                    <button class="filter-btn" data-filter="industry" data-value="本地服务">本地服务</button>
                 </div>
-            </article>
-
-            <article class="insight-card">
-                <div class="insight-tag">核心竞对 · 腾讯</div>
-                <h3>腾讯 2026Q1 财报：营收 1965 亿元，视频号带动广告收入增长 20%</h3>
-                <p class="insight-body">
-                    腾讯2026Q1总营收1965亿元（同比+9%），视频号、搜一搜、小程序流量池商业化能力加速释放，营销服务业务（广告）同比增长20%。微信月活14.02亿，视频号广告主数持续增长，本地生活行业成重点增长点。AI战略加速，但管理层表示微信Agent近期不会上线。
-                </p>
-                <p class="insight-sowhat">
-                    <strong>So What：</strong>腾讯广告增长核心驱动力从朋友圈转向视频号+搜一搜组合，全链路商业化生态成型。本地生活成腾讯广告新增长极，与字节/美团形成三足鼎立。AI暂缓C端Agent、聚焦WorkBuddy生产力工具，避开与字节/阿里正面竞争。
-                </p>
-                <button class="source-toggle" onclick="toggleSources(this)">📋 信息源 (3)</button>
-                <div class="source-list" style="display:none;">
-                    <div class="source-item">
-                        <span class="source-icon">📰</span>
-                        <a href="https://m.thepaper.cn/newsDetail_forward_33197379" target="_blank">澎湃新闻 - 腾讯Q1财报，藏着AI商业的增长命题</a>
-                        <span class="source-date">2026-05-19</span>
-                    </div>
-                    <div class="source-item">
-                        <span class="source-icon">📰</span>
-                        <a href="https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml" target="_blank">新浪财经 - 腾讯Q1营收近2000亿</a>
-                        <span class="source-date">2026-05-14</span>
-                    </div>
-                    <div class="source-item">
-                        <span class="source-icon">📰</span>
-                        <a href="https://wallstreetcn.com/articles/3772275" target="_blank">华尔街见闻 - 腾讯财报电话会观察</a>
-                        <span class="source-date">2026-05-14</span>
-                    </div>
+                <div class="filter-group">
+                    <span class="filter-label">类型</span>
+                    <button class="filter-btn active" data-filter="type" data-value="all">全部</button>
+                    <button class="filter-btn" data-filter="type" data-value="产品动态">产品动态</button>
+                    <button class="filter-btn" data-filter="type" data-value="政策更新">政策更新</button>
+                    <button class="filter-btn" data-filter="type" data-value="财报数据">财报数据</button>
+                    <button class="filter-btn" data-filter="type" data-value="组织动态">组织动态</button>
                 </div>
-            </article>
+            </div>
+            <div class="search-result-count">共找到 <span id="intelCount">4</span> 条情报</div>
+        </div>
 
+        <!-- 结果列表 -->
+        <div class="intel-list" id="intelList">
+            <!-- 由 JS 动态渲染 -->
+        </div>
+        <div class="intel-empty" id="intelEmpty" style="display:none;">
+            🔍 未找到匹配的情报，请尝试其他关键词或筛选条件
         </div>
     </div>
 </section>
 
-<!-- ============== 核心竞对动态 ============== -->
+<!-- ============== Part2 核心竞对动态 ============== -->
 <section id="competitors" class="section section-alt">
     <div class="container">
         <div class="section-head">
             <h2>🎯 核心竞对动态</h2>
-            <p>仅展示已核验的公开信息（未核验内容不展示）</p>
+            <p>仅展示已核验的公开信息 · 按产品动态 / 政策更新 / 行业 Case 分类</p>
         </div>
 
+        <!-- 公司 tabs -->
         <div class="tabs">
             <button class="tab active" data-target="bytedance">字节跳动</button>
             <button class="tab" data-target="xiaohongshu">小红书</button>
@@ -153,53 +122,119 @@
 
         <div class="tab-panels">
 
+            <!-- 字节 -->
             <div class="tab-panel active" id="bytedance">
-                <ul class="news-list">
-                    <li><span class="date">05-21</span> <span class="title">抖音推出独立团购 App「抖省省」</span> <span class="src">36氪</span></li>
-                    <li><span class="date">05-20</span> <span class="title">抖音生活服务 2025 年支付 GMV 突破 8500 亿元（同比+59%）</span> <span class="src">36氪（援引多方报道）</span></li>
-                    <li><span class="date">04-27</span> <span class="title">巨量引擎开放平台发布 46 个接口 bp_id 入参下线预通知</span> <span class="src">巨量引擎开放平台</span></li>
-                </ul>
-                <button class="source-toggle" onclick="toggleSources(this)">📋 数据来源 (2)</button>
-                <div class="source-list" style="display:none;">
-                    <div class="source-item"><span class="source-icon">📰</span><a href="https://m.36kr.com/p/3709581605580932" target="_blank">36氪：抖音“分家”干美团</a><span class="source-date">2026-03-05</span></div>
-                    <div class="source-item"><span class="source-icon">📰</span><a href="https://open.oceanengine.com/changelog/1" target="_blank">巨量引擎开放平台：2026-04-27 更新日志</a><span class="source-date">2026-04-27</span></div>
+                <div class="comp-category-tabs">
+                    <button class="ctab active" data-ctarget="bytedance-all">全部</button>
+                    <button class="ctab" data-ctarget="bytedance-product">📦 产品动态</button>
+                    <button class="ctab" data-ctarget="bytedance-policy">📋 政策更新</button>
+                    <button class="ctab" data-ctarget="bytedance-case">🏭 行业 Case</button>
+                </div>
+                <div class="comp-items" id="bytedance-all">
+                    <div class="comp-item" data-ccat="product">
+                        <span class="comp-cat-tag product">📦 产品动态</span>
+                        <span class="comp-date">2026-03-05</span>
+                        <div class="comp-title">抖音推出独立团购 App「抖省省」，主打搜索逻辑与工具属性</div>
+                        <div class="comp-sowhat-block">
+                            <button class="sowhat-toggle" onclick="toggleSoWhat(this)">💡 So What ▾</button>
+                            <div class="sowhat-content" style="display:none;">字节拆分内容与交易流量，抖省省对标美团早期极简模式。本地生活竞争升维至履约和供应链层，单纯流量优势不再充分。</div>
+                        </div>
+                        <button class="source-toggle" onclick="toggleSources(this)">📋 来源 (1)</button>
+                        <div class="source-list" style="display:none;">
+                            <div class="source-item"><span class="source-icon">📰</span><a href="https://m.36kr.com/p/3709581605580932" target="_blank">36氪：抖音"分家"干美团</a><span class="source-date">2026-03-05</span></div>
+                        </div>
+                    </div>
+                    <div class="comp-item" data-ccat="policy">
+                        <span class="comp-cat-tag policy">📋 政策更新</span>
+                        <span class="comp-date">2026-04-27</span>
+                        <div class="comp-title">巨量引擎开放平台：46个接口 bp_id 入参下线预通知</div>
+                        <div class="comp-sowhat-block">
+                            <button class="sowhat-toggle" onclick="toggleSoWhat(this)">💡 So What ▾</button>
+                            <div class="sowhat-content" style="display:none;">字节商业化技术底层系统性重构，广告主需迁移ID体系。关注后续oCPX算法效率变化对投放竞争格局的影响。</div>
+                        </div>
+                        <button class="source-toggle" onclick="toggleSources(this)">📋 来源 (1)</button>
+                        <div class="source-list" style="display:none;">
+                            <div class="source-item"><span class="source-icon">🔗</span><a href="https://open.oceanengine.com/changelog/1" target="_blank">巨量引擎开放平台 Changelog</a><span class="source-date">2026-04-27</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- 小红书 -->
             <div class="tab-panel" id="xiaohongshu">
-                <ul class="news-list">
-                    <li><span class="date">05-01</span> <span class="title">小红书整合社区/电商/商业化三大业务，成立 AI 一级部门 Dots</span> <span class="src">21经济网</span></li>
-                </ul>
-                <button class="source-toggle" onclick="toggleSources(this)">📋 数据来源 (1)</button>
-                <div class="source-list" style="display:none;">
-                    <div class="source-item"><span class="source-icon">📰</span><a href="https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html" target="_blank">21经济网：小红书重大调整</a><span class="source-date">2026-05-01</span></div>
+                <div class="comp-category-tabs">
+                    <button class="ctab active" data-ctarget="xhs-all">全部</button>
+                    <button class="ctab" data-ctarget="xhs-product">📦 产品动态</button>
+                    <button class="ctab" data-ctarget="xhs-policy">📋 政策更新</button>
+                    <button class="ctab" data-ctarget="xhs-case">🏭 行业 Case</button>
+                </div>
+                <div class="comp-items" id="xhs-all">
+                    <div class="comp-item" data-ccat="product">
+                        <span class="comp-cat-tag product">📦 产品动态</span>
+                        <span class="comp-date">2026-05-01</span>
+                        <div class="comp-title">整合三大业务，成立 AI 一级部门 Dots + 海外部 Rednote</div>
+                        <div class="comp-sowhat-block">
+                            <button class="sowhat-toggle" onclick="toggleSoWhat(this)">💡 So What ▾</button>
+                            <div class="sowhat-content" style="display:none;">组织整合标志商业化提速，AI升格一级战略。种草广告+AI投放赛道竞争将加剧，中腰部品牌客户争夺加剧。</div>
+                        </div>
+                        <button class="source-toggle" onclick="toggleSources(this)">📋 来源 (1)</button>
+                        <div class="source-list" style="display:none;">
+                            <div class="source-item"><span class="source-icon">📰</span><a href="https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html" target="_blank">21经济网：小红书重大调整</a><span class="source-date">2026-05-01</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- 腾讯 -->
             <div class="tab-panel" id="tencent">
-                <ul class="news-list">
-                    <li><span class="date">05-14</span> <span class="title">腾讯 2026Q1 营收约 1965 亿元，营销服务收入同比增长约 20%</span> <span class="src">新浪财经</span></li>
-                    <li><span class="date">05-19</span> <span class="title">腾讯 Q1 财报解读：AI 持续赋能广告与商业化效率</span> <span class="src">澎湃新闻</span></li>
-                </ul>
-                <button class="source-toggle" onclick="toggleSources(this)">📋 数据来源 (2)</button>
-                <div class="source-list" style="display:none;">
-                    <div class="source-item"><span class="source-icon">📰</span><a href="https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml" target="_blank">新浪财经：腾讯Q1营收近2000亿</a><span class="source-date">2026-05-14</span></div>
-                    <div class="source-item"><span class="source-icon">📰</span><a href="https://m.thepaper.cn/newsDetail_forward_33197379" target="_blank">澎湃新闻：腾讯Q1财报，藏着AI商业的增长命题</a><span class="source-date">2026-05-19</span></div>
+                <div class="comp-category-tabs">
+                    <button class="ctab active" data-ctarget="tx-all">全部</button>
+                    <button class="ctab" data-ctarget="tx-product">📦 产品动态</button>
+                    <button class="ctab" data-ctarget="tx-policy">📋 政策更新</button>
+                    <button class="ctab" data-ctarget="tx-case">🏭 行业 Case</button>
+                </div>
+                <div class="comp-items" id="tx-all">
+                    <div class="comp-item" data-ccat="case">
+                        <span class="comp-cat-tag case">🏭 行业 Case</span>
+                        <span class="comp-date">2026-05-14</span>
+                        <div class="comp-title">2026Q1 广告增长 20%，视频号+搜一搜成核心驱动力，本地生活成新增长极</div>
+                        <div class="comp-sowhat-block">
+                            <button class="sowhat-toggle" onclick="toggleSoWhat(this)">💡 So What ▾</button>
+                            <div class="sowhat-content" style="display:none;">腾讯广告从朋友圈单点转向多触点组合生态，本地生活客户预算将与快手形成直接竞争。视频号广告扩容节奏值得持续关注。</div>
+                        </div>
+                        <button class="source-toggle" onclick="toggleSources(this)">📋 来源 (2)</button>
+                        <div class="source-list" style="display:none;">
+                            <div class="source-item"><span class="source-icon">📰</span><a href="https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml" target="_blank">新浪财经：腾讯Q1营收近2000亿</a><span class="source-date">2026-05-14</span></div>
+                            <div class="source-item"><span class="source-icon">📰</span><a href="https://m.thepaper.cn/newsDetail_forward_33197379" target="_blank">澎湃新闻：腾讯Q1财报</a><span class="source-date">2026-05-19</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- 美团 -->
             <div class="tab-panel" id="meituan">
-                <ul class="news-list">
-                    <li><span class="date">--</span> <span class="title">暂无已核验更新</span> <span class="src">待补充</span></li>
-                </ul>
-                <button class="source-toggle" disabled>📋 数据来源 (0)</button>
+                <div class="comp-category-tabs">
+                    <button class="ctab active" data-ctarget="mt-all">全部</button>
+                    <button class="ctab" data-ctarget="mt-product">📦 产品动态</button>
+                    <button class="ctab" data-ctarget="mt-policy">📋 政策更新</button>
+                    <button class="ctab" data-ctarget="mt-case">🏭 行业 Case</button>
+                </div>
+                <div class="comp-items" id="mt-all">
+                    <div class="comp-empty">暂无已核验更新</div>
+                </div>
             </div>
 
+            <!-- 百度 -->
             <div class="tab-panel" id="baidu">
-                <ul class="news-list">
-                    <li><span class="date">--</span> <span class="title">暂无已核验更新</span> <span class="src">待补充</span></li>
-                </ul>
-                <button class="source-toggle" disabled>📋 数据来源 (0)</button>
+                <div class="comp-category-tabs">
+                    <button class="ctab active" data-ctarget="bd-all">全部</button>
+                    <button class="ctab" data-ctarget="bd-product">📦 产品动态</button>
+                    <button class="ctab" data-ctarget="bd-policy">📋 政策更新</button>
+                    <button class="ctab" data-ctarget="bd-case">🏭 行业 Case</button>
+                </div>
+                <div class="comp-items" id="bd-all">
+                    <div class="comp-empty">暂无已核验更新</div>
+                </div>
             </div>
 
         </div>
@@ -228,7 +263,7 @@
                 <span class="industry-tag">证据充分</span>
                 <button class="source-toggle" onclick="toggleSources(this)">📋 数据来源 (2)</button>
                 <div class="source-list" style="display:none;">
-                    <div class="source-item"><span class="source-icon">📰</span><a href="https://m.36kr.com/p/3709581605580932" target="_blank">36氪：抖音“分家”干美团</a><span class="source-date">2026-03-05</span></div>
+                    <div class="source-item"><span class="source-icon">📰</span><a href="https://m.36kr.com/p/3709581605580932" target="_blank">36氪：抖音"分家"干美团</a><span class="source-date">2026-03-05</span></div>
                     <div class="source-item"><span class="source-icon">📰</span><a href="https://m.xfb315.com/article/155665" target="_blank">消费者报道：抖省省入局团购</a><span class="source-date">2026-04-15</span></div>
                 </div>
             </div>
@@ -246,7 +281,7 @@
                 <button class="source-toggle" onclick="toggleSources(this)">📋 数据来源 (3)</button>
                 <div class="source-list" style="display:none;">
                     <div class="source-item"><span class="source-icon">📰</span><a href="https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html" target="_blank">21经济网：小红书重大调整</a><span class="source-date">2026-05-01</span></div>
-                    <div class="source-item"><span class="source-icon">📰</span><a href="https://m.thepaper.cn/newsDetail_forward_33197379" target="_blank">澎湃新闻：腾讯Q1财报，藏着AI商业增长命题</a><span class="source-date">2026-05-19</span></div>
+                    <div class="source-item"><span class="source-icon">📰</span><a href="https://m.thepaper.cn/newsDetail_forward_33197379" target="_blank">澎湃新闻：腾讯Q1财报</a><span class="source-date">2026-05-19</span></div>
                     <div class="source-item"><span class="source-icon">📰</span><a href="https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml" target="_blank">新浪财经：腾讯Q1营收近2000亿</a><span class="source-date">2026-05-14</span></div>
                 </div>
             </div>
@@ -255,9 +290,7 @@
                 <div class="industry-icon">⏳</div>
                 <h3>线索广告</h3>
                 <p class="industry-desc">表单收集 / 电话拨打 / 私信</p>
-                <ul class="industry-points">
-                    <li>暂无可公开引用且完成核验的增量信息</li>
-                </ul>
+                <ul class="industry-points"><li>暂无可公开引用且完成核验的增量信息</li></ul>
                 <span class="industry-tag">待核验后发布</span>
                 <button class="source-toggle" disabled>📋 数据来源 (0)</button>
             </div>
@@ -266,9 +299,7 @@
                 <div class="industry-icon">⏳</div>
                 <h3>医疗行业广告</h3>
                 <p class="industry-desc">男科、妇科、口腔、医美、植发</p>
-                <ul class="industry-points">
-                    <li>暂无可公开引用且完成核验的增量信息</li>
-                </ul>
+                <ul class="industry-points"><li>暂无可公开引用且完成核验的增量信息</li></ul>
                 <span class="industry-tag">待核验后发布</span>
                 <button class="source-toggle" disabled>📋 数据来源 (0)</button>
             </div>
@@ -277,21 +308,9 @@
                 <div class="industry-icon">⏳</div>
                 <h3>本地服务行业广告</h3>
                 <p class="industry-desc">生美、招盟、便民、民生、摄影、婚恋</p>
-                <ul class="industry-points">
-                    <li>暂无可公开引用且完成核验的增量信息</li>
-                </ul>
+                <ul class="industry-points"><li>暂无可公开引用且完成核验的增量信息</li></ul>
                 <span class="industry-tag">待核验后发布</span>
                 <button class="source-toggle" disabled>📋 数据来源 (0)</button>
-            </div>
-
-            <div class="industry-card industry-card-placeholder">
-                <div class="industry-icon">➕</div>
-                <h3>更多赛道</h3>
-                <p class="industry-desc">短剧 / 游戏 / 电商... 持续扩展中</p>
-                <ul class="industry-points">
-                    <li>根据团队需求灵活添加新赛道</li>
-                </ul>
-                <span class="industry-tag">规划中</span>
             </div>
 
         </div>
@@ -303,16 +322,12 @@
     <div class="container">
         <div class="section-head">
             <h2>📄 行研报告库</h2>
-            <p>历史行研报告归档，支持关键词搜索</p>
+            <p>历史行研报告归档，支持关键词搜索（建设中）</p>
         </div>
-
         <div class="search-box">
             <input type="text" id="reportSearch" placeholder="🔍 输入关键词搜索（建设中）" disabled />
             <span class="search-count">共 <span id="reportCount">0</span> 份报告</span>
         </div>
-
-        <ul class="report-list" id="reportList"></ul>
-        <p class="report-end" id="reportEnd" style="display:none;">— 已加载全部报告 —</p>
         <p class="report-empty" id="reportEmpty">📂 报告库建设中：未来将收录基于公开信息撰写的行业研究报告</p>
     </div>
 </section>
@@ -321,7 +336,7 @@
 <footer class="site-footer">
     <div class="container">
         <p>📊 商业化洞察平台 · Strategy Insight</p>
-        <p class="foot-sub">每日更新 · 平台基于 GitHub Pages 托管 · 内容来自公开信息整理</p>
+        <p class="foot-sub">每周更新 · 平台基于 GitHub Pages 托管 · 内容来自公开信息整理</p>
         <p class="foot-sub" style="margin-top:12px;">
             📋 <a href="https://docs.corp.kuaishou.com/d/home/fcAAoE2eWZ9oZFNrZB9qJaYpz" target="_blank" style="color:#9ca3af;text-decoration:underline;">信息源库（Kim Doc · 内网）</a>
             &nbsp;·&nbsp;

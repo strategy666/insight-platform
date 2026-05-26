@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "description": "Part2 竞对产品/政策/行业case更新 数据源 — 由 sub-agent: competitor-tracker 维护",
+    "update_frequency": "weekly",
+    "last_updated": "2026-05-26",
+    "fields": ["id","date","company","category","title","sowhat","sources"]
+  },
+  "items": [
+    {
+      "id": "comp-001",
+      "date": "2026-03-05",
+      "company": "字节",
+      "category": "产品动态",
+      "title": "抖音上线独立团购 App「抖省省」，主打搜索逻辑与工具属性",
+      "sowhat": "字节拆分内容与交易流量，抖省省对标美团早期极简模式。本地生活竞争升维至履约和供应链层。",
+      "sources": [
+        {"name": "36氪：抖音"分家"干美团", "url": "https://m.36kr.com/p/3709581605580932", "date": "2026-03-05"}
+      ]
+    },
+    {
+      "id": "comp-002",
+      "date": "2026-04-27",
+      "company": "字节",
+      "category": "政策更新",
+      "title": "巨量引擎开放平台：46个接口 bp_id 入参下线预通知",
+      "sowhat": "字节商业化技术底层系统性重构，广告主需迁移ID体系。关注后续oCPX算法效率变化。",
+      "sources": [
+        {"name": "巨量引擎开放平台 Changelog", "url": "https://open.oceanengine.com/changelog/1", "date": "2026-04-27"}
+      ]
+    },
+    {
+      "id": "comp-003",
+      "date": "2026-05-01",
+      "company": "小红书",
+      "category": "产品动态",
+      "title": "小红书整合三大业务，成立 AI 一级部门 Dots + 海外部 Rednote",
+      "sowhat": "组织整合标志商业化提速，AI升格一级战略。种草广告+AI投放赛道竞争将加剧。",
+      "sources": [
+        {"name": "21经济网：小红书重大调整", "url": "https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html", "date": "2026-05-01"}
+      ]
+    },
+    {
+      "id": "comp-004",
+      "date": "2026-05-14",
+      "company": "腾讯",
+      "category": "行业case",
+      "title": "腾讯 2026Q1 广告增长 20%，视频号+搜一搜成核心驱动",
+      "sowhat": "腾讯广告生态从朋友圈单点转向多触点组合，本地生活成新增长极。视频号广告扩容将与快手争夺同一批客户预算。",
+      "sources": [
+        {"name": "新浪财经：腾讯Q1营收近2000亿", "url": "https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml", "date": "2026-05-14"},
+        {"name": "澎湃新闻：腾讯Q1财报", "url": "https://m.thepaper.cn/newsDetail_forward_33197379", "date": "2026-05-19"}
+      ]
+    }
+  ]
+}
