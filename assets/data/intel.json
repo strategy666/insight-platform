@@ -5,8 +5,7 @@
     "last_updated": "2026-05-26",
     "period": "2026-05-12 至 2026-05-26",
     "version": "2.0",
-    "fields": ["id","date","title","tldr","priority","signal","tags","company","tracks","metrics","takeaway","sowhat_for_kuaishou","timeline","related_ids","sources"],
-    "update_rule": "检索最近14天增量，每条需含 tldr(1句话) + takeaway(3要点) + metrics(关键数字) + timeline(结构化时间线)"
+    "fields": ["id","date","title","tldr","priority","signal","tags","company","tracks","metrics","takeaway","sowhat_for_kuaishou","timeline","related_ids","sources"]
   },
   "items": [
     {
@@ -30,7 +29,7 @@
         "本地生活行业成为广告增长新极点，视频号广告主扩容",
         "全链路商业化生态成型，将与快手争夺本地生活和线索广告主预算"
       ],
-      "sowhat_for_kuaishou": "视频号在本地生活赛道的广告扩容将直接与快手争抢同一批客户预算，快手需强化内容消费→本地服务转化路径的产品竞争力。",
+      "sowhat_for_kuaishou": "视频号在本地生活赛道的广告扩容将直接与快手争抢同一批客户预算，快手需强化内容消费到本地服务转化路径的产品竞争力。",
       "timeline": [
         {"date": "2025-Q4", "event": "视频号广告收入占比持续提升"},
         {"date": "2026-05-14", "event": "腾讯Q1财报发布"},
@@ -39,7 +38,6 @@
       "related_ids": ["intel-009"],
       "sources": [
         {"name": "新浪财经：腾讯Q1营收近2000亿", "url": "https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml", "date": "2026-05-14"},
-        {"name": "澎湃新闻：腾讯Q1财报解读", "url": "https://m.thepaper.cn/newsDetail_forward_33197379", "date": "2026-05-19"},
         {"name": "钛媒体：腾讯阿里财报里的AI赌注", "url": "https://www.tmtpost.com/7987755.html", "date": "2026-05-14"}
       ]
     },
@@ -61,7 +59,7 @@
         "成立AI一级部门Dots（从模型研发到产品完整体系）+ 企业智能部 + 海外部门Rednote",
         "用户与广告增长见顶倒逼转型，种草广告+AI投放赛道竞争将加剧"
       ],
-      "sowhat_for_kuaishou": "小红书将加速抢占种草广告市场，中腰部品牌客户（美妆/服饰/消费品）预算争夺会更激烈。快手需强化"老铁经济"差异化定位。",
+      "sowhat_for_kuaishou": "小红书将加速抢占种草广告市场，中腰部品牌客户（美妆/服饰/消费品）预算争夺会更激烈。快手需强化差异化定位。",
       "timeline": [
         {"date": "2025-08", "event": "柯南升任COO"},
         {"date": "2026-04-30", "event": "全员内部信：整合三大业务成立Dots"},
@@ -70,13 +68,13 @@
       "related_ids": [],
       "sources": [
         {"name": "21经济网：小红书重大调整", "url": "https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html", "date": "2026-05-01"},
-        {"name": "钛媒体：集权、搞AI、出海，小红书撕掉"慢公司"标签", "url": "https://www.tmtpost.com/7974429.html", "date": "2026-04-30"}
+        {"name": "钛媒体：集权、搞AI、出海，小红书撕掉慢公司标签", "url": "https://www.tmtpost.com/7974429.html", "date": "2026-04-30"}
       ]
     },
     {
       "id": "intel-003",
       "date": "2026-03-05",
-      "title": "抖音推出独立团购 App「抖省省」，2025 年生服 GMV 达 8500 亿",
+      "title": "抖音推出独立团购 App 「抖省省」，2025 年生服 GMV 达 8500 亿",
       "tldr": "字节拆分内容流与交易流，抖省省主打搜索逻辑，承认内容+电商打架",
       "priority": "high",
       "signal": "neutral",
@@ -102,7 +100,7 @@
       ],
       "related_ids": ["intel-009"],
       "sources": [
-        {"name": "36氪：抖音"分家"干美团", "url": "https://m.36kr.com/p/3709581605580932", "date": "2026-03-05"}
+        {"name": "36氪：抖音分家干美团", "url": "https://m.36kr.com/p/3709581605580932", "date": "2026-03-05"}
       ]
     },
     {
@@ -134,8 +132,7 @@
       ],
       "related_ids": ["intel-008", "intel-010"],
       "sources": [
-        {"name": "钛媒体：成长的阵痛，百度必须经历", "url": "https://www.tmtpost.com/7994112.html", "date": "2026-05-20"},
-        {"name": "钛媒体：百度Q1—搜索广告跌破半壁江山", "url": "https://www.tmtpost.com/7992627.html", "date": "2026-05-18"},
+        {"name": "钛媒体：百度Q1搜索广告跌破半壁江山", "url": "https://www.tmtpost.com/7992627.html", "date": "2026-05-18"},
         {"name": "华尔街见闻：百度Q1营收320.8亿", "url": "https://wallstreetcn.com/articles/3772526", "date": "2026-05-18"}
       ]
     },
@@ -164,7 +161,7 @@
       "timeline": [
         {"date": "2025年", "event": "字节AI资本开支1600亿"},
         {"date": "2026年初", "event": "豆包月活过亿"},
-        {"date": "2026-05-04", "event": "豆包发布付费版(68元/月)"}
+        {"date": "2026-05-04", "event": "豆包发布付费版（68元/月）"}
       ],
       "related_ids": ["intel-007", "intel-010"],
       "sources": [
@@ -175,8 +172,8 @@
     {
       "id": "intel-009",
       "date": "2026-05-19",
-      "title": "QuestMobile：2026本地生活报告——即时零售走向"综合消费入口"",
-      "tldr": "本地生活从"到店/到家"演变为"即时+内容+电商"多维竞争，阿里/京东/美团陷阵地战，抖音偷家",
+      "title": "QuestMobile：2026本地生活报告——即时零售走向综合消费入口",
+      "tldr": "本地生活从到店/到家演变为即时+内容+电商多维竞争，阿里/京东/美团陷阵地战，抖音偷家",
       "priority": "high",
       "signal": "threat",
       "tags": ["#行业报告", "#本地生活", "#即时零售", "#国内"],
@@ -186,11 +183,11 @@
         "即时零售市场规模": ">1万亿元"
       },
       "takeaway": [
-        "即时零售用户心智升维，从"买菜"演进为"综合消费入口"",
+        "即时零售用户心智升维，从买菜演进为综合消费入口",
         "阿里（饿了么+淘宝）、京东（秒送）、美团三方陷入阵地战",
         "抖音凭借内容流量持续偷家，用户规模增速远超美团"
       ],
-      "sowhat_for_kuaishou": "本地生活竞争已不是单纯的配送网络竞争，而是"内容+即时"融合战场。快手需要在供给侧和内容生态两端同步建设，否则难以在竞争中突围。",
+      "sowhat_for_kuaishou": "本地生活竞争已不是单纯的配送网络竞争，而是内容+即时融合战场。快手需要在供给侧和内容生态两端同步建设，否则难以在竞争中突围。",
       "timeline": [
         {"date": "2024年", "event": "即时零售市场规模超万亿"},
         {"date": "2025年", "event": "抖音生服GMV+59%"},
@@ -248,7 +245,7 @@
       "takeaway": [
         "AI Max for Search Campaigns正式退出Beta，2026年9月起强制升级所有Dynamic Search Ads",
         "AI Max全量应用后，广告主的目标网址、文案、定向均由AI自动决策，相比DSA提升7%转化率",
-        "搜索广告自动化关键里程碑：广告主从"手动出价"走向"托管增长""
+        "搜索广告自动化关键里程碑：广告主从手动出价走向托管增长"
       ],
       "sowhat_for_kuaishou": "国内平台oCPX/智能投放需对标更新。出海广告主在Google的投放效率提升后，可能对国内流量平台议价能力增强，间接影响快手出海客户合作。",
       "timeline": [
@@ -274,7 +271,7 @@
       "metrics": {
         "TikTok广告收入": ">300亿美元",
         "抖音广告收入": "4200亿元",
-        "字节全球广告": "~900-1000亿美元"
+        "字节全球广告": "约900-1000亿美元"
       },
       "takeaway": [
         "2025年TikTok全球广告收入超300亿美元；抖音国内广告收入约4200亿元",
