@@ -766,4 +766,53 @@ body {
     .intel-card { padding: 18px 20px; }
     .filter-row { gap: 8px; }
     .search-panel { padding: 18px; }
+    .intel-summary-panel { grid-template-columns: 1fr 1fr; }
 }
+
+/* ============== Part1 本期概要面板（dcap 风格） ============== */
+.intel-summary-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    box-shadow: var(--c-shadow);
+}
+.summary-company {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--c-primary);
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #bfdbfe;
+}
+.summary-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.summary-list li {
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.summary-date {
+    color: var(--c-text-light);
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 11px;
+    background: var(--c-bg-alt);
+    padding: 1px 6px;
+    border-radius: 6px;
+    margin-top: 1px;
+}
+.summary-text { color: var(--c-text); }
+
+/* scope 地域标签 */
+.intel-tag.scope { background: #f5f3ff; color: #7c3aed; }

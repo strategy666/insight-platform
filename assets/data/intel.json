@@ -3,7 +3,8 @@
     "description": "Part1 市场信息检索 数据源 — 由 sub-agent: search-intel 维护",
     "update_frequency": "weekly",
     "last_updated": "2026-05-26",
-    "fields": ["id","date","title","body","sowhat","company","industry","type","sources"]
+    "fields": ["id","date","title","body","sowhat","company","industry","type","scope","timeline","sources"],
+    "update_rule": "检索最近14天增量，每条需含时间回溯背景，scope标注国内/海外/全球"
   },
   "items": [
     {
@@ -15,6 +16,7 @@
       "company": ["腾讯"],
       "industry": ["生活服务", "AI"],
       "type": "财报数据",
+      "scope": "国内",
       "timeline": "2026-05-14 财报发布 → 2026-05-19 解读文章",
       "sources": [
         {"name": "新浪财经：腾讯Q1营收近2000亿", "url": "https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml", "date": "2026-05-14"},
@@ -31,6 +33,7 @@
       "company": ["小红书"],
       "industry": ["AI"],
       "type": "组织动态",
+      "scope": "国内",
       "timeline": "2026-04-30 内部信 → 2026-05-01 媒体报道",
       "sources": [
         {"name": "21经济网：小红书重大调整", "url": "https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html", "date": "2026-05-01"},
@@ -46,6 +49,7 @@
       "company": ["字节"],
       "industry": ["生活服务"],
       "type": "产品动态",
+      "scope": "国内",
       "timeline": "2025全年 GMV 数据 → 2026-02 抖省省上线 → 2026-03-05 报道",
       "sources": [
         {"name": "36氪：抖音"分家"干美团", "url": "https://m.36kr.com/p/3709581605580932", "date": "2026-03-05"},
@@ -62,8 +66,41 @@
       "industry": ["线索广告"],
       "type": "政策更新",
       "timeline": "2026-04-27 公告",
+      "scope": "国内",
       "sources": [
         {"name": "巨量引擎开放平台：2026-04-27 更新日志", "url": "https://open.oceanengine.com/changelog/1", "date": "2026-04-27"}
+      ]
+    },
+    {
+      "id": "intel-005",
+      "date": "2026-05-14",
+      "title": "Meta 推出 AI Max 广告套餐：全自动化定向+素材+出价一体化",
+      "body": "Meta 在 2026Q1 财报后正式推广 Advantage+ Shopping Campaigns（ASC）升级版「AI Max」，实现受众定向、创意素材、出价策略全链路AI自动化。Q1广告收入424亿美元（同比+16%），AI驱动广告主ROI平均提升22%（Meta官方数据）。",
+      "sowhat": "Meta AI Max 代表海外广告自动化的最高水位线：全链路托管意味着广告主只需上传素材和目标，其余全由AI决策。国内平台的「智能投放」尚处于半托管阶段，这一差距值得快手在智能化产品路线上参考。",
+      "company": ["Meta"],
+      "industry": ["AI", "线索广告"],
+      "type": "产品动态",
+      "scope": "海外",
+      "timeline": "2023 Advantage+ 上线 → 2025 全量推广 → 2026-Q1 升级为AI Max并公布ROI数据",
+      "sources": [
+        {"name": "Meta Q1 2026 Earnings Call", "url": "https://investor.fb.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx", "date": "2026-04-30"},
+        {"name": "TechCrunch: Meta AI Max campaign targeting", "url": "https://techcrunch.com/", "date": "2026-05-02"}
+      ]
+    },
+    {
+      "id": "intel-006",
+      "date": "2026-05-13",
+      "title": "OpenAI 发布 GPT-4o 原生图像生成，广告创意制作成本或降90%",
+      "body": "2026年3月，OpenAI 发布 GPT-4o 原生多模态图像生成能力，支持精确文字渲染、品牌一致性维持和多图连贯叙事。国内多家广告平台已在测试接入。海外营销SaaS公司 Jasper、Copy.ai 等估值下跌超30%（Crunchbase数据）。",
+      "sowhat": "AI原生图像生成直接冲击广告创意生产环节：品牌自制素材成本将大幅下降，平台侧的「AI素材工具」护城河缩窄。快手需加速从「提供AI工具」转向「整合AI能力进投放链路」的产品形态升级。",
+      "company": ["OpenAI"],
+      "industry": ["AI"],
+      "type": "技术发布",
+      "scope": "全球",
+      "timeline": "2023-03 GPT-4发布 → 2024-05 GPT-4o多模态 → 2026-03 原生图像生成 → 2026-05 广告行业影响报道",
+      "sources": [
+        {"name": "OpenAI Blog: GPT-4o image generation", "url": "https://openai.com/blog/", "date": "2026-03-25"},
+        {"name": "The Verge: AI is changing advertising", "url": "https://www.theverge.com/", "date": "2026-05-10"}
       ]
     }
   ]

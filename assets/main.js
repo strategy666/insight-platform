@@ -26,7 +26,7 @@ function toggleSoWhat(button) {
    - 支持关键词搜索 + 公司/赛道/类型筛选
    ============================================================ */
 let intelData = [];
-let activeFilters = { company: 'all', industry: 'all', type: 'all' };
+let activeFilters = { company: 'all', industry: 'all', type: 'all', scope: 'all' };
 let searchKeyword = '';
 
 async function loadIntelData() {
@@ -34,10 +34,40 @@ async function loadIntelData() {
         const resp = await fetch('assets/data/intel.json');
         const json = await resp.json();
         intelData = json.items || [];
+        renderIntelSummary();
         renderIntel();
     } catch (e) {
         console.error('Failed to load intel.json', e);
     }
+}
+
+/* 渲染「本期概要」摘要区（dcap 风格：按公司分组，每条一句话摘要） */
+function renderIntelSummary() {
+    const summaryEl = document.getElementById('intelSummary');
+    if (!summaryEl || intelData.length === 0) return;
+
+    // 按 company 分组
+    const grouped = {};
+    intelData.forEach(item => {
+        (item.company || ['其他']).forEach(c => {
+            if (!grouped[c]) grouped[c] = [];
+            grouped[c].push(item);
+        });
+    });
+
+    const companyOrder = ['字节','小红书','腾讯','美团','百度','Meta','Google','OpenAI','NVIDIA'];
+    const sorted = Object.keys(grouped).sort((a,b) => {
+        const ia = companyOrder.indexOf(a); const ib = companyOrder.indexOf(b);
+        return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+    });
+
+    summaryEl.innerHTML = sorted.map(company => {
+        const items = grouped[company];
+        const rows = items.map(item =>
+            `<li><span class="summary-date">${item.date.slice(5)}</span><span class="summary-text">${item.title}</span></li>`
+        ).join('');
+        return `<div class="summary-group"><div class="summary-company">${company}</div><ul class="summary-list">${rows}</ul></div>`;
+    }).join('');
 }
 
 function renderIntel() {
@@ -55,6 +85,7 @@ function renderIntel() {
         if (activeFilters.company !== 'all' && !(item.company||[]).includes(activeFilters.company)) return false;
         if (activeFilters.industry !== 'all' && !(item.industry||[]).includes(activeFilters.industry)) return false;
         if (activeFilters.type !== 'all' && item.type !== activeFilters.type) return false;
+        if (activeFilters.scope !== 'all' && item.scope !== activeFilters.scope) return false;
         return true;
     });
 
@@ -71,6 +102,8 @@ function renderIntel() {
         const compTags = (item.company||[]).map(c => `<span class="intel-tag company">${c}</span>`).join('');
         const indTags = (item.industry||[]).map(i => `<span class="intel-tag industry">${i}</span>`).join('');
         const typeTag = item.type ? `<span class="intel-tag type">${item.type}</span>` : '';
+        const scopeMap = { '国内': '🇨🇳', '海外': '🌐', '全球': '🌍' };
+        const scopeTag = item.scope ? `<span class="intel-tag scope">${(scopeMap[item.scope]||'')} ${item.scope}</span>` : '';
         const sourceItems = (item.sources||[]).map(s =>
             `<div class="source-item"><span class="source-icon">📰</span><a href="${s.url}" target="_blank">${s.name}</a><span class="source-date">${s.date}</span></div>`
         ).join('');
@@ -81,7 +114,7 @@ function renderIntel() {
         <article class="intel-card">
             <div class="intel-card-meta">
                 <span class="intel-date">${item.date}</span>
-                <div class="intel-tags">${compTags}${indTags}${typeTag}</div>
+                <div class="intel-tags">${scopeTag}${compTags}${indTags}${typeTag}</div>
             </div>
             <h3 class="intel-title">${item.title}</h3>
             <p class="intel-body">${item.body}</p>

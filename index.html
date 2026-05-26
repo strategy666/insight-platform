@@ -34,11 +34,11 @@
 <section class="hero">
     <div class="container">
         <h1>洞察先于决策，数据驱动战略</h1>
-        <p class="subtitle">追踪 5 大核心竞对 · 5 大重点行业赛道 · 每周更新</p>
+        <p class="subtitle">追踪国内外 10+ 竞对 · 5 大重点行业赛道 · 每周更新</p>
         <div class="hero-stats">
-            <div class="stat"><div class="num" id="statIssues">4</div><div class="label">情报条目</div></div>
-            <div class="stat"><div class="num" id="statCompetitors">5</div><div class="label">核心竞对</div></div>
-            <div class="stat"><div class="num" id="statIndustries">5</div><div class="label">行业赛道</div></div>
+            <div class="stat"><div class="num" id="statIssues">6</div><div class="label">情报条目</div></div>
+            <div class="stat"><div class="num" id="statCompetitors">10+</div><div class="label">跟踪竞对</div></div>
+            <div class="stat"><div class="num" id="statIndustries">8</div><div class="label">行业赛道</div></div>
             <div class="stat"><div class="num" id="statReports">0</div><div class="label">行研报告</div></div>
         </div>
         <!-- 快速搜索入口 -->
@@ -57,12 +57,24 @@
             <p>按公司或行业赛道筛选，每条含 So What 商业视角解读</p>
         </div>
 
+        <!-- 本期概要（dcap 风格） -->
+        <div class="intel-summary-panel" id="intelSummary">
+            <!-- JS 动态渲染 -->
+        </div>
+
         <!-- 筛选区 -->
         <div class="search-panel">
             <div class="search-row">
                 <input type="text" id="intelSearchInput" class="intel-search-input" placeholder="输入关键词搜索..." autocomplete="off" />
             </div>
             <div class="filter-row">
+                <div class="filter-group">
+                    <span class="filter-label">地域</span>
+                    <button class="filter-btn active" data-filter="scope" data-value="all">全部</button>
+                    <button class="filter-btn" data-filter="scope" data-value="国内">🇨🇳 国内</button>
+                    <button class="filter-btn" data-filter="scope" data-value="海外">🌐 海外</button>
+                    <button class="filter-btn" data-filter="scope" data-value="全球">🌍 全球</button>
+                </div>
                 <div class="filter-group">
                     <span class="filter-label">公司</span>
                     <button class="filter-btn active" data-filter="company" data-value="all">全部</button>
@@ -71,6 +83,10 @@
                     <button class="filter-btn" data-filter="company" data-value="腾讯">腾讯</button>
                     <button class="filter-btn" data-filter="company" data-value="美团">美团</button>
                     <button class="filter-btn" data-filter="company" data-value="百度">百度</button>
+                    <button class="filter-btn" data-filter="company" data-value="Meta">Meta</button>
+                    <button class="filter-btn" data-filter="company" data-value="Google">Google</button>
+                    <button class="filter-btn" data-filter="company" data-value="OpenAI">OpenAI</button>
+                    <button class="filter-btn" data-filter="company" data-value="NVIDIA">NVIDIA</button>
                 </div>
                 <div class="filter-group">
                     <span class="filter-label">赛道</span>
@@ -80,6 +96,8 @@
                     <button class="filter-btn" data-filter="industry" data-value="线索广告">线索广告</button>
                     <button class="filter-btn" data-filter="industry" data-value="医疗">医疗</button>
                     <button class="filter-btn" data-filter="industry" data-value="本地服务">本地服务</button>
+                    <button class="filter-btn" data-filter="industry" data-value="电商">电商</button>
+                    <button class="filter-btn" data-filter="industry" data-value="科技">科技</button>
                 </div>
                 <div class="filter-group">
                     <span class="filter-label">类型</span>
@@ -88,6 +106,8 @@
                     <button class="filter-btn" data-filter="type" data-value="政策更新">政策更新</button>
                     <button class="filter-btn" data-filter="type" data-value="财报数据">财报数据</button>
                     <button class="filter-btn" data-filter="type" data-value="组织动态">组织动态</button>
+                    <button class="filter-btn" data-filter="type" data-value="技术发布">技术发布</button>
+                    <button class="filter-btn" data-filter="type" data-value="行业数据">行业数据</button>
                 </div>
             </div>
             <div class="search-result-count">共找到 <span id="intelCount">4</span> 条情报</div>
