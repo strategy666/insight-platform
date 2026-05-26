@@ -1,15 +1,7 @@
 #!/usr/bin/env python3
 """
-nxny.com 行研报告抓取脚本
-用途：每周自动抓取 nxny.com 网站上与互联网/广告/AI/本地生活相关的行研报告
-使用方法：
-  1. 首次运行前，需要手动登录 nxny.com 获取 cookie
-  2. 将 cookie 写入 ~/.nxny_cookie.txt 文件
-  3. 运行：python3 scripts/fetch_nxny_reports.py
-
-输出：
-  - reports/nxny/YYYY-MM-DD_报告标题.md
-  - 报告摘要会自动加入 intel.json
+nxny.com 行研报告抓取脚本（关键词过滤版）
+只抓取与互联网/AI/科技相关的报告
 """
 
 import os
@@ -17,8 +9,9 @@ import sys
 import json
 import time
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime
 from pathlib import Path
+from bs4 import BeautifulSoup
 
 # 配置
 BASE_URL = "https://www.nxny.com"
@@ -28,20 +21,35 @@ INTEL_JSON_PATH = Path(__file__).parent.parent / "assets" / "data" / "intel.json
 
 # 关键词过滤（只抓取相关报告）
 KEYWORDS = [
-    "互联网", "广告", "营销", "AI", "人工智能", "本地生活", "生活服务",
-    "短视频", "直播", "电商", "抖音", "快手", "小红书", "腾讯", "字节",
-    "Meta", "Google", "TikTok", "ChatGPT", "OpenAI", "百度", "阿里"
+    # 互联网公司
+    "字节", "抖音", "TikTok", "快手", "腾讯", "微信", "视频号", "小红书",
+    "阿里", "淘宝", "京东", "拼多多", "美团", "饿了么", "滴滴",
+    "百度", "爱奇艺", "B站", "哔哩哔哩", "网易", "搜狐", "新浪",
+    
+    # AI/科技
+    "AI", "人工智能", "大模型", "ChatGPT", "GPT", "OpenAI", "Kimi",
+    "豆包", "文心", "Claude", "Gemini", "Llama", "机器学习", "深度学习",
+    
+    # 互联网广告/营销
+    "广告", "营销", "投放", "效果广告", "品牌广告", "程序化", "DSP",
+    "信息流", "短视频营销", "直播带货", "种草", "转化", "ROI",
+    
+    # 赛道
+    "本地生活", "生活服务", "O2O", "即时零售", "外卖", "到店到家",
+    "线索广告", "教育", "医疗", "金融科技", "Fintech",
+    "电商", "社交电商", "内容电商", "直播电商",
+    "短视频", "直播", "MCN", "网红经济", "创作者经济",
+    
+    # 科技
+    "互联网", "移动互联网", "数字化", "云计算", "SaaS", "大数据",
+    "5G", "物联网", "IoT", "元宇宙", "VR", "AR", "XR"
 ]
 
 def load_cookie():
     """从文件读取 cookie"""
     if not os.path.exists(COOKIE_FILE):
         print(f"❌ Cookie 文件不存在：{COOKIE_FILE}")
-        print("\n📝 使用方法：")
-        print("1. 在浏览器登录 https://www.nxny.com")
-        print("2. 打开开发者工具 (F12) → Network → 刷新页面")
-        print("3. 找到任意请求 → Headers → Cookie → 复制完整 cookie 字符串")
-        print(f"4. 将 cookie 写入文件：echo 'your_cookie_here' > {COOKIE_FILE}")
+        print(f"\n💡 请先运行：cat ~/.nxny_cookie.txt 确认 cookie 已保存")
         sys.exit(1)
     
     with open(COOKIE_FILE, 'r') as f:
@@ -53,54 +61,82 @@ def load_cookie():
     
     return cookie
 
-def fetch_reports_list(cookie, page=1, days=14):
-    """抓取报告列表"""
+def fetch_category_list(cookie, category="/stype_hy/", page=1):
+    """抓取某个分类的报告列表（行业研究/宏观策略）"""
     headers = {
         "Cookie": cookie,
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
     }
     
-    # TODO: 替换为实际的 nxny.com API 接口（需要你提供网站结构）
-    # 示例：假设有一个报告列表接口
-    url = f"{BASE_URL}/api/reports?page={page}&days={days}"
+    url = f"{BASE_URL}{category}?page={page}"
     
     try:
         resp = requests.get(url, headers=headers, timeout=10)
         resp.raise_for_status()
-        return resp.json()
+        resp.encoding = 'utf-8'
+        return resp.text
     except Exception as e:
-        print(f"❌ 抓取报告列表失败：{e}")
+        print(f"❌ 抓取列表失败 ({category}): {e}")
         return None
 
-def filter_reports(reports):
+def parse_reports_from_html(html):
+    """从 HTML 解析报告列表"""
+    soup = BeautifulSoup(html, 'html.parser')
+    reports = []
+    
+    # 找到报告列表（根据网站结构调整选择器）
+    # nxny.com 的结构：通常在 <ul class="report-list"> 或类似结构
+    for link in soup.find_all('a', href=True):
+        href = link.get('href', '')
+        title = link.get_text(strip=True)
+        
+        # 只保留报告详情链接（通常是 /baogao/数字/ 或 /info/数字/）
+        if '/baogao/' in href or '/info/' in href:
+            reports.append({
+                'title': title,
+                'url': BASE_URL + href if href.startswith('/') else href,
+                'date': datetime.now().strftime("%Y-%m-%d")  # 需要从页面提取
+            })
+    
+    return reports
+
+def filter_reports_by_keywords(reports):
     """根据关键词过滤报告"""
     filtered = []
     for report in reports:
         title = report.get("title", "")
-        summary = report.get("summary", "")
         
-        # 检查标题或摘要是否包含关键词
-        if any(kw in title or kw in summary for kw in KEYWORDS):
+        # 检查标题是否包含任何关键词
+        if any(kw in title for kw in KEYWORDS):
             filtered.append(report)
+            print(f"  ✅ 匹配: {title[:50]}...")
     
     return filtered
 
-def download_report(report_id, cookie):
+def download_report(report_url, cookie):
     """下载单个报告内容"""
     headers = {
         "Cookie": cookie,
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
     }
     
-    # TODO: 替换为实际的报告详情接口
-    url = f"{BASE_URL}/api/report/{report_id}"
-    
     try:
-        resp = requests.get(url, headers=headers, timeout=10)
+        resp = requests.get(report_url, headers=headers, timeout=10)
         resp.raise_for_status()
-        return resp.json()
+        resp.encoding = 'utf-8'
+        
+        soup = BeautifulSoup(resp.text, 'html.parser')
+        
+        # 提取报告内容（根据实际页面结构调整）
+        content = soup.find('div', class_='content') or soup.find('article')
+        
+        return {
+            'html': resp.text,
+            'content': content.get_text(strip=True) if content else "",
+            'summary': content.get_text(strip=True)[:500] if content else ""
+        }
     except Exception as e:
-        print(f"❌ 下载报告失败 (ID: {report_id}): {e}")
+        print(f"❌ 下载报告失败: {e}")
         return None
 
 def save_report_to_file(report):
@@ -108,7 +144,7 @@ def save_report_to_file(report):
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     
     date = report.get("date", datetime.now().strftime("%Y-%m-%d"))
-    title = report.get("title", "未命名报告").replace("/", "-")
+    title = report.get("title", "未命名报告").replace("/", "-")[:100]
     filename = f"{date}_{title}.md"
     filepath = REPORTS_DIR / filename
     
@@ -116,35 +152,21 @@ def save_report_to_file(report):
 title: {report.get('title', '未命名')}
 date: {date}
 source: nxny.com
-author: {report.get('author', '未知')}
-tags: {', '.join(report.get('tags', []))}
+url: {report.get('url', '')}
 ---
 
 # {report.get('title', '未命名')}
 
 **发布日期**: {date}  
-**来源**: nxny.com  
-**作者**: {report.get('author', '未知')}
+**来源**: nxny.com (股票报告网)
 
 ## 摘要
 
 {report.get('summary', '暂无摘要')}
 
-## 核心观点
-
-{report.get('key_points', '暂无核心观点')}
-
-## 数据亮点
-
-{report.get('metrics', '暂无数据')}
-
-## 完整报告
-
-{report.get('content', '暂无内容')}
-
 ---
 
-**来源链接**: {BASE_URL}/report/{report.get('id')}
+**来源链接**: {report.get('url', '')}
 """
     
     with open(filepath, 'w', encoding='utf-8') as f:
@@ -153,100 +175,50 @@ tags: {', '.join(report.get('tags', []))}
     print(f"✅ 已保存报告：{filename}")
     return filepath
 
-def extract_intel_from_report(report):
-    """从报告中提取情报条目（生成 intel.json 格式）"""
-    return {
-        "id": f"intel-nxny-{report.get('id')}",
-        "date": report.get('date', datetime.now().strftime("%Y-%m-%d")),
-        "title": f"[行研] {report.get('title', '未命名')}",
-        "tldr": report.get('summary', '')[:100],  # 摘要前100字作为tldr
-        "priority": "mid",  # 默认中优先级
-        "signal": "neutral",
-        "tags": ["#行研报告", "#nxny"] + [f"#{tag}" for tag in report.get('tags', [])],
-        "company": [],
-        "tracks": [],
-        "metrics": {},
-        "takeaway": report.get('key_points', '').split('\n')[:3],  # 前3条要点
-        "sowhat_for_kuaishou": "",  # 需要人工补充
-        "timeline": [],
-        "related_ids": [],
-        "sources": [{
-            "name": f"nxny.com - {report.get('title')}",
-            "url": f"{BASE_URL}/report/{report.get('id')}",
-            "date": report.get('date', datetime.now().strftime("%Y-%m-%d"))
-        }]
-    }
-
 def main():
-    print("🚀 开始抓取 nxny.com 行研报告...")
+    print("🚀 开始抓取 nxny.com 行研报告（关键词过滤）...")
     
     # 1. 加载 cookie
     cookie = load_cookie()
     print(f"✅ Cookie 已加载")
     
-    # 2. 抓取最近14天的报告列表
-    print("📡 正在抓取报告列表...")
-    reports_data = fetch_reports_list(cookie, page=1, days=14)
+    # 2. 抓取行业研究和宏观策略两个分类
+    categories = [
+        ("/stype_hy/", "行业研究"),
+        ("/stype_hc/", "宏观策略")
+    ]
     
-    if not reports_data:
-        print("❌ 未获取到报告数据")
-        sys.exit(1)
+    all_reports = []
     
-    reports = reports_data.get("reports", [])
-    print(f"📊 共找到 {len(reports)} 篇报告")
+    for cat_path, cat_name in categories:
+        print(f"\n📡 正在抓取【{cat_name}】分类...")
+        html = fetch_category_list(cookie, cat_path, page=1)
+        
+        if not html:
+            continue
+        
+        reports = parse_reports_from_html(html)
+        print(f"📊 找到 {len(reports)} 篇报告")
+        
+        # 关键词过滤
+        filtered = filter_reports_by_keywords(reports[:20])  # 只看前20条
+        all_reports.extend(filtered)
     
-    # 3. 过滤相关报告
-    filtered_reports = filter_reports(reports)
-    print(f"🔍 过滤后剩余 {len(filtered_reports)} 篇相关报告")
+    print(f"\n🔍 关键词过滤后剩余 {len(all_reports)} 篇相关报告")
     
-    if not filtered_reports:
+    if not all_reports:
         print("✅ 无新增相关报告")
         return
     
-    # 4. 下载并保存报告
+    # 3. 保存报告（简化版，只保存元信息）
     saved_count = 0
-    intel_items = []
-    
-    for report_meta in filtered_reports:
-        report_id = report_meta.get("id")
-        print(f"\n📥 下载报告: {report_meta.get('title')}")
-        
-        report = download_report(report_id, cookie)
-        if not report:
-            continue
-        
-        # 保存为文件
+    for report in all_reports[:5]:  # 最多保存5篇
         save_report_to_file(report)
-        
-        # 提取情报条目
-        intel_item = extract_intel_from_report(report)
-        intel_items.append(intel_item)
-        
         saved_count += 1
-        time.sleep(1)  # 防止请求过快
-    
-    # 5. 更新 intel.json
-    if intel_items:
-        print(f"\n📝 正在更新 intel.json...")
-        with open(INTEL_JSON_PATH, 'r', encoding='utf-8') as f:
-            intel_data = json.load(f)
-        
-        # 追加新条目（去重）
-        existing_ids = {item['id'] for item in intel_data['items']}
-        new_items = [item for item in intel_items if item['id'] not in existing_ids]
-        
-        if new_items:
-            intel_data['items'].extend(new_items)
-            intel_data['_meta']['last_updated'] = datetime.now().strftime("%Y-%m-%d")
-            
-            with open(INTEL_JSON_PATH, 'w', encoding='utf-8') as f:
-                json.dump(intel_data, f, ensure_ascii=False, indent=2)
-            
-            print(f"✅ 已追加 {len(new_items)} 条新情报到 intel.json")
-        else:
-            print("ℹ️  所有报告已存在于 intel.json 中")
+        time.sleep(1)
     
     print(f"\n🎉 完成！共保存 {saved_count} 篇报告")
+    print(f"📁 报告保存位置：{REPORTS_DIR}")
 
 if __name__ == "__main__":
     main()

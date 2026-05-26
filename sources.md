@@ -154,8 +154,13 @@
 | 新榜有数 | https://data.newrank.cn/ | 公众号/短视频数据 |
 | AppGrowing | https://appgrowing.cn/ | 移动广告监测 |
 | QuestMobile | https://www.questmobile.com.cn/ | 移动互联网数据 |
-| 艾瑞咨询 | https://www.iresearch.com.cn/ | 行业研究报告 |
-| 易观分析 | https://www.analysys.cn/ | 用户/行业数据 |
+| **艾瑞咨询** | **https://www.iresearch.com.cn/** | **互联网/广告/AI 行业研究报告** |
+| **艾瑞咨询报告中心** | **https://report.iresearch.cn/** | **行业报告下载（部分免费）** |
+| **易观分析** | **https://www.analysys.cn/** | **数字经济/用户行为数据** |
+| **易观千帆** | **https://qianfan.analysys.cn/** | **APP数据监测平台** |
+| **36氪研究院** | **https://36kr.com/research** | **科技/互联网研究报告** |
+| **甲子光年** | **https://www.jazzyear.com/** | **AI/科技/产业深度报告** |
+| **nxny.com (股票报告网)** | **https://www.nxny.com/** | **行业研究/宏观策略报告（关键词过滤）** |
 
 ### 3.3 海外主流科技媒体
 
