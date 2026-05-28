@@ -2,8 +2,16 @@
   "_meta": {
     "description": "Part2 竞对产品/政策/行业case更新 数据源 — 由 sub-agent: competitor-tracker 维护",
     "update_frequency": "weekly",
-    "last_updated": "2026-05-26",
-    "fields": ["id","date","company","category","title","sowhat","sources"]
+    "last_updated": "2026-05-28",
+    "fields": [
+      "id",
+      "date",
+      "company",
+      "category",
+      "title",
+      "sowhat",
+      "sources"
+    ]
   },
   "items": [
     {
@@ -14,7 +22,11 @@
       "title": "抖音上线独立团购 App「抖省省」，主打搜索逻辑与工具属性",
       "sowhat": "字节拆分内容与交易流量，抖省省对标美团早期极简模式。本地生活竞争升维至履约和供应链层。",
       "sources": [
-        {"name": "36氪：抖音【分家】干美团", "url": "https://m.36kr.com/p/3709581605580932", "date": "2026-03-05"}
+        {
+          "name": "36氪：抖音【分家】干美团",
+          "url": "https://m.36kr.com/p/3709581605580932",
+          "date": "2026-03-05"
+        }
       ]
     },
     {
@@ -25,7 +37,11 @@
       "title": "巨量引擎开放平台：46个接口 bp_id 入参下线预通知",
       "sowhat": "字节商业化技术底层系统性重构，广告主需迁移ID体系。关注后续oCPX算法效率变化。",
       "sources": [
-        {"name": "巨量引擎开放平台 Changelog", "url": "https://open.oceanengine.com/changelog/1", "date": "2026-04-27"}
+        {
+          "name": "巨量引擎开放平台 Changelog",
+          "url": "https://open.oceanengine.com/changelog/1",
+          "date": "2026-04-27"
+        }
       ]
     },
     {
@@ -36,7 +52,11 @@
       "title": "小红书整合三大业务，成立 AI 一级部门 Dots + 海外部 Rednote",
       "sowhat": "组织整合标志商业化提速，AI升格一级战略。种草广告+AI投放赛道竞争将加剧。",
       "sources": [
-        {"name": "21经济网：小红书重大调整", "url": "https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html", "date": "2026-05-01"}
+        {
+          "name": "21经济网：小红书重大调整",
+          "url": "https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html",
+          "date": "2026-05-01"
+        }
       ]
     },
     {
@@ -47,8 +67,16 @@
       "title": "腾讯 2026Q1 广告增长 20%，视频号+搜一搜成核心驱动",
       "sowhat": "腾讯广告生态从朋友圈单点转向多触点组合，本地生活成新增长极。视频号广告扩容将与快手争夺同一批客户预算。",
       "sources": [
-        {"name": "新浪财经：腾讯Q1营收近2000亿", "url": "https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml", "date": "2026-05-14"},
-        {"name": "澎湃新闻：腾讯Q1财报", "url": "https://m.thepaper.cn/newsDetail_forward_33197379", "date": "2026-05-19"}
+        {
+          "name": "新浪财经：腾讯Q1营收近2000亿",
+          "url": "https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml",
+          "date": "2026-05-14"
+        },
+        {
+          "name": "澎湃新闻：腾讯Q1财报",
+          "url": "https://m.thepaper.cn/newsDetail_forward_33197379",
+          "date": "2026-05-19"
+        }
       ]
     },
     {
@@ -59,8 +87,16 @@
       "title": "百度 2026Q1：广告收入同比降 22%，AI云首次超过广告占比",
       "sowhat": "百度广告主盘正被AI搜索自我替代——文心AI搜索减少展示广告位，但AI原生营销服务尚未填补缺口。对快手：线索广告主（医疗/教育/金融）一部分预算可能因百度搜索广告走弱而向短视频平台迁移，是增量机会窗口。",
       "sources": [
-        {"name": "钛媒体：百度Q1广告跌破半壁江山", "url": "https://www.tmtpost.com/7992627.html", "date": "2026-05-18"},
-        {"name": "华尔街见闻：百度Q1营收320.8亿", "url": "https://wallstreetcn.com/articles/3772526", "date": "2026-05-18"}
+        {
+          "name": "钛媒体：百度Q1广告跌破半壁江山",
+          "url": "https://www.tmtpost.com/7992627.html",
+          "date": "2026-05-18"
+        },
+        {
+          "name": "华尔街见闻：百度Q1营收320.8亿",
+          "url": "https://wallstreetcn.com/articles/3772526",
+          "date": "2026-05-18"
+        }
       ]
     },
     {
@@ -71,8 +107,16 @@
       "title": "OpenAI 正式在 ChatGPT 中测试广告，开放新广告购买方式",
       "sowhat": "AI对话产品商业化进入新阶段，ChatGPT广告或重构【对话即广告】模式。国内AI应用（豆包/Kimi）面临跟进压力。对快手：对话式广告入口开始与短视频内容广告竞争品牌主预算，需关注AI广告生态对现有广告投放逻辑的颠覆时间窗。",
       "sources": [
-        {"name": "OpenAI官方：在ChatGPT中测试广告", "url": "https://openai.com/zh-Hans-CN/index/testing-ads-in-chatgpt/", "date": "2026-05-07"},
-        {"name": "OpenAI官方：New ways to buy ChatGPT ads", "url": "https://openai.com/index/new-ways-to-buy-chatgpt-ads/", "date": "2026-05-05"}
+        {
+          "name": "OpenAI官方：在ChatGPT中测试广告",
+          "url": "https://openai.com/zh-Hans-CN/index/testing-ads-in-chatgpt/",
+          "date": "2026-05-07"
+        },
+        {
+          "name": "OpenAI官方：New ways to buy ChatGPT ads",
+          "url": "https://openai.com/index/new-ways-to-buy-chatgpt-ads/",
+          "date": "2026-05-05"
+        }
       ]
     },
     {
@@ -83,8 +127,16 @@
       "title": "豆包推出付费版（68元/月），字节 AI 商业化路径明确化",
       "sowhat": "豆包从免费到付费的跃迁意味着字节开始正式将AI转化为独立商业体。更值得关注的是字节AI+广告的双轮闭环路径：豆包作为流量入口，最终通过巨量引擎广告变现。若这条路径跑通，字节的广告算法和投放精准度将进一步领先，对快手广告产品形成更大压力。",
       "sources": [
-        {"name": "新华网：豆包收费，国产大模型会全面付费吗", "url": "http://www.xinhuanet.com/globe/20260526/8761919cbaa54cb0b8b95c0d38f87e80/c.html", "date": "2026-05-26"},
-        {"name": "钛媒体：用户越多，字节越穷", "url": "https://www.tmtpost.com/7976994.html", "date": "2026-05-06"}
+        {
+          "name": "新华网：豆包收费，国产大模型会全面付费吗",
+          "url": "http://www.xinhuanet.com/globe/20260526/8761919cbaa54cb0b8b95c0d38f87e80/c.html",
+          "date": "2026-05-26"
+        },
+        {
+          "name": "钛媒体：用户越多，字节越穷",
+          "url": "https://www.tmtpost.com/7976994.html",
+          "date": "2026-05-06"
+        }
       ]
     },
     {
@@ -95,8 +147,186 @@
       "title": "Google AI Max 退出 Beta：9月强制升级所有 Dynamic Search Ads",
       "sowhat": "搜索广告全面AI托管时代到来，DSA到AI Max迁移将深刻改变出海广告主的投放习惯。国内平台AI智投（智能投放/oCPX）需对标更新，出海品牌在Google的投放效率提升后，可能对国内流量平台议价能力增强。",
       "sources": [
-        {"name": "Google Blog: We're upgrading Dynamic Search Ads to AI Max", "url": "https://blog.google/products/ads-commerce/dsa-upgrade-to-ai-max-2026/", "date": "2026-04-15"}
+        {
+          "name": "Google Blog: We're upgrading Dynamic Search Ads to AI Max",
+          "url": "https://blog.google/products/ads-commerce/dsa-upgrade-to-ai-max-2026/",
+          "date": "2026-04-15"
+        }
       ]
+    },
+    {
+      "id": "comp-009",
+      "date": "2025-03-19",
+      "company": "字节",
+      "category": "行业打法",
+      "title": "抖音生活服务丽人行业全链路运营体系：三分拆品类+五步冷启+全域推广",
+      "sowhat": "字节已为丽人行业（美甲美睫/美发养发/美容美体）建立高度标准化的SOP体系，从入驻认领到组品到短视频推广形成完整闭环。快手丽人行业商家运营工具和SOP成熟度明显落后，需加快行业垂类标准化建设。",
+      "sources": [
+        {
+          "name": "飞书：抖音生活服务综合丽人行业商家运营手册",
+          "url": "https://bytedance.larkoffice.com/docx/EXrjd9ibboa2i1x1GqvcDhHDnHb",
+          "date": "2025-03-19"
+        }
+      ],
+      "detail": {
+        "product_matrix": [
+          "POI货架标准化组品",
+          "达人运营",
+          "BGC短视频",
+          "抖音来客五步走"
+        ],
+        "sub_tracks": [
+          "美容美体",
+          "美发养发",
+          "美甲美睫"
+        ],
+        "key_tools": [
+          "商家经营分",
+          "冷启SOP",
+          "组品公式"
+        ],
+        "doc_structure": "Part01生态介绍 → Part02行业案例 → Part03经营策略（含组品/短视频/营销）"
+      }
+    },
+    {
+      "id": "comp-010",
+      "date": "2024-12-27",
+      "company": "字节",
+      "category": "广告产品",
+      "title": "丽人行业巨量本地推投放策略：接发/假发/皮肤管理三大高利润赛道专项打法",
+      "sowhat": "字节已将丽人行业按利润率分层，对接发/假发（线索型）、皮肤管理（高客单）等高利润细分赛道制定独立投放策略和视频案例。快手线索广告在丽人高客单行业（皮肤管理/毛发）的打法尚未成体系，是可突破的差异化方向。",
+      "sources": [
+        {
+          "name": "飞书：宣讲版-丽人行业分析&本地推策略",
+          "url": "https://bytedance.larkoffice.com/docx/Dy97dSH7DoNHZhxOm4DcmBJQnSc",
+          "date": "2024-12-27"
+        }
+      ],
+      "detail": {
+        "high_value_tracks": [
+          "接发/假发/养发（线索投放）",
+          "皮肤管理（高客单转化）"
+        ],
+        "ad_type": "线索投放 + 效果广告",
+        "positioning": "新美业机会大，抖音成丽人商家核心营收渠道",
+        "competitive_note": "三大运营模式：好组品 + 好内容 + 好生意"
+      }
+    },
+    {
+      "id": "comp-011",
+      "date": "2026-01-28",
+      "company": "字节",
+      "category": "广告产品",
+      "title": "巨量本地推【全域投放】正式落地丽人行业：GMV/成单人数提升15-20%",
+      "sowhat": "全域投放（内容流+搜索流统一调控）已在丽人健康行业形成成熟案例，宣称GMV提升15-20%。这意味着字节在本地生活广告投放的自动化和规模化能力又上一台阶。快手在丽人行业的全域投放产品能力是否有对标方案，是关键差距。",
+      "sources": [
+        {
+          "name": "飞书：巨量本地推直播全域投放产品手册",
+          "url": "https://bytedance.larkoffice.com/docx/D9LmdL3n4oDMRIxtfQHcyQL9nVf",
+          "date": "2026-01-28"
+        }
+      ],
+      "detail": {
+        "product_name": "全域投放",
+        "bid_modes": [
+          "手动出价（保障ROI）",
+          "智能出价（最大化GMV）"
+        ],
+        "claimed_lift": "GMV/成单人数提升15-20%",
+        "advantages": [
+          "调控全域流量",
+          "提升GMV/成单规模",
+          "简化投放操作",
+          "手动出价保障ROI"
+        ],
+        "target_users": "丽人健康行业 + 宠物医院等本地商家"
+      }
+    },
+    {
+      "id": "comp-012",
+      "date": "2026-01-01",
+      "company": "字节",
+      "category": "广告产品",
+      "title": "门店全域推广上线丽人-生活美容行业：弱势门店补量+成单人头提升",
+      "sowhat": "字节推出面向门店级别的全域推广产品，专门解决弱势门店流量不足问题。核心策略是对多门店连锁中的弱势门店定向补量，这是本地生活广告精细化运营的重要升级。快手在多门店连锁商家的分层投放产品能力是否完善？",
+      "sources": [
+        {
+          "name": "飞书：巨量本地推门店全域推广产品手册",
+          "url": "https://bytedance.larkoffice.com/docx/GPiZdDYvSoJjkex0iracevtSnEd",
+          "date": "2026-01-01"
+        }
+      ],
+      "detail": {
+        "target_industry": "丽人-生活美容",
+        "core_goal": "提升成单人头数量 + 弱势门店补量",
+        "key_constraint": "投放门店全域推广的门店，不可同时投放PC端标准推广-团购成交",
+        "auth_note": "巨量本地推直投账户默认拥有投放权限"
+      }
+    },
+    {
+      "id": "comp-013",
+      "date": "2026-01-28",
+      "company": "字节",
+      "category": "行业打法",
+      "title": "抖音生活服务丽人营销工具体系：拉新获客+提交易转化+提复购三层架构",
+      "sowhat": "抖音生活服务针对丽人行业构建了完整营销工具层次：拉新（商家新客价/拼团/分享领券）+ 转化（秒杀/优惠券/专享价）+ 复购（私域留存）。快手本地生活的商家营销工具生态相比仍不完整，尤其在拼团、分享裂变等社交营销工具上存在差距。",
+      "sources": [
+        {
+          "name": "飞书：生活服务-商家营销工具白皮书",
+          "url": "https://bytedance.larkoffice.com/docx/UKiTdOeXNo1p5mxTT9HcXb1dn6g",
+          "date": "2026-01-28"
+        }
+      ],
+      "detail": {
+        "acquisition_tools": [
+          "商家新客价",
+          "拼团",
+          "分享领券"
+        ],
+        "conversion_tools": [
+          "秒杀",
+          "商家优惠券",
+          "专享价"
+        ],
+        "liren_case": "丽人理发：POI货架80%核心团品覆盖（烫染/剪发），折扣力度八折以内",
+        "mutual_exclusion": "各营销工具存在叠斥关系，需按角色和行业范围使用"
+      }
+    },
+    {
+      "id": "comp-014",
+      "date": "2026-01-28",
+      "company": "字节",
+      "category": "行业打法",
+      "title": "抖音2026重点产品全景图：丽人行业全链路（经营准备→扩流量→拉新→提转化）",
+      "sowhat": "抖音2026年生活服务产品战略已发布重点产品全景图，对餐饮/综合/酒旅各行业分别制定投放路径。丽人属于综合行业，字节今年将继续加码全域投放和内容营销工具。快手需关注字节在综合行业的新产品发布节奏，及时跟进或差异化。",
+      "sources": [
+        {
+          "name": "飞书：抖音生活服务重点产品白皮书（商家版）",
+          "url": "https://bytedance.larkoffice.com/docx/JYkidlap1onEUbxw1NEc1i83nyc",
+          "date": "2026-01-28"
+        }
+      ],
+      "detail": {
+        "2026_product_map": {
+          "经营准备": [
+            "通用",
+            "餐饮",
+            "综合（含丽人）",
+            "酒旅"
+          ],
+          "扩流量": [
+            "通用工具"
+          ],
+          "拉新": [
+            "通用工具"
+          ],
+          "提转化": [
+            "通用工具"
+          ]
+        },
+        "update_date": "2026年1月28日最近更新",
+        "coverage": "餐综酒全行业"
+      }
     }
   ]
 }
