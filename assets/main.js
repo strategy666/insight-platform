@@ -260,8 +260,11 @@ function switchCompetitor(company) {
         tab.classList.toggle('active', tab.textContent === company);
     });
     
-    // 渲染该公司的动态
-    const updates = competitorData.filter(item => item.company === company);
+    // 渲染该公司的动态（按日期降序排列）
+    const updates = competitorData
+        .filter(item => item.company === company)
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
+
     const html = updates.map(item => `
         <div class="competitor-card">
             <div class="comp-card-header">
@@ -270,6 +273,23 @@ function switchCompetitor(company) {
             </div>
             <h3>${item.title}</h3>
             <p class="comp-sowhat">${item.sowhat}</p>
+            
+            ${item.timeline && item.timeline.length > 0 ? `
+            <div class="comp-timeline">
+                <div class="comp-timeline-header" onclick="toggleTimeline(this)">
+                    📅 事件时间线（${item.timeline.length}个节点）<span class="tl-toggle">▶</span>
+                </div>
+                <div class="comp-timeline-body" style="display:none;">
+                    ${item.timeline.map(t => `
+                        <div class="comp-tl-item">
+                            <span class="comp-tl-date">${t.date}</span>
+                            <span class="comp-tl-event">${t.event}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            ` : ''}
+
             <div class="comp-sources">
                 ${item.sources.map(s => `
                     <a href="${s.url}" target="_blank" class="comp-source-link">${s.name}</a>
@@ -279,6 +299,18 @@ function switchCompetitor(company) {
     `).join('');
     
     document.getElementById('competitorUpdates').innerHTML = html || '<p class="empty-state">暂无动态</p>';
+}
+
+function toggleTimeline(header) {
+    const body = header.nextElementSibling;
+    const toggle = header.querySelector('.tl-toggle');
+    if (body.style.display === 'none') {
+        body.style.display = 'block';
+        toggle.textContent = '▼';
+    } else {
+        body.style.display = 'none';
+        toggle.textContent = '▶';
+    }
 }
 
 // ==================== 更新统计数据 ====================

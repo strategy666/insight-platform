@@ -620,7 +620,65 @@ body {
     text-decoration: underline;
 }
 
-/* ==================== 信源管理 ==================== */
+/* ==================== 竞对时间线 ==================== */
+.comp-timeline {
+    margin: 0.75rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+.comp-timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--color-bg);
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+}
+
+.comp-timeline-header:hover {
+    background: #e8f4e8;
+}
+
+.tl-toggle {
+    margin-left: auto;
+    font-size: 0.7rem;
+}
+
+.comp-timeline-body {
+    padding: 0.75rem;
+    background: var(--color-card);
+}
+
+.comp-tl-item {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.875rem;
+    align-items: flex-start;
+}
+
+.comp-tl-item:last-child {
+    border-bottom: none;
+}
+
+.comp-tl-date {
+    flex-shrink: 0;
+    color: var(--color-primary);
+    font-weight: 600;
+    min-width: 90px;
+}
+
+.comp-tl-event {
+    color: var(--color-text);
+    line-height: 1.4;
+} */
 .sources-note {
     background: var(--color-card);
     border-radius: 12px;
