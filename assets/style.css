@@ -759,15 +759,16 @@ body {
 /* AI Answer Panel */
 .ai-answer-section {
     background: var(--color-bg);
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 .ai-answer-panel {
+    position: relative;
     background: var(--color-card);
-    border-radius: 16px;
-    padding: 2rem;
-    margin-top: 2rem;
-    box-shadow: var(--shadow-lg);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    margin-top: 1rem;
+    box-shadow: var(--shadow-md);
     animation: slideDown 0.3s ease-out;
 }
 
@@ -782,35 +783,20 @@ body {
     }
 }
 
-.answer-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--color-border);
-}
-
-.answer-icon {
-    font-size: 1.5rem;
-}
-
-.answer-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-text);
-    flex: 1;
-}
-
 .close-answer {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     color: var(--color-text-light);
     cursor: pointer;
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     transition: all 0.2s;
+    line-height: 1;
+    z-index: 2;
 }
 
 .close-answer:hover {
@@ -819,50 +805,67 @@ body {
 }
 
 .answer-content {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
 }
 
 .answer-summary {
-    font-size: 1.125rem;
-    line-height: 1.8;
+    font-size: 0.9375rem;
+    line-height: 1.7;
     color: var(--color-text);
-    margin-bottom: 1.5rem;
-    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    padding: 1rem 1.125rem;
     background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-    border-radius: 12px;
-    border-left: 4px solid var(--color-primary);
+    border-radius: 10px;
+    border-left: 3px solid var(--color-primary);
+    padding-right: 2.5rem;
+}
+
+.answer-summary b {
+    color: var(--color-primary);
+    font-weight: 700;
+    background: rgba(59, 130, 246, 0.08);
+    padding: 0 0.25rem;
+    border-radius: 3px;
 }
 
 .answer-analysis {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.75rem;
 }
 
 .analysis-section {
-    margin-bottom: 1.5rem;
-    padding: 1.25rem;
+    margin-bottom: 0;
+    padding: 0.875rem 1rem;
     background: var(--color-bg);
     border-radius: 8px;
+    border-top: 2px solid var(--color-primary);
 }
 
 .analysis-section h4 {
-    font-size: 1rem;
+    font-size: 0.875rem;
     color: var(--color-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.375rem;
+    font-weight: 700;
 }
 
 .analysis-section ul {
     list-style: none;
     padding-left: 0;
+    margin: 0;
 }
 
 .analysis-section li {
-    padding: 0.5rem 0;
-    padding-left: 1.5rem;
+    padding: 0.25rem 0;
+    padding-left: 1rem;
     position: relative;
-    line-height: 1.6;
+    line-height: 1.55;
+    font-size: 0.875rem;
+    color: var(--color-text);
 }
 
 .analysis-section li:before {
@@ -871,103 +874,108 @@ body {
     left: 0;
     color: var(--color-primary);
     font-weight: bold;
+    font-size: 0.75rem;
+    top: 0.4rem;
 }
 
 .answer-sources {
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     background: var(--color-bg);
     border-radius: 8px;
 }
 
 .answer-sources h4 {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     color: var(--color-text-light);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .source-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.375rem;
 }
 
 .source-link {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    padding: 0.5rem 1rem;
+    padding: 0.3125rem 0.75rem;
     background: white;
     border: 1px solid var(--color-border);
-    border-radius: 20px;
+    border-radius: 16px;
     color: var(--color-primary);
     text-decoration: none;
-    font-size: 0.875rem;
-    transition: all 0.2s;
+    font-size: 0.8125rem;
+    transition: all 0.15s;
 }
 
 .source-link:hover {
     background: var(--color-primary);
     color: white;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: var(--shadow-sm);
 }
 
-/* Related Updates */
+/* Related Updates - 紧凑两列 */
 .related-updates {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 2px solid var(--color-border);
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px dashed var(--color-border);
 }
 
 .related-updates h4 {
-    font-size: 1.125rem;
-    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+    margin-bottom: 0.75rem;
     color: var(--color-text);
+    font-weight: 600;
 }
 
 .related-list {
     display: grid;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.5rem;
 }
 
 .related-item {
-    padding: 1rem;
+    padding: 0.625rem 0.875rem;
     background: var(--color-bg);
-    border-radius: 8px;
+    border-radius: 6px;
     border-left: 3px solid var(--color-primary);
-    transition: all 0.2s;
+    transition: all 0.15s;
     cursor: pointer;
 }
 
 .related-item:hover {
     background: white;
     box-shadow: var(--shadow-sm);
-    transform: translateX(4px);
+    transform: translateX(2px);
 }
 
 .related-item-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .related-item-company {
     font-weight: 600;
     color: var(--color-primary);
-    font-size: 0.875rem;
+    font-size: 0.75rem;
 }
 
 .related-item-date {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     color: var(--color-text-light);
 }
 
 .related-item-title {
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     color: var(--color-text);
-    line-height: 1.5;
-} */
+    line-height: 1.45;
+}
 .sources-note {
     background: var(--color-card);
     border-radius: 12px;
