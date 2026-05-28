@@ -357,153 +357,213 @@ function initAISearch() {
     const suggestBtns = document.querySelectorAll('.suggest-q');
     
     if (!searchInput || !searchBtn) {
-        console.error('AI Search elements not found');
+        console.error('[AI Search] elements not found');
         return;
     }
     
-    // 搜索按钮点击
-    searchBtn.addEventListener('click', () => {
+    const triggerSearch = () => {
         const query = searchInput.value.trim();
         if (query) {
-            console.log('Searching:', query);
+            console.log('[AI Search] Searching:', query);
             performAISearch(query);
         }
-    });
+    };
     
-    // 回车搜索
+    searchBtn.addEventListener('click', triggerSearch);
     searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            const query = searchInput.value.trim();
-            if (query) {
-                console.log('Searching (Enter):', query);
-                performAISearch(query);
-            }
-        }
+        if (e.key === 'Enter') triggerSearch();
     });
     
-    // 预设问题点击
     suggestBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const question = btn.dataset.question;
-            console.log('Suggested question clicked:', question);
+            console.log('[AI Search] Suggested clicked:', question);
             searchInput.value = question;
             performAISearch(question);
         });
     });
     
-    console.log('AI Search initialized with', competitorData.length, 'competitor items and', intelData.length, 'intel items');
+    console.log('[AI Search] initialized | competitor:', competitorData.length, '| intel:', intelData.length);
 }
 
 function performAISearch(query) {
-    // 显示答案面板
     const panel = document.getElementById('aiAnswerPanel');
-    panel.style.display = 'block';
-    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    if (!panel) {
+        console.error('[AI Search] aiAnswerPanel not found');
+        return;
+    }
     
-    // 分析问题并生成答案
-    const answer = analyzeQuery(query);
+    // 显示面板
+    panel.style.display = 'block';
+    
+    // 生成答案
+    const answer = generateAnswer(query);
+    console.log('[AI Search] Generated answer:', answer);
     
     // 渲染答案
     renderAIAnswer(answer);
+    
+    // 滚动到答案位置
+    setTimeout(() => {
+        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
 }
 
-function analyzeQuery(query) {
+// 通用关键词搜索：在所有数据中查找匹配
+function searchAllData(query) {
     const lowerQuery = query.toLowerCase();
     
-    // 关键词匹配逻辑
-    const keywords = {
-        '出单宝': ['出单宝', 'chudanbao'],
-        '字节': ['字节', '抖音', 'bytedance', 'douyin'],
-        '快手': ['快手', 'kuaishou'],
-        '腾讯': ['腾讯', '视频号', 'tencent', 'wechat'],
-        '小红书': ['小红书', 'xiaohongshu', 'redbook'],
-        '百度': ['百度', 'baidu'],
-        '本地生活': ['本地生活', '本地推', '团购'],
-        '广告': ['广告', '投放', 'ad'],
-        'AI': ['ai', '人工智能', '大模型']
-    };
-    
-    // 找到相关的竞对动态和市场洞察
-    let relatedCompetitor = [];
-    let relatedIntel = [];
+    // 提取查询中的关键词
+    const queryKeywords = extractKeywords(lowerQuery);
     
     // 搜索竞对数据
-    competitorData.forEach(item => {
-        const searchText = `${item.title} ${item.sowhat} ${item.company}`.toLowerCase();
-        if (Object.values(keywords).some(kws => 
-            kws.some(kw => lowerQuery.includes(kw) && searchText.includes(kw))
-        )) {
-            relatedCompetitor.push(item);
-        }
+    const matchedCompetitors = competitorData.filter(item => {
+        const text = `${item.title || ''} ${item.sowhat || ''} ${item.company || ''} ${item.category || ''}`.toLowerCase();
+        return queryKeywords.some(kw => text.includes(kw));
     });
     
     // 搜索市场洞察数据
-    intelData.forEach(item => {
-        const searchText = `${item.title} ${item.tldr} ${item.sowhat_for_kuaishou}`.toLowerCase();
-        if (Object.values(keywords).some(kws => 
-            kws.some(kw => lowerQuery.includes(kw) && searchText.includes(kw))
-        )) {
-            relatedIntel.push(item);
+    const matchedIntel = intelData.filter(item => {
+        const companies = Array.isArray(item.company) ? item.company.join(' ') : (item.company || '');
+        const tags = Array.isArray(item.tags) ? item.tags.join(' ') : '';
+        const text = `${item.title || ''} ${item.tldr || ''} ${item.sowhat_for_kuaishou || ''} ${companies} ${tags}`.toLowerCase();
+        return queryKeywords.some(kw => text.includes(kw));
+    });
+    
+    return { competitors: matchedCompetitors, intel: matchedIntel };
+}
+
+// 从查询中提取关键词
+function extractKeywords(query) {
+    const keywords = [];
+    const aliasMap = {
+        '出单宝': ['出单宝'],
+        '字节': ['字节', '抖音'],
+        '抖音': ['抖音', '字节'],
+        '快手': ['快手'],
+        '腾讯': ['腾讯', '视频号', '微信'],
+        '视频号': ['视频号', '腾讯'],
+        '小红书': ['小红书'],
+        '百度': ['百度'],
+        '美团': ['美团'],
+        '本地生活': ['本地生活', '本地推', '团购', '出单宝', '抖省省'],
+        '本地推': ['本地推', '本地生活'],
+        '团购': ['团购', '本地生活'],
+        '广告': ['广告', '投放'],
+        'ai': ['ai', '人工智能', '大模型', '豆包'],
+        '豆包': ['豆包', 'ai'],
+        '丽人': ['丽人', '美容', '美甲', '美睫'],
+        '增长': ['增长', '上升', '提升'],
+        'q1': ['q1', '一季度'],
+        'q2': ['q2', '二季度', '5月', '4月']
+    };
+    
+    // 直接添加查询中的所有可能关键词
+    Object.keys(aliasMap).forEach(key => {
+        if (query.includes(key)) {
+            aliasMap[key].forEach(alias => {
+                if (!keywords.includes(alias)) keywords.push(alias);
+            });
         }
     });
     
-    // 生成答案
-    return generateAnswer(query, relatedCompetitor, relatedIntel);
-}
-
-function generateAnswer(query, competitors, intel) {
-    const lowerQuery = query.toLowerCase();
-    
-    // 根据问题类型生成不同的答案
-    let summary = '';
-    let analysis = [];
-    let sources = [];
-    let related = [];
-    
-    // 出单宝相关问题
-    if (lowerQuery.includes('出单宝')) {
-        const chudanbao = competitors.find(c => c.title.includes('出单宝'));
-        if (chudanbao) {
-            summary = `抖音生活服务于2026年5月18日推出「出单宝」智能托管产品，采用"出单全托管+核销才计费"模式，首期定向单体中小商家开放。这是字节在本地生活商家侧的重大产品突破，彻底解决中小商家"不会投、不敢投"的痛点。`;
-            
-            analysis = [
-                {
-                    title: '📊 核心机制',
-                    points: [
-                        '一键托管：AI自动投放，商家零操作门槛',
-                        '按核销计费：只有用户到店核销后才扣费，降低商家风险',
-                        '首期定向单体中小商家：精准切入快手本地推的核心阵地'
-                    ]
-                },
-                {
-                    title: '⚠️ 对快手的影响',
-                    points: [
-                        '直接竞争：字节切入中小商家市场，这是快手在下沉市场的核心优势',
-                        '产品压力：快手本地推是否有同类"零门槛+效果付费"产品？',
-                        '时间窗口：需要快速响应，推出对标产品或差异化方案'
-                    ]
-                },
-                {
-                    title: '💡 战略建议',
-                    points: [
-                        '加速推出快手版"托管+按效果付费"产品',
-                        '强化中小商家服务能力和运营支持',
-                        '利用快手老铁经济优势，打差异化（信任度、复购率）'
-                    ]
+    // 如果没匹配到任何关键词，按2-4字切分
+    if (keywords.length === 0) {
+        for (let len = 4; len >= 2; len--) {
+            for (let i = 0; i <= query.length - len; i++) {
+                const sub = query.substr(i, len).trim();
+                if (sub && !sub.match(/[\s\?\？\!\！\,\，\。\.]/)) {
+                    keywords.push(sub);
                 }
-            ];
-            
-            sources = chudanbao.sources;
-            related = competitors.filter(c => c.company === '字节' && c.id !== chudanbao.id).slice(0, 3);
+            }
         }
     }
-    // 字节本地生活Q2动作
-    else if (lowerQuery.includes('字节') && (lowerQuery.includes('q2') || lowerQuery.includes('动作') || lowerQuery.includes('本地生活'))) {
-        const bytedanceItems = competitors.filter(c => c.company === '字节' && c.date >= '2026-04-01');
-        
-        summary = `字节本地生活在2026年Q2连续出招，形成"抖省省上线→五一团购爆发→出单宝发布"的三步连贯布局。抖省省（3月）主打搜索工具属性切美团大众点评；五一团购同比大涨60%验证本地生活消费回暖；出单宝（5月18日）主打中小商家零门槛托管、按核销计费，精准打击快手本地推的增量市场。`;
-        
-        analysis = [
+    
+    return keywords;
+}
+
+function generateAnswer(query) {
+    const lowerQuery = query.toLowerCase();
+    
+    // 全局搜索匹配数据
+    const { competitors: matchedComp, intel: matchedIntel } = searchAllData(query);
+    
+    console.log('[AI Search] matched competitors:', matchedComp.length, '| matched intel:', matchedIntel.length);
+    
+    // 答案模板分发
+    
+    // 模板1：出单宝
+    if (lowerQuery.includes('出单宝')) {
+        return buildChudanbaoAnswer(matchedComp, matchedIntel);
+    }
+    
+    // 模板2：字节本地生活/Q2/动作
+    if ((lowerQuery.includes('字节') || lowerQuery.includes('抖音')) && 
+        (lowerQuery.includes('q2') || lowerQuery.includes('动作') || lowerQuery.includes('本地生活'))) {
+        return buildBytedanceAnswer(matchedComp, matchedIntel);
+    }
+    
+    // 模板3：腾讯/视频号
+    if (lowerQuery.includes('腾讯') || lowerQuery.includes('视频号')) {
+        return buildTencentAnswer(matchedComp, matchedIntel);
+    }
+    
+    // 默认：通用答案
+    return buildGenericAnswer(query, matchedComp, matchedIntel);
+}
+
+function buildChudanbaoAnswer(matchedComp, matchedIntel) {
+    // 优先从匹配数据找出单宝条目，没有就从全局找
+    const chudanbao = competitorData.find(c => c.title && c.title.includes('出单宝'));
+    
+    return {
+        summary: `抖音生活服务于2026年5月18日推出「出单宝」智能托管产品，采用"出单全托管+核销才计费"模式，首期定向单体中小商家开放。这是字节在本地生活商家侧的重大产品突破，彻底解决中小商家"不会投、不敢投"的痛点。对快手本地推形成直接竞争压力。`,
+        analysis: [
+            {
+                title: '📊 核心机制',
+                points: [
+                    '一键托管：AI自动投放，商家零操作门槛',
+                    '按核销计费：只有用户到店核销后才扣费，降低商家风险',
+                    '首期定向单体中小商家：精准切入快手本地推的核心阵地'
+                ]
+            },
+            {
+                title: '⚠️ 对快手的影响',
+                points: [
+                    '直接竞争：字节切入中小商家市场，这是快手在下沉市场的核心优势',
+                    '产品压力：快手本地推是否有同类"零门槛+效果付费"产品？',
+                    '时间窗口：需要快速响应，推出对标产品或差异化方案'
+                ]
+            },
+            {
+                title: '💡 战略建议',
+                points: [
+                    '加速推出快手版"托管+按效果付费"产品',
+                    '强化中小商家服务能力和运营支持',
+                    '利用快手老铁经济优势，打差异化（信任度、复购率）'
+                ]
+            }
+        ],
+        sources: chudanbao ? chudanbao.sources : [],
+        related: competitorData.filter(c => 
+            c.company === '字节' && (!chudanbao || c.id !== chudanbao.id)
+        ).slice(0, 4)
+    };
+}
+
+function buildBytedanceAnswer(matchedComp, matchedIntel) {
+    const bytedanceItems = competitorData
+        .filter(c => c.company === '字节')
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    const sources = [];
+    bytedanceItems.slice(0, 3).forEach(item => {
+        if (item.sources) sources.push(...item.sources);
+    });
+    
+    return {
+        summary: `字节本地生活在2026年Q2连续出招，形成"抖省省上线→五一团购爆发→出单宝发布"的三步连贯布局。抖省省（3月）主打搜索工具属性切美团大众点评；五一团购同比大涨60%验证本地生活消费回暖；出单宝（5月18日）主打中小商家零门槛托管、按核销计费，精准打击快手本地推的增量市场。`,
+        analysis: [
             {
                 title: '📅 关键时间线',
                 points: [
@@ -528,102 +588,166 @@ function generateAnswer(query, competitors, intel) {
                     '丽人/美容行业是旺季核心受益赛道，需要重点布局'
                 ]
             }
-        ];
-        
-        sources = bytedanceItems.flatMap(item => item.sources).slice(0, 5);
-        related = bytedanceItems.slice(0, 4);
-    }
-    // 腾讯视频号
-    else if (lowerQuery.includes('腾讯') || lowerQuery.includes('视频号')) {
-        const tencentItem = competitors.find(c => c.company === '腾讯' && c.title.includes('视频号'));
-        
-        if (tencentItem) {
-            summary = `腾讯2026Q1广告收入同比增长20%，视频号+搜一搜成为双核驱动力。视频号广告正式并入腾讯广告统一平台，本地生活服务广告同比增长超40%。搜一搜月活用户突破5亿，本地生活成重要搜索场景。`;
-            
-            analysis = [
-                {
-                    title: '📈 增长驱动',
-                    points: [
-                        '视频号：广告并入统一平台，流量变现效率提升',
-                        '搜一搜：月活5亿+，本地生活搜索场景成型',
-                        '本地生活广告：同比增长40%+，成为核心增量'
-                    ]
-                },
-                {
-                    title: '🔍 对快手的启示',
-                    points: [
-                        '搜索+短视频：腾讯验证了"搜索+内容"双轮驱动模式',
-                        '本地生活：视频号在本地生活广告的高增长值得关注',
-                        '平台整合：统一广告平台提升变现效率'
-                    ]
-                }
-            ];
-            
-            sources = tencentItem.sources;
-            related = competitors.filter(c => c.company === '腾讯' || c.title.includes('本地生活')).slice(0, 3);
-        }
-    }
-    // 默认通用答案
-    else {
-        const allRelated = [...competitors, ...intel].slice(0, 5);
-        
-        summary = `根据您的问题"${query}"，我在情报库中找到了 ${competitors.length + intel.length} 条相关信息。以下是核心洞察和相关动态。`;
-        
-        analysis = [
+        ],
+        sources: sources.slice(0, 5),
+        related: bytedanceItems.slice(0, 4)
+    };
+}
+
+function buildTencentAnswer(matchedComp, matchedIntel) {
+    const tencentItems = competitorData.filter(c => c.company === '腾讯');
+    const tencentItem = tencentItems[0];
+    
+    return {
+        summary: `腾讯2026Q1广告收入同比增长20%，视频号+搜一搜成为双核驱动力。视频号广告正式并入腾讯广告统一平台，本地生活服务广告同比增长超40%。搜一搜月活用户突破5亿，本地生活成重要搜索场景。`,
+        analysis: [
             {
-                title: '🔍 相关情报',
-                points: allRelated.map(item => `${item.company || item.company?.[0] || '未知'}：${item.title}`)
+                title: '📈 增长驱动',
+                points: [
+                    '视频号：广告并入统一平台，流量变现效率提升',
+                    '搜一搜：月活5亿+，本地生活搜索场景成型',
+                    '本地生活广告：同比增长40%+，成为核心增量'
+                ]
+            },
+            {
+                title: '🔍 对快手的启示',
+                points: [
+                    '搜索+短视频：腾讯验证了"搜索+内容"双轮驱动模式',
+                    '本地生活：视频号在本地生活广告的高增长值得关注',
+                    '平台整合：统一广告平台提升变现效率'
+                ]
+            },
+            {
+                title: '💡 战略建议',
+                points: [
+                    '强化快手搜索能力建设，本地生活搜索场景',
+                    '平台广告产品整合，提升变现效率',
+                    '关注视频号本地生活商家迁移趋势'
+                ]
             }
-        ];
+        ],
+        sources: tencentItem ? tencentItem.sources : [],
+        related: tencentItems.concat(
+            competitorData.filter(c => c.title && c.title.includes('本地生活'))
+        ).slice(0, 4)
+    };
+}
+
+function buildGenericAnswer(query, matchedComp, matchedIntel) {
+    const totalMatches = matchedComp.length + matchedIntel.length;
+    
+    if (totalMatches === 0) {
+        // 完全没找到匹配数据，返回最新动态
+        const latestComp = [...competitorData]
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, 5);
         
-        sources = allRelated.flatMap(item => item.sources || []).slice(0, 5);
-        related = allRelated;
+        return {
+            summary: `没有找到与"${query}"直接相关的情报。这里展示情报库中最新的 5 条动态，您也可以尝试使用更具体的关键词，例如「出单宝」「字节」「腾讯」等。`,
+            analysis: [
+                {
+                    title: '📰 情报库最新动态',
+                    points: latestComp.map(item => `${item.date} | ${item.company}：${item.title}`)
+                }
+            ],
+            sources: latestComp.flatMap(item => item.sources || []).slice(0, 5),
+            related: latestComp
+        };
     }
     
-    return { summary, analysis, sources, related };
+    // 构建结构化答案
+    const allMatched = [...matchedComp, ...matchedIntel].slice(0, 8);
+    const points = matchedComp.slice(0, 5).map(item => 
+        `[${item.date}] ${item.company}：${item.title}`
+    );
+    
+    if (matchedIntel.length > 0) {
+        matchedIntel.slice(0, 3).forEach(item => {
+            const company = Array.isArray(item.company) ? item.company.join('/') : item.company;
+            points.push(`[${item.date}] ${company}：${item.title}`);
+        });
+    }
+    
+    return {
+        summary: `根据您的问题"${query}"，在情报库中找到 ${totalMatches} 条相关信息（${matchedComp.length}条竞对动态，${matchedIntel.length}条市场洞察）。以下是核心情报和相关动态。`,
+        analysis: [
+            {
+                title: '🔍 相关情报',
+                points: points
+            }
+        ],
+        sources: allMatched.flatMap(item => item.sources || []).slice(0, 6),
+        related: allMatched
+    };
 }
 
 function renderAIAnswer(answer) {
+    if (!answer || !answer.summary) {
+        console.error('[AI Search] Invalid answer:', answer);
+        return;
+    }
+    
     // 渲染摘要
-    document.getElementById('answerSummary').textContent = answer.summary;
+    const summaryEl = document.getElementById('answerSummary');
+    if (summaryEl) summaryEl.textContent = answer.summary;
     
     // 渲染结构化分析
-    const analysisHtml = answer.analysis.map(section => `
-        <div class="analysis-section">
-            <h4>${section.title}</h4>
-            <ul>
-                ${section.points.map(point => `<li>${point}</li>`).join('')}
-            </ul>
-        </div>
-    `).join('');
-    document.getElementById('answerAnalysis').innerHTML = analysisHtml;
+    const analysisEl = document.getElementById('answerAnalysis');
+    if (analysisEl && answer.analysis) {
+        const analysisHtml = answer.analysis.map(section => `
+            <div class="analysis-section">
+                <h4>${section.title}</h4>
+                <ul>
+                    ${section.points.map(point => `<li>${point}</li>`).join('')}
+                </ul>
+            </div>
+        `).join('');
+        analysisEl.innerHTML = analysisHtml;
+    }
     
     // 渲染来源
-    const sourcesHtml = `
-        <h4>📎 信息来源</h4>
-        <div class="source-links">
-            ${answer.sources.map(s => `
-                <a href="${s.url}" target="_blank" class="source-link">
-                    ${s.name}
-                </a>
-            `).join('')}
-        </div>
-    `;
-    document.getElementById('answerSources').innerHTML = sourcesHtml;
+    const sourcesEl = document.getElementById('answerSources');
+    if (sourcesEl) {
+        if (answer.sources && answer.sources.length > 0) {
+            sourcesEl.innerHTML = `
+                <h4>📎 信息来源</h4>
+                <div class="source-links">
+                    ${answer.sources.map(s => `
+                        <a href="${s.url}" target="_blank" class="source-link">
+                            ${s.name}
+                        </a>
+                    `).join('')}
+                </div>
+            `;
+        } else {
+            sourcesEl.innerHTML = '';
+        }
+    }
     
     // 渲染相关动态
-    const relatedHtml = answer.related.map(item => `
-        <div class="related-item">
-            <div class="related-item-header">
-                <span class="related-item-company">${item.company || item.company?.[0] || '未知'}</span>
-                <span class="related-item-date">${item.date}</span>
-            </div>
-            <div class="related-item-title">${item.title}</div>
-        </div>
-    `).join('');
-    document.getElementById('relatedUpdates').innerHTML = relatedHtml || '<p class="empty-state">暂无相关动态</p>';
+    const relatedEl = document.getElementById('relatedUpdates');
+    if (relatedEl) {
+        if (answer.related && answer.related.length > 0) {
+            const relatedHtml = answer.related.map(item => {
+                const company = Array.isArray(item.company) ? item.company.join('/') : (item.company || '未知');
+                return `
+                    <div class="related-item">
+                        <div class="related-item-header">
+                            <span class="related-item-company">${company}</span>
+                            <span class="related-item-date">${item.date}</span>
+                        </div>
+                        <div class="related-item-title">${item.title}</div>
+                    </div>
+                `;
+            }).join('');
+            relatedEl.innerHTML = relatedHtml;
+        } else {
+            relatedEl.innerHTML = '<p class="empty-state">暂无相关动态</p>';
+        }
+    }
 }
 
 function closeAIAnswer() {
-    document.getElementById('aiAnswerPanel').style.display = 'none';
+    const panel = document.getElementById('aiAnswerPanel');
+    if (panel) panel.style.display = 'none';
 }
