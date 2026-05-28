@@ -698,7 +698,13 @@ body {
     border-radius: 50px;
     border: none;
     font-size: 1rem;
+    color: #1e293b;
+    background: white;
     box-shadow: var(--shadow-lg);
+}
+
+.search-input-wrapper input::placeholder {
+    color: #94a3b8;
 }
 
 .search-btn {
@@ -751,6 +757,11 @@ body {
 }
 
 /* AI Answer Panel */
+.ai-answer-section {
+    background: var(--color-bg);
+    padding: 3rem 0;
+}
+
 .ai-answer-panel {
     background: var(--color-card);
     border-radius: 16px;

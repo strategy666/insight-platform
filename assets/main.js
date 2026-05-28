@@ -387,14 +387,16 @@ function initAISearch() {
 }
 
 function performAISearch(query) {
+    const section = document.getElementById('aiAnswerSection');
     const panel = document.getElementById('aiAnswerPanel');
-    if (!panel) {
-        console.error('[AI Search] aiAnswerPanel not found');
+    if (!section || !panel) {
+        console.error('[AI Search] aiAnswerSection or aiAnswerPanel not found');
+        alert('搜索功能初始化失败，请刷新页面');
         return;
     }
     
-    // 显示面板
-    panel.style.display = 'block';
+    // 显示section
+    section.style.display = 'block';
     
     // 生成答案
     const answer = generateAnswer(query);
@@ -405,7 +407,7 @@ function performAISearch(query) {
     
     // 滚动到答案位置
     setTimeout(() => {
-        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 100);
 }
 
@@ -748,6 +750,6 @@ function renderAIAnswer(answer) {
 }
 
 function closeAIAnswer() {
-    const panel = document.getElementById('aiAnswerPanel');
-    if (panel) panel.style.display = 'none';
+    const section = document.getElementById('aiAnswerSection');
+    if (section) section.style.display = 'none';
 }
