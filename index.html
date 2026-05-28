@@ -55,9 +55,46 @@
             </div>
         </div>
 
-        <!-- Quick Search -->
-        <div class="hero-search">
-            <input type="text" id="globalSearch" placeholder="🔍 搜索关键词、公司、赛道..." autocomplete="off" />
+        <!-- AI Search -->
+        <div class="ai-search-container">
+            <div class="search-input-wrapper">
+                <input type="text" id="aiSearchInput" placeholder="💬 问我任何关于市场情报的问题..." autocomplete="off" />
+                <button id="aiSearchBtn" class="search-btn">搜索</button>
+            </div>
+            
+            <!-- 猜你想搜 -->
+            <div class="suggested-questions">
+                <span class="suggest-label">💡 猜你想搜：</span>
+                <button class="suggest-q" data-question="抖音出单宝对快手本地推有什么影响？">抖音出单宝对快手本地推有什么影响？</button>
+                <button class="suggest-q" data-question="字节本地生活Q2有哪些重要动作？">字节本地生活Q2有哪些重要动作？</button>
+                <button class="suggest-q" data-question="腾讯视频号广告增长的核心驱动力是什么？">腾讯视频号广告增长的核心驱动力是什么？</button>
+            </div>
+        </div>
+
+        <!-- AI Answer Panel (初始隐藏) -->
+        <div id="aiAnswerPanel" class="ai-answer-panel" style="display:none;">
+            <div class="answer-header">
+                <span class="answer-icon">🤖</span>
+                <span class="answer-title">AI 分析结果</span>
+                <button class="close-answer" onclick="closeAIAnswer()">✕</button>
+            </div>
+            
+            <div class="answer-content">
+                <!-- 自然语言回答 -->
+                <div class="answer-summary" id="answerSummary"></div>
+                
+                <!-- 结构化分析 -->
+                <div class="answer-analysis" id="answerAnalysis"></div>
+                
+                <!-- 信息来源 -->
+                <div class="answer-sources" id="answerSources"></div>
+            </div>
+            
+            <!-- 相关动态 -->
+            <div class="related-updates">
+                <h4>📰 相关动态</h4>
+                <div id="relatedUpdates" class="related-list"></div>
+            </div>
         </div>
     </div>
 </section>
