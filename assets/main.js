@@ -17,8 +17,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderCompetitors();
     initFilters();
     initSearch();
-    initAISearch();
     updateStats();
+    
+    // 确保数据加载完成后再初始化 AI 搜索
+    initAISearch();
 });
 
 // ==================== 数据加载 ====================
@@ -354,17 +356,28 @@ function initAISearch() {
     const searchBtn = document.getElementById('aiSearchBtn');
     const suggestBtns = document.querySelectorAll('.suggest-q');
     
+    if (!searchInput || !searchBtn) {
+        console.error('AI Search elements not found');
+        return;
+    }
+    
     // 搜索按钮点击
     searchBtn.addEventListener('click', () => {
         const query = searchInput.value.trim();
-        if (query) performAISearch(query);
+        if (query) {
+            console.log('Searching:', query);
+            performAISearch(query);
+        }
     });
     
     // 回车搜索
     searchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             const query = searchInput.value.trim();
-            if (query) performAISearch(query);
+            if (query) {
+                console.log('Searching (Enter):', query);
+                performAISearch(query);
+            }
         }
     });
     
@@ -372,10 +385,13 @@ function initAISearch() {
     suggestBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const question = btn.dataset.question;
+            console.log('Suggested question clicked:', question);
             searchInput.value = question;
             performAISearch(question);
         });
     });
+    
+    console.log('AI Search initialized with', competitorData.length, 'competitor items and', intelData.length, 'intel items');
 }
 
 function performAISearch(query) {
