@@ -351,38 +351,38 @@ function showChangeLog() {
 }
 
 // ==================== AI Search ====================
-function initAISearch() {
-    const searchInput = document.getElementById('aiSearchInput');
-    const searchBtn = document.getElementById('aiSearchBtn');
-    const suggestBtns = document.querySelectorAll('.suggest-q');
+// 全局函数：直接被 HTML onclick 调用（最可靠的方式）
+function askAI(query) {
+    if (!query) {
+        const input = document.getElementById('aiSearchInput');
+        if (input) query = input.value.trim();
+    }
     
-    if (!searchInput || !searchBtn) {
-        console.error('[AI Search] elements not found');
+    if (!query || !query.trim()) {
+        console.warn('[AI Search] empty query');
         return;
     }
     
-    const triggerSearch = () => {
-        const query = searchInput.value.trim();
-        if (query) {
-            console.log('[AI Search] Searching:', query);
-            performAISearch(query);
-        }
-    };
+    query = query.trim();
+    console.log('[AI Search] askAI called with:', query);
     
-    searchBtn.addEventListener('click', triggerSearch);
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') triggerSearch();
-    });
+    // 同步搜索框
+    const input = document.getElementById('aiSearchInput');
+    if (input && input.value !== query) input.value = query;
     
-    suggestBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const question = btn.dataset.question;
-            console.log('[AI Search] Suggested clicked:', question);
-            searchInput.value = question;
-            performAISearch(question);
-        });
-    });
+    // 检查数据
+    if (!competitorData || competitorData.length === 0) {
+        console.warn('[AI Search] data not loaded yet, waiting...');
+        // 数据未加载完，等待后重试
+        setTimeout(() => askAI(query), 500);
+        return;
+    }
     
+    performAISearch(query);
+}
+
+function initAISearch() {
+    // 简化：现在主要靠 onclick，只需要确保数据加载完成的提示
     console.log('[AI Search] initialized | competitor:', competitorData.length, '| intel:', intelData.length);
 }
 
@@ -752,4 +752,11 @@ function renderAIAnswer(answer) {
 function closeAIAnswer() {
     const section = document.getElementById('aiAnswerSection');
     if (section) section.style.display = 'none';
+}
+
+// ==================== 显式暴露到全局，确保HTML onclick能调用 ====================
+if (typeof window !== 'undefined') {
+    window.askAI = askAI;
+    window.closeAIAnswer = closeAIAnswer;
+    window.showChangeLog = showChangeLog;
 }
