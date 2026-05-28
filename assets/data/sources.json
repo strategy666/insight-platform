@@ -1,0 +1,405 @@
+{
+  "_meta": {
+    "description": "全行业信息源渠道库 - 用于市场洞察(Part1)的情报采集",
+    "version": "1.0",
+    "last_updated": "2026-05-28",
+    "total_industries": 19,
+    "total_sources": 168,
+    "scan_dimensions": [
+      "行业市场规模数据",
+      "行业政策变动（广告法、各竞媒准入禁入、315风险）",
+      "标杆公司动态",
+      "融资并购",
+      "技术演进",
+      "营销大事件"
+    ]
+  },
+  "industries": [
+    {
+      "id": "ind-aigc",
+      "name": "AIGC（模型层 & 应用层）",
+      "icon": "🤖",
+      "priority": "S",
+      "scan_focus": ["模型迭代", "应用爆款", "融资并购", "监管政策", "出海动态"],
+      "sources": [
+        {"name": "机器之心", "url": "https://www.jiqizhixin.com", "type": "媒体", "tier": "T1", "tags": ["技术", "模型"]},
+        {"name": "量子位 QbitAI", "url": "https://www.qbitai.com", "type": "媒体", "tier": "T1", "tags": ["技术", "应用"]},
+        {"name": "新智元", "url": "https://www.aiera.com.cn", "type": "媒体", "tier": "T1", "tags": ["技术"]},
+        {"name": "硅星人 Pro", "url": "https://www.pingwest.com", "type": "媒体", "tier": "T1", "tags": ["商业", "应用"]},
+        {"name": "AI产品榜 aicpb.com", "url": "https://aicpb.com", "type": "数据", "tier": "T1", "tags": ["榜单", "数据"]},
+        {"name": "OpenAI Blog", "url": "https://openai.com/blog", "type": "官方", "tier": "T1", "tags": ["海外", "模型"]},
+        {"name": "Anthropic News", "url": "https://www.anthropic.com/news", "type": "官方", "tier": "T1", "tags": ["海外", "模型"]},
+        {"name": "Google DeepMind", "url": "https://deepmind.google", "type": "官方", "tier": "T1", "tags": ["海外", "模型"]},
+        {"name": "Hugging Face Blog", "url": "https://huggingface.co/blog", "type": "官方", "tier": "T1", "tags": ["开源", "模型"]},
+        {"name": "Stratechery", "url": "https://stratechery.com", "type": "媒体", "tier": "T1", "tags": ["海外", "深度"]},
+        {"name": "The Information", "url": "https://www.theinformation.com", "type": "媒体", "tier": "T1", "tags": ["海外", "付费"]},
+        {"name": "AIGC.Cn", "url": "https://aigc.cn", "type": "数据", "tier": "T2", "tags": ["榜单"]}
+      ]
+    },
+    {
+      "id": "ind-world-model",
+      "name": "世界模型 / 视频生成",
+      "icon": "🎬",
+      "priority": "S",
+      "scan_focus": ["Seedance", "可灵 Kling", "HappyHorse", "Sora", "Runway", "PixVerse"],
+      "sources": [
+        {"name": "可灵 AI 官网", "url": "https://kling.kuaishou.com", "type": "官方", "tier": "T1", "tags": ["国内", "视频生成"]},
+        {"name": "字节即梦 AI", "url": "https://jimeng.jianying.com", "type": "官方", "tier": "T1", "tags": ["国内", "视频生成"]},
+        {"name": "Sora（OpenAI）", "url": "https://openai.com/sora", "type": "官方", "tier": "T1", "tags": ["海外"]},
+        {"name": "Runway ML", "url": "https://runwayml.com", "type": "官方", "tier": "T1", "tags": ["海外"]},
+        {"name": "Pika Labs", "url": "https://pika.art", "type": "官方", "tier": "T1", "tags": ["海外"]},
+        {"name": "Luma AI Dream Machine", "url": "https://lumalabs.ai/dream-machine", "type": "官方", "tier": "T1", "tags": ["海外"]},
+        {"name": "MiniMax Hailuo AI", "url": "https://hailuoai.com", "type": "官方", "tier": "T1", "tags": ["国内"]},
+        {"name": "Vidu（生数科技）", "url": "https://www.vidu.studio", "type": "官方", "tier": "T1", "tags": ["国内"]},
+        {"name": "Artificial Analysis", "url": "https://artificialanalysis.ai", "type": "数据", "tier": "T1", "tags": ["对比", "评测"]}
+      ]
+    },
+    {
+      "id": "ind-shortdrama",
+      "name": "真人短剧 / AI 漫剧",
+      "icon": "📺",
+      "priority": "S",
+      "scan_focus": ["头部平台MAU", "投流ROI", "题材爆款", "AI漫剧落地", "出海"],
+      "sources": [
+        {"name": "DataEye 短剧观察", "url": "https://www.dataeye.com", "type": "数据", "tier": "T1", "tags": ["短剧", "投放数据"]},
+        {"name": "TopMaker 抖音短剧榜", "url": "https://www.topmaker.cn", "type": "数据", "tier": "T1", "tags": ["榜单"]},
+        {"name": "古麦嘉禾", "url": "", "type": "公众号", "tier": "T1", "tags": ["短剧", "MCN"]},
+        {"name": "微短剧观察", "url": "", "type": "公众号", "tier": "T1", "tags": ["短剧"]},
+        {"name": "ReelShort（短剧出海）", "url": "https://reelshort.com", "type": "官方", "tier": "T1", "tags": ["出海"]},
+        {"name": "DramaBox", "url": "https://www.dramabox.com", "type": "官方", "tier": "T1", "tags": ["出海"]},
+        {"name": "广电总局 网络视听管理", "url": "https://www.nrta.gov.cn", "type": "官方", "tier": "T1", "tags": ["政策"]},
+        {"name": "国家广电智库", "url": "", "type": "公众号", "tier": "T1", "tags": ["政策"]},
+        {"name": "西瓜数据 / 飞瓜数据", "url": "https://www.feigua.cn", "type": "数据", "tier": "T1", "tags": ["短视频"]}
+      ]
+    },
+    {
+      "id": "ind-ecommerce",
+      "name": "电商",
+      "icon": "🛒",
+      "priority": "S",
+      "scan_focus": ["GMV", "DAU", "新品类", "直播电商", "跨境电商", "618/双11"],
+      "sources": [
+        {"name": "晚点 LatePost", "url": "https://www.latepost.com", "type": "媒体", "tier": "T1", "tags": ["深度"]},
+        {"name": "亿邦动力", "url": "https://www.ebrun.com", "type": "媒体", "tier": "T1", "tags": ["电商"]},
+        {"name": "雪豹财经社", "url": "", "type": "公众号", "tier": "T1", "tags": ["电商"]},
+        {"name": "电商在线", "url": "", "type": "公众号", "tier": "T1", "tags": ["电商"]},
+        {"name": "魔镜洞察", "url": "https://www.mktindex.com", "type": "数据", "tier": "T1", "tags": ["数据", "天猫"]},
+        {"name": "蝉妈妈数据", "url": "https://www.chanmama.com", "type": "数据", "tier": "T1", "tags": ["抖音电商"]},
+        {"name": "果集行研", "url": "", "type": "公众号", "tier": "T1", "tags": ["数据"]},
+        {"name": "网经社 电商研究中心", "url": "https://www.100ec.cn", "type": "数据", "tier": "T1", "tags": ["报告"]},
+        {"name": "QuestMobile", "url": "https://www.questmobile.com.cn", "type": "数据", "tier": "T1", "tags": ["MAU"]}
+      ]
+    },
+    {
+      "id": "ind-content",
+      "name": "内容消费（短视频/直播/社区）",
+      "icon": "📱",
+      "priority": "S",
+      "scan_focus": ["DAU", "用户时长", "创作者生态", "中视频", "播客"],
+      "sources": [
+        {"name": "深响", "url": "https://www.deepecho.com", "type": "媒体", "tier": "T1", "tags": ["商业"]},
+        {"name": "刺猬公社", "url": "", "type": "公众号", "tier": "T1", "tags": ["内容"]},
+        {"name": "克劳锐", "url": "", "type": "公众号", "tier": "T1", "tags": ["内容数据"]},
+        {"name": "新榜", "url": "https://www.newrank.cn", "type": "数据", "tier": "T1", "tags": ["公众号", "短视频"]},
+        {"name": "TopKlout 克劳锐数据", "url": "https://www.topklout.com", "type": "数据", "tier": "T1", "tags": ["KOL"]},
+        {"name": "QuestMobile", "url": "https://www.questmobile.com.cn", "type": "数据", "tier": "T1", "tags": ["MAU"]},
+        {"name": "卡思数据", "url": "https://www.caasdata.com", "type": "数据", "tier": "T1", "tags": ["短视频"]},
+        {"name": "三声", "url": "https://www.sanshengss.com", "type": "媒体", "tier": "T1", "tags": ["文娱"]}
+      ]
+    },
+    {
+      "id": "ind-medical",
+      "name": "医疗 / 严肃医疗",
+      "icon": "🏥",
+      "priority": "A",
+      "scan_focus": ["民营医院政策", "处方药线上", "互联网医疗", "广告合规"],
+      "sources": [
+        {"name": "国家卫健委", "url": "http://www.nhc.gov.cn", "type": "政府", "tier": "T1", "tags": ["政策"]},
+        {"name": "国家药监局 NMPA", "url": "https://www.nmpa.gov.cn", "type": "政府", "tier": "T1", "tags": ["药监"]},
+        {"name": "国家医保局", "url": "http://www.nhsa.gov.cn", "type": "政府", "tier": "T1", "tags": ["医保"]},
+        {"name": "丁香园 Insight 数据库", "url": "https://insight.dxy.cn", "type": "数据", "tier": "T1", "tags": ["药品", "临床"]},
+        {"name": "动脉网", "url": "https://vcbeat.top", "type": "媒体", "tier": "T1", "tags": ["数字医疗"]},
+        {"name": "健闻咨询 / 八点健闻", "url": "", "type": "公众号", "tier": "T1", "tags": ["深度"]},
+        {"name": "医学界", "url": "https://www.yxj.org.cn", "type": "媒体", "tier": "T2", "tags": ["医生"]},
+        {"name": "赛柏蓝", "url": "", "type": "公众号", "tier": "T1", "tags": ["药企"]}
+      ]
+    },
+    {
+      "id": "ind-medical-beauty",
+      "name": "医美",
+      "icon": "💉",
+      "priority": "A",
+      "scan_focus": ["机构监管", "新品上市", "315风险", "明星代言", "项目热度"],
+      "sources": [
+        {"name": "新氧数据颜究院", "url": "https://so-young.com", "type": "数据", "tier": "T1", "tags": ["项目热度"]},
+        {"name": "美呗", "url": "https://www.meibei.com", "type": "数据", "tier": "T2", "tags": ["机构"]},
+        {"name": "更美 App", "url": "https://www.gengmei.com", "type": "数据", "tier": "T2", "tags": ["项目"]},
+        {"name": "中国整形美容协会", "url": "", "type": "协会", "tier": "T1", "tags": ["政策"]},
+        {"name": "丽都好医生 / 医美研究院", "url": "", "type": "公众号", "tier": "T2", "tags": ["行业"]},
+        {"name": "国家药监局 医美耗材专项", "url": "https://www.nmpa.gov.cn", "type": "政府", "tier": "T1", "tags": ["合规"]},
+        {"name": "艾瑞咨询 医美报告", "url": "https://www.iresearch.com.cn", "type": "数据", "tier": "T1", "tags": ["报告"]},
+        {"name": "中央广播电视总台 315晚会", "url": "https://315.cctv.com", "type": "媒体", "tier": "T1", "tags": ["315"]}
+      ]
+    },
+    {
+      "id": "ind-life-beauty",
+      "name": "生活美容（美甲/美睫/美发/SPA）",
+      "icon": "💅",
+      "priority": "A",
+      "scan_focus": ["连锁品牌动态", "团购ROI", "客单价", "城市渗透"],
+      "sources": [
+        {"name": "美团点评行业报告", "url": "https://about.meituan.com/research", "type": "数据", "tier": "T1", "tags": ["美业"]},
+        {"name": "美业新纬度", "url": "", "type": "公众号", "tier": "T1", "tags": ["美业"]},
+        {"name": "美业邦 / 美博汇", "url": "", "type": "公众号", "tier": "T2", "tags": ["美业"]},
+        {"name": "中国美发美容协会", "url": "https://www.cabbf.org", "type": "协会", "tier": "T1", "tags": ["行业"]},
+        {"name": "餐宝典 RABID", "url": "https://www.canbaodian.com", "type": "数据", "tier": "T2", "tags": ["连锁"]},
+        {"name": "极海品牌监测", "url": "https://www.geohey.com", "type": "数据", "tier": "T1", "tags": ["门店", "选址"]}
+      ]
+    },
+    {
+      "id": "ind-leisure",
+      "name": "休闲娱乐（KTV/桌游/剧本杀/密室）",
+      "icon": "🎮",
+      "priority": "B",
+      "scan_focus": ["年轻消费", "节假日数据", "新业态"],
+      "sources": [
+        {"name": "美团行业研究", "url": "https://about.meituan.com/research", "type": "数据", "tier": "T1", "tags": ["休闲娱乐"]},
+        {"name": "极海品牌监测", "url": "https://www.geohey.com", "type": "数据", "tier": "T1", "tags": ["门店"]},
+        {"name": "Tech星球", "url": "https://www.tech-planet.cn", "type": "媒体", "tier": "T2", "tags": ["互联网"]},
+        {"name": "剧本杀行业观察", "url": "", "type": "公众号", "tier": "T2", "tags": ["剧本杀"]},
+        {"name": "中国饭店协会 休闲娱乐分会", "url": "", "type": "协会", "tier": "T2", "tags": ["行业"]}
+      ]
+    },
+    {
+      "id": "ind-lifeservice",
+      "name": "本地服务 / 到综服务",
+      "icon": "🛠️",
+      "priority": "S",
+      "scan_focus": ["美团/抖音/快手对垒", "防水补漏/手机租赁/黄金回收/婚恋", "线索质量"],
+      "sources": [
+        {"name": "美团本地生活报告", "url": "https://about.meituan.com/research", "type": "数据", "tier": "T1", "tags": ["本地生活"]},
+        {"name": "亿欧网 本地生活", "url": "https://www.iyiou.com", "type": "媒体", "tier": "T1", "tags": ["本地"]},
+        {"name": "晚点 LatePost", "url": "https://www.latepost.com", "type": "媒体", "tier": "T1", "tags": ["深度"]},
+        {"name": "雪豹财经社 / 36氪本地生活", "url": "", "type": "公众号", "tier": "T1", "tags": ["本地"]},
+        {"name": "中国互联网协会", "url": "https://www.isc.org.cn", "type": "协会", "tier": "T1", "tags": ["政策"]},
+        {"name": "国家市场监督管理总局 反垄断", "url": "https://www.samr.gov.cn", "type": "政府", "tier": "T1", "tags": ["政策"]}
+      ]
+    },
+    {
+      "id": "ind-travel",
+      "name": "酒旅",
+      "icon": "✈️",
+      "priority": "A",
+      "scan_focus": ["节假日数据", "OTA竞争", "下沉旅游", "出境游恢复"],
+      "sources": [
+        {"name": "文化和旅游部", "url": "https://www.mct.gov.cn", "type": "政府", "tier": "T1", "tags": ["政策", "数据"]},
+        {"name": "STR Global / 浩华", "url": "https://str.com", "type": "数据", "tier": "T1", "tags": ["酒店", "RevPAR"]},
+        {"name": "携程研究院", "url": "https://www.ctripcorp.com", "type": "数据", "tier": "T1", "tags": ["OTA"]},
+        {"name": "去哪儿大数据研究院", "url": "", "type": "数据", "tier": "T1", "tags": ["OTA"]},
+        {"name": "环球旅讯", "url": "https://www.traveldaily.cn", "type": "媒体", "tier": "T1", "tags": ["酒旅"]},
+        {"name": "迈点 Mtravel", "url": "https://www.meadin.com", "type": "媒体", "tier": "T1", "tags": ["酒店"]},
+        {"name": "执惠", "url": "https://www.tripvivid.com", "type": "媒体", "tier": "T2", "tags": ["旅游"]},
+        {"name": "酒店之家", "url": "", "type": "公众号", "tier": "T2", "tags": ["酒店"]}
+      ]
+    },
+    {
+      "id": "ind-franchise",
+      "name": "招商加盟",
+      "icon": "🤝",
+      "priority": "A",
+      "scan_focus": ["热门赛道（咖啡茶饮/连锁餐饮）", "加盟政策", "投诉风险"],
+      "sources": [
+        {"name": "中国连锁经营协会 CCFA", "url": "http://www.ccfa.org.cn", "type": "协会", "tier": "T1", "tags": ["连锁"]},
+        {"name": "餐宝典 / 红餐网", "url": "https://www.canyin88.com", "type": "媒体", "tier": "T1", "tags": ["餐饮"]},
+        {"name": "极海品牌监测", "url": "https://www.geohey.com", "type": "数据", "tier": "T1", "tags": ["门店"]},
+        {"name": "窄门餐眼", "url": "https://www.zhaimentech.com", "type": "数据", "tier": "T1", "tags": ["门店"]},
+        {"name": "国家市场监督管理总局 商业特许经营", "url": "https://txjy.syggs.mofcom.gov.cn", "type": "政府", "tier": "T1", "tags": ["合规"]},
+        {"name": "Foodaily 每日食品", "url": "https://www.foodaily.com", "type": "媒体", "tier": "T2", "tags": ["食品"]}
+      ]
+    },
+    {
+      "id": "ind-home",
+      "name": "家居建材 / 装修",
+      "icon": "🏠",
+      "priority": "A",
+      "scan_focus": ["楼市数据联动", "装修平台动态", "整装一体化", "智能家居"],
+      "sources": [
+        {"name": "中国建筑装饰协会", "url": "https://www.ccd.com.cn", "type": "协会", "tier": "T1", "tags": ["装修"]},
+        {"name": "亿欧家居", "url": "https://www.iyiou.com", "type": "媒体", "tier": "T1", "tags": ["家居"]},
+        {"name": "新居网 / 新浪家居", "url": "https://jiaju.sina.com.cn", "type": "媒体", "tier": "T2", "tags": ["家居"]},
+        {"name": "腾讯家居", "url": "https://jiaju.qq.com", "type": "媒体", "tier": "T2", "tags": ["家居"]},
+        {"name": "国家统计局 房地产", "url": "http://www.stats.gov.cn", "type": "政府", "tier": "T1", "tags": ["数据"]},
+        {"name": "贝壳研究院", "url": "https://research.ke.com", "type": "数据", "tier": "T1", "tags": ["地产"]},
+        {"name": "中装新网", "url": "https://www.cbda.cn", "type": "媒体", "tier": "T2", "tags": ["装修"]}
+      ]
+    },
+    {
+      "id": "ind-auto",
+      "name": "汽车",
+      "icon": "🚗",
+      "priority": "S",
+      "scan_focus": ["新能源渗透率", "周度零售/批发", "新车上市", "智驾", "出海"],
+      "sources": [
+        {"name": "乘联会 CPCA", "url": "http://www.cpcaauto.com", "type": "协会", "tier": "T1", "tags": ["周报", "月度数据"]},
+        {"name": "中汽协 CAAM", "url": "http://www.caam.org.cn", "type": "协会", "tier": "T1", "tags": ["月度数据"]},
+        {"name": "崔东树（乘联会秘书长）", "url": "", "type": "公众号", "tier": "T1", "tags": ["周报"]},
+        {"name": "汽车之家研究院", "url": "https://www.autohome.com.cn", "type": "数据", "tier": "T1", "tags": ["市场"]},
+        {"name": "懂车帝研究院", "url": "https://www.dongchedi.com", "type": "数据", "tier": "T1", "tags": ["市场"]},
+        {"name": "汽车商业评论", "url": "", "type": "公众号", "tier": "T1", "tags": ["深度"]},
+        {"name": "电动汽车百人会", "url": "https://www.evhundred.org", "type": "协会", "tier": "T1", "tags": ["新能源"]},
+        {"name": "盖世汽车", "url": "https://auto.gasgoo.com", "type": "媒体", "tier": "T1", "tags": ["供应链"]},
+        {"name": "电厂", "url": "", "type": "公众号", "tier": "T1", "tags": ["新能源"]},
+        {"name": "工信部 汽车产业", "url": "https://www.miit.gov.cn", "type": "政府", "tier": "T1", "tags": ["政策"]}
+      ]
+    },
+    {
+      "id": "ind-education",
+      "name": "教育",
+      "icon": "📚",
+      "priority": "A",
+      "scan_focus": ["双减政策延续", "职业教育", "AI+教育", "K12转型"],
+      "sources": [
+        {"name": "教育部", "url": "http://www.moe.gov.cn", "type": "政府", "tier": "T1", "tags": ["政策"]},
+        {"name": "芥末堆", "url": "https://www.jiemodui.com", "type": "媒体", "tier": "T1", "tags": ["教育"]},
+        {"name": "多鲸资本教育研究", "url": "", "type": "公众号", "tier": "T1", "tags": ["教育"]},
+        {"name": "蓝鲸教育", "url": "https://edu.lanjinger.com", "type": "媒体", "tier": "T1", "tags": ["教育"]},
+        {"name": "鲸媒体", "url": "https://www.jingmeiti.com", "type": "媒体", "tier": "T2", "tags": ["教育"]},
+        {"name": "黑板洞察", "url": "", "type": "公众号", "tier": "T2", "tags": ["教育"]},
+        {"name": "艾瑞 教育报告", "url": "https://www.iresearch.com.cn", "type": "数据", "tier": "T1", "tags": ["报告"]}
+      ]
+    },
+    {
+      "id": "ind-finance",
+      "name": "金融",
+      "icon": "💰",
+      "priority": "A",
+      "scan_focus": ["互联网金融监管", "消费金融", "保险线上化", "财富管理"],
+      "sources": [
+        {"name": "中国人民银行", "url": "http://www.pbc.gov.cn", "type": "政府", "tier": "T1", "tags": ["政策"]},
+        {"name": "国家金融监督管理总局", "url": "https://www.cbirc.gov.cn", "type": "政府", "tier": "T1", "tags": ["政策"]},
+        {"name": "证监会", "url": "http://www.csrc.gov.cn", "type": "政府", "tier": "T1", "tags": ["政策"]},
+        {"name": "财新网", "url": "https://www.caixin.com", "type": "媒体", "tier": "T1", "tags": ["深度", "付费"]},
+        {"name": "21世纪经济报道", "url": "https://www.21jingji.com", "type": "媒体", "tier": "T1", "tags": ["综合"]},
+        {"name": "麻袋研究院 / 苏宁金融研究院", "url": "https://www.sufe.edu.cn", "type": "数据", "tier": "T1", "tags": ["金融"]},
+        {"name": "新流财经", "url": "", "type": "公众号", "tier": "T2", "tags": ["消费金融"]},
+        {"name": "镭射财经", "url": "", "type": "公众号", "tier": "T2", "tags": ["金融"]}
+      ]
+    },
+    {
+      "id": "ind-telecom",
+      "name": "通信 / 5G",
+      "icon": "📡",
+      "priority": "B",
+      "scan_focus": ["三大运营商竞争", "5G应用", "广电网络", "卫星互联网"],
+      "sources": [
+        {"name": "工信部", "url": "https://www.miit.gov.cn", "type": "政府", "tier": "T1", "tags": ["政策"]},
+        {"name": "中国信通院", "url": "http://www.caict.ac.cn", "type": "数据", "tier": "T1", "tags": ["报告"]},
+        {"name": "C114通信网", "url": "http://www.c114.com.cn", "type": "媒体", "tier": "T1", "tags": ["通信"]},
+        {"name": "通信世界网", "url": "https://www.cww.net.cn", "type": "媒体", "tier": "T2", "tags": ["通信"]},
+        {"name": "三大运营商财报", "url": "", "type": "官方", "tier": "T1", "tags": ["财报"]}
+      ]
+    },
+    {
+      "id": "ind-industry",
+      "name": "工农业",
+      "icon": "🏭",
+      "priority": "B",
+      "scan_focus": ["工业互联网", "智能制造", "农产品流通", "数字农业"],
+      "sources": [
+        {"name": "国家统计局", "url": "http://www.stats.gov.cn", "type": "政府", "tier": "T1", "tags": ["数据"]},
+        {"name": "工信部", "url": "https://www.miit.gov.cn", "type": "政府", "tier": "T1", "tags": ["政策"]},
+        {"name": "农业农村部", "url": "http://www.moa.gov.cn", "type": "政府", "tier": "T1", "tags": ["政策"]},
+        {"name": "工控网", "url": "https://www.gongkong.com", "type": "媒体", "tier": "T2", "tags": ["工业"]},
+        {"name": "中国农网", "url": "http://www.farmer.com.cn", "type": "媒体", "tier": "T2", "tags": ["农业"]},
+        {"name": "前瞻产业研究院", "url": "https://www.qianzhan.com", "type": "数据", "tier": "T1", "tags": ["报告"]}
+      ]
+    },
+    {
+      "id": "ind-legal",
+      "name": "法律服务",
+      "icon": "⚖️",
+      "priority": "B",
+      "scan_focus": ["互联网法律服务", "AI律师", "合规咨询", "知识产权"],
+      "sources": [
+        {"name": "司法部", "url": "http://www.moj.gov.cn", "type": "政府", "tier": "T1", "tags": ["政策"]},
+        {"name": "中国律师网", "url": "http://www.acla.org.cn", "type": "协会", "tier": "T1", "tags": ["律师"]},
+        {"name": "法盛金融律师", "url": "", "type": "公众号", "tier": "T2", "tags": ["金融法"]},
+        {"name": "智合", "url": "https://www.allbrightlaw.com", "type": "媒体", "tier": "T2", "tags": ["法律科技"]},
+        {"name": "无讼", "url": "https://www.itslaw.com", "type": "数据", "tier": "T2", "tags": ["案例"]}
+      ]
+    }
+  ],
+  "cross_industry_sources": {
+    "description": "跨行业核心信息源（覆盖全部行业的重要渠道）",
+    "categories": [
+      {
+        "name": "广告与营销监管",
+        "icon": "📢",
+        "sources": [
+          {"name": "国家市场监督管理总局 广告司", "url": "https://www.samr.gov.cn", "type": "政府", "tier": "T1", "tags": ["广告法"]},
+          {"name": "广告法及实施条例", "url": "https://www.samr.gov.cn", "type": "政策", "tier": "T1", "tags": ["法规"]},
+          {"name": "网信办 互联网信息服务管理", "url": "http://www.cac.gov.cn", "type": "政府", "tier": "T1", "tags": ["互联网"]},
+          {"name": "中国广告协会", "url": "https://www.china-caa.org", "type": "协会", "tier": "T1", "tags": ["广告"]},
+          {"name": "麦迪逊邦", "url": "https://www.madisonboom.com", "type": "媒体", "tier": "T1", "tags": ["营销"]},
+          {"name": "数英 DIGITALING", "url": "https://www.digitaling.com", "type": "媒体", "tier": "T1", "tags": ["创意"]},
+          {"name": "Morketing", "url": "https://www.morketing.com", "type": "媒体", "tier": "T1", "tags": ["营销"]},
+          {"name": "Marteker 营销技术官", "url": "https://www.marteker.cn", "type": "媒体", "tier": "T2", "tags": ["MarTech"]}
+        ]
+      },
+      {
+        "name": "竞媒平台准入禁入",
+        "icon": "🚫",
+        "sources": [
+          {"name": "巨量引擎 行业准入清单", "url": "https://e.oceanengine.com", "type": "官方", "tier": "T1", "tags": ["抖音", "准入"]},
+          {"name": "腾讯广告 行业资质", "url": "https://e.qq.com", "type": "官方", "tier": "T1", "tags": ["腾讯", "准入"]},
+          {"name": "百度营销 行业准入", "url": "https://yingxiao.baidu.com", "type": "官方", "tier": "T1", "tags": ["百度", "准入"]},
+          {"name": "美团广告 行业管理", "url": "https://e.meituan.com", "type": "官方", "tier": "T1", "tags": ["美团", "准入"]},
+          {"name": "小红书聚光平台 准入规则", "url": "https://ad.xiaohongshu.com", "type": "官方", "tier": "T1", "tags": ["小红书"]},
+          {"name": "快手磁力引擎 行业准入", "url": "https://ad.kuaishou.com", "type": "官方", "tier": "T1", "tags": ["快手"]}
+        ]
+      },
+      {
+        "name": "315 风险监测",
+        "icon": "🚨",
+        "sources": [
+          {"name": "中央广播电视总台 315晚会", "url": "https://315.cctv.com", "type": "媒体", "tier": "T1", "tags": ["315"]},
+          {"name": "黑猫投诉", "url": "https://tousu.sina.com.cn", "type": "数据", "tier": "T1", "tags": ["消费者投诉"]},
+          {"name": "12315 全国消费者投诉举报平台", "url": "https://www.12315.cn", "type": "政府", "tier": "T1", "tags": ["投诉"]},
+          {"name": "中国消费者协会", "url": "https://www.cca.org.cn", "type": "协会", "tier": "T1", "tags": ["消费者"]},
+          {"name": "啄木鸟数据 黑灰产监测", "url": "", "type": "数据", "tier": "T2", "tags": ["黑产"]}
+        ]
+      },
+      {
+        "name": "宏观经济与综合财经",
+        "icon": "📊",
+        "sources": [
+          {"name": "国家统计局", "url": "http://www.stats.gov.cn", "type": "政府", "tier": "T1", "tags": ["宏观数据"]},
+          {"name": "财新网", "url": "https://www.caixin.com", "type": "媒体", "tier": "T1", "tags": ["财经"]},
+          {"name": "第一财经", "url": "https://www.yicai.com", "type": "媒体", "tier": "T1", "tags": ["财经"]},
+          {"name": "界面新闻", "url": "https://www.jiemian.com", "type": "媒体", "tier": "T1", "tags": ["综合"]},
+          {"name": "36氪", "url": "https://www.36kr.com", "type": "媒体", "tier": "T1", "tags": ["科技商业"]},
+          {"name": "虎嗅", "url": "https://www.huxiu.com", "type": "媒体", "tier": "T1", "tags": ["科技商业"]},
+          {"name": "钛媒体", "url": "https://www.tmtpost.com", "type": "媒体", "tier": "T1", "tags": ["科技"]},
+          {"name": "21世纪经济报道", "url": "https://www.21jingji.com", "type": "媒体", "tier": "T1", "tags": ["财经"]},
+          {"name": "彭博 Bloomberg", "url": "https://www.bloomberg.com", "type": "媒体", "tier": "T1", "tags": ["海外"]},
+          {"name": "路透中文", "url": "https://cn.reuters.com", "type": "媒体", "tier": "T1", "tags": ["海外"]}
+        ]
+      },
+      {
+        "name": "数据与咨询",
+        "icon": "📈",
+        "sources": [
+          {"name": "QuestMobile", "url": "https://www.questmobile.com.cn", "type": "数据", "tier": "T1", "tags": ["MAU"]},
+          {"name": "艾瑞咨询", "url": "https://www.iresearch.com.cn", "type": "数据", "tier": "T1", "tags": ["报告"]},
+          {"name": "易观分析", "url": "https://www.analysys.cn", "type": "数据", "tier": "T1", "tags": ["报告"]},
+          {"name": "Gartner", "url": "https://www.gartner.com", "type": "数据", "tier": "T1", "tags": ["IT"]},
+          {"name": "IDC", "url": "https://www.idc.com", "type": "数据", "tier": "T1", "tags": ["IT"]},
+          {"name": "Statista", "url": "https://www.statista.com", "type": "数据", "tier": "T1", "tags": ["全球"]},
+          {"name": "BCG / McKinsey / Bain Insights", "url": "https://www.bcg.com/publications", "type": "咨询", "tier": "T1", "tags": ["报告"]},
+          {"name": "前瞻产业研究院", "url": "https://www.qianzhan.com", "type": "数据", "tier": "T2", "tags": ["报告"]},
+          {"name": "国海证券 / 中信建投 行业研报", "url": "", "type": "券商", "tier": "T1", "tags": ["研报"]}
+        ]
+      }
+    ]
+  }
+}

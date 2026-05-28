@@ -1,6 +1,8 @@
 // ==================== 全局状态 ====================
 let intelData = [];
 let competitorData = [];
+let sourcesData = null;
+let sourceFilters = { industry: 'all', type: 'all' };
 let currentFilters = {
     priority: 'all',
     signal: 'all',
@@ -15,8 +17,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderKeyInsights();
     renderInsightsGrid();
     renderCompetitors();
+    renderSources();
     initFilters();
     initSearch();
+    initSourcesFilters();
     updateStats();
     
     // 确保数据加载完成后再初始化 AI 搜索
@@ -26,16 +30,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 // ==================== 数据加载 ====================
 async function loadData() {
     try {
-        const [intelResp, compResp] = await Promise.all([
+        const [intelResp, compResp, srcResp] = await Promise.all([
             fetch('assets/data/intel.json'),
-            fetch('assets/data/competitor_updates.json')
+            fetch('assets/data/competitor_updates.json'),
+            fetch('assets/data/sources.json')
         ]);
         
         const intelJson = await intelResp.json();
         const compJson = await compResp.json();
+        const srcJson = await srcResp.json();
         
         intelData = intelJson.items || [];
         competitorData = compJson.items || [];
+        sourcesData = srcJson;
         
         // 更新最后更新时间
         document.getElementById('lastUpdate').textContent = 
@@ -325,6 +332,19 @@ function updateStats() {
     const companies = new Set();
     intelData.forEach(item => item.company.forEach(c => companies.add(c)));
     document.getElementById('statCompanies').textContent = companies.size;
+    
+    // 信源总数：从 sources.json 计算
+    if (sourcesData) {
+        let total = 0;
+        (sourcesData.industries || []).forEach(ind => {
+            total += (ind.sources || []).length;
+        });
+        ((sourcesData.cross_industry_sources || {}).categories || []).forEach(cat => {
+            total += (cat.sources || []).length;
+        });
+        const sourcesEl = document.getElementById('statSources');
+        if (sourcesEl) sourcesEl.textContent = total;
+    }
 }
 
 // ==================== 工具函数 ====================
@@ -787,6 +807,167 @@ function renderAIAnswer(answer) {
 function closeAIAnswer() {
     const section = document.getElementById('aiAnswerSection');
     if (section) section.style.display = 'none';
+}
+
+// ==================== Sources 信息源渲染 ====================
+function renderSources() {
+    if (!sourcesData) return;
+    
+    const industries = sourcesData.industries || [];
+    const cross = sourcesData.cross_industry_sources || {};
+    
+    // 计算总数和T1数
+    let totalCount = 0;
+    let t1Count = 0;
+    industries.forEach(ind => {
+        totalCount += (ind.sources || []).length;
+        t1Count += (ind.sources || []).filter(s => s.tier === 'T1').length;
+    });
+    (cross.categories || []).forEach(cat => {
+        totalCount += (cat.sources || []).length;
+        t1Count += (cat.sources || []).filter(s => s.tier === 'T1').length;
+    });
+    
+    // 更新概览
+    const setText = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+    };
+    setText('sourcesIndustryCount', industries.length);
+    setText('sourcesTotalCount', totalCount);
+    setText('sourcesT1Count', t1Count);
+    
+    // 行业筛选按钮
+    const industryFilters = document.getElementById('industryFilters');
+    if (industryFilters) {
+        const allBtn = industryFilters.querySelector('[data-industry="all"]');
+        let html = allBtn ? allBtn.outerHTML : '<button class="filter-btn active" data-industry="all">全部行业</button>';
+        industries.forEach(ind => {
+            html += `<button class="filter-btn" data-industry="${ind.id}">${ind.icon} ${ind.name}</button>`;
+        });
+        industryFilters.innerHTML = html;
+    }
+    
+    // 渲染行业列表
+    renderIndustriesList();
+    
+    // 渲染跨行业核心信息源
+    const crossEl = document.getElementById('crossCategories');
+    if (crossEl && cross.categories) {
+        crossEl.innerHTML = cross.categories.map(cat => `
+            <div class="cross-category">
+                <div class="cross-cat-header">
+                    <span class="cross-cat-icon">${cat.icon}</span>
+                    <span class="cross-cat-name">${cat.name}</span>
+                    <span class="cross-cat-count">${cat.sources.length}</span>
+                </div>
+                <div class="source-pills">
+                    ${cat.sources.map(s => renderSourcePill(s)).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+}
+
+function renderIndustriesList() {
+    if (!sourcesData) return;
+    const listEl = document.getElementById('industriesList');
+    if (!listEl) return;
+    
+    const industries = sourcesData.industries || [];
+    const filtered = industries.filter(ind => {
+        if (sourceFilters.industry !== 'all' && ind.id !== sourceFilters.industry) return false;
+        return true;
+    });
+    
+    listEl.innerHTML = filtered.map(ind => {
+        const filteredSources = (ind.sources || []).filter(s => {
+            if (sourceFilters.type !== 'all' && s.type !== sourceFilters.type) return false;
+            return true;
+        });
+        
+        if (filteredSources.length === 0 && sourceFilters.type !== 'all') return '';
+        
+        const priorityBadge = {
+            'S': '<span class="priority-badge priority-s">S</span>',
+            'A': '<span class="priority-badge priority-a">A</span>',
+            'B': '<span class="priority-badge priority-b">B</span>'
+        }[ind.priority] || '';
+        
+        return `
+            <div class="industry-card" data-industry="${ind.id}">
+                <div class="industry-header">
+                    <span class="industry-icon">${ind.icon}</span>
+                    <h3 class="industry-name">${ind.name}</h3>
+                    ${priorityBadge}
+                    <span class="industry-count">${filteredSources.length} 源</span>
+                </div>
+                <div class="industry-focus">
+                    <span class="focus-label">扫描重点：</span>
+                    ${(ind.scan_focus || []).map(f => `<span class="focus-item">${f}</span>`).join('')}
+                </div>
+                <div class="source-pills">
+                    ${filteredSources.map(s => renderSourcePill(s)).join('')}
+                </div>
+            </div>
+        `;
+    }).filter(Boolean).join('');
+    
+    if (!listEl.innerHTML.trim()) {
+        listEl.innerHTML = '<div class="empty-state">没有匹配的信息源</div>';
+    }
+}
+
+function renderSourcePill(s) {
+    const typeIcon = {
+        '政府': '🏛️', '协会': '🤝', '官方': '🏢',
+        '媒体': '📰', '数据': '📈', '公众号': '📱',
+        '咨询': '💼', '券商': '📊', '政策': '⚖️'
+    }[s.type] || '🔗';
+    
+    const tierClass = s.tier === 'T1' ? 'tier-t1' : 'tier-t2';
+    const url = s.url || '';
+    const tagText = url ? '' : ' <span class="no-url">需订阅</span>';
+    
+    if (url) {
+        return `
+            <a href="${url}" target="_blank" class="source-pill ${tierClass}" title="${s.type} · ${s.tier}">
+                <span class="pill-icon">${typeIcon}</span>
+                <span class="pill-name">${s.name}</span>
+                <span class="pill-tier">${s.tier}</span>
+            </a>
+        `;
+    } else {
+        return `
+            <span class="source-pill ${tierClass} no-link" title="${s.type} · ${s.tier} · 需关注公众号或订阅">
+                <span class="pill-icon">${typeIcon}</span>
+                <span class="pill-name">${s.name}</span>
+                <span class="pill-tier">${s.tier}</span>
+            </span>
+        `;
+    }
+}
+
+function initSourcesFilters() {
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('#industryFilters .filter-btn, #typeFilters .filter-btn');
+        if (!btn) return;
+        
+        const parent = btn.closest('#industryFilters, #typeFilters');
+        if (!parent) return;
+        
+        // 切换 active
+        parent.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        if (parent.id === 'industryFilters') {
+            sourceFilters.industry = btn.dataset.industry;
+        } else {
+            sourceFilters.type = btn.dataset.type;
+        }
+        
+        renderIndustriesList();
+    });
 }
 
 // ==================== 显式暴露到全局，确保HTML onclick能调用 ====================
