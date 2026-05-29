@@ -318,25 +318,21 @@ function toggleTimeline(header) {
 
 // ==================== 更新统计数据 ====================
 function updateStats() {
-    document.getElementById('statTotal').textContent = intelData.length;
-    document.getElementById('statHigh').textContent = 
-        intelData.filter(item => item.priority === 'high').length;
-    
+    const t = document.getElementById('statTotal');
+    if (t) t.textContent = intelData.length;
+    const h = document.getElementById('statHigh');
+    if (h) h.textContent = intelData.filter(item => item.priority === 'high').length;
+
     const companies = new Set();
-    intelData.forEach(item => item.company.forEach(c => companies.add(c)));
-    document.getElementById('statCompanies').textContent = companies.size;
-    
-    // 信源总数：动态读取 sources.json 的真实数量
-    const sourcesEl = document.getElementById('statSources');
-    if (sourcesEl) {
-        fetch('assets/data/sources.json')
-            .then(r => r.json())
-            .then(d => {
-                const n = (d._meta && d._meta.total_sources) ? d._meta.total_sources : 180;
-                sourcesEl.textContent = n + '+';
-            })
-            .catch(() => { sourcesEl.textContent = '260+'; });
-    }
+    intelData.forEach(item => (item.company || []).forEach(c => companies.add(c)));
+    const c = document.getElementById('statCompanies');
+    if (c) c.textContent = companies.size;
+
+    // 覆盖赛道
+    const tracks = new Set();
+    intelData.forEach(item => (item.tracks || []).forEach(t => tracks.add(t)));
+    const tk = document.getElementById('statTracks');
+    if (tk) tk.textContent = tracks.size;
 }
 
 // ==================== 工具函数 ====================

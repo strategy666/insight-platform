@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>商业化洞察 v2.0 | 市场情报追踪平台</title>
-    <meta name="description" content="商业化战略洞察平台 - 市场情报 & 竞对追踪（公开信息版）" />
+    <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究 / 战分助手" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
     <link rel="stylesheet" href="assets/style.css" />
 </head>
@@ -14,44 +14,49 @@
 <header class="site-header">
     <div class="container">
         <div class="header-inner">
-            <a href="#" class="logo">
+            <a href="#" class="logo" onclick="switchTab('insights');return false;">
                 <span class="logo-icon">📊</span>
                 <span class="logo-text">商业化洞察 <sup>v2</sup></span>
             </a>
-            <nav class="nav">
-                <a href="#insights" class="nav-link">💡 市场洞察</a>
-                <a href="#competitors" class="nav-link">🎯 竞对追踪</a>
+            <nav class="nav main-tabs" id="mainTabs">
+                <a href="#insights"   class="nav-link tab-link active" data-tab="insights">💡 市场洞察</a>
+                <a href="#competitors" class="nav-link tab-link"        data-tab="competitors">🎯 竞对追踪</a>
+                <a href="#research"    class="nav-link tab-link"        data-tab="research">📚 行业研究</a>
+                <a href="#assistant"   class="nav-link tab-link"        data-tab="assistant">🤖 战分助手</a>
             </nav>
             <div class="meta">
-                <span class="last-update" id="lastUpdate">更新于 2026-05-26</span>
+                <span class="last-update" id="lastUpdate">更新于 2026-05-29</span>
             </div>
         </div>
     </div>
 </header>
 
+<!-- ===================== TAB 1: 市场洞察 ===================== -->
+<div class="tab-pane active" id="tab-insights">
+
 <!-- Hero -->
 <section class="hero">
     <div class="container">
         <h1>洞察先于决策，数据驱动战略</h1>
-        <p class="hero-subtitle">追踪 10+ 竞对 · 260+ 信息源<a href="https://docs.corp.kuaishou.com/d/home/fcAAoE2eWZ9oZFNrZB9qJaYpz" target="_blank" class="sub-link"> (查看渠道 Kim Doc ↗) </a>· 每周自动更新</p>
+        <p class="hero-subtitle">追踪 10+ 竞对 · 全市场关键动态 · 每周自动更新</p>
         
         <!-- Key Stats -->
         <div class="hero-stats">
             <div class="stat-card">
-                <div class="stat-num" id="statTotal">9</div>
+                <div class="stat-num" id="statTotal">19</div>
                 <div class="stat-label">情报条目</div>
             </div>
             <div class="stat-card">
-                <div class="stat-num stat-high" id="statHigh">6</div>
+                <div class="stat-num stat-high" id="statHigh">—</div>
                 <div class="stat-label">高优先级</div>
             </div>
             <div class="stat-card">
-                <div class="stat-num" id="statCompanies">8</div>
+                <div class="stat-num" id="statCompanies">—</div>
                 <div class="stat-label">跟踪公司</div>
             </div>
-            <div class="stat-card" onclick="window.open('https://docs.corp.kuaishou.com/d/home/fcAAoE2eWZ9oZFNrZB9qJaYpz','_blank')" style="cursor:pointer" title="点击查看渠道库 Kim Doc">
-                <div class="stat-num" id="statSources">180+</div>
-                <div class="stat-label">信息源 ↗</div>
+            <div class="stat-card">
+                <div class="stat-num" id="statTracks">—</div>
+                <div class="stat-label">覆盖赛道</div>
             </div>
         </div>
 
@@ -61,35 +66,26 @@
                 <input type="text" id="aiSearchInput" placeholder="💬 问我任何关于市场情报的问题..." autocomplete="off" onkeypress="if(event.key==='Enter')askAI(this.value)" />
                 <button id="aiSearchBtn" class="search-btn" onclick="askAI(document.getElementById('aiSearchInput').value)">搜索</button>
             </div>
-            
-            <!-- 猜你想搜 -->
             <div class="suggested-questions">
-                <button class="suggest-q" onclick="askAI('抖音出单宝对快手本地推有什么影响？')">抖音出单宝对快手本地推有什么影响？</button>
-                <button class="suggest-q" onclick="askAI('字节本地生活Q2有哪些重要动作？')">字节本地生活Q2有哪些重要动作？</button>
-                <button class="suggest-q" onclick="askAI('腾讯视频号广告增长的核心驱动力是什么？')">腾讯视频号广告增长的核心驱动力是什么？</button>
+                <button class="suggest-q" onclick="askAI('抖音出单宝对快手本地推有什么影响？')">抖音出单宝对快手本地推</button>
+                <button class="suggest-q" onclick="askAI('字节本地生活Q2有哪些重要动作？')">字节本地生活Q2</button>
+                <button class="suggest-q" onclick="askAI('腾讯视频号广告增长的核心驱动力是什么？')">腾讯视频号广告</button>
+                <button class="suggest-q" onclick="askAI('AI视频生成赛道最新格局')">AI视频生成赛道</button>
             </div>
         </div>
     </div>
 </section>
 
-<!-- AI Answer Panel (独立区域，初始隐藏) -->
+<!-- AI Answer Panel -->
 <section id="aiAnswerSection" class="ai-answer-section" style="display:none;">
     <div class="container">
         <div id="aiAnswerPanel" class="ai-answer-panel">
             <button class="close-answer" onclick="closeAIAnswer()" title="关闭">✕</button>
-            
             <div class="answer-content">
-                <!-- 自然语言回答 -->
                 <div class="answer-summary" id="answerSummary"></div>
-                
-                <!-- 结构化分析 -->
                 <div class="answer-analysis" id="answerAnalysis"></div>
-                
-                <!-- 信息来源 -->
                 <div class="answer-sources" id="answerSources"></div>
             </div>
-            
-            <!-- 相关动态 -->
             <div class="related-updates">
                 <h4>📰 相关动态</h4>
                 <div id="relatedUpdates" class="related-list"></div>
@@ -98,20 +94,17 @@
     </div>
 </section>
 
-<!-- Tab1: 市场洞察 (原Part1+Part3合并) -->
+<!-- 市场洞察 主体 -->
 <section id="insights" class="section">
     <div class="container">
         <div class="section-header">
-            <h2>💡 市场洞察</h2>
-            <p>本周关键情报 · 多维筛选 · So What 解读</p>
+            <h2>💡 本周关键情报</h2>
+            <p>多维筛选 · So What 解读</p>
         </div>
 
-        <!-- 本周关键（Top 3 高优先级） -->
-        <div class="key-insights" id="keyInsights">
-            <!-- JS 动态渲染 -->
-        </div>
+        <div class="key-insights" id="keyInsights"></div>
 
-        <!-- 筛选器 -->
+        <!-- 筛选器（占位结构，下一轮瘦身） -->
         <div class="filters-panel">
             <div class="filter-group">
                 <label>优先级</label>
@@ -133,7 +126,7 @@
             </div>
             <div class="filter-group">
                 <label>赛道</label>
-                <div class="filter-btns">
+                <div class="filter-btns" id="trackFilterBtns">
                     <button class="filter-btn active" data-type="track" data-value="all">全部</button>
                     <button class="filter-btn" data-type="track" data-value="本地生活">本地生活</button>
                     <button class="filter-btn" data-type="track" data-value="AI">AI</button>
@@ -144,71 +137,247 @@
             </div>
             <div class="filter-group">
                 <label>公司</label>
-                <div class="filter-btns">
+                <div class="filter-btns" id="companyFilterBtns">
                     <button class="filter-btn active" data-type="company" data-value="all">全部</button>
-                    <button class="filter-btn" data-type="company" data-value="字节">字节</button>
-                    <button class="filter-btn" data-type="company" data-value="腾讯">腾讯</button>
-                    <button class="filter-btn" data-type="company" data-value="小红书">小红书</button>
-                    <button class="filter-btn" data-type="company" data-value="百度">百度</button>
-                    <button class="filter-btn" data-type="company" data-value="美团">美团</button>
-                    <button class="filter-btn" data-type="company" data-value="OpenAI">OpenAI</button>
-                    <button class="filter-btn" data-type="company" data-value="Google">Google</button>
                 </div>
             </div>
         </div>
 
-        <!-- 情报卡片流 -->
-        <div class="insights-grid" id="insightsGrid">
-            <!-- JS 动态渲染卡片 -->
+        <div class="insights-grid" id="insightsGrid"></div>
+    </div>
+</section>
+
+</div><!-- /tab-insights -->
+
+<!-- ===================== TAB 2: 竞对追踪 ===================== -->
+<div class="tab-pane" id="tab-competitors">
+
+<section class="hero hero-sub">
+    <div class="container">
+        <h1>🎯 竞对追踪</h1>
+        <p class="hero-subtitle">字节 / 小红书 / 百度 / 腾讯 — 产品动态 · 准入政策 · 营销策略（细颗粒度）</p>
+
+        <!-- 竞对追踪检索框（与市场洞察隔离） -->
+        <div class="ai-search-container">
+            <div class="search-input-wrapper">
+                <input type="text" id="competitorSearchInput" placeholder="🔍 搜索竞对动态 / 飞书内部资料..." autocomplete="off" onkeypress="if(event.key==='Enter')searchCompetitor(this.value)" />
+                <button class="search-btn" onclick="searchCompetitor(document.getElementById('competitorSearchInput').value)">搜索</button>
+            </div>
+            <div class="suggested-questions">
+                <button class="suggest-q" onclick="searchCompetitor('巨量引擎本月有哪些产品更新')">巨量引擎产品更新</button>
+                <button class="suggest-q" onclick="searchCompetitor('小红书蒲公英最新政策')">小红书蒲公英政策</button>
+                <button class="suggest-q" onclick="searchCompetitor('腾讯广告医疗类目准入')">腾讯广告医疗准入</button>
+                <button class="suggest-q" onclick="searchCompetitor('百度阳光信用最新规则')">百度阳光信用规则</button>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Tab2: 竞对追踪 -->
-<section id="competitors" class="section section-alt">
+<section id="competitors" class="section">
     <div class="container">
         <div class="section-header">
-            <h2>🎯 竞对追踪</h2>
-            <p>竞对产品/政策/动态时间线</p>
+            <h2>📌 竞对动态</h2>
+            <p>选择竞对查看其细粒度产品/政策/营销动态</p>
         </div>
+        <div class="competitor-tabs" id="competitorTabs"></div>
+        <div class="competitor-updates" id="competitorUpdates"></div>
+    </div>
+</section>
 
-        <!-- 竞对 Tabs -->
-        <div class="competitor-tabs" id="competitorTabs">
-            <!-- JS 动态渲染 -->
+</div><!-- /tab-competitors -->
+
+<!-- ===================== TAB 3: 行业研究 ===================== -->
+<div class="tab-pane" id="tab-research">
+
+<section class="hero hero-sub">
+    <div class="container">
+        <h1>📚 行业研究</h1>
+        <p class="hero-subtitle">行业报告库 · 热点话题整合 · 研究索引</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>📖 行业报告库账号</h2>
+            <p>头部研究机构 / 平台研究院 / 数据咨询账号检索入口</p>
         </div>
-
-        <!-- 竞对动态列表 -->
-        <div class="competitor-updates" id="competitorUpdates">
-            <!-- JS 动态渲染 -->
+        <div class="research-grid" id="researchAccounts">
+            <!-- JS 渲染 -->
         </div>
     </div>
 </section>
+
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <h2>🔥 热点话题整合</h2>
+            <p>近期高热话题的多源信息聚合（占位，下一轮接入）</p>
+        </div>
+        <div class="hot-topics" id="hotTopics">
+            <div class="placeholder-card">
+                <div class="placeholder-icon">🚧</div>
+                <div class="placeholder-title">即将上线</div>
+                <div class="placeholder-desc">本模块将自动聚合"AI 视频生成 / 本地生活三强 / 大模型商业化"等高热话题的跨源研究素材。<br/>下一轮迭代接入。</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div><!-- /tab-research -->
+
+<!-- ===================== TAB 4: 战分助手 ===================== -->
+<div class="tab-pane" id="tab-assistant">
+
+<section class="hero hero-sub">
+    <div class="container">
+        <h1>🤖 战分助手</h1>
+        <p class="hero-subtitle">竞对内部文档检索 · 对话式查询（数据源与公开信息隔离）</p>
+
+        <div class="ai-search-container">
+            <div class="search-input-wrapper">
+                <input type="text" id="assistantInput" placeholder="💬 询问内部访谈 / 内部分析 / 历史文档..." autocomplete="off" onkeypress="if(event.key==='Enter')askAssistant(this.value)" />
+                <button class="search-btn" onclick="askAssistant(document.getElementById('assistantInput').value)">提问</button>
+            </div>
+            <div class="suggested-questions">
+                <button class="suggest-q" onclick="askAssistant('百度医疗访谈中关于阳光科室的关键观点')">百度医疗访谈</button>
+                <button class="suggest-q" onclick="askAssistant('字节摄影行业策略复盘')">字节摄影策略</button>
+                <button class="suggest-q" onclick="askAssistant('本地服务赛道的内部分析')">本地服务内部分析</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>🗂️ 内部资料索引</h2>
+            <p>访谈纪要 / 行业研究 / 战略分析（待接入专属资料库）</p>
+        </div>
+        <div id="assistantAnswer" class="assistant-answer" style="display:none;"></div>
+        <div class="placeholder-card">
+            <div class="placeholder-icon">🔒</div>
+            <div class="placeholder-title">内部资料库待接入</div>
+            <div class="placeholder-desc">
+                本模块独立于公开信息渠道，专门承接：<br/>
+                · 历史访谈纪要（如医疗 / 摄影 / 本地服务等）<br/>
+                · 内部战略分析与行业研究<br/>
+                · 跨部门共享文档<br/>
+                <br/>
+                数据源建立后将单独开 doc 沉淀。
+            </div>
+        </div>
+    </div>
+</section>
+
+</div><!-- /tab-assistant -->
 
 <!-- Footer -->
 <footer class="site-footer">
     <div class="container">
-        <p>© 2026 商业化洞察平台 | 数据来源：公开信息 | 每周自动更新</p>
+        <p>© 2026 商业化洞察平台 | 每周自动更新</p>
         <p class="footer-links">
             <a href="https://github.com/strategy666/insight-platform" target="_blank">GitHub</a> ·
-            <a href="#" onclick="showChangeLog()">更新日志</a>
+            <a href="#" onclick="showChangeLog();return false;">更新日志</a>
         </p>
     </div>
 </footer>
 
+<script>
+// ==== Tab 切换（在 main.js 之前注入，确保即使 main.js 失败也能切换）====
+(function(){
+    function switchTab(tabId){
+        document.querySelectorAll('.tab-link').forEach(function(el){
+            el.classList.toggle('active', el.dataset.tab === tabId);
+        });
+        document.querySelectorAll('.tab-pane').forEach(function(el){
+            el.classList.toggle('active', el.id === 'tab-' + tabId);
+        });
+        // 切换时滚动到顶
+        window.scrollTo({top:0, behavior:'smooth'});
+        // hash
+        try { history.replaceState(null, '', '#' + tabId); } catch(e){}
+    }
+    window.switchTab = switchTab;
+    document.addEventListener('click', function(e){
+        var a = e.target.closest('.tab-link');
+        if (a){
+            e.preventDefault();
+            switchTab(a.dataset.tab);
+        }
+    });
+    // 启动时根据 hash 自动切
+    document.addEventListener('DOMContentLoaded', function(){
+        var h = (location.hash || '').replace('#','');
+        if (h && document.getElementById('tab-' + h)) switchTab(h);
+    });
+})();
+
+// ==== 占位函数（main.js 里没有 ）====
+window.searchCompetitor = window.searchCompetitor || function(q){
+    if(!q || !q.trim()) return;
+    alert('竞对追踪检索（接入飞书 skill 中）：\n\n' + q + '\n\n下一轮将打通飞书文档对话式查询。');
+};
+window.askAssistant = window.askAssistant || function(q){
+    if(!q || !q.trim()) return;
+    var box = document.getElementById('assistantAnswer');
+    box.style.display='block';
+    box.innerHTML = '<div class="answer-content"><h3>🤖 战分助手</h3><p>问题：<b>' + q + '</b></p><p style="color:#888">内部资料库尚未接入，本占位将在下一轮接入飞书内部文档检索后启用。</p></div>';
+};
+
+// ==== 行业研究 - 报告库账号渲染 ====
+window.renderResearchAccounts = function(){
+    var grid = document.getElementById('researchAccounts');
+    if(!grid) return;
+    var accounts = [
+        {name:'QuestMobile', url:'https://www.questmobile.com.cn', tag:'移动互联网数据', icon:'📱'},
+        {name:'艾瑞咨询 iResearch', url:'https://www.iresearch.com.cn', tag:'综合研究', icon:'📊'},
+        {name:'易观分析 Analysys', url:'https://www.analysys.cn', tag:'消费/数字经济', icon:'📈'},
+        {name:'CTR 央视市场研究', url:'https://www.ctrchina.cn', tag:'媒介/广告', icon:'📺'},
+        {name:'CNNIC 中国互联网络信息中心', url:'https://www.cnnic.net.cn', tag:'宏观互联网', icon:'🌐'},
+        {name:'CAICT 信通院', url:'http://www.caict.ac.cn', tag:'通信/AI/数据', icon:'📡'},
+        {name:'美团研究院', url:'https://about.meituan.com', tag:'本地生活', icon:'🍜'},
+        {name:'巨量算数', url:'https://trendinsight.oceanengine.com', tag:'抖音/趋势', icon:'🎵'},
+        {name:'磁力引擎研究', url:'https://magnet.kuaishou.com', tag:'快手生态', icon:'⚡'},
+        {name:'小红书商业化', url:'https://ad.xiaohongshu.com', tag:'种草/品牌', icon:'📖'},
+        {name:'新榜', url:'https://data.newrank.cn', tag:'内容/账号', icon:'📰'},
+        {name:'克劳锐', url:'https://www.topklout.com', tag:'KOL/网红', icon:'⭐'},
+        {name:'CBNData 第一财经数据', url:'https://www.cbndata.com', tag:'消费洞察', icon:'💹'},
+        {name:'极光大数据', url:'https://www.jiguang.cn', tag:'移动应用', icon:'🔦'},
+        {name:'AppGrowing', url:'https://appgrowing.cn', tag:'广告投放', icon:'📲'},
+        {name:'Sensor Tower 出海', url:'https://sensortower.com', tag:'出海/App', icon:'🌍'},
+        {name:'BCG 出版物', url:'https://www.bcg.com/publications', tag:'战略咨询', icon:'🎓'},
+        {name:'McKinsey Insights', url:'https://www.mckinsey.com/insights', tag:'战略咨询', icon:'🎓'},
+    ];
+    grid.innerHTML = accounts.map(function(a){
+        return '<a class="research-card" href="'+ a.url +'" target="_blank" rel="noopener">'
+             + '<div class="rc-icon">'+ a.icon +'</div>'
+             + '<div class="rc-name">'+ a.name +'</div>'
+             + '<div class="rc-tag">'+ a.tag +'</div>'
+             + '</a>';
+    }).join('');
+};
+document.addEventListener('DOMContentLoaded', window.renderResearchAccounts);
+</script>
+
 <script src="assets/main.js"></script>
 <script>
-// 兜底：如果 main.js 加载失败或 askAI 未定义，提供基础提示
+// 兜底
 window.addEventListener('load', function() {
     setTimeout(function() {
         if (typeof window.askAI !== 'function') {
-            console.error('[Fallback] askAI 未定义！main.js 可能加载失败');
-            window.askAI = function(q) {
-                alert('搜索功能暂时不可用，请刷新页面或检查网络。问题：' + q);
-            };
-        } else {
-            console.log('[Fallback] askAI 已就绪 ✅');
+            window.askAI = function(q){ alert('搜索功能暂时不可用，请刷新页面。\n问题：' + q); };
         }
-    }, 2000);
+        // 动态填充覆盖赛道数
+        try {
+            fetch('assets/data/intel.json').then(r=>r.json()).then(d=>{
+                var tracks = new Set();
+                (d.items||[]).forEach(it=>(it.tracks||[]).forEach(t=>tracks.add(t)));
+                var el = document.getElementById('statTracks');
+                if(el) el.textContent = tracks.size;
+            }).catch(()=>{});
+        } catch(e){}
+    }, 1500);
 });
 </script>
 </body>
