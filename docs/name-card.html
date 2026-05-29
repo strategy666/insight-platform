@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>战分搭子 · Name Card</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans SC', -apple-system, sans-serif;
+    background: #f4f6f8;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .card {
+    width: 880px;
+    max-width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,80,40,0.08), 0 4px 12px rgba(0,0,0,0.04);
+    overflow: hidden;
+    position: relative;
+  }
+  /* 顶部 BCG 绿色斜切带 */
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #00553e 0%, #00805c 50%, #00b27a 100%);
+  }
+  .header {
+    padding: 36px 44px 28px;
+    border-bottom: 1px solid #eef0f2;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .avatar {
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00553e 0%, #00b27a 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px;
+    box-shadow: 0 8px 20px rgba(0,178,122,0.25);
+    flex-shrink: 0;
+  }
+  .header-text { flex: 1; min-width: 0; }
+  .name {
+    font-size: 28px;
+    font-weight: 900;
+    color: #0a2540;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+  }
+  .name .badge {
+    display: inline-block;
+    background: #00553e; color: #fff;
+    font-size: 11px; font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-left: 10px;
+    vertical-align: middle;
+    letter-spacing: 0.5px;
+  }
+  .title {
+    font-size: 15px;
+    color: #5a6776;
+    font-weight: 500;
+  }
+  .title .sep { color: #00b27a; margin: 0 8px; font-weight: 700; }
+
+  /* 主体三栏 */
+  .body {
+    padding: 30px 44px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+  }
+  .col h3 {
+    font-size: 11px;
+    color: #00553e;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #00553e;
+    text-transform: uppercase;
+  }
+  .col ul { list-style: none; }
+  .col li {
+    font-size: 13px;
+    color: #2c3e50;
+    line-height: 1.7;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .col li::before {
+    content: '▸';
+    color: #00b27a;
+    position: absolute; left: 0;
+    font-weight: 700;
+  }
+
+  /* 数据条 */
+  .stats {
+    background: linear-gradient(135deg, #003824 0%, #00553e 100%);
+    color: #fff;
+    padding: 22px 44px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 26px;
+    font-weight: 900;
+    color: #4ade80;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: #b8d4c8;
+    letter-spacing: 0.5px;
+  }
+
+  /* footer */
+  .footer {
+    padding: 18px 44px;
+    background: #f8fafb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #5a6776;
+  }
+  .footer .quote {
+    font-style: italic;
+    color: #00553e;
+    font-weight: 500;
+  }
+  .footer .pill {
+    background: #fff;
+    border: 1px solid #00553e;
+    color: #00553e;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+
+  /* 下载提示 */
+  .hint {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 16px;
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .hint { display: none; }
+    .card { box-shadow: none; border-radius: 0; }
+  }
+  @media (max-width: 720px) {
+    .body { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .header { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <!-- Header -->
+  <div class="header">
+    <div class="avatar">🤖</div>
+    <div class="header-text">
+      <div class="name">战分搭子 AI <span class="badge">CODEFLICKER × CLAUDE</span></div>
+      <div class="title">
+        商业化情报研究员
+        <span class="sep">·</span> 全栈交付工程师
+        <span class="sep">·</span> 战略文档润色师
+      </div>
+    </div>
+  </div>
+
+  <!-- 三栏能力 -->
+  <div class="body">
+    <div class="col">
+      <h3>📊 情报研究</h3>
+      <ul>
+        <li>全网 + 公众号 + 飞书内部文档检索</li>
+        <li>多源交叉验证 + 时序回溯</li>
+        <li>结构化情报入库（intel.json schema）</li>
+        <li>每周自动化扫描 19 行业 / 262 信源</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>🧠 战略分析</h3>
+      <ul>
+        <li>BCG 风格洞察提炼（So What 解读）</li>
+        <li>竞对全景拆解 / 时序演化分析</li>
+        <li>访谈纪要结构化</li>
+        <li>战略文档专业润色</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>💻 工程交付</h3>
+      <ul>
+        <li>全栈 Web（HTML/CSS/JS/Python）</li>
+        <li>GitHub Pages 一键部署</li>
+        <li>专属 Skill / SubAgent 编写</li>
+        <li>飞书 / Kim Doc 双向同步</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 数据条 -->
+  <div class="stats">
+    <div>
+      <div class="stat-num">19</div>
+      <div class="stat-label">行业覆盖</div>
+    </div>
+    <div>
+      <div class="stat-num">262</div>
+      <div class="stat-label">信息源沉淀</div>
+    </div>
+    <div>
+      <div class="stat-num">29</div>
+      <div class="stat-label">情报实时入库</div>
+    </div>
+    <div>
+      <div class="stat-num">4</div>
+      <div class="stat-label">Portal Tab 在线</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span class="quote">"把散乱的市场信息，变成可以决策的战略弹药。"</span>
+    <span class="pill">🚀 Next: Agent 化竞对追踪</span>
+  </div>
+</div>
+
+<div class="hint">💡 在浏览器中按 <b>⌘ + P</b> 可保存为 PDF / 截图分享</div>
+
+</body>
+</html>

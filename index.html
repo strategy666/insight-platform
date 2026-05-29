@@ -38,13 +38,13 @@
 <section class="hero">
     <div class="container">
         <h1>洞察先于决策，数据驱动战略</h1>
-        <p class="hero-subtitle">追踪 10+ 竞对 · 全市场关键动态 · 每周自动更新</p>
+        <p class="hero-subtitle">追踪 10+ 竞对 · 近 14 天关键动态 · 每周自动更新</p>
         
         <!-- Key Stats -->
         <div class="hero-stats">
             <div class="stat-card">
-                <div class="stat-num" id="statTotal">19</div>
-                <div class="stat-label">情报条目</div>
+                <div class="stat-num" id="statTotal">—</div>
+                <div class="stat-label">近 14 天情报</div>
             </div>
             <div class="stat-card">
                 <div class="stat-num stat-high" id="statHigh">—</div>
@@ -369,13 +369,27 @@ window.addEventListener('load', function() {
         if (typeof window.askAI !== 'function') {
             window.askAI = function(q){ alert('搜索功能暂时不可用，请刷新页面。\n问题：' + q); };
         }
-        // 动态填充覆盖赛道数
+        // 兜底填充全部统计（防止 main.js 异常时 stats 显示 — / 0）
         try {
             fetch('assets/data/intel.json').then(r=>r.json()).then(d=>{
-                var tracks = new Set();
-                (d.items||[]).forEach(it=>(it.tracks||[]).forEach(t=>tracks.add(t)));
-                var el = document.getElementById('statTracks');
-                if(el) el.textContent = tracks.size;
+                var items = d.items || [];
+                var tracks = new Set(), companies = new Set();
+                var high = 0;
+                items.forEach(function(it){
+                    (it.tracks||[]).forEach(function(t){ tracks.add(t); });
+                    (it.company||[]).forEach(function(c){ companies.add(c); });
+                    if(it.priority === 'high') high += 1;
+                });
+                var set = function(id, v){
+                    var el = document.getElementById(id);
+                    if(el && (el.textContent === '—' || el.textContent === '0' || el.textContent === '')) {
+                        el.textContent = v;
+                    }
+                };
+                set('statTotal', items.length);
+                set('statHigh', high);
+                set('statCompanies', companies.size);
+                set('statTracks', tracks.size);
             }).catch(()=>{});
         } catch(e){}
     }, 1500);
