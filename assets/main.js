@@ -326,9 +326,17 @@ function updateStats() {
     intelData.forEach(item => item.company.forEach(c => companies.add(c)));
     document.getElementById('statCompanies').textContent = companies.size;
     
-    // 信源总数：固定展示（信息源已迁移到 Kim Doc）
+    // 信源总数：动态读取 sources.json 的真实数量
     const sourcesEl = document.getElementById('statSources');
-    if (sourcesEl) sourcesEl.textContent = '180+';
+    if (sourcesEl) {
+        fetch('assets/data/sources.json')
+            .then(r => r.json())
+            .then(d => {
+                const n = (d._meta && d._meta.total_sources) ? d._meta.total_sources : 180;
+                sourcesEl.textContent = n + '+';
+            })
+            .catch(() => { sourcesEl.textContent = '260+'; });
+    }
 }
 
 // ==================== 工具函数 ====================
