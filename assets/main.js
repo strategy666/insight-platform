@@ -45,10 +45,12 @@ async function loadData() {
     }
 }
 
-// ==================== 渲染本周关键（Top 3 高优先级） ====================
+// ==================== 渲染本周关键（最新 3 条高优先级，按日期倒序） ====================
 function renderKeyInsights() {
     const highPriorityItems = intelData
         .filter(item => item.priority === 'high')
+        .slice() // 复制一份避免污染原数组
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
         .slice(0, 3);
     
     const html = highPriorityItems.map(item => `
@@ -183,7 +185,7 @@ function filterInsights() {
         }
         
         return true;
-    });
+    }).sort((a, b) => new Date(b.date) - new Date(a.date));  // 时间倒序
 }
 
 // ==================== 初始化筛选器 ====================
