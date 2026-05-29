@@ -320,6 +320,11 @@ function toggleTimeline(header) {
 
 // ==================== 更新统计数据 ====================
 function updateStats() {
+    if (!intelData || intelData.length === 0) {
+        // 数据没加载到，不要写 0，让 index.html 的兜底 fetch 接管
+        console.warn('[updateStats] intelData is empty, skip writing 0');
+        return;
+    }
     const t = document.getElementById('statTotal');
     if (t) t.textContent = intelData.length;
     const h = document.getElementById('statHigh');

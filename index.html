@@ -363,36 +363,59 @@ document.addEventListener('DOMContentLoaded', window.renderResearchAccounts);
 <script src="assets/main.js"></script>
 <script src="assets/feishu-search.js"></script>
 <script>
-// 兜底
+// === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
+(function fillStats(){
+    fetch('assets/data/intel.json?v=' + Date.now())
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+            var items = d.items || [];
+            var tracks = new Set(), companies = new Set();
+            var high = 0;
+            items.forEach(function(it){
+                (it.tracks||[]).forEach(function(t){ tracks.add(t); });
+                (it.company||[]).forEach(function(c){ companies.add(c); });
+                if(it.priority === 'high') high += 1;
+            });
+            // 强制覆盖（不判断当前值，避免 main.js 把它先设成 0 后被绕过）
+            var force = function(id, v){
+                var el = document.getElementById(id);
+                if(el) el.textContent = v;
+            };
+            force('statTotal', items.length);
+            force('statHigh', high);
+            force('statCompanies', companies.size);
+            force('statTracks', tracks.size);
+            console.log('[stats] total=' + items.length + ' high=' + high + ' companies=' + companies.size + ' tracks=' + tracks.size);
+        })
+        .catch(function(err){ console.error('[stats] fetch failed:', err); });
+})();
+
+// 兜底：askAI / 延后再覆盖一次（防 main.js 之后又写 0）
 window.addEventListener('load', function() {
     setTimeout(function() {
         if (typeof window.askAI !== 'function') {
             window.askAI = function(q){ alert('搜索功能暂时不可用，请刷新页面。\n问题：' + q); };
         }
-        // 兜底填充全部统计（防止 main.js 异常时 stats 显示 — / 0）
-        try {
-            fetch('assets/data/intel.json').then(r=>r.json()).then(d=>{
-                var items = d.items || [];
-                var tracks = new Set(), companies = new Set();
-                var high = 0;
-                items.forEach(function(it){
-                    (it.tracks||[]).forEach(function(t){ tracks.add(t); });
-                    (it.company||[]).forEach(function(c){ companies.add(c); });
-                    if(it.priority === 'high') high += 1;
-                });
-                var set = function(id, v){
-                    var el = document.getElementById(id);
-                    if(el && (el.textContent === '—' || el.textContent === '0' || el.textContent === '')) {
-                        el.textContent = v;
-                    }
-                };
-                set('statTotal', items.length);
-                set('statHigh', high);
-                set('statCompanies', companies.size);
-                set('statTracks', tracks.size);
-            }).catch(()=>{});
-        } catch(e){}
-    }, 1500);
+        // 二次强制兜底
+        fetch('assets/data/intel.json?v=' + Date.now()).then(function(r){return r.json();}).then(function(d){
+            var items = d.items || [];
+            var tracks = new Set(), companies = new Set();
+            var high = 0;
+            items.forEach(function(it){
+                (it.tracks||[]).forEach(function(t){ tracks.add(t); });
+                (it.company||[]).forEach(function(c){ companies.add(c); });
+                if(it.priority === 'high') high += 1;
+            });
+            var force = function(id, v){
+                var el = document.getElementById(id);
+                if(el) el.textContent = v;
+            };
+            force('statTotal', items.length);
+            force('statHigh', high);
+            force('statCompanies', companies.size);
+            force('statTracks', tracks.size);
+        }).catch(function(){});
+    }, 2000);
 });
 </script>
 </body>
