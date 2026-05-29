@@ -376,14 +376,21 @@ window.askResearchChat = function(q){
             }).slice(0, 3);
 
             var html;
+            var encQ = encodeURIComponent(q);
+            var kimUrl = 'https://docs.corp.kuaishou.com/search?keywords=' + encQ;
+            var kimBtn = '<div style="margin-top:12px;">'
+                       + '<a href="' + kimUrl + '" target="_blank" rel="noopener" '
+                       + 'style="display:inline-block; background:linear-gradient(135deg,#ff6b35,#f7931e); color:#fff; padding:10px 18px; border-radius:8px; text-decoration:none; font-weight:600; font-size:13px; box-shadow:0 3px 10px rgba(255,107,53,0.3);">'
+                       + '🚀 去 Kim Doc 搜「' + q + '」全库</a></div>';
+
             if(matched.length === 0){
-                html = '🤔 暂无情报库匹配条目。<br/>'
+                html = '🤔 本地情报库未命中。<br/>'
                      + '<div style="margin-top:10px; padding:10px; background:#f0f7ff; border-radius:8px; font-size:13px; color:#555;">'
-                     + '💡 装修期间建议：<br/>'
+                     + '💡 试试：<br/>'
                      + '• 切换到「💡 市场洞察」tab 浏览近 14 天 19 条情报<br/>'
-                     + '• 切换到「🎯 竞对追踪」tab 搜飞书内部资料<br/>'
-                     + '• 或直接联系 @zhangjiayi20 提需求'
-                     + '</div>';
+                     + '• 或直接去 Kim Doc 搜内网文档 👇'
+                     + '</div>'
+                     + kimBtn;
             } else {
                 html = '✅ 从情报库找到 ' + matched.length + ' 条相关内容：<br/>'
                      + matched.map(function(it){
@@ -393,7 +400,8 @@ window.askResearchChat = function(q){
                               + '<div class="cic-tldr">' + it.tldr + '</div>'
                               + '</div>';
                      }).join('')
-                     + '<div style="margin-top:10px; color:#888; font-size:12px;">💡 完整行业研究模块装修中，正式版会接入更深的资料库</div>';
+                     + kimBtn
+                     + '<div style="margin-top:8px; color:#888; font-size:12px;">💡 想看内网更全的资料，点上面橙色按钮去 Kim Doc</div>';
             }
             botBubble.innerHTML = html;
             body.scrollTop = body.scrollHeight;

@@ -112,10 +112,11 @@
                 return '<button class="fs-suggest-btn" onclick="window.feishuSearch.fillInput(\''+ panelId +'\',\''+ escapeAttr(k) +'\')">'+ escapeHtml(k) +'</button>';
             }).join('') + '</div>' : '';
 
-        // 飞书命令
-        var feishuCmd = 'python3 ~/.codeflicker/skills/feishu-intel-extractor/scripts/run.py "' + query.replace(/"/g,'\\"') + '"';
-        var feishuExport = feishuCmd + ' --export';
-        var feishuPortal = feishuCmd + ' --to-portal';
+        // —— Kim Doc 内网检索三件套 ——
+        var encQ = encodeURIComponent(query);
+        var kimSearchUrl = 'https://docs.corp.kuaishou.com/search?keywords=' + encQ;
+        var cliCmd = 'uv run --refresh-package ks_aimate ~/.codeflicker/internal/skills/docs-shuttle/scripts/docs.py search "' + query.replace(/"/g,'\\"') + '" --size 20';
+        var cliJson = cliCmd + ' --json';
 
         var head = '<div class="fs-result-head">'
                  + '<div class="fs-result-stat">本地匹配 <b>'+ items.length +'</b> 条 · 数据集：'+ (dataset==='intel'?'市场情报 intel':'竞对动态') +'</div>'
@@ -123,13 +124,19 @@
                  + '</div>';
 
         var feishuBox = '<div class="fs-feishu-box">'
-                 + '<div class="fs-feishu-title">🛰️ 在飞书全库检索 <span class="fs-feishu-hint">（粘贴到终端运行，自动登录+检索+提取）</span></div>'
-                 + '<div class="fs-cmd-row"><code>'+ escapeHtml(feishuCmd) +'</code><button class="fs-copy-btn" onclick="window.feishuSearch.copy(this, \''+ escapeAttr(feishuCmd) +'\')">复制</button></div>'
-                 + '<div class="fs-cmd-row"><code>'+ escapeHtml(feishuPortal) +'</code><button class="fs-copy-btn" onclick="window.feishuSearch.copy(this, \''+ escapeAttr(feishuPortal) +'\')">复制 → 直接入库</button></div>'
+                 + '<div class="fs-feishu-title">🔍 在 Kim Doc 内网检索 <span class="fs-feishu-hint">（选一个方式）</span></div>'
+                 + '<div class="fs-cmd-row">'
+                 +   '<a href="'+ kimSearchUrl +'" target="_blank" rel="noopener" class="fs-kim-open-btn">'
+                 +     '🚀 一键打开 Kim Doc 搜索「'+ escapeHtml(query) +'」'
+                 +   '</a>'
+                 + '</div>'
+                 + '<div class="fs-cmd-tip">💡 已登录内网的话，上方按钮最快，直接看全部文档。或者走下面的 CLI：</div>'
+                 + '<div class="fs-cmd-row"><code>'+ escapeHtml(cliCmd) +'</code><button class="fs-copy-btn" onclick="window.feishuSearch.copy(this, \''+ escapeAttr(cliCmd) +'\')">复制 CLI</button></div>'
+                 + '<div class="fs-cmd-row"><code>'+ escapeHtml(cliJson) +'</code><button class="fs-copy-btn" onclick="window.feishuSearch.copy(this, \''+ escapeAttr(cliJson) +'\')">复制 (JSON)</button></div>'
                  + '</div>';
 
         panel.innerHTML = head + sugHtml + feishuBox
-                        + '<div class="fs-result-list">' + (html || '<div class="fs-empty">本地未命中，但你可以用上面飞书命令搜全库</div>') + '</div>';
+                        + '<div class="fs-result-list">' + (html || '<div class="fs-empty">本地情报库未命中，请点上方按钮去 Kim Doc 搜全库</div>') + '</div>';
     }
 
     function escapeHtml(s){ return (s||'').toString().replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
