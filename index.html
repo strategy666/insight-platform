@@ -21,7 +21,6 @@
             <nav class="nav">
                 <a href="#insights" class="nav-link">💡 市场洞察</a>
                 <a href="#competitors" class="nav-link">🎯 竞对追踪</a>
-                <a href="#sources" class="nav-link">📡 信息源</a>
             </nav>
             <div class="meta">
                 <span class="last-update" id="lastUpdate">更新于 2026-05-26</span>
@@ -34,7 +33,7 @@
 <section class="hero">
     <div class="container">
         <h1>洞察先于决策，数据驱动战略</h1>
-        <p class="hero-subtitle">追踪 10+ 竞对 · 50+ 信息源 · 每周自动更新</p>
+        <p class="hero-subtitle">追踪 10+ 竞对 · 180+ 信息源<a href="https://docs.corp.kuaishou.com/s/home/fcADdie-9DQzc0MB4sCeBJorF?section=596914157" target="_blank" class="sub-link"> (查看渠道 Kim Doc ↗) </a>· 每周自动更新</p>
         
         <!-- Key Stats -->
         <div class="hero-stats">
@@ -50,9 +49,9 @@
                 <div class="stat-num" id="statCompanies">8</div>
                 <div class="stat-label">跟踪公司</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-num" id="statSources">56</div>
-                <div class="stat-label">信息源</div>
+            <div class="stat-card" onclick="window.open('https://docs.corp.kuaishou.com/s/home/fcADdie-9DQzc0MB4sCeBJorF?section=596914157','_blank')" style="cursor:pointer" title="点击查看渠道库 Kim Doc">
+                <div class="stat-num" id="statSources">180+</div>
+                <div class="stat-label">信息源 ↗</div>
             </div>
         </div>
 
@@ -181,88 +180,6 @@
         <!-- 竞对动态列表 -->
         <div class="competitor-updates" id="competitorUpdates">
             <!-- JS 动态渲染 -->
-        </div>
-    </div>
-</section>
-
-<!-- Tab3: 信息源 -->
-<section id="sources" class="section">
-    <div class="container">
-        <div class="section-header">
-            <h2>📡 信息源渠道库</h2>
-            <p>覆盖 19 个行业 · 180+ 信息源 · 6 个扫描维度 · 持续扩充中</p>
-        </div>
-
-        <!-- 信息源概览 -->
-        <div class="sources-overview">
-            <div class="overview-card">
-                <div class="overview-icon">🏭</div>
-                <div class="overview-num" id="sourcesIndustryCount">19</div>
-                <div class="overview-label">覆盖行业</div>
-            </div>
-            <div class="overview-card">
-                <div class="overview-icon">🔗</div>
-                <div class="overview-num" id="sourcesTotalCount">180</div>
-                <div class="overview-label">信息源</div>
-            </div>
-            <div class="overview-card">
-                <div class="overview-icon">🎯</div>
-                <div class="overview-num" id="sourcesT1Count">0</div>
-                <div class="overview-label">T1 核心源</div>
-            </div>
-            <div class="overview-card">
-                <div class="overview-icon">📊</div>
-                <div class="overview-num" id="sourcesScanDim">6</div>
-                <div class="overview-label">扫描维度</div>
-            </div>
-        </div>
-
-        <!-- 扫描维度说明 -->
-        <div class="scan-dimensions">
-            <h3>🔍 信息扫描维度</h3>
-            <div class="dim-tags">
-                <span class="dim-tag">📊 行业市场规模</span>
-                <span class="dim-tag">⚖️ 行业政策变动</span>
-                <span class="dim-tag">📢 广告法变动</span>
-                <span class="dim-tag">🚫 竞媒准入禁入</span>
-                <span class="dim-tag">🚨 315 风险</span>
-                <span class="dim-tag">🏢 标杆公司动态</span>
-            </div>
-        </div>
-
-        <!-- 筛选 -->
-        <div class="sources-filters">
-            <div class="filter-group">
-                <label>行业筛选</label>
-                <div class="filter-btns" id="industryFilters">
-                    <button class="filter-btn active" data-industry="all">全部行业</button>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label>信源类型</label>
-                <div class="filter-btns" id="typeFilters">
-                    <button class="filter-btn active" data-type="all">全部</button>
-                    <button class="filter-btn" data-type="政府">🏛️ 政府</button>
-                    <button class="filter-btn" data-type="协会">🤝 协会</button>
-                    <button class="filter-btn" data-type="官方">🏢 官方</button>
-                    <button class="filter-btn" data-type="媒体">📰 媒体</button>
-                    <button class="filter-btn" data-type="数据">📈 数据</button>
-                    <button class="filter-btn" data-type="公众号">📱 公众号</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 行业信息源列表 -->
-        <div class="industries-list" id="industriesList">
-            <!-- JS 动态渲染 -->
-        </div>
-
-        <!-- 跨行业核心信息源 -->
-        <div class="cross-industry">
-            <h3>🌐 跨行业核心信息源</h3>
-            <div class="cross-categories" id="crossCategories">
-                <!-- JS 动态渲染 -->
-            </div>
         </div>
     </div>
 </section>
