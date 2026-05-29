@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📡 市场洞察 · 信息源渠道库</title>
+<style>
+:root {
+  --green-deep: #064e3b;
+  --green-mid: #047857;
+  --green-light: #10b981;
+  --green-bg: #f0fdf4;
+  --gray-900: #111827;
+  --gray-700: #374151;
+  --gray-500: #6b7280;
+  --gray-300: #d1d5db;
+  --gray-100: #f3f4f6;
+  --red: #dc2626;
+  --orange: #f59e0b;
+  --blue: #2563eb;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--gray-100);
+  color: var(--gray-900);
+  line-height: 1.6;
+}
+.hero {
+  background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+  color: white;
+  padding: 3rem 1.5rem 2.5rem;
+  text-align: center;
+}
+.hero h1 { font-size: 2rem; margin: 0 0 0.5rem; font-weight: 700; }
+.hero .subtitle { font-size: 1rem; opacity: 0.9; margin: 0; }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 1.5rem auto 0;
+}
+.stat {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+}
+.stat-num { font-size: 1.75rem; font-weight: 700; }
+.stat-label { font-size: 0.85rem; opacity: 0.85; }
+.container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
+.toc {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+}
+.toc h3 { margin: 0 0 1rem; font-size: 1.05rem; color: var(--green-deep); }
+.toc-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.toc-tag {
+  background: var(--green-bg);
+  color: var(--green-deep);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid #d1fae5;
+  transition: all 0.15s;
+}
+.toc-tag:hover { background: var(--green-mid); color: white; }
+.dim-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.dim-section h3 { margin: 0 0 1rem; color: var(--green-deep); font-size: 1.05rem; }
+.dim-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.dim-tag {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  color: var(--green-mid);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.pri-section { margin-top: 2.5rem; }
+.pri-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--gray-300);
+}
+.pri-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.pri-meta { color: var(--gray-500); font-size: 0.85rem; }
+.industries {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.industry-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--green-light);
+  transition: all 0.2s;
+}
+.industry-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); transform: translateY(-1px); }
+.industry-card.pri-S { border-left-color: var(--red); }
+.industry-card.pri-A { border-left-color: var(--orange); }
+.industry-card.pri-B { border-left-color: var(--green-light); }
+.ind-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.ind-icon { font-size: 1.4rem; }
+.ind-name { font-size: 1.1rem; font-weight: 600; margin: 0; flex: 1; }
+.ind-count {
+  background: var(--gray-100);
+  color: var(--gray-700);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.ind-focus {
+  background: var(--green-bg);
+  color: var(--green-mid);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--green-light);
+}
+.ind-focus strong { color: var(--green-deep); }
+.tier-group { margin-top: 0.75rem; }
+.tier-label {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.src-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+.src-pill.tier-t1 {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #78350f;
+  border-color: #fcd34d;
+}
+.src-pill.tier-t1:hover { background: linear-gradient(135deg, #fde68a 0%, #fcd34d 100%); }
+.src-pill.tier-t2 {
+  background: var(--gray-100);
+  color: var(--gray-700);
+  border-color: var(--gray-300);
+}
+.src-pill.tier-t2:hover { background: var(--gray-300); }
+.src-pill.no-url { opacity: 0.7; cursor: default; }
+.pill-ic { font-size: 0.85rem; }
+.pill-nm { font-weight: 500; }
+.pill-tier { font-size: 0.7rem; opacity: 0.7; padding: 0.05rem 0.3rem; background: rgba(0,0,0,0.06); border-radius: 3px; }
+.cross-section { margin-top: 3rem; }
+.cross-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 1rem;
+}
+.footer {
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--gray-500);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--gray-300);
+}
+.footer a { color: var(--green-mid); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+@media (max-width: 768px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .industries, .cross-cards { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>📡 市场洞察 · 信息源渠道库</h1>
+  <p class="subtitle">服务于 Part 1 市场洞察的情报采集 & 来源标注 · 更新于 2026-05-28</p>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">19</div><div class="stat-label">核心行业</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">跨行业维度</div></div>
+    <div class="stat"><div class="stat-num">180</div><div class="stat-label">总信源数</div></div>
+    <div class="stat"><div class="stat-num">151</div><div class="stat-label">T1 核心源</div></div>
+  </div>
+</header>
+<main class="container">
+
+<section class="dim-section"><h3>🔍 信息扫描维度</h3><div class="dim-tags">
+<span class="dim-tag">行业市场规模数据</span>
+<span class="dim-tag">行业政策变动（广告法、各竞媒准入禁入、315风险）</span>
+<span class="dim-tag">标杆公司动态</span>
+<span class="dim-tag">融资并购</span>
+<span class="dim-tag">技术演进</span>
+<span class="dim-tag">营销大事件</span>
+</div></section>
+<nav class="toc"><h3>📑 快速跳转</h3><div class="toc-tags">
+<a class="toc-tag" href="#ind-ind-aigc">🤖 AIGC（模型层 &amp; 应用层）</a>
+<a class="toc-tag" href="#ind-ind-world-model">🎬 世界模型 / 视频生成</a>
+<a class="toc-tag" href="#ind-ind-shortdrama">📺 真人短剧 / AI 漫剧</a>
+<a class="toc-tag" href="#ind-ind-ecommerce">🛒 电商</a>
+<a class="toc-tag" href="#ind-ind-content">📱 内容消费（短视频/直播/社区）</a>
+<a class="toc-tag" href="#ind-ind-lifeservice">🛠️ 本地服务 / 到综服务</a>
+<a class="toc-tag" href="#ind-ind-auto">🚗 汽车</a>
+<a class="toc-tag" href="#ind-ind-medical">🏥 医疗 / 严肃医疗</a>
+<a class="toc-tag" href="#ind-ind-medical-beauty">💉 医美</a>
+<a class="toc-tag" href="#ind-ind-life-beauty">💅 生活美容（美甲/美睫/美发/SPA）</a>
+<a class="toc-tag" href="#ind-ind-travel">✈️ 酒旅</a>
+<a class="toc-tag" href="#ind-ind-franchise">🤝 招商加盟</a>
+<a class="toc-tag" href="#ind-ind-home">🏠 家居建材 / 装修</a>
+<a class="toc-tag" href="#ind-ind-education">📚 教育</a>
+<a class="toc-tag" href="#ind-ind-finance">💰 金融</a>
+<a class="toc-tag" href="#ind-ind-leisure">🎮 休闲娱乐（KTV/桌游/剧本杀/密室）</a>
+<a class="toc-tag" href="#ind-ind-telecom">📡 通信 / 5G</a>
+<a class="toc-tag" href="#ind-ind-industry">🏭 工农业</a>
+<a class="toc-tag" href="#ind-ind-legal">⚖️ 法律服务</a>
+<a class="toc-tag" href="#cross-广告与营销监管">📢 广告与营销监管</a>
+<a class="toc-tag" href="#cross-竞媒平台准入禁入">🚫 竞媒平台准入禁入</a>
+<a class="toc-tag" href="#cross-315 风险监测">🚨 315 风险监测</a>
+<a class="toc-tag" href="#cross-宏观经济与综合财经">📊 宏观经济与综合财经</a>
+<a class="toc-tag" href="#cross-数据与咨询">📈 数据与咨询</a>
+</div></nav>
+<section class="pri-section">
+<div class="pri-header"><span class="pri-badge" style="background:#dc2626">S 级 · 核心赛道</span><span class="pri-meta">每周必扫 · 7 个行业</span></div>
+<div class="industries">
+<div class="industry-card pri-S" id="ind-ind-aigc">
+<div class="ind-header"><span class="ind-icon">🤖</span><h3 class="ind-name">AIGC（模型层 &amp; 应用层）</h3><span class="ind-count">12 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>模型迭代 / 应用爆款 / 融资并购 / 监管政策 / 出海动态</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://www.jiqizhixin.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 技术 · 模型"><span class="pill-ic">📰</span><span class="pill-nm">机器之心</span><span class="pill-tier">T1</span></a>
+<a href="https://www.qbitai.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 技术 · 应用"><span class="pill-ic">📰</span><span class="pill-nm">量子位 QbitAI</span><span class="pill-tier">T1</span></a>
+<a href="https://www.aiera.com.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 技术"><span class="pill-ic">📰</span><span class="pill-nm">新智元</span><span class="pill-tier">T1</span></a>
+<a href="https://www.pingwest.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 商业 · 应用"><span class="pill-ic">📰</span><span class="pill-nm">硅星人 Pro</span><span class="pill-tier">T1</span></a>
+<a href="https://aicpb.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 榜单 · 数据"><span class="pill-ic">📈</span><span class="pill-nm">AI产品榜 aicpb.com</span><span class="pill-tier">T1</span></a>
+<a href="https://openai.com/blog" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 海外 · 模型"><span class="pill-ic">🏢</span><span class="pill-nm">OpenAI Blog</span><span class="pill-tier">T1</span></a>
+<a href="https://www.anthropic.com/news" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 海外 · 模型"><span class="pill-ic">🏢</span><span class="pill-nm">Anthropic News</span><span class="pill-tier">T1</span></a>
+<a href="https://deepmind.google" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 海外 · 模型"><span class="pill-ic">🏢</span><span class="pill-nm">Google DeepMind</span><span class="pill-tier">T1</span></a>
+<a href="https://huggingface.co/blog" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 开源 · 模型"><span class="pill-ic">🏢</span><span class="pill-nm">Hugging Face Blog</span><span class="pill-tier">T1</span></a>
+<a href="https://stratechery.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 海外 · 深度"><span class="pill-ic">📰</span><span class="pill-nm">Stratechery</span><span class="pill-tier">T1</span></a>
+<a href="https://www.theinformation.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 海外 · 付费"><span class="pill-ic">📰</span><span class="pill-nm">The Information</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<a href="https://aigc.cn" target="_blank" rel="noopener" class="src-pill tier-t2" title="数据 · T2 · 榜单"><span class="pill-ic">📈</span><span class="pill-nm">AIGC.Cn</span><span class="pill-tier">T2</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-S" id="ind-ind-world-model">
+<div class="ind-header"><span class="ind-icon">🎬</span><h3 class="ind-name">世界模型 / 视频生成</h3><span class="ind-count">9 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>Seedance / 可灵 Kling / HappyHorse / Sora / Runway / PixVerse</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://kling.kuaishou.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 国内 · 视频生成"><span class="pill-ic">🏢</span><span class="pill-nm">可灵 AI 官网</span><span class="pill-tier">T1</span></a>
+<a href="https://jimeng.jianying.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 国内 · 视频生成"><span class="pill-ic">🏢</span><span class="pill-nm">字节即梦 AI</span><span class="pill-tier">T1</span></a>
+<a href="https://openai.com/sora" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 海外"><span class="pill-ic">🏢</span><span class="pill-nm">Sora（OpenAI）</span><span class="pill-tier">T1</span></a>
+<a href="https://runwayml.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 海外"><span class="pill-ic">🏢</span><span class="pill-nm">Runway ML</span><span class="pill-tier">T1</span></a>
+<a href="https://pika.art" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 海外"><span class="pill-ic">🏢</span><span class="pill-nm">Pika Labs</span><span class="pill-tier">T1</span></a>
+<a href="https://lumalabs.ai/dream-machine" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 海外"><span class="pill-ic">🏢</span><span class="pill-nm">Luma AI Dream Machine</span><span class="pill-tier">T1</span></a>
+<a href="https://hailuoai.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 国内"><span class="pill-ic">🏢</span><span class="pill-nm">MiniMax Hailuo AI</span><span class="pill-tier">T1</span></a>
+<a href="https://www.vidu.studio" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 国内"><span class="pill-ic">🏢</span><span class="pill-nm">Vidu（生数科技）</span><span class="pill-tier">T1</span></a>
+<a href="https://artificialanalysis.ai" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 对比 · 评测"><span class="pill-ic">📈</span><span class="pill-nm">Artificial Analysis</span><span class="pill-tier">T1</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-S" id="ind-ind-shortdrama">
+<div class="ind-header"><span class="ind-icon">📺</span><h3 class="ind-name">真人短剧 / AI 漫剧</h3><span class="ind-count">9 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>头部平台MAU / 投流ROI / 题材爆款 / AI漫剧落地 / 出海</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://www.dataeye.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 短剧 · 投放数据"><span class="pill-ic">📈</span><span class="pill-nm">DataEye 短剧观察</span><span class="pill-tier">T1</span></a>
+<a href="https://www.topmaker.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 榜单"><span class="pill-ic">📈</span><span class="pill-nm">TopMaker 抖音短剧榜</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">古麦嘉禾</span><span class="pill-tier">需订阅</span></span>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">微短剧观察</span><span class="pill-tier">需订阅</span></span>
+<a href="https://reelshort.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 出海"><span class="pill-ic">🏢</span><span class="pill-nm">ReelShort（短剧出海）</span><span class="pill-tier">T1</span></a>
+<a href="https://www.dramabox.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 出海"><span class="pill-ic">🏢</span><span class="pill-nm">DramaBox</span><span class="pill-tier">T1</span></a>
+<a href="https://www.nrta.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 政策"><span class="pill-ic">🏢</span><span class="pill-nm">广电总局 网络视听管理</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">国家广电智库</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.feigua.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 短视频"><span class="pill-ic">📈</span><span class="pill-nm">西瓜数据 / 飞瓜数据</span><span class="pill-tier">T1</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-S" id="ind-ind-ecommerce">
+<div class="ind-header"><span class="ind-icon">🛒</span><h3 class="ind-name">电商</h3><span class="ind-count">9 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>GMV / DAU / 新品类 / 直播电商 / 跨境电商 / 618/双11</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://www.latepost.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 深度"><span class="pill-ic">📰</span><span class="pill-nm">晚点 LatePost</span><span class="pill-tier">T1</span></a>
+<a href="https://www.ebrun.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 电商"><span class="pill-ic">📰</span><span class="pill-nm">亿邦动力</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">雪豹财经社</span><span class="pill-tier">需订阅</span></span>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">电商在线</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.mktindex.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 数据 · 天猫"><span class="pill-ic">📈</span><span class="pill-nm">魔镜洞察</span><span class="pill-tier">T1</span></a>
+<a href="https://www.chanmama.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 抖音电商"><span class="pill-ic">📈</span><span class="pill-nm">蝉妈妈数据</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">果集行研</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.100ec.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 报告"><span class="pill-ic">📈</span><span class="pill-nm">网经社 电商研究中心</span><span class="pill-tier">T1</span></a>
+<a href="https://www.questmobile.com.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · MAU"><span class="pill-ic">📈</span><span class="pill-nm">QuestMobile</span><span class="pill-tier">T1</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-S" id="ind-ind-content">
+<div class="ind-header"><span class="ind-icon">📱</span><h3 class="ind-name">内容消费（短视频/直播/社区）</h3><span class="ind-count">8 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>DAU / 用户时长 / 创作者生态 / 中视频 / 播客</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://www.deepecho.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 商业"><span class="pill-ic">📰</span><span class="pill-nm">深响</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">刺猬公社</span><span class="pill-tier">需订阅</span></span>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">克劳锐</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.newrank.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 公众号 · 短视频"><span class="pill-ic">📈</span><span class="pill-nm">新榜</span><span class="pill-tier">T1</span></a>
+<a href="https://www.topklout.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · KOL"><span class="pill-ic">📈</span><span class="pill-nm">TopKlout 克劳锐数据</span><span class="pill-tier">T1</span></a>
+<a href="https://www.questmobile.com.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · MAU"><span class="pill-ic">📈</span><span class="pill-nm">QuestMobile</span><span class="pill-tier">T1</span></a>
+<a href="https://www.caasdata.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 短视频"><span class="pill-ic">📈</span><span class="pill-nm">卡思数据</span><span class="pill-tier">T1</span></a>
+<a href="https://www.sanshengss.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 文娱"><span class="pill-ic">📰</span><span class="pill-nm">三声</span><span class="pill-tier">T1</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-S" id="ind-ind-lifeservice">
+<div class="ind-header"><span class="ind-icon">🛠️</span><h3 class="ind-name">本地服务 / 到综服务</h3><span class="ind-count">6 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>美团/抖音/快手对垒 / 防水补漏/手机租赁/黄金回收/婚恋 / 线索质量</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://about.meituan.com/research" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 本地生活"><span class="pill-ic">📈</span><span class="pill-nm">美团本地生活报告</span><span class="pill-tier">T1</span></a>
+<a href="https://www.iyiou.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 本地"><span class="pill-ic">📰</span><span class="pill-nm">亿欧网 本地生活</span><span class="pill-tier">T1</span></a>
+<a href="https://www.latepost.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 深度"><span class="pill-ic">📰</span><span class="pill-nm">晚点 LatePost</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">雪豹财经社 / 36氪本地生活</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.isc.org.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="协会 · T1 · 政策"><span class="pill-ic">🤝</span><span class="pill-nm">中国互联网协会</span><span class="pill-tier">T1</span></a>
+<a href="https://www.samr.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 政策"><span class="pill-ic">🏛️</span><span class="pill-nm">国家市场监督管理总局 反垄断</span><span class="pill-tier">T1</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-S" id="ind-ind-auto">
+<div class="ind-header"><span class="ind-icon">🚗</span><h3 class="ind-name">汽车</h3><span class="ind-count">10 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>新能源渗透率 / 周度零售/批发 / 新车上市 / 智驾 / 出海</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="http://www.cpcaauto.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="协会 · T1 · 周报 · 月度数据"><span class="pill-ic">🤝</span><span class="pill-nm">乘联会 CPCA</span><span class="pill-tier">T1</span></a>
+<a href="http://www.caam.org.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="协会 · T1 · 月度数据"><span class="pill-ic">🤝</span><span class="pill-nm">中汽协 CAAM</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">崔东树（乘联会秘书长）</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.autohome.com.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 市场"><span class="pill-ic">📈</span><span class="pill-nm">汽车之家研究院</span><span class="pill-tier">T1</span></a>
+<a href="https://www.dongchedi.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 市场"><span class="pill-ic">📈</span><span class="pill-nm">懂车帝研究院</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">汽车商业评论</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.evhundred.org" target="_blank" rel="noopener" class="src-pill tier-t1" title="协会 · T1 · 新能源"><span class="pill-ic">🤝</span><span class="pill-nm">电动汽车百人会</span><span class="pill-tier">T1</span></a>
+<a href="https://auto.gasgoo.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 供应链"><span class="pill-ic">📰</span><span class="pill-nm">盖世汽车</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">电厂</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.miit.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 政策"><span class="pill-ic">🏛️</span><span class="pill-nm">工信部 汽车产业</span><span class="pill-tier">T1</span></a>
+</div></div>
+</div>
+</div></section>
+<section class="pri-section">
+<div class="pri-header"><span class="pri-badge" style="background:#f59e0b">A 级 · 重要赛道</span><span class="pri-meta">每两周一次 · 8 个行业</span></div>
+<div class="industries">
+<div class="industry-card pri-A" id="ind-ind-medical">
+<div class="ind-header"><span class="ind-icon">🏥</span><h3 class="ind-name">医疗 / 严肃医疗</h3><span class="ind-count">8 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>民营医院政策 / 处方药线上 / 互联网医疗 / 广告合规</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="http://www.nhc.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 政策"><span class="pill-ic">🏛️</span><span class="pill-nm">国家卫健委</span><span class="pill-tier">T1</span></a>
+<a href="https://www.nmpa.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 药监"><span class="pill-ic">🏛️</span><span class="pill-nm">国家药监局 NMPA</span><span class="pill-tier">T1</span></a>
+<a href="http://www.nhsa.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 医保"><span class="pill-ic">🏛️</span><span class="pill-nm">国家医保局</span><span class="pill-tier">T1</span></a>
+<a href="https://insight.dxy.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 药品 · 临床"><span class="pill-ic">📈</span><span class="pill-nm">丁香园 Insight 数据库</span><span class="pill-tier">T1</span></a>
+<a href="https://vcbeat.top" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 数字医疗"><span class="pill-ic">📰</span><span class="pill-nm">动脉网</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">健闻咨询 / 八点健闻</span><span class="pill-tier">需订阅</span></span>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">赛柏蓝</span><span class="pill-tier">需订阅</span></span>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<a href="https://www.yxj.org.cn" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · 医生"><span class="pill-ic">📰</span><span class="pill-nm">医学界</span><span class="pill-tier">T2</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-A" id="ind-ind-medical-beauty">
+<div class="ind-header"><span class="ind-icon">💉</span><h3 class="ind-name">医美</h3><span class="ind-count">8 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>机构监管 / 新品上市 / 315风险 / 明星代言 / 项目热度</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://so-young.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 项目热度"><span class="pill-ic">📈</span><span class="pill-nm">新氧数据颜究院</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 协会 · T1"><span class="pill-ic">🤝</span><span class="pill-nm">中国整形美容协会</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.nmpa.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 合规"><span class="pill-ic">🏛️</span><span class="pill-nm">国家药监局 医美耗材专项</span><span class="pill-tier">T1</span></a>
+<a href="https://www.iresearch.com.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 报告"><span class="pill-ic">📈</span><span class="pill-nm">艾瑞咨询 医美报告</span><span class="pill-tier">T1</span></a>
+<a href="https://315.cctv.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 315"><span class="pill-ic">📰</span><span class="pill-nm">中央广播电视总台 315晚会</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<a href="https://www.meibei.com" target="_blank" rel="noopener" class="src-pill tier-t2" title="数据 · T2 · 机构"><span class="pill-ic">📈</span><span class="pill-nm">美呗</span><span class="pill-tier">T2</span></a>
+<a href="https://www.gengmei.com" target="_blank" rel="noopener" class="src-pill tier-t2" title="数据 · T2 · 项目"><span class="pill-ic">📈</span><span class="pill-nm">更美 App</span><span class="pill-tier">T2</span></a>
+<span class="src-pill no-url tier-t2" title="需关注公众号 · 公众号 · T2"><span class="pill-ic">📱</span><span class="pill-nm">丽都好医生 / 医美研究院</span><span class="pill-tier">需订阅</span></span>
+</div></div>
+</div>
+<div class="industry-card pri-A" id="ind-ind-life-beauty">
+<div class="ind-header"><span class="ind-icon">💅</span><h3 class="ind-name">生活美容（美甲/美睫/美发/SPA）</h3><span class="ind-count">6 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>连锁品牌动态 / 团购ROI / 客单价 / 城市渗透</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://about.meituan.com/research" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 美业"><span class="pill-ic">📈</span><span class="pill-nm">美团点评行业报告</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">美业新纬度</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.cabbf.org" target="_blank" rel="noopener" class="src-pill tier-t1" title="协会 · T1 · 行业"><span class="pill-ic">🤝</span><span class="pill-nm">中国美发美容协会</span><span class="pill-tier">T1</span></a>
+<a href="https://www.geohey.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 门店 · 选址"><span class="pill-ic">📈</span><span class="pill-nm">极海品牌监测</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<span class="src-pill no-url tier-t2" title="需关注公众号 · 公众号 · T2"><span class="pill-ic">📱</span><span class="pill-nm">美业邦 / 美博汇</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.canbaodian.com" target="_blank" rel="noopener" class="src-pill tier-t2" title="数据 · T2 · 连锁"><span class="pill-ic">📈</span><span class="pill-nm">餐宝典 RABID</span><span class="pill-tier">T2</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-A" id="ind-ind-travel">
+<div class="ind-header"><span class="ind-icon">✈️</span><h3 class="ind-name">酒旅</h3><span class="ind-count">8 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>节假日数据 / OTA竞争 / 下沉旅游 / 出境游恢复</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://www.mct.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 政策 · 数据"><span class="pill-ic">🏛️</span><span class="pill-nm">文化和旅游部</span><span class="pill-tier">T1</span></a>
+<a href="https://str.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 酒店 · RevPAR"><span class="pill-ic">📈</span><span class="pill-nm">STR Global / 浩华</span><span class="pill-tier">T1</span></a>
+<a href="https://www.ctripcorp.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · OTA"><span class="pill-ic">📈</span><span class="pill-nm">携程研究院</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 数据 · T1"><span class="pill-ic">📈</span><span class="pill-nm">去哪儿大数据研究院</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.traveldaily.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 酒旅"><span class="pill-ic">📰</span><span class="pill-nm">环球旅讯</span><span class="pill-tier">T1</span></a>
+<a href="https://www.meadin.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 酒店"><span class="pill-ic">📰</span><span class="pill-nm">迈点 Mtravel</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<a href="https://www.tripvivid.com" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · 旅游"><span class="pill-ic">📰</span><span class="pill-nm">执惠</span><span class="pill-tier">T2</span></a>
+<span class="src-pill no-url tier-t2" title="需关注公众号 · 公众号 · T2"><span class="pill-ic">📱</span><span class="pill-nm">酒店之家</span><span class="pill-tier">需订阅</span></span>
+</div></div>
+</div>
+<div class="industry-card pri-A" id="ind-ind-franchise">
+<div class="ind-header"><span class="ind-icon">🤝</span><h3 class="ind-name">招商加盟</h3><span class="ind-count">6 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>热门赛道（咖啡茶饮/连锁餐饮） / 加盟政策 / 投诉风险</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="http://www.ccfa.org.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="协会 · T1 · 连锁"><span class="pill-ic">🤝</span><span class="pill-nm">中国连锁经营协会 CCFA</span><span class="pill-tier">T1</span></a>
+<a href="https://www.canyin88.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 餐饮"><span class="pill-ic">📰</span><span class="pill-nm">餐宝典 / 红餐网</span><span class="pill-tier">T1</span></a>
+<a href="https://www.geohey.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 门店"><span class="pill-ic">📈</span><span class="pill-nm">极海品牌监测</span><span class="pill-tier">T1</span></a>
+<a href="https://www.zhaimentech.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 门店"><span class="pill-ic">📈</span><span class="pill-nm">窄门餐眼</span><span class="pill-tier">T1</span></a>
+<a href="https://txjy.syggs.mofcom.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 合规"><span class="pill-ic">🏛️</span><span class="pill-nm">国家市场监督管理总局 商业特许经营</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<a href="https://www.foodaily.com" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · 食品"><span class="pill-ic">📰</span><span class="pill-nm">Foodaily 每日食品</span><span class="pill-tier">T2</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-A" id="ind-ind-home">
+<div class="ind-header"><span class="ind-icon">🏠</span><h3 class="ind-name">家居建材 / 装修</h3><span class="ind-count">7 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>楼市数据联动 / 装修平台动态 / 整装一体化 / 智能家居</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://www.ccd.com.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="协会 · T1 · 装修"><span class="pill-ic">🤝</span><span class="pill-nm">中国建筑装饰协会</span><span class="pill-tier">T1</span></a>
+<a href="https://www.iyiou.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 家居"><span class="pill-ic">📰</span><span class="pill-nm">亿欧家居</span><span class="pill-tier">T1</span></a>
+<a href="http://www.stats.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 数据"><span class="pill-ic">🏛️</span><span class="pill-nm">国家统计局 房地产</span><span class="pill-tier">T1</span></a>
+<a href="https://research.ke.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 地产"><span class="pill-ic">📈</span><span class="pill-nm">贝壳研究院</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<a href="https://jiaju.sina.com.cn" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · 家居"><span class="pill-ic">📰</span><span class="pill-nm">新居网 / 新浪家居</span><span class="pill-tier">T2</span></a>
+<a href="https://jiaju.qq.com" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · 家居"><span class="pill-ic">📰</span><span class="pill-nm">腾讯家居</span><span class="pill-tier">T2</span></a>
+<a href="https://www.cbda.cn" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · 装修"><span class="pill-ic">📰</span><span class="pill-nm">中装新网</span><span class="pill-tier">T2</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-A" id="ind-ind-education">
+<div class="ind-header"><span class="ind-icon">📚</span><h3 class="ind-name">教育</h3><span class="ind-count">7 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>双减政策延续 / 职业教育 / AI+教育 / K12转型</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="http://www.moe.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 政策"><span class="pill-ic">🏛️</span><span class="pill-nm">教育部</span><span class="pill-tier">T1</span></a>
+<a href="https://www.jiemodui.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 教育"><span class="pill-ic">📰</span><span class="pill-nm">芥末堆</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 公众号 · T1"><span class="pill-ic">📱</span><span class="pill-nm">多鲸资本教育研究</span><span class="pill-tier">需订阅</span></span>
+<a href="https://edu.lanjinger.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 教育"><span class="pill-ic">📰</span><span class="pill-nm">蓝鲸教育</span><span class="pill-tier">T1</span></a>
+<a href="https://www.iresearch.com.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 报告"><span class="pill-ic">📈</span><span class="pill-nm">艾瑞 教育报告</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<a href="https://www.jingmeiti.com" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · 教育"><span class="pill-ic">📰</span><span class="pill-nm">鲸媒体</span><span class="pill-tier">T2</span></a>
+<span class="src-pill no-url tier-t2" title="需关注公众号 · 公众号 · T2"><span class="pill-ic">📱</span><span class="pill-nm">黑板洞察</span><span class="pill-tier">需订阅</span></span>
+</div></div>
+</div>
+<div class="industry-card pri-A" id="ind-ind-finance">
+<div class="ind-header"><span class="ind-icon">💰</span><h3 class="ind-name">金融</h3><span class="ind-count">8 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>互联网金融监管 / 消费金融 / 保险线上化 / 财富管理</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="http://www.pbc.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 政策"><span class="pill-ic">🏛️</span><span class="pill-nm">中国人民银行</span><span class="pill-tier">T1</span></a>
+<a href="https://www.cbirc.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 政策"><span class="pill-ic">🏛️</span><span class="pill-nm">国家金融监督管理总局</span><span class="pill-tier">T1</span></a>
+<a href="http://www.csrc.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 政策"><span class="pill-ic">🏛️</span><span class="pill-nm">证监会</span><span class="pill-tier">T1</span></a>
+<a href="https://www.caixin.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 深度 · 付费"><span class="pill-ic">📰</span><span class="pill-nm">财新网</span><span class="pill-tier">T1</span></a>
+<a href="https://www.21jingji.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 综合"><span class="pill-ic">📰</span><span class="pill-nm">21世纪经济报道</span><span class="pill-tier">T1</span></a>
+<a href="https://www.sufe.edu.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 金融"><span class="pill-ic">📈</span><span class="pill-nm">麻袋研究院 / 苏宁金融研究院</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<span class="src-pill no-url tier-t2" title="需关注公众号 · 公众号 · T2"><span class="pill-ic">📱</span><span class="pill-nm">新流财经</span><span class="pill-tier">需订阅</span></span>
+<span class="src-pill no-url tier-t2" title="需关注公众号 · 公众号 · T2"><span class="pill-ic">📱</span><span class="pill-nm">镭射财经</span><span class="pill-tier">需订阅</span></span>
+</div></div>
+</div>
+</div></section>
+<section class="pri-section">
+<div class="pri-header"><span class="pri-badge" style="background:#16a34a">B 级 · 一般赛道</span><span class="pri-meta">每月一次 · 4 个行业</span></div>
+<div class="industries">
+<div class="industry-card pri-B" id="ind-ind-leisure">
+<div class="ind-header"><span class="ind-icon">🎮</span><h3 class="ind-name">休闲娱乐（KTV/桌游/剧本杀/密室）</h3><span class="ind-count">5 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>年轻消费 / 节假日数据 / 新业态</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://about.meituan.com/research" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 休闲娱乐"><span class="pill-ic">📈</span><span class="pill-nm">美团行业研究</span><span class="pill-tier">T1</span></a>
+<a href="https://www.geohey.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 门店"><span class="pill-ic">📈</span><span class="pill-nm">极海品牌监测</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<a href="https://www.tech-planet.cn" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · 互联网"><span class="pill-ic">📰</span><span class="pill-nm">Tech星球</span><span class="pill-tier">T2</span></a>
+<span class="src-pill no-url tier-t2" title="需关注公众号 · 公众号 · T2"><span class="pill-ic">📱</span><span class="pill-nm">剧本杀行业观察</span><span class="pill-tier">需订阅</span></span>
+<span class="src-pill no-url tier-t2" title="需关注公众号 · 协会 · T2"><span class="pill-ic">🤝</span><span class="pill-nm">中国饭店协会 休闲娱乐分会</span><span class="pill-tier">需订阅</span></span>
+</div></div>
+</div>
+<div class="industry-card pri-B" id="ind-ind-telecom">
+<div class="ind-header"><span class="ind-icon">📡</span><h3 class="ind-name">通信 / 5G</h3><span class="ind-count">5 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>三大运营商竞争 / 5G应用 / 广电网络 / 卫星互联网</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://www.miit.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 政策"><span class="pill-ic">🏛️</span><span class="pill-nm">工信部</span><span class="pill-tier">T1</span></a>
+<a href="http://www.caict.ac.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 报告"><span class="pill-ic">📈</span><span class="pill-nm">中国信通院</span><span class="pill-tier">T1</span></a>
+<a href="http://www.c114.com.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 通信"><span class="pill-ic">📰</span><span class="pill-nm">C114通信网</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 官方 · T1"><span class="pill-ic">🏢</span><span class="pill-nm">三大运营商财报</span><span class="pill-tier">需订阅</span></span>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<a href="https://www.cww.net.cn" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · 通信"><span class="pill-ic">📰</span><span class="pill-nm">通信世界网</span><span class="pill-tier">T2</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-B" id="ind-ind-industry">
+<div class="ind-header"><span class="ind-icon">🏭</span><h3 class="ind-name">工农业</h3><span class="ind-count">6 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>工业互联网 / 智能制造 / 农产品流通 / 数字农业</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="http://www.stats.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 数据"><span class="pill-ic">🏛️</span><span class="pill-nm">国家统计局</span><span class="pill-tier">T1</span></a>
+<a href="https://www.miit.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 政策"><span class="pill-ic">🏛️</span><span class="pill-nm">工信部</span><span class="pill-tier">T1</span></a>
+<a href="http://www.moa.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 政策"><span class="pill-ic">🏛️</span><span class="pill-nm">农业农村部</span><span class="pill-tier">T1</span></a>
+<a href="https://www.qianzhan.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 报告"><span class="pill-ic">📈</span><span class="pill-nm">前瞻产业研究院</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<a href="https://www.gongkong.com" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · 工业"><span class="pill-ic">📰</span><span class="pill-nm">工控网</span><span class="pill-tier">T2</span></a>
+<a href="http://www.farmer.com.cn" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · 农业"><span class="pill-ic">📰</span><span class="pill-nm">中国农网</span><span class="pill-tier">T2</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-B" id="ind-ind-legal">
+<div class="ind-header"><span class="ind-icon">⚖️</span><h3 class="ind-name">法律服务</h3><span class="ind-count">5 源</span></div>
+<div class="ind-focus"><strong>扫描重点：</strong>互联网法律服务 / AI律师 / 合规咨询 / 知识产权</div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="http://www.moj.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 政策"><span class="pill-ic">🏛️</span><span class="pill-nm">司法部</span><span class="pill-tier">T1</span></a>
+<a href="http://www.acla.org.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="协会 · T1 · 律师"><span class="pill-ic">🤝</span><span class="pill-nm">中国律师网</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<span class="src-pill no-url tier-t2" title="需关注公众号 · 公众号 · T2"><span class="pill-ic">📱</span><span class="pill-nm">法盛金融律师</span><span class="pill-tier">需订阅</span></span>
+<a href="https://www.allbrightlaw.com" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · 法律科技"><span class="pill-ic">📰</span><span class="pill-nm">智合</span><span class="pill-tier">T2</span></a>
+<a href="https://www.itslaw.com" target="_blank" rel="noopener" class="src-pill tier-t2" title="数据 · T2 · 案例"><span class="pill-ic">📈</span><span class="pill-nm">无讼</span><span class="pill-tier">T2</span></a>
+</div></div>
+</div>
+</div></section>
+<section class="cross-section">
+<div class="pri-header"><span class="pri-badge" style="background:var(--blue)">🌐 跨行业核心信源</span><span class="pri-meta">通用维度 · 适用多行业</span></div>
+<div class="cross-cards">
+<div class="industry-card pri-S" id="cross-广告与营销监管">
+<div class="ind-header"><span class="ind-icon">📢</span><h3 class="ind-name">广告与营销监管</h3><span class="ind-count">8 源</span></div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://www.samr.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 广告法"><span class="pill-ic">🏛️</span><span class="pill-nm">国家市场监督管理总局 广告司</span><span class="pill-tier">T1</span></a>
+<a href="https://www.samr.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政策 · T1 · 法规"><span class="pill-ic">⚖️</span><span class="pill-nm">广告法及实施条例</span><span class="pill-tier">T1</span></a>
+<a href="http://www.cac.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 互联网"><span class="pill-ic">🏛️</span><span class="pill-nm">网信办 互联网信息服务管理</span><span class="pill-tier">T1</span></a>
+<a href="https://www.china-caa.org" target="_blank" rel="noopener" class="src-pill tier-t1" title="协会 · T1 · 广告"><span class="pill-ic">🤝</span><span class="pill-nm">中国广告协会</span><span class="pill-tier">T1</span></a>
+<a href="https://www.madisonboom.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 营销"><span class="pill-ic">📰</span><span class="pill-nm">麦迪逊邦</span><span class="pill-tier">T1</span></a>
+<a href="https://www.digitaling.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 创意"><span class="pill-ic">📰</span><span class="pill-nm">数英 DIGITALING</span><span class="pill-tier">T1</span></a>
+<a href="https://www.morketing.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 营销"><span class="pill-ic">📰</span><span class="pill-nm">Morketing</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<a href="https://www.marteker.cn" target="_blank" rel="noopener" class="src-pill tier-t2" title="媒体 · T2 · MarTech"><span class="pill-ic">📰</span><span class="pill-nm">Marteker 营销技术官</span><span class="pill-tier">T2</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-S" id="cross-竞媒平台准入禁入">
+<div class="ind-header"><span class="ind-icon">🚫</span><h3 class="ind-name">竞媒平台准入禁入</h3><span class="ind-count">6 源</span></div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://e.oceanengine.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 抖音 · 准入"><span class="pill-ic">🏢</span><span class="pill-nm">巨量引擎 行业准入清单</span><span class="pill-tier">T1</span></a>
+<a href="https://e.qq.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 腾讯 · 准入"><span class="pill-ic">🏢</span><span class="pill-nm">腾讯广告 行业资质</span><span class="pill-tier">T1</span></a>
+<a href="https://yingxiao.baidu.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 百度 · 准入"><span class="pill-ic">🏢</span><span class="pill-nm">百度营销 行业准入</span><span class="pill-tier">T1</span></a>
+<a href="https://e.meituan.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 美团 · 准入"><span class="pill-ic">🏢</span><span class="pill-nm">美团广告 行业管理</span><span class="pill-tier">T1</span></a>
+<a href="https://ad.xiaohongshu.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 小红书"><span class="pill-ic">🏢</span><span class="pill-nm">小红书聚光平台 准入规则</span><span class="pill-tier">T1</span></a>
+<a href="https://ad.kuaishou.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="官方 · T1 · 快手"><span class="pill-ic">🏢</span><span class="pill-nm">快手磁力引擎 行业准入</span><span class="pill-tier">T1</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-S" id="cross-315 风险监测">
+<div class="ind-header"><span class="ind-icon">🚨</span><h3 class="ind-name">315 风险监测</h3><span class="ind-count">5 源</span></div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://315.cctv.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 315"><span class="pill-ic">📰</span><span class="pill-nm">中央广播电视总台 315晚会</span><span class="pill-tier">T1</span></a>
+<a href="https://tousu.sina.com.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 消费者投诉"><span class="pill-ic">📈</span><span class="pill-nm">黑猫投诉</span><span class="pill-tier">T1</span></a>
+<a href="https://www.12315.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 投诉"><span class="pill-ic">🏛️</span><span class="pill-nm">12315 全国消费者投诉举报平台</span><span class="pill-tier">T1</span></a>
+<a href="https://www.cca.org.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="协会 · T1 · 消费者"><span class="pill-ic">🤝</span><span class="pill-nm">中国消费者协会</span><span class="pill-tier">T1</span></a>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<span class="src-pill no-url tier-t2" title="需关注公众号 · 数据 · T2"><span class="pill-ic">📈</span><span class="pill-nm">啄木鸟数据 黑灰产监测</span><span class="pill-tier">需订阅</span></span>
+</div></div>
+</div>
+<div class="industry-card pri-S" id="cross-宏观经济与综合财经">
+<div class="ind-header"><span class="ind-icon">📊</span><h3 class="ind-name">宏观经济与综合财经</h3><span class="ind-count">10 源</span></div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="http://www.stats.gov.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="政府 · T1 · 宏观数据"><span class="pill-ic">🏛️</span><span class="pill-nm">国家统计局</span><span class="pill-tier">T1</span></a>
+<a href="https://www.caixin.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 财经"><span class="pill-ic">📰</span><span class="pill-nm">财新网</span><span class="pill-tier">T1</span></a>
+<a href="https://www.yicai.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 财经"><span class="pill-ic">📰</span><span class="pill-nm">第一财经</span><span class="pill-tier">T1</span></a>
+<a href="https://www.jiemian.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 综合"><span class="pill-ic">📰</span><span class="pill-nm">界面新闻</span><span class="pill-tier">T1</span></a>
+<a href="https://www.36kr.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 科技商业"><span class="pill-ic">📰</span><span class="pill-nm">36氪</span><span class="pill-tier">T1</span></a>
+<a href="https://www.huxiu.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 科技商业"><span class="pill-ic">📰</span><span class="pill-nm">虎嗅</span><span class="pill-tier">T1</span></a>
+<a href="https://www.tmtpost.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 科技"><span class="pill-ic">📰</span><span class="pill-nm">钛媒体</span><span class="pill-tier">T1</span></a>
+<a href="https://www.21jingji.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 财经"><span class="pill-ic">📰</span><span class="pill-nm">21世纪经济报道</span><span class="pill-tier">T1</span></a>
+<a href="https://www.bloomberg.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 海外"><span class="pill-ic">📰</span><span class="pill-nm">彭博 Bloomberg</span><span class="pill-tier">T1</span></a>
+<a href="https://cn.reuters.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="媒体 · T1 · 海外"><span class="pill-ic">📰</span><span class="pill-nm">路透中文</span><span class="pill-tier">T1</span></a>
+</div></div>
+</div>
+<div class="industry-card pri-S" id="cross-数据与咨询">
+<div class="ind-header"><span class="ind-icon">📈</span><h3 class="ind-name">数据与咨询</h3><span class="ind-count">9 源</span></div>
+<div class="tier-group"><div class="tier-label">T1 核心源</div><div class="pills">
+<a href="https://www.questmobile.com.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · MAU"><span class="pill-ic">📈</span><span class="pill-nm">QuestMobile</span><span class="pill-tier">T1</span></a>
+<a href="https://www.iresearch.com.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 报告"><span class="pill-ic">📈</span><span class="pill-nm">艾瑞咨询</span><span class="pill-tier">T1</span></a>
+<a href="https://www.analysys.cn" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 报告"><span class="pill-ic">📈</span><span class="pill-nm">易观分析</span><span class="pill-tier">T1</span></a>
+<a href="https://www.gartner.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · IT"><span class="pill-ic">📈</span><span class="pill-nm">Gartner</span><span class="pill-tier">T1</span></a>
+<a href="https://www.idc.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · IT"><span class="pill-ic">📈</span><span class="pill-nm">IDC</span><span class="pill-tier">T1</span></a>
+<a href="https://www.statista.com" target="_blank" rel="noopener" class="src-pill tier-t1" title="数据 · T1 · 全球"><span class="pill-ic">📈</span><span class="pill-nm">Statista</span><span class="pill-tier">T1</span></a>
+<a href="https://www.bcg.com/publications" target="_blank" rel="noopener" class="src-pill tier-t1" title="咨询 · T1 · 报告"><span class="pill-ic">💼</span><span class="pill-nm">BCG / McKinsey / Bain Insights</span><span class="pill-tier">T1</span></a>
+<span class="src-pill no-url tier-t1" title="需关注公众号 · 券商 · T1"><span class="pill-ic">📊</span><span class="pill-nm">国海证券 / 中信建投 行业研报</span><span class="pill-tier">需订阅</span></span>
+</div></div>
+<div class="tier-group"><div class="tier-label">T2 补充源</div><div class="pills">
+<a href="https://www.qianzhan.com" target="_blank" rel="noopener" class="src-pill tier-t2" title="数据 · T2 · 报告"><span class="pill-ic">📈</span><span class="pill-nm">前瞻产业研究院</span><span class="pill-tier">T2</span></a>
+</div></div>
+</div>
+</div></section>
+</main>
+<footer class="footer">
+  <p>📊 共 180 个信源 · 19 个行业 · 5 个跨行业维度</p>
+  <p>由 <a href="https://strategy666.github.io/insight-platform/">市场洞察 Portal</a> 提供 · 更新于 2026-05-28</p>
+  <p>数据源：<a href="https://github.com/strategy666/insight-platform/blob/main/insight-platform/assets/data/sources.json" target="_blank">sources.json</a> · 修改后通过 <code>tools/json_to_html.py</code> 重新生成</p>
+</footer>
+</body>
+</html>
