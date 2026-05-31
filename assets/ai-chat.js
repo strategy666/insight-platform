@@ -15,8 +15,8 @@
         llm_endpoint: 'https://api.deepseek.com/v1',
         llm_key: 'sk-26d4c78e1c6b47db9213a4a8db01b2d4',
         llm_model: 'deepseek-v4-flash',
-        search_provider: 'none',  // 无独立搜索 key 时，由 LLM 本身知识库代替
-        search_key: ''
+        search_provider: 'tavily',  // 已内置 Tavily key
+        search_key: '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'
     };
     const DEFAULT_CFG = {
         llm_endpoint: '',

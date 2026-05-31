@@ -9,7 +9,7 @@
     <title>商业化洞察 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究 / 战分助手" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260531z" />
+    <link rel="stylesheet" href="assets/style.css?v=20260601a" />
 </head>
 <body>
 
@@ -327,21 +327,49 @@
     </div>
 </section>
 
-<!-- ① 行业报告库入口 -->
+<!-- ① 行业研报检索·内嵌搜索栏（已内置 Tavily key） -->
 <section class="section research-portal-row">
     <div class="container">
-        <div class="research-portals">
-            <div class="research-portal-card primary" onclick="openNxnyModal()" style="cursor:pointer">
-                <div class="rp-icon">📊</div>
-                <div class="rp-body">
-                    <div class="rp-title">行业研报检索</div>
-                    <div class="rp-desc">嵌入式调用第三方研报库（暖夕南野），数千份卖方研报 / 行业白皮书 / 一手访谈</div>
-                    <div class="rp-actions">
-                        <span class="rp-tag">嵌入式检索</span>
-                        <span class="rp-link">打开检索弹窗 →</span>
-                    </div>
+        <div class="nxny-inline">
+            <div class="nxny-inline-head">
+                <div class="nxny-inline-icon">📊</div>
+                <div class="nxny-inline-headtext">
+                    <div class="nxny-inline-title">行业研报检索</div>
+                    <div class="nxny-inline-sub">实时调用第三方研报库（暖夕南野）· 数千份卖方研报 / 行业白皮书 / 一手访谈</div>
                 </div>
             </div>
+            <div class="nxny-inline-searchbar">
+                <input type="text" id="nxnyInlineInput" class="nxny-inline-input"
+                       placeholder="🔍 输入行业 / 领域 / 机构 检索研报（回车搜索）"
+                       onkeypress="if(event.key==='Enter')searchNxnyInline(this.value)" />
+                <button class="nxny-inline-btn" onclick="searchNxnyInline(document.getElementById('nxnyInlineInput').value)">检索</button>
+                <label class="nxny-inline-allweb" title="勾选后不限 nxny，全网检索">
+                    <input type="checkbox" id="nxnyInlineAllWeb" />
+                    <span>🌐 全网</span>
+                </label>
+            </div>
+            <div class="nxny-inline-suggest">
+                <span class="nxny-inline-suggest-label">热门推荐：</span>
+                <button class="nxny-inline-pill" onclick="searchNxnyInline('本地生活 2025 市场规模与竞争格局')">本地生活市场格局</button>
+                <button class="nxny-inline-pill" onclick="searchNxnyInline('快手生服商业化趋势')">快手生服趋势</button>
+                <button class="nxny-inline-pill" onclick="searchNxnyInline('餐饮行业 2025 报告')">餐饮行业</button>
+                <button class="nxny-inline-pill" onclick="searchNxnyInline('医美行业研究报告')">医美</button>
+                <button class="nxny-inline-pill" onclick="searchNxnyInline('新能源汽车后市场')">新能源后市场</button>
+                <button class="nxny-inline-pill" onclick="searchNxnyInline('AI 数字人直播带货 行业报告')">AI 数字人直播</button>
+                <button class="nxny-inline-pill" onclick="searchNxnyInline('生鲜电商 即时零售 竞争格局')">即时零售</button>
+                <button class="nxny-inline-pill" onclick="searchNxnyInline('宠物经济 2025 白皮书')">宠物经济</button>
+                <button class="nxny-inline-pill" onclick="searchNxnyInline('教育培训 职业教育 报告')">教育培训</button>
+            </div>
+            <div id="nxnyInlineResults" class="nxny-inline-results">
+                <div class="nxny-inline-empty">
+                    <span class="nxny-inline-empty-icon">🔎</span>
+                    输入关键词或点击上方热门推荐，在线检索第三方研报库·结果在下方直接展示
+                </div>
+            </div>
+        </div>
+
+        <!-- 辅助卡片·体量压缩为纵向小缩略 -->
+        <div class="research-portals research-portals-compact">
             <div class="research-portal-card secondary" onclick="document.getElementById('indMindmapInput').focus()">
                 <div class="rp-icon">🔍</div>
                 <div class="rp-body">
@@ -1275,6 +1303,75 @@ async function nxnyWebSearchInline(query, cfg, topN) {
     throw new Error('未知搜索提供商：' + provider);
 }
 
+// ==== 内嵌检索栏（替代 modal）====
+window.searchNxnyInline = async function(kw) {
+    if (!kw) kw = document.getElementById('nxnyInlineInput').value || '';
+    kw = String(kw).trim();
+    if (!kw) return;
+    document.getElementById('nxnyInlineInput').value = kw;
+    var results = document.getElementById('nxnyInlineResults');
+    var allWeb = document.getElementById('nxnyInlineAllWeb') && document.getElementById('nxnyInlineAllWeb').checked;
+    var scope = allWeb ? '🌐 全网检索' : '📊 限定 site:nxny.com';
+    results.innerHTML = '<div class="nxny-loading">⏳ 正在检索「<b>' + escapeHtmlNxny(kw) + '</b>」（' + scope + '）…</div>';
+
+    var cfg;
+    try {
+        cfg = (typeof window.__getAIConfig === 'function') ? window.__getAIConfig() : null;
+        if (!cfg) {
+            var raw = localStorage.getItem('insight_ai_config_v1');
+            cfg = raw ? JSON.parse(raw) : null;
+        }
+    } catch(e) { cfg = null; }
+
+    var hasWebSearch = cfg && cfg.search_key && cfg.search_provider && cfg.search_provider !== 'none';
+    var hasLLM = cfg && cfg.llm_endpoint && cfg.llm_key;
+
+    if (!hasWebSearch && !hasLLM) {
+        results.innerHTML = renderNxnyNoApiKey(kw, allWeb);
+        return;
+    }
+    if (!hasWebSearch && hasLLM) {
+        await runNxnyLLMRecommend(kw, allWeb, cfg, results);
+        return;
+    }
+
+    var fullQuery = allWeb
+        ? (kw + ' 行业研究 OR 行业报告 OR 研报 2024 OR 2025')
+        : ('site:nxny.com ' + kw);
+
+    try {
+        var items = await nxnyWebSearchInline(fullQuery, cfg, 15);
+        if (!items.length) {
+            results.innerHTML = '<div class="nxny-inline-empty">🤷 未找到「' + escapeHtmlNxny(kw) + '」相关结果。试试其他关键词，或勾选 🌐 全网检索 放宽范围。</div>';
+            return;
+        }
+        results.innerHTML = '<div class="nxny-meta">📊 共 <b>' + items.length + '</b> 条结果 · 关键词「<b>' + escapeHtmlNxny(kw) + '</b>」· ' + scope + ' · ' + escapeHtmlNxny(cfg.search_provider) + '</div>' +
+            items.map(function(it, i) {
+                var domain = '';
+                try { domain = new URL(it.url).hostname.replace(/^www\./, ''); } catch(e) {}
+                var isNxny = /nxny\.com/i.test(it.url);
+                return '<div class="nxny-result-card' + (isNxny ? ' is-nxny' : '') + '">' +
+                    '<div class="nxny-rc-no">' + (i+1) + '</div>' +
+                    '<div class="nxny-rc-body">' +
+                        '<a href="' + escapeAttrNxny(it.url) + '" target="_blank" rel="noopener" class="nxny-rc-title">' +
+                            escapeHtmlNxny(it.title || '无标题') +
+                        '</a>' +
+                        '<div class="nxny-rc-url">' + (isNxny ? '📊 ' : '🌐 ') + escapeHtmlNxny(domain) + ' · ' + escapeHtmlNxny(it.url.slice(0, 80)) + '</div>' +
+                        '<div class="nxny-rc-snippet">' + escapeHtmlNxny((it.snippet || '').slice(0, 300)) + '</div>' +
+                        '<div class="nxny-rc-actions">' +
+                            '<a href="' + escapeAttrNxny(it.url) + '" target="_blank" rel="noopener" class="nxny-rc-btn primary">↗ 打开原文</a>' +
+                            (isNxny ? '<span class="nxny-rc-tag">nxny.com 报告</span>' : '<span class="nxny-rc-tag other">' + escapeHtmlNxny(domain) + '</span>') +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+            }).join('');
+    } catch (err) {
+        results.innerHTML = '<div class="nxny-error">❌ 检索失败：' + escapeHtmlNxny(err.message || String(err)) +
+            '<div class="nxny-fb-actions" style="margin-top:8px"><button class="nxny-fb-btn primary" onclick="openAISettings()">⚙️ 检查配置</button>' +
+            '<a href="https://www.google.com/search?q=' + encodeURIComponent(kw) + '" target="_blank" rel="noopener" class="nxny-fb-btn">↗ Google 搜本词</a></div></div>';
+    }
+};
+
 function escapeHtmlNxny(s) {
     return String(s||'').replace(/[&<>"']/g, function(c){
         return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
@@ -1371,13 +1468,13 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260531z"></script>
-<script src="assets/feishu-search.js?v=20260531z"></script>
-<script src="assets/ai-chat.js?v=20260531z"></script>
-<script src="assets/industry-research.js?v=20260531z"></script>
-<script src="assets/onboarding.js?v=20260531z"></script>
-<script src="assets/chat-widget.js?v=20260531z"></script>
-<script src="assets/assistant-tab.js?v=20260531z"></script>
+<script src="assets/main.js?v=20260601a"></script>
+<script src="assets/feishu-search.js?v=20260601a"></script>
+<script src="assets/ai-chat.js?v=20260601a"></script>
+<script src="assets/industry-research.js?v=20260601a"></script>
+<script src="assets/onboarding.js?v=20260601a"></script>
+<script src="assets/chat-widget.js?v=20260601a"></script>
+<script src="assets/assistant-tab.js?v=20260601a"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){

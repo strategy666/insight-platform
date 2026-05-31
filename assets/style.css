@@ -5047,3 +5047,141 @@ button.nxny-external-btn {
 #tab-research .hero.hero-sub .hero-subtitle {
     color: #fff !important;
 }
+
+/* ============== Tab3 行研检索 · 内嵌搜索栏（替代 modal） ============== */
+.nxny-inline {
+    background: linear-gradient(135deg, #ffffff 0%, #fbfbff 100%);
+    border: 1px solid #ece6ff;
+    border-radius: 14px;
+    padding: 18px 22px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 18px rgba(102, 76, 196, 0.06);
+}
+.nxny-inline-head {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+}
+.nxny-inline-icon {
+    font-size: 28px;
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #6d4ed8 0%, #9b6cf5 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(109, 78, 216, 0.25);
+}
+.nxny-inline-title {
+    font-size: 17px; font-weight: 700; color: #2c1d6b; margin-bottom: 2px;
+}
+.nxny-inline-sub {
+    font-size: 12px; color: #6b6593; line-height: 1.5;
+}
+.nxny-inline-searchbar {
+    display: flex; gap: 8px; align-items: stretch; margin-bottom: 12px;
+}
+.nxny-inline-input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 1.5px solid #d8d0f5;
+    border-radius: 10px;
+    background: #fff;
+    color: #2c1d6b;
+    transition: all 0.15s;
+    outline: none;
+}
+.nxny-inline-input:focus {
+    border-color: #6d4ed8;
+    box-shadow: 0 0 0 3px rgba(109, 78, 216, 0.12);
+}
+.nxny-inline-input::placeholder { color: #a39db8; }
+.nxny-inline-btn {
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #6d4ed8 0%, #9b6cf5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+.nxny-inline-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(109, 78, 216, 0.3);
+}
+.nxny-inline-allweb {
+    display: flex; align-items: center; gap: 6px;
+    padding: 0 14px;
+    background: #fff;
+    border: 1.5px solid #f0e8d8;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #6b5a32;
+    white-space: nowrap;
+    user-select: none;
+}
+.nxny-inline-allweb input { margin: 0; cursor: pointer; }
+
+.nxny-inline-suggest {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    margin-bottom: 14px;
+}
+.nxny-inline-suggest-label {
+    font-size: 12px; color: #6b6593; font-weight: 600;
+}
+.nxny-inline-pill {
+    padding: 6px 12px;
+    background: #f3eeff;
+    color: #5639b8;
+    border: 1px solid #e1d5fa;
+    border-radius: 16px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.12s;
+}
+.nxny-inline-pill:hover {
+    background: #6d4ed8;
+    color: #fff;
+    border-color: #6d4ed8;
+    transform: translateY(-1px);
+}
+
+.nxny-inline-results {
+    min-height: 80px;
+    border-top: 1px dashed #e8e2f7;
+    padding-top: 14px;
+}
+.nxny-inline-empty {
+    text-align: center;
+    color: #8d87a8;
+    font-size: 13px;
+    padding: 24px 16px;
+    background: #faf8ff;
+    border-radius: 10px;
+    border: 1px dashed #d8d0f5;
+}
+.nxny-inline-empty-icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 6px;
+    opacity: 0.7;
+}
+
+/* 紧凑型辅助卡片（脑图搜索 + 数据说明） */
+.research-portals-compact {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.research-portals-compact .research-portal-card {
+    padding: 14px 16px;
+    min-height: auto;
+}
+.research-portals-compact .rp-title { font-size: 14px; }
+.research-portals-compact .rp-desc  { font-size: 12px; }
+
+@media (max-width: 700px) {
+    .nxny-inline-searchbar { flex-direction: column; }
+    .nxny-inline-allweb { justify-content: center; padding: 10px; }
+    .research-portals-compact { grid-template-columns: 1fr; }
+}
