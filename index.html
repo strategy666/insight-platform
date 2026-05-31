@@ -9,7 +9,7 @@
     <title>商业化洞察 v2.0 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究 / 战分助手" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260531k" />
+    <link rel="stylesheet" href="assets/style.css?v=20260531m" />
 </head>
 <body>
 
@@ -341,8 +341,11 @@
         <div class="feishu-result-grid" id="fsResultList">
             <div class="dual-empty">⏳ 加载中...</div>
         </div>
-    </div>
-</section>
+        </div><!-- /ffm-body -->
+    </div><!-- /ffm-panel -->
+</div><!-- /feishuFullModal -->
+
+</div><!-- /tab-competitors -->
 
 <!-- ===================== TAB 3: 行业研究（脑图 + 报告库） ===================== -->
 <div class="tab-pane" id="tab-research">
@@ -543,11 +546,18 @@
             switchTab(a.dataset.tab);
         }
     });
-    // 启动时根据 hash 自动切
-    document.addEventListener('DOMContentLoaded', function(){
+    // 启动时根据 hash 自动切（三重兜底）
+    function _bootTab(){
         var h = (location.hash || '').replace('#','');
         if (h && document.getElementById('tab-' + h)) switchTab(h);
-    });
+    }
+    // inline script 在 body 底部，DOM 已就绪，直接立即切
+    _bootTab();
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', _bootTab);
+    }
+    // hashchange 也响应
+    window.addEventListener('hashchange', _bootTab);
 })();
 
 // ==== Part2 双源检索：公开竞对动态 + 飞书对外文档 + AI 摘要 ====
@@ -1005,9 +1015,9 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260531k"></script>
-<script src="assets/feishu-search.js?v=20260531k"></script>
-<script src="assets/industry-research.js?v=20260531k"></script>
+<script src="assets/main.js?v=20260531m"></script>
+<script src="assets/feishu-search.js?v=20260531m"></script>
+<script src="assets/industry-research.js?v=20260531m"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){
