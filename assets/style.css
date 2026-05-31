@@ -4900,3 +4900,42 @@ button.nxny-external-btn {
     .as-gate-card { padding: 24px 18px; margin: 16px 12px; }
     .as-gate-head { flex-direction: column; gap: 12px; }
 }
+
+/* Tab4 — KB 增强：搜索框 + 分类分组 + 高优标记 */
+.as-kb-search {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid #d8e0db;
+    border-radius: 6px;
+    font-size: 12.5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    outline: none;
+}
+.as-kb-search:focus { border-color: #2a6f4f; }
+.as-kb-cat { margin-bottom: 14px; }
+.as-kb-cat-head {
+    font-size: 12px;
+    font-weight: 700;
+    color: #555;
+    padding: 6px 4px;
+    margin-bottom: 6px;
+    border-bottom: 1px dashed #e0e6e2;
+    display: flex; align-items: center; gap: 6px;
+}
+.as-kb-cat-cnt {
+    background: #2a6f4f; color: #fff;
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 8px;
+    margin-left: auto;
+}
+.as-kb-item.is-high {
+    border-left-color: #ff6b35;
+    background: #fff8f3;
+}
+.as-kb-item.is-high::after {
+    content: '🔥';
+    float: right;
+    font-size: 11px;
+}

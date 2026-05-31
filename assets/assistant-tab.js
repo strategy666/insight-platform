@@ -19,9 +19,12 @@
     const LS_HIST = 'insight_assistant_chat_v1';
 
     // 内部知识库索引（手动 ingest 后填入）
-    // 每条 = { id, title, doc_url, summary, full?  }
+    // 每条 = { id, category, title, doc_url, summary, full?, priority? }
     // full 字段如果存在，将作为 LLM context 注入（避免一次性塞超过 token 上限）
     let internalKB = [];
+    let kbCategories = [];
+    let kbMeta = {};
+    let kbFilter = ''; // 侧栏搜索/过滤
 
     let chatHistory = loadHistory();
     let isLoading = false;
@@ -48,7 +51,9 @@
             if (!r.ok) return;
             const idx = await r.json();
             internalKB = idx.docs || [];
-            console.log('[Assistant] Loaded internal KB:', internalKB.length, 'docs');
+            kbCategories = idx.categories || [];
+            kbMeta = idx._meta || {};
+            console.log('[Assistant] Loaded internal KB:', internalKB.length, 'docs across', kbCategories.length, 'categories');
             updateKBBadge();
         } catch(e) {
             console.log('[Assistant] No internal KB yet (data/internal-kb/index.json not found)');
@@ -224,6 +229,7 @@
                     <h3>🗂️ 内部知识库</h3>
                     <span class="as-help" title="文档源由管理员从 docs.corp.kuaishou.com 同步">?</span>
                   </div>
+                  <input type="text" id="asKbSearch" class="as-kb-search" placeholder="🔍 过滤文档（如：26年、BP、线索）" />
                   <div id="asKbList" class="as-kb-list"></div>
                 </aside>
 
@@ -231,9 +237,10 @@
                 <main class="as-chat-main">
                   <div id="asChatBody" class="as-chat-body"></div>
                   <div class="as-quick-row">
-                    <button class="as-quick" data-q="知识库里有哪些文档？">📚 列出所有文档</button>
-                    <button class="as-quick" data-q="总结一下内部对竞对最新的战略判断">🎯 战略判断总结</button>
-                    <button class="as-quick" data-q="对比一下我们和字节在本地生活的差异">🆚 vs 字节</button>
+                    <button class="as-quick" data-q="知识库里有哪些文档？按分类列出来">📚 列出所有文档</button>
+                    <button class="as-quick" data-q="字节生服 26 年最新的战略重点是什么？">🎯 字节最新战略</button>
+                    <button class="as-quick" data-q="字节线索广告 26Q1 的 OKR 和 Q2 规划核心点">📊 26Q1 线索 OKR</button>
+                    <button class="as-quick" data-q="对比一下字节 24-26 BP 和 25-27 BP 战略变化">📈 BP 演进对比</button>
                   </div>
                   <div class="as-input-wrap">
                     <textarea id="asInput" class="as-input" rows="1" placeholder="提问内部文档相关问题（回车发送，Shift+回车换行）"></textarea>
@@ -249,6 +256,11 @@
     function bindChat() {
         loadInternalKB().then(() => {
             renderKBList();
+            const sb = document.getElementById('asKbSearch');
+            if (sb) sb.addEventListener('input', e => {
+                kbFilter = e.target.value.trim().toLowerCase();
+                renderKBList();
+            });
         });
         const input = document.getElementById('asInput');
         const send = document.getElementById('asSend');
@@ -282,10 +294,29 @@
                 </div>`;
             return;
         }
-        el.innerHTML = internalKB.map(d => `
-            <div class="as-kb-item" title="${escapeHtml(d.summary||'')}">
-              <div class="as-kb-title">${escapeHtml(d.title||'未命名')}</div>
-              ${d.doc_url ? `<a class="as-kb-link" href="${escapeHtml(d.doc_url)}" target="_blank">原文 ↗</a>` : ''}
+        // 按 category 分组
+        const filt = (d) => !kbFilter || ((d.title||'')+(d.summary||'')).toLowerCase().includes(kbFilter);
+        const filtered = internalKB.filter(filt);
+        const catMap = {};
+        kbCategories.forEach(c => { catMap[c.id] = { ...c, items: [] }; });
+        catMap['_other'] = { id:'_other', icon:'📄', name:'其他', items: [] };
+        filtered.forEach(d => {
+            (catMap[d.category] || catMap['_other']).items.push(d);
+        });
+        const cats = Object.values(catMap).filter(c => c.items.length);
+        if (!cats.length) {
+            el.innerHTML = '<div class="as-kb-empty"><p style="padding:18px">无匹配文档</p></div>';
+            return;
+        }
+        el.innerHTML = cats.map(c => `
+            <div class="as-kb-cat">
+              <div class="as-kb-cat-head">${c.icon||'📄'} ${escapeHtml(c.name)} <span class="as-kb-cat-cnt">${c.items.length}</span></div>
+              ${c.items.map(d => `
+                <div class="as-kb-item ${d.priority==='high'?'is-high':''}" title="${escapeHtml(d.summary||'')}">
+                  <div class="as-kb-title">${d.priority==='high'?'🔥 ':''}${escapeHtml(d.title||'未命名')}</div>
+                  ${d.doc_url ? `<a class="as-kb-link" href="${escapeHtml(d.doc_url)}" target="_blank" rel="noopener">原文 ↗</a>` : ''}
+                </div>
+              `).join('')}
             </div>
         `).join('');
     }
@@ -367,30 +398,46 @@
     }
 
     function buildSystemPrompt(q) {
-        const idx = internalKB.map(d => ({
-            id: d.id, title: d.title, summary: (d.summary||'').slice(0, 200), url: d.doc_url
-        }));
-        // 简单关键词命中，注入相关文档的 full 内容
+        // 全索引（title+summary+url），按 category 分组让 LLM 更易理解
+        const byCat = {};
+        kbCategories.forEach(c => byCat[c.id] = { name: c.name, docs: [] });
+        byCat['_other'] = { name: '其他', docs: [] };
+        internalKB.forEach(d => {
+            (byCat[d.category] || byCat['_other']).docs.push({
+                id: d.id, title: d.title, summary: (d.summary||'').slice(0, 200), url: d.doc_url, priority: d.priority
+            });
+        });
+        // 仅含 full 字段的文档才有正文可注入
         const qLow = q.toLowerCase();
-        const hits = internalKB.filter(d => {
+        const fulltext = internalKB.filter(d => d.full).filter(d => {
             const t = ((d.title||'') + ' ' + (d.summary||'') + ' ' + (d.full||'')).toLowerCase();
             return qLow.split(/[\s,，。?？]+/).filter(w=>w.length>=2).some(w => t.includes(w));
         }).slice(0, 3);
 
+        const hasFulltext = internalKB.some(d => d.full);
+
         return `你是「快手生服战分助手」，仅基于下方「内部知识库」回答用户问题。
 
+【知识库元数据】
+- 源文档：${kbMeta.source_title || '竞品内部材料导航目录'}
+- 文档总数：${internalKB.length}（涵盖字节·生活服务/商业化整体/线索广告 三大类）
+- 最后同步：${kbMeta.last_synced || '未知'}
+${hasFulltext ? '- 部分文档已注入正文，可直接回答细节' : '- ⚠️ 目前知识库仅含【文档标题 + 摘要 + 原文链接】，未注入文档正文'}
+
 【严格规则】
-1. 只用知识库中的信息，不要编造没有在 KB 中出现的事实
-2. 如果 KB 没有覆盖用户问题，明确说"知识库暂未收录该主题"，不要瞎答
-3. 回答末尾必须列出引用的文档：📎 引用文档：[文档标题](url)
-4. 数据敏感，回答中不要出现"对外披露"等措辞
-5. 用 markdown，关键观点 **加粗**
+1. 只用知识库索引中存在的文档（title + summary）回答
+2. 当问题涉及具体数据/段落细节 → 如果文档没有 full 字段，要明确说"该问题需要查看原文细节，请点击下方链接查阅：[文档标题](url)"
+3. 当问题问"有哪些文档/索引/导航" → 按分类列出文档标题 + 链接
+4. 回答末尾必须列出引用的文档：📎 引用文档：[文档标题](url)（可多条）
+5. 数据敏感，不要在回答中外推/编造数据；只引用知识库内出现的事实
+6. 用 markdown，关键观点 **加粗**，分类小标题用 ### 字节·生活服务
 
-【知识库索引 - ${idx.length} 篇】
-${JSON.stringify(idx, null, 0)}
+【知识库索引（按分类）】
+${Object.entries(byCat).filter(([k,v])=>v.docs.length).map(([k,v])=>`
+## ${v.name} (${v.docs.length} 篇)
+${v.docs.map(d => `- [${d.title}](${d.url}) — ${d.summary}${d.priority==='high'?' 【高优】':''}`).join('\n')}`).join('\n')}
 
-${hits.length ? `【与本次问题相关的文档全文】
-${hits.map((h,i) => `--- 文档 ${i+1}：${h.title} ---\n${(h.full||'').slice(0, 4000)}\n`).join('\n')}` : '【提示】当前知识库索引中未命中本次问题的相关文档。'}
+${fulltext.length ? `\n【与本次问题相关的文档全文】\n${fulltext.map((h,i) => `--- 文档 ${i+1}：${h.title} ---\n${(h.full||'').slice(0, 4000)}\n`).join('\n')}` : ''}
 `;
     }
 

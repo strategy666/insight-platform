@@ -1,24 +1,76 @@
 {
   "_meta": {
-    "source": "docs.corp.kuaishou.com",
-    "owner_doc": "fcABypg8VYuXbE6sYnoKQooXu",
+    "source_doc": "https://docs.corp.kuaishou.com/d/home/fcABypg8VYuXbE6sYnoKQooXu",
+    "source_title": "竞品内部材料导航目录- For Skill",
     "last_synced": "2026-05-31",
-    "note": "数据由管理员通过 docs-shuttle skill 从内网文档系统同步。增量文档放在本目录下，并在 docs 数组追加。"
+    "owner_skill": "docs-shuttle + browser_agent",
+    "indexed_docs": 54,
+    "fulltext_ingested": 0,
+    "note": "目录文档由 browser_agent 拉取。子文档 URL 全部入库为 stub（只有 title+url+category），点击「原文 ↗」可直达。后续可用 ingest 流程把高优文档的全文加进 full 字段。"
   },
+  "categories": [
+    { "id": "data", "name": "数据底表", "icon": "📊" },
+    { "id": "bd-life", "name": "字节·生活服务", "icon": "🏪" },
+    { "id": "bd-comm", "name": "字节·商业化整体", "icon": "💰" },
+    { "id": "bd-leads", "name": "字节·线索广告", "icon": "🎯" }
+  ],
   "docs": [
-    {
-      "id": "demo-001",
-      "title": "【示例】快手生服 vs 字节抖音生服 — 竞对策略复盘 2026Q1",
-      "doc_url": "https://docs.corp.kuaishou.com/d/home/fcABypg8VYuXbE6sYnoKQooXu",
-      "summary": "示例文档：覆盖 26Q1 字节本地推迭代、出单宝节奏、快手对策。真实数据由 SSO 拉取后替换。",
-      "full": "## 核心结论\n\n2026 Q1 字节本地推走完 3 步关键迭代：① 1月「全域投放」从信息流跨域到搜索；② 4月底门店全域推广上线；③ 5月「出单宝」面向中小商家零门槛托管。\n\n快手核心差距：\n- 缺乏对标「出单宝」的轻量级零门槛投放产品\n- 缺乏跨域全域投放能力\n- 中小商家心智仍以「直播带货」为主，对达人探店/团购投放渗透不足\n\n## 建议方向\n\n1. **零门槛投放产品**：6 月内推出按核销结果计费的轻量化产品对标出单宝\n2. **跨域投放打通**：信息流 + 搜索 + 探店达人 三端打通\n3. **行业垂直**：丽人 / 医美 / 餐饮等高客单赛道率先打样\n\n## 数据点\n\n- 抖音生服 26Q1 GMV ~1700 亿，YoY +45%\n- 快手生服同期 GMV ~280 亿，YoY +60%\n- 抖音中小商家渗透率 ~38%，快手 ~22%"
-    },
-    {
-      "id": "demo-002",
-      "title": "【示例】百度医疗赛道访谈 — 阳光科室项目纪要",
-      "doc_url": "https://docs.corp.kuaishou.com/d/home/PLACEHOLDER",
-      "summary": "示例：百度医疗团队对「阳光科室」(科室医生独立账号体系) 的建设思路、流量逻辑、商业化路径的访谈纪要。",
-      "full": "## 项目背景\n\n百度健康在 25 年推出「阳光科室」，核心是把医院科室 IP 化，给每个科室建立独立账号矩阵，承接医患问答 → 私域沉淀 → 转化。\n\n## 关键观点\n\n- **流量分发逻辑**：不是给医生倒流，而是给「科室」倒流；医生作为内容创作者贡献内容\n- **商业模式**：科室付费包年（订阅制） + 单次问诊抽佣\n- **难点**：医院端配合度低（合规 + KPI 不匹配）；医生时间稀缺\n\n## 对快手的启示\n\n- 快手医疗赛道短期不宜对标，建议优先做「健康科普 IP」（个人医生 KOL）而不是机构 IP\n- 可以引入百度健康的「分级问诊」机制做差异化"
-    }
+    { "id": "bd-data-01", "category": "data", "title": "2026年字节生服广告数据追踪底表-新专家", "doc_url": "https://docs.corp.kuaishou.com/s/home/fcADMf3G_rARjiF07Zn0v6eMN", "summary": "字节生服广告数据追踪底表（电子表格）", "priority": "high" },
+
+    { "id": "bd-life-bp3y-2527", "category": "bd-life", "title": "字节生活服务3年BP 2025-2027", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAAZ5gG7H1Y_O4w89fee0bVJ", "summary": "字节生活服务最新 3 年业务规划 (2025-2027)", "priority": "high" },
+    { "id": "bd-life-bp3y-2426", "category": "bd-life", "title": "字节生活服务3年BP 2024-2026", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACEa0m-NXZZEMCAjvjJDTT9", "summary": "字节生活服务前一版 3 年业务规划 (2024-2026)", "priority": "high" },
+    { "id": "bd-life-2604", "category": "bd-life", "title": "字节生活服务26年4月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcADJcmAjX6o4PPAxWKqyTUYE", "summary": "字节生服 26 年 4 月月报（最新月报）", "priority": "high" },
+    { "id": "bd-life-2603", "category": "bd-life", "title": "字节生活服务26年3月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAAQ6YgVCtQQUWV5tLYXHGqS", "summary": "字节生服 26 年 3 月月报", "priority": "high" },
+    { "id": "bd-life-2602", "category": "bd-life", "title": "字节生活服务26年2月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcABgvMHtMxMNmjxPxJxpkZJ0", "summary": "字节生服 26 年 2 月月报", "priority": "medium" },
+    { "id": "bd-life-2512", "category": "bd-life", "title": "字节生活服务25年12月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcABIIxRWg2IogiH0wd45UXuL", "summary": "字节生服 25 年 12 月月报", "priority": "medium" },
+    { "id": "bd-life-2511", "category": "bd-life", "title": "字节生活服务25年11月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAAjtC8MQH2Hl4L91bP5xTf9", "summary": "字节生服 25 年 11 月月报", "priority": "medium" },
+    { "id": "bd-life-2510", "category": "bd-life", "title": "字节生活服务25年10月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAAMXIldwUJI0JaJA0dPONIf", "summary": "字节生服 25 年 10 月月报", "priority": "medium" },
+    { "id": "bd-life-25q3", "category": "bd-life", "title": "字节生活服务25年Q3复盘及Q4策略", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACECw4epShItNXlAFCult8H", "summary": "字节生服 25 Q3 复盘 + Q4 策略", "priority": "high" },
+    { "id": "bd-life-2509", "category": "bd-life", "title": "字节生活服务25年9月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcADgt7oiaaSAbQpmTuh_D30f", "summary": "字节生服 25 年 9 月月报", "priority": "low" },
+    { "id": "bd-life-2508", "category": "bd-life", "title": "字节生活服务25年8月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcABMfRAXpCihmKZkqsh1jfNr", "summary": "字节生服 25 年 8 月月报", "priority": "low" },
+    { "id": "bd-life-2507", "category": "bd-life", "title": "字节生活服务25年7月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAC163eQaKEDzSFFA6PVva9r", "summary": "字节生服 25 年 7 月月报", "priority": "low" },
+    { "id": "bd-life-25h1", "category": "bd-life", "title": "字节生活服务25年H1复盘及策略优化", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACSDDS3tCCxjS8bve7fOYC8", "summary": "字节生服 25 H1 复盘 + 策略优化", "priority": "high" },
+    { "id": "bd-life-2506", "category": "bd-life", "title": "字节生活服务25年6月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcADtHWY-AhPATQRPLWXVSn-6", "summary": "字节生服 25 年 6 月月报", "priority": "low" },
+    { "id": "bd-life-2505", "category": "bd-life", "title": "字节生活服务25年5月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACoy1lAn_jIj1YHhBFzN7SY", "summary": "字节生服 25 年 5 月月报", "priority": "low" },
+    { "id": "bd-life-2504", "category": "bd-life", "title": "字节生活服务25年4月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACdCMvPgyImhGL0LfVeq03A", "summary": "字节生服 25 年 4 月月报", "priority": "low" },
+    { "id": "bd-life-2503", "category": "bd-life", "title": "字节生活服务25年3月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcABavRsry8q8qndI6__mM5s8", "summary": "字节生服 25 年 3 月月报", "priority": "low" },
+    { "id": "bd-life-2502", "category": "bd-life", "title": "字节生活服务25年2月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACArSkV8oHbOcdj5SFRZpKk", "summary": "字节生服 25 年 2 月月报", "priority": "low" },
+    { "id": "bd-life-2501", "category": "bd-life", "title": "字节生活服务25年1月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACDgtd7Df7VG_tudcBxoFwX", "summary": "字节生服 25 年 1 月月报", "priority": "low" },
+    { "id": "bd-life-2412", "category": "bd-life", "title": "字节生活服务24年12月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcADVGo-YWYTgblDyJApgSxKI", "summary": "字节生服 24 年 12 月月报", "priority": "low" },
+    { "id": "bd-life-24q3-mtg", "category": "bd-life", "title": "字节生活服务2024 Q3季度会", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAC85Ip3DqtwEFhRW5jytdO1", "summary": "字节生服 24 Q3 季度会议", "priority": "medium" },
+    { "id": "bd-life-2411", "category": "bd-life", "title": "字节生活服务24年11月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAAtsxND1ePi9_XN3HOYifum", "summary": "字节生服 24 年 11 月月报", "priority": "low" },
+    { "id": "bd-life-2410", "category": "bd-life", "title": "字节生活服务24年10月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACujYMRvk4qRJdSr3kanEYk", "summary": "字节生服 24 年 10 月月报", "priority": "low" },
+    { "id": "bd-life-2409", "category": "bd-life", "title": "字节生活服务24年9月月报", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcABLNvR-9LBUvL8zfYxbGVdO", "summary": "字节生服 24 年 9 月月报", "priority": "low" },
+
+    { "id": "bd-comm-26q1", "category": "bd-comm", "title": "字节中国区商业化26Q1讨论", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAA69LIk3QRTaFbrSFdWntwo", "summary": "字节中国区商业化 26 Q1 讨论纪要", "priority": "high" },
+    { "id": "bd-comm-bp3y-2426", "category": "bd-comm", "title": "字节商业化3年BP 2024-2026", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAA60hn0QEsf8IPKAQUmlbrb", "summary": "字节商业化 3 年 BP (2024-2026)", "priority": "high" },
+    { "id": "bd-comm-noloop-bp", "category": "bd-comm", "title": "字节非闭环3年BP（2024-2026）", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAA1M51_xQQ9vnT_cuBSmfnQ", "summary": "字节非闭环商业化 3 年 BP (2024-2026)", "priority": "high" },
+    { "id": "bd-comm-bp5y", "category": "bd-comm", "title": "字节商业化5年BP 2025-2030", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAAIf-98PXUEyELvZBA9bl16", "summary": "字节商业化 5 年 BP (2025-2030)", "priority": "high" },
+    { "id": "bd-comm-25q3", "category": "bd-comm", "title": "字节商业产品与技术2025 Q3季度会", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACkCsbH-gUb27CNuXhlafRQ", "summary": "字节商业产品与技术 25 Q3 季度会", "priority": "high" },
+    { "id": "bd-comm-25q1", "category": "bd-comm", "title": "字节商业产品与技术2025 Q1季度会", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAAsaryAIQ6tYAKq-koN6o2w", "summary": "字节商业产品与技术 25 Q1 季度会", "priority": "medium" },
+    { "id": "bd-comm-24q4", "category": "bd-comm", "title": "字节商业产品与技术2024 Q4季度会", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcADfbyjeHyv0RnYIgoPKwJ-X", "summary": "字节商业产品与技术 24 Q4 季度会", "priority": "medium" },
+    { "id": "bd-comm-2410", "category": "bd-comm", "title": "字节商业产品与技术2024年10月月会", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACdV3kK43kzkOSVSUzf4ZFO", "summary": "字节商业产品与技术 24 年 10 月月会", "priority": "low" },
+    { "id": "bd-comm-2411", "category": "bd-comm", "title": "字节商业产品与技术2024年11月月会", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcABawHZzyait-CDUcP3e3_Kl", "summary": "字节商业产品与技术 24 年 11 月月会", "priority": "low" },
+    { "id": "bd-comm-24q3", "category": "bd-comm", "title": "字节商业产品与技术2024 Q3季度会", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcABQlNe05hHs52sdqvbKD2xS", "summary": "字节商业产品与技术 24 Q3 季度会", "priority": "medium" },
+    { "id": "bd-comm-2408", "category": "bd-comm", "title": "字节商业产品与技术2024年8月月会", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAAPfpGSJ3uTAXjrA0bfhEq3", "summary": "字节商业产品与技术 24 年 8 月月会", "priority": "low" },
+    { "id": "bd-comm-24q2", "category": "bd-comm", "title": "字节商业产品与技术2024 Q2季度会", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAD7D4sFFKRymXC6I5bEJCzD", "summary": "字节商业产品与技术 24 Q2 季度会", "priority": "medium" },
+    { "id": "bd-comm-24q1", "category": "bd-comm", "title": "字节商业产品与技术 2024 Q1季度总结", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAA3VPe3D2MyyAQ2nVfBN43M", "summary": "字节商业产品与技术 24 Q1 季度总结", "priority": "medium" },
+    { "id": "bd-comm-2401-shot", "category": "bd-comm", "title": "字节商业产品与技术2024年1月月会【截图版】", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACo0mSrg8T4-SSO4ZC-YePm", "summary": "字节商业产品与技术 24 年 1 月月会（截图版）", "priority": "low" },
+    { "id": "bd-comm-cn-24q1", "category": "bd-comm", "title": "字节中国区商业化2024 Q1总结", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcABNmj9TOipX3Xv4sEa_PvGH", "summary": "字节中国区商业化 24 Q1 总结", "priority": "medium" },
+    { "id": "bd-comm-23q4", "category": "bd-comm", "title": "字节商业产品与技术2023 Q4季度会", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAD_SdZODwlWT8Ddt94fBWUa", "summary": "字节商业产品与技术 23 Q4 季度会", "priority": "low" },
+    { "id": "bd-comm-2311", "category": "bd-comm", "title": "商业产品&技术双周会_23年11月【截图版】", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcADluhPqqPpuP-frJyojJ51U", "summary": "商业产品&技术双周会 23 年 11 月（截图版）", "priority": "low" },
+    { "id": "bd-comm-2310", "category": "bd-comm", "title": "商业产品&技术双周会_23.10【截图版】", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACM4B8O-oyctuZ_FYEk5OM9", "summary": "商业产品&技术双周会 23 年 10 月（截图版）", "priority": "low" },
+    { "id": "bd-comm-23q3", "category": "bd-comm", "title": "字节商业产品与技术2023 Q3季度会", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcABrKk6-ob9rArR53q6srpqV", "summary": "字节商业产品与技术 23 Q3 季度会", "priority": "low" },
+    { "id": "bd-comm-2308", "category": "bd-comm", "title": "商业产品&技术双周会_23.8【截图版】", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAB3g2CbbwgJhK9cZ6eM9TYP", "summary": "商业产品&技术双周会 23 年 8 月（截图版）", "priority": "low" },
+
+    { "id": "bd-leads-2605", "category": "bd-leads", "title": "字节线索广告产品双周报_2026.5.13", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACx8mwyuLzdCOCbpBXCpbIj", "summary": "字节线索广告产品双周报 (2026.5.13)", "priority": "high" },
+    { "id": "bd-leads-2604", "category": "bd-leads", "title": "字节广告产品双周会_2026.4.22", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcABSVSybevvuHDn6PO1F9LsP", "summary": "字节广告产品双周会 (2026.4.22)", "priority": "high" },
+    { "id": "bd-leads-26q1-mix", "category": "bd-leads", "title": "字节广告产品2026Q1季度会（线索+交易）", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcADkTYZsPUBFSSaxn4N8zl9W", "summary": "字节广告产品 26 Q1 季度会（线索 + 交易）", "priority": "high" },
+    { "id": "bd-leads-26q1-leads", "category": "bd-leads", "title": "字节线索广告产品2026Q1季度会", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcADi35S2kJR08cqaEhPLxGTE", "summary": "字节线索广告产品 26 Q1 季度会（线索专项）", "priority": "high" },
+    { "id": "bd-leads-26q1-okr", "category": "bd-leads", "title": "字节生服线索广告26Q1 OKR总结及Q2规划", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAA0tIJukuplg6tBH1qKdBFU", "summary": "字节生服线索广告 26 Q1 OKR 总结 + Q2 规划", "priority": "high" },
+    { "id": "bd-leads-25y-plan", "category": "bd-leads", "title": "字节线索行业深转25年规划（正式版)", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAACr1_ct8k8yWAL_zTHM0jb", "summary": "字节线索行业深转 25 年规划（正式版）", "priority": "high" },
+    { "id": "bd-leads-25-26", "category": "bd-leads", "title": "字节线索广告产品25年总结26年规划", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcAAgjnMeQFHuuITcA71Fk2fP", "summary": "字节线索广告产品 25 年总结 + 26 年规划", "priority": "high" },
+    { "id": "bd-leads-2603-biz", "category": "bd-leads", "title": "字节广告产品双周会_260311(线索+交易）", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcACc5HcgC65RCbLCufouX4-z", "summary": "字节广告产品双周会 26.03.11（线索 + 交易）", "priority": "medium" },
+    { "id": "bd-leads-2603-bw", "category": "bd-leads", "title": "字节线索广告产品双周会_260319", "doc_url": "https://docs.corp.kuaishou.com/d/home/fcADFF30C0RQIQkagMunUpzIi", "summary": "字节线索广告产品双周会 26.03.19", "priority": "medium" }
   ]
 }
