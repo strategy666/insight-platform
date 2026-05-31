@@ -10,21 +10,34 @@
     'use strict';
 
     const LS_KEY = 'insight_ai_config_v1';
+    // 内置默认 key（项目中央配置）— 首次访问自动生效，用户可随时覆盖
+    const BUILTIN_CFG = {
+        llm_endpoint: 'https://api.deepseek.com/v1',
+        llm_key: 'sk-26d4c78e1c6b47db9213a4a8db01b2d4',
+        llm_model: 'deepseek-v4-flash',
+        search_provider: 'none',  // 无独立搜索 key 时，由 LLM 本身知识库代替
+        search_key: ''
+    };
     const DEFAULT_CFG = {
         llm_endpoint: '',
         llm_key: '',
         llm_model: '',
         search_provider: 'tavily',
         search_key: '',
-        chat_mode: 'local'
+        chat_mode: 'web'  // 默认 web 模式，已内置 key
     };
 
     function getCfg() {
         try {
             const raw = localStorage.getItem(LS_KEY);
-            if (!raw) return Object.assign({}, DEFAULT_CFG);
-            return Object.assign({}, DEFAULT_CFG, JSON.parse(raw));
-        } catch (e) { return Object.assign({}, DEFAULT_CFG); }
+            const stored = raw ? JSON.parse(raw) : {};
+            // 优先级：user 的 stored 设置 > BUILTIN > DEFAULT
+            // 如果 stored 中某字段为空，用 BUILTIN 补全
+            const merged = Object.assign({}, DEFAULT_CFG, BUILTIN_CFG, stored);
+            // 但允许用户完全清空 key（设为空串时保留用户意愿）
+            if (raw && stored.llm_key === '') merged.llm_key = '';
+            return merged;
+        } catch (e) { return Object.assign({}, DEFAULT_CFG, BUILTIN_CFG); }
     }
     function setCfg(cfg) {
         try { localStorage.setItem(LS_KEY, JSON.stringify(cfg)); } catch (e) {}
@@ -51,7 +64,8 @@
     window.fillLlmPreset = function(p) {
         const presets = {
             openai:      { ep: 'https://api.openai.com/v1', model: 'gpt-4o-mini' },
-            deepseek:    { ep: 'https://api.deepseek.com/v1', model: 'deepseek-chat' },
+            deepseek:    { ep: 'https://api.deepseek.com/v1', model: 'deepseek-v4-flash' },
+            'deepseek-pro': { ep: 'https://api.deepseek.com/v1', model: 'deepseek-v4-pro' },
             moonshot:    { ep: 'https://api.moonshot.cn/v1', model: 'moonshot-v1-8k' },
             dashscope:   { ep: 'https://dashscope.aliyuncs.com/compatible-mode/v1', model: 'qwen-plus' },
             siliconflow: { ep: 'https://api.siliconflow.cn/v1', model: 'Qwen/Qwen2.5-7B-Instruct' }
@@ -402,6 +416,92 @@ ${ctxBlock}`;
 
     // ============ 暴露接口供 industry-research.js 调用 ============
     window.__getChatMode = () => getCfg().chat_mode || 'local';
+    window.__getAIConfig = () => getCfg();
+
+    // ============ Tab1 顶部 AI 问答（复用同一套 LLM） ============
+    window.askAIWithLLM = async function(question) {
+        const cfg = getCfg();
+        const summaryEl = document.getElementById('answerSummary');
+        const analysisEl = document.getElementById('answerAnalysis');
+        const sourcesEl = document.getElementById('answerSources');
+        const relatedEl = document.getElementById('relatedUpdates');
+        if (!summaryEl) return;
+
+        if (!cfg.llm_endpoint || !cfg.llm_key) {
+            summaryEl.innerHTML = '⚠️ 还未配置 LLM API。点击行业研究 Tab 中的 ⚙️ 配置。';
+            return;
+        }
+
+        // 构造本地数据上下文（让 LLM 优先用 portal 里已有的 27 条 intel + 39 条 competitor）
+        const intel = (window.intelData || []).map(it => ({
+            d: it.date, c: (it.company||[]).join('/'), t: it.title, w: it.tldr, s: it.signal, p: it.priority
+        }));
+        const comp = (window.competitorData || []).map(it => ({
+            d: it.date, c: it.company, t: it.title, w: (it.sowhat||'').slice(0, 200), dim: it.dimension
+        }));
+
+        summaryEl.innerHTML = '<div class="llm-progress">🤖 <b>正在调用 ' + (cfg.llm_model||'AI') + ' 综合分析…</b> <span class="cursor-blink">▍</span></div>';
+        if (analysisEl) analysisEl.innerHTML = '';
+        if (sourcesEl) sourcesEl.innerHTML = '';
+        if (relatedEl) relatedEl.innerHTML = '';
+
+        const sysPrompt = `你是一名互联网战略分析师，服务于快手生活服务团队。回答问题时严格遵循：
+1. **优先**基于下方"本地情报库"和"竞对追踪库"的数据回答，引用具体公司/日期/数据
+2. 结合你的常识知识补充背景，但不要编造未在数据中出现的具体数字
+3. 输出结构：
+   - 开头一段「核心结论」（2-3 句话）
+   - 然后 2-4 个【小标题】小节，每个小节 2-4 条要点
+   - 末尾一句「📌 对快手生服的启示」
+4. 用 markdown，关键观点 **加粗**，要点用 - 开头
+5. 回答末尾如有引用 portal 数据，用 [日期-公司-标题] 形式标注
+
+【本地情报库 - 近期市场动态 ${intel.length} 条】
+${JSON.stringify(intel.slice(0, 30), null, 0)}
+
+【竞对追踪库 - ${comp.length} 条】
+${JSON.stringify(comp.slice(0, 40), null, 0)}`;
+
+        try {
+            let acc = '';
+            await callLLMStream(
+                [{ role: 'system', content: sysPrompt }, { role: 'user', content: question }],
+                cfg,
+                (delta, accNew) => {
+                    acc = accNew;
+                    summaryEl.innerHTML = '<div class="llm-answer">' + renderMd(acc) + '<span class="cursor-blink">▍</span></div>';
+                }
+            );
+            summaryEl.innerHTML = '<div class="llm-answer">' + renderMd(acc) + '</div>';
+            // 同时找出 portal 内最相关的 3-5 条作为「相关动态」
+            if (relatedEl && (window.intelData || window.competitorData)) {
+                const qLow = question.toLowerCase();
+                const score = (text) => {
+                    const t = String(text||'').toLowerCase();
+                    let s = 0;
+                    qLow.split(/[\s,，。？?]+/).filter(w => w.length >= 2).forEach(w => {
+                        if (t.includes(w)) s += w.length;
+                    });
+                    return s;
+                };
+                const all = [
+                    ...(window.intelData||[]).map(x => ({...x, _kind:'intel', _txt: x.title+' '+x.tldr+' '+(x.company||[]).join(' ')+' '+(x.tags||[]).join(' ')})),
+                    ...(window.competitorData||[]).map(x => ({...x, _kind:'comp', _txt: x.title+' '+(x.sowhat||'')+' '+x.company}))
+                ].map(x => ({...x, _s: score(x._txt)})).filter(x => x._s > 0).sort((a,b) => b._s - a._s).slice(0, 6);
+                if (all.length) {
+                    relatedEl.innerHTML = '<h4>📰 portal 中的相关动态</h4>' + all.map(x => `
+                        <div class="related-item" onclick="${x._kind==='intel'?'openIntelModal':'switchCompetitor'}('${x.id||x.company}')">
+                            <div class="related-item-header">
+                                <span class="related-item-company">${Array.isArray(x.company)?x.company.join('/'):x.company}</span>
+                                <span class="related-item-date">${x.date}</span>
+                            </div>
+                            <div class="related-item-title">${x.title}</div>
+                        </div>`).join('');
+                }
+            }
+        } catch (e) {
+            summaryEl.innerHTML = '<div style="color:#d83a3a">❌ LLM 调用失败：' + escapeHtml(e.message||String(e)) + '</div>';
+        }
+    };
 
     // 初始化 mode 按钮
     function syncMode() {

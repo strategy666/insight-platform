@@ -638,17 +638,26 @@ function performAISearch(query) {
     // 显示section
     section.style.display = 'block';
     
-    // 生成答案
-    const answer = generateAnswer(query);
-    console.log('[AI Search] Generated answer:', answer);
-    
-    // 渲染答案
-    renderAIAnswer(answer);
-    
     // 滚动到答案位置
     setTimeout(() => {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 100);
+    
+    // ===== 优先：调用 LLM 综合本地数据 + 实时知识回答 =====
+    if (typeof window.askAIWithLLM === 'function') {
+        try {
+            const cfg = (typeof window.__getAIConfig === 'function') ? window.__getAIConfig() : null;
+            if (cfg && cfg.llm_key && cfg.llm_endpoint) {
+                window.askAIWithLLM(query);
+                return;
+            }
+        } catch(e) { console.warn('[AI Search] LLM mode skipped:', e); }
+    }
+    
+    // Fallback: 本地模板答案
+    const answer = generateAnswer(query);
+    console.log('[AI Search] Generated answer (local template):', answer);
+    renderAIAnswer(answer);
 }
 
 // 通用关键词搜索：在所有数据中查找匹配
