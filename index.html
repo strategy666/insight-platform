@@ -9,7 +9,7 @@
     <title>商业化洞察 v2.0 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究 / 战分助手" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260531m" />
+    <link rel="stylesheet" href="assets/style.css?v=20260531n" />
 </head>
 <body>
 
@@ -356,21 +356,21 @@
     </div>
 </section>
 
-<!-- ① 行业报告库入口（外链 nxny.com） -->
+<!-- ① 行业报告库入口 -->
 <section class="section research-portal-row">
     <div class="container">
         <div class="research-portals">
-            <a href="https://www.nxny.com" target="_blank" rel="noopener" class="research-portal-card primary">
+            <div class="research-portal-card primary" onclick="openNxnyModal()" style="cursor:pointer">
                 <div class="rp-icon">📊</div>
                 <div class="rp-body">
                     <div class="rp-title">行业报告库 · 暖夕南野（nxny.com）</div>
-                    <div class="rp-desc">数千份卖方研报 / 行业白皮书 / 一手访谈，搜索任意行业关键词即可下载 PDF</div>
+                    <div class="rp-desc">数千份卖方研报 / 行业白皮书 / 一手访谈 · 点击在 portal 内嵌使用</div>
                     <div class="rp-actions">
-                        <span class="rp-tag">登录账号已配置</span>
-                        <span class="rp-link">前往报告库 ↗</span>
+                        <span class="rp-tag">嵌入式检索</span>
+                        <span class="rp-link">打开检索 弹窗 →</span>
                     </div>
                 </div>
-            </a>
+            </div>
             <div class="research-portal-card secondary" onclick="document.getElementById('indMindmapInput').focus()">
                 <div class="rp-icon">🔍</div>
                 <div class="rp-body">
@@ -387,7 +387,7 @@
                 <div class="rp-icon">💡</div>
                 <div class="rp-body">
                     <div class="rp-title">数据说明</div>
-                    <div class="rp-desc">市场规模 / CAGR / 毛利率 / 线上化率均为估算值，详细数据请到 nxny.com 查阅原始研报</div>
+                    <div class="rp-desc">市场规模 / CAGR / 毛利率 / 线上化率均为估算值，详细数据请在嵌入式 nxny 弹窗中查阅</div>
                 </div>
             </div>
         </div>
@@ -458,6 +458,61 @@
                         <button class="chatbot-send-btn" onclick="askIndustryChat()">发送</button>
                     </div>
                     <div class="idm-chat-suggest" id="idmChatSuggest"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ④ 行研报告库内嵌 modal（nxny.com iframe + 检索栏 + 关键词预填） -->
+<div class="nxny-modal" id="nxnyModal" style="display:none;">
+    <div class="nxny-overlay" onclick="closeNxnyModal()"></div>
+    <div class="nxny-panel">
+        <div class="nxny-header">
+            <div class="nxny-header-left">
+                <span class="nxny-icon">📊</span>
+                <div>
+                    <div class="nxny-title">行业报告库 · 暖夕南野</div>
+                    <div class="nxny-sub">portal 内嵌检索 · 数据源：nxny.com</div>
+                </div>
+            </div>
+            <div class="nxny-header-actions">
+                <input type="text" id="nxnyKeyword" class="nxny-search-input"
+                       placeholder="🔍 输入关键词检索（按回车）"
+                       onkeypress="if(event.key==='Enter')searchNxny(this.value)" />
+                <button class="nxny-search-btn" onclick="searchNxny(document.getElementById('nxnyKeyword').value)">检索</button>
+                <a href="https://www.nxny.com" target="_blank" rel="noopener" class="nxny-external-btn" title="在新窗口打开">↗ 新窗口</a>
+                <button class="nxny-close" onclick="closeNxnyModal()" title="关闭 (Esc)">✕</button>
+            </div>
+        </div>
+        <div class="nxny-quicktags" id="nxnyQuickTags">
+            <span class="nxny-tag-label">热门：</span>
+            <button class="nxny-tag" onclick="searchNxny('本地生活')">本地生活</button>
+            <button class="nxny-tag" onclick="searchNxny('餐饮')">餐饮</button>
+            <button class="nxny-tag" onclick="searchNxny('美妆')">美妆</button>
+            <button class="nxny-tag" onclick="searchNxny('医美')">医美</button>
+            <button class="nxny-tag" onclick="searchNxny('教育培训')">教育培训</button>
+            <button class="nxny-tag" onclick="searchNxny('宠物')">宠物</button>
+            <button class="nxny-tag" onclick="searchNxny('新能源汽车')">新能源汽车</button>
+            <button class="nxny-tag" onclick="searchNxny('AI')">AI 行业</button>
+        </div>
+        <div class="nxny-body">
+            <iframe id="nxnyIframe" class="nxny-iframe" src="about:blank"
+                    sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
+                    referrerpolicy="no-referrer"></iframe>
+            <div class="nxny-fallback" id="nxnyFallback" style="display:none;">
+                <div class="nxny-fb-icon">⚠️</div>
+                <div class="nxny-fb-title">嵌入式加载受限</div>
+                <div class="nxny-fb-desc">
+                    暖夕南野（nxny.com）可能设置了 X-Frame-Options 或 CSP 禁止 iframe 嵌入，<br/>
+                    或需要登录后才能访问。请使用以下任一方式：
+                </div>
+                <div class="nxny-fb-actions">
+                    <a href="#" target="_blank" rel="noopener" id="nxnyFbDirectLink" class="nxny-fb-btn primary">↗ 在新窗口打开当前检索</a>
+                    <a href="https://www.nxny.com" target="_blank" rel="noopener" class="nxny-fb-btn">↗ 打开 nxny 主站</a>
+                </div>
+                <div class="nxny-fb-creds">
+                    <small style="color:#888">登录账号：jasperyuecui@163.com（密码已配置）</small>
                 </div>
             </div>
         </div>
@@ -925,8 +980,94 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         var m = document.getElementById('feishuFullModal');
         if (m && m.style.display === 'flex') window.closeFeishuModal();
+        var n = document.getElementById('nxnyModal');
+        if (n && n.style.display === 'flex') window.closeNxnyModal();
     }
 });
+
+// ==== 行研报告库 nxny.com 内嵌检索 ====
+window.openNxnyModal = function(keyword) {
+    var m = document.getElementById('nxnyModal');
+    if (!m) return;
+    m.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    if (keyword) {
+        document.getElementById('nxnyKeyword').value = keyword;
+        searchNxny(keyword);
+    } else {
+        // 默认进首页
+        loadNxnyUrl('https://www.nxny.com');
+    }
+};
+window.closeNxnyModal = function() {
+    var m = document.getElementById('nxnyModal');
+    if (!m) return;
+    m.style.display = 'none';
+    document.body.style.overflow = '';
+};
+window.searchNxny = function(kw) {
+    if (!kw) kw = document.getElementById('nxnyKeyword').value || '';
+    kw = String(kw).trim();
+    document.getElementById('nxnyKeyword').value = kw;
+    var url = kw
+        ? 'https://www.nxny.com/search?keyword=' + encodeURIComponent(kw)
+        : 'https://www.nxny.com';
+    loadNxnyUrl(url);
+};
+function loadNxnyUrl(url) {
+    var iframe = document.getElementById('nxnyIframe');
+    var fb = document.getElementById('nxnyFallback');
+    var fbLink = document.getElementById('nxnyFbDirectLink');
+    if (!iframe) return;
+    fb.style.display = 'none';
+    iframe.style.display = 'block';
+    iframe.src = url;
+    if (fbLink) fbLink.href = url;
+    // 检测加载是否被 X-Frame-Options 阻止：3 秒后看 iframe document 是否可访问
+    clearTimeout(window.__nxnyTimer);
+    window.__nxnyTimer = setTimeout(function() {
+        var blocked = false;
+        try {
+            // 跨域访问会抛错；about:blank 不会
+            var doc = iframe.contentDocument || iframe.contentWindow.document;
+            // 如果 doc 完全可读且为空，也算被阻止
+            if (!doc || doc.body === null || (doc.body && doc.body.innerHTML === '' && iframe.src !== 'about:blank')) {
+                blocked = true;
+            }
+        } catch (e) {
+            // 跨域 - 这是正常的，多数情况下页面已加载，不算 blocked
+            blocked = false;
+        }
+        // 简单兜底：通过尝试主动获取头判断（fetch 不能拿到 X-Frame-Options，但能感知 200/404）
+        // 实际策略：iframe 加载完触发 onload 即认为 OK；超过 5s 还在 about:blank 才提示
+        if (iframe.src !== 'about:blank' && iframe.contentWindow && !iframe.contentWindow.length) {
+            // 实测：被 X-Frame 拒绝时 contentWindow.length 可能为 undefined 但不抛错
+        }
+    }, 3000);
+    // 监听 iframe load 事件，检测是否被阻止
+    iframe.onload = function() {
+        try {
+            // 跨域时访问 contentDocument 抛错 - 这是页面加载成功的标志
+            var ct = iframe.contentDocument;
+            // 如果是同域且 body 为空，认为被 X-Frame 阻止
+            if (ct && ct.body && ct.body.children.length === 0 && iframe.src.indexOf('nxny.com') !== -1) {
+                showNxnyFallback(url);
+            }
+        } catch (err) {
+            // 跨域 - 加载成功，正常
+        }
+    };
+    iframe.onerror = function() { showNxnyFallback(url); };
+}
+function showNxnyFallback(url) {
+    var iframe = document.getElementById('nxnyIframe');
+    var fb = document.getElementById('nxnyFallback');
+    var fbLink = document.getElementById('nxnyFbDirectLink');
+    if (iframe) iframe.style.display = 'none';
+    if (fb) fb.style.display = 'flex';
+    if (fbLink) fbLink.href = url;
+}
+window.__showNxnyFallback = showNxnyFallback;
 
 window.askAssistant = window.askAssistant || function(q){
     if(!q || !q.trim()) return;
@@ -1015,9 +1156,9 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260531m"></script>
-<script src="assets/feishu-search.js?v=20260531m"></script>
-<script src="assets/industry-research.js?v=20260531m"></script>
+<script src="assets/main.js?v=20260531n"></script>
+<script src="assets/feishu-search.js?v=20260531n"></script>
+<script src="assets/industry-research.js?v=20260531n"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){

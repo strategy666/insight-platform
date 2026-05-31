@@ -3317,3 +3317,172 @@ body {
     margin-bottom: 12px !important;
     padding: 6px 0 !important;
 }
+
+/* ============== nxny 行研报告库 内嵌 modal ============== */
+.nxny-modal {
+    position: fixed; inset: 0; z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
+}
+.nxny-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,.55); backdrop-filter: blur(3px);
+}
+.nxny-panel {
+    position: relative;
+    background: #fff;
+    width: 96vw; max-width: 1400px;
+    height: 92vh;
+    border-radius: 14px;
+    box-shadow: 0 12px 48px rgba(0,0,0,.3);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+}
+.nxny-header {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    border-bottom: 1px solid #e8eef0;
+    background: linear-gradient(135deg, #2a6f4f 0%, #1e5a3e 100%);
+    color: #fff;
+}
+.nxny-header-left { display: flex; gap: 12px; align-items: center; }
+.nxny-icon { font-size: 26px; }
+.nxny-title { font-size: 16px; font-weight: 700; }
+.nxny-sub { font-size: 11px; color: rgba(255,255,255,.75); margin-top: 2px; }
+.nxny-header-actions {
+    display: flex; gap: 8px; align-items: center; flex: 1; max-width: 700px;
+}
+.nxny-search-input {
+    flex: 1;
+    padding: 8px 14px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 8px;
+    background: rgba(255,255,255,.95);
+    color: #1a3826;
+    font-size: 13px;
+    outline: none;
+    min-width: 200px;
+}
+.nxny-search-input:focus { background: #fff; border-color: #ffe082; }
+.nxny-search-btn {
+    padding: 8px 18px;
+    background: #ffe082;
+    border: none;
+    border-radius: 8px;
+    color: #1a3826;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .15s;
+}
+.nxny-search-btn:hover { background: #ffd54f; }
+.nxny-external-btn {
+    padding: 8px 12px;
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .15s;
+    white-space: nowrap;
+}
+.nxny-external-btn:hover { background: rgba(255,255,255,.25); }
+.nxny-close {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,.2); border: none;
+    color: #fff; cursor: pointer; font-size: 14px;
+    transition: all .15s;
+}
+.nxny-close:hover { background: #d83a3a; }
+
+.nxny-quicktags {
+    display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
+    padding: 10px 20px;
+    background: #f8fbf9;
+    border-bottom: 1px solid #e8eef0;
+}
+.nxny-tag-label { font-size: 12px; color: #888; margin-right: 4px; }
+.nxny-tag {
+    padding: 4px 12px;
+    background: #fff;
+    border: 1px solid #d0d8d3;
+    border-radius: 14px;
+    color: #1a3826;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all .15s;
+}
+.nxny-tag:hover { background: #2a6f4f; color: #fff; border-color: #2a6f4f; }
+
+.nxny-body {
+    flex: 1;
+    position: relative;
+    background: #f5f7f6;
+    overflow: hidden;
+}
+.nxny-iframe {
+    width: 100%; height: 100%;
+    border: none;
+    background: #fff;
+}
+.nxny-fallback {
+    position: absolute; inset: 0;
+    background: #f8fbf9;
+    flex-direction: column; justify-content: center; align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+.nxny-fb-icon { font-size: 56px; margin-bottom: 14px; }
+.nxny-fb-title { font-size: 20px; font-weight: 700; color: #1a3826; margin-bottom: 12px; }
+.nxny-fb-desc { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 22px; }
+.nxny-fb-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 16px; }
+.nxny-fb-btn {
+    padding: 10px 22px;
+    background: #fff;
+    border: 1px solid #2a6f4f;
+    border-radius: 8px;
+    color: #2a6f4f;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .15s;
+}
+.nxny-fb-btn:hover { background: #f0f5f2; }
+.nxny-fb-btn.primary { background: #2a6f4f; color: #fff; }
+.nxny-fb-btn.primary:hover { background: #1e5a3e; }
+.nxny-fb-creds { margin-top: 8px; }
+
+@media (max-width: 700px) {
+    .nxny-panel { width: 100vw; height: 100vh; border-radius: 0; }
+    .nxny-header { flex-direction: column; align-items: stretch; }
+    .nxny-header-actions { flex-wrap: wrap; }
+}
+
+/* ============== 二级卡片可点击视觉强化 ============== */
+.mm-l2-card {
+    cursor: pointer !important;
+    position: relative;
+    transition: all .18s;
+}
+.mm-l2-card::after {
+    content: '👆 点击查看详情+AI问答';
+    position: absolute;
+    top: 6px; right: 8px;
+    font-size: 10px;
+    color: #2a6f4f;
+    background: rgba(42,111,79,.08);
+    padding: 2px 6px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity .15s;
+    pointer-events: none;
+}
+.mm-l2-card:hover {
+    border-color: #2a6f4f !important;
+    box-shadow: 0 4px 14px rgba(42,111,79,.18) !important;
+    transform: translateY(-1px);
+}
+.mm-l2-card:hover::after { opacity: 1; }

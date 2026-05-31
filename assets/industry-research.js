@@ -130,7 +130,10 @@
 
         // 渲染 markdown 报告
         document.getElementById('idmReport').innerHTML = simpleMd(item.report_md);
-        document.getElementById('idmNxnyLink').href = item.nxny_search_url;
+        const nxnyBtn = document.getElementById('idmNxnyLink');
+        nxnyBtn.href = 'javascript:void(0)';
+        nxnyBtn.onclick = function(e) { e.preventDefault(); if (window.openNxnyModal) window.openNxnyModal(item.name); return false; };
+        nxnyBtn.textContent = '📊 在 portal 嵌入式 nxny 报告库检索本行业';
 
         // 重置 chatbot
         const body = document.getElementById('idmChatBody');
@@ -244,7 +247,7 @@ ${extractFromReport(item.report_md, '商业化机会（快手生服视角）')}`
 关于「${escapeHtml(q)}」的问题，建议组合参考：<br/>
 - 市场规模 <b>${fmtGmv(item.gmv_2025)}</b>，CAGR <b>${item.cagr}%</b><br/>
 - 毛利 ${item.gross_margin}，线上化率 ${item.online_rate}<br/>
-- 详细研报请到 <a href="${item.nxny_search_url}" target="_blank">nxny.com 检索 ${item.name}</a><br/>
+- 详细研报请点击 <a href="javascript:void(0)" onclick="window.openNxnyModal('${item.name.replace(/'/g, "\\'")}')">📊 嵌入式 nxny 检索 ${item.name}</a><br/>
 <small style="color:#888">本 chatbot 基于本地数据回答，深度研究建议查阅原始研报</small>`;
     }
 
