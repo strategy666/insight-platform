@@ -9,7 +9,7 @@
     <title>商业化洞察周报 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究 / 战分助手" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260601b" />
+    <link rel="stylesheet" href="assets/style.css?v=20260601c" />
 </head>
 <body>
 
@@ -46,17 +46,22 @@
                 <h1>📊 商业化洞察周报</h1>
                 <p class="hero-subtitle"><span id="statTotal">—</span> 条近 14 天情报 · <span id="statHigh">—</span> 高优 · <span id="statCompanies">—</span> 公司 · <span id="statTracks">—</span> 赛道</p>
             </div>
-            <div class="hero-search-mini">
-                <input type="text" id="aiSearchInput" class="mini-search-input" placeholder="💬 AI 问答：问任何市场情报问题…" autocomplete="off" onkeypress="if(event.key==='Enter')askAI(this.value)" />
-                <button class="mini-search-btn" onclick="askAI(document.getElementById('aiSearchInput').value)">问</button>
+            <div class="hero-search-wrap">
+                <div class="hero-search-mini">
+                    <input type="text" id="aiSearchInput" class="mini-search-input"
+                           placeholder="🔮 猜你想搜：抖音出单宝对快手本地推有什么影响？"
+                           autocomplete="off"
+                           onkeypress="if(event.key==='Enter')askAI(this.value)" />
+                    <button class="mini-search-btn" onclick="askAI(document.getElementById('aiSearchInput').value)">问</button>
+                </div>
+                <div class="hero-search-hints">
+                    <span class="hero-hint-link" onclick="askAI('磁力星辰 AI 经营官全量对快手生服商家有什么影响？')">磁力星辰 AI 经营官全量对快手生服商家有什么影响？</span>
+                    <span class="hero-hint-sep">·</span>
+                    <span class="hero-hint-link" onclick="askAI('抖音生服商户净增 80 万是怎么做到的？快手能学吗？')">抖音生服商户净增 80 万是怎么做到的？</span>
+                    <span class="hero-hint-sep">·</span>
+                    <span class="hero-hint-link" onclick="askAI('美团闪购 GMV +95% 对快手即时零售有什么启示？')">美团闪购 GMV +95% 对快手有什么启示？</span>
+                </div>
             </div>
-        </div>
-        <div class="hero-suggest-row">
-            <span class="suggest-label">热门：</span>
-            <button class="suggest-pill" onclick="askAI('抖音出单宝对快手本地推有什么影响？')">抖音出单宝</button>
-            <button class="suggest-pill" onclick="askAI('字节本地生活Q2有哪些重要动作？')">字节本地生活Q2</button>
-            <button class="suggest-pill" onclick="askAI('腾讯视频号广告增长的核心驱动力是什么？')">视频号广告</button>
-            <button class="suggest-pill" onclick="askAI('AI视频生成赛道最新格局')">AI视频生成</button>
         </div>
     </div>
 </section>
@@ -1468,13 +1473,13 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260601b"></script>
-<script src="assets/feishu-search.js?v=20260601b"></script>
-<script src="assets/ai-chat.js?v=20260601b"></script>
-<script src="assets/industry-research.js?v=20260601b"></script>
-<script src="assets/onboarding.js?v=20260601b"></script>
-<script src="assets/chat-widget.js?v=20260601b"></script>
-<script src="assets/assistant-tab.js?v=20260601b"></script>
+<script src="assets/main.js?v=20260601c"></script>
+<script src="assets/feishu-search.js?v=20260601c"></script>
+<script src="assets/ai-chat.js?v=20260601c"></script>
+<script src="assets/industry-research.js?v=20260601c"></script>
+<script src="assets/onboarding.js?v=20260601c"></script>
+<script src="assets/chat-widget.js?v=20260601c"></script>
+<script src="assets/assistant-tab.js?v=20260601c"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){

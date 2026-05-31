@@ -5185,3 +5185,39 @@ button.nxny-external-btn {
     .nxny-inline-allweb { justify-content: center; padding: 10px; }
     .research-portals-compact { grid-template-columns: 1fr; }
 }
+
+/* ============== Hero 搜索栏 + 灰色热点提示链 ============== */
+.hero-search-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 380px;
+    flex: 0 0 auto;
+}
+.hero-search-hints {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    padding: 0 2px;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.4;
+}
+.hero-hint-link {
+    cursor: pointer;
+    transition: color 0.15s;
+    border-bottom: 1px dashed rgba(255,255,255,0.18);
+    padding-bottom: 1px;
+}
+.hero-hint-link:hover {
+    color: rgba(255,255,255,0.95);
+    border-bottom-color: rgba(255,255,255,0.6);
+}
+.hero-hint-sep {
+    color: rgba(255,255,255,0.28);
+}
+@media (max-width: 768px) {
+    .hero-search-wrap { min-width: 0; width: 100%; }
+    .hero-search-hints { font-size: 11px; }
+}
