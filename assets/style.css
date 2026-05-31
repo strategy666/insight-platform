@@ -3181,3 +3181,110 @@ body {
     .idm-stats { grid-template-columns: repeat(2, 1fr); }
     .idm-panel { width: 100vw; max-height: 100vh; border-radius: 0; }
 }
+
+/* ============== 竞对追踪 · 飞书全库触发按钮 ============== */
+.fs-modal-trigger {
+    margin-left: 6px;
+    padding: 8px 14px;
+    background: #fff;
+    border: 1px solid #2a6f4f;
+    border-radius: 8px;
+    color: #2a6f4f;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all .15s;
+}
+.fs-modal-trigger:hover {
+    background: #2a6f4f;
+    color: #fff;
+}
+.fs-modal-trigger span {
+    background: rgba(42,111,79,.15);
+    padding: 1px 6px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-left: 2px;
+}
+.fs-modal-trigger:hover span {
+    background: rgba(255,255,255,.25);
+    color: #fff;
+}
+
+/* ============== 飞书全库 modal ============== */
+.feishu-fullmodal {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ffm-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(3px);
+}
+.ffm-panel {
+    position: relative;
+    background: #fff;
+    width: 92vw;
+    max-width: 1200px;
+    height: 90vh;
+    border-radius: 14px;
+    box-shadow: 0 12px 48px rgba(0,0,0,.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.ffm-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    z-index: 10;
+    background: #f0f0f0;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    transition: all .15s;
+}
+.ffm-close:hover {
+    background: #d83a3a;
+    color: #fff;
+}
+.ffm-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 28px 32px;
+}
+/* modal 内复用既有 feishu-sub-* 样式，只调一下间距 */
+.ffm-body .feishu-sub-header {
+    margin-bottom: 18px;
+}
+.ffm-body .feishu-sub-search {
+    margin-bottom: 14px;
+}
+.ffm-body .feishu-filters {
+    margin-bottom: 16px;
+}
+
+@media (max-width: 700px) {
+    .ffm-panel {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+    .ffm-body { padding: 20px 16px; }
+    .fs-modal-trigger { padding: 6px 10px; font-size: 12px; }
+}
+
+/* 隐藏旧的子模块样式（因为内容现在已经包在 modal 里，旧 .feishu-subsection 已删除，
+   保留这条规则防御性兜底） */
+.feishu-subsection { display: none; }

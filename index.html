@@ -9,7 +9,7 @@
     <title>商业化洞察 v2.0 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究 / 战分助手" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260531i" />
+    <link rel="stylesheet" href="assets/style.css?v=20260531j" />
 </head>
 <body>
 
@@ -188,6 +188,7 @@
                     <span>📁 仅飞书</span>
                 </label>
                 <button class="search-btn" onclick="searchCompetitor(document.getElementById('competitorSearchInput').value)">搜索</button>
+                <button class="fs-modal-trigger" onclick="openFeishuModal()" title="打开飞书文档全库检索">📁 全库 (<span id="fsTriggerCount">419</span>)</button>
             </div>
             <div class="suggested-questions">
                 <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='区域服务商';searchCompetitor('区域服务商')">区域服务商</button>
@@ -264,9 +265,12 @@
     </div>
 </section>
 
-<!-- ===================== 竟对追踪 · 子模块：飞书文档全库 ===================== -->
-<section class="section feishu-subsection">
-    <div class="container">
+<!-- ===================== 竟对追踪 · 飞书文档全库 modal（隐藏，点击搜索栏旁 全库 按钮弹出） ===================== -->
+<div class="feishu-fullmodal" id="feishuFullModal" style="display:none;">
+    <div class="ffm-overlay" onclick="closeFeishuModal()"></div>
+    <div class="ffm-panel">
+        <button class="ffm-close" onclick="closeFeishuModal()" title="关闭 (Esc)">✕</button>
+        <div class="ffm-body">
         <div class="feishu-sub-header">
             <h2 class="feishu-sub-title">📁 飞书文档全库检索</h2>
             <div class="feishu-sub-meta">本地索引 <b id="fsTotalCount">—</b> 篇 · 仅包含字节对外公开文档（bytedance.larkoffice.com），不含个人隐私内容 · <span style="color:#888">从你飞书「最近浏览」定期扫描</span></div>
@@ -639,7 +643,7 @@ window.searchCompetitor = async function(q) {
         const typeIcon = it.type === 'docx' ? '📄' : it.type === 'wiki' ? '📚' : it.type === 'sheet' ? '📊' : it.type === 'file' ? '📎' : it.type === 'bitable' ? '🗃️' : '📝';
         const hasUrl = !!(it.url && it.url.startsWith('http'));
         const openBtn = hasUrl
-            ? `<a href="${it.url}" target="_blank" rel="noopener" class="fs-open-btn">打开飞书 ↗</a>`
+            ? `<a href="${it.url}" target="_blank" rel="noopener" class="fs-open-btn">打开全文 ↗</a>`
             : `<span class="fs-open-btn fs-open-btn-disabled" title="此条仅有标题元信息，无飞书直链">仅元数据</span>`;
         return `
         <div class="dual-card fs-card">
@@ -782,7 +786,7 @@ function renderFeishuList(list, q) {
         const compTag = (it.competitors || ['字节'])[0];
         const sheetTag = it.source_sheet || it.sheet || '';
         const openBtn = hasUrl
-            ? `<a href="${it.url}" target="_blank" rel="noopener" class="fs-open-btn">打开飞书 ↗</a>`
+            ? `<a href="${it.url}" target="_blank" rel="noopener" class="fs-open-btn">打开全文 ↗</a>`
             : `<span class="fs-open-btn fs-open-btn-disabled" title="此条仅有标题元信息，无飞书直链">仅元数据</span>`;
         return `
         <div class="dual-card fs-card fs-page-card">
@@ -858,31 +862,61 @@ document.addEventListener('change', function(e) {
         applyFeishuFilters();
     }
 });
-// 进入 #competitors tab 自动加载飞书子模块
+// 进入 #competitors tab 自动预加载飞书数据（不再渲染独立子模块，但 modal 打开就有数据）
 (function() {
     function maybeInit() {
-        // 任何时候 competitors tab 激活 OR hash 是 #competitors/feishu 都加载
         const isComp = location.hash === '#competitors' || location.hash === '#feishu'
             || document.querySelector('.tab-link[data-tab="competitors"]')?.classList.contains('active');
         if (isComp || document.getElementById('fsResultList')) {
             applyFeishuFilters();
         }
+        // 同步 trigger 按钮上的总数显示
+        setTimeout(updateFsTriggerCount, 600);
+    }
+    function updateFsTriggerCount() {
+        const tot = document.getElementById('fsTotalCount');
+        const trig = document.getElementById('fsTriggerCount');
+        if (tot && trig && tot.textContent && tot.textContent !== '—') {
+            trig.textContent = tot.textContent;
+        }
     }
     document.addEventListener('DOMContentLoaded', maybeInit);
-    // 监听 tab 切换到 competitors
     document.addEventListener('click', function(e) {
         const a = e.target.closest('.tab-link[data-tab="competitors"]');
         if (a) setTimeout(applyFeishuFilters, 50);
     });
-    // 兼容旧 #feishu hash → 跳竞对追踪
+    // 兼容旧 #feishu hash → 跳竞对追踪并打开 modal
     if (location.hash === '#feishu') {
         location.hash = '#competitors';
         setTimeout(() => {
-            const fsEl = document.getElementById('fsResultList');
-            if (fsEl) fsEl.scrollIntoView({behavior:'smooth', block:'start'});
-        }, 300);
+            if (typeof window.openFeishuModal === 'function') window.openFeishuModal();
+        }, 400);
     }
 })();
+
+// ==== 飞书全库 modal ====
+window.openFeishuModal = function() {
+    var m = document.getElementById('feishuFullModal');
+    if (!m) return;
+    m.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    // 触发加载（如果还没加载）
+    if (typeof window.applyFeishuFilters === 'function') {
+        setTimeout(window.applyFeishuFilters, 50);
+    }
+};
+window.closeFeishuModal = function() {
+    var m = document.getElementById('feishuFullModal');
+    if (!m) return;
+    m.style.display = 'none';
+    document.body.style.overflow = '';
+};
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        var m = document.getElementById('feishuFullModal');
+        if (m && m.style.display === 'flex') window.closeFeishuModal();
+    }
+});
 
 window.askAssistant = window.askAssistant || function(q){
     if(!q || !q.trim()) return;
@@ -971,9 +1005,9 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260531i"></script>
-<script src="assets/feishu-search.js?v=20260531i"></script>
-<script src="assets/industry-research.js?v=20260531i"></script>
+<script src="assets/main.js?v=20260531j"></script>
+<script src="assets/feishu-search.js?v=20260531j"></script>
+<script src="assets/industry-research.js?v=20260531j"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){
