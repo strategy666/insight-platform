@@ -2845,3 +2845,339 @@ body {
 .feishu-sub-search {
     margin-bottom: 16px;
 }
+
+/* ============================================ */
+/* 行业研究 · 脑图 + 报告库入口                   */
+/* ============================================ */
+
+/* 顶部三张入口卡 */
+.research-portal-row { padding: 24px 0; }
+.research-portals {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 16px;
+}
+.research-portal-card {
+    display: flex; gap: 14px; padding: 18px 20px;
+    background: #fff; border-radius: 12px;
+    border: 1px solid #e0e6e3;
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    cursor: pointer; text-decoration: none; color: inherit;
+    transition: all .2s;
+    align-items: flex-start;
+}
+.research-portal-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(42,111,79,.15);
+    border-color: #2a6f4f;
+}
+.research-portal-card.primary {
+    background: linear-gradient(135deg, #2a6f4f 0%, #1e5a3e 100%);
+    color: #fff; border-color: #1e5a3e;
+}
+.research-portal-card.primary .rp-desc { color: rgba(255,255,255,.85); }
+.research-portal-card.secondary { border-color: #ffe082; background: #fffef7; }
+.research-portal-card.tertiary { background: #f5f7f6; cursor: default; }
+.research-portal-card.tertiary:hover { transform: none; }
+.rp-icon { font-size: 32px; line-height: 1; }
+.rp-body { flex: 1; min-width: 0; }
+.rp-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+.rp-desc { font-size: 13px; color: #666; line-height: 1.5; }
+.rp-actions { margin-top: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.rp-tag {
+    font-size: 11px; padding: 2px 8px; border-radius: 10px;
+    background: rgba(255,255,255,.2); color: rgba(255,255,255,.95);
+}
+.research-portal-card.primary .rp-link {
+    font-size: 13px; color: #ffe082; font-weight: 600;
+}
+.ind-search-input {
+    width: 100%; padding: 8px 12px; border: 1px solid #e0e6e3;
+    border-radius: 8px; font-size: 13px; outline: none;
+    background: #fff;
+}
+.ind-search-input:focus { border-color: #2a6f4f; }
+
+/* 脑图 toolbar */
+.research-mindmap-section { padding-top: 8px; }
+.mindmap-toolbar {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 16px; padding: 10px 0;
+}
+.mindmap-title { margin: 0; font-size: 20px; font-weight: 700; color: #1a3826; }
+.mindmap-tip { font-size: 13px; color: #888; }
+
+/* 脑图网格 */
+.industry-mindmap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+.mm-l1-card {
+    background: #fff;
+    border: 1px solid #e8eef0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all .2s;
+}
+.mm-l1-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+.mm-l1-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 18px; cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid transparent;
+}
+.mm-l1-card.expanded .mm-l1-header { border-bottom-color: #f0f0f0; }
+.mm-l1-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--l1-color, #2a6f4f);
+    flex-shrink: 0;
+}
+.mm-l1-icon { font-size: 16px; }
+.mm-l1-name { font-weight: 700; font-size: 15px; flex: 1; color: #1a3826; }
+.mm-l1-count {
+    background: var(--l1-color, #2a6f4f); color: #fff;
+    font-size: 11px; padding: 2px 8px; border-radius: 10px;
+    font-weight: 700; min-width: 24px; text-align: center;
+}
+.mm-l1-gmv { font-size: 12px; color: #666; font-weight: 600; }
+.mm-l1-cagr {
+    font-size: 11px; padding: 2px 6px; border-radius: 4px;
+    font-weight: 700;
+}
+.mm-l1-cagr.pos { color: #2a6f4f; background: #e8f5ee; }
+.mm-l1-cagr.neg { color: #d83a3a; background: #fdecec; }
+.mm-l1-toggle { color: #999; font-size: 12px; margin-left: 4px; }
+
+.mm-l2-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 12px 14px 14px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease;
+}
+.mm-l1-card.expanded .mm-l2-grid {
+    max-height: 4000px;
+}
+.mm-l2-card {
+    background: #f8faf9;
+    border: 1px solid #e8eef0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all .15s;
+}
+.mm-l2-card:hover {
+    background: #fff;
+    border-color: var(--l1-color, #2a6f4f);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+.mm-l2-name {
+    font-size: 13px; font-weight: 600; color: #1a3826;
+    margin-bottom: 4px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.mm-l2-meta {
+    display: flex; gap: 8px; align-items: center;
+    font-size: 11px;
+}
+.mm-gmv { color: #666; font-weight: 600; }
+.mm-cagr { font-weight: 700; }
+.mm-cagr.pos { color: #2a6f4f; }
+.mm-cagr.neg { color: #d83a3a; }
+
+.mindmap-loading, .mindmap-empty {
+    grid-column: 1 / -1;
+    text-align: center; padding: 40px;
+    color: #999; font-size: 14px;
+}
+
+/* ===== 行业详情弹窗 ===== */
+.industry-detail-modal {
+    position: fixed; inset: 0; z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
+}
+.idm-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,.5);
+    backdrop-filter: blur(2px);
+}
+.idm-panel {
+    position: relative;
+    background: #fff;
+    width: 90vw; max-width: 980px;
+    max-height: 90vh;
+    border-radius: 14px;
+    box-shadow: 0 12px 48px rgba(0,0,0,.25);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+}
+.idm-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e8eef0;
+    background: linear-gradient(135deg, #f8fbf9 0%, #fff 100%);
+}
+.idm-header-left { display: flex; gap: 12px; align-items: center; }
+.idm-l1-tag {
+    padding: 4px 12px; border-radius: 14px;
+    color: #fff; font-size: 12px; font-weight: 600;
+    background: #2a6f4f;
+}
+.idm-l2-title { margin: 0; font-size: 22px; font-weight: 800; color: #1a3826; }
+.idm-close {
+    background: #f0f0f0; border: none;
+    width: 32px; height: 32px; border-radius: 50%;
+    cursor: pointer; font-size: 14px; color: #666;
+    transition: all .15s;
+}
+.idm-close:hover { background: #d83a3a; color: #fff; }
+
+.idm-body {
+    overflow-y: auto;
+    padding: 24px;
+}
+
+/* 关键指标 */
+.idm-stats {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.idm-stat {
+    background: #f8fbf9;
+    border: 1px solid #e8eef0;
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+}
+.idm-stat-val {
+    font-size: 18px; font-weight: 800; color: #1a3826;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+.idm-stat-val .pos { color: #2a6f4f; }
+.idm-stat-val .neg { color: #d83a3a; }
+.idm-stat-lbl { font-size: 11px; color: #888; line-height: 1.3; }
+
+/* section */
+.idm-section {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.idm-section:last-child { border-bottom: none; }
+.idm-section-title {
+    margin: 0 0 14px 0;
+    font-size: 16px; font-weight: 700; color: #1a3826;
+}
+.idm-report-content {
+    font-size: 14px; line-height: 1.7; color: #333;
+}
+.idm-report-content h3 { font-size: 17px; margin: 18px 0 10px; color: #1a3826; }
+.idm-report-content h4 { font-size: 14px; margin: 14px 0 8px; color: #2a6f4f; }
+.idm-report-content p { margin: 8px 0; }
+.idm-report-content ul { margin: 8px 0 8px 20px; }
+.idm-report-content li { margin: 4px 0; }
+.idm-report-content code {
+    background: #f0f4f1; padding: 1px 6px; border-radius: 4px;
+    font-family: 'SF Mono', monospace; font-size: 13px;
+}
+.idm-actions { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+.idm-action-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 16px; border-radius: 8px;
+    font-size: 13px; font-weight: 600;
+    text-decoration: none;
+    transition: all .15s;
+    border: 1px solid #2a6f4f;
+}
+.idm-action-btn.primary {
+    background: #2a6f4f; color: #fff;
+}
+.idm-action-btn.primary:hover { background: #1e5a3e; }
+
+/* chatbot */
+.idm-chatbot-section {
+    background: #f8fbf9;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 0 -8px;
+}
+.idm-chatbot { display: flex; flex-direction: column; gap: 12px; }
+.idm-chat-body {
+    background: #fff;
+    border: 1px solid #e8eef0;
+    border-radius: 10px;
+    padding: 14px;
+    max-height: 320px;
+    min-height: 120px;
+    overflow-y: auto;
+    display: flex; flex-direction: column; gap: 10px;
+}
+.idm-chat-body .chat-bubble {
+    padding: 10px 14px;
+    border-radius: 10px;
+    max-width: 85%;
+    font-size: 13px;
+    line-height: 1.6;
+    word-break: break-word;
+}
+.idm-chat-body .chat-bubble.bot {
+    background: #e8f5ee;
+    color: #1a3826;
+    align-self: flex-start;
+}
+.idm-chat-body .chat-bubble.user {
+    background: #2a6f4f;
+    color: #fff;
+    align-self: flex-end;
+}
+.idm-chat-input-row {
+    display: flex; gap: 8px;
+}
+.idm-chat-input-row .chatbot-input {
+    flex: 1; padding: 10px 14px;
+    border: 1px solid #e0e6e3; border-radius: 8px;
+    font-size: 13px; outline: none;
+}
+.idm-chat-input-row .chatbot-input:focus { border-color: #2a6f4f; }
+.idm-chat-input-row .chatbot-send-btn {
+    padding: 10px 20px; border: none; border-radius: 8px;
+    background: #2a6f4f; color: #fff; cursor: pointer;
+    font-size: 13px; font-weight: 600;
+    transition: background .15s;
+}
+.idm-chat-input-row .chatbot-send-btn:hover { background: #1e5a3e; }
+.idm-chat-suggest {
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.idm-chat-suggest .cs-label { font-size: 12px; color: #888; }
+.idm-chat-suggest .cs-pill {
+    padding: 5px 12px; border-radius: 14px;
+    background: #fff; border: 1px solid #d0d8d3;
+    font-size: 12px; cursor: pointer;
+    color: #1a3826; transition: all .15s;
+}
+.idm-chat-suggest .cs-pill:hover {
+    background: #2a6f4f; color: #fff; border-color: #2a6f4f;
+}
+
+/* 响应式 */
+@media (max-width: 1100px) {
+    .industry-mindmap-grid { grid-template-columns: repeat(2, 1fr); }
+    .research-portals { grid-template-columns: 1fr 1fr; }
+    .research-portal-card.primary { grid-column: 1 / -1; }
+    .idm-stats { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+    .industry-mindmap-grid { grid-template-columns: 1fr; }
+    .research-portals { grid-template-columns: 1fr; }
+    .mm-l2-grid { grid-template-columns: 1fr; }
+    .idm-stats { grid-template-columns: repeat(2, 1fr); }
+    .idm-panel { width: 100vw; max-height: 100vh; border-radius: 0; }
+}

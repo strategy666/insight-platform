@@ -337,58 +337,122 @@
     </div>
 </section>
 
-<!-- ===================== TAB 3: 行业研究（待装修） ===================== -->
+<!-- ===================== TAB 3: 行业研究（脑图 + 报告库） ===================== -->
 <div class="tab-pane" id="tab-research">
 <section class="hero hero-sub">
     <div class="container">
-        <h1>📚 行业研究</h1>
-        <p class="hero-subtitle">🚧 待装修中 · 暂时提供 chatbot 占位</p>
+        <h1>📚 行业研究 · 生服行业知识库</h1>
+        <p class="hero-subtitle"><b id="indL1Count">36</b> 个一级行业 · <b id="indL2Count">245</b> 个二级行业 · 2025E 总规模 <b id="indGmvTotal">189 万亿</b> · 点击二级行业卡片查看行研报告 + AI 问答</p>
     </div>
 </section>
 
-<section class="section">
+<!-- ① 行业报告库入口（外链 nxny.com） -->
+<section class="section research-portal-row">
     <div class="container">
-        <!-- 待装修提示 -->
-        <div class="under-construction">
-            <div class="uc-icon">🛠️</div>
-            <div class="uc-title">本页面正在装修中</div>
-            <div class="uc-desc">
-                行业报告库 / 热点话题整合 / 研究索引<br/>
-                即将上线，敬请期待 ✨
-            </div>
-        </div>
-
-        <!-- Chatbot 占位 -->
-        <div class="research-chatbot">
-            <div class="chatbot-header">
-                <span class="chatbot-icon">💬</span>
-                <div>
-                    <div class="chatbot-title">行业研究 Chatbot</div>
-                    <div class="chatbot-sub">先用对话式查询，正式版本上线后会接入专属行业资料库</div>
+        <div class="research-portals">
+            <a href="https://www.nxny.com" target="_blank" rel="noopener" class="research-portal-card primary">
+                <div class="rp-icon">📊</div>
+                <div class="rp-body">
+                    <div class="rp-title">行业报告库 · 暖夕南野（nxny.com）</div>
+                    <div class="rp-desc">数千份卖方研报 / 行业白皮书 / 一手访谈，搜索任意行业关键词即可下载 PDF</div>
+                    <div class="rp-actions">
+                        <span class="rp-tag">登录账号已配置</span>
+                        <span class="rp-link">前往报告库 ↗</span>
+                    </div>
+                </div>
+            </a>
+            <div class="research-portal-card secondary" onclick="document.getElementById('indMindmapInput').focus()">
+                <div class="rp-icon">🔍</div>
+                <div class="rp-body">
+                    <div class="rp-title">行业内搜索</div>
+                    <div class="rp-desc">在 245 个二级行业中快速定位（如「中式正餐」「医美」）</div>
+                    <div class="rp-actions">
+                        <input type="text" id="indMindmapInput" class="ind-search-input"
+                               placeholder="搜行业名（标题 / 一级 / 二级）"
+                               oninput="filterIndustryMindmap(this.value)" />
+                    </div>
                 </div>
             </div>
-            <div class="chatbot-body" id="researchChatBody">
-                <div class="chat-bubble bot">
-                    👋 你好！装修期间我可以帮你查询：行业大盘数据、竞对策略、AI/电商/本地生活赛道动态等。<br/>
-                    试试问：「字节本地生活2026最新动态」「小红书电商策略」「AI视频生成赛道格局」
+            <div class="research-portal-card tertiary">
+                <div class="rp-icon">💡</div>
+                <div class="rp-body">
+                    <div class="rp-title">数据说明</div>
+                    <div class="rp-desc">市场规模 / CAGR / 毛利率 / 线上化率均为估算值，详细数据请到 nxny.com 查阅原始研报</div>
                 </div>
-            </div>
-            <div class="chatbot-input-row">
-                <input type="text" id="researchChatInput" class="chatbot-input"
-                       placeholder="💬 询问行业相关问题，回车发送..."
-                       onkeypress="if(event.key==='Enter')window.askResearchChat(this.value)" />
-                <button class="chatbot-send-btn" onclick="window.askResearchChat(document.getElementById('researchChatInput').value)">发送</button>
-            </div>
-            <div class="chatbot-suggest">
-                <span class="cs-label">试试：</span>
-                <button class="cs-pill" onclick="window.askResearchChat('字节本地生活 2026 最新策略')">字节本地生活策略</button>
-                <button class="cs-pill" onclick="window.askResearchChat('小红书电商商业化进展')">小红书电商进展</button>
-                <button class="cs-pill" onclick="window.askResearchChat('AI 视频生成赛道格局')">AI 视频赛道</button>
-                <button class="cs-pill" onclick="window.askResearchChat('快手 Q1 财报亮点')">快手 Q1 财报</button>
             </div>
         </div>
     </div>
 </section>
+
+<!-- ② 行业脑图（36 一级 × 245 二级 卡片网格） -->
+<section class="section research-mindmap-section">
+    <div class="container">
+        <div class="mindmap-toolbar">
+            <h2 class="mindmap-title">🗺️ 生服行业脑图</h2>
+            <div class="mindmap-tip">点击一级行业展开 / 点击二级行业查看详情 + AI 问答</div>
+        </div>
+        <div class="industry-mindmap-grid" id="industryMindmapGrid">
+            <div class="mindmap-loading">⏳ 加载行业数据中...</div>
+        </div>
+    </div>
+</section>
+
+<!-- ③ 行业详情弹窗 -->
+<div class="industry-detail-modal" id="industryDetailModal" style="display:none;">
+    <div class="idm-overlay" onclick="closeIndustryDetail()"></div>
+    <div class="idm-panel">
+        <div class="idm-header">
+            <div class="idm-header-left">
+                <div class="idm-l1-tag" id="idmL1Tag">—</div>
+                <h2 class="idm-l2-title" id="idmL2Title">—</h2>
+            </div>
+            <button class="idm-close" onclick="closeIndustryDetail()">✕</button>
+        </div>
+        
+        <div class="idm-body">
+            <!-- 关键指标卡片 -->
+            <div class="idm-stats">
+                <div class="idm-stat"><div class="idm-stat-val" id="idmGmv">—</div><div class="idm-stat-lbl">2025E 市场规模 (亿元)</div></div>
+                <div class="idm-stat"><div class="idm-stat-val" id="idmCagr">—</div><div class="idm-stat-lbl">3 年 CAGR</div></div>
+                <div class="idm-stat"><div class="idm-stat-val" id="idmGross">—</div><div class="idm-stat-lbl">毛利率</div></div>
+                <div class="idm-stat"><div class="idm-stat-val" id="idmNet">—</div><div class="idm-stat-lbl">净利率</div></div>
+                <div class="idm-stat"><div class="idm-stat-val" id="idmOnline">—</div><div class="idm-stat-lbl">线上化率</div></div>
+                <div class="idm-stat"><div class="idm-stat-val" id="idmTrend">—</div><div class="idm-stat-lbl">线上趋势</div></div>
+            </div>
+            
+            <!-- 行研报告内容 -->
+            <div class="idm-section">
+                <h3 class="idm-section-title">📄 行业研究报告</h3>
+                <div class="idm-report-content" id="idmReport">—</div>
+                <div class="idm-actions">
+                    <a href="#" target="_blank" rel="noopener" class="idm-action-btn primary" id="idmNxnyLink">
+                        📊 在 nxny.com 报告库搜索本行业 ↗
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 内嵌 chatbot -->
+            <div class="idm-section idm-chatbot-section">
+                <h3 class="idm-section-title">💬 行业 AI 问答</h3>
+                <div class="idm-chatbot">
+                    <div class="idm-chat-body" id="idmChatBody">
+                        <div class="chat-bubble bot">
+                            👋 你正在咨询「<b id="idmChatIndustry">—</b>」行业。<br/>
+                            可以问：「这个行业的快手机会点」「TOP3 玩家是谁」「线下转线上路径」「客户画像是怎样」等
+                        </div>
+                    </div>
+                    <div class="idm-chat-input-row">
+                        <input type="text" id="idmChatInput" class="chatbot-input"
+                               placeholder="输入问题，回车发送…"
+                               onkeypress="if(event.key==='Enter')askIndustryChat()" />
+                        <button class="chatbot-send-btn" onclick="askIndustryChat()">发送</button>
+                    </div>
+                    <div class="idm-chat-suggest" id="idmChatSuggest"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </div><!-- /tab-research -->
 
@@ -904,8 +968,9 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260531g"></script>
-<script src="assets/feishu-search.js?v=20260531g"></script>
+<script src="assets/main.js?v=20260531h"></script>
+<script src="assets/feishu-search.js?v=20260531h"></script>
+<script src="assets/industry-research.js?v=20260531h"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){
