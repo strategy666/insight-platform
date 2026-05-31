@@ -76,6 +76,20 @@
     </div>
 </section>
 
+<!-- AI 速递专区 -->
+<section id="aiNewsSection" class="section ai-news-section">
+    <div class="container">
+        <div class="section-header section-header-row">
+            <div>
+                <h2>🚀 AI 速递</h2>
+                <p>最近 7 天 AI 领域关键动态 · 拼接 So What 解读</p>
+            </div>
+            <div class="ai-news-tag">实时同步 · 腾讯研究院 / 钛媒体 / 官方源</div>
+        </div>
+        <div class="ai-news-grid" id="aiNewsGrid"></div>
+    </div>
+</section>
+
 <!-- AI Answer Panel -->
 <section id="aiAnswerSection" class="ai-answer-section" style="display:none;">
     <div class="container">
@@ -97,49 +111,54 @@
 <!-- 市场洞察 主体 -->
 <section id="insights" class="section">
     <div class="container">
-        <div class="section-header">
-            <h2>💡 本周关键情报</h2>
-            <p>多维筛选 · So What 解读</p>
+        <div class="section-header section-header-row">
+            <div>
+                <h2>💡 本周关键情报</h2>
+                <p>多维筛选 · So What 解读 · 点卡片看完整时间线</p>
+            </div>
+            <button class="filter-toggle-btn" onclick="toggleFilters()">
+                <span id="filterToggleLabel">⚙️ 筛选</span>
+                <span id="filterCountBadge" class="filter-count-badge" style="display:none;">0</span>
+            </button>
         </div>
 
         <div class="key-insights" id="keyInsights"></div>
 
-        <!-- 筛选器（占位结构，下一轮瘦身） -->
-        <div class="filters-panel">
+        <!-- 筛选器：默认收起 chip 风格 -->
+        <div class="filters-panel filters-collapsed" id="filtersPanel">
             <div class="filter-group">
-                <label>优先级</label>
-                <div class="filter-btns">
-                    <button class="filter-btn active" data-type="priority" data-value="all">全部</button>
-                    <button class="filter-btn" data-type="priority" data-value="high">🔴 高</button>
-                    <button class="filter-btn" data-type="priority" data-value="mid">🟡 中</button>
-                    <button class="filter-btn" data-type="priority" data-value="low">🟢 低</button>
+                <label>🎯 优先级</label>
+                <div class="filter-chips">
+                    <button class="chip active" data-type="priority" data-value="all">全部</button>
+                    <button class="chip" data-type="priority" data-value="high">🔴 高</button>
+                    <button class="chip" data-type="priority" data-value="mid">🟡 中</button>
+                    <button class="chip" data-type="priority" data-value="low">🟢 低</button>
                 </div>
             </div>
             <div class="filter-group">
-                <label>信号</label>
-                <div class="filter-btns">
-                    <button class="filter-btn active" data-type="signal" data-value="all">全部</button>
-                    <button class="filter-btn" data-type="signal" data-value="opportunity">🟢 机会</button>
-                    <button class="filter-btn" data-type="signal" data-value="neutral">🟡 中性</button>
-                    <button class="filter-btn" data-type="signal" data-value="threat">🔴 威胁</button>
+                <label>📡 信号</label>
+                <div class="filter-chips">
+                    <button class="chip active" data-type="signal" data-value="all">全部</button>
+                    <button class="chip" data-type="signal" data-value="opportunity">🟢 机会</button>
+                    <button class="chip" data-type="signal" data-value="neutral">🟡 中性</button>
+                    <button class="chip" data-type="signal" data-value="threat">🔴 威胁</button>
                 </div>
             </div>
             <div class="filter-group">
-                <label>赛道</label>
-                <div class="filter-btns" id="trackFilterBtns">
-                    <button class="filter-btn active" data-type="track" data-value="all">全部</button>
-                    <button class="filter-btn" data-type="track" data-value="本地生活">本地生活</button>
-                    <button class="filter-btn" data-type="track" data-value="AI">AI</button>
-                    <button class="filter-btn" data-type="track" data-value="线索广告">线索广告</button>
-                    <button class="filter-btn" data-type="track" data-value="电商">电商</button>
-                    <button class="filter-btn" data-type="track" data-value="出海">出海</button>
+                <label>🛣️ 赛道</label>
+                <div class="filter-chips" id="trackFilterBtns">
+                    <button class="chip active" data-type="track" data-value="all">全部</button>
+                    <!-- 由 JS 动态生成 -->
                 </div>
             </div>
             <div class="filter-group">
-                <label>公司</label>
-                <div class="filter-btns" id="companyFilterBtns">
-                    <button class="filter-btn active" data-type="company" data-value="all">全部</button>
+                <label>🏢 公司</label>
+                <div class="filter-chips" id="companyFilterBtns">
+                    <button class="chip active" data-type="company" data-value="all">全部</button>
                 </div>
+            </div>
+            <div class="filter-actions">
+                <button class="filter-reset-btn" onclick="resetFilters()">↺ 重置全部</button>
             </div>
         </div>
 
@@ -175,11 +194,39 @@
 
 <section id="competitors" class="section">
     <div class="container">
-        <div class="section-header">
-            <h2>📌 竞对动态</h2>
-            <p>选择竞对查看其细粒度产品/政策/营销动态</p>
+        <div class="section-header section-header-row">
+            <div>
+                <h2>📌 竞对动态矩阵</h2>
+                <p>双维筛选：公司 × 业务维度 · 数据源标签可追溯</p>
+            </div>
+            <div class="comp-stat-row">
+                <span class="comp-stat"><b id="compTotal">—</b> 条动态</span>
+                <span class="comp-stat-sep">·</span>
+                <span class="comp-stat"><b id="compRecent">—</b> 条本周</span>
+            </div>
         </div>
-        <div class="competitor-tabs" id="competitorTabs"></div>
+
+        <!-- 公司维度切换 -->
+        <div class="comp-filter-bar">
+            <div class="comp-filter-group">
+                <label>🏢 公司</label>
+                <div class="comp-tabs" id="competitorTabs"></div>
+            </div>
+            <div class="comp-filter-group">
+                <label>🧭 维度</label>
+                <div class="comp-dim-tabs" id="competitorDimTabs"></div>
+            </div>
+            <div class="comp-filter-group">
+                <label>📊 数据源</label>
+                <div class="comp-source-tabs" id="competitorSourceTabs">
+                    <button class="chip active" data-source="all">全部</button>
+                    <button class="chip" data-source="飞书内部">📁 飞书内部</button>
+                    <button class="chip" data-source="竞媒官方">🏢 竞媒官方</button>
+                    <button class="chip" data-source="三方媒体">📰 三方媒体</button>
+                </div>
+            </div>
+        </div>
+
         <div class="competitor-updates" id="competitorUpdates"></div>
     </div>
 </section>
@@ -412,6 +459,14 @@ window.askResearchChat = function(q){
 };
 
 </script>
+
+<!-- 情报详情弹窗 (Part1 加厚详情) -->
+<div class="intel-modal" id="intelModal" style="display:none;" onclick="if(event.target===this)closeIntelModal()">
+    <div class="intel-modal-content">
+        <button class="intel-modal-close" onclick="closeIntelModal()">×</button>
+        <div id="intelModalBody"></div>
+    </div>
+</div>
 
 <script src="assets/main.js"></script>
 <script src="assets/feishu-search.js"></script>

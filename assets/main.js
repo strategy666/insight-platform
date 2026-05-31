@@ -8,11 +8,18 @@ let currentFilters = {
     company: 'all',
     search: ''
 };
+let currentCompFilters = {
+    company: null,
+    dimension: 'all',
+    source: 'all'
+};
 
 // ==================== 初始化 ====================
 document.addEventListener('DOMContentLoaded', async () => {
     await loadData();
     renderKeyInsights();
+    renderAINews();
+    initDynamicFilters();
     renderInsightsGrid();
     renderCompetitors();
     initFilters();
@@ -71,87 +78,197 @@ function renderKeyInsights() {
     document.getElementById('keyInsights').innerHTML = html || '<p class="empty-state">暂无高优先级情报</p>';
 }
 
-// ==================== 渲染情报卡片流 ====================
+// ==================== 渲染情报卡片流（瘦身版）====================
 function renderInsightsGrid() {
     const filtered = filterInsights();
     
     if (filtered.length === 0) {
-        document.getElementById('insightsGrid').innerHTML = '<p class="empty-state">暂无匹配情报</p>';
+        document.getElementById('insightsGrid').innerHTML = '<p class="empty-state">暂无匹配情报，试试调整筛选</p>';
         return;
     }
     
-    const html = filtered.map(item => `
-        <div class="insight-card" data-id="${item.id}">
-            <div class="card-header">
-                <div class="card-meta">
-                    <span class="priority-badge priority-${item.priority}">${getPriorityIcon(item.priority)}</span>
-                    <span class="signal-badge signal-${item.signal}">${getSignalIcon(item.signal)}</span>
-                    <span class="date">${item.date}</span>
-                </div>
-                <div class="card-companies">
-                    ${item.company.map(c => `<span class="company-tag">${c}</span>`).join('')}
-                </div>
+    const html = filtered.map(item => {
+        const isAI = (item.tracks || []).some(t => /AI|AIGC/i.test(t));
+        const cardClass = 'insight-card slim-card' + (item.priority==='high' ? ' card-high' : '');
+        return `
+        <div class="${cardClass}" data-id="${item.id}" onclick="openIntelModal('${item.id}')">
+            <div class="slim-card-top">
+                <span class="slim-priority slim-pri-${item.priority}">${getPriorityIcon(item.priority).split(' ')[0]}</span>
+                <span class="slim-signal slim-sig-${item.signal}">${getSignalIcon(item.signal).split(' ')[0]}</span>
+                ${isAI ? '<span class="slim-ai-badge">AI</span>' : ''}
+                <span class="slim-date">${item.date}</span>
             </div>
-            
-            <h3 class="card-title">${item.title}</h3>
-            <p class="card-tldr">${item.tldr}</p>
-            
-            <div class="card-tags">
-                ${item.tags.slice(0, 5).map(tag => `<span class="tag">${tag}</span>`).join('')}
+            <h3 class="slim-title">${item.title}</h3>
+            <p class="slim-tldr">${item.tldr}</p>
+            <div class="slim-card-foot">
+                <div class="slim-companies">${(item.company || []).slice(0,3).map(c => `<span class="slim-tag">${c}</span>`).join('')}</div>
+                <span class="slim-cta">打开 →</span>
             </div>
-            
-            <div class="card-metrics">
-                ${Object.entries(item.metrics || {}).slice(0, 3).map(([key, val]) => 
-                    `<div class="metric"><span class="metric-label">${key}</span><span class="metric-value">${val}</span></div>`
-                ).join('')}
-            </div>
-            
-            <div class="card-footer">
-                <button class="btn-expand" onclick="toggleDetails('${item.id}')">查看详情</button>
-                <span class="source-count">${item.sources.length} 个来源</span>
-            </div>
-            
-            <div class="card-details" id="details-${item.id}" style="display:none;">
-                <div class="details-section">
-                    <h4>核心要点</h4>
-                    <ul>
-                        ${item.takeaway.map(t => `<li>${t}</li>`).join('')}
-                    </ul>
-                </div>
-                
-                <div class="details-section">
-                    <h4>对快手启示</h4>
-                    <p>${item.sowhat_for_kuaishou || '待补充'}</p>
-                </div>
-                
-                ${item.timeline && item.timeline.length > 0 ? `
-                <div class="details-section">
-                    <h4>时间线</h4>
-                    <div class="timeline">
-                        ${item.timeline.map(t => `
-                            <div class="timeline-item">
-                                <span class="timeline-date">${t.date}</span>
-                                <span class="timeline-event">${t.event}</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                ` : ''}
-                
-                <div class="details-section">
-                    <h4>信息来源</h4>
-                    <ul class="sources-list">
-                        ${item.sources.map(s => `
-                            <li><a href="${s.url}" target="_blank">${s.name}</a> <span class="source-date">${s.date}</span></li>
-                        `).join('')}
-                    </ul>
-                </div>
-            </div>
-        </div>
-    `).join('');
+        </div>`;
+    }).join('');
     
     document.getElementById('insightsGrid').innerHTML = html;
 }
+
+// ==================== 详情弹窗（加厚）====================
+function openIntelModal(id) {
+    const item = intelData.find(it => it.id === id);
+    if (!item) return;
+    const modal = document.getElementById('intelModal');
+    const body = document.getElementById('intelModalBody');
+    
+    const tlHtml = (item.timeline && item.timeline.length > 0) ? `
+        <div class="modal-section">
+            <h4>📅 事件时间线</h4>
+            <div class="modal-timeline">
+                ${item.timeline.map(t => `
+                    <div class="modal-tl-item">
+                        <span class="modal-tl-date">${t.date}</span>
+                        <span class="modal-tl-event">${t.event}</span>
+                    </div>`).join('')}
+            </div>
+        </div>` : '';
+    
+    const metricsHtml = (item.metrics && Object.keys(item.metrics).length > 0) ? `
+        <div class="modal-section">
+            <h4>📊 关键指标</h4>
+            <div class="modal-metrics">
+                ${Object.entries(item.metrics).map(([k,v]) => `
+                    <div class="modal-metric"><div class="mm-val">${v}</div><div class="mm-lab">${k}</div></div>`).join('')}
+            </div>
+        </div>` : '';
+    
+    body.innerHTML = `
+        <div class="modal-header">
+            <div class="modal-badges">
+                <span class="priority-badge priority-${item.priority}">${getPriorityIcon(item.priority)}</span>
+                <span class="signal-badge signal-${item.signal}">${getSignalIcon(item.signal)}</span>
+                <span class="modal-date">${item.date}</span>
+            </div>
+            <h2 class="modal-title">${item.title}</h2>
+            <p class="modal-tldr">${item.tldr}</p>
+            <div class="modal-companies">
+                ${(item.company || []).map(c => `<span class="company-tag">${c}</span>`).join('')}
+                · ${(item.tracks || []).map(t => `<span class="track-tag">#${t}</span>`).join(' ')}
+            </div>
+        </div>
+        
+        ${metricsHtml}
+        
+        <div class="modal-section">
+            <h4>📝 核心要点</h4>
+            <ul class="modal-list">
+                ${(item.takeaway || []).map(t => `<li>${t}</li>`).join('') || '<li class="empty">待补充</li>'}
+            </ul>
+        </div>
+        
+        <div class="modal-section modal-sowhat">
+            <h4>💡 对快手启示 (So What)</h4>
+            <p>${item.sowhat_for_kuaishou || '待补充分析'}</p>
+        </div>
+        
+        ${tlHtml}
+        
+        <div class="modal-section">
+            <h4>🔗 信息源 (${(item.sources || []).length})</h4>
+            <ul class="modal-sources">
+                ${(item.sources || []).map(s => `
+                    <li>
+                        <a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>
+                        ${s.date ? `<span class="src-date">${s.date}</span>` : ''}
+                    </li>`).join('')}
+            </ul>
+        </div>
+    `;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+function closeIntelModal() {
+    document.getElementById('intelModal').style.display = 'none';
+    document.body.style.overflow = '';
+}
+window.openIntelModal = openIntelModal;
+window.closeIntelModal = closeIntelModal;
+
+// ==================== AI 速递专区 ====================
+function renderAINews() {
+    const aiItems = intelData
+        .filter(it => (it.tracks || []).some(t => /AI|AIGC/i.test(t)))
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 8);
+    const grid = document.getElementById('aiNewsGrid');
+    if (!grid) return;
+    if (aiItems.length === 0) {
+        grid.innerHTML = '<p class="empty-state">暂无 AI 速递</p>';
+        return;
+    }
+    grid.innerHTML = aiItems.map(it => `
+        <div class="ai-news-card" onclick="openIntelModal('${it.id}')">
+            <div class="ai-card-top">
+                <span class="ai-card-date">${it.date}</span>
+                ${it.priority === 'high' ? '<span class="ai-card-hot">🔥 HOT</span>' : ''}
+            </div>
+            <h4 class="ai-card-title">${it.title}</h4>
+            <p class="ai-card-tldr">${it.tldr}</p>
+            <div class="ai-card-foot">
+                <span class="ai-card-tags">${(it.company || []).slice(0,2).map(c => `<span class="ai-tag">${c}</span>`).join('')}</span>
+                <span class="ai-card-more">深入 →</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ==================== 动态初始化筛选器 chip ====================
+function initDynamicFilters() {
+    // 赛道 chip
+    const tracks = new Set();
+    intelData.forEach(it => (it.tracks || []).forEach(t => tracks.add(t)));
+    const trackOrder = ['本地生活', '电商', 'AI', 'AIGC', '线索广告', '出海'];
+    const sortedTracks = Array.from(tracks).sort((a, b) => {
+        const ai = trackOrder.indexOf(a), bi = trackOrder.indexOf(b);
+        if (ai !== -1 && bi !== -1) return ai - bi;
+        if (ai !== -1) return -1;
+        if (bi !== -1) return 1;
+        return a.localeCompare(b);
+    });
+    const trackBox = document.getElementById('trackFilterBtns');
+    if (trackBox) {
+        trackBox.innerHTML = '<button class="chip active" data-type="track" data-value="all">全部</button>' +
+            sortedTracks.map(t => `<button class="chip" data-type="track" data-value="${t}">${t}</button>`).join('');
+    }
+    // 公司 chip【按出现频次排序，取 Top 10】
+    const compCount = {};
+    intelData.forEach(it => (it.company || []).forEach(c => { compCount[c] = (compCount[c] || 0) + 1; }));
+    const topComps = Object.entries(compCount).sort((a, b) => b[1] - a[1]).slice(0, 10).map(x => x[0]);
+    const compBox = document.getElementById('companyFilterBtns');
+    if (compBox) {
+        compBox.innerHTML = '<button class="chip active" data-type="company" data-value="all">全部</button>' +
+            topComps.map(c => `<button class="chip" data-type="company" data-value="${c}">${c}<sup>${compCount[c]}</sup></button>`).join('');
+    }
+}
+
+function toggleFilters() {
+    const panel = document.getElementById('filtersPanel');
+    if (panel) panel.classList.toggle('filters-collapsed');
+}
+function resetFilters() {
+    currentFilters = { priority: 'all', signal: 'all', track: 'all', company: 'all', search: '' };
+    document.querySelectorAll('.filters-panel .chip').forEach(b => {
+        b.classList.toggle('active', b.dataset.value === 'all');
+    });
+    renderInsightsGrid();
+    updateFilterCountBadge();
+}
+function updateFilterCountBadge() {
+    const cnt = ['priority', 'signal', 'track', 'company'].filter(k => currentFilters[k] !== 'all').length;
+    const badge = document.getElementById('filterCountBadge');
+    if (badge) {
+        if (cnt === 0) { badge.style.display = 'none'; }
+        else { badge.style.display = 'inline-block'; badge.textContent = cnt; }
+    }
+}
+window.toggleFilters = toggleFilters;
+window.resetFilters = resetFilters;
 
 // ==================== 筛选逻辑 ====================
 function filterInsights() {
@@ -190,20 +307,22 @@ function filterInsights() {
 
 // ==================== 初始化筛选器 ====================
 function initFilters() {
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const type = e.target.dataset.type;
-            const value = e.target.dataset.value;
+    // 事件委托（适用于 chip + filter-btn 两种类名）
+    document.querySelectorAll('.filters-panel').forEach(panel => {
+        panel.addEventListener('click', e => {
+            const btn = e.target.closest('.chip, .filter-btn');
+            if (!btn) return;
+            const type = btn.dataset.type;
+            const value = btn.dataset.value;
+            if (!type || !value) return;
             
-            // 更新按钮状态
-            e.target.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
+            // 更新同组状态
+            btn.parentElement.querySelectorAll('.chip, .filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
             
-            // 更新筛选条件
             currentFilters[type] = value;
-            
-            // 重新渲染
             renderInsightsGrid();
+            updateFilterCountBadge();
         });
     });
 }
@@ -211,6 +330,7 @@ function initFilters() {
 // ==================== 初始化搜索 ====================
 function initSearch() {
     const searchInput = document.getElementById('globalSearch');
+    if (!searchInput) return; // hero 改造后该元素可能不存在
     let searchTimer;
     
     searchInput.addEventListener('input', (e) => {
@@ -236,44 +356,93 @@ function toggleDetails(id) {
     }
 }
 
-// ==================== 渲染竞对追踪 ====================
+// ==================== 渲染竞对追踪（2D 矩阵）====================
 function renderCompetitors() {
-    const companiesMap = {};
-    competitorData.forEach(item => {
-        if (!companiesMap[item.company]) {
-            companiesMap[item.company] = [];
-        }
-        companiesMap[item.company].push(item);
-    });
+    const companies = Array.from(new Set(competitorData.map(it => it.company)));
     
-    // 渲染 Tabs
-    const tabsHtml = Object.keys(companiesMap).map((company, idx) => `
-        <button class="competitor-tab ${idx === 0 ? 'active' : ''}" 
-                onclick="switchCompetitor('${company}')">${company}</button>
-    `).join('');
+    // 公司 tabs
+    const tabsHtml = companies.map((c, idx) => {
+        const count = competitorData.filter(it => it.company === c).length;
+        return `<button class="chip comp-chip ${idx === 0 ? 'active' : ''}" 
+                onclick="switchCompetitor('${c}')">${c}<sup>${count}</sup></button>`;
+    }).join('');
     document.getElementById('competitorTabs').innerHTML = tabsHtml;
     
-    // 默认显示第一个公司
-    if (Object.keys(companiesMap).length > 0) {
-        switchCompetitor(Object.keys(companiesMap)[0]);
+    // 统计
+    const ctotal = document.getElementById('compTotal');
+    const crecent = document.getElementById('compRecent');
+    if (ctotal) ctotal.textContent = competitorData.length;
+    if (crecent) {
+        const weekAgo = new Date(); weekAgo.setDate(weekAgo.getDate() - 7);
+        crecent.textContent = competitorData.filter(it => new Date(it.date) >= weekAgo).length;
     }
+    
+    // 维度事件委托
+    const dimTabs = document.getElementById('competitorDimTabs');
+    if (dimTabs) {
+        dimTabs.addEventListener('click', e => {
+            const b = e.target.closest('.chip'); if (!b) return;
+            currentCompFilters.dimension = b.dataset.dim;
+            dimTabs.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+            b.classList.add('active');
+            renderCompetitorList();
+        });
+    }
+    const srcTabs = document.getElementById('competitorSourceTabs');
+    if (srcTabs) {
+        srcTabs.addEventListener('click', e => {
+            const b = e.target.closest('.chip'); if (!b) return;
+            currentCompFilters.source = b.dataset.source;
+            srcTabs.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+            b.classList.add('active');
+            renderCompetitorList();
+        });
+    }
+    
+    if (companies.length > 0) switchCompetitor(companies[0]);
 }
 
 function switchCompetitor(company) {
-    // 更新 Tab 状态
-    document.querySelectorAll('.competitor-tab').forEach(tab => {
-        tab.classList.toggle('active', tab.textContent === company);
+    currentCompFilters.company = company;
+    currentCompFilters.dimension = 'all';
+    document.querySelectorAll('#competitorTabs .chip').forEach(t => {
+        t.classList.toggle('active', t.textContent.startsWith(company));
     });
     
-    // 渲染该公司的动态（按日期降序排列）
-    const updates = competitorData
-        .filter(item => item.company === company)
-        .sort((a, b) => new Date(b.date) - new Date(a.date));
+    // 重新计算该公司的维度
+    const dims = Array.from(new Set(
+        competitorData.filter(it => it.company === company).map(it => it.dimension || it.category)
+    ));
+    const dimTabs = document.getElementById('competitorDimTabs');
+    if (dimTabs) {
+        dimTabs.innerHTML = '<button class="chip active" data-dim="all">全部</button>' +
+            dims.map(d => `<button class="chip" data-dim="${d}">${d}</button>`).join('');
+    }
+    renderCompetitorList();
+}
 
-    const html = updates.map(item => `
+function renderCompetitorList() {
+    const { company, dimension, source } = currentCompFilters;
+    let updates = competitorData.filter(it => it.company === company);
+    if (dimension !== 'all') updates = updates.filter(it => (it.dimension || it.category) === dimension);
+    if (source !== 'all') updates = updates.filter(it => (it.data_source || '三方媒体') === source);
+    updates.sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    if (updates.length === 0) {
+        document.getElementById('competitorUpdates').innerHTML = '<p class="empty-state">暂无匹配动态，试试其他维度/数据源</p>';
+        return;
+    }
+    
+    const html = updates.map(item => {
+        const srcBadge = item.data_source === '飞书内部' ? '📁' :
+                          item.data_source === '竞媒官方' ? '🏢' : '📰';
+        const srcCls = (item.data_source || '').replace(/[\s\/]/g, '');
+        return `
         <div class="competitor-card">
             <div class="comp-card-header">
-                <span class="comp-category">${item.category}</span>
+                <span class="comp-dim-badge">${item.dimension || item.category}</span>
+                <span class="comp-source-badge src-${srcCls}">${srcBadge} ${item.data_source || '三方媒体'}</span>
+                <span class="comp-tier-badge tier-${item.tier || 'T2'}">${item.tier || 'T2'}</span>
                 <span class="comp-date">${item.date}</span>
             </div>
             <h3>${item.title}</h3>
@@ -289,22 +458,20 @@ function switchCompetitor(company) {
                         <div class="comp-tl-item">
                             <span class="comp-tl-date">${t.date}</span>
                             <span class="comp-tl-event">${t.event}</span>
-                        </div>
-                    `).join('')}
+                        </div>`).join('')}
                 </div>
-            </div>
-            ` : ''}
+            </div>` : ''}
 
             <div class="comp-sources">
-                ${item.sources.map(s => `
-                    <a href="${s.url}" target="_blank" class="comp-source-link">${s.name}</a>
-                `).join('')}
+                ${(item.sources || []).map(s => `
+                    <a href="${s.url}" target="_blank" class="comp-source-link">${s.name}</a>`).join('')}
             </div>
-        </div>
-    `).join('');
+        </div>`;
+    }).join('');
     
-    document.getElementById('competitorUpdates').innerHTML = html || '<p class="empty-state">暂无动态</p>';
+    document.getElementById('competitorUpdates').innerHTML = html;
 }
+window.switchCompetitor = switchCompetitor;
 
 function toggleTimeline(header) {
     const body = header.nextElementSibling;

@@ -2,7 +2,7 @@
   "_meta": {
     "description": "Part2 竞对产品/政策/行业case更新 数据源 — 由 sub-agent: competitor-tracker 维护",
     "update_frequency": "weekly",
-    "last_updated": "2026-05-28",
+    "last_updated": "2026-05-29",
     "fields": [
       "id",
       "date",
@@ -11,7 +11,21 @@
       "title",
       "sowhat",
       "sources"
-    ]
+    ],
+    "dimensions": [
+      "AI/技术",
+      "产品/接入",
+      "产品发布",
+      "准入/政策",
+      "广告产品",
+      "政策更新",
+      "数据动态",
+      "电商/交易",
+      "营销/分账",
+      "行业打法",
+      "财报/行业case"
+    ],
+    "total_items": 21
   },
   "items": [
     {
@@ -50,7 +64,10 @@
           "date": "2026-05-18",
           "event": "正式发布智能托管产品\"出单宝\"，出单全托管、核销才计费，首期定向单体中小商家开放"
         }
-      ]
+      ],
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1"
     },
     {
       "id": "comp-002",
@@ -65,7 +82,10 @@
           "url": "https://open.oceanengine.com/changelog/1",
           "date": "2026-04-27"
         }
-      ]
+      ],
+      "dimension": "政策更新",
+      "data_source": "竞媒官方",
+      "tier": "T1"
     },
     {
       "id": "comp-003",
@@ -94,7 +114,10 @@
           "date": "2026-05-01",
           "event": "正式成立AI一级部门Dots，海外部门更名Rednote，同步启动AI投放能力建设"
         }
-      ]
+      ],
+      "dimension": "产品/接入",
+      "data_source": "竞媒官方",
+      "tier": "T1"
     },
     {
       "id": "comp-004",
@@ -128,7 +151,10 @@
           "date": "2026-05-14",
           "event": "2026Q1财报：广告收入同比增长20%，视频号+搜一搜成双核驱动，本地生活服务广告同比增长超40%"
         }
-      ]
+      ],
+      "dimension": "财报/行业case",
+      "data_source": "三方媒体",
+      "tier": "T1"
     },
     {
       "id": "comp-005",
@@ -162,7 +188,10 @@
           "date": "2026-05-18",
           "event": "2026Q1财报：广告收入同比降22%，AI云收入占比反超广告，线索广告（医疗/教育）客户开始向短视频平台迁移"
         }
-      ]
+      ],
+      "dimension": "财报/行业case",
+      "data_source": "三方媒体",
+      "tier": "T1"
     },
     {
       "id": "comp-006",
@@ -182,7 +211,10 @@
           "url": "https://openai.com/index/new-ways-to-buy-chatgpt-ads/",
           "date": "2026-05-05"
         }
-      ]
+      ],
+      "dimension": "产品/接入",
+      "data_source": "竞媒官方",
+      "tier": "T2"
     },
     {
       "id": "comp-007",
@@ -216,7 +248,10 @@
           "date": "2026-05-04",
           "event": "豆包推出付费版（68元/月），字节AI正式商业化，AI+广告双轮闭环路径成型"
         }
-      ]
+      ],
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1"
     },
     {
       "id": "comp-008",
@@ -231,7 +266,10 @@
           "url": "https://blog.google/products/ads-commerce/dsa-upgrade-to-ai-max-2026/",
           "date": "2026-04-15"
         }
-      ]
+      ],
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T2"
     },
     {
       "id": "comp-009",
@@ -265,7 +303,10 @@
           "组品公式"
         ],
         "doc_structure": "Part01生态介绍 → Part02行业案例 → Part03经营策略（含组品/短视频/营销）"
-      }
+      },
+      "dimension": "行业打法",
+      "data_source": "三方媒体",
+      "tier": "T1"
     },
     {
       "id": "comp-010",
@@ -289,7 +330,10 @@
         "ad_type": "线索投放 + 效果广告",
         "positioning": "新美业机会大，抖音成丽人商家核心营收渠道",
         "competitive_note": "三大运营模式：好组品 + 好内容 + 好生意"
-      }
+      },
+      "dimension": "广告产品",
+      "data_source": "三方媒体",
+      "tier": "T1"
     },
     {
       "id": "comp-011",
@@ -319,7 +363,10 @@
           "手动出价保障ROI"
         ],
         "target_users": "丽人健康行业 + 宠物医院等本地商家"
-      }
+      },
+      "dimension": "广告产品",
+      "data_source": "竞媒官方",
+      "tier": "T1"
     },
     {
       "id": "comp-012",
@@ -340,7 +387,10 @@
         "core_goal": "提升成单人头数量 + 弱势门店补量",
         "key_constraint": "投放门店全域推广的门店，不可同时投放PC端标准推广-团购成交",
         "auth_note": "巨量本地推直投账户默认拥有投放权限"
-      }
+      },
+      "dimension": "广告产品",
+      "data_source": "竞媒官方",
+      "tier": "T1"
     },
     {
       "id": "comp-013",
@@ -369,7 +419,10 @@
         ],
         "liren_case": "丽人理发：POI货架80%核心团品覆盖（烫染/剪发），折扣力度八折以内",
         "mutual_exclusion": "各营销工具存在叠斥关系，需按角色和行业范围使用"
-      }
+      },
+      "dimension": "行业打法",
+      "data_source": "三方媒体",
+      "tier": "T1"
     },
     {
       "id": "comp-014",
@@ -405,7 +458,10 @@
         },
         "update_date": "2026年1月28日最近更新",
         "coverage": "餐综酒全行业"
-      }
+      },
+      "dimension": "行业打法",
+      "data_source": "三方媒体",
+      "tier": "T1"
     },
     {
       "id": "comp-015",
@@ -439,7 +495,10 @@
           "url": "https://www.jiediancj.com/archives/42093",
           "date": "2026-05-19"
         }
-      ]
+      ],
+      "dimension": "产品发布",
+      "data_source": "三方媒体",
+      "tier": "T1"
     },
     {
       "id": "comp-016",
@@ -472,6 +531,141 @@
           "name": "中经网：五一前夕出游变美需求升温丽人消费迎来增长",
           "url": "https://finance.ce.cn/home/jrzq/dc/index.shtml",
           "date": "2026-04-28"
+        }
+      ],
+      "dimension": "数据动态",
+      "data_source": "三方媒体",
+      "tier": "T1"
+    },
+    {
+      "id": "comp-017",
+      "date": "2026-05-28",
+      "company": "字节",
+      "category": "产品/接入",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "抖音生服「商家智能助手」灰度：客服/选品/分析一体化，对标拼多多多多AI",
+      "sowhat": "字节正在用 AI Agent 重构商家工作台，自动化客服+智能选品+实时数据洞察，明显降低中小商家运营门槛。快手磁力魔方需思考类似 Agent 化能力，否则 KA 商家可能转移。",
+      "sources": [
+        {
+          "name": "36氪：抖音商家智能助手",
+          "url": "https://36kr.com",
+          "date": "2026-05-28"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-15",
+          "event": "字节灰度测试'商家智能助手' Beta 版"
+        },
+        {
+          "date": "2026-05-28",
+          "event": "36氪报道灰度名单扩到 500 家 GMV TOP 商家"
+        }
+      ]
+    },
+    {
+      "id": "comp-018",
+      "date": "2026-05-27",
+      "company": "字节",
+      "category": "营销/分账",
+      "dimension": "营销/分账",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "title": "巨量引擎深转能力升级：行为预估到点击-激活-付费全链路打通",
+      "sowhat": "巨量引擎把深度转化从'激活'拓展到'付费/复购'全链路，广告主投放 ROI 可观测性大幅提升。快手磁力台度需对齐深度转化路径，否则 KA 预算可能向字节倾斜。",
+      "sources": [
+        {
+          "name": "巨量引擎官方",
+          "url": "https://oceanengine.com",
+          "date": "2026-05-27"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-27",
+          "event": "巨量引擎《深度转化能力升级》白皮书发布"
+        }
+      ]
+    },
+    {
+      "id": "comp-019",
+      "date": "2026-05-26",
+      "company": "小红书",
+      "category": "电商/交易",
+      "dimension": "电商/交易",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "title": "小红书电商「买手分」机制上线：买手影响力直接挂钩流量分发",
+      "sowhat": "小红书把 KOL/买手个人 IP 与电商 GMV 强绑定，'人货场'模型从'商品中心'转向'买手中心'。快手电商需评估老铁经济与买手经济的协同打法。",
+      "sources": [
+        {
+          "name": "小红书商业化",
+          "url": "https://ad.xiaohongshu.com",
+          "date": "2026-05-26"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-20",
+          "event": "小红书内测买手等级体系"
+        },
+        {
+          "date": "2026-05-26",
+          "event": "正式发布'买手分'公开规则"
+        }
+      ]
+    },
+    {
+      "id": "comp-020",
+      "date": "2026-05-25",
+      "company": "腾讯",
+      "category": "AI/技术",
+      "dimension": "AI/技术",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "title": "腾讯广告 AI 创意：朋友圈视频广告生成成本降至 1/10，扶持中小广告主",
+      "sowhat": "腾讯广告用 AI 大幅降低视频创意制作成本，瞄准长尾中小广告主。快手磁力创意需评估 AI 自动剪辑/智能配音能力，避免长尾客户流失。",
+      "sources": [
+        {
+          "name": "腾讯广告官方",
+          "url": "https://e.qq.com",
+          "date": "2026-05-25"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-25",
+          "event": "腾讯广告发布'妙问 AI 创意工坊'，朋友圈广告一键生成"
+        }
+      ]
+    },
+    {
+      "id": "comp-021",
+      "date": "2026-05-22",
+      "company": "百度",
+      "category": "准入/政策",
+      "dimension": "准入/政策",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "title": "百度严肃医疗类目准入再收紧：男科妇科需提供二级以上医院授权",
+      "sowhat": "百度连续两年压缩男科妇科广告（消耗 -30%）。这些预算可能溢出到快手健康/磁力，但同时合规风险加大。快手需提前布局医疗资质审核能力。",
+      "sources": [
+        {
+          "name": "百度营销官方",
+          "url": "https://yingxiao.baidu.com",
+          "date": "2026-05-22"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-04-01",
+          "event": "百度更新医疗准入规则征求意见稿"
+        },
+        {
+          "date": "2026-05-22",
+          "event": "正式实施：男科妇科广告需二级以上医院授权"
         }
       ]
     }

@@ -22,7 +22,7 @@
       "related_ids",
       "sources"
     ],
-    "total_items": 19,
+    "total_items": 27,
     "window_days": 14,
     "cutoff_rule": "事件发生日期 >= 2026-05-15；老事件归档到 intel_archive.json",
     "stats": {
@@ -102,6 +102,72 @@
           "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
         }
       ]
+    },
+    {
+      "id": "intel-033",
+      "date": "2026-05-29",
+      "title": "ElevenLabs Music v2 发布：AI 音乐迈入'可编辑创作'",
+      "tldr": "ElevenLabs Music v2 解决吃字/节奏漂移，支持长程结构控制 + 局部 inpainting 重生成，AI 音乐从'一次性生成'走向'可编辑迭代'。",
+      "priority": "mid",
+      "signal": "neutral",
+      "tags": [
+        "#AI 音乐",
+        "#ElevenLabs",
+        "#AIGC"
+      ],
+      "company": [
+        "ElevenLabs"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI 音乐"
+      ],
+      "takeaway": [
+        "AI 音乐进入可编辑时代",
+        "局部 inpainting 是关键能力",
+        "对短视频 BGM 制作有冲击"
+      ],
+      "sowhat_for_kuaishou": "短视频 BGM 自动生成场景可借鉴，降低创作者音频制作成本。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ],
+      "category": "AI 速递"
+    },
+    {
+      "id": "intel-034",
+      "date": "2026-05-29",
+      "title": "Anthropic Claude Code 升级：流式输出 + MCP 重试 + 自愈机制",
+      "tldr": "Claude Code 终结终端闪烁，引入流式思考链可见、自愈会话、MCP 强化握手，AI Coding 从'demo'走向'可靠伙伴'。",
+      "priority": "mid",
+      "signal": "neutral",
+      "tags": [
+        "#AI Coding",
+        "#Anthropic",
+        "#MCP"
+      ],
+      "company": [
+        "Anthropic"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI Coding"
+      ],
+      "takeaway": [
+        "AI Coding 进入工程化稳定期",
+        "MCP 协议在 Agent 生态收敛",
+        "流式输出成 Agent UI 标配"
+      ],
+      "sowhat_for_kuaishou": "内部研发提效路径参考，MCP 可作为内部工具集成标准。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ],
+      "category": "AI 速递"
     },
     {
       "id": "intel-015",
@@ -242,6 +308,77 @@
           "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
         }
       ]
+    },
+    {
+      "id": "intel-035",
+      "date": "2026-05-28",
+      "title": "讯飞 AI 眼镜发布：40g 行业最轻 + 122 语种实时互译",
+      "tldr": "科大讯飞首款 AI 眼镜重 40g，唇动识别降噪 + 5+1 麦克风矩阵，端到端首字延迟 2 秒，搭载 GlassClaw 工作流 Agent。",
+      "priority": "mid",
+      "signal": "neutral",
+      "tags": [
+        "#AI 眼镜",
+        "#讯飞",
+        "#硬件"
+      ],
+      "company": [
+        "科大讯飞"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI 硬件"
+      ],
+      "metrics": {
+        "重量": "40g",
+        "翻译语种": "122",
+        "首字延迟": "2s"
+      },
+      "takeaway": [
+        "AI 眼镜从拍照走向翻译+工作流",
+        "硬件轻量化是关键差异点",
+        "唇动识别开启高噪场景突围"
+      ],
+      "sowhat_for_kuaishou": "新硬件入口的短视频/直播内容形态机会。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ],
+      "category": "AI 速递"
+    },
+    {
+      "id": "intel-036",
+      "date": "2026-05-28",
+      "title": "腾讯创意 Agent Miora 开测：一句话生成整套品牌视觉",
+      "tldr": "腾讯香港 Cloud Day 发布 Miora，集成图像/视频/3D/UI 四引擎 + 审美记忆 + Skills 开放平台，直冲 Midjourney/Canva。",
+      "priority": "mid",
+      "signal": "threat",
+      "tags": [
+        "#AI 设计",
+        "#腾讯",
+        "#创意 Agent"
+      ],
+      "company": [
+        "腾讯"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI 应用"
+      ],
+      "takeaway": [
+        "腾讯打全栈 AI 创意，对位字节剪映/即梦",
+        "Skills 平台建社区飞轮",
+        "广告主创意制作环节面临 AI 替代"
+      ],
+      "sowhat_for_kuaishou": "磁力创意需 Agent 化，避免被广告主直接绕过。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ],
+      "category": "AI 速递"
     },
     {
       "id": "intel-027",
@@ -428,6 +565,43 @@
       ]
     },
     {
+      "id": "intel-037",
+      "date": "2026-05-26",
+      "title": "面壁智能 PilotDeck 开源：以'工作舱'取代对话框",
+      "tldr": "清华 THUNLP+面壁+OpenBMB 开源 PilotDeck Agent OS，WorkSpace 范式 + 智能路由 + Always-on，社交媒体场景成本省 70%。",
+      "priority": "mid",
+      "signal": "neutral",
+      "tags": [
+        "#Agent OS",
+        "#开源",
+        "#面壁智能"
+      ],
+      "company": [
+        "面壁智能"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI Agent"
+      ],
+      "metrics": {
+        "成本节省": "70%",
+        "复杂任务成本": "1/6"
+      },
+      "takeaway": [
+        "Agent 交互范式可能从对话框迁向工作舱",
+        "智能路由让小模型超越大模型",
+        "24h 常驻 Agent 新场景"
+      ],
+      "sowhat_for_kuaishou": "内部 Agent (客服/经营) 可借鉴 WorkSpace 范式。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ],
+      "category": "AI 速递"
+    },
+    {
       "id": "intel-021",
       "date": "2026-05-25",
       "title": "时序回溯：本地生活三强格局 美团守基本盘 vs 抖音攻头部 vs 快手聚焦长尾",
@@ -539,6 +713,44 @@
       ]
     },
     {
+      "id": "intel-038",
+      "date": "2026-05-25",
+      "title": "腾讯混元 Hy-Memory：6 层记忆 + 演化链，Agent 记忆量降 70%",
+      "tldr": "腾讯混元发布 Hy-Memory，6 层记忆 + System1/2 双系统 + 演化链，LongMemEval 85.2 分远超同类，写入速度是 Graphiti 的 8 倍。",
+      "priority": "high",
+      "signal": "neutral",
+      "tags": [
+        "#AI Agent",
+        "#记忆系统",
+        "#腾讯"
+      ],
+      "company": [
+        "腾讯"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI Agent"
+      ],
+      "metrics": {
+        "评测得分": "85.2",
+        "记忆压缩": "70%",
+        "写入速度": "8x Graphiti"
+      },
+      "takeaway": [
+        "Agent 长程任务进入'记忆'核心竞争阶段",
+        "演化链 supersedes 指针机制创新",
+        "腾讯主动卡位 Agent 基础设施"
+      ],
+      "sowhat_for_kuaishou": "Agent 中长期记忆是商业化客服/营销 Agent 的关键依赖。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ],
+      "category": "AI 速递"
+    },
+    {
       "id": "intel-032",
       "date": "2026-05-24",
       "title": "Gemini 3.5 发布：价格砍半、速度 4 倍，Google 用价格战逼 OpenAI",
@@ -584,6 +796,43 @@
           "url": "https://zhuanlan.zhihu.com/p/670574382"
         }
       ]
+    },
+    {
+      "id": "intel-039",
+      "date": "2026-05-24",
+      "title": "Gemini 3.5 发布：价格砍半 + 速度 4 倍 + Gemini Omni 视频",
+      "tldr": "Google DeepMind 发布 Gemini 3.5 Flash + Omni 视频模型，API 价格砍半推理 4 倍速；AlphaProof Nexus 数学证明突破。",
+      "priority": "high",
+      "signal": "threat",
+      "tags": [
+        "#Gemini",
+        "#价格战",
+        "#视频生成"
+      ],
+      "company": [
+        "Google"
+      ],
+      "tracks": [
+        "AIGC",
+        "大模型"
+      ],
+      "metrics": {
+        "价格": "-50%",
+        "速度": "4x"
+      },
+      "takeaway": [
+        "Google 用价格战逼 OpenAI",
+        "Gemini Omni 进入视频生成赛道",
+        "Action AI 成各家标配"
+      ],
+      "sowhat_for_kuaishou": "可灵需重估 API 定价，关注 Agent 化避免被通用模型挤压。",
+      "sources": [
+        {
+          "name": "钛媒体 - Gemini 3.5",
+          "url": "https://www.tmtpost.com/7994400.html"
+        }
+      ],
+      "category": "AI 速递"
     },
     {
       "id": "intel-012",
@@ -728,6 +977,39 @@
           "date": "2026-05-13"
         }
       ]
+    },
+    {
+      "id": "intel-040",
+      "date": "2026-05-22",
+      "title": "OpenAI 国家级 AI：与马耳他合作启动 B2G 全球渗透",
+      "tldr": "OpenAI 'Next phase of OpenAI for countries' 公布，与马耳他政府合作国家级 ChatGPT/Codex 部署，从 G7 扩到中小国家。",
+      "priority": "mid",
+      "signal": "neutral",
+      "tags": [
+        "#OpenAI",
+        "#国家级 AI",
+        "#全球化"
+      ],
+      "company": [
+        "OpenAI"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI 政企"
+      ],
+      "takeaway": [
+        "B2G 政府市场成 LLM 厂商新蓝海",
+        "OpenAI 从大国扩到中小国家",
+        "国家级合作成新竞争维度"
+      ],
+      "sowhat_for_kuaishou": "国际化业务 Kwai 可参考 B2G/B2C 协同打法。",
+      "sources": [
+        {
+          "name": "OpenAI 官方",
+          "url": "https://openai.com/zh-Hans-CN/index/agentic-ai-foundation/"
+        }
+      ],
+      "category": "AI 速递"
     },
     {
       "id": "intel-014",
