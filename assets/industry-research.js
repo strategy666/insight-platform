@@ -10,7 +10,7 @@
     async function loadIndustryDB() {
         if (INDUSTRY_DB) return INDUSTRY_DB;
         try {
-            const res = await fetch('assets/data/industry_research.json?v=20260531h');
+            const res = await fetch('assets/data/industry_research.json?v=20260531i&t=' + Date.now());
             INDUSTRY_DB = await res.json();
             return INDUSTRY_DB;
         } catch (e) {
@@ -299,16 +299,24 @@ ${extractFromReport(item.report_md, '商业化机会（快手生服视角）')}`
             || document.querySelector('.tab-link[data-tab="research"]')?.classList.contains('active');
         if (isRes && !INDUSTRY_DB) initIndustryMindmap();
     }
-    document.addEventListener('DOMContentLoaded', () => {
+    function bootIndustry() {
         maybeInit();
         // 即便不是默认 tab 也提前预加载
-        if (!INDUSTRY_DB) setTimeout(initIndustryMindmap, 800);
-    });
+        if (!INDUSTRY_DB) setTimeout(initIndustryMindmap, 300);
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bootIndustry);
+    } else {
+        // DOM 已就绪（脚本在 body 底部时 readyState 已 interactive/complete）
+        bootIndustry();
+    }
     document.addEventListener('click', e => {
         if (e.target.closest('.tab-link[data-tab="research"]')) {
             setTimeout(maybeInit, 100);
         }
     });
+    // hash 变化也触发
+    window.addEventListener('hashchange', () => setTimeout(maybeInit, 100));
     // ESC 关弹窗
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') closeIndustryDetail();
