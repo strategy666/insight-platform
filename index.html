@@ -21,7 +21,6 @@
             <nav class="nav main-tabs" id="mainTabs">
                 <a href="#insights"   class="nav-link tab-link active" data-tab="insights">💡 市场洞察</a>
                 <a href="#competitors" class="nav-link tab-link"        data-tab="competitors">🎯 竞对追踪</a>
-                <a href="#feishu"     class="nav-link tab-link"         data-tab="feishu">📁 飞书文档</a>
                 <a href="#research"    class="nav-link tab-link"        data-tab="research">📚 行业研究</a>
                 <a href="#assistant"   class="nav-link tab-link"        data-tab="assistant">🤖 战分助手</a>
             </nav>
@@ -262,19 +261,17 @@
     </div>
 </section>
 
-</div><!-- /tab-competitors -->
-
-<!-- ===================== TAB 3: 飞书文档检索（独立通路） ===================== -->
-<div class="tab-pane" id="tab-feishu">
-
-<section class="hero hero-sub">
+<!-- ===================== 竟对追踪 · 子模块：飞书文档全库 ===================== -->
+<section class="section feishu-subsection">
     <div class="container">
-        <h1>📁 飞书文档检索</h1>
-        <p class="hero-subtitle">本地索引 <b id="fsTotalCount">—</b> 篇飞书文档（含真实 URL <b id="fsUrlCount">—</b> 篇） · 来自你飞书空间 my.feishu.cn 的定期扫描</p>
+        <div class="feishu-sub-header">
+            <h2 class="feishu-sub-title">📁 飞书文档全库检索</h2>
+            <div class="feishu-sub-meta">本地索引 <b id="fsTotalCount">—</b> 篇 · 仅包含字节对外公开文档（bytedance.larkoffice.com），不含个人隐私内容 · <span style="color:#888">从你飞书「最近浏览」定期扫描</span></div>
+        </div>
 
-        <div class="ai-search-container">
+        <div class="ai-search-container feishu-sub-search">
             <div class="search-input-wrapper feishu-search-wrapper">
-                <input type="text" id="feishuPageInput" placeholder="🔍 在 517 篇飞书文档中检索（来自你飞书空间的真实索引）" autocomplete="off" onkeyup="if(event.key==='Enter')runFeishuPageSearch(this.value)" oninput="onFeishuPageInput(this.value)" />
+                <input type="text" id="feishuPageInput" placeholder="🔍 在字节对外飞书文档中检索（标题 / 维度 / 关键词）" autocomplete="off" onkeyup="if(event.key==='Enter')runFeishuPageSearch(this.value)" oninput="onFeishuPageInput(this.value)" />
                 <button class="search-btn" onclick="runFeishuPageSearch(document.getElementById('feishuPageInput').value)">检索</button>
             </div>
             <div class="suggested-questions">
@@ -287,11 +284,7 @@
                 <button class="suggest-q" onclick="runFeishuPageSearch('激励政策')">激励政策</button>
             </div>
         </div>
-    </div>
-</section>
 
-<section class="section">
-    <div class="container">
         <!-- 过滤条 -->
         <div class="feishu-filters" id="fsFilters">
             <div class="fs-filter-group">
@@ -344,9 +337,7 @@
     </div>
 </section>
 
-</div><!-- /tab-feishu -->
-
-<!-- ===================== TAB 4: 行业研究（待装修） ===================== -->
+<!-- ===================== TAB 3: 行业研究（待装修） ===================== -->
 <div class="tab-pane" id="tab-research">
 <section class="hero hero-sub">
     <div class="container">
@@ -702,15 +693,18 @@ let _fsState = { type: 'all', comp: 'all', dim: 'all', onlyUrl: false, q: '' };
 
 async function ensureFeishuLoaded() {
     const list = await loadFeishuDocs();
-    document.getElementById('fsTotalCount').textContent = list.length;
-    document.getElementById('fsUrlCount').textContent = list.filter(it => it.has_url || (it.url && it.url.startsWith('http'))).length;
+    const totalEl = document.getElementById('fsTotalCount');
+    if (totalEl) totalEl.textContent = list.length;
+    const urlEl = document.getElementById('fsUrlCount');
+    if (urlEl) urlEl.textContent = list.filter(it => it.has_url || (it.url && it.url.startsWith('http'))).length;
     return list;
 }
 
 function renderFeishuList(list, q) {
     const grid = document.getElementById('fsResultList');
+    if (!grid) return;
     const stat = document.getElementById('fsResultStat');
-    stat.innerHTML = `命中 <b>${list.length}</b> 条`;
+    if (stat) stat.innerHTML = `命中 <b>${list.length}</b> 条`;
     if (!list.length) {
         grid.innerHTML = '<div class="dual-empty">🔎 当前筛选下无结果，试试放宽过滤器</div>';
         return;
@@ -797,19 +791,30 @@ document.addEventListener('change', function(e) {
         applyFeishuFilters();
     }
 });
-// 进入 #feishu tab 自动加载
+// 进入 #competitors tab 自动加载飞书子模块
 (function() {
     function maybeInit() {
-        if (location.hash === '#feishu' || document.querySelector('.tab-link[data-tab="feishu"]')?.classList.contains('active')) {
+        // 任何时候 competitors tab 激活 OR hash 是 #competitors/feishu 都加载
+        const isComp = location.hash === '#competitors' || location.hash === '#feishu'
+            || document.querySelector('.tab-link[data-tab="competitors"]')?.classList.contains('active');
+        if (isComp || document.getElementById('fsResultList')) {
             applyFeishuFilters();
         }
     }
     document.addEventListener('DOMContentLoaded', maybeInit);
-    // 监听 tab 切换
+    // 监听 tab 切换到 competitors
     document.addEventListener('click', function(e) {
-        const a = e.target.closest('.tab-link[data-tab="feishu"]');
+        const a = e.target.closest('.tab-link[data-tab="competitors"]');
         if (a) setTimeout(applyFeishuFilters, 50);
     });
+    // 兼容旧 #feishu hash → 跳竞对追踪
+    if (location.hash === '#feishu') {
+        location.hash = '#competitors';
+        setTimeout(() => {
+            const fsEl = document.getElementById('fsResultList');
+            if (fsEl) fsEl.scrollIntoView({behavior:'smooth', block:'start'});
+        }, 300);
+    }
 })();
 
 window.askAssistant = window.askAssistant || function(q){
@@ -899,8 +904,8 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260531e"></script>
-<script src="assets/feishu-search.js?v=20260531e"></script>
+<script src="assets/main.js?v=20260531g"></script>
+<script src="assets/feishu-search.js?v=20260531g"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){

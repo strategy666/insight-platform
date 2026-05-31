@@ -137,6 +137,12 @@ def main():
     skipped = 0
     today = date.today().isoformat()
     
+    # ===== 隐私白名单过滤 =====
+    # 只保留 bytedance.larkoffice.com 域名（字节对外公开文档）
+    # 排除：my.feishu.cn(个人空间) / 其他飞书租户的私有内容
+    ALLOWED_DOMAINS = ['bytedance.larkoffice.com', 'bytedance.feishu.cn']
+    
+    privacy_skipped = 0
     for f in raw_files:
         name = f.get('name', '').strip()
         url = f.get('url', '').strip()
@@ -147,6 +153,13 @@ def main():
             continue
         if type_name == 'folder':  # folder 不当文档
             skipped += 1
+            continue
+        
+        # ✅ 隐私过滤：只保留字节对外文档
+        domain = re.match(r'https?://([^/]+)', url)
+        domain = domain.group(1) if domain else ''
+        if domain not in ALLOWED_DOMAINS:
+            privacy_skipped += 1
             continue
         
         # 飞书 token = obj_token
@@ -200,7 +213,7 @@ def main():
             'updated_at_raw': edit_iso,
             'summary': summary,
             'keywords': list(set(comps + dims + [category, sheet])),
-            'source': '飞书空间扫描',
+            'source': '飞书空间扫描 · 仅字节对外文档',
             'source_channel': source_labels,
             'is_external_visible': is_external_doc(name, url),
             'is_pined': f.get('biz_type') == 'pined',
@@ -211,7 +224,7 @@ def main():
     items.sort(key=lambda x: x['updated_at'], reverse=True)
     
     # 统计
-    print(f'\n生成 {len(items)} 条 (skipped {skipped})')
+    print(f'\n生成 {len(items)} 条 (skipped folder/empty {skipped}, 隐私过滤 {privacy_skipped})')
     print('\n按主体：')
     for k, v in Counter(it['competitors'][0] for it in items).most_common():
         print(f'  {k}: {v}')
@@ -230,9 +243,10 @@ def main():
     
     result = {
         '_meta': {
-            'version': '4.0',
-            'source': '用户飞书空间（my.feishu.cn）全量扫描',
-            'pipeline': 'browser_agent SSO 抓飞书 7 个 explorer API → 本地 server 落地 → sync_feishu_drive.py 合并',
+            'version': '4.1',
+            'source': '用户飞书空间扫描 · 严格仅字节对外文档（bytedance.larkoffice.com）',
+            'pipeline': 'browser_agent SSO 抓飞书 7 个 explorer API → 本地 server 落地 → sync_feishu_drive.py 隐私过滤合并',
+            'privacy_policy': 'ALLOWED_DOMAINS 白名单：仅 bytedance.larkoffice.com / bytedance.feishu.cn；个人空间(my.feishu.cn)和其他飞书租户全部排除',
             'last_scan': scan.get('fetched_at'),
             'last_updated': today,
             'total_items': len(items),

@@ -2807,3 +2807,41 @@ body {
     .feishu-result-grid { grid-template-columns: 1fr; }
     .fs-filter-group { gap: 6px; }
 }
+
+/* ============== 竞对追踪 · 飞书文档子模块 ============== */
+.feishu-subsection {
+    border-top: 1px solid #e8eef0;
+    background: linear-gradient(180deg, #f8fbf9 0%, #ffffff 80px);
+    padding-top: 32px !important;
+}
+.feishu-sub-header {
+    margin-bottom: 20px;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #2a6f4f 0%, #1e5a3e 100%);
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(42,111,79,.12);
+}
+.feishu-sub-title {
+    margin: 0 0 6px 0;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+}
+.feishu-sub-meta {
+    font-size: 13px;
+    color: rgba(255,255,255,.85);
+    line-height: 1.5;
+}
+.feishu-sub-meta b {
+    color: #ffe082;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 0 4px;
+}
+.feishu-sub-meta span {
+    color: rgba(255,255,255,.7) !important;
+}
+.feishu-sub-search {
+    margin-bottom: 16px;
+}
