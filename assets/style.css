@@ -4939,3 +4939,42 @@ button.nxny-external-btn {
     float: right;
     font-size: 11px;
 }
+
+/* ============================================================
+ * Tab1 全部动态 — 平铺 list + 行内日期（不分组）
+ * ============================================================ */
+.news-row-datecol {
+    flex-shrink: 0;
+    width: 52px;
+    text-align: center;
+    padding-top: 1px;
+    border-right: 1px solid #f0f0f0;
+    margin-right: 10px;
+}
+.news-row-date {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2a6f4f;
+    line-height: 1.1;
+    letter-spacing: -0.3px;
+}
+.news-row-week {
+    font-size: 10px;
+    color: #aaa;
+    margin-top: 2px;
+}
+/* 趋势信号 */
+.sig-pill.sig-trend {
+    background: #fef7e6;
+    color: #b87400;
+}
+
+/* Mobile：日期更紧凑 */
+@media (max-width: 700px) {
+    .news-row-datecol {
+        width: 44px;
+        margin-right: 8px;
+    }
+    .news-row-date { font-size: 14px; }
+    .news-row-week { font-size: 9px; }
+}

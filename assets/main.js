@@ -97,63 +97,54 @@ function renderKeyInsights() {
     document.getElementById('keyInsights').innerHTML = html;
 }
 
-// ==================== 渲染情报列表流（dcap 单行风格）====================
+// ==================== 渲染情报列表流（dcap 单行风格 · 不再按日期分组）====================
 function renderInsightsGrid() {
     const filtered = filterInsights();
     const meta = document.getElementById('insightsFlowMeta');
-    if (meta) meta.textContent = `共 ${filtered.length} 条 · 点击查看详情 + 时间线`;
+    if (meta) meta.textContent = `共 ${filtered.length} 条 · 按时间倒序 · 点击查看详情`;
 
     if (filtered.length === 0) {
         document.getElementById('insightsGrid').innerHTML = '<p class="empty-state">暂无匹配情报，试试调整筛选</p>';
         return;
     }
 
-    // 按日期分组（参考 dcap）
-    const groups = {};
-    filtered.forEach(it => {
-        const d = it.date || '';
-        if (!groups[d]) groups[d] = [];
-        groups[d].push(it);
-    });
-    const sortedDates = Object.keys(groups).sort((a, b) => new Date(b) - new Date(a));
+    // 直接平铺，每行自带日期
+    const html = filtered.map(item => {
+        const isAI = (item.tracks || []).some(t => /AI|AIGC/i.test(t));
+        const priCls = item.priority === 'high' ? 'pri-high' : (item.priority === 'mid' ? 'pri-mid' : 'pri-low');
+        const sigBadge = item.signal === 'opportunity' ? '<span class="sig-pill sig-opp">机会</span>'
+                      : item.signal === 'threat' ? '<span class="sig-pill sig-thr">威胁</span>'
+                      : item.signal === 'trend' ? '<span class="sig-pill sig-trend">趋势</span>'
+                      : '<span class="sig-pill sig-neu">中性</span>';
+        const companyTags = (item.company || []).slice(0, 3).map(c => `<span class="row-tag tag-company">${c}</span>`).join('');
+        const trackTags = (item.tracks || []).slice(0, 2).map(t => `<span class="row-tag tag-track">${t}</span>`).join('');
+        // 把日期格式化为 5/29 这种短日期 + 周几（参考 dcap 风格）
+        const dt = new Date(item.date);
+        const shortDate = isNaN(dt.getTime()) ? item.date : `${dt.getMonth()+1}/${dt.getDate()}`;
+        const weekDay = ['日','一','二','三','四','五','六'][dt.getDay()] || '';
 
-    const html = sortedDates.map(date => {
-        const items = groups[date];
-        const dt = new Date(date);
-        const weekDay = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][dt.getDay()] || '';
-        const dateLabel = isNaN(dt.getTime()) ? date : `${dt.getFullYear()}年${dt.getMonth()+1}月${dt.getDate()}日 ${weekDay}`;
-        const itemsHtml = items.map(item => {
-            const isAI = (item.tracks || []).some(t => /AI|AIGC/i.test(t));
-            const priCls = item.priority === 'high' ? 'pri-high' : (item.priority === 'mid' ? 'pri-mid' : 'pri-low');
-            const sigBadge = item.signal === 'opportunity' ? '<span class="sig-pill sig-opp">机会</span>'
-                          : item.signal === 'threat' ? '<span class="sig-pill sig-thr">威胁</span>'
-                          : '<span class="sig-pill sig-neu">中性</span>';
-            const companyTags = (item.company || []).slice(0, 3).map(c => `<span class="row-tag tag-company">${c}</span>`).join('');
-            const trackTags = (item.tracks || []).slice(0, 2).map(t => `<span class="row-tag tag-track">${t}</span>`).join('');
-            return `
-            <div class="news-row ${priCls}" data-id="${item.id}" onclick="openIntelModal('${item.id}')">
-                <div class="news-row-main">
-                    <div class="news-row-headline">
-                        ${item.priority === 'high' ? '<span class="row-dot dot-high" title="高优先级"></span>' : ''}
-                        ${isAI ? '<span class="row-ai-badge">AI</span>' : ''}
-                        <span class="news-title">${item.title}</span>
-                    </div>
-                    <div class="news-row-tldr">${item.tldr}</div>
-                    <div class="news-row-meta">
-                        ${sigBadge}
-                        ${companyTags}
-                        ${trackTags}
-                    </div>
-                </div>
-                <div class="news-row-aside">
-                    <span class="row-cta">详情 ›</span>
-                </div>
-            </div>`;
-        }).join('');
         return `
-        <div class="news-date-group">
-            <div class="news-date-label">${dateLabel} · ${items.length} 条</div>
-            ${itemsHtml}
+        <div class="news-row ${priCls}" data-id="${item.id}" onclick="openIntelModal('${item.id}')">
+            <div class="news-row-datecol">
+                <div class="news-row-date">${shortDate}</div>
+                <div class="news-row-week">周${weekDay}</div>
+            </div>
+            <div class="news-row-main">
+                <div class="news-row-headline">
+                    ${item.priority === 'high' ? '<span class="row-dot dot-high" title="高优先级"></span>' : ''}
+                    ${isAI ? '<span class="row-ai-badge">AI</span>' : ''}
+                    <span class="news-title">${item.title}</span>
+                </div>
+                <div class="news-row-tldr">${item.tldr}</div>
+                <div class="news-row-meta">
+                    ${sigBadge}
+                    ${companyTags}
+                    ${trackTags}
+                </div>
+            </div>
+            <div class="news-row-aside">
+                <span class="row-cta">详情 ›</span>
+            </div>
         </div>`;
     }).join('');
 

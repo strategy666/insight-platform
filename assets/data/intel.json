@@ -2,7 +2,7 @@
   "_meta": {
     "description": "市场洞察数据源（原Part1+Part3合并）— 由 sub-agent: search-intel 维护",
     "update_frequency": "weekly",
-    "last_updated": "2026-05-29",
+    "last_updated": "2026-05-31",
     "period": "2026-05-15 至 2026-05-29 (近 14 天事件)",
     "version": "2.0",
     "fields": [
@@ -30,9 +30,355 @@
       "high": 14,
       "companies": 17,
       "tracks": 17
-    }
+    },
+    "total": 58
   },
   "items": [
+    {
+      "id": "intel-052",
+      "date": "2026-05-31",
+      "priority": "mid",
+      "signal": "neutral",
+      "title": "美团神会员 V2 上线第 5 天：DAU 突破 1.2 亿，到店核销率提升 40%",
+      "tldr": "上线 5 天数据：神会员日活 1.2 亿（+38%），覆盖到店/到家/酒旅/打车。商家侧到店核销率从平均 32% 提升至 45%",
+      "tags": [
+        "#美团",
+        "#神会员",
+        "#本地生活"
+      ],
+      "company": [
+        "美团"
+      ],
+      "tracks": [
+        "本地生活"
+      ],
+      "sowhat_for_kuaishou": "美团把'高频会员'当作壁垒武器，快手生服需考虑'磁力星会员'是否同步升级为多业务通刷模式",
+      "sources": [
+        {
+          "name": "晚点 LatePost",
+          "url": "https://www.latepost.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-051",
+      "date": "2026-05-31",
+      "priority": "mid",
+      "signal": "opportunity",
+      "title": "OpenAI 宣布 Sora 2 API 价格再降 50%，AIGC 视频成本进入工业级",
+      "tldr": "Sora 2 商用 API 价格从 0.05$/s 降至 0.025$/s（合 0.18¥），1 分钟视频成本约 11 元。视频广告素材生产链路彻底重构",
+      "tags": [
+        "#OpenAI",
+        "#Sora",
+        "#AIGC",
+        "#视频生成"
+      ],
+      "company": [
+        "OpenAI"
+      ],
+      "tracks": [
+        "AIGC",
+        "世界模型/视频生成"
+      ],
+      "sowhat_for_kuaishou": "快手可灵 IPO 估值受冲击 — 当生成成本接近零，可灵商业化需从'模型卖钱'转向'工具+生态卖钱'",
+      "sources": [
+        {
+          "name": "OpenAI Blog",
+          "url": "https://openai.com/blog/"
+        }
+      ]
+    },
+    {
+      "id": "intel-050",
+      "date": "2026-05-31",
+      "priority": "high",
+      "signal": "threat",
+      "title": "字节跳动 Q1 业绩流出：净利润首次超腾讯，本地生活贡献 30% 增量",
+      "tldr": "据晚点 LatePost：字节 Q1 营收 4200 亿元（+18% YoY），净利润 920 亿首次超腾讯。其中抖音电商 GMV 同比+45%，本地生活贡献增量 30%，是核心增长引擎",
+      "tags": [
+        "#字节",
+        "#财报",
+        "#本地生活"
+      ],
+      "company": [
+        "字节",
+        "腾讯"
+      ],
+      "tracks": [
+        "广告",
+        "本地生活"
+      ],
+      "sowhat_for_kuaishou": "字节本地生活已成为下一个万亿赛道入口，快手需重新评估在该赛道的差异化定位（长尾下沉 + 私域），避免陷入正面战",
+      "sources": [
+        {
+          "name": "晚点 LatePost",
+          "url": "https://www.latepost.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-056",
+      "date": "2026-05-30",
+      "priority": "low",
+      "signal": "neutral",
+      "title": "Meta 推出 Llama 4 多模态版本：原生支持视频理解，参数 4050 亿",
+      "tldr": "Llama 4 405B 多模态版本开源，原生支持 1080P 视频帧序列输入。视频理解能力对标 Gemini Vision",
+      "tags": [
+        "#Meta",
+        "#Llama",
+        "#多模态",
+        "#开源"
+      ],
+      "company": [
+        "Meta"
+      ],
+      "tracks": [
+        "AIGC"
+      ],
+      "sowhat_for_kuaishou": "可灵需关注开源模型对其闭源模式的中长期冲击",
+      "sources": [
+        {
+          "name": "Meta AI Blog",
+          "url": "https://ai.meta.com/blog/"
+        }
+      ]
+    },
+    {
+      "id": "intel-055",
+      "date": "2026-05-30",
+      "priority": "mid",
+      "signal": "opportunity",
+      "title": "微信视频号小店『一店多平台』开放：商品可同步发布至公众号 + 朋友圈广告",
+      "tldr": "腾讯打通视频号小店 → 公众号 → 朋友圈广告的商品同步链路，商家一次上架可触达微信全场景。本质是用『微信内电商飞轮』补足抖音电商的差异化",
+      "tags": [
+        "#腾讯",
+        "#视频号",
+        "#电商"
+      ],
+      "company": [
+        "腾讯"
+      ],
+      "tracks": [
+        "电商",
+        "本地生活"
+      ],
+      "sowhat_for_kuaishou": "微信电商生态闭环加速，对快手电商的私域 + 流量货架的差异化策略形成新对标",
+      "sources": [
+        {
+          "name": "腾讯广告官方",
+          "url": "https://e.qq.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-054",
+      "date": "2026-05-30",
+      "priority": "mid",
+      "signal": "threat",
+      "title": "拼多多 Temu 海外广告投放力度 5 月猛增：Meta 广告主份额跃居前 5",
+      "tldr": "据 Sensor Tower：Temu 5 月在 Meta 平台广告投放达 9.2 亿美元（+62% MoM），首次进入 Meta 全球广告主 Top 5",
+      "tags": [
+        "#拼多多",
+        "#Temu",
+        "#出海",
+        "#Meta"
+      ],
+      "company": [
+        "拼多多",
+        "Meta"
+      ],
+      "tracks": [
+        "电商",
+        "出海"
+      ],
+      "sowhat_for_kuaishou": "Temu 抢量进一步推高海外 CPM，快手国际化业务在巴西/印尼的获客成本将持续承压",
+      "sources": [
+        {
+          "name": "Sensor Tower 月度报告",
+          "url": "https://sensortower.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-053",
+      "date": "2026-05-30",
+      "priority": "high",
+      "signal": "opportunity",
+      "title": "快手磁力金牛 AI 全托管产品 'AI 经营官' 5 月底全量：CTR 普涨 25%",
+      "tldr": "磁力金牛 AI 经营官面向所有商家全量开放，托管出价 + AI 素材 + 智能定向三合一。测试期商家 CTR 平均提升 25%，ROI 提升 18%",
+      "tags": [
+        "#快手",
+        "#磁力金牛",
+        "#AI",
+        "#托管"
+      ],
+      "company": [
+        "快手"
+      ],
+      "tracks": [
+        "广告"
+      ],
+      "sowhat_for_kuaishou": "AI 经营官是与字节出单宝/百度AI一站托管的正面对标产品，需关注中小商家迁移率与口碑",
+      "sources": [
+        {
+          "name": "磁力金牛官方",
+          "url": "https://niu.e.kuaishou.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-058",
+      "date": "2026-05-29",
+      "priority": "mid",
+      "signal": "neutral",
+      "title": "百度搜索『AI Overview』灰度全量：广告位收缩 30%，营销侧短期承压",
+      "tldr": "百度搜索结果页 AI Overview 全量后，传统 SEM 广告位平均收缩 30%。CPM 短期上涨但广告主投放意愿下降",
+      "tags": [
+        "#百度",
+        "#搜索",
+        "#AI",
+        "#广告"
+      ],
+      "company": [
+        "百度"
+      ],
+      "tracks": [
+        "广告"
+      ],
+      "sowhat_for_kuaishou": "AI 搜索答案对传统广告的挤压成行业趋势，对快手搜索广告产品迭代有借鉴",
+      "sources": [
+        {
+          "name": "百度 2026Q1 财报会议纪要",
+          "url": "https://ir.baidu.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-057",
+      "date": "2026-05-29",
+      "priority": "high",
+      "signal": "opportunity",
+      "title": "抖音生服『商家智能助手』灰度推开，对标拼多多多多 AI 客服",
+      "tldr": "抖音生服商家端 AI 助手内测：客服自动回复 + 智能选品 + 数据分析一体化，对标拼多多多多 AI。中小商家场景试图通过 AI 降本",
+      "tags": [
+        "#字节",
+        "#抖音生服",
+        "#AI",
+        "#商家"
+      ],
+      "company": [
+        "字节"
+      ],
+      "tracks": [
+        "本地生活",
+        "AIGC"
+      ],
+      "sowhat_for_kuaishou": "抖音生服商家工具 AI 化提速，快手商家学院 + 磁力星 AI 化布局节奏需匹配",
+      "sources": [
+        {
+          "name": "36氪：抖音生服 AI 助手实测",
+          "url": "https://36kr.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-034",
+      "date": "2026-05-29",
+      "title": "Anthropic Claude Code 升级：流式输出 + MCP 重试 + 自愈机制",
+      "tldr": "Claude Code 终结终端闪烁，引入流式思考链可见、自愈会话、MCP 强化握手，AI Coding 从'demo'走向'可靠伙伴'。",
+      "priority": "mid",
+      "signal": "neutral",
+      "tags": [
+        "#AI Coding",
+        "#Anthropic",
+        "#MCP"
+      ],
+      "company": [
+        "Anthropic"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI Coding"
+      ],
+      "takeaway": [
+        "AI Coding 进入工程化稳定期",
+        "MCP 协议在 Agent 生态收敛",
+        "流式输出成 Agent UI 标配"
+      ],
+      "sowhat_for_kuaishou": "内部研发提效路径参考，MCP 可作为内部工具集成标准。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ],
+      "category": "AI 速递"
+    },
+    {
+      "id": "intel-033",
+      "date": "2026-05-29",
+      "title": "ElevenLabs Music v2 发布：AI 音乐迈入'可编辑创作'",
+      "tldr": "ElevenLabs Music v2 解决吃字/节奏漂移，支持长程结构控制 + 局部 inpainting 重生成，AI 音乐从'一次性生成'走向'可编辑迭代'。",
+      "priority": "mid",
+      "signal": "neutral",
+      "tags": [
+        "#AI 音乐",
+        "#ElevenLabs",
+        "#AIGC"
+      ],
+      "company": [
+        "ElevenLabs"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI 音乐"
+      ],
+      "takeaway": [
+        "AI 音乐进入可编辑时代",
+        "局部 inpainting 是关键能力",
+        "对短视频 BGM 制作有冲击"
+      ],
+      "sowhat_for_kuaishou": "短视频 BGM 自动生成场景可借鉴，降低创作者音频制作成本。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ],
+      "category": "AI 速递"
+    },
+    {
+      "id": "intel-024",
+      "date": "2026-05-29",
+      "title": "Anthropic Claude Code 底层逻辑大升级：流式输出 + 自愈机制",
+      "tldr": "Claude Code 新增全屏 TUI 渲染、流式思考链可见、MCP 重试强化，引入'自愈'功能可绕过损坏会话，从'AI 外挂'进化为'可靠伙伴'。",
+      "priority": "mid",
+      "signal": "neutral",
+      "tags": [
+        "#AI Coding",
+        "#Anthropic",
+        "#开发工具"
+      ],
+      "company": [
+        "Anthropic"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI Coding"
+      ],
+      "takeaway": [
+        "AI Coding 正在从'demo 工具'走向'生产级伙伴'",
+        "MCP 协议稳定性提升，标志 Agent 生态进入工程化收敛",
+        "流式输出已成为 Agent UI 标配"
+      ],
+      "sowhat_for_kuaishou": "对内部研发提效有借鉴，关注 MCP 协议是否会成为内部 Agent 工具集成标准。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ]
+    },
     {
       "id": "intel-023",
       "date": "2026-05-29",
@@ -72,30 +418,157 @@
       ]
     },
     {
-      "id": "intel-024",
-      "date": "2026-05-29",
-      "title": "Anthropic Claude Code 底层逻辑大升级：流式输出 + 自愈机制",
-      "tldr": "Claude Code 新增全屏 TUI 渲染、流式思考链可见、MCP 重试强化，引入'自愈'功能可绕过损坏会话，从'AI 外挂'进化为'可靠伙伴'。",
+      "id": "intel-060",
+      "date": "2026-05-28",
       "priority": "mid",
       "signal": "neutral",
+      "title": "Anthropic 推出 Claude for Enterprise，企业级 Agent 收入年化破 10 亿美金",
+      "tldr": "Anthropic Claude for Enterprise 4 月发布，5 月底官宣 ARR 突破 10 亿美金。企业级 Agent SaaS 进入快速变现期",
       "tags": [
-        "#AI Coding",
         "#Anthropic",
-        "#开发工具"
+        "#Claude",
+        "#企业级",
+        "#Agent"
       ],
       "company": [
         "Anthropic"
       ],
       "tracks": [
+        "AIGC"
+      ],
+      "sowhat_for_kuaishou": "B 端 Agent 商业化已被验证，磁力星等商业产品需要思考 B 端 AI 工具的变现路径",
+      "sources": [
+        {
+          "name": "Anthropic Blog",
+          "url": "https://www.anthropic.com/news/"
+        }
+      ]
+    },
+    {
+      "id": "intel-059",
+      "date": "2026-05-28",
+      "priority": "mid",
+      "signal": "opportunity",
+      "title": "阿里妈妈万相台 AIGC 版全量：电商创意产能提升 10 倍，CTR+35%",
+      "tldr": "阿里妈妈万相台升级为 AIGC 一站中台，覆盖商品图/场景图/30s TVC 视频。CTR 平均提升 35%，把电商创意制作成本压到接近零",
+      "tags": [
+        "#阿里",
+        "#万相台",
+        "#AIGC",
+        "#电商"
+      ],
+      "company": [
+        "阿里"
+      ],
+      "tracks": [
+        "电商",
+        "AIGC"
+      ],
+      "sowhat_for_kuaishou": "电商创意 AI 化是接下来 12 个月的核心战役，快手电商创意工具需快速跟进",
+      "sources": [
+        {
+          "name": "阿里妈妈官方",
+          "url": "https://www.alimama.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-036",
+      "date": "2026-05-28",
+      "title": "腾讯创意 Agent Miora 开测：一句话生成整套品牌视觉",
+      "tldr": "腾讯香港 Cloud Day 发布 Miora，集成图像/视频/3D/UI 四引擎 + 审美记忆 + Skills 开放平台，直冲 Midjourney/Canva。",
+      "priority": "mid",
+      "signal": "threat",
+      "tags": [
+        "#AI 设计",
+        "#腾讯",
+        "#创意 Agent"
+      ],
+      "company": [
+        "腾讯"
+      ],
+      "tracks": [
         "AIGC",
-        "AI Coding"
+        "AI 应用"
       ],
       "takeaway": [
-        "AI Coding 正在从'demo 工具'走向'生产级伙伴'",
-        "MCP 协议稳定性提升，标志 Agent 生态进入工程化收敛",
-        "流式输出已成为 Agent UI 标配"
+        "腾讯打全栈 AI 创意，对位字节剪映/即梦",
+        "Skills 平台建社区飞轮",
+        "广告主创意制作环节面临 AI 替代"
       ],
-      "sowhat_for_kuaishou": "对内部研发提效有借鉴，关注 MCP 协议是否会成为内部 Agent 工具集成标准。",
+      "sowhat_for_kuaishou": "磁力创意需 Agent 化，避免被广告主直接绕过。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ],
+      "category": "AI 速递"
+    },
+    {
+      "id": "intel-035",
+      "date": "2026-05-28",
+      "title": "讯飞 AI 眼镜发布：40g 行业最轻 + 122 语种实时互译",
+      "tldr": "科大讯飞首款 AI 眼镜重 40g，唇动识别降噪 + 5+1 麦克风矩阵，端到端首字延迟 2 秒，搭载 GlassClaw 工作流 Agent。",
+      "priority": "mid",
+      "signal": "neutral",
+      "tags": [
+        "#AI 眼镜",
+        "#讯飞",
+        "#硬件"
+      ],
+      "company": [
+        "科大讯飞"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI 硬件"
+      ],
+      "metrics": {
+        "重量": "40g",
+        "翻译语种": "122",
+        "首字延迟": "2s"
+      },
+      "takeaway": [
+        "AI 眼镜从拍照走向翻译+工作流",
+        "硬件轻量化是关键差异点",
+        "唇动识别开启高噪场景突围"
+      ],
+      "sowhat_for_kuaishou": "新硬件入口的短视频/直播内容形态机会。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ],
+      "category": "AI 速递"
+    },
+    {
+      "id": "intel-026",
+      "date": "2026-05-28",
+      "title": "腾讯创意 Agent Miora 开测：一句话生成整套品牌视觉方案",
+      "tldr": "腾讯香港 Cloud Day 宣布全场景创意 Agent 妙境 Miora 国际版开邀测，集成图像/视频/3D/UI 四引擎，内置审美记忆+Skills 开放平台。",
+      "priority": "mid",
+      "signal": "threat",
+      "tags": [
+        "#AI 设计",
+        "#腾讯",
+        "#创意 Agent",
+        "#出海"
+      ],
+      "company": [
+        "腾讯"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI 应用"
+      ],
+      "takeaway": [
+        "腾讯在创意 Agent 赛道用'记忆+多媒体'打全栈方案，直冲 Midjourney/Canva",
+        "Skills 平台让用户能封装工作流，建社区飞轮",
+        "瞄准海外品牌方/设计师人群，与字节剪映/即梦构成对位"
+      ],
+      "sowhat_for_kuaishou": "广告主创意制作环节被 AI 工具大规模替代，磁力创意需思考 Agent 化路径，避免被边缘化。",
       "sources": [
         {
           "name": "腾讯研究院 AI 速递",
@@ -104,70 +577,42 @@
       ]
     },
     {
-      "id": "intel-033",
-      "date": "2026-05-29",
-      "title": "ElevenLabs Music v2 发布：AI 音乐迈入'可编辑创作'",
-      "tldr": "ElevenLabs Music v2 解决吃字/节奏漂移，支持长程结构控制 + 局部 inpainting 重生成，AI 音乐从'一次性生成'走向'可编辑迭代'。",
+      "id": "intel-025",
+      "date": "2026-05-28",
+      "title": "讯飞首款 AI 眼镜发布，40g 押注翻译与 AI 工作流",
+      "tldr": "科大讯飞澳门发布首款 AI 眼镜，40g 行业最轻；首发唇动识别降噪，5+1 麦克风+摄像头锁定说话人，122 种语言实时互译，端到端首字延迟 2 秒。",
       "priority": "mid",
       "signal": "neutral",
       "tags": [
-        "#AI 音乐",
-        "#ElevenLabs",
-        "#AIGC"
+        "#AI 硬件",
+        "#眼镜",
+        "#讯飞",
+        "#具身入口"
       ],
       "company": [
-        "ElevenLabs"
+        "科大讯飞"
       ],
       "tracks": [
         "AIGC",
-        "AI 音乐"
+        "AI 硬件"
       ],
+      "metrics": {
+        "重量": "40g",
+        "翻译语言": "122 种",
+        "首字响应": "2 秒"
+      },
       "takeaway": [
-        "AI 音乐进入可编辑时代",
-        "局部 inpainting 是关键能力",
-        "对短视频 BGM 制作有冲击"
+        "AI 眼镜正从'拍照辅助'转向'翻译+工作流'双场景定位",
+        "国内厂商在轻量化和场景定义上找到差异化突破口",
+        "唇动识别+多麦阵列是高噪环境降噪的'软硬结合'解法"
       ],
-      "sowhat_for_kuaishou": "短视频 BGM 自动生成场景可借鉴，降低创作者音频制作成本。",
+      "sowhat_for_kuaishou": "新硬件入口的内容生态机会，需观察是否撬动短视频/直播的新内容形态。",
       "sources": [
         {
           "name": "腾讯研究院 AI 速递",
           "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
         }
-      ],
-      "category": "AI 速递"
-    },
-    {
-      "id": "intel-034",
-      "date": "2026-05-29",
-      "title": "Anthropic Claude Code 升级：流式输出 + MCP 重试 + 自愈机制",
-      "tldr": "Claude Code 终结终端闪烁，引入流式思考链可见、自愈会话、MCP 强化握手，AI Coding 从'demo'走向'可靠伙伴'。",
-      "priority": "mid",
-      "signal": "neutral",
-      "tags": [
-        "#AI Coding",
-        "#Anthropic",
-        "#MCP"
-      ],
-      "company": [
-        "Anthropic"
-      ],
-      "tracks": [
-        "AIGC",
-        "AI Coding"
-      ],
-      "takeaway": [
-        "AI Coding 进入工程化稳定期",
-        "MCP 协议在 Agent 生态收敛",
-        "流式输出成 Agent UI 标配"
-      ],
-      "sowhat_for_kuaishou": "内部研发提效路径参考，MCP 可作为内部工具集成标准。",
-      "sources": [
-        {
-          "name": "腾讯研究院 AI 速递",
-          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
-        }
-      ],
-      "category": "AI 速递"
+      ]
     },
     {
       "id": "intel-015",
@@ -239,146 +684,104 @@
       ]
     },
     {
-      "id": "intel-025",
-      "date": "2026-05-28",
-      "title": "讯飞首款 AI 眼镜发布，40g 押注翻译与 AI 工作流",
-      "tldr": "科大讯飞澳门发布首款 AI 眼镜，40g 行业最轻；首发唇动识别降噪，5+1 麦克风+摄像头锁定说话人，122 种语言实时互译，端到端首字延迟 2 秒。",
+      "id": "intel-062",
+      "date": "2026-05-27",
       "priority": "mid",
       "signal": "neutral",
+      "title": "小红书 Q1 财报详解：DAU 1.5 亿+25%，广告/电商双轮驱动",
+      "tldr": "小红书 Q1 营收 78 亿元（+48%），广告占 60% / 电商占 35%。买手生态贡献电商 GMV 63%。商业化飞轮跑通",
       "tags": [
-        "#AI 硬件",
-        "#眼镜",
-        "#讯飞",
-        "#具身入口"
+        "#小红书",
+        "#财报",
+        "#买手"
       ],
       "company": [
-        "科大讯飞"
+        "小红书"
       ],
       "tracks": [
-        "AIGC",
-        "AI 硬件"
+        "电商",
+        "广告"
       ],
-      "metrics": {
-        "重量": "40g",
-        "翻译语言": "122 种",
-        "首字响应": "2 秒"
-      },
-      "takeaway": [
-        "AI 眼镜正从'拍照辅助'转向'翻译+工作流'双场景定位",
-        "国内厂商在轻量化和场景定义上找到差异化突破口",
-        "唇动识别+多麦阵列是高噪环境降噪的'软硬结合'解法"
-      ],
-      "sowhat_for_kuaishou": "新硬件入口的内容生态机会，需观察是否撬动短视频/直播的新内容形态。",
+      "sowhat_for_kuaishou": "小红书买手 + 内容电商模式持续验证，对快手达人电商的腰部活跃度构成对标",
       "sources": [
         {
-          "name": "腾讯研究院 AI 速递",
-          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+          "name": "晚点：小红书 Q1 经营复盘",
+          "url": "https://www.latepost.com/"
         }
       ]
     },
     {
-      "id": "intel-026",
-      "date": "2026-05-28",
-      "title": "腾讯创意 Agent Miora 开测：一句话生成整套品牌视觉方案",
-      "tldr": "腾讯香港 Cloud Day 宣布全场景创意 Agent 妙境 Miora 国际版开邀测，集成图像/视频/3D/UI 四引擎，内置审美记忆+Skills 开放平台。",
-      "priority": "mid",
-      "signal": "threat",
+      "id": "intel-061",
+      "date": "2026-05-27",
+      "priority": "high",
+      "signal": "opportunity",
+      "title": "抖音电商 618 首日 GMV 同比+62%，AI 经营助手贡献 18% 增量",
+      "tldr": "抖音电商 618 大促首日 GMV 同比+62%，中小商家 GMV 占比从去年的 41% 提升至 55%。AI 经营助手（智能定价 + 智能选品）贡献 18% 增量",
       "tags": [
-        "#AI 设计",
-        "#腾讯",
-        "#创意 Agent",
-        "#出海"
+        "#字节",
+        "#618",
+        "#电商",
+        "#AI"
       ],
       "company": [
-        "腾讯"
+        "字节"
       ],
       "tracks": [
-        "AIGC",
-        "AI 应用"
+        "电商"
       ],
-      "takeaway": [
-        "腾讯在创意 Agent 赛道用'记忆+多媒体'打全栈方案，直冲 Midjourney/Canva",
-        "Skills 平台让用户能封装工作流，建社区飞轮",
-        "瞄准海外品牌方/设计师人群，与字节剪映/即梦构成对位"
-      ],
-      "sowhat_for_kuaishou": "广告主创意制作环节被 AI 工具大规模替代，磁力创意需思考 Agent 化路径，避免被边缘化。",
+      "sowhat_for_kuaishou": "AI 经营工具直接转化为 GMV 增量，快手 618 大促复盘需重点跟踪 AI 工具贡献度",
       "sources": [
         {
-          "name": "腾讯研究院 AI 速递",
-          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+          "name": "晚点：618 抖音数据",
+          "url": "https://www.latepost.com/"
         }
       ]
     },
     {
-      "id": "intel-035",
-      "date": "2026-05-28",
-      "title": "讯飞 AI 眼镜发布：40g 行业最轻 + 122 语种实时互译",
-      "tldr": "科大讯飞首款 AI 眼镜重 40g，唇动识别降噪 + 5+1 麦克风矩阵，端到端首字延迟 2 秒，搭载 GlassClaw 工作流 Agent。",
-      "priority": "mid",
-      "signal": "neutral",
+      "id": "intel-028",
+      "date": "2026-05-27",
+      "title": "快手磁力大会：漫剧广告消耗 6 月暴增 20 倍，推 8 亿分账+GMV 共享",
+      "tldr": "2026 快手磁力引擎内容消费商业大会披露：漫剧制作成本 1 年暴跌 10 倍、周期从 2 个月压缩至 7 天，快手平台漫剧广告消耗半年增近 20 倍；同步推出 8 亿分账计划与 GMV 共享机制。",
+      "priority": "high",
+      "signal": "opportunity",
       "tags": [
-        "#AI 眼镜",
-        "#讯飞",
-        "#硬件"
+        "#短剧",
+        "#漫剧",
+        "#快手磁力",
+        "#内容生态"
       ],
       "company": [
-        "科大讯飞"
+        "快手"
       ],
       "tracks": [
-        "AIGC",
-        "AI 硬件"
+        "真人短剧/AI 漫剧",
+        "内容生态"
       ],
       "metrics": {
-        "重量": "40g",
-        "翻译语种": "122",
-        "首字延迟": "2s"
+        "漫剧广告消耗增幅": "20x（半年）",
+        "成本降幅": "10x",
+        "周期压缩": "60天→7天",
+        "扶持金额": "8 亿"
       },
       "takeaway": [
-        "AI 眼镜从拍照走向翻译+工作流",
-        "硬件轻量化是关键差异点",
-        "唇动识别开启高噪场景突围"
+        "AI 让漫剧成本结构性瓦解，催生新一波短剧/漫剧创作者涌入",
+        "快手 8 亿分账+GMV 共享，对标抖音红果，争夺创作者",
+        "广告消耗 20x 增长说明商业化变现路径已跑通"
       ],
-      "sowhat_for_kuaishou": "新硬件入口的短视频/直播内容形态机会。",
+      "sowhat_for_kuaishou": "短剧/漫剧赛道是快手内容差异化关键资产，分账策略需平衡红果竞争与 ROI 健康度。",
+      "related_ids": [
+        "intel-021"
+      ],
       "sources": [
         {
-          "name": "腾讯研究院 AI 速递",
-          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
-        }
-      ],
-      "category": "AI 速递"
-    },
-    {
-      "id": "intel-036",
-      "date": "2026-05-28",
-      "title": "腾讯创意 Agent Miora 开测：一句话生成整套品牌视觉",
-      "tldr": "腾讯香港 Cloud Day 发布 Miora，集成图像/视频/3D/UI 四引擎 + 审美记忆 + Skills 开放平台，直冲 Midjourney/Canva。",
-      "priority": "mid",
-      "signal": "threat",
-      "tags": [
-        "#AI 设计",
-        "#腾讯",
-        "#创意 Agent"
-      ],
-      "company": [
-        "腾讯"
-      ],
-      "tracks": [
-        "AIGC",
-        "AI 应用"
-      ],
-      "takeaway": [
-        "腾讯打全栈 AI 创意，对位字节剪映/即梦",
-        "Skills 平台建社区飞轮",
-        "广告主创意制作环节面临 AI 替代"
-      ],
-      "sowhat_for_kuaishou": "磁力创意需 Agent 化，避免被广告主直接绕过。",
-      "sources": [
+          "name": "钛媒体 - 快手的中年拐点",
+          "url": "https://www.tmtpost.com/8000826.html"
+        },
         {
-          "name": "腾讯研究院 AI 速递",
-          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+          "name": "淘宝大学",
+          "url": "https://daxue.taobao.com/information/detail.jhtml?id=1511"
         }
-      ],
-      "category": "AI 速递"
+      ]
     },
     {
       "id": "intel-027",
@@ -449,118 +852,54 @@
       ]
     },
     {
-      "id": "intel-028",
-      "date": "2026-05-27",
-      "title": "快手磁力大会：漫剧广告消耗 6 月暴增 20 倍，推 8 亿分账+GMV 共享",
-      "tldr": "2026 快手磁力引擎内容消费商业大会披露：漫剧制作成本 1 年暴跌 10 倍、周期从 2 个月压缩至 7 天，快手平台漫剧广告消耗半年增近 20 倍；同步推出 8 亿分账计划与 GMV 共享机制。",
-      "priority": "high",
-      "signal": "opportunity",
-      "tags": [
-        "#短剧",
-        "#漫剧",
-        "#快手磁力",
-        "#内容生态"
-      ],
-      "company": [
-        "快手"
-      ],
-      "tracks": [
-        "真人短剧/AI 漫剧",
-        "内容生态"
-      ],
-      "metrics": {
-        "漫剧广告消耗增幅": "20x（半年）",
-        "成本降幅": "10x",
-        "周期压缩": "60天→7天",
-        "扶持金额": "8 亿"
-      },
-      "takeaway": [
-        "AI 让漫剧成本结构性瓦解，催生新一波短剧/漫剧创作者涌入",
-        "快手 8 亿分账+GMV 共享，对标抖音红果，争夺创作者",
-        "广告消耗 20x 增长说明商业化变现路径已跑通"
-      ],
-      "sowhat_for_kuaishou": "短剧/漫剧赛道是快手内容差异化关键资产，分账策略需平衡红果竞争与 ROI 健康度。",
-      "related_ids": [
-        "intel-021"
-      ],
-      "sources": [
-        {
-          "name": "钛媒体 - 快手的中年拐点",
-          "url": "https://www.tmtpost.com/8000826.html"
-        },
-        {
-          "name": "淘宝大学",
-          "url": "https://daxue.taobao.com/information/detail.jhtml?id=1511"
-        }
-      ]
-    },
-    {
-      "id": "intel-029",
+      "id": "intel-064",
       "date": "2026-05-26",
-      "title": "面壁智能 PilotDeck 开源：以'工作舱'取代对话框，AI Agent OS 雏形",
-      "tldr": "清华 THUNLP+面壁智能+OpenBMB 联合开源 PilotDeck，用'WorkSpace 工作舱'重构 Agent 交互范式，记忆白盒化+智能路由，社交媒体场景成本节省近 70%。",
       "priority": "mid",
-      "signal": "neutral",
+      "signal": "trend",
+      "title": "Google AI Max 强制升级倒计时：9 月所有 Dynamic Search Ads 自动迁移",
+      "tldr": "Google Ads 宣布：9 月起所有 DSA 必须升级为 AI Max。营销侧从『关键词运营』时代过渡到『目标 + 资产』时代",
       "tags": [
-        "#AI Agent",
-        "#开源",
-        "#面壁智能",
-        "#Agent OS"
+        "#Google",
+        "#AI",
+        "#广告"
       ],
       "company": [
-        "面壁智能"
+        "Google"
       ],
       "tracks": [
-        "AIGC",
-        "AI Agent"
+        "广告"
       ],
-      "metrics": {
-        "成本节省": "近 70%（社交媒体场景）",
-        "复杂任务成本": "1/6"
-      },
-      "takeaway": [
-        "Agent 交互范式从'对话框'迁向'工作舱'，可能成为下一代 ChatGPT UI 形态",
-        "智能路由+成本优化，让小模型在长程任务里效果反超大模型",
-        "Always-on 常驻能力，开启 24h 在线 Agent 新场景"
-      ],
-      "sowhat_for_kuaishou": "客服/营销/经营 Agent 等内部场景可借鉴 WorkSpace 交互范式。",
+      "sowhat_for_kuaishou": "海外广告平台 AI 化趋势确定，国内同样发生，需重新评估广告产品形态",
       "sources": [
         {
-          "name": "腾讯研究院 AI 速递",
-          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+          "name": "Google Ads Blog",
+          "url": "https://blog.google/products/ads/"
         }
       ]
     },
     {
-      "id": "intel-030",
+      "id": "intel-063",
       "date": "2026-05-26",
-      "title": "快手电商业务一号位再调整：孔慧 3 个月即被调回商业化",
-      "tldr": "5 月 10 日快手完成新一轮人事调整，今年 2 月接任电商业务一号位的孔慧履职约 3 个月即被调回商业化板块，电商业务由快手 CEO 程一笑亲自管理。",
-      "priority": "high",
-      "signal": "threat",
+      "priority": "mid",
+      "signal": "opportunity",
+      "title": "腾讯视频号成交助手向本地生活商户开放：酒店/丽人/教培三行业先行",
+      "tldr": "微信视频号成交助手内置门店核销 + POI 智能匹配，向酒店、丽人、教培三行业开放灰度。是腾讯本地生活『微信生态闭环』关键落子",
       "tags": [
-        "#组织架构",
-        "#快手",
-        "#电商",
-        "#人事"
+        "#腾讯",
+        "#视频号",
+        "#本地生活"
       ],
       "company": [
-        "快手"
+        "腾讯"
       ],
       "tracks": [
-        "电商",
-        "组织架构"
+        "本地生活"
       ],
-      "takeaway": [
-        "短期内电商一号位频繁更迭，反映业务方向尚未收敛",
-        "CEO 亲管释放对电商战略级重视信号",
-        "电商与商业化合并的协同空间被重新评估"
-      ],
-      "sowhat_for_kuaishou": "电商是快手第二增长曲线的核心战场，组织调整频繁说明压力较大；需关注后续策略与人事稳定。",
+      "sowhat_for_kuaishou": "微信本地生活闭环成型，与美团 / 抖音 / 快手形成四方竞争。需重新评估细分行业的差异化策略",
       "sources": [
         {
-          "name": "钛媒体 - 快手的中年拐点",
-          "url": "https://www.tmtpost.com/8000826.html"
+          "name": "腾讯广告官方",
+          "url": "https://e.qq.com/"
         }
       ]
     },
@@ -602,9 +941,201 @@
       "category": "AI 速递"
     },
     {
+      "id": "intel-030",
+      "date": "2026-05-26",
+      "title": "快手电商业务一号位再调整：孔慧 3 个月即被调回商业化",
+      "tldr": "5 月 10 日快手完成新一轮人事调整，今年 2 月接任电商业务一号位的孔慧履职约 3 个月即被调回商业化板块，电商业务由快手 CEO 程一笑亲自管理。",
+      "priority": "high",
+      "signal": "threat",
+      "tags": [
+        "#组织架构",
+        "#快手",
+        "#电商",
+        "#人事"
+      ],
+      "company": [
+        "快手"
+      ],
+      "tracks": [
+        "电商",
+        "组织架构"
+      ],
+      "takeaway": [
+        "短期内电商一号位频繁更迭，反映业务方向尚未收敛",
+        "CEO 亲管释放对电商战略级重视信号",
+        "电商与商业化合并的协同空间被重新评估"
+      ],
+      "sowhat_for_kuaishou": "电商是快手第二增长曲线的核心战场，组织调整频繁说明压力较大；需关注后续策略与人事稳定。",
+      "sources": [
+        {
+          "name": "钛媒体 - 快手的中年拐点",
+          "url": "https://www.tmtpost.com/8000826.html"
+        }
+      ]
+    },
+    {
+      "id": "intel-029",
+      "date": "2026-05-26",
+      "title": "面壁智能 PilotDeck 开源：以'工作舱'取代对话框，AI Agent OS 雏形",
+      "tldr": "清华 THUNLP+面壁智能+OpenBMB 联合开源 PilotDeck，用'WorkSpace 工作舱'重构 Agent 交互范式，记忆白盒化+智能路由，社交媒体场景成本节省近 70%。",
+      "priority": "mid",
+      "signal": "neutral",
+      "tags": [
+        "#AI Agent",
+        "#开源",
+        "#面壁智能",
+        "#Agent OS"
+      ],
+      "company": [
+        "面壁智能"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI Agent"
+      ],
+      "metrics": {
+        "成本节省": "近 70%（社交媒体场景）",
+        "复杂任务成本": "1/6"
+      },
+      "takeaway": [
+        "Agent 交互范式从'对话框'迁向'工作舱'，可能成为下一代 ChatGPT UI 形态",
+        "智能路由+成本优化，让小模型在长程任务里效果反超大模型",
+        "Always-on 常驻能力，开启 24h 在线 Agent 新场景"
+      ],
+      "sowhat_for_kuaishou": "客服/营销/经营 Agent 等内部场景可借鉴 WorkSpace 交互范式。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ]
+    },
+    {
+      "id": "intel-066",
+      "date": "2026-05-25",
+      "priority": "low",
+      "signal": "neutral",
+      "title": "微博推出『短视频热搜』，对标抖音 / 视频号信息流热点",
+      "tldr": "微博将热搜机制升级为『短视频热搜』，热点话题直接以短视频形式聚合呈现。一定程度上是微博对内容形态的转型尝试",
+      "tags": [
+        "#微博",
+        "#短视频"
+      ],
+      "company": [
+        "微博"
+      ],
+      "tracks": [
+        "内容"
+      ],
+      "sowhat_for_kuaishou": "微博热搜转向视频化，对快手社区氛围中的话题运营有借鉴价值",
+      "sources": [
+        {
+          "name": "新榜：微博热搜改革",
+          "url": "https://www.newrank.cn/"
+        }
+      ]
+    },
+    {
+      "id": "intel-065",
+      "date": "2026-05-25",
+      "priority": "high",
+      "signal": "opportunity",
+      "title": "字节本地生活：『出单宝』上线 1 周中小商家入驻破 20 万家",
+      "tldr": "5/18 上线的『出单宝』1 周吸引 20 万家中小商家入驻，按核销结果计费机制让商家投放门槛骤降。对美团到店 / 快手本地推中小商家盘构成虹吸",
+      "tags": [
+        "#字节",
+        "#出单宝",
+        "#本地生活",
+        "#中小商家"
+      ],
+      "company": [
+        "字节"
+      ],
+      "tracks": [
+        "本地生活"
+      ],
+      "sowhat_for_kuaishou": "出单宝上线 1 周即有 20 万商家迁移，需在 4-6 周内推出对标产品稳住快手本地推中小盘",
+      "sources": [
+        {
+          "name": "36氪：出单宝 1 周数据",
+          "url": "https://36kr.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-038",
+      "date": "2026-05-25",
+      "title": "腾讯混元 Hy-Memory：6 层记忆 + 演化链，Agent 记忆量降 70%",
+      "tldr": "腾讯混元发布 Hy-Memory，6 层记忆 + System1/2 双系统 + 演化链，LongMemEval 85.2 分远超同类，写入速度是 Graphiti 的 8 倍。",
+      "priority": "high",
+      "signal": "neutral",
+      "tags": [
+        "#AI Agent",
+        "#记忆系统",
+        "#腾讯"
+      ],
+      "company": [
+        "腾讯"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI Agent"
+      ],
+      "metrics": {
+        "评测得分": "85.2",
+        "记忆压缩": "70%",
+        "写入速度": "8x Graphiti"
+      },
+      "takeaway": [
+        "Agent 长程任务进入'记忆'核心竞争阶段",
+        "演化链 supersedes 指针机制创新",
+        "腾讯主动卡位 Agent 基础设施"
+      ],
+      "sowhat_for_kuaishou": "Agent 中长期记忆是商业化客服/营销 Agent 的关键依赖。",
+      "sources": [
+        {
+          "name": "腾讯研究院 AI 速递",
+          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ],
+      "category": "AI 速递"
+    },
+    {
+      "id": "intel-031",
+      "date": "2026-05-25",
+      "title": "OpenAI 与马耳他合作启动'国家级 AI'下阶段，加速全球渗透",
+      "tldr": "OpenAI 公布 'Next phase of OpenAI for countries'，宣布与马耳他政府合作落地国家级 ChatGPT/Codex 部署方案，本轮主打中小国家政企渗透。",
+      "priority": "mid",
+      "signal": "neutral",
+      "tags": [
+        "#OpenAI",
+        "#国家级 AI",
+        "#全球化"
+      ],
+      "company": [
+        "OpenAI"
+      ],
+      "tracks": [
+        "AIGC",
+        "AI 政企"
+      ],
+      "takeaway": [
+        "OpenAI 国家级落地从 G7 大国扩展到中小国家",
+        "B2G 政府市场成 LLM 厂商新蓝海",
+        "中国 AI 出海需要更多'国家级合作'案例对标"
+      ],
+      "sowhat_for_kuaishou": "国际化业务 Kwai 可参考 B2G/B2C 协同打法，把 AI 工具与政企关系绑定。",
+      "sources": [
+        {
+          "name": "OpenAI 官方",
+          "url": "https://openai.com/zh-Hans-CN/index/agentic-ai-foundation/"
+        }
+      ]
+    },
+    {
       "id": "intel-021",
       "date": "2026-05-25",
-      "title": "时序回溯：本地生活三强格局 美团守基本盘 vs 抖音攻头部 vs 快手聚焦长尾",
+      "title": "本地生活三强格局演化：美团守家+抖音攻头+快手做长尾，5月分化加剧",
       "tldr": "2025年至今，美团在到家+即时零售巩固护城河；抖音到店2025年GMV超8500亿撬动大头部；快手在防水补漏/婚恋等长尾赛道做差异化下沉",
       "priority": "high",
       "signal": "threat",
@@ -681,71 +1212,91 @@
       ]
     },
     {
-      "id": "intel-031",
-      "date": "2026-05-25",
-      "title": "OpenAI 与马耳他合作启动'国家级 AI'下阶段，加速全球渗透",
-      "tldr": "OpenAI 公布 'Next phase of OpenAI for countries'，宣布与马耳他政府合作落地国家级 ChatGPT/Codex 部署方案，本轮主打中小国家政企渗透。",
+      "id": "intel-068",
+      "date": "2026-05-24",
       "priority": "mid",
       "signal": "neutral",
+      "title": "拼多多多多客分销系统升级：佣金最高 80% + 二级返佣放开",
+      "tldr": "拼多多把多多客分销升级：最高佣金 50% → 80%，并开放二级返佣（KOL 拉新分销商分润）。用社交杠杆对抗短视频达人电商",
       "tags": [
-        "#OpenAI",
-        "#国家级 AI",
-        "#全球化"
+        "#拼多多",
+        "#分销",
+        "#达人"
       ],
       "company": [
-        "OpenAI"
+        "拼多多"
       ],
       "tracks": [
-        "AIGC",
-        "AI 政企"
+        "电商"
       ],
-      "takeaway": [
-        "OpenAI 国家级落地从 G7 大国扩展到中小国家",
-        "B2G 政府市场成 LLM 厂商新蓝海",
-        "中国 AI 出海需要更多'国家级合作'案例对标"
-      ],
-      "sowhat_for_kuaishou": "国际化业务 Kwai 可参考 B2G/B2C 协同打法，把 AI 工具与政企关系绑定。",
+      "sowhat_for_kuaishou": "拼多多用佣金杠杆抢腰部达人，快手联盟 / 磁力聚星的中腰部达人面临现金流分流",
       "sources": [
         {
-          "name": "OpenAI 官方",
-          "url": "https://openai.com/zh-Hans-CN/index/agentic-ai-foundation/"
+          "name": "拼多多商家公告",
+          "url": "https://mms.pinduoduo.com/"
         }
       ]
     },
     {
-      "id": "intel-038",
-      "date": "2026-05-25",
-      "title": "腾讯混元 Hy-Memory：6 层记忆 + 演化链，Agent 记忆量降 70%",
-      "tldr": "腾讯混元发布 Hy-Memory，6 层记忆 + System1/2 双系统 + 演化链，LongMemEval 85.2 分远超同类，写入速度是 Graphiti 的 8 倍。",
-      "priority": "high",
-      "signal": "neutral",
+      "id": "intel-067",
+      "date": "2026-05-24",
+      "priority": "mid",
+      "signal": "opportunity",
+      "title": "百度营销『AI 一站托管』公测：素材 + 落地页 + 出价全自动，对标巨量出单宝",
+      "tldr": "百度把 AIGC 创意 + 智能落地页 + oCPC 自动出价整合为一站托管产品。中小广告主入门门槛进一步降低",
       "tags": [
-        "#AI Agent",
-        "#记忆系统",
-        "#腾讯"
+        "#百度",
+        "#AI",
+        "#托管",
+        "#广告"
       ],
       "company": [
-        "腾讯"
+        "百度"
+      ],
+      "tracks": [
+        "广告"
+      ],
+      "sowhat_for_kuaishou": "全行业进入『一站 AI 托管』时代，快手磁力金牛 AI 经营官需建立差异化（如更强的内容生态联动）",
+      "sources": [
+        {
+          "name": "百度营销官网",
+          "url": "https://e.baidu.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-039",
+      "date": "2026-05-24",
+      "title": "Gemini 3.5 发布：价格砍半 + 速度 4 倍 + Gemini Omni 视频",
+      "tldr": "Google DeepMind 发布 Gemini 3.5 Flash + Omni 视频模型，API 价格砍半推理 4 倍速；AlphaProof Nexus 数学证明突破。",
+      "priority": "high",
+      "signal": "threat",
+      "tags": [
+        "#Gemini",
+        "#价格战",
+        "#视频生成"
+      ],
+      "company": [
+        "Google"
       ],
       "tracks": [
         "AIGC",
-        "AI Agent"
+        "大模型"
       ],
       "metrics": {
-        "评测得分": "85.2",
-        "记忆压缩": "70%",
-        "写入速度": "8x Graphiti"
+        "价格": "-50%",
+        "速度": "4x"
       },
       "takeaway": [
-        "Agent 长程任务进入'记忆'核心竞争阶段",
-        "演化链 supersedes 指针机制创新",
-        "腾讯主动卡位 Agent 基础设施"
+        "Google 用价格战逼 OpenAI",
+        "Gemini Omni 进入视频生成赛道",
+        "Action AI 成各家标配"
       ],
-      "sowhat_for_kuaishou": "Agent 中长期记忆是商业化客服/营销 Agent 的关键依赖。",
+      "sowhat_for_kuaishou": "可灵需重估 API 定价，关注 Agent 化避免被通用模型挤压。",
       "sources": [
         {
-          "name": "腾讯研究院 AI 速递",
-          "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+          "name": "钛媒体 - Gemini 3.5",
+          "url": "https://www.tmtpost.com/7994400.html"
         }
       ],
       "category": "AI 速递"
@@ -798,107 +1349,150 @@
       ]
     },
     {
-      "id": "intel-039",
-      "date": "2026-05-24",
-      "title": "Gemini 3.5 发布：价格砍半 + 速度 4 倍 + Gemini Omni 视频",
-      "tldr": "Google DeepMind 发布 Gemini 3.5 Flash + Omni 视频模型，API 价格砍半推理 4 倍速；AlphaProof Nexus 数学证明突破。",
-      "priority": "high",
-      "signal": "threat",
+      "id": "intel-070",
+      "date": "2026-05-23",
+      "priority": "mid",
+      "signal": "opportunity",
+      "title": "微信小店『一键带货』+ 全民推官计划：T+0 即时分账，覆盖 1 亿用户",
+      "tldr": "微信小店把带货中台和小程序 / 直播 / 视频号 / 公众号全场景打通，T+0 即时分账。本质是在微信生态内复刻拼多多的多多客模式",
       "tags": [
-        "#Gemini",
-        "#价格战",
-        "#视频生成"
+        "#腾讯",
+        "#微信小店",
+        "#分销"
       ],
       "company": [
-        "Google"
+        "腾讯"
+      ],
+      "tracks": [
+        "电商"
+      ],
+      "sowhat_for_kuaishou": "微信社交电商杠杆开始放大，对达人电商生态形成新竞争",
+      "sources": [
+        {
+          "name": "微信小店官方",
+          "url": "https://shop.weixin.qq.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-069",
+      "date": "2026-05-23",
+      "priority": "high",
+      "signal": "trend",
+      "title": "中国电竞产业 2025E 规模破 2000 亿，腾讯 / 网易 / 字节三分天下",
+      "tldr": "据伽马数据：2025E 中国电竞产业规模 2000 亿（+18% YoY），腾讯（35%）/ 网易（22%）/ 字节（18%）形成三足鼎立。电竞内容向短视频平台溢出",
+      "tags": [
+        "#电竞",
+        "#腾讯",
+        "#字节",
+        "#网易"
+      ],
+      "company": [
+        "腾讯",
+        "网易",
+        "字节"
+      ],
+      "tracks": [
+        "内容"
+      ],
+      "sowhat_for_kuaishou": "电竞内容向短视频平台溢出，是快手内容差异化的潜在抓手（如赛事二创、选手个人 IP）",
+      "sources": [
+        {
+          "name": "伽马数据 2025 电竞报告",
+          "url": "https://www.cnggame.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-072",
+      "date": "2026-05-22",
+      "priority": "low",
+      "signal": "neutral",
+      "title": "B 站 Q1 财报：营收 67 亿元 +14%，游戏广告双轮驱动",
+      "tldr": "B 站 Q1 营收 67 亿（+14% YoY），其中游戏 24 亿、广告 21 亿。月活 3.4 亿稳定，但 ARPU 提升乏力",
+      "tags": [
+        "#B站",
+        "#财报"
+      ],
+      "company": [
+        "B站"
+      ],
+      "tracks": [
+        "内容"
+      ],
+      "sowhat_for_kuaishou": "B 站社区电商 / 直播带货增量有限，反衬出快手腰部达人 + 信任电商的差异化价值",
+      "sources": [
+        {
+          "name": "B 站 Q1 财报",
+          "url": "https://ir.bilibili.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-071",
+      "date": "2026-05-22",
+      "priority": "mid",
+      "signal": "opportunity",
+      "title": "小红书『灵犀种草通』新增 ROI 优化模式：CPS 计费 + 闭环转化追踪",
+      "tldr": "小红书在传统 CPC / CPM 之外，新增按成交分润的 CPS 模式，配合 ROI 优化包，让中小品牌跑通『种草-成交』闭环",
+      "tags": [
+        "#小红书",
+        "#灵犀",
+        "#种草",
+        "#CPS"
+      ],
+      "company": [
+        "小红书"
+      ],
+      "tracks": [
+        "广告",
+        "电商"
+      ],
+      "sowhat_for_kuaishou": "小红书在『种草-成交』闭环上加速渗透，对快手磁力金牛的品牌广告路径有威胁",
+      "sources": [
+        {
+          "name": "36氪：小红书种草通 ROI 模式",
+          "url": "https://36kr.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-040",
+      "date": "2026-05-22",
+      "title": "OpenAI 国家级 AI：与马耳他合作启动 B2G 全球渗透",
+      "tldr": "OpenAI 'Next phase of OpenAI for countries' 公布，与马耳他政府合作国家级 ChatGPT/Codex 部署，从 G7 扩到中小国家。",
+      "priority": "mid",
+      "signal": "neutral",
+      "tags": [
+        "#OpenAI",
+        "#国家级 AI",
+        "#全球化"
+      ],
+      "company": [
+        "OpenAI"
       ],
       "tracks": [
         "AIGC",
-        "大模型"
+        "AI 政企"
       ],
-      "metrics": {
-        "价格": "-50%",
-        "速度": "4x"
-      },
       "takeaway": [
-        "Google 用价格战逼 OpenAI",
-        "Gemini Omni 进入视频生成赛道",
-        "Action AI 成各家标配"
+        "B2G 政府市场成 LLM 厂商新蓝海",
+        "OpenAI 从大国扩到中小国家",
+        "国家级合作成新竞争维度"
       ],
-      "sowhat_for_kuaishou": "可灵需重估 API 定价，关注 Agent 化避免被通用模型挤压。",
+      "sowhat_for_kuaishou": "国际化业务 Kwai 可参考 B2G/B2C 协同打法。",
       "sources": [
         {
-          "name": "钛媒体 - Gemini 3.5",
-          "url": "https://www.tmtpost.com/7994400.html"
+          "name": "OpenAI 官方",
+          "url": "https://openai.com/zh-Hans-CN/index/agentic-ai-foundation/"
         }
       ],
       "category": "AI 速递"
     },
     {
-      "id": "intel-012",
-      "date": "2026-05-22",
-      "title": "TikTok 全球广告收入超 300 亿美元，与抖音合计字节广告规模近千亿美元",
-      "tldr": "TikTok广告收入超300亿美元，字节全球广告规模近千亿美元，进入第一梯队竞争",
-      "priority": "high",
-      "signal": "threat",
-      "tags": [
-        "#行业数据",
-        "#广告",
-        "#出海",
-        "#全球"
-      ],
-      "company": [
-        "字节"
-      ],
-      "tracks": [
-        "AI",
-        "电商",
-        "出海"
-      ],
-      "metrics": {
-        "TikTok广告收入": ">300亿美元",
-        "抖音广告收入": "4200亿元",
-        "字节全球广告": "约900-1000亿美元"
-      },
-      "takeaway": [
-        "2025年TikTok全球广告收入超300亿美元；抖音国内广告收入约4200亿元",
-        "两者合计，字节广告收入规模约900-1000亿美元，正接近Meta广告体量",
-        "TikTok在海外复制抖音成功路径，TikTok Shop正在海外重走抖音电商模式"
-      ],
-      "sowhat_for_kuaishou": "字节广告帝国规模已进入全球第一梯队。快手国际版（Kwai）在东南亚/南美的广告商业化能力与TikTok差距显著，国际化压力持续。同时字节国内外广告技术的规模效应将持续反哺算法优化能力。",
-      "timeline": [
-        {
-          "date": "2023年",
-          "event": "TikTok广告收入约180亿美元"
-        },
-        {
-          "date": "2024年",
-          "event": "约250亿美元"
-        },
-        {
-          "date": "2025年",
-          "event": "突破300亿美元"
-        },
-        {
-          "date": "2026年",
-          "event": "字节全球广告规模近千亿美元"
-        }
-      ],
-      "related_ids": [
-        "intel-008"
-      ],
-      "sources": [
-        {
-          "name": "钛媒体：全球社交的旧王与新王",
-          "url": "https://www.tmtpost.com/7998944.html",
-          "date": "2026-05-22"
-        }
-      ]
-    },
-    {
       "id": "intel-022",
       "date": "2026-05-22",
-      "title": "时序回溯：国内AI大模型商业化演进——从规模竞赛到Agent变现",
+      "title": "国内 AI 大模型商业化转折：从规模竞赛进入 Agent 工作流变现期",
       "tldr": "豆包Q1 MAU达4.68亿中国第一；DeepSeek V3.2强化Agent；Kimi K2面世对标DeepSeek；2026年竞争从功能比拼转向工作流集成变现",
       "priority": "high",
       "signal": "trend",
@@ -979,42 +1573,241 @@
       ]
     },
     {
-      "id": "intel-040",
+      "id": "intel-012",
       "date": "2026-05-22",
-      "title": "OpenAI 国家级 AI：与马耳他合作启动 B2G 全球渗透",
-      "tldr": "OpenAI 'Next phase of OpenAI for countries' 公布，与马耳他政府合作国家级 ChatGPT/Codex 部署，从 G7 扩到中小国家。",
-      "priority": "mid",
-      "signal": "neutral",
+      "title": "TikTok 全球广告收入超 300 亿美元，与抖音合计字节广告规模近千亿美元",
+      "tldr": "TikTok广告收入超300亿美元，字节全球广告规模近千亿美元，进入第一梯队竞争",
+      "priority": "high",
+      "signal": "threat",
       "tags": [
-        "#OpenAI",
-        "#国家级 AI",
-        "#全球化"
+        "#行业数据",
+        "#广告",
+        "#出海",
+        "#全球"
       ],
       "company": [
-        "OpenAI"
+        "字节"
+      ],
+      "tracks": [
+        "AI",
+        "电商",
+        "出海"
+      ],
+      "metrics": {
+        "TikTok广告收入": ">300亿美元",
+        "抖音广告收入": "4200亿元",
+        "字节全球广告": "约900-1000亿美元"
+      },
+      "takeaway": [
+        "2025年TikTok全球广告收入超300亿美元；抖音国内广告收入约4200亿元",
+        "两者合计，字节广告收入规模约900-1000亿美元，正接近Meta广告体量",
+        "TikTok在海外复制抖音成功路径，TikTok Shop正在海外重走抖音电商模式"
+      ],
+      "sowhat_for_kuaishou": "字节广告帝国规模已进入全球第一梯队。快手国际版（Kwai）在东南亚/南美的广告商业化能力与TikTok差距显著，国际化压力持续。同时字节国内外广告技术的规模效应将持续反哺算法优化能力。",
+      "timeline": [
+        {
+          "date": "2023年",
+          "event": "TikTok广告收入约180亿美元"
+        },
+        {
+          "date": "2024年",
+          "event": "约250亿美元"
+        },
+        {
+          "date": "2025年",
+          "event": "突破300亿美元"
+        },
+        {
+          "date": "2026年",
+          "event": "字节全球广告规模近千亿美元"
+        }
+      ],
+      "related_ids": [
+        "intel-008"
+      ],
+      "sources": [
+        {
+          "name": "钛媒体：全球社交的旧王与新王",
+          "url": "https://www.tmtpost.com/7998944.html",
+          "date": "2026-05-22"
+        }
+      ]
+    },
+    {
+      "id": "intel-074",
+      "date": "2026-05-21",
+      "priority": "low",
+      "signal": "trend",
+      "title": "微信小程序月活破 12 亿，承接 30% 移动端电商订单",
+      "tldr": "微信小程序月活破 12 亿，承接全网 30% 移动端电商订单。是微信生态电商化的核心承载",
+      "tags": [
+        "#腾讯",
+        "#小程序",
+        "#电商"
+      ],
+      "company": [
+        "腾讯"
+      ],
+      "tracks": [
+        "电商"
+      ],
+      "sowhat_for_kuaishou": "微信小程序电商生态规模化，对短视频电商交易承载形成承压",
+      "sources": [
+        {
+          "name": "晚点：小程序电商 2025 数据",
+          "url": "https://www.latepost.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-073",
+      "date": "2026-05-21",
+      "priority": "mid",
+      "signal": "opportunity",
+      "title": "微信广告『朋友圈原生互动样式』上线：用户可直接评论 / 点赞 / 打开小程序",
+      "tldr": "朋友圈广告升级为原生互动样式，无需跳出。CTR 实测提升 30-50%，是腾讯私域广告差异化对抗短视频信息流的关键武器",
+      "tags": [
+        "#腾讯",
+        "#朋友圈",
+        "#广告"
+      ],
+      "company": [
+        "腾讯"
+      ],
+      "tracks": [
+        "广告"
+      ],
+      "sowhat_for_kuaishou": "微信原生互动样式 CTR 提升明显，对短视频信息流广告 ARPU 形成压力",
+      "sources": [
+        {
+          "name": "腾讯广告官方公众号",
+          "url": "https://e.qq.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-076",
+      "date": "2026-05-20",
+      "priority": "mid",
+      "signal": "neutral",
+      "title": "Stability AI 推出 Stable Video 3.0：开源视频生成对标 Sora",
+      "tldr": "Stable Video 3.0 开源，4K 30s 视频生成能力对标 Sora 2，但推理速度慢约 3 倍。开源生态加速视频生成商业化",
+      "tags": [
+        "#Stability",
+        "#视频生成",
+        "#开源"
+      ],
+      "company": [
+        "Stability AI"
       ],
       "tracks": [
         "AIGC",
-        "AI 政企"
+        "世界模型/视频生成"
       ],
-      "takeaway": [
-        "B2G 政府市场成 LLM 厂商新蓝海",
-        "OpenAI 从大国扩到中小国家",
-        "国家级合作成新竞争维度"
-      ],
-      "sowhat_for_kuaishou": "国际化业务 Kwai 可参考 B2G/B2C 协同打法。",
+      "sowhat_for_kuaishou": "开源视频生成持续追赶闭源，可灵需评估开源生态的中长期冲击",
       "sources": [
         {
-          "name": "OpenAI 官方",
-          "url": "https://openai.com/zh-Hans-CN/index/agentic-ai-foundation/"
+          "name": "Stability AI Blog",
+          "url": "https://stability.ai/blog/"
+        }
+      ]
+    },
+    {
+      "id": "intel-075",
+      "date": "2026-05-20",
+      "priority": "high",
+      "signal": "opportunity",
+      "title": "快手 618 大促开启：『一键托管 + AI 智能定价』新增千万级商家覆盖",
+      "tldr": "快手 618 大促正式开启，磁力金牛新增『一键托管 + AI 智能定价』模块，预估覆盖商家增至 1500 万。618 重点抢中小商家 AI 化心智",
+      "tags": [
+        "#快手",
+        "#618",
+        "#AI"
+      ],
+      "company": [
+        "快手"
+      ],
+      "tracks": [
+        "广告",
+        "电商"
+      ],
+      "sowhat_for_kuaishou": "618 是检验磁力金牛 AI 化产品力的关键大促，需重点跟踪商家迁移率和 ROI 数据",
+      "sources": [
+        {
+          "name": "磁力金牛 618 政策官方",
+          "url": "https://niu.e.kuaishou.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-016",
+      "date": "2026-05-20",
+      "title": "2026年618大促开启：叙事从GMV转向AI落地，平台押注AI经营基础设施",
+      "tldr": "5月12日京东/淘宝率先开启618，5月15日抖音跟进；今年主叙事从GMV规模转向AI赋能，阿里AI万相、京东京小通、快手/抖音AI营销工具成主战场",
+      "priority": "high",
+      "signal": "opportunity",
+      "tags": [
+        "#618",
+        "#电商",
+        "#AIGC",
+        "#广告工具"
+      ],
+      "company": [
+        "阿里",
+        "京东",
+        "抖音",
+        "快手"
+      ],
+      "tracks": [
+        "电商",
+        "AIGC"
+      ],
+      "metrics": {
+        "京东/淘宝开门": "2026-05-12",
+        "抖音开门": "2026-05-15"
+      },
+      "takeaway": [
+        "618核心叙事变化：不再比规模GMV，而是比谁的AI工具帮商家更高效",
+        "阿里推出AI万相、京东升级京小通、抖音快手纷纷以AI赋能商家",
+        "快手泛货架商品卡持续发力，618是验证货架电商增长韧性的关键节点"
+      ],
+      "sowhat_for_kuaishou": "快手需在618期间展示AI广告工具（磁力智投/AI创意）对电商商家GMV提升的量化ROI数据，否则在AI叙事竞争中将落后于淘天、抖音",
+      "timeline": [
+        {
+          "date": "2025-06",
+          "event": "2025年618快手电商泛货架GMV同比增长"
+        },
+        {
+          "date": "2026-05-12",
+          "event": "京东、淘宝618开门"
+        },
+        {
+          "date": "2026-05-15",
+          "event": "抖音商城618好物节开启"
+        },
+        {
+          "date": "2026-06-18",
+          "event": "618大促收官，GMV数据公布"
         }
       ],
-      "category": "AI 速递"
+      "related_ids": [],
+      "sources": [
+        {
+          "name": "潮新闻：618从拼复杂度转向拼诚意",
+          "url": "https://tidenews.com.cn",
+          "date": "2026-05-20"
+        },
+        {
+          "name": "淘宝大学：618规则做减法AI做加法",
+          "url": "https://daxue.taobao.com",
+          "date": "2026-05-22"
+        }
+      ]
     },
     {
       "id": "intel-014",
       "date": "2026-05-20",
-      "title": "时序回溯：AI视频生成大战 Seedance vs 可灵 vs 即梦 vs Runway",
+      "title": "AI 视频生成赛道五月战报：Seedance/可灵/即梦三强分化，阿里入局加速洗牌",
       "tldr": "字节Seedance靠抖音分发领跑月活；可灵靠海外品牌溢价拟IPO；即梦依托剪映生态稳居第二；阿里5月宣布入局加剧竞争",
       "priority": "high",
       "signal": "trend",
@@ -1094,67 +1887,110 @@
       ]
     },
     {
-      "id": "intel-016",
-      "date": "2026-05-20",
-      "title": "2026年618大促开启：叙事从GMV转向AI落地，平台押注AI经营基础设施",
-      "tldr": "5月12日京东/淘宝率先开启618，5月15日抖音跟进；今年主叙事从GMV规模转向AI赋能，阿里AI万相、京东京小通、快手/抖音AI营销工具成主战场",
-      "priority": "high",
-      "signal": "opportunity",
+      "id": "intel-078",
+      "date": "2026-05-19",
+      "priority": "low",
+      "signal": "neutral",
+      "title": "OpenAI 与马耳他合作启动『国家级 AI』，B2G 全球渗透加速",
+      "tldr": "OpenAI 与马耳他签署国家级 AI 部署协议，公共服务 / 教育 / 医疗全面 AI 化。继日本 / 韩国后第三个国家级合作",
       "tags": [
-        "#618",
-        "#电商",
-        "#AIGC",
-        "#广告工具"
+        "#OpenAI",
+        "#B2G"
       ],
       "company": [
-        "阿里",
-        "京东",
-        "抖音",
-        "快手"
+        "OpenAI"
       ],
       "tracks": [
-        "电商",
         "AIGC"
       ],
-      "metrics": {
-        "京东/淘宝开门": "2026-05-12",
-        "抖音开门": "2026-05-15"
-      },
-      "takeaway": [
-        "618核心叙事变化：不再比规模GMV，而是比谁的AI工具帮商家更高效",
-        "阿里推出AI万相、京东升级京小通、抖音快手纷纷以AI赋能商家",
-        "快手泛货架商品卡持续发力，618是验证货架电商增长韧性的关键节点"
-      ],
-      "sowhat_for_kuaishou": "快手需在618期间展示AI广告工具（磁力智投/AI创意）对电商商家GMV提升的量化ROI数据，否则在AI叙事竞争中将落后于淘天、抖音",
-      "timeline": [
-        {
-          "date": "2025-06",
-          "event": "2025年618快手电商泛货架GMV同比增长"
-        },
-        {
-          "date": "2026-05-12",
-          "event": "京东、淘宝618开门"
-        },
-        {
-          "date": "2026-05-15",
-          "event": "抖音商城618好物节开启"
-        },
-        {
-          "date": "2026-06-18",
-          "event": "618大促收官，GMV数据公布"
-        }
-      ],
-      "related_ids": [],
+      "sowhat_for_kuaishou": "AI 模型从消费侧向 B2G 渗透是 2026 关键叙事",
       "sources": [
         {
-          "name": "潮新闻：618从拼复杂度转向拼诚意",
-          "url": "https://tidenews.com.cn",
-          "date": "2026-05-20"
+          "name": "OpenAI Blog",
+          "url": "https://openai.com/blog/"
+        }
+      ]
+    },
+    {
+      "id": "intel-077",
+      "date": "2026-05-19",
+      "priority": "mid",
+      "signal": "opportunity",
+      "title": "小红书本地生活『下一家好店』计划：覆盖 50 城 + 商户冷启动免佣",
+      "tldr": "小红书本地生活以『内容+种草』差异化路径切入。下一家好店计划首批 50 城 + 商户前 3 个月免佣金，明显加速拓城",
+      "tags": [
+        "#小红书",
+        "#本地生活"
+      ],
+      "company": [
+        "小红书"
+      ],
+      "tracks": [
+        "本地生活"
+      ],
+      "sowhat_for_kuaishou": "小红书本地生活『内容种草差异化』成型，是除美团/抖音外的第三种本地生活形态",
+      "sources": [
+        {
+          "name": "钛媒体：小红书本地生活 50 城拓张",
+          "url": "https://www.tmtpost.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-009",
+      "date": "2026-05-19",
+      "title": "QuestMobile：2026本地生活报告——即时零售走向综合消费入口",
+      "tldr": "本地生活从到店/到家演变为即时+内容+电商多维竞争，阿里/京东/美团陷阵地战，抖音偷家",
+      "priority": "high",
+      "signal": "threat",
+      "tags": [
+        "#行业报告",
+        "#本地生活",
+        "#即时零售",
+        "#国内"
+      ],
+      "company": [
+        "美团",
+        "字节",
+        "阿里",
+        "京东"
+      ],
+      "tracks": [
+        "本地生活",
+        "电商"
+      ],
+      "metrics": {
+        "即时零售市场规模": ">1万亿元"
+      },
+      "takeaway": [
+        "即时零售用户心智升维，从买菜演进为综合消费入口",
+        "阿里（饿了么+淘宝）、京东（秒送）、美团三方陷入阵地战",
+        "抖音凭借内容流量持续偷家，用户规模增速远超美团"
+      ],
+      "sowhat_for_kuaishou": "本地生活竞争已不是单纯的配送网络竞争，而是内容+即时融合战场。快手需要在供给侧和内容生态两端同步建设，否则难以在竞争中突围。",
+      "timeline": [
+        {
+          "date": "2024年",
+          "event": "即时零售市场规模超万亿"
         },
         {
-          "name": "淘宝大学：618规则做减法AI做加法",
-          "url": "https://daxue.taobao.com",
-          "date": "2026-05-22"
+          "date": "2025年",
+          "event": "抖音生服GMV+59%"
+        },
+        {
+          "date": "2026-05-19",
+          "event": "QuestMobile报告发布"
+        }
+      ],
+      "related_ids": [
+        "intel-001",
+        "intel-003"
+      ],
+      "sources": [
+        {
+          "name": "QuestMobile：2026本地生活消费洞察报告",
+          "url": "https://www.questmobile.com.cn/",
+          "date": "2026-05-19"
         }
       ]
     },
@@ -1221,60 +2057,54 @@
       ]
     },
     {
-      "id": "intel-009",
-      "date": "2026-05-19",
-      "title": "QuestMobile：2026本地生活报告——即时零售走向综合消费入口",
-      "tldr": "本地生活从到店/到家演变为即时+内容+电商多维竞争，阿里/京东/美团陷阵地战，抖音偷家",
-      "priority": "high",
-      "signal": "threat",
+      "id": "intel-080",
+      "date": "2026-05-18",
+      "priority": "mid",
+      "signal": "neutral",
+      "title": "TikTok 美国业务正式『独立化』，独立董事会 + 数据本地化",
+      "tldr": "TikTok 美国与字节其他业务的隔离架构正式落地：独立董事会、独立数据中心、独立合规。为 TikTok 美国 IPO 铺路",
       "tags": [
-        "#行业报告",
-        "#本地生活",
-        "#即时零售",
-        "#国内"
+        "#字节",
+        "#TikTok",
+        "#出海"
       ],
       "company": [
-        "美团",
-        "字节",
-        "阿里",
-        "京东"
+        "字节"
       ],
       "tracks": [
-        "本地生活",
-        "电商"
+        "出海"
       ],
-      "metrics": {
-        "即时零售市场规模": ">1万亿元"
-      },
-      "takeaway": [
-        "即时零售用户心智升维，从买菜演进为综合消费入口",
-        "阿里（饿了么+淘宝）、京东（秒送）、美团三方陷入阵地战",
-        "抖音凭借内容流量持续偷家，用户规模增速远超美团"
-      ],
-      "sowhat_for_kuaishou": "本地生活竞争已不是单纯的配送网络竞争，而是内容+即时融合战场。快手需要在供给侧和内容生态两端同步建设，否则难以在竞争中突围。",
-      "timeline": [
-        {
-          "date": "2024年",
-          "event": "即时零售市场规模超万亿"
-        },
-        {
-          "date": "2025年",
-          "event": "抖音生服GMV+59%"
-        },
-        {
-          "date": "2026-05-19",
-          "event": "QuestMobile报告发布"
-        }
-      ],
-      "related_ids": [
-        "intel-001",
-        "intel-003"
-      ],
+      "sowhat_for_kuaishou": "TikTok 美国架构独立后，字节出海重心或转向南美 + 东南亚，对快手国际化的竞争格局重塑",
       "sources": [
         {
-          "name": "QuestMobile：2026本地生活消费洞察报告",
-          "url": "https://www.questmobile.com.cn/",
-          "date": "2026-05-19"
+          "name": "WSJ：TikTok US 独立化",
+          "url": "https://www.wsj.com/"
+        }
+      ]
+    },
+    {
+      "id": "intel-079",
+      "date": "2026-05-18",
+      "priority": "high",
+      "signal": "threat",
+      "title": "抖音『出单宝』正式发布：出单全托管 + 核销才计费，精准切中小商家盘",
+      "tldr": "抖音生活服务正式发布智能托管产品『出单宝』。首期定向单体中小商家开放，按核销结果计费。这是字节本地生活 Q2 最重要的产品落子",
+      "tags": [
+        "#字节",
+        "#出单宝",
+        "#本地生活"
+      ],
+      "company": [
+        "字节"
+      ],
+      "tracks": [
+        "本地生活"
+      ],
+      "sowhat_for_kuaishou": "出单宝是字节本地生活 Q2 杀手锏，直接对快手本地推中小商家盘构成威胁。需 30 天内出对标方案",
+      "sources": [
+        {
+          "name": "澎湃：抖音生活服务出单宝发布",
+          "url": "https://www.thepaper.cn/"
         }
       ]
     },
