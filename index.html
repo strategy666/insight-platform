@@ -9,7 +9,7 @@
     <title>商业化洞察 v2.0 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究 / 战分助手" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260531w" />
+    <link rel="stylesheet" href="assets/style.css?v=20260531x" />
 </head>
 <body>
 
@@ -1064,15 +1064,28 @@ window.searchNxny = async function(kw) {
     var scope = allWeb ? '全网检索' : '限定 site:nxny.com';
     results.innerHTML = '<div class="nxny-loading">⏳ 正在检索「<b>' + escapeHtmlNxny(kw) + '</b>」（' + scope + '）…</div>';
 
-    // 读取 AI 配置
+    // 读取 AI 配置（优先用 ai-chat.js 暴露的 __getAIConfig，包含 BUILTIN_CFG 内置 key）
     var cfg;
     try {
-        var raw = localStorage.getItem('insight_ai_config_v1');
-        cfg = raw ? JSON.parse(raw) : null;
+        cfg = (typeof window.__getAIConfig === 'function') ? window.__getAIConfig() : null;
+        if (!cfg) {
+            var raw = localStorage.getItem('insight_ai_config_v1');
+            cfg = raw ? JSON.parse(raw) : null;
+        }
     } catch(e) { cfg = null; }
 
-    if (!cfg || !cfg.search_key || cfg.search_provider === 'none') {
+    // ⭐ 新策略：优先用真实 Web 搜索 API；没有就用 LLM 知识库回退；都没才提示
+    var hasWebSearch = cfg && cfg.search_key && cfg.search_provider && cfg.search_provider !== 'none';
+    var hasLLM = cfg && cfg.llm_endpoint && cfg.llm_key;
+
+    if (!hasWebSearch && !hasLLM) {
         results.innerHTML = renderNxnyNoApiKey(kw, allWeb);
+        return;
+    }
+
+    // 没有真实 web search → 走 LLM 推荐研报模式
+    if (!hasWebSearch && hasLLM) {
+        await runNxnyLLMRecommend(kw, allWeb, cfg, results);
         return;
     }
 
@@ -1122,6 +1135,83 @@ window.searchNxny = async function(kw) {
             '</div></div>';
     }
 };
+
+// ===== LLM 知识库推荐研报（DeepSeek 等 LLM-only key 的 fallback）=====
+async function runNxnyLLMRecommend(kw, allWeb, cfg, results) {
+    var scopeLabel = allWeb ? '🌐 全网范围' : '📊 偏向 nxny.com / 行业研究机构';
+    results.innerHTML = '<div class="nxny-loading">🤖 正在用 <b>' + escapeHtmlNxny(cfg.llm_model || 'AI') + '</b> 检索「<b>' + escapeHtmlNxny(kw) + '</b>」相关研报推荐…<span class="cursor-blink">▍</span></div>';
+
+    var sysPrompt = '你是一名熟悉中国互联网/消费/科技行业研究的分析师。' +
+        '用户在「行业报告库」检索关键词，请基于你的知识库推荐 5-8 份高质量的相关行业研究报告/研报/白皮书。' +
+        '严格输出 JSON 数组，每个元素结构：' +
+        '{"title":"具体研报标题","org":"出品机构（如：QuestMobile/艾瑞/亿欧/晚点LatePost/CIC灼识/Gartner/麦肯锡/IDC/iResearch/罗兰贝格/BCG/Frost等）","year":"2024或2025","topic":"核心议题（20字内）","highlights":["核心要点1","核心要点2","核心要点3"],"search_hint":"用什么关键词在Google/百度能找到"}。' +
+        '推荐时：1) 优先真实存在的报告；2) 覆盖多家机构视角；3) 时效性优先（2024-2025）；4) 与关键词高度相关；' +
+        '5) 如果是行业类查询，可包含咨询公司白皮书/上市公司财报解读/招股书行研章节。' +
+        '只输出 JSON 数组，不要 markdown 代码块，不要前后文字。';
+
+    var userPrompt = '检索关键词：' + kw + '\n范围：' + (allWeb ? '全网' : '偏向 nxny.com 等行业报告平台') + '\n请推荐 5-8 份相关研报。';
+
+    try {
+        var resp = await fetch(cfg.llm_endpoint.replace(/\/$/, '') + '/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + cfg.llm_key
+            },
+            body: JSON.stringify({
+                model: cfg.llm_model || 'deepseek-v4-flash',
+                messages: [
+                    { role: 'system', content: sysPrompt },
+                    { role: 'user', content: userPrompt }
+                ],
+                stream: false,
+                temperature: 0.3
+            })
+        });
+        if (!resp.ok) throw new Error('LLM ' + resp.status + ': ' + (await resp.text()).slice(0, 200));
+        var data = await resp.json();
+        var content = (((data.choices||[])[0]||{}).message||{}).content || '';
+        // 提取 JSON 数组（兼容 LLM 偶尔包 markdown）
+        var jsonStr = content.trim().replace(/^```(?:json)?\s*/, '').replace(/```\s*$/, '');
+        var firstBracket = jsonStr.indexOf('[');
+        var lastBracket = jsonStr.lastIndexOf(']');
+        if (firstBracket >= 0 && lastBracket > firstBracket) jsonStr = jsonStr.slice(firstBracket, lastBracket + 1);
+        var reports = JSON.parse(jsonStr);
+        if (!Array.isArray(reports) || !reports.length) throw new Error('LLM 返回结果为空');
+
+        results.innerHTML = '<div class="nxny-meta">🤖 共 <b>' + reports.length + '</b> 份 AI 推荐研报 · 关键词「<b>' + escapeHtmlNxny(kw) + '</b>」· ' + scopeLabel + ' · 数据来源：' + escapeHtmlNxny(cfg.llm_model || 'LLM') + '</div>' +
+            '<div class="nxny-tip" style="font-size:12px;color:#888;margin:6px 0 10px;padding:8px 12px;background:#fff8e6;border-radius:6px;border-left:3px solid #f0c040">💡 当前未配置 Web 搜索 API（只有 LLM key），结果来自 ' + escapeHtmlNxny(cfg.llm_model || 'AI') + ' 知识库推荐。如需真实抓取 nxny.com 列表，请去 ⚙️ 配置 Tavily/Serper/博查 任一搜索 API（推荐 Tavily 免费 1000 次/月）</div>' +
+            reports.map(function(r, i) {
+                var hl = (r.highlights || []).slice(0, 4).map(function(h){
+                    return '<li>' + escapeHtmlNxny(h) + '</li>';
+                }).join('');
+                var searchHint = encodeURIComponent(r.search_hint || (r.title + ' ' + r.org));
+                return '<div class="nxny-result-card">' +
+                    '<div class="nxny-rc-no">' + (i+1) + '</div>' +
+                    '<div class="nxny-rc-body">' +
+                        '<div class="nxny-rc-title" style="color:#1a4a36">' + escapeHtmlNxny(r.title || '无标题') + '</div>' +
+                        '<div class="nxny-rc-url">🏛 ' + escapeHtmlNxny(r.org || '机构未知') + ' · ' + escapeHtmlNxny(r.year || '') + ' · ' + escapeHtmlNxny(r.topic || '') + '</div>' +
+                        (hl ? '<ul class="nxny-rc-snippet" style="margin:6px 0 0 18px;padding:0">' + hl + '</ul>' : '') +
+                        '<div class="nxny-rc-actions">' +
+                            '<a href="https://www.google.com/search?q=' + searchHint + '" target="_blank" rel="noopener" class="nxny-rc-btn primary">🔍 Google 搜原文</a>' +
+                            '<a href="https://www.baidu.com/s?wd=' + searchHint + '" target="_blank" rel="noopener" class="nxny-rc-btn">🔍 百度搜原文</a>' +
+                            '<a href="https://www.nxny.com/search?q=' + encodeURIComponent(r.title || kw) + '" target="_blank" rel="noopener" class="nxny-rc-btn">📊 去 nxny.com 找</a>' +
+                            '<span class="nxny-rc-tag" style="background:#e8f3ec;color:#2a6f4f">AI 推荐</span>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+            }).join('');
+    } catch (err) {
+        results.innerHTML = '<div class="nxny-error">' +
+            '<div class="nxny-fb-icon">❌</div>' +
+            '<div class="nxny-fb-title">AI 推荐失败</div>' +
+            '<div class="nxny-fb-desc">' + escapeHtmlNxny(err.message || String(err)) + '</div>' +
+            '<div class="nxny-fb-actions">' +
+                '<button class="nxny-fb-btn primary" onclick="openAISettings()">⚙️ 检查 AI 配置</button>' +
+                '<a href="https://www.google.com/search?q=site%3Anxny.com+' + encodeURIComponent(kw) + '" target="_blank" rel="noopener" class="nxny-fb-btn">↗ Google 搜本词</a>' +
+            '</div></div>';
+    }
+}
 
 function renderNxnyNoApiKey(kw, allWeb) {
     var encKw = encodeURIComponent(kw);
@@ -1281,13 +1371,13 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260531w"></script>
-<script src="assets/feishu-search.js?v=20260531w"></script>
-<script src="assets/ai-chat.js?v=20260531w"></script>
-<script src="assets/industry-research.js?v=20260531w"></script>
-<script src="assets/onboarding.js?v=20260531w"></script>
-<script src="assets/chat-widget.js?v=20260531w"></script>
-<script src="assets/assistant-tab.js?v=20260531w"></script>
+<script src="assets/main.js?v=20260531x"></script>
+<script src="assets/feishu-search.js?v=20260531x"></script>
+<script src="assets/ai-chat.js?v=20260531x"></script>
+<script src="assets/industry-research.js?v=20260531x"></script>
+<script src="assets/onboarding.js?v=20260531x"></script>
+<script src="assets/chat-widget.js?v=20260531x"></script>
+<script src="assets/assistant-tab.js?v=20260531x"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){
