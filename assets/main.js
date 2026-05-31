@@ -55,61 +55,123 @@ async function loadData() {
 
 // ==================== 渲染本周关键（最新 3 条高优先级，按日期倒序） ====================
 function renderKeyInsights() {
-    const highPriorityItems = intelData
-        .filter(item => item.priority === 'high')
-        .slice() // 复制一份避免污染原数组
+    // 合并 AI 速递 + 高优先级情报：high priority 或 AI 赛道，取近 7 天内 top 6
+    const sevenDaysAgo = Date.now() - 7 * 86400000;
+    const merged = intelData
+        .filter(it => {
+            const isHigh = it.priority === 'high';
+            const isAI = (it.tracks || []).some(t => /AI|AIGC/i.test(t));
+            const ts = new Date(it.date).getTime();
+            return (isHigh || isAI) && ts >= sevenDaysAgo;
+        })
+        .slice()
         .sort((a, b) => new Date(b.date) - new Date(a.date))
-        .slice(0, 3);
-    
-    const html = highPriorityItems.map(item => `
-        <div class="key-insight-card" data-signal="${item.signal}">
-            <div class="key-card-header">
-                <span class="priority-badge priority-${item.priority}">🔴 必看</span>
-                <span class="signal-badge signal-${item.signal}">${getSignalIcon(item.signal)}</span>
-                <span class="date">${item.date}</span>
+        .slice(0, 6);
+
+    if (merged.length === 0) {
+        document.getElementById('keyInsights').innerHTML = '<p class="empty-state">近 7 天暂无高优或0AI 速递情报</p>';
+        return;
+    }
+
+    const html = merged.map(item => {
+        const isHigh = item.priority === 'high';
+        const isAI = (item.tracks || []).some(t => /AI|AIGC/i.test(t));
+        const badges = [];
+        if (isHigh) badges.push('<span class="hot-badge hot-high">🔥 高优</span>');
+        if (isAI) badges.push('<span class="hot-badge hot-ai">🤖 AI</span>');
+        const sig = item.signal === 'opportunity' ? '<span class="hot-badge hot-opp">🟢 机会</span>'
+                  : item.signal === 'threat' ? '<span class="hot-badge hot-thr">🔴 威胁</span>' : '';
+        const companies = (item.company || []).slice(0, 2).map(c => `<span class="hot-comp-tag">${c}</span>`).join('');
+        return `
+        <div class="hot-card" onclick="openIntelModal('${item.id}')">
+            <div class="hot-card-head">
+                ${badges.join('')}${sig}
+                <span class="hot-date">${item.date}</span>
             </div>
-            <h3>${item.title}</h3>
-            <p class="tldr">${item.tldr}</p>
-            <div class="key-card-tags">
-                ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-            </div>
-        </div>
-    `).join('');
-    
-    document.getElementById('keyInsights').innerHTML = html || '<p class="empty-state">暂无高优先级情报</p>';
+            <h3 class="hot-title">${item.title}</h3>
+            <p class="hot-tldr">${item.tldr}</p>
+            <div class="hot-foot">${companies}<span class="hot-cta">看详情 →</span></div>
+        </div>`;
+    }).join('');
+    document.getElementById('keyInsights').innerHTML = html;
 }
 
-// ==================== 渲染情报卡片流（瘦身版）====================
+// ==================== 渲染情报列表流（dcap 单行风格）====================
 function renderInsightsGrid() {
     const filtered = filterInsights();
-    
+    const meta = document.getElementById('insightsFlowMeta');
+    if (meta) meta.textContent = `共 ${filtered.length} 条 · 点击查看详情 + 时间线`;
+
     if (filtered.length === 0) {
         document.getElementById('insightsGrid').innerHTML = '<p class="empty-state">暂无匹配情报，试试调整筛选</p>';
         return;
     }
-    
-    const html = filtered.map(item => {
-        const isAI = (item.tracks || []).some(t => /AI|AIGC/i.test(t));
-        const cardClass = 'insight-card slim-card' + (item.priority==='high' ? ' card-high' : '');
+
+    // 按日期分组（参考 dcap）
+    const groups = {};
+    filtered.forEach(it => {
+        const d = it.date || '';
+        if (!groups[d]) groups[d] = [];
+        groups[d].push(it);
+    });
+    const sortedDates = Object.keys(groups).sort((a, b) => new Date(b) - new Date(a));
+
+    const html = sortedDates.map(date => {
+        const items = groups[date];
+        const dt = new Date(date);
+        const weekDay = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][dt.getDay()] || '';
+        const dateLabel = isNaN(dt.getTime()) ? date : `${dt.getFullYear()}年${dt.getMonth()+1}月${dt.getDate()}日 ${weekDay}`;
+        const itemsHtml = items.map(item => {
+            const isAI = (item.tracks || []).some(t => /AI|AIGC/i.test(t));
+            const priCls = item.priority === 'high' ? 'pri-high' : (item.priority === 'mid' ? 'pri-mid' : 'pri-low');
+            const sigBadge = item.signal === 'opportunity' ? '<span class="sig-pill sig-opp">机会</span>'
+                          : item.signal === 'threat' ? '<span class="sig-pill sig-thr">威胁</span>'
+                          : '<span class="sig-pill sig-neu">中性</span>';
+            const companyTags = (item.company || []).slice(0, 3).map(c => `<span class="row-tag tag-company">${c}</span>`).join('');
+            const trackTags = (item.tracks || []).slice(0, 2).map(t => `<span class="row-tag tag-track">${t}</span>`).join('');
+            return `
+            <div class="news-row ${priCls}" data-id="${item.id}" onclick="openIntelModal('${item.id}')">
+                <div class="news-row-main">
+                    <div class="news-row-headline">
+                        ${item.priority === 'high' ? '<span class="row-dot dot-high" title="高优先级"></span>' : ''}
+                        ${isAI ? '<span class="row-ai-badge">AI</span>' : ''}
+                        <span class="news-title">${item.title}</span>
+                    </div>
+                    <div class="news-row-tldr">${item.tldr}</div>
+                    <div class="news-row-meta">
+                        ${sigBadge}
+                        ${companyTags}
+                        ${trackTags}
+                    </div>
+                </div>
+                <div class="news-row-aside">
+                    <span class="row-cta">详情 ›</span>
+                </div>
+            </div>`;
+        }).join('');
         return `
-        <div class="${cardClass}" data-id="${item.id}" onclick="openIntelModal('${item.id}')">
-            <div class="slim-card-top">
-                <span class="slim-priority slim-pri-${item.priority}">${getPriorityIcon(item.priority).split(' ')[0]}</span>
-                <span class="slim-signal slim-sig-${item.signal}">${getSignalIcon(item.signal).split(' ')[0]}</span>
-                ${isAI ? '<span class="slim-ai-badge">AI</span>' : ''}
-                <span class="slim-date">${item.date}</span>
-            </div>
-            <h3 class="slim-title">${item.title}</h3>
-            <p class="slim-tldr">${item.tldr}</p>
-            <div class="slim-card-foot">
-                <div class="slim-companies">${(item.company || []).slice(0,3).map(c => `<span class="slim-tag">${c}</span>`).join('')}</div>
-                <span class="slim-cta">打开 →</span>
-            </div>
+        <div class="news-date-group">
+            <div class="news-date-label">${dateLabel} · ${items.length} 条</div>
+            ${itemsHtml}
         </div>`;
     }).join('');
-    
+
     document.getElementById('insightsGrid').innerHTML = html;
 }
+
+// 列表内实时搜索（仅隐藏/显示已渲染元素，不重新拉取）
+window.filterListInline = function(kw) {
+    kw = (kw || '').trim().toLowerCase();
+    document.querySelectorAll('.news-row').forEach(row => {
+        const t = row.textContent.toLowerCase();
+        row.style.display = (!kw || t.includes(kw)) ? '' : 'none';
+    });
+    // 隐藏空日期组
+    document.querySelectorAll('.news-date-group').forEach(g => {
+        const visible = g.querySelectorAll('.news-row:not([style*="display: none"])').length;
+        g.style.display = visible > 0 ? '' : 'none';
+    });
+};
 
 // ==================== 详情弹窗（加厚）====================
 function openIntelModal(id) {
@@ -193,30 +255,8 @@ window.closeIntelModal = closeIntelModal;
 
 // ==================== AI 速递专区 ====================
 function renderAINews() {
-    const aiItems = intelData
-        .filter(it => (it.tracks || []).some(t => /AI|AIGC/i.test(t)))
-        .sort((a, b) => new Date(b.date) - new Date(a.date))
-        .slice(0, 8);
-    const grid = document.getElementById('aiNewsGrid');
-    if (!grid) return;
-    if (aiItems.length === 0) {
-        grid.innerHTML = '<p class="empty-state">暂无 AI 速递</p>';
-        return;
-    }
-    grid.innerHTML = aiItems.map(it => `
-        <div class="ai-news-card" onclick="openIntelModal('${it.id}')">
-            <div class="ai-card-top">
-                <span class="ai-card-date">${it.date}</span>
-                ${it.priority === 'high' ? '<span class="ai-card-hot">🔥 HOT</span>' : ''}
-            </div>
-            <h4 class="ai-card-title">${it.title}</h4>
-            <p class="ai-card-tldr">${it.tldr}</p>
-            <div class="ai-card-foot">
-                <span class="ai-card-tags">${(it.company || []).slice(0,2).map(c => `<span class="ai-tag">${c}</span>`).join('')}</span>
-                <span class="ai-card-more">深入 →</span>
-            </div>
-        </div>
-    `).join('');
+    // 已合并入 renderKeyInsights（本周高热情报），此函数保留兼容空实现
+    return;
 }
 
 // ==================== 动态初始化筛选器 chip ====================
@@ -326,6 +366,22 @@ function initFilters() {
             updateFilterCountBadge();
         });
     });
+    // 新版 inline pill 筛选条（filter-pill）
+    const inlineBar = document.getElementById('filterChipsInline');
+    if (inlineBar) {
+        inlineBar.addEventListener('click', e => {
+            const btn = e.target.closest('.filter-pill');
+            if (!btn || !btn.dataset.type) return;
+            const type = btn.dataset.type;
+            const value = btn.dataset.value;
+            if (!type || !value) return;
+            inlineBar.querySelectorAll('.filter-pill[data-type="' + type + '"]').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilters[type] = value;
+            renderInsightsGrid();
+            updateFilterCountBadge();
+        });
+    }
 }
 
 // ==================== 初始化搜索 ====================
