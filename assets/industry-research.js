@@ -133,7 +133,7 @@
         const nxnyBtn = document.getElementById('idmNxnyLink');
         nxnyBtn.href = 'javascript:void(0)';
         nxnyBtn.onclick = function(e) { e.preventDefault(); if (window.openNxnyModal) window.openNxnyModal(item.name); return false; };
-        nxnyBtn.textContent = '📊 在 portal 嵌入式 nxny 报告库检索本行业';
+        nxnyBtn.textContent = '📊 嵌入式检索本行业研报';
 
         // 重置 chatbot
         const body = document.getElementById('idmChatBody');
@@ -204,21 +204,18 @@
         // 关键词路由
         if (/玩家|品牌|龙头|头部|top|竞争|对手/i.test(q)) {
             return `<b>${item.name} 主要玩家</b><br/>
-${extractFromReport(item.report_md, '主要玩家与格局')}<br/>
-<small style="color:#888">深度数据请到 nxny.com 检索 ${item.name} 行业研究报告</small>`;
+${extractFromReport(item.report_md, '主要玩家与格局')}`;
         }
         if (/机会|快手|商业化|增长|投放|广告/i.test(q)) {
             return `<b>${item.name} 快手商业化机会</b><br/>
 ${extractFromReport(item.report_md, '商业化机会（快手生服视角）')}<br/>
-关键数据：市场规模 ${fmtGmv(item.gmv_2025)} · CAGR ${item.cagr}% · 线上化率 ${item.online_rate}<br/>
-<small style="color:#888">建议进一步查阅：飞书文档全库 + nxny 报告库</small>`;
+关键数据：市场规模 ${fmtGmv(item.gmv_2025)} · CAGR ${item.cagr}% · 线上化率 ${item.online_rate}`;
         }
         if (/趋势|未来|预测|展望|2026|2027|增长率|cagr/i.test(q)) {
             return `<b>${item.name} 趋势预测</b><br/>
 - 3 年 CAGR：<b>${item.cagr}%</b>（${item.cagr > 0 ? '正增长' : '负增长/调整期'}）<br/>
 - 线上化趋势：<b>${item.online_trend}</b>（当前 ${item.online_rate}）<br/>
-- 核心驱动：${extractFromReport(item.report_md, '核心驱动因素').replace(/^- /, '')}<br/>
-<small style="color:#888">详细预测建议查阅 nxny.com 上的卖方研报</small>`;
+- 核心驱动：${extractFromReport(item.report_md, '核心驱动因素').replace(/^- /, '')}`;
         }
         if (/规模|市场|多大|盘子|gmv/i.test(q)) {
             return `<b>${item.name} 市场规模</b><br/>
@@ -237,8 +234,7 @@ ${extractFromReport(item.report_md, '商业化机会（快手生服视角）')}<
             return `<b>${item.name} 客户画像（一般规律）</b><br/>
 - 一级行业：${l1}（${INDUSTRY_DB.l1_categories.find(c=>c.name===l1)?.biz_traits||''}）<br/>
 - 线上化率 ${item.online_rate}：${item.online_vs_offline}<br/>
-- 建议结合具体业务场景查阅细分研报<br/>
-<small style="color:#888">深度画像请到 nxny.com 检索行业白皮书</small>`;
+- 建议结合具体业务场景调研细分人群`;
         }
         if (/线下|线上|渠道|转型/i.test(q)) {
             return `<b>${item.name} 线上线下渠道</b><br/>
@@ -252,9 +248,7 @@ ${extractFromReport(item.report_md, '商业化机会（快手生服视角）')}`
         return `<b>${item.name} 行业概览</b><br/>
 关于「${escapeHtml(q)}」的问题，建议组合参考：<br/>
 - 市场规模 <b>${fmtGmv(item.gmv_2025)}</b>，CAGR <b>${item.cagr}%</b><br/>
-- 毛利 ${item.gross_margin}，线上化率 ${item.online_rate}<br/>
-- 详细研报请点击 <a href="javascript:void(0)" onclick="window.openNxnyModal('${item.name.replace(/'/g, "\\'")}')">📊 嵌入式 nxny 检索 ${item.name}</a><br/>
-<small style="color:#888">本 chatbot 基于本地数据回答，深度研究建议查阅原始研报</small>`;
+- 毛利 ${item.gross_margin}，线上化率 ${item.online_rate}`;
     }
 
     function extractFromReport(md, sectionTitle) {

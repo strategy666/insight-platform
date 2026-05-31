@@ -4978,3 +4978,72 @@ button.nxny-external-btn {
     .news-row-date { font-size: 14px; }
     .news-row-week { font-size: 9px; }
 }
+
+/* ============================================================
+ * 全 Tab 统一紫色 Hero（Tab1 / Tab2 / Tab3 一致）— v2 装修
+ * ============================================================ */
+
+/* Tab2 (.hero.hero-sub) 已经是 .hero 渐变（#667eea → #764ba2）
+   现在把 Tab1 紧凑版 + Tab3 hero-sub 强制对齐这一套紫色 */
+
+/* Tab1: hero-compact 改紫色（覆盖原浅绿渐变） */
+.hero.hero-compact {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.15) !important;
+}
+.hero.hero-compact h1 {
+    color: #fff !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.hero.hero-compact .hero-subtitle {
+    color: rgba(255,255,255,0.92) !important;
+}
+.hero.hero-compact .hero-subtitle span {
+    color: #fff !important;
+    font-weight: 700;
+}
+/* mini 搜索框配色微调 */
+.hero.hero-compact .mini-search-input {
+    background: rgba(255,255,255,0.96);
+    border-color: rgba(255,255,255,0.4);
+}
+.hero.hero-compact .mini-search-btn {
+    background: #fff;
+    color: #5e3aaa;
+    font-weight: 700;
+}
+.hero.hero-compact .mini-search-btn:hover {
+    background: #f5edff;
+    color: #4c2891;
+}
+.hero.hero-compact .suggest-label {
+    color: rgba(255,255,255,0.85);
+}
+.hero.hero-compact .suggest-pill {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.hero.hero-compact .suggest-pill:hover {
+    background: #fff;
+    color: #5e3aaa;
+}
+
+/* Tab2 / Tab3 (.hero.hero-sub) 也明确锁定紫色（之前继承 .hero 已经是紫色，这里加固） */
+.hero.hero-sub {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: #fff !important;
+}
+.hero.hero-sub h1 { color: #fff !important; }
+.hero.hero-sub .hero-subtitle { color: rgba(255,255,255,0.92) !important; }
+.hero.hero-sub .hero-subtitle b {
+    color: #fff !important;
+    font-weight: 700;
+}
+
+/* Tab3 子页内的 Tab3 hero 微调（之前 #tab-research .hero.hero-sub 有 padding override，颜色还要保险） */
+#tab-research .hero.hero-sub,
+#tab-research .hero.hero-sub h1,
+#tab-research .hero.hero-sub .hero-subtitle {
+    color: #fff !important;
+}
