@@ -3288,3 +3288,32 @@ body {
 /* 隐藏旧的子模块样式（因为内容现在已经包在 modal 里，旧 .feishu-subsection 已删除，
    保留这条规则防御性兜底） */
 .feishu-subsection { display: none; }
+
+/* ============== Tab3 行业研究 紧凑布局（脑图直接上来） ============== */
+#tab-research .hero.hero-sub {
+    padding: 28px 0 16px !important;
+    background: linear-gradient(135deg, #f0f5f2 0%, #fff 100%);
+}
+#tab-research .hero.hero-sub h1 {
+    font-size: 24px !important;
+    margin-bottom: 6px !important;
+}
+#tab-research .hero.hero-sub .hero-subtitle {
+    font-size: 13px !important;
+}
+#tab-research .research-portal-row {
+    padding: 16px 0 !important;
+}
+#tab-research .research-portal-card {
+    padding: 14px 16px !important;
+}
+#tab-research .rp-icon { font-size: 24px !important; }
+#tab-research .rp-title { font-size: 14px !important; }
+#tab-research .rp-desc { font-size: 12px !important; line-height: 1.4 !important; }
+#tab-research .research-mindmap-section {
+    padding: 8px 0 40px !important;
+}
+#tab-research .mindmap-toolbar {
+    margin-bottom: 12px !important;
+    padding: 6px 0 !important;
+}

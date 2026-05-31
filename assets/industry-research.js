@@ -10,11 +10,14 @@
     async function loadIndustryDB() {
         if (INDUSTRY_DB) return INDUSTRY_DB;
         try {
-            const res = await fetch('assets/data/industry_research.json?v=20260531i&t=' + Date.now());
+            const res = await fetch('assets/data/industry_research.json?v=20260531k&t=' + Date.now());
             INDUSTRY_DB = await res.json();
+            window.__INDUSTRY_DB__ = INDUSTRY_DB;  // 暴露供调试
             return INDUSTRY_DB;
         } catch (e) {
             console.error('industry_research.json 加载失败', e);
+            const grid = document.getElementById('industryMindmapGrid');
+            if (grid) grid.innerHTML = '<div class="mindmap-empty" style="color:#d83a3a">❌ 加载失败: ' + (e.message || e) + '</div>';
             return null;
         }
     }
@@ -285,12 +288,14 @@ ${extractFromReport(item.report_md, '商业化机会（快手生服视角）')}`
     }
 
     async function initIndustryMindmap() {
-        await loadIndustryDB();
+        const db = await loadIndustryDB();
+        if (!db) return;
         // 默认展开规模最大的前 6 个
-        if (INDUSTRY_DB && EXPANDED_L1.size === 0) {
-            INDUSTRY_DB.l1_categories.slice(0, 6).forEach(c => EXPANDED_L1.add(c.name));
+        if (EXPANDED_L1.size === 0) {
+            db.l1_categories.slice(0, 6).forEach(c => EXPANDED_L1.add(c.name));
         }
         renderMindmap();
+        console.log('[industry-research] 渲染完成', db.l1_categories.length, '一级 /', db._meta.l2_count, '二级');
     }
 
     // 进入 #research tab 自动加载
