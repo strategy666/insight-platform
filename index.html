@@ -9,7 +9,7 @@
     <title>商业化洞察 v2.0 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究 / 战分助手" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260531o" />
+    <link rel="stylesheet" href="assets/style.css?v=20260531p" />
 </head>
 <body>
 
@@ -542,7 +542,7 @@
     </div>
 </div>
 
-<!-- ④ 行研报告库内嵌 modal（nxny.com iframe + 检索栏 + 关键词预填） -->
+<!-- ④ 行研报告库内嵌 modal（用 Web 搜索 API 限定 site:nxny.com，在 portal 内显示报告列表） -->
 <div class="nxny-modal" id="nxnyModal" style="display:none;">
     <div class="nxny-overlay" onclick="closeNxnyModal()"></div>
     <div class="nxny-panel">
@@ -550,8 +550,8 @@
             <div class="nxny-header-left">
                 <span class="nxny-icon">📊</span>
                 <div>
-                    <div class="nxny-title">行业报告库 · 暖夕南野</div>
-                    <div class="nxny-sub">portal 内嵌检索 · 数据源：nxny.com</div>
+                    <div class="nxny-title">行业报告库 · portal 内嵌检索</div>
+                    <div class="nxny-sub">数据源：<a href="https://www.nxny.com" target="_blank" rel="noopener" style="color:#ffe082">nxny.com</a> · 通过 Web 搜索 API 限定 site:nxny.com 检索</div>
                 </div>
             </div>
             <div class="nxny-header-actions">
@@ -559,7 +559,7 @@
                        placeholder="🔍 输入关键词检索（按回车）"
                        onkeypress="if(event.key==='Enter')searchNxny(this.value)" />
                 <button class="nxny-search-btn" onclick="searchNxny(document.getElementById('nxnyKeyword').value)">检索</button>
-                <a href="https://www.nxny.com" target="_blank" rel="noopener" class="nxny-external-btn" title="在新窗口打开">↗ 新窗口</a>
+                <button class="nxny-external-btn" onclick="openAISettings()" title="配置 Web 搜索 API">⚙️</button>
                 <button class="nxny-close" onclick="closeNxnyModal()" title="关闭 (Esc)">✕</button>
             </div>
         </div>
@@ -573,24 +573,23 @@
             <button class="nxny-tag" onclick="searchNxny('宠物')">宠物</button>
             <button class="nxny-tag" onclick="searchNxny('新能源汽车')">新能源汽车</button>
             <button class="nxny-tag" onclick="searchNxny('AI')">AI 行业</button>
+            <span style="flex:1"></span>
+            <label class="nxny-tag" style="background:#fffbe5;border-color:#f4d97c;cursor:pointer">
+                <input type="checkbox" id="nxnyAllWeb" style="vertical-align:middle;margin-right:4px" />
+                <span style="vertical-align:middle">🌐 全网检索（不限 nxny）</span>
+            </label>
         </div>
         <div class="nxny-body">
-            <iframe id="nxnyIframe" class="nxny-iframe" src="about:blank"
-                    sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
-                    referrerpolicy="no-referrer"></iframe>
-            <div class="nxny-fallback" id="nxnyFallback" style="display:none;">
-                <div class="nxny-fb-icon">⚠️</div>
-                <div class="nxny-fb-title">嵌入式加载受限</div>
-                <div class="nxny-fb-desc">
-                    暖夕南野（nxny.com）可能设置了 X-Frame-Options 或 CSP 禁止 iframe 嵌入，<br/>
-                    或需要登录后才能访问。请使用以下任一方式：
-                </div>
-                <div class="nxny-fb-actions">
-                    <a href="#" target="_blank" rel="noopener" id="nxnyFbDirectLink" class="nxny-fb-btn primary">↗ 在新窗口打开当前检索</a>
-                    <a href="https://www.nxny.com" target="_blank" rel="noopener" class="nxny-fb-btn">↗ 打开 nxny 主站</a>
-                </div>
-                <div class="nxny-fb-creds">
-                    <small style="color:#888">登录账号：jasperyuecui@163.com（密码已配置）</small>
+            <!-- 检索结果列表 -->
+            <div id="nxnyResults" class="nxny-results">
+                <div class="nxny-empty">
+                    <div class="nxny-empty-icon">🔍</div>
+                    <div class="nxny-empty-title">请输入关键词或点击热门标签开始检索</div>
+                    <div class="nxny-empty-desc">
+                        通过 Web 搜索 API 在 portal 内直接检索 <b>nxny.com</b> 报告库<br/>
+                        每条结果带标题 + 摘要 + 链接，点击链接在新窗口打开原文/PDF<br/>
+                        <small style="color:#888">首次使用需 ⚙️ 配置 Tavily / 博查 等任一 Web 搜索 API Key</small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1063,18 +1062,19 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// ==== 行研报告库 nxny.com 内嵌检索 ====
+// ==== 行研报告库内嵌检索（Web 搜索 API + site:nxny.com） ====
 window.openNxnyModal = function(keyword) {
     var m = document.getElementById('nxnyModal');
     if (!m) return;
     m.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    var input = document.getElementById('nxnyKeyword');
     if (keyword) {
-        document.getElementById('nxnyKeyword').value = keyword;
+        input.value = keyword;
         searchNxny(keyword);
     } else {
-        // 默认进首页
-        loadNxnyUrl('https://www.nxny.com');
+        // 不预填，等用户输入
+        setTimeout(function(){ input.focus(); }, 100);
     }
 };
 window.closeNxnyModal = function() {
@@ -1083,69 +1083,145 @@ window.closeNxnyModal = function() {
     m.style.display = 'none';
     document.body.style.overflow = '';
 };
-window.searchNxny = function(kw) {
+window.searchNxny = async function(kw) {
     if (!kw) kw = document.getElementById('nxnyKeyword').value || '';
     kw = String(kw).trim();
+    if (!kw) return;
     document.getElementById('nxnyKeyword').value = kw;
-    var url = kw
-        ? 'https://www.nxny.com/search?keyword=' + encodeURIComponent(kw)
-        : 'https://www.nxny.com';
-    loadNxnyUrl(url);
+    var results = document.getElementById('nxnyResults');
+    var allWeb = document.getElementById('nxnyAllWeb') && document.getElementById('nxnyAllWeb').checked;
+    var scope = allWeb ? '全网检索' : '限定 site:nxny.com';
+    results.innerHTML = '<div class="nxny-loading">⏳ 正在检索「<b>' + escapeHtmlNxny(kw) + '</b>」（' + scope + '）…</div>';
+
+    // 读取 AI 配置
+    var cfg;
+    try {
+        var raw = localStorage.getItem('insight_ai_config_v1');
+        cfg = raw ? JSON.parse(raw) : null;
+    } catch(e) { cfg = null; }
+
+    if (!cfg || !cfg.search_key || cfg.search_provider === 'none') {
+        results.innerHTML = renderNxnyNoApiKey(kw, allWeb);
+        return;
+    }
+
+    // 构造 query：限定 site 或全网
+    var fullQuery = allWeb
+        ? (kw + ' 行业研究 OR 行业报告 OR 研报 2024 OR 2025')
+        : ('site:nxny.com ' + kw);
+
+    try {
+        // 复用 ai-chat.js 里的 webSearch（私有函数 → 通过 window.__nxnyWebSearch 暴露）
+        // 这里直接 inline 实现一次（避免依赖）
+        var items = await nxnyWebSearchInline(fullQuery, cfg, 15);
+        if (!items.length) {
+            results.innerHTML = '<div class="nxny-empty"><div class="nxny-empty-icon">🤷</div>' +
+                '<div class="nxny-empty-title">未找到「' + escapeHtmlNxny(kw) + '」相关结果</div>' +
+                '<div class="nxny-empty-desc">试试其他关键词，或勾选「🌐 全网检索」放宽范围。</div></div>';
+            return;
+        }
+        results.innerHTML = '<div class="nxny-meta">📊 共 <b>' + items.length + '</b> 条结果 · 关键词「<b>' + escapeHtmlNxny(kw) + '</b>」· ' + scope + ' · 数据来源：' + escapeHtmlNxny(cfg.search_provider) + '</div>' +
+            items.map(function(it, i) {
+                var domain = '';
+                try { domain = new URL(it.url).hostname.replace(/^www\./, ''); } catch(e) {}
+                var isNxny = /nxny\.com/i.test(it.url);
+                return '<div class="nxny-result-card' + (isNxny ? ' is-nxny' : '') + '">' +
+                    '<div class="nxny-rc-no">' + (i+1) + '</div>' +
+                    '<div class="nxny-rc-body">' +
+                        '<a href="' + escapeAttrNxny(it.url) + '" target="_blank" rel="noopener" class="nxny-rc-title">' +
+                            escapeHtmlNxny(it.title || '无标题') +
+                        '</a>' +
+                        '<div class="nxny-rc-url">' + (isNxny ? '📊 ' : '🌐 ') + escapeHtmlNxny(domain) + ' · ' + escapeHtmlNxny(it.url.slice(0, 80)) + '</div>' +
+                        '<div class="nxny-rc-snippet">' + escapeHtmlNxny((it.snippet || '').slice(0, 300)) + '</div>' +
+                        '<div class="nxny-rc-actions">' +
+                            '<a href="' + escapeAttrNxny(it.url) + '" target="_blank" rel="noopener" class="nxny-rc-btn primary">↗ 打开原文</a>' +
+                            (isNxny ? '<span class="nxny-rc-tag">nxny.com 报告</span>' : '<span class="nxny-rc-tag other">' + escapeHtmlNxny(domain) + '</span>') +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+            }).join('');
+    } catch (err) {
+        results.innerHTML = '<div class="nxny-error">' +
+            '<div class="nxny-fb-icon">❌</div>' +
+            '<div class="nxny-fb-title">检索失败</div>' +
+            '<div class="nxny-fb-desc">' + escapeHtmlNxny(err.message || String(err)) + '</div>' +
+            '<div class="nxny-fb-actions">' +
+                '<button class="nxny-fb-btn primary" onclick="openAISettings()">⚙️ 检查配置</button>' +
+                '<a href="https://www.google.com/search?q=site%3Anxny.com+' + encodeURIComponent(kw) + '" target="_blank" rel="noopener" class="nxny-fb-btn">↗ Google 搜本词</a>' +
+            '</div></div>';
+    }
 };
-function loadNxnyUrl(url) {
-    var iframe = document.getElementById('nxnyIframe');
-    var fb = document.getElementById('nxnyFallback');
-    var fbLink = document.getElementById('nxnyFbDirectLink');
-    if (!iframe) return;
-    fb.style.display = 'none';
-    iframe.style.display = 'block';
-    iframe.src = url;
-    if (fbLink) fbLink.href = url;
-    // 检测加载是否被 X-Frame-Options 阻止：3 秒后看 iframe document 是否可访问
-    clearTimeout(window.__nxnyTimer);
-    window.__nxnyTimer = setTimeout(function() {
-        var blocked = false;
-        try {
-            // 跨域访问会抛错；about:blank 不会
-            var doc = iframe.contentDocument || iframe.contentWindow.document;
-            // 如果 doc 完全可读且为空，也算被阻止
-            if (!doc || doc.body === null || (doc.body && doc.body.innerHTML === '' && iframe.src !== 'about:blank')) {
-                blocked = true;
-            }
-        } catch (e) {
-            // 跨域 - 这是正常的，多数情况下页面已加载，不算 blocked
-            blocked = false;
-        }
-        // 简单兜底：通过尝试主动获取头判断（fetch 不能拿到 X-Frame-Options，但能感知 200/404）
-        // 实际策略：iframe 加载完触发 onload 即认为 OK；超过 5s 还在 about:blank 才提示
-        if (iframe.src !== 'about:blank' && iframe.contentWindow && !iframe.contentWindow.length) {
-            // 实测：被 X-Frame 拒绝时 contentWindow.length 可能为 undefined 但不抛错
-        }
-    }, 3000);
-    // 监听 iframe load 事件，检测是否被阻止
-    iframe.onload = function() {
-        try {
-            // 跨域时访问 contentDocument 抛错 - 这是页面加载成功的标志
-            var ct = iframe.contentDocument;
-            // 如果是同域且 body 为空，认为被 X-Frame 阻止
-            if (ct && ct.body && ct.body.children.length === 0 && iframe.src.indexOf('nxny.com') !== -1) {
-                showNxnyFallback(url);
-            }
-        } catch (err) {
-            // 跨域 - 加载成功，正常
-        }
-    };
-    iframe.onerror = function() { showNxnyFallback(url); };
+
+function renderNxnyNoApiKey(kw, allWeb) {
+    var encKw = encodeURIComponent(kw);
+    return '<div class="nxny-empty nxny-noapi">' +
+        '<div class="nxny-empty-icon">🔑</div>' +
+        '<div class="nxny-empty-title">需要配置 Web 搜索 API 才能在 portal 内显示结果</div>' +
+        '<div class="nxny-empty-desc">' +
+            '由于 nxny.com 拒绝被 iframe 嵌入（X-Frame-Options），我们改用「Web 搜索 API + site:nxny.com」方式直接拉报告列表到 portal 内。<br/>' +
+            '请点击右上 ⚙️ 配置任一搜索 API（推荐 <b>Tavily 免费 1000 次/月</b>）。<br/><br/>' +
+            '<b>暂时跳转外站搜索：</b>' +
+        '</div>' +
+        '<div class="nxny-fb-actions">' +
+            '<button class="nxny-fb-btn primary" onclick="openAISettings()">⚙️ 立即配置（仅 30 秒）</button>' +
+            '<a href="https://www.google.com/search?q=site%3Anxny.com+' + encKw + '" target="_blank" rel="noopener" class="nxny-fb-btn">↗ Google 搜 site:nxny.com ' + escapeHtmlNxny(kw) + '</a>' +
+            '<a href="https://www.bing.com/search?q=site%3Anxny.com+' + encKw + '" target="_blank" rel="noopener" class="nxny-fb-btn">↗ Bing 搜 site:nxny.com ' + escapeHtmlNxny(kw) + '</a>' +
+            '<a href="https://www.nxny.com" target="_blank" rel="noopener" class="nxny-fb-btn">↗ 打开 nxny 主站登录后检索</a>' +
+        '</div>' +
+    '</div>';
 }
-function showNxnyFallback(url) {
-    var iframe = document.getElementById('nxnyIframe');
-    var fb = document.getElementById('nxnyFallback');
-    var fbLink = document.getElementById('nxnyFbDirectLink');
-    if (iframe) iframe.style.display = 'none';
-    if (fb) fb.style.display = 'flex';
-    if (fbLink) fbLink.href = url;
+
+async function nxnyWebSearchInline(query, cfg, topN) {
+    topN = topN || 10;
+    var provider = cfg.search_provider;
+    if (provider === 'tavily') {
+        var r = await fetch('https://api.tavily.com/search', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                api_key: cfg.search_key,
+                query: query,
+                search_depth: 'basic',
+                max_results: topN,
+                include_answer: false
+            })
+        });
+        if (!r.ok) throw new Error('Tavily ' + r.status + ': ' + (await r.text()).slice(0,200));
+        var j = await r.json();
+        return (j.results || []).map(function(x){ return { title: x.title, url: x.url, snippet: x.content || '' }; });
+    }
+    if (provider === 'serpapi') {
+        var url = 'https://serpapi.com/search.json?engine=google&hl=zh-cn&num=' + topN +
+            '&q=' + encodeURIComponent(query) + '&api_key=' + encodeURIComponent(cfg.search_key);
+        var r2 = await fetch(url);
+        if (!r2.ok) throw new Error('SerpAPI ' + r2.status);
+        var j2 = await r2.json();
+        return (j2.organic_results || []).slice(0, topN).map(function(x){
+            return { title: x.title, url: x.link, snippet: x.snippet || '' };
+        });
+    }
+    if (provider === 'bocha') {
+        var r3 = await fetch('https://api.bochaai.com/v1/web-search', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + cfg.search_key },
+            body: JSON.stringify({ query: query, count: topN, summary: true })
+        });
+        if (!r3.ok) throw new Error('BoCha ' + r3.status + ': ' + (await r3.text()).slice(0,200));
+        var j3 = await r3.json();
+        var items = (j3.data && j3.data.webPages && j3.data.webPages.value) || [];
+        return items.slice(0, topN).map(function(x){ return { title: x.name, url: x.url, snippet: x.summary || x.snippet || '' }; });
+    }
+    throw new Error('未知搜索提供商：' + provider);
 }
-window.__showNxnyFallback = showNxnyFallback;
+
+function escapeHtmlNxny(s) {
+    return String(s||'').replace(/[&<>"']/g, function(c){
+        return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
+    });
+}
+function escapeAttrNxny(s) {
+    return String(s||'').replace(/"/g, '&quot;');
+}
 
 window.askAssistant = window.askAssistant || function(q){
     if(!q || !q.trim()) return;
@@ -1234,10 +1310,10 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260531o"></script>
-<script src="assets/feishu-search.js?v=20260531o"></script>
-<script src="assets/ai-chat.js?v=20260531o"></script>
-<script src="assets/industry-research.js?v=20260531o"></script>
+<script src="assets/main.js?v=20260531p"></script>
+<script src="assets/feishu-search.js?v=20260531p"></script>
+<script src="assets/ai-chat.js?v=20260531p"></script>
+<script src="assets/industry-research.js?v=20260531p"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){
