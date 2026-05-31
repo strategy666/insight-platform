@@ -3486,3 +3486,230 @@ body {
     transform: translateY(-1px);
 }
 .mm-l2-card:hover::after { opacity: 1; }
+
+/* ============== 行业 chatbot 模式切换栏 ============== */
+.idm-chat-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.idm-chat-modes { display: flex; gap: 4px; }
+.idm-mode-btn {
+    padding: 5px 11px;
+    background: #fff;
+    border: 1px solid #d0d8d3;
+    border-radius: 14px;
+    color: #666;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .15s;
+}
+.idm-mode-btn:hover { color: #2a6f4f; border-color: #2a6f4f; }
+.idm-mode-btn.active {
+    background: #2a6f4f;
+    color: #fff;
+    border-color: #2a6f4f;
+}
+.idm-mode-btn.settings {
+    width: 28px;
+    padding: 5px 0;
+    text-align: center;
+}
+
+/* 系统提示气泡 */
+.chat-bubble.system {
+    background: #fffbe5;
+    border-left: 3px solid #f4b740;
+    color: #66541a;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    margin: 6px 0;
+}
+
+/* AI 进度气泡 */
+.chat-bubble.ai-progress {
+    background: #f0f5f2;
+    border-left: 3px solid #2a6f4f;
+    color: #2a6f4f;
+    font-size: 13px;
+}
+
+/* 流式光标 */
+.cursor-blink {
+    display: inline-block;
+    width: 8px;
+    color: #2a6f4f;
+    animation: cursor-blink 1s step-end infinite;
+}
+@keyframes cursor-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* 引用源 */
+.ai-sources {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: #f8fbf9;
+    border: 1px solid #d8e6df;
+    border-radius: 8px;
+    font-size: 12px;
+}
+.ai-sources b { color: #2a6f4f; display: block; margin-bottom: 4px; }
+.ai-sources ol { margin: 0; padding-left: 20px; }
+.ai-sources li { margin: 2px 0; line-height: 1.5; }
+.ai-sources a { color: #2a6f4f; text-decoration: none; }
+.ai-sources a:hover { text-decoration: underline; }
+sup.ref { color: #2a6f4f; font-weight: 600; cursor: help; }
+
+/* ============== AI Settings 配置面板 ============== */
+.ai-settings-modal {
+    position: fixed; inset: 0; z-index: 10000;
+    display: flex; justify-content: center; align-items: center;
+}
+.ais-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(3px);
+}
+.ais-panel {
+    position: relative;
+    background: #fff;
+    width: 92vw; max-width: 580px;
+    max-height: 90vh;
+    border-radius: 14px;
+    box-shadow: 0 12px 48px rgba(0,0,0,.3);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+}
+.ais-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 22px;
+    background: linear-gradient(135deg, #2a6f4f 0%, #1e5a3e 100%);
+    color: #fff;
+}
+.ais-header h3 { margin: 0; font-size: 16px; font-weight: 700; }
+.ais-close {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.2);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all .15s;
+}
+.ais-close:hover { background: #d83a3a; }
+.ais-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px 22px;
+}
+.ais-tip {
+    background: #f8fbf9;
+    border-left: 3px solid #2a6f4f;
+    padding: 8px 12px;
+    margin: 0 0 14px 0;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+    border-radius: 4px;
+}
+.ais-section-title {
+    font-size: 13px;
+    color: #2a6f4f;
+    font-weight: 700;
+    margin: 14px 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e8eef0;
+}
+.ais-row {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 8px;
+}
+.ais-label {
+    width: 90px;
+    flex-shrink: 0;
+    font-size: 12px;
+    color: #666;
+    font-weight: 600;
+}
+.ais-row input, .ais-row select {
+    flex: 1;
+    padding: 7px 10px;
+    border: 1px solid #d0d8d3;
+    border-radius: 6px;
+    font-size: 13px;
+    outline: none;
+    transition: border-color .15s;
+}
+.ais-row input:focus, .ais-row select:focus { border-color: #2a6f4f; }
+.ais-presets {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin: 8px 0 0 100px;
+}
+.ais-preset {
+    padding: 3px 10px;
+    background: #f0f5f2;
+    border: 1px solid #d0d8d3;
+    border-radius: 12px;
+    color: #2a6f4f;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all .15s;
+}
+.ais-preset:hover { background: #2a6f4f; color: #fff; }
+.ais-actions {
+    display: flex; gap: 8px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+.ais-btn {
+    flex: 1; min-width: 110px;
+    padding: 8px 14px;
+    background: #fff;
+    border: 1px solid #d0d8d3;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    transition: all .15s;
+}
+.ais-btn:hover { background: #f0f5f2; border-color: #2a6f4f; color: #2a6f4f; }
+.ais-btn.primary {
+    background: #2a6f4f; color: #fff; border-color: #2a6f4f;
+}
+.ais-btn.primary:hover { background: #1e5a3e; color: #fff; }
+.ais-btn.danger { color: #d83a3a; border-color: #f0c5c5; }
+.ais-btn.danger:hover { background: #fcebeb; border-color: #d83a3a; color: #d83a3a; }
+.ais-test-result {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #f8fbf9;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.7;
+    min-height: 22px;
+}
+.ais-help {
+    margin-top: 18px;
+    padding: 10px 14px;
+    background: #fffbe5;
+    border: 1px solid #f4d97c;
+    border-radius: 6px;
+    font-size: 12px;
+}
+.ais-help summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #66541a;
+}
+.ais-help ul {
+    margin: 8px 0 0 0;
+    padding-left: 22px;
+    line-height: 1.8;
+}
+.ais-help a { color: #2a6f4f; font-weight: 600; }

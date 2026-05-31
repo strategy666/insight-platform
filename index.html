@@ -9,7 +9,7 @@
     <title>商业化洞察 v2.0 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究 / 战分助手" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260531n" />
+    <link rel="stylesheet" href="assets/style.css?v=20260531o" />
 </head>
 <body>
 
@@ -443,12 +443,20 @@
             
             <!-- 内嵌 chatbot -->
             <div class="idm-section idm-chatbot-section">
-                <h3 class="idm-section-title">💬 行业 AI 问答</h3>
+                <div class="idm-chat-header">
+                    <h3 class="idm-section-title" style="margin:0">💬 行业 AI 问答</h3>
+                    <div class="idm-chat-modes">
+                        <button class="idm-mode-btn active" data-mode="local" onclick="setChatMode('local')" title="基于本地行业数据快速回答">📦 本地数据</button>
+                        <button class="idm-mode-btn" data-mode="web" onclick="setChatMode('web')" title="网络检索 + AI 综合（需配 API Key）">🌐 联网 AI</button>
+                        <button class="idm-mode-btn settings" onclick="openAISettings()" title="配置 LLM / Web 搜索 API">⚙️</button>
+                    </div>
+                </div>
                 <div class="idm-chatbot">
                     <div class="idm-chat-body" id="idmChatBody">
                         <div class="chat-bubble bot">
                             👋 你正在咨询「<b id="idmChatIndustry">—</b>」行业。<br/>
-                            可以问：「这个行业的快手机会点」「TOP3 玩家是谁」「线下转线上路径」「客户画像是怎样」等
+                            可以问：「这个行业的快手机会点」「TOP3 玩家是谁」「线下转线上路径」「客户画像是怎样」等<br/>
+                            <small style="color:#888">💡 默认本地数据回答；切换到「🌐 联网 AI」可基于网络实时检索结果做综合回答（首次使用需 ⚙️ 配置 API Key）</small>
                         </div>
                     </div>
                     <div class="idm-chat-input-row">
@@ -460,6 +468,76 @@
                     <div class="idm-chat-suggest" id="idmChatSuggest"></div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- ⑤ AI Settings 配置面板 -->
+<div class="ai-settings-modal" id="aiSettingsModal" style="display:none;">
+    <div class="ais-overlay" onclick="closeAISettings()"></div>
+    <div class="ais-panel">
+        <div class="ais-header">
+            <h3>⚙️ AI 问答 · API 配置</h3>
+            <button class="ais-close" onclick="closeAISettings()">✕</button>
+        </div>
+        <div class="ais-body">
+            <p class="ais-tip">配置后用于「🌐 联网 AI」模式：先用 Web 搜索拉取实时信息，再用 LLM 做综合回答。所有配置保存在你的浏览器 localStorage（不上传）。</p>
+
+            <h4 class="ais-section-title">🤖 LLM 配置（兼容 OpenAI / 通义千问 / DeepSeek / Moonshot 等）</h4>
+            <label class="ais-row">
+                <span class="ais-label">Endpoint</span>
+                <input type="text" id="aisLlmEndpoint" placeholder="https://api.openai.com/v1" />
+            </label>
+            <label class="ais-row">
+                <span class="ais-label">API Key</span>
+                <input type="password" id="aisLlmKey" placeholder="sk-..." />
+            </label>
+            <label class="ais-row">
+                <span class="ais-label">Model</span>
+                <input type="text" id="aisLlmModel" placeholder="gpt-4o-mini" />
+            </label>
+            <div class="ais-presets">
+                <span style="color:#888;font-size:12px">快速填充：</span>
+                <button class="ais-preset" onclick="fillLlmPreset('openai')">OpenAI</button>
+                <button class="ais-preset" onclick="fillLlmPreset('deepseek')">DeepSeek</button>
+                <button class="ais-preset" onclick="fillLlmPreset('moonshot')">月之暗面 Kimi</button>
+                <button class="ais-preset" onclick="fillLlmPreset('dashscope')">通义千问</button>
+                <button class="ais-preset" onclick="fillLlmPreset('siliconflow')">硅基流动</button>
+            </div>
+
+            <h4 class="ais-section-title" style="margin-top:18px">🌐 Web 搜索配置</h4>
+            <label class="ais-row">
+                <span class="ais-label">搜索引擎</span>
+                <select id="aisSearchProvider">
+                    <option value="tavily">Tavily（推荐，注册送 1000 次/月免费）</option>
+                    <option value="serpapi">SerpAPI</option>
+                    <option value="bocha">博查 BoCha（国内）</option>
+                    <option value="none">不联网（仅 LLM 单独回答）</option>
+                </select>
+            </label>
+            <label class="ais-row">
+                <span class="ais-label">搜索 API Key</span>
+                <input type="password" id="aisSearchKey" placeholder="tvly-... / sk-..." />
+            </label>
+
+            <div class="ais-actions">
+                <button class="ais-btn primary" onclick="saveAISettings()">💾 保存</button>
+                <button class="ais-btn" onclick="testAIConnection()">🔬 测试连通性</button>
+                <button class="ais-btn danger" onclick="resetAISettings()">🗑 清空</button>
+            </div>
+            <div id="aisTestResult" class="ais-test-result"></div>
+
+            <details class="ais-help">
+                <summary>📖 如何获取免费 API Key？</summary>
+                <ul>
+                    <li><b>DeepSeek</b>（推荐国内，便宜）：<a href="https://platform.deepseek.com" target="_blank">platform.deepseek.com</a> → API Keys</li>
+                    <li><b>Moonshot Kimi</b>（128K 长上下文）：<a href="https://platform.moonshot.cn" target="_blank">platform.moonshot.cn</a></li>
+                    <li><b>通义千问</b>：<a href="https://dashscope.console.aliyun.com" target="_blank">dashscope.console.aliyun.com</a></li>
+                    <li><b>硅基流动</b>（多模型聚合）：<a href="https://siliconflow.cn" target="_blank">siliconflow.cn</a> → 注册送 14 元免费额度</li>
+                    <li><b>Tavily 搜索</b>（免费 1000/月）：<a href="https://tavily.com" target="_blank">tavily.com</a></li>
+                    <li><b>博查搜索</b>（国内，免费 100 次试用）：<a href="https://open.bochaai.com" target="_blank">open.bochaai.com</a></li>
+                </ul>
+            </details>
         </div>
     </div>
 </div>
@@ -1156,9 +1234,10 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260531n"></script>
-<script src="assets/feishu-search.js?v=20260531n"></script>
-<script src="assets/industry-research.js?v=20260531n"></script>
+<script src="assets/main.js?v=20260531o"></script>
+<script src="assets/feishu-search.js?v=20260531o"></script>
+<script src="assets/ai-chat.js?v=20260531o"></script>
+<script src="assets/industry-research.js?v=20260531o"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){

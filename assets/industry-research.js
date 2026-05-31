@@ -173,11 +173,17 @@
         if (!q) return;
         input.value = '';
         appendChatMsg('user', q);
+        // 路由：本地 / 联网 AI
+        const mode = (typeof window.__getChatMode === 'function') ? window.__getChatMode() : 'local';
+        if (mode === 'web' && typeof window.askIndustryChatWeb === 'function') {
+            window.askIndustryChatWeb(q, CURRENT_INDUSTRY);
+            return;
+        }
         // 模拟 AI 回答（基于本地数据 + 模板）
         setTimeout(() => {
             const ans = generateIndustryAnswer(q, CURRENT_INDUSTRY);
             appendChatMsg('bot', ans);
-        }, 600);
+        }, 300);
     }
 
     function appendChatMsg(role, text) {
