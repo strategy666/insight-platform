@@ -2727,3 +2727,83 @@ body {
 @media (max-width: 900px) {
     .dual-result-grid { grid-template-columns: 1fr; }
 }
+
+/* ============== TAB 3: 飞书文档独立检索通路 ============== */
+.feishu-search-wrapper { max-width: 760px; }
+
+.feishu-filters {
+    background: #fff;
+    border: 1px solid #eef0ef;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+.fs-filter-group {
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: 8px; padding: 6px 0;
+    border-bottom: 1px dashed #f0f0f0;
+}
+.fs-filter-group:last-child { border-bottom: none; padding-bottom: 0; }
+.fs-filter-label {
+    font-size: 12px; font-weight: 600; color: #555;
+    min-width: 60px;
+}
+.fs-chip {
+    padding: 5px 12px;
+    border: 1px solid #d8e3de;
+    background: #fff;
+    color: #5a6c64;
+    font-size: 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all .15s;
+}
+.fs-chip:hover { border-color: #2a6f4f; color: #2a6f4f; }
+.fs-chip.active {
+    background: #2a6f4f; color: #fff;
+    border-color: #2a6f4f;
+    font-weight: 600;
+}
+.fs-only-url {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: #5a6c64; cursor: pointer;
+    padding: 4px 10px; background: #f5fbf7;
+    border: 1px solid #c8e8d4; border-radius: 16px;
+}
+.fs-only-url input { margin: 0; cursor: pointer; }
+.fs-filter-stat {
+    margin-left: auto; font-size: 12px; color: #888;
+}
+.fs-filter-stat b { color: #2a6f4f; font-weight: 700; font-size: 14px; }
+
+.feishu-result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 12px;
+}
+.fs-page-card { background: #fff; }
+.fs-page-card:hover { transform: translateY(-1px); }
+.fs-comp-pill {
+    padding: 1px 8px;
+    background: #eef5f1;
+    color: #2a6f4f;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.fs-url-flag {
+    color: #2a6f4f; font-size: 11px; margin-left: auto;
+}
+.fs-open-btn-disabled {
+    background: #f0f0f0 !important;
+    color: #999 !important;
+    cursor: not-allowed !important;
+    text-decoration: line-through;
+}
+.ai-summary-title-plain { font-weight: 600; color: #333; }
+
+@media (max-width: 900px) {
+    .feishu-result-grid { grid-template-columns: 1fr; }
+    .fs-filter-group { gap: 6px; }
+}

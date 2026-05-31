@@ -21,6 +21,7 @@
             <nav class="nav main-tabs" id="mainTabs">
                 <a href="#insights"   class="nav-link tab-link active" data-tab="insights">💡 市场洞察</a>
                 <a href="#competitors" class="nav-link tab-link"        data-tab="competitors">🎯 竞对追踪</a>
+                <a href="#feishu"     class="nav-link tab-link"         data-tab="feishu">📁 飞书文档</a>
                 <a href="#research"    class="nav-link tab-link"        data-tab="research">📚 行业研究</a>
                 <a href="#assistant"   class="nav-link tab-link"        data-tab="assistant">🤖 战分助手</a>
             </nav>
@@ -214,9 +215,8 @@
             <div class="dual-result-col" id="dualColFeishu">
                 <div class="dual-col-head">
                     <h3>📁 飞书内部文档 <span class="dual-cnt" id="dualCntFs">0</span></h3>
-                    <a href="https://docs.corp.kuaishou.com/s/home/fcADdie-9DQzc0MB4sCeBJorF" target="_blank" rel="noopener" class="dual-col-deep-link" title="字节对外文档库（396 条）">去字节文档库 ↗</a>
                 </div>
-                <div class="dual-col-tip">📊 已索引 <b>379</b> 条字节对外文档（覆盖区域服务商 / 营销 / 广告 / 商家 / 达人等 12 类目）</div>
+                <div class="dual-col-tip">📊 本地索引 <b>334</b> 篇飞书文档（全部带真实 URL）· 数据只从字节对外汇总表 SSO 拉取，不跳外部站点</div>
                 <div class="dual-col-body" id="dualBodyFs"></div>
             </div>
         </div>
@@ -264,9 +264,90 @@
 
 </div><!-- /tab-competitors -->
 
-<!-- ===================== TAB 3: 行业研究（待装修） ===================== -->
-<div class="tab-pane" id="tab-research">
+<!-- ===================== TAB 3: 飞书文档检索（独立通路） ===================== -->
+<div class="tab-pane" id="tab-feishu">
 
+<section class="hero hero-sub">
+    <div class="container">
+        <h1>📁 飞书文档检索</h1>
+        <p class="hero-subtitle">本地索引 <b id="fsTotalCount">—</b> 篇飞书文档（含真实 URL <b id="fsUrlCount">—</b> 篇） · 完全独立于公开渠道</p>
+
+        <div class="ai-search-container">
+            <div class="search-input-wrapper feishu-search-wrapper">
+                <input type="text" id="feishuPageInput" placeholder="🔍 在 334 篇飞书文档中检索（支持标题 / 主体 / 维度 / 内容关键词）" autocomplete="off" onkeyup="if(event.key==='Enter')runFeishuPageSearch(this.value)" oninput="onFeishuPageInput(this.value)" />
+                <button class="search-btn" onclick="runFeishuPageSearch(document.getElementById('feishuPageInput').value)">检索</button>
+            </div>
+            <div class="suggested-questions">
+                <button class="suggest-q" onclick="runFeishuPageSearch('巨量本地推')">巨量本地推</button>
+                <button class="suggest-q" onclick="runFeishuPageSearch('林客')">林客</button>
+                <button class="suggest-q" onclick="runFeishuPageSearch('区域服务商')">区域服务商</button>
+                <button class="suggest-q" onclick="runFeishuPageSearch('SDPA')">SDPA</button>
+                <button class="suggest-q" onclick="runFeishuPageSearch('达人')">达人合作</button>
+                <button class="suggest-q" onclick="runFeishuPageSearch('AIGC')">AIGC</button>
+                <button class="suggest-q" onclick="runFeishuPageSearch('激励政策')">激励政策</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <!-- 过滤条 -->
+        <div class="feishu-filters" id="fsFilters">
+            <div class="fs-filter-group">
+                <span class="fs-filter-label">📂 类型</span>
+                <button class="fs-chip active" data-filter-type="all">全部</button>
+                <button class="fs-chip" data-filter-type="docx">📄 docx</button>
+                <button class="fs-chip" data-filter-type="wiki">📚 wiki</button>
+                <button class="fs-chip" data-filter-type="sheet">📊 sheet</button>
+                <button class="fs-chip" data-filter-type="file">📎 file</button>
+                <button class="fs-chip" data-filter-type="bitable">🗃️ bitable</button>
+                <button class="fs-chip" data-filter-type="doc">📝 元数据(无URL)</button>
+            </div>
+            <div class="fs-filter-group">
+                <span class="fs-filter-label">🎯 主体</span>
+                <button class="fs-chip active" data-filter-comp="all">全部</button>
+                <button class="fs-chip" data-filter-comp="字节">字节</button>
+                <button class="fs-chip" data-filter-comp="巨量引擎">巨量引擎</button>
+                <button class="fs-chip" data-filter-comp="腾讯">腾讯</button>
+                <button class="fs-chip" data-filter-comp="百度">百度</button>
+                <button class="fs-chip" data-filter-comp="美团">美团</button>
+                <button class="fs-chip" data-filter-comp="小红书">小红书</button>
+            </div>
+            <div class="fs-filter-group">
+                <span class="fs-filter-label">🧭 维度</span>
+                <button class="fs-chip active" data-filter-dim="all">全部</button>
+                <button class="fs-chip" data-filter-dim="广告产品">广告产品</button>
+                <button class="fs-chip" data-filter-dim="商家产品">商家产品</button>
+                <button class="fs-chip" data-filter-dim="达人/职人">达人/职人</button>
+                <button class="fs-chip" data-filter-dim="服务商体系">服务商体系</button>
+                <button class="fs-chip" data-filter-dim="激励政策">激励政策</button>
+                <button class="fs-chip" data-filter-dim="运营SOP">运营SOP</button>
+                <button class="fs-chip" data-filter-dim="数据产品">数据产品</button>
+                <button class="fs-chip" data-filter-dim="AI能力">AI能力</button>
+                <button class="fs-chip" data-filter-dim="节点策略">节点策略</button>
+                <button class="fs-chip" data-filter-dim="直播">直播</button>
+            </div>
+            <div class="fs-filter-group">
+                <label class="fs-only-url">
+                    <input type="checkbox" id="fsOnlyUrl" />
+                    <span>🔗 仅看带 URL 的文档</span>
+                </label>
+                <span class="fs-filter-stat" id="fsResultStat">—</span>
+            </div>
+        </div>
+
+        <!-- 结果列表 -->
+        <div class="feishu-result-grid" id="fsResultList">
+            <div class="dual-empty">⏳ 加载中...</div>
+        </div>
+    </div>
+</section>
+
+</div><!-- /tab-feishu -->
+
+<!-- ===================== TAB 4: 行业研究（待装修） ===================== -->
+<div class="tab-pane" id="tab-research">
 <section class="hero hero-sub">
     <div class="container">
         <h1>📚 行业研究</h1>
@@ -320,7 +401,7 @@
 
 </div><!-- /tab-research -->
 
-<!-- ===================== TAB 4: 战分助手 ===================== -->
+<!-- ===================== TAB 5: 战分助手 ===================== -->
 <div class="tab-pane" id="tab-assistant">
 
 <section class="hero hero-sub">
@@ -495,10 +576,13 @@ window.searchCompetitor = async function(q) {
     // 5. 飞书列
     document.getElementById('dualCntFs').textContent = fsHits.length;
     document.getElementById('dualBodyFs').innerHTML = fsHits.length ? fsHits.map(it => {
-        const openUrl = it.url || it.source_doc || 'https://docs.corp.kuaishou.com/s/home/fcADdie-9DQzc0MB4sCeBJorF';
         const sheetTag = it.source_sheet || it.sheet || '';
         const compTag = (it.competitors || [])[0] || '字节';
-        const typeIcon = it.type === 'doc' ? '📄' : it.type === 'sheet' ? '📊' : it.type === 'wiki' ? '📚' : '📁';
+        const typeIcon = it.type === 'docx' ? '📄' : it.type === 'wiki' ? '📚' : it.type === 'sheet' ? '📊' : it.type === 'file' ? '📎' : it.type === 'bitable' ? '🗃️' : '📝';
+        const hasUrl = !!(it.url && it.url.startsWith('http'));
+        const openBtn = hasUrl
+            ? `<a href="${it.url}" target="_blank" rel="noopener" class="fs-open-btn">打开飞书 ↗</a>`
+            : `<span class="fs-open-btn fs-open-btn-disabled" title="此条仅有标题元信息，无飞书直链">仅元数据</span>`;
         return `
         <div class="dual-card fs-card">
             <div class="dual-card-top">
@@ -510,10 +594,10 @@ window.searchCompetitor = async function(q) {
             <p class="dual-card-summary">${_highlightHtml(it.summary || (it.category||''), q)}</p>
             <div class="dual-card-foot">
                 <div class="fs-keywords">${(it.dimensions || it.keywords || []).slice(0, 4).map(k => `<span class="kw-chip">${_highlightHtml(k, q)}</span>`).join('')}</div>
-                <a href="${openUrl}" target="_blank" rel="noopener" class="fs-open-btn">查看源表 ↗</a>
+                ${openBtn}
             </div>
         </div>`;
-    }).join('') : '<div class="dual-empty">📁 未命中飞书文档，可点击右上角去飞书全库搜</div>';
+    }).join('') : '<div class="dual-empty">📁 未命中飞书文档，可点击顶部「📁 飞书文档」tab 在 518 篇全库检索</div>';
     
     // 6. 公开动态列
     document.getElementById('dualCntComp').textContent = feishuOnly ? '-' : compHits.length;
@@ -560,7 +644,7 @@ function _genAISummary(q, fsHits, compHits, feishuOnly) {
             <p>未找到与「<b>${q}</b>」相关的内部资料或公开动态。建议：</p>
             <ul>
                 <li>尝试更宽泛的关键词（如改"巨量引擎深度转化"为"巨量引擎"）</li>
-                <li>点击右上角 <a href="https://feishusearch.frontend-cloud.corp.kuaishou.com" target="_blank">📁 飞书全库</a> 搜更多内部文档</li>
+                <li>点击顶部 <a href="#feishu" onclick="switchTab('feishu');return false;"><b>📁 飞书文档</b></a> tab 去本地全库检索（334 篇·全部带真实链接）</li>
             </ul>
         </div>`;
     }
@@ -599,7 +683,9 @@ function _genAISummary(q, fsHits, compHits, feishuOnly) {
             </div>
             ${topFs ? `<div class="ai-summary-highlight">
                 <b>📌 最相关飞书文档：</b>
-                <a href="${topFs.url || topFs.source_doc || '#'}" target="_blank" rel="noopener">${topFs.title}</a>
+                ${topFs.url && topFs.url.startsWith('http') 
+                    ? `<a href="${topFs.url}" target="_blank" rel="noopener">${topFs.title} ↗</a>` 
+                    : `<span class="ai-summary-title-plain">${topFs.title}</span> <small style="color:#888">(仅元数据·去<a href="#feishu" onclick="switchTab('feishu');return false;">飞书文档</a>tab查更多)</small>`}
                 <p>${topFs.summary || (topFs.source_sheet || '') + ' · ' + (topFs.updated_at_raw || topFs.updated_at || '')}</p>
             </div>` : ''}
             ${topComp && !feishuOnly ? `<div class="ai-summary-highlight comp-highlight">
@@ -610,6 +696,122 @@ function _genAISummary(q, fsHits, compHits, feishuOnly) {
         </div>
     </div>`;
 }
+
+// ==== TAB 3: 飞书文档独立检索通路 ====
+let _fsState = { type: 'all', comp: 'all', dim: 'all', onlyUrl: false, q: '' };
+
+async function ensureFeishuLoaded() {
+    const list = await loadFeishuDocs();
+    document.getElementById('fsTotalCount').textContent = list.length;
+    document.getElementById('fsUrlCount').textContent = list.filter(it => it.has_url || (it.url && it.url.startsWith('http'))).length;
+    return list;
+}
+
+function renderFeishuList(list, q) {
+    const grid = document.getElementById('fsResultList');
+    const stat = document.getElementById('fsResultStat');
+    stat.innerHTML = `命中 <b>${list.length}</b> 条`;
+    if (!list.length) {
+        grid.innerHTML = '<div class="dual-empty">🔎 当前筛选下无结果，试试放宽过滤器</div>';
+        return;
+    }
+    grid.innerHTML = list.slice(0, 200).map(it => {
+        const hasUrl = !!(it.url && it.url.startsWith('http'));
+        const typeIcon = it.type === 'docx' ? '📄' : it.type === 'wiki' ? '📚' : it.type === 'sheet' ? '📊' : it.type === 'file' ? '📎' : it.type === 'bitable' ? '🗃️' : '📝';
+        const compTag = (it.competitors || ['字节'])[0];
+        const sheetTag = it.source_sheet || it.sheet || '';
+        const openBtn = hasUrl
+            ? `<a href="${it.url}" target="_blank" rel="noopener" class="fs-open-btn">打开飞书 ↗</a>`
+            : `<span class="fs-open-btn fs-open-btn-disabled" title="此条仅有标题元信息，无飞书直链">仅元数据</span>`;
+        return `
+        <div class="dual-card fs-card fs-page-card">
+            <div class="dual-card-top">
+                <span class="fs-type-badge type-${it.type || 'doc'}">${typeIcon} ${it.type || 'doc'}</span>
+                <span class="fs-comp-pill">${compTag}</span>
+                <span class="fs-owner">${sheetTag}</span>
+                <span class="fs-date">${it.updated_at_raw || it.updated_at || ''}</span>
+                ${hasUrl ? '<span class="fs-url-flag" title="有真实飞书 URL">🔗</span>' : ''}
+            </div>
+            <h4 class="dual-card-title">${_highlightHtml(it.title, q || '')}</h4>
+            <p class="dual-card-summary">${_highlightHtml((it.summary||'').slice(0, 220), q || '')}</p>
+            <div class="dual-card-foot">
+                <div class="fs-keywords">${(it.dimensions || []).slice(0, 5).map(d => `<span class="kw-chip">${d}</span>`).join('')}</div>
+                ${openBtn}
+            </div>
+        </div>`;
+    }).join('') + (list.length > 200 ? `<div class="dual-empty" style="grid-column: 1/-1;">… 还有 ${list.length - 200} 条未显示，请加更多筛选条件</div>` : '');
+}
+
+async function applyFeishuFilters() {
+    const all = await ensureFeishuLoaded();
+    const { type, comp, dim, onlyUrl, q } = _fsState;
+    let filtered = all;
+    if (type !== 'all') filtered = filtered.filter(it => (it.type || 'doc') === type);
+    if (comp !== 'all') filtered = filtered.filter(it => (it.competitors || []).includes(comp));
+    if (dim !== 'all') filtered = filtered.filter(it => (it.dimensions || []).includes(dim));
+    if (onlyUrl) filtered = filtered.filter(it => it.url && it.url.startsWith('http'));
+    if (q) {
+        const ql = q.toLowerCase();
+        filtered = filtered
+            .map(it => ({
+                ...it,
+                _score: _scoreMatch(it, q, [
+                    ['title', 5], ['keywords', 3], ['competitors', 4],
+                    ['dimensions', 3], ['category', 3], ['tags', 3],
+                    ['source_sheet', 2], ['summary', 2]
+                ])
+            }))
+            .filter(it => it._score > 0)
+            .sort((a, b) => b._score - a._score);
+    } else {
+        filtered = filtered.slice().sort((a, b) => (b.updated_at || '').localeCompare(a.updated_at || ''));
+    }
+    renderFeishuList(filtered, q);
+}
+
+window.runFeishuPageSearch = function(v) {
+    _fsState.q = (v || '').trim();
+    applyFeishuFilters();
+};
+window.onFeishuPageInput = function(v) {
+    clearTimeout(window._fsTimer);
+    window._fsTimer = setTimeout(() => window.runFeishuPageSearch(v), 300);
+};
+
+// 过滤器 chip 点击
+document.addEventListener('click', function(e) {
+    const chip = e.target.closest('.fs-chip');
+    if (!chip) return;
+    const group = chip.parentElement;
+    group.querySelectorAll('.fs-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    if (chip.dataset.filterType !== undefined) _fsState.type = chip.dataset.filterType;
+    if (chip.dataset.filterComp !== undefined) _fsState.comp = chip.dataset.filterComp;
+    if (chip.dataset.filterDim !== undefined) _fsState.dim = chip.dataset.filterDim;
+    applyFeishuFilters();
+});
+// onlyUrl 复选框
+document.addEventListener('change', function(e) {
+    if (e.target && e.target.id === 'fsOnlyUrl') {
+        _fsState.onlyUrl = e.target.checked;
+        applyFeishuFilters();
+    }
+});
+// 进入 #feishu tab 自动加载
+(function() {
+    function maybeInit() {
+        if (location.hash === '#feishu' || document.querySelector('.tab-link[data-tab="feishu"]')?.classList.contains('active')) {
+            applyFeishuFilters();
+        }
+    }
+    document.addEventListener('DOMContentLoaded', maybeInit);
+    // 监听 tab 切换
+    document.addEventListener('click', function(e) {
+        const a = e.target.closest('.tab-link[data-tab="feishu"]');
+        if (a) setTimeout(applyFeishuFilters, 50);
+    });
+})();
+
 window.askAssistant = window.askAssistant || function(q){
     if(!q || !q.trim()) return;
     var box = document.getElementById('assistantAnswer');
@@ -697,8 +899,8 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260531c"></script>
-<script src="assets/feishu-search.js?v=20260531c"></script>
+<script src="assets/main.js?v=20260531d"></script>
+<script src="assets/feishu-search.js?v=20260531d"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){
