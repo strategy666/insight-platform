@@ -22,7 +22,7 @@
       "related_ids",
       "sources"
     ],
-    "total_items": 83,
+    "total_items": 89,
     "window_days": 14,
     "cutoff_rule": "事件发生日期 >= 2026-05-15；老事件归档到 intel_archive.json",
     "stats": {
@@ -423,6 +423,69 @@
       ]
     },
     {
+      "id": "intel-201",
+      "date": "2026-05-29",
+      "priority": "high",
+      "signal": "opportunity",
+      "title": "Waymo 周付费订单量将翻倍至 100 万次/周，年底前再开 8 城",
+      "tldr": "Waymo CEO Tekedra Mawakana 在最新博客披露：2026 年末周订单将翻倍至 100 万 +，已确认新城包括达拉斯 / 休斯敦 / 圣安东尼奥 / 奥兰多 / 巴尔的摩 / 费城 / 西雅图 / 拉斯维加斯",
+      "tags": [
+        "#Waymo",
+        "#Robotaxi",
+        "#扩张"
+      ],
+      "company": [
+        "Waymo"
+      ],
+      "tracks": [
+        "AIGC",
+        "自动驾驶"
+      ],
+      "metrics": {
+        "周订单": "100万+",
+        "新城": "8个",
+        "舰队增量": "+150%"
+      },
+      "timeline": [
+        {
+          "date": "2025-05",
+          "event": "美国本地化制造 + 6 工厂启动"
+        },
+        {
+          "date": "2025-12",
+          "event": "宣布巴尔的摩/费城/西雅图/拉斯维加斯"
+        },
+        {
+          "date": "2026-02-24",
+          "event": "宣布达拉斯/休斯敦/圣安东尼奥/奥兰多"
+        },
+        {
+          "date": "2026-05-28",
+          "event": "新博客 Same Driver, new cities"
+        }
+      ],
+      "takeaway": [
+        "Robotaxi 已进入'城市矩阵复制'阶段，规模效应开始显现",
+        "Waymo 的扩张速度超过 Cruise / Pony.ai，行业格局可能重塑",
+        "舰队规模 +150% 意味着单车经济模型已被验证"
+      ],
+      "sowhat_for_kuaishou": "Robotaxi 城市矩阵的高速扩张将催生'移动空间内容消费'新场景，快手可探索车载短视频 / 直播分发，提前布局 Waymo / Pony.ai 的车内屏内容生态。",
+      "sources": [
+        {
+          "name": "Waymo Blog 官方",
+          "url": "https://waymo.com/blog/"
+        },
+        {
+          "name": "Waymo 2026/02 扩张博客",
+          "url": "https://waymo.com/blog/2026/02/dallas-houston-san-antonio-orlando"
+        },
+        {
+          "name": "Reddit r/waymo 讨论",
+          "url": "https://www.reddit.com/r/waymo/comments/1pd69fh/waymo_announces_4_new_expansion_cities_baltimore/"
+        }
+      ]
+    },
+    {
       "id": "intel-105",
       "date": "2026-05-29",
       "priority": "high",
@@ -708,6 +771,65 @@
         {
           "name": "腾讯研究院 AI 速递",
           "url": "https://mp.weixin.qq.com/s/ExFJI9FENX4fMmV0P1NGmQ"
+        }
+      ]
+    },
+    {
+      "id": "intel-200",
+      "date": "2026-05-28",
+      "priority": "high",
+      "signal": "competitive",
+      "title": "Anthropic 完成 Series H 650 亿美元融资，估值 9650 亿美元超 OpenAI",
+      "tldr": "Anthropic 单轮募资 650 亿美元，post-money 估值 9650 亿美元，首次反超 OpenAI 成为全球最值钱 AI 公司",
+      "tags": [
+        "#Anthropic",
+        "#AI融资",
+        "#估值"
+      ],
+      "company": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "tracks": [
+        "AIGC"
+      ],
+      "metrics": {
+        "融资额": "650亿美元",
+        "估值": "9650亿美元",
+        "对比上轮": "+154%"
+      },
+      "timeline": [
+        {
+          "date": "2025-08",
+          "event": "Series E 35 亿美元，估值 615 亿"
+        },
+        {
+          "date": "2026-02",
+          "event": "Series G 300 亿美元，估值 3800 亿"
+        },
+        {
+          "date": "2026-05-28",
+          "event": "Series H 650 亿美元，估值 9650 亿"
+        }
+      ],
+      "takeaway": [
+        "Claude Code ARR 已突破 25 亿美元，成为企业级 Coding Agent 头部",
+        "AI 模型公司估值进入万亿门槛，资本对 LLM 投入仍在加码",
+        "Anthropic 估值超 OpenAI，标志企业市场对 Claude 的偏好"
+      ],
+      "sowhat_for_kuaishou": "海外 AI 资本格局重塑速度极快，磁力星辰 / 可灵需关注 Anthropic Claude 4 在中国企业市场的代理人渠道（亚马逊云科技等），避免错过 ToB AI 工具迁移窗口。",
+      "sources": [
+        {
+          "name": "Anthropic 官方 News",
+          "url": "https://www.anthropic.com/news/series-h"
+        },
+        {
+          "name": "NYT Tech",
+          "url": "https://www.nytimes.com/2026/05/28/technology/anthropic-tops-openai-valuation.html"
+        },
+        {
+          "name": "ABC7 News (AP)",
+          "url": "https://abc7news.com/post/anthropic-san-francisco-ai-company-vaults-965-billion-valuation-new-funding-claude-demand-surges/19188579/"
         }
       ]
     },
@@ -2664,6 +2786,68 @@
       ]
     },
     {
+      "id": "intel-202",
+      "date": "2026-05-20",
+      "priority": "high",
+      "signal": "competitive",
+      "title": "NVIDIA Q1 FY27 财报：数据中心营收占比 >90%，AI 算力需求未见放缓",
+      "tldr": "NVIDIA 2027 财年 Q1 数据中心营收占比超 90%，CEO 黄仁勋称'计算需求正指数级增长'，Blackwell 已大规模出货",
+      "tags": [
+        "#NVIDIA",
+        "#AI算力",
+        "#财报"
+      ],
+      "company": [
+        "NVIDIA"
+      ],
+      "tracks": [
+        "AIGC"
+      ],
+      "metrics": {
+        "数据中心占比": ">90%",
+        "Blackwell状态": "大规模出货",
+        "FY26 EPS": "$4.90"
+      },
+      "timeline": [
+        {
+          "date": "2025-05-28",
+          "event": "Q1 FY26 营收 440.6 亿美元"
+        },
+        {
+          "date": "2025-08-27",
+          "event": "Q2 FY26 营收 467 亿美元，环比 +6%"
+        },
+        {
+          "date": "2026-02-25",
+          "event": "FY26 全年 EPS $4.90"
+        },
+        {
+          "date": "2026-05-20",
+          "event": "Q1 FY27 财报披露"
+        }
+      ],
+      "takeaway": [
+        "AI 算力仍是 NVIDIA 增长主引擎，游戏 / 汽车占比已不到 10%",
+        "中国市场 H20 出口受限影响有限，欧洲/中东订单补位",
+        "Blackwell 出货节奏决定 2026 H2 算力供给"
+      ],
+      "sowhat_for_kuaishou": "可灵 / 磁力星辰底层依赖 GPU 算力，需评估 H20 供给变化对国内训推成本的影响，提前与阿里云 / 字节火山引擎锁定 Blackwell 配额。",
+      "sources": [
+        {
+          "name": "NVIDIA Investor Relations",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/"
+        },
+        {
+          "name": "CNBC NVDA Q1 FY27 Live",
+          "url": "https://www.cnbc.com/2026/05/20/nvidia-nvda-earnings-report-q1-2027.html"
+        },
+        {
+          "name": "S&P Global Preview",
+          "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/05/nvidia-earnings-preview-q1-2027"
+        }
+      ]
+    },
+    {
       "id": "intel-120",
       "date": "2026-05-20",
       "priority": "mid",
@@ -3391,6 +3575,179 @@
           "name": "华尔街见闻：百度Q1营收320.8亿",
           "url": "https://wallstreetcn.com/articles/3772526",
           "date": "2026-05-18"
+        }
+      ]
+    },
+    {
+      "id": "intel-204",
+      "date": "2026-05-12",
+      "priority": "medium",
+      "signal": "opportunity",
+      "title": "Figure AI × Qualcomm 联手推 Dragonwing IQ10 人形机器人专用算力芯片",
+      "tldr": "KraneShares 报告披露：高通推出 Dragonwing IQ10 人形机器人专用处理器，已与 Figure AI、Neura Robotics 联合定义下一代人形机器人计算栈",
+      "tags": [
+        "#FigureAI",
+        "#人形机器人",
+        "#高通"
+      ],
+      "company": [
+        "Figure AI",
+        "Qualcomm"
+      ],
+      "tracks": [
+        "AIGC"
+      ],
+      "metrics": {
+        "芯片": "Dragonwing IQ10",
+        "合作方": "Figure/Neura"
+      },
+      "timeline": [
+        {
+          "date": "2025-10-09",
+          "event": "Figure 03 发布（第三代人形机器人，Helix 系统）"
+        },
+        {
+          "date": "2026-02-27",
+          "event": "BMW 德国工厂部署 Figure 机器人"
+        },
+        {
+          "date": "2026-05-12",
+          "event": "Qualcomm IQ10 联合白皮书"
+        }
+      ],
+      "takeaway": [
+        "人形机器人 2026 年从'试点'走向'平台化'阶段",
+        "通用算力 + 专用控制芯片成为新分工",
+        "BMW / 福特 等汽车工厂成为首批客户"
+      ],
+      "sowhat_for_kuaishou": "人形机器人内容是短视频新增量赛道（参考宇树春晚后流量爆发），快手可联系 Figure / Unitree / 1X 做独家短视频内容合作，并探索机器人 IP 直播带货模式。",
+      "sources": [
+        {
+          "name": "Figure AI 官方",
+          "url": "https://www.figure.ai/news/introducing-figure-03"
+        },
+        {
+          "name": "KraneShares Humanoid Report",
+          "url": "https://kraneshares.com/humanoid-robotics-in-2026-the-race-from-pilot-to-platform/"
+        },
+        {
+          "name": "BMW Press Release",
+          "url": "https://www.press.bmwgroup.com/global/article/detail/T0455864EN/bmw-group-to-deploy-humanoid-robots-in-production-in-germany-for-the-first-time?language=en"
+        }
+      ]
+    },
+    {
+      "id": "intel-205",
+      "date": "2026-05-05",
+      "priority": "medium",
+      "signal": "opportunity",
+      "title": "Anthropic 发布金融行业 Agent：10 个开箱即用模板，主攻投行/资管",
+      "tldr": "Anthropic 推出 10 个金融行业 ready-to-run Agent 模板，覆盖投行 / 资管 / 财富管理 / 合规等场景，进一步抢占企业级 Agent 市场",
+      "tags": [
+        "#Anthropic",
+        "#AIAgent",
+        "#金融"
+      ],
+      "company": [
+        "Anthropic"
+      ],
+      "tracks": [
+        "AIGC"
+      ],
+      "metrics": {
+        "Agent数量": "10个",
+        "目标行业": "金融"
+      },
+      "timeline": [
+        {
+          "date": "2025-05",
+          "event": "Claude Code 公测"
+        },
+        {
+          "date": "2026-02-12",
+          "event": "Claude Code ARR 突破 25 亿美元"
+        },
+        {
+          "date": "2026-05-05",
+          "event": "金融 Agent 模板发布"
+        }
+      ],
+      "takeaway": [
+        "AI Agent 正按行业纵深落地，金融是首批高价值场景",
+        "Anthropic 走'垂直行业模板'路线，与 OpenAI 'GPTs' 形成区隔",
+        "10 个模板降低企业接入门槛，提高客户黏性"
+      ],
+      "sowhat_for_kuaishou": "快手 AI 经营官（磁力星辰）目前是水平能力，可参考 Anthropic 模式按生服 / 电商 / 本地生活做垂直 Agent 模板，加速商家上手。",
+      "sources": [
+        {
+          "name": "Anthropic Finance Agents",
+          "url": "https://www.anthropic.com/news/finance-agents"
+        },
+        {
+          "name": "Anthropic Series G",
+          "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
+        }
+      ]
+    },
+    {
+      "id": "intel-203",
+      "date": "2026-04-08",
+      "priority": "medium",
+      "signal": "opportunity",
+      "title": "Pony.ai 在欧洲克罗地亚萨格勒布启动首个商用 Robotaxi 服务",
+      "tldr": "小马智行宣布在克罗地亚萨格勒布（Zagreb）正式启动 Robotaxi 商用服务，成为欧洲首个由中国公司运营的商业化自动驾驶出租车",
+      "tags": [
+        "#PonyAI",
+        "#出海",
+        "#欧洲"
+      ],
+      "company": [
+        "Pony.ai"
+      ],
+      "tracks": [
+        "AIGC",
+        "自动驾驶"
+      ],
+      "metrics": {
+        "首发城市": "Zagreb",
+        "运营模式": "商用"
+      },
+      "timeline": [
+        {
+          "date": "2025-06-17",
+          "event": "广州车展发布 Gen-7 Robotaxi"
+        },
+        {
+          "date": "2025-10-28",
+          "event": "香港 IPO 启动"
+        },
+        {
+          "date": "2026-02-11",
+          "event": "纳入 MSCI 中国指数"
+        },
+        {
+          "date": "2026-04-08",
+          "event": "欧洲首个商业化 Robotaxi 在萨格勒布上线"
+        }
+      ],
+      "takeaway": [
+        "中国 Robotaxi 厂商正加速出海，欧洲监管环境更友好",
+        "Pony.ai 同时推进中国 + 香港 + 欧洲三地市场",
+        "小马 / 文远 / 百度 Apollo Go 三家形成中国出海第一梯队"
+      ],
+      "sowhat_for_kuaishou": "中国科技品牌出海具备示范效应，快手国际化（Kwai / SnackVideo）可借鉴 Pony.ai 的合规 / 本地化打法，重点观察其欧洲合规框架可移植性。",
+      "sources": [
+        {
+          "name": "Pony.ai Investor Relations",
+          "url": "https://ir.pony.ai/news-releases/news-release-details/pony-ai-inc-advances-overseas-deployment-launch-europes-first"
+        },
+        {
+          "name": "ZAG Daily",
+          "url": "https://zagdaily.com/connected/pony-ai-launches-hong-kong-ipo-to-fund-autonomous-vehicle-development/"
+        },
+        {
+          "name": "Gasgoo AutoNews",
+          "url": "https://autonews.gasgoo.com/articles/news/ponyai-unveils-gen-7-robotaxi-at-2025-hong-kong-auto-expo-70037746"
         }
       ]
     }

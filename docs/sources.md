@@ -403,4 +403,232 @@
 - **更新流程**：编辑 sources.json → 运行脚本 → 复制粘贴回 Kim Doc 替换本文档
 - **Portal 入口**：[市场洞察 Portal](https://strategy666.github.io/insight-platform/) 首页统计卡「信息源」可点击跳回本文档
 
-_Generated at 2026-05-28 · 共 180 个信源_
+_Generated at 2026-05-28 · 共 180 个信源_# 📡 商业化洞察周报 · 信息源补充清单 v2.0
+
+> 在原 `sources.md` 基础上的增量补充 · 参考 weekly.dcapapp.com 数据源体系并做扩展
+> 生成时间：2026-05-31 · 适用：Part1 商业化洞察周报每周采集
+
+---
+
+## 一、🏢 科技公司领英主页（30 个 · 海外公司动态最早源头）
+
+| 公司 | 赛道 | LinkedIn URL |
+|---|---|---|
+| **Pony.ai 小马智行** | Robotaxi | https://www.linkedin.com/company/pony-ai/ |
+| **NVIDIA** | AI 算力 | https://www.linkedin.com/company/nvidia/ |
+| **OpenAI** | LLM | https://www.linkedin.com/company/openai/ |
+| **Anthropic** | LLM | https://www.linkedin.com/company/anthropicresearch/ |
+| **xAI** | LLM | https://www.linkedin.com/company/x-ai/ |
+| **Mistral AI** | 开源 LLM | https://www.linkedin.com/company/mistralai/ |
+| **Perplexity** | AI 搜索 | https://www.linkedin.com/company/perplexity-ai/ |
+| **Tesla** | EV / FSD | https://www.linkedin.com/company/tesla-motors/ |
+| **Waymo** | Robotaxi | https://www.linkedin.com/company/waymo/ |
+| **Cruise** | Robotaxi | https://www.linkedin.com/company/getcruise/ |
+| **Wayve** | 端到端自驾 | https://www.linkedin.com/company/wayve/ |
+| **Figure AI** | 人形机器人 | https://www.linkedin.com/company/figureai/ |
+| **1X Technologies** | 人形机器人 | https://www.linkedin.com/company/1x-tech/ |
+| **Unitree 宇树科技** | 人形机器人 | https://www.linkedin.com/company/unitree-robotics/ |
+| **Meta** | 社交+AI | https://www.linkedin.com/company/meta/ |
+| **Google DeepMind** | AI 研究 | https://www.linkedin.com/company/googledeepmind/ |
+| **ByteDance / TikTok** | 短视频 | https://www.linkedin.com/company/tiktok/ |
+| **Snap Inc.** | AR/广告 | https://www.linkedin.com/company/snap-inc-co/ |
+| **Pinterest** | 兴趣电商 | https://www.linkedin.com/company/pinterest/ |
+| **DoorDash** | 本地生活/即时配送 | https://www.linkedin.com/company/doordash/ |
+| **Uber** | 出行+外卖 | https://www.linkedin.com/company/uber-com/ |
+| **Instacart / Maplebear** | 即时零售 | https://www.linkedin.com/company/instacart/ |
+| **Shopify** | 电商 SaaS | https://www.linkedin.com/company/shopify/ |
+| **Stripe** | 支付 | https://www.linkedin.com/company/stripe/ |
+| **Palantir** | 企业 AI | https://www.linkedin.com/company/palantir-technologies/ |
+| **Databricks** | 数据平台 | https://www.linkedin.com/company/databricks/ |
+| **Snowflake** | 数据云 | https://www.linkedin.com/company/snowflake-computing/ |
+| **CrowdStrike** | 网络安全 | https://www.linkedin.com/company/crowdstrike/ |
+| **AppLovin** | 移动广告 | https://www.linkedin.com/company/applovin/ |
+| **The Trade Desk** | 程序化广告 | https://www.linkedin.com/company/the-trade-desk/ |
+
+> ⚠️ LinkedIn 大陆不直连，建议用 **RSS.app** 把以上 page 转 RSS 订阅到内部聚合器。
+
+---
+
+## 二、🐦 创始人 / CEO 推特（20 个）
+
+| 人物 | 公司 | X URL |
+|---|---|---|
+| Elon Musk | Tesla / xAI / X | https://x.com/elonmusk |
+| Sam Altman | OpenAI | https://x.com/sama |
+| Dario Amodei | Anthropic | https://x.com/DarioAmodei |
+| Jensen Huang | NVIDIA（本人较少；用官方账号） | https://x.com/nvidia |
+| Mark Zuckerberg | Meta | https://x.com/finkd |
+| Aravind Srinivas | Perplexity | https://x.com/AravSrinivas |
+| Brett Adcock | Figure AI | https://x.com/adcock_brett |
+| James Peng 彭军 | Pony.ai | https://x.com/jamesxpeng |
+| Tony Han 韩旭 | Pony.ai | https://x.com/HanTonyXu |
+| Lei Jun 雷军 | 小米 | https://x.com/leijun |
+| Dylan Patel | SemiAnalysis | https://x.com/dylan522p |
+| Naval Ravikant | Angel | https://x.com/naval |
+| Patrick Collison | Stripe | https://x.com/patrickc |
+| Garry Tan | YC | https://x.com/garrytan |
+| Marc Andreessen | a16z | https://x.com/pmarca |
+| Bill Gurley | Benchmark | https://x.com/bgurley |
+| Keith Rabois | Khosla | https://x.com/rabois |
+| Chamath Palihapitiya | Social Capital | https://x.com/chamath |
+| David Sacks | Craft Ventures | https://x.com/DavidSacks |
+| Brad Gerstner | Altimeter | https://x.com/altcap |
+
+---
+
+## 三、🏢 公司 / 机构官方 X（20 个）
+
+| 账号 | URL |
+|---|---|
+| OpenAI | https://x.com/OpenAI |
+| Anthropic | https://x.com/AnthropicAI |
+| xAI | https://x.com/xai |
+| NVIDIA | https://x.com/nvidia |
+| Tesla AI | https://x.com/Tesla_AI |
+| Waymo | https://x.com/Waymo |
+| Pony.ai | https://x.com/pony_ai |
+| Figure | https://x.com/Figure_robot |
+| 1X | https://x.com/1x_tech |
+| Unitree | https://x.com/UnitreeRobotics |
+| Meta AI | https://x.com/AIatMeta |
+| Google DeepMind | https://x.com/GoogleDeepMind |
+| Stripe | https://x.com/stripe |
+| Shopify | https://x.com/Shopify |
+| TikTok Newsroom | https://x.com/TikTok_Comms |
+| Snap | https://x.com/Snap |
+| AppLovin | https://x.com/AppLovin |
+| Sequoia | https://x.com/sequoia |
+| a16z | https://x.com/a16z |
+| Y Combinator | https://x.com/ycombinator |
+
+---
+
+## 四、🎙️ 英文播客（16 个）
+
+| 播客 | 主题 | 主页 |
+|---|---|---|
+| **Acquired** | 公司深度剖析（必听） | https://www.acquired.fm |
+| **All-In Podcast** | VC 圆桌 | https://www.allinpodcast.co |
+| **Lex Fridman Podcast** | AI/科技长访谈 | https://lexfridman.com/podcast |
+| **No Priors** (Sarah Guo + Elad Gil) | AI 创始人访谈 | https://www.no-priors.com |
+| **The Logan Bartlett Show** | 早期 VC | https://www.theloganbartlettshow.com |
+| **20VC** (Harry Stebbings) | VC 访谈 | https://www.thetwentyminutevc.com |
+| **Invest Like the Best** (Patrick O'Shaughnessy) | 投资 | https://joincolossus.com/podcasts/episodes |
+| **a16z Podcast** | 综合科技 | https://a16z.com/podcasts |
+| **BG2 Pod** (Brad Gerstner + Bill Gurley) | 公开市场+科技 | https://www.bg2pod.com |
+| **This Day in AI** | AI 周更 | https://thisdayinai.com |
+| **Latent Space** (swyx) | AI 工程 | https://www.latent.space/podcast |
+| **Hard Fork** (NYT) | 科技新闻周报 | https://www.nytimes.com/column/hard-fork |
+| **The Stratechery Podcast** (Ben Thompson) | 战略分析 | https://stratechery.com/category/podcasts/ |
+| **The Information's 411** | 内幕新闻 | https://www.theinformation.com/podcasts |
+| **Autonocast** | 自动驾驶 | https://www.autonocast.com |
+| **Ride AI Podcast** | 自动驾驶/出行 | https://www.spaceofmind.com/p/ride-ai-podcast |
+
+---
+
+## 五、🎙️ 中文播客（dcapapp 弱项 · 10 个）
+
+| 播客 | 主题 | 小宇宙 URL |
+|---|---|---|
+| **晚点聊 LateTalk** | 科技/AI/出行 | https://www.xiaoyuzhoufm.com/podcast/61428728dee9d33ad4fa3eef |
+| **张小珺·商业访谈录** | 互联网商业 | https://www.xiaoyuzhoufm.com/podcast/642ea3a8db18583758b6c00f |
+| **乱翻书** (潘乱) | 互联网战略 | https://www.xiaoyuzhoufm.com/podcast/5e72cba2418a84a046d61b3e |
+| **硬地骇客** | 独立开发/AI | https://www.xiaoyuzhoufm.com/podcast/6388148e73d4efa3be801b1f |
+| **OnBoard!** (Monica + GN) | 硅谷+创投 | https://www.xiaoyuzhoufm.com/podcast/619540a91da6dc3c70efc2bc |
+| **十字路口** (Koji) | AI Native | https://www.xiaoyuzhoufm.com/podcast/65c20cd87aa8a6e2089ee65d |
+| **赛博食堂** | AI/科技尝鲜 | https://www.xiaoyuzhoufm.com/podcast/63e44a09c00e7b48e0d4afac |
+| **声东击西** (徐涛) | 商业全球化 | https://www.xiaoyuzhoufm.com/podcast/5e75a1f5418a84a04680cce7 |
+| **去现场** (晚点) | 一线对话 | https://www.xiaoyuzhoufm.com/podcast/66380aa28b08f7d8c5c5c2e2 |
+| **42章经** (曲凯) | 创投 | https://www.xiaoyuzhoufm.com/podcast/5e6c61d8418a84a0466b9da6 |
+
+---
+
+## 六、📨 Substack / Newsletter（15 个 · 比转手公众号信息密度高）
+
+| Newsletter | 作者 | URL |
+|---|---|---|
+| **Stratechery** | Ben Thompson | https://stratechery.com |
+| **The Information** | — | https://www.theinformation.com |
+| **Platformer** | Casey Newton | https://www.platformer.news |
+| **Lenny's Newsletter** | Lenny Rachitsky | https://www.lennysnewsletter.com |
+| **SemiAnalysis** | Dylan Patel | https://www.semianalysis.com |
+| **The Diff** | Byrne Hobart | https://www.thediff.co |
+| **Not Boring** | Packy McCormick | https://www.notboring.co |
+| **Doomberg** | 匿名团队 | https://doomberg.substack.com |
+| **The Generalist** | Mario Gabriele | https://www.generalist.com |
+| **Big Technology** | Alex Kantrowitz | https://www.bigtechnology.com |
+| **Above the Crowd** | Bill Gurley | https://abovethecrowd.com |
+| **AI Supremacy** | Michael Spencer | https://aisupremacy.substack.com |
+| **One Useful Thing** | Ethan Mollick | https://www.oneusefulthing.org |
+| **晚点 LatePost** | — | https://www.latepost.com |
+| **品玩 PingWest** | — | https://www.pingwest.com |
+
+---
+
+## 七、📰 中文公众号（建议 RSS 化）
+
+> 公众号没有原生 RSS，推荐用 **WeWe RSS** (https://github.com/cooderl/wewe-rss) 或 **WeRSS.app** 转 RSS。
+
+| 公众号 | 主题 |
+|---|---|
+| 晚点 LatePost | 互联网战略 |
+| 36氪 | 综合科技 |
+| 钛媒体 / 钛媒体 AGI | 综合科技 + AI |
+| 创业邦 | 一级市场 |
+| 量子位 | AI |
+| 机器之心 | AI |
+| 硅星人 Pro | 硅谷科技 |
+| 智东西 | 智能科技 |
+| 远川研究所 | 行业研究 |
+| 阑夕 | 互联网评论 |
+| 第一财经 / 21 世纪经济报道 | 财经 |
+| 36氪未来汽车日报 | 出行 |
+| 投中网 / 投资界 | VC |
+| 卫诗婕 / 张小珺 | 独立作者 |
+
+---
+
+## 八、📊 研报与机构
+
+| 机构 | 类型 | URL |
+|---|---|---|
+| Goldman Sachs Research | 投行研报 | https://www.goldmansachs.com/insights/ |
+| J.P. Morgan Insights | 投行研报 | https://www.jpmorgan.com/insights |
+| Morgan Stanley Ideas | 投行研报 | https://www.morganstanley.com/ideas |
+| Bernstein Research | 投行研报 | https://www.bernsteinresearch.com |
+| BofA Global Research | 投行研报 | https://business.bofa.com/en-us/content/insights.html |
+| Citi GPS | 投行研报 | https://www.citivelocity.com/citigps |
+| Jefferies Insights | 投行研报 | https://www.jefferies.com/insights/ |
+| Deutsche Bank Research | 投行研报 | https://www.dbresearch.com |
+| ARK Invest Research | 主题投资 | https://www.ark-invest.com/big-ideas |
+| McKinsey Insights | 咨询 | https://www.mckinsey.com/featured-insights |
+| BCG Insights | 咨询 | https://www.bcg.com/publications |
+| Bain Insights | 咨询 | https://www.bain.com/insights/ |
+| **QuestMobile** | 国内数据 | https://www.questmobile.com.cn |
+| **艾瑞 iResearch** | 国内研究 | https://www.iresearch.com.cn |
+| **CIC 灼识** | 行业咨询 | https://www.cir.com.cn |
+| **亿欧智库** | 行业研究 | https://www.iyiou.com/research |
+
+---
+
+## 🎁 Bonus：聚合工具（一站监听以上 130+ 信源）
+
+| 工具 | 作用 | URL |
+|---|---|---|
+| **Inoreader** | RSS 聚合（X/Substack/RSS 统一收） | https://www.inoreader.com |
+| **Feedly AI** | AI 主题订阅 | https://feedly.com |
+| **RSS.app** | LinkedIn page / X 账号 → RSS | https://rss.app |
+| **WeWe RSS** | 微信公众号 → RSS | https://github.com/cooderl/wewe-rss |
+
+---
+
+## ✅ 落地建议
+
+1. **领英按必要性分两档**：A 档（必看）= Pony.ai / NVIDIA / OpenAI / Anthropic / Tesla / Waymo / Figure；B 档（备查）= 其余 23 个。
+2. **播客增量重点**：dcapapp 没收的 No Priors / Latent Space / BG2 Pod / 张小珺商业访谈录 / 晚点聊 这 5 个，对快手生服商业化最相关。
+3. **Substack 必订**：Stratechery / Platformer / SemiAnalysis / Lenny's Newsletter — 英文圈最权威的科技战略 + 增长 + 半导体 + 产品分析。
+
+---
+
+> 数据生成 by Spectra @ 2026-05-31 · 用于 strategy666/insight-platform 信源补充
+---
