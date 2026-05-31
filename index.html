@@ -216,7 +216,7 @@
                 <div class="dual-col-head">
                     <h3>📁 飞书内部文档 <span class="dual-cnt" id="dualCntFs">0</span></h3>
                 </div>
-                <div class="dual-col-tip">📊 本地索引 <b>334</b> 篇飞书文档（全部带真实 URL）· 数据只从字节对外汇总表 SSO 拉取，不跳外部站点</div>
+                <div class="dual-col-tip">📊 本地索引 <b>517</b> 篇飞书文档（来自你飞书空间·每周可重扫更新）</div>
                 <div class="dual-col-body" id="dualBodyFs"></div>
             </div>
         </div>
@@ -270,11 +270,11 @@
 <section class="hero hero-sub">
     <div class="container">
         <h1>📁 飞书文档检索</h1>
-        <p class="hero-subtitle">本地索引 <b id="fsTotalCount">—</b> 篇飞书文档（含真实 URL <b id="fsUrlCount">—</b> 篇） · 完全独立于公开渠道</p>
+        <p class="hero-subtitle">本地索引 <b id="fsTotalCount">—</b> 篇飞书文档（含真实 URL <b id="fsUrlCount">—</b> 篇） · 来自你飞书空间 my.feishu.cn 的定期扫描</p>
 
         <div class="ai-search-container">
             <div class="search-input-wrapper feishu-search-wrapper">
-                <input type="text" id="feishuPageInput" placeholder="🔍 在 334 篇飞书文档中检索（支持标题 / 主体 / 维度 / 内容关键词）" autocomplete="off" onkeyup="if(event.key==='Enter')runFeishuPageSearch(this.value)" oninput="onFeishuPageInput(this.value)" />
+                <input type="text" id="feishuPageInput" placeholder="🔍 在 517 篇飞书文档中检索（来自你飞书空间的真实索引）" autocomplete="off" onkeyup="if(event.key==='Enter')runFeishuPageSearch(this.value)" oninput="onFeishuPageInput(this.value)" />
                 <button class="search-btn" onclick="runFeishuPageSearch(document.getElementById('feishuPageInput').value)">检索</button>
             </div>
             <div class="suggested-questions">
@@ -644,7 +644,7 @@ function _genAISummary(q, fsHits, compHits, feishuOnly) {
             <p>未找到与「<b>${q}</b>」相关的内部资料或公开动态。建议：</p>
             <ul>
                 <li>尝试更宽泛的关键词（如改"巨量引擎深度转化"为"巨量引擎"）</li>
-                <li>点击顶部 <a href="#feishu" onclick="switchTab('feishu');return false;"><b>📁 飞书文档</b></a> tab 去本地全库检索（334 篇·全部带真实链接）</li>
+                <li>点击顶部 <a href="#feishu" onclick="switchTab('feishu');return false;"><b>📁 飞书文档</b></a> tab 去本地全库检索（517 篇·来自你飞书空间）</li>
             </ul>
         </div>`;
     }
@@ -899,8 +899,8 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260531d"></script>
-<script src="assets/feishu-search.js?v=20260531d"></script>
+<script src="assets/main.js?v=20260531e"></script>
+<script src="assets/feishu-search.js?v=20260531e"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){
