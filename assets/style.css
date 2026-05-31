@@ -5221,3 +5221,97 @@ button.nxny-external-btn {
     .hero-search-wrap { min-width: 0; width: 100%; }
     .hero-search-hints { font-size: 11px; }
 }
+
+/* ============ 信号雷达 · Signals Radar (Podcasts/Tweets/Deals) ============ */
+#signalsRadar { margin-top: 32px; }
+.signals-tabs {
+    display: flex; gap: 6px; margin: 18px 0 14px; flex-wrap: wrap;
+    border-bottom: 1px solid var(--border, #e5e7eb);
+}
+.signal-tab {
+    background: transparent; border: 0; border-bottom: 2px solid transparent;
+    padding: 8px 14px; cursor: pointer; font-size: 14px; font-weight: 500;
+    color: #6b7280; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px;
+}
+.signal-tab:hover { color: #111827; }
+.signal-tab.active {
+    color: #2563eb; border-bottom-color: #2563eb; font-weight: 600;
+}
+.signal-count {
+    background: #f3f4f6; color: #4b5563; font-size: 11px;
+    padding: 1px 7px; border-radius: 10px; min-width: 18px; text-align: center;
+}
+.signal-tab.active .signal-count { background: #dbeafe; color: #1d4ed8; }
+.signals-content { min-height: 200px; }
+.signal-pane { display: none; }
+.signal-pane.active { display: block; }
+
+/* 通用条目卡 */
+.signal-row {
+    display: block; padding: 14px 0;
+    border-bottom: 1px solid #f3f4f6;
+    transition: background .15s;
+}
+.signal-row:hover { background: #f9fafb; padding-left: 8px; padding-right: 8px; margin: 0 -8px; }
+.signal-row:last-child { border-bottom: 0; }
+.signal-row-head {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+.signal-date { color: #6b7280; font-size: 12px; font-variant-numeric: tabular-nums; min-width: 78px; }
+.signal-pri {
+    font-size: 10px; padding: 1px 6px; border-radius: 3px; font-weight: 600;
+}
+.signal-pri.high { background: #fee2e2; color: #b91c1c; }
+.signal-pri.mid  { background: #fef3c7; color: #b45309; }
+.signal-pri.low  { background: #e5e7eb; color: #4b5563; }
+.signal-cat {
+    font-size: 11px; color: #6b7280; background: #f3f4f6;
+    padding: 1px 6px; border-radius: 3px;
+}
+.signal-title { font-size: 15px; font-weight: 600; color: #111827; line-height: 1.4; }
+.signal-title a { color: inherit; text-decoration: none; }
+.signal-title a:hover { color: #2563eb; }
+.signal-meta { font-size: 12px; color: #6b7280; margin: 4px 0; }
+.signal-meta a { color: #2563eb; text-decoration: none; }
+.signal-points { margin: 6px 0 0; padding: 0; list-style: none; }
+.signal-points li {
+    font-size: 13px; color: #374151; line-height: 1.65;
+    padding-left: 14px; position: relative;
+}
+.signal-points li::before {
+    content: "·"; position: absolute; left: 4px; color: #9ca3af;
+}
+.signal-sowhat {
+    margin-top: 7px; padding: 8px 10px; border-radius: 4px;
+    background: #eff6ff; border-left: 3px solid #2563eb;
+    font-size: 12.5px; color: #1e3a8a; line-height: 1.55;
+}
+.signal-sowhat strong { color: #1e40af; }
+.signal-tags { margin-top: 6px; }
+.signal-tag {
+    display: inline-block; font-size: 11px; color: #6b7280;
+    background: #f9fafb; border: 1px solid #f3f4f6;
+    padding: 1px 6px; border-radius: 3px; margin-right: 4px;
+}
+
+/* 推特特有 */
+.tweet-content { font-size: 14px; color: #111827; line-height: 1.6; margin: 4px 0; }
+.tweet-author { font-weight: 600; color: #111827; font-size: 13px; }
+.tweet-handle { color: #6b7280; font-size: 12px; margin-left: 4px; }
+.tweet-stats { color: #9ca3af; font-size: 12px; margin-top: 4px; }
+.tweet-stats span { margin-right: 12px; }
+
+/* 融资交易特有 */
+.deal-amount {
+    font-size: 16px; font-weight: 700; color: #059669;
+    font-variant-numeric: tabular-nums;
+}
+.deal-round {
+    background: #d1fae5; color: #065f46; font-size: 11px;
+    padding: 1px 6px; border-radius: 3px; font-weight: 600;
+}
+.deal-valuation { font-size: 12px; color: #6b7280; }
+.deal-investors { font-size: 12px; color: #4b5563; margin: 4px 0; }
+.deal-investors strong { color: #111827; }

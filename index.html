@@ -9,7 +9,7 @@
     <title>商业化洞察周报 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究 / 战分助手" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260601d" />
+    <link rel="stylesheet" href="assets/style.css?v=20260601e" />
 </head>
 <body>
 
@@ -142,6 +142,28 @@
 
         <!-- 列表流（dcap 单行风格） -->
         <div class="insights-flow" id="insightsGrid"></div>
+    </div>
+</section>
+
+<!-- ===================== 📡 信号雷达：播客 · 推特 · 融资交易 ===================== -->
+<section id="signalsRadar" class="section section-tight">
+    <div class="container">
+        <div class="section-header-mini" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <h2>📡 信号雷达</h2>
+            <span class="section-sub-mini">播客 · 推特 · 融资交易 — 周更（参考 weekly.dcapapp.com）</span>
+            <span style="flex:1"></span>
+            <span class="section-sub-mini" id="signalsMeta">—</span>
+        </div>
+        <div class="signals-tabs">
+            <button class="signal-tab active" data-signal-tab="podcasts">🎙️ 播客 <span class="signal-count" id="cntPodcasts">0</span></button>
+            <button class="signal-tab" data-signal-tab="tweets">🐦 推特 <span class="signal-count" id="cntTweets">0</span></button>
+            <button class="signal-tab" data-signal-tab="deals">💰 融资交易 <span class="signal-count" id="cntDeals">0</span></button>
+        </div>
+        <div class="signals-content">
+            <div class="signal-pane active" id="signalPane-podcasts"></div>
+            <div class="signal-pane" id="signalPane-tweets"></div>
+            <div class="signal-pane" id="signalPane-deals"></div>
+        </div>
     </div>
 </section>
 
@@ -1473,7 +1495,7 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260601d"></script>
+<script src="assets/main.js?v=20260601e"></script>
 <script src="assets/feishu-search.js?v=20260601d"></script>
 <script src="assets/ai-chat.js?v=20260601d"></script>
 <script src="assets/industry-research.js?v=20260601d"></script>

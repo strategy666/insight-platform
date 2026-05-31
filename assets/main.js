@@ -1035,3 +1035,119 @@ if (typeof window !== 'undefined') {
     window.closeAIAnswer = closeAIAnswer;
     window.showChangeLog = showChangeLog;
 }
+
+// ==================== 📡 信号雷达：播客 · 推特 · 融资交易 ====================
+async function loadSignalsRadar() {
+    try {
+        const r = await fetch('assets/data/signals_radar.json?v=' + Date.now());
+        if (!r.ok) throw new Error('signals_radar.json fetch failed');
+        const d = await r.json();
+        window.__signals = d;
+        renderSignalPane('podcasts', d.podcasts || []);
+        renderSignalPane('tweets', d.tweets || []);
+        renderSignalPane('deals', d.deals || []);
+        const cP = document.getElementById('cntPodcasts'); if (cP) cP.textContent = (d.podcasts||[]).length;
+        const cT = document.getElementById('cntTweets'); if (cT) cT.textContent = (d.tweets||[]).length;
+        const cD = document.getElementById('cntDeals'); if (cD) cD.textContent = (d.deals||[]).length;
+        const meta = document.getElementById('signalsMeta');
+        if (meta && d._meta) meta.textContent = `更新于 ${d._meta.last_updated} · 共 ${(d.podcasts||[]).length + (d.tweets||[]).length + (d.deals||[]).length} 条信号`;
+    } catch (e) {
+        console.error('[signals] load failed', e);
+        ['podcasts','tweets','deals'].forEach(t => {
+            const el = document.getElementById('signalPane-' + t);
+            if (el) el.innerHTML = '<div style="padding:20px;color:#9ca3af;text-align:center;">加载失败：' + e.message + '</div>';
+        });
+    }
+}
+
+function priChip(p) {
+    const map = { high: '🔴 高', mid: '🟡 中', low: '⚪ 低' };
+    return `<span class="signal-pri ${p||'low'}">${map[p]||'低'}</span>`;
+}
+
+function renderSignalPane(type, items) {
+    const el = document.getElementById('signalPane-' + type);
+    if (!el) return;
+    if (!items.length) { el.innerHTML = '<div style="padding:20px;color:#9ca3af;text-align:center;">暂无内容</div>'; return; }
+
+    const html = items.map(it => {
+        const tags = (it.tags||[]).map(t => `<span class="signal-tag">${t}</span>`).join('');
+        const sw = it.sowhat ? `<div class="signal-sowhat"><strong>So What ·</strong> ${it.sowhat}</div>` : '';
+
+        if (type === 'podcasts') {
+            const pts = (it.key_points||[]).map(p => `<li>${p}</li>`).join('');
+            const guests = (it.guests||[]).join(' · ');
+            return `<div class="signal-row">
+                <div class="signal-row-head">
+                    <span class="signal-date">${it.date}</span>
+                    ${priChip(it.priority)}
+                    <span class="signal-cat">${it.category||''}</span>
+                    <span class="signal-cat">${it.platform||''}</span>
+                    ${it.duration ? `<span class="signal-cat">⏱ ${it.duration}</span>` : ''}
+                </div>
+                <div class="signal-title"><a href="${it.url}" target="_blank" rel="noopener">${it.title} ↗</a></div>
+                <div class="signal-meta">🎙️ ${it.show} · 主持 ${it.host}${guests ? ' · 嘉宾 ' + guests : ''}</div>
+                ${pts ? `<ul class="signal-points">${pts}</ul>` : ''}
+                ${sw}
+                <div class="signal-tags">${tags}</div>
+            </div>`;
+        }
+
+        if (type === 'tweets') {
+            return `<div class="signal-row">
+                <div class="signal-row-head">
+                    <span class="signal-date">${it.date}</span>
+                    ${priChip(it.priority)}
+                    <span class="signal-cat">${it.category||''}</span>
+                </div>
+                <div><span class="tweet-author">${it.handle||it.author}</span><span class="tweet-handle">${it.author}</span></div>
+                <div class="tweet-content">${it.content}</div>
+                <div class="tweet-stats">
+                    <span>❤️ ${(it.likes||0).toLocaleString()}</span>
+                    <span>🔁 ${(it.retweets||0).toLocaleString()}</span>
+                    <span><a href="${it.url}" target="_blank" rel="noopener">在 X 查看 ↗</a></span>
+                </div>
+                ${sw}
+                <div class="signal-tags">${tags}</div>
+            </div>`;
+        }
+
+        if (type === 'deals') {
+            const leads = (it.lead_investors||[]).join(' · ');
+            const others = (it.other_investors||[]).join(' · ');
+            return `<div class="signal-row">
+                <div class="signal-row-head">
+                    <span class="signal-date">${it.date}</span>
+                    ${priChip(it.priority)}
+                    <span class="signal-cat">${it.category||''}</span>
+                    <span class="deal-round">${it.round||''}</span>
+                </div>
+                <div class="signal-title"><a href="${it.url}" target="_blank" rel="noopener">${it.company} ↗</a> <span class="deal-amount">${it.amount||''}</span> <span class="deal-valuation">估值 ${it.valuation||'—'}</span></div>
+                <div class="deal-investors">领投：<strong>${leads||'—'}</strong>${others ? ` · 跟投：${others}` : ''}</div>
+                ${sw}
+                <div class="signal-tags">${tags}</div>
+            </div>`;
+        }
+        return '';
+    }).join('');
+    el.innerHTML = html;
+}
+
+// 信号雷达 tab 切换
+document.addEventListener('click', function(e) {
+    const t = e.target.closest('.signal-tab');
+    if (!t) return;
+    const name = t.dataset.signalTab;
+    document.querySelectorAll('.signal-tab').forEach(x => x.classList.toggle('active', x === t));
+    document.querySelectorAll('.signal-pane').forEach(p => p.classList.toggle('active', p.id === 'signalPane-' + name));
+});
+
+// 启动加载
+if (typeof window !== 'undefined') {
+    window.loadSignalsRadar = loadSignalsRadar;
+    if (document.readyState !== 'loading') {
+        setTimeout(loadSignalsRadar, 100);
+    } else {
+        document.addEventListener('DOMContentLoaded', () => setTimeout(loadSignalsRadar, 100));
+    }
+}
