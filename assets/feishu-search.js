@@ -202,8 +202,7 @@
         return panel;
     }
 
-    // 替换原占位 searchCompetitor
-    window.searchCompetitor = function(q){ window.feishuSearch.searchCompetitor(q); };
+    // 注：Part2 searchCompetitor 已在 index.html 内接管为「双源检索」，本 skill 不再覆盖
 
     // 增强 askAI：除了原本的 AI 回答，再叠加飞书面板
     var origAskAI = null;
@@ -238,7 +237,7 @@
             });
         }
         bind(input1, window.feishuSearch.searchInsight);
-        bind(input2, window.feishuSearch.searchCompetitor);
+        // Part2 input 由 index.html 内 onCompSearchInput 接管，不再绑定旧 Kim Doc 联想
     }
     document.addEventListener('DOMContentLoaded', bindLiveSearch);
     setTimeout(bindLiveSearch, 1000);

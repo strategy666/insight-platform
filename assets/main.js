@@ -43,6 +43,7 @@ async function loadData() {
         
         intelData = intelJson.items || [];
         competitorData = compJson.items || [];
+        window.competitorData = competitorData;  // 暴露给 inline scripts (index.html 内的双源检索)
         
         // 更新最后更新时间
         document.getElementById('lastUpdate').textContent = 

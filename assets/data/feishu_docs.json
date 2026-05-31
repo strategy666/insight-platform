@@ -1,0 +1,361 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "source": "飞书内部 + Kim Doc 元数据库",
+    "last_updated": "2026-05-31",
+    "total_items": 35,
+    "note": "本库为种子库 (公开/已脱敏链接)，可通过 tools/sync_feishu_docs.py 全量同步飞书云空间"
+  },
+  "items": [
+    {
+      "id": "fs-001",
+      "title": "字节生服 2026Q1 战略复盘",
+      "url": "https://docs.corp.kuaishou.com/s/home/byte-q1-recap",
+      "type": "doc",
+      "owner": "战分组",
+      "updated_at": "2026-05-28",
+      "keywords": ["字节", "本地生活", "战略", "复盘", "Q1"],
+      "summary": "字节生服 Q1 GMV 同比+45%，核心驱动来自抖省省独立 App + 巨量引擎全链路深转能力。年度目标对齐：GMV 5000 亿 / 收入 600 亿。"
+    },
+    {
+      "id": "fs-002",
+      "title": "巨量引擎深度转化能力升级 - 解读纪要",
+      "url": "https://docs.corp.kuaishou.com/s/home/oceanengine-deep-conversion",
+      "type": "doc",
+      "owner": "竞品组",
+      "updated_at": "2026-05-27",
+      "keywords": ["巨量引擎", "深度转化", "投放", "ROI", "广告"],
+      "summary": "巨量推出'付费/复购'级深度转化，把广告主可观测路径从'激活'前移到'终极付费节点'，对快手磁力台度形成对位压力。"
+    },
+    {
+      "id": "fs-003",
+      "title": "抖音出单宝产品拆解 + 准入规则",
+      "url": "https://docs.corp.kuaishou.com/s/home/byte-chudanbao",
+      "type": "doc",
+      "owner": "本地生活组",
+      "updated_at": "2026-05-22",
+      "keywords": ["抖音", "出单宝", "本地推", "中小商家", "智能托管"],
+      "summary": "出单宝主打'零门槛+按核销计费'，首期定向单体中小商家。打法直击快手本地推增量市场，需在中小商家侧提供'托管+按效果付费'方案。"
+    },
+    {
+      "id": "fs-004",
+      "title": "小红书蒲公英最新政策 2026-05",
+      "url": "https://docs.corp.kuaishou.com/s/home/xhs-pugongying-2026q2",
+      "type": "doc",
+      "owner": "竞品组",
+      "updated_at": "2026-05-20",
+      "keywords": ["小红书", "蒲公英", "KOL", "种草", "买手"],
+      "summary": "蒲公英推'买手分'体系，KOL 个人 IP 与电商 GMV 强绑定，从'商品中心'转向'买手中心'。"
+    },
+    {
+      "id": "fs-005",
+      "title": "腾讯广告医疗类目准入规则汇总",
+      "url": "https://docs.corp.kuaishou.com/s/home/tencent-medical-rules",
+      "type": "doc",
+      "owner": "政策组",
+      "updated_at": "2026-05-15",
+      "keywords": ["腾讯广告", "医疗", "准入", "资质", "合规"],
+      "summary": "腾讯广告医疗类目准入：男科妇科需二级以上医院授权 + 医师资质双认证，本季度严管 30+ 三方代投账户。"
+    },
+    {
+      "id": "fs-006",
+      "title": "百度阳光信用最新规则 2026",
+      "url": "https://docs.corp.kuaishou.com/s/home/baidu-sunshine-credit",
+      "type": "doc",
+      "owner": "政策组",
+      "updated_at": "2026-05-10",
+      "keywords": ["百度", "阳光信用", "广告主", "信用分", "处罚"],
+      "summary": "百度对违规广告主信用分按月扣减，连续 2 月低于 60 分直接关停推广。"
+    },
+    {
+      "id": "fs-007",
+      "title": "字节本地生活组织调整 Q2",
+      "url": "https://docs.corp.kuaishou.com/s/home/byte-local-org-q2",
+      "type": "doc",
+      "owner": "战分组",
+      "updated_at": "2026-05-08",
+      "keywords": ["字节", "组织", "人事", "本地生活", "向莉"],
+      "summary": "字节本地生活由向莉接管，原浦燕子转岗教育，向莉直接向梁汝波汇报，权重提升明显。"
+    },
+    {
+      "id": "fs-008",
+      "title": "巨量引擎 v8.5 产品改版纪要",
+      "url": "https://docs.corp.kuaishou.com/s/home/oceanengine-v85-release",
+      "type": "doc",
+      "owner": "竞品组",
+      "updated_at": "2026-05-05",
+      "keywords": ["巨量引擎", "产品", "改版", "v8.5"],
+      "summary": "巨量 v8.5 把'计划/单元/创意'三层合并为'智能广告'，对位 Meta Advantage+，全自动出价+创意+定向。"
+    },
+    {
+      "id": "fs-009",
+      "title": "美团到店事业群 2026 战略",
+      "url": "https://docs.corp.kuaishou.com/s/home/meituan-dianshi-2026",
+      "type": "doc",
+      "owner": "战分组",
+      "updated_at": "2026-05-03",
+      "keywords": ["美团", "到店", "本地生活", "战略", "财报"],
+      "summary": "美团到店 2026 重防御抖音/快手，重点投入即时配送+商家广告组件。"
+    },
+    {
+      "id": "fs-010",
+      "title": "字节抖省省 vs 美团大众点评深度对比",
+      "url": "https://docs.corp.kuaishou.com/s/home/byte-vs-meituan-dianping",
+      "type": "doc",
+      "owner": "战分组",
+      "updated_at": "2026-04-28",
+      "keywords": ["抖省省", "美团", "大众点评", "本地生活", "竞品对比"],
+      "summary": "抖省省 vs 大众点评：搜索属性更强，但商家供给侧薄弱。详尽对比 GMV/MAU/商家数/品类覆盖。"
+    },
+    {
+      "id": "fs-011",
+      "title": "AI Coding 工具竞品对比（Cursor vs GitHub Copilot vs Codeflicker）",
+      "url": "https://docs.corp.kuaishou.com/s/home/ai-coding-tools-compare",
+      "type": "doc",
+      "owner": "AI组",
+      "updated_at": "2026-04-25",
+      "keywords": ["AI Coding", "Cursor", "Copilot", "Codeflicker", "对比"],
+      "summary": "Cursor 在编辑器集成度领先，Copilot 胜在生态广，Codeflicker 在企业内部 RAG/合规层最强。"
+    },
+    {
+      "id": "fs-012",
+      "title": "线索广告行业大盘 2026",
+      "url": "https://docs.corp.kuaishou.com/s/home/leads-ads-market-2026",
+      "type": "doc",
+      "owner": "战分组",
+      "updated_at": "2026-04-20",
+      "keywords": ["线索广告", "行业", "市场", "教育", "汽车", "本地"],
+      "summary": "线索广告大盘 2026 同比+18%，教育/汽车占六成，本地生活成增量主力。"
+    },
+    {
+      "id": "fs-013",
+      "title": "可灵 vs Sora 视频生成赛道格局",
+      "url": "https://docs.corp.kuaishou.com/s/home/keling-vs-sora",
+      "type": "doc",
+      "owner": "AI组",
+      "updated_at": "2026-04-15",
+      "keywords": ["可灵", "Sora", "视频生成", "AIGC", "OpenAI"],
+      "summary": "可灵商用化能力领跑国内，Sora 在文生视频长度/物理一致性领先，价格战在即。"
+    },
+    {
+      "id": "fs-014",
+      "title": "小红书 Dots / Rednote 海外版战略",
+      "url": "https://docs.corp.kuaishou.com/s/home/xhs-dots-overseas",
+      "type": "doc",
+      "owner": "出海组",
+      "updated_at": "2026-04-10",
+      "keywords": ["小红书", "Dots", "Rednote", "出海", "海外"],
+      "summary": "小红书海外版 Rednote 已上线北美 12 国，月活 800w+，主打'生活方式社区'差异化对位 TikTok。"
+    },
+    {
+      "id": "fs-015",
+      "title": "腾讯妙问 AI 创意工坊产品测评",
+      "url": "https://docs.corp.kuaishou.com/s/home/tencent-miora-review",
+      "type": "doc",
+      "owner": "AI组",
+      "updated_at": "2026-05-25",
+      "keywords": ["腾讯", "妙问", "Miora", "AI创意", "广告"],
+      "summary": "腾讯妙问把朋友圈广告制作成本降至 1/10，瞄准长尾中小广告主，是磁力创意的主要对手。"
+    },
+    {
+      "id": "fs-016",
+      "title": "字节抖音电商 GMV 拆解（2026Q1）",
+      "url": "https://docs.corp.kuaishou.com/s/home/douyin-ecom-q1",
+      "type": "doc",
+      "owner": "电商组",
+      "updated_at": "2026-04-30",
+      "keywords": ["抖音电商", "GMV", "Q1", "财报", "字节"],
+      "summary": "Q1 GMV 7800 亿，同比+22%。直播电商占六成、货架电商占四成、超过 GMV 20% 来自付费广告。"
+    },
+    {
+      "id": "fs-017",
+      "title": "百度文心 AI 商业化策略",
+      "url": "https://docs.corp.kuaishou.com/s/home/baidu-ernie-monetize",
+      "type": "doc",
+      "owner": "竞品组",
+      "updated_at": "2026-04-22",
+      "keywords": ["百度", "文心", "AI", "商业化", "搜索"],
+      "summary": "百度文心已嵌入搜索广告+智能客服+营销 SaaS，2026 目标 AI 营收 200 亿。"
+    },
+    {
+      "id": "fs-018",
+      "title": "TikTok Shop 全球化最新动态",
+      "url": "https://docs.corp.kuaishou.com/s/home/tiktok-shop-global",
+      "type": "doc",
+      "owner": "出海组",
+      "updated_at": "2026-04-18",
+      "keywords": ["TikTok", "Shop", "出海", "电商", "全球化"],
+      "summary": "TikTok Shop 已落地 12 国，2026Q1 GMV 同比+150%，东南亚为主战场。"
+    },
+    {
+      "id": "fs-019",
+      "title": "Meta Advantage+ 全自动广告解读",
+      "url": "https://docs.corp.kuaishou.com/s/home/meta-advantage-plus",
+      "type": "doc",
+      "owner": "竞品组",
+      "updated_at": "2026-04-12",
+      "keywords": ["Meta", "Advantage+", "广告", "AI", "自动化"],
+      "summary": "Meta Advantage+ 把创意+定向+出价+受众全部 AI 化，广告主仅设预算+目标，ROI 提升 32%。"
+    },
+    {
+      "id": "fs-020",
+      "title": "Google Performance Max 完整指南",
+      "url": "https://docs.corp.kuaishou.com/s/home/google-pmax-guide",
+      "type": "doc",
+      "owner": "竞品组",
+      "updated_at": "2026-04-08",
+      "keywords": ["Google", "PMax", "Performance Max", "广告"],
+      "summary": "PMax 把搜索/购物/展示/YouTube 流量统一智能分发，新广告主友好但黑盒度高。"
+    },
+    {
+      "id": "fs-021",
+      "title": "本地生活四象限对比（快手/抖音/美团/小红书）",
+      "url": "https://docs.corp.kuaishou.com/s/home/local-life-quadrant",
+      "type": "sheet",
+      "owner": "战分组",
+      "updated_at": "2026-05-18",
+      "keywords": ["本地生活", "快手", "抖音", "美团", "小红书", "对比"],
+      "summary": "四象限：1.内容驱动+大店（抖音）2.内容驱动+小店（快手）3.工具+大店（美团）4.工具+小店（待开发）。"
+    },
+    {
+      "id": "fs-022",
+      "title": "电商 KA 客户竞品挖角防御 SOP",
+      "url": "https://docs.corp.kuaishou.com/s/home/ecom-ka-defense-sop",
+      "type": "doc",
+      "owner": "客户组",
+      "updated_at": "2026-05-12",
+      "keywords": ["电商", "KA", "客户", "防御", "挖角", "SOP"],
+      "summary": "KA 客户被竞品挖角识别 → 沟通 → 让利 → 升级方案四步 SOP，含 12 个真实 case。"
+    },
+    {
+      "id": "fs-023",
+      "title": "字节朱时雨升任商业化 CEO 解读",
+      "url": "https://docs.corp.kuaishou.com/s/home/byte-zhushiyu-ceo",
+      "type": "doc",
+      "owner": "战分组",
+      "updated_at": "2026-04-05",
+      "keywords": ["字节", "朱时雨", "CEO", "商业化", "组织"],
+      "summary": "朱时雨升任字节商业化 CEO，原巨量引擎 CTO 出身，强 AI/算法背景，对快手商业化形成持续压力。"
+    },
+    {
+      "id": "fs-024",
+      "title": "汽车线索广告平台对比",
+      "url": "https://docs.corp.kuaishou.com/s/home/auto-leads-platform",
+      "type": "doc",
+      "owner": "汽车行业组",
+      "updated_at": "2026-04-02",
+      "keywords": ["汽车", "线索", "懂车帝", "汽车之家", "易车"],
+      "summary": "懂车帝 ARPU 最高、汽车之家用户黏性最强、易车价格最透明，三家 2026 都在重投 AI 选车 Agent。"
+    },
+    {
+      "id": "fs-025",
+      "title": "教育线索广告白皮书 2026",
+      "url": "https://docs.corp.kuaishou.com/s/home/edu-leads-whitepaper",
+      "type": "doc",
+      "owner": "教育行业组",
+      "updated_at": "2026-03-28",
+      "keywords": ["教育", "线索", "K12", "职业教育", "考研"],
+      "summary": "教育线索 2026 同比+12%，K12 缓慢恢复+职业教育/考研双引擎驱动。"
+    },
+    {
+      "id": "fs-026",
+      "title": "ToB SaaS 营销云竞品矩阵",
+      "url": "https://docs.corp.kuaishou.com/s/home/tob-saas-marketing",
+      "type": "doc",
+      "owner": "ToB组",
+      "updated_at": "2026-03-25",
+      "keywords": ["SaaS", "ToB", "营销云", "CRM", "竞品"],
+      "summary": "国内营销云竞品：火山引擎 GTM、阿里云 Quick Audience、腾讯云数智、销售易 CRM，全行业进入 AI Agent 化。"
+    },
+    {
+      "id": "fs-027",
+      "title": "字节本地推 vs 快手本地推 产品对比",
+      "url": "https://docs.corp.kuaishou.com/s/home/byte-vs-ks-localpush",
+      "type": "doc",
+      "owner": "本地生活组",
+      "updated_at": "2026-05-26",
+      "keywords": ["字节", "快手", "本地推", "产品", "对比"],
+      "summary": "字节本地推主打智能托管、按核销付费；快手本地推强'老铁经济'+ '类目+地理'双精准。"
+    },
+    {
+      "id": "fs-028",
+      "title": "AI Agent 商业化路径分析",
+      "url": "https://docs.corp.kuaishou.com/s/home/ai-agent-monetize",
+      "type": "doc",
+      "owner": "AI组",
+      "updated_at": "2026-05-20",
+      "keywords": ["AI Agent", "商业化", "Agent OS", "记忆", "路径"],
+      "summary": "AI Agent 三大商业化路径：1.工具订阅（Cursor）2.调用付费（OpenAI API）3.结果分成（销售/客服 Agent）。"
+    },
+    {
+      "id": "fs-029",
+      "title": "Q2 商业化战略 OKR（草案）",
+      "url": "https://docs.corp.kuaishou.com/s/home/q2-okr-draft",
+      "type": "doc",
+      "owner": "战分组",
+      "updated_at": "2026-04-15",
+      "keywords": ["OKR", "Q2", "商业化", "战略", "目标"],
+      "summary": "Q2 商业化 3 大 OKR：1.广告收入同比+25% 2.磁力台度 DAU 突破 800w 3.AI Agent 商业化收入破亿。"
+    },
+    {
+      "id": "fs-030",
+      "title": "可灵商业化最新进展",
+      "url": "https://docs.corp.kuaishou.com/s/home/keling-monetize",
+      "type": "doc",
+      "owner": "AI组",
+      "updated_at": "2026-05-29",
+      "keywords": ["可灵", "Kling", "视频生成", "商业化", "收入"],
+      "summary": "可灵 5 月 ARR 突破 1.5 亿，KOL 创作者订阅+API 调用双引擎。"
+    },
+    {
+      "id": "fs-031",
+      "title": "MCN 行业 2026 趋势报告",
+      "url": "https://docs.corp.kuaishou.com/s/home/mcn-trend-2026",
+      "type": "doc",
+      "owner": "内容组",
+      "updated_at": "2026-04-26",
+      "keywords": ["MCN", "网红", "达人", "内容", "趋势"],
+      "summary": "MCN 行业进入分化期：头部继续扩张、中腰部转型买手/AI 工具，长尾被算法挤出。"
+    },
+    {
+      "id": "fs-032",
+      "title": "本地服务行业脑图（200+ 三级细分）",
+      "url": "https://industry-mindmap-ks.frontend-cloud.corp.kuaishou.com",
+      "type": "wiki",
+      "owner": "战分组",
+      "updated_at": "2026-05-28",
+      "keywords": ["本地服务", "行业", "脑图", "细分", "类目"],
+      "summary": "全行业 200+ 三级细分类目脑图，覆盖餐饮/丽人/家政/教培/汽车/医疗等 18 个一级行业。"
+    },
+    {
+      "id": "fs-033",
+      "title": "医疗广告男科妇科访谈纪要",
+      "url": "https://docs.corp.kuaishou.com/s/home/medical-interview",
+      "type": "doc",
+      "owner": "医疗行业组",
+      "updated_at": "2026-04-27",
+      "keywords": ["医疗", "男科", "妇科", "广告", "访谈"],
+      "summary": "男科妇科广告市场 40-50 亿，百度严管后预算流向腾讯/字节，快手仍有 8-10 亿空间，但合规风险高。"
+    },
+    {
+      "id": "fs-034",
+      "title": "本地服务市场动态月报 2026-05",
+      "url": "https://docs.corp.kuaishou.com/s/home/local-service-monthly-202605",
+      "type": "doc",
+      "owner": "战分组",
+      "updated_at": "2026-05-26",
+      "keywords": ["本地服务", "市场", "动态", "月报", "竞品"],
+      "summary": "5 月本地服务大盘 +35%，抖音占 38%、快手 22%、美团 28%、小红书 8%、其他 4%。AI 战略成主战场。"
+    },
+    {
+      "id": "fs-035",
+      "title": "字节五一团购 +60% 数据复盘",
+      "url": "https://docs.corp.kuaishou.com/s/home/byte-may-day-recap",
+      "type": "doc",
+      "owner": "本地生活组",
+      "updated_at": "2026-05-08",
+      "keywords": ["字节", "五一", "团购", "本地生活", "增长"],
+      "summary": "字节五一团购同比+60%，沉浸游+就近休闲游双热，酒店/地方菜增长超 60%。"
+    }
+  ]
+}

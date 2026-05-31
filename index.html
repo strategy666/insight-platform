@@ -176,17 +176,45 @@
         <h1>🎯 竞对追踪</h1>
         <p class="hero-subtitle">字节 / 小红书 / 百度 / 腾讯 — 产品动态 · 准入政策 · 营销策略（细颗粒度）</p>
 
-        <!-- 竞对追踪检索框（与市场洞察隔离） -->
-        <div class="ai-search-container">
+        <!-- 双源统一检索：公开动态 + 飞书文档 -->
+        <div class="ai-search-container compsearch-v2">
             <div class="search-input-wrapper">
-                <input type="text" id="competitorSearchInput" placeholder="🔍 搜索竞对动态 / 飞书内部资料..." autocomplete="off" onkeypress="if(event.key==='Enter')searchCompetitor(this.value)" />
+                <input type="text" id="competitorSearchInput" placeholder="🔍 搜竞对动态 + 飞书内部文档（如：字节出单宝 / 巨量引擎深转）" autocomplete="off" onkeyup="if(event.key==='Enter')searchCompetitor(this.value)" oninput="onCompSearchInput(this.value)" />
+                <label class="comp-feishu-only" title="只看飞书对外文档">
+                    <input type="checkbox" id="feishuOnlyToggle" onchange="searchCompetitor(document.getElementById('competitorSearchInput').value)" />
+                    <span>📁 仅飞书</span>
+                </label>
                 <button class="search-btn" onclick="searchCompetitor(document.getElementById('competitorSearchInput').value)">搜索</button>
             </div>
             <div class="suggested-questions">
-                <button class="suggest-q" onclick="searchCompetitor('巨量引擎本月有哪些产品更新')">巨量引擎产品更新</button>
-                <button class="suggest-q" onclick="searchCompetitor('小红书蒲公英最新政策')">小红书蒲公英政策</button>
-                <button class="suggest-q" onclick="searchCompetitor('腾讯广告医疗类目准入')">腾讯广告医疗准入</button>
-                <button class="suggest-q" onclick="searchCompetitor('百度阳光信用最新规则')">百度阳光信用规则</button>
+                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='巨量引擎深度转化';searchCompetitor('巨量引擎深度转化')">巨量引擎深度转化</button>
+                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='抖音出单宝';searchCompetitor('抖音出单宝')">抖音出单宝</button>
+                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='小红书买手分';searchCompetitor('小红书买手分')">小红书买手分</button>
+                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='腾讯医疗准入';searchCompetitor('腾讯医疗准入')">腾讯医疗准入</button>
+                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='可灵商业化';searchCompetitor('可灵商业化')">可灵商业化</button>
+            </div>
+            <div class="compsearch-stats" id="compSearchStats" style="display:none;"></div>
+        </div>
+    </div>
+</section>
+
+<!-- 检索结果面板 -->
+<section id="compSearchResult" class="section" style="display:none;">
+    <div class="container">
+        <div id="compSearchSummary" class="ai-summary-block"></div>
+        <div class="dual-result-grid">
+            <div class="dual-result-col" id="dualColCompetitors">
+                <div class="dual-col-head">
+                    <h3>🟠 公开竞对动态 <span class="dual-cnt" id="dualCntComp">0</span></h3>
+                </div>
+                <div class="dual-col-body" id="dualBodyComp"></div>
+            </div>
+            <div class="dual-result-col" id="dualColFeishu">
+                <div class="dual-col-head">
+                    <h3>📁 飞书对外文档 <span class="dual-cnt" id="dualCntFs">0</span></h3>
+                    <a href="https://feishusearch.frontend-cloud.corp.kuaishou.com" target="_blank" rel="noopener" class="dual-col-deep-link">去飞书全库 ↗</a>
+                </div>
+                <div class="dual-col-body" id="dualBodyFs"></div>
             </div>
         </div>
     </div>
@@ -376,11 +404,190 @@
     });
 })();
 
-// ==== 占位函数（main.js 里没有 ）====
-window.searchCompetitor = window.searchCompetitor || function(q){
-    if(!q || !q.trim()) return;
-    alert('竞对追踪检索（接入飞书 skill 中）：\n\n' + q + '\n\n下一轮将打通飞书文档对话式查询。');
+// ==== Part2 双源检索：公开竞对动态 + 飞书对外文档 + AI 摘要 ====
+let _feishuDocs = null;
+async function loadFeishuDocs() {
+    if (_feishuDocs) return _feishuDocs;
+    try {
+        const r = await fetch('assets/data/feishu_docs.json');
+        const j = await r.json();
+        _feishuDocs = j.items || [];
+    } catch(e) {
+        console.error('飞书文档加载失败', e);
+        _feishuDocs = [];
+    }
+    return _feishuDocs;
+}
+
+// 模糊匹配打分：标题 5 / 关键词 3 / 摘要 1
+function _scoreMatch(item, q, fields) {
+    const ql = q.toLowerCase();
+    let score = 0;
+    fields.forEach(([f, w]) => {
+        const v = item[f];
+        if (!v) return;
+        const s = (Array.isArray(v) ? v.join(' ') : String(v)).toLowerCase();
+        if (s.includes(ql)) score += w;
+    });
+    return score;
+}
+function _highlightHtml(text, q) {
+    if (!text || !q) return text || '';
+    const safe = String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+    return safe.replace(re, '<mark>$1</mark>');
+}
+
+window.onCompSearchInput = function(v) {
+    // 简单防抖：300ms 触发；按 Enter 仍立即触发
+    clearTimeout(window._csTimer);
+    if (!v || !v.trim()) {
+        document.getElementById('compSearchResult').style.display = 'none';
+        document.getElementById('compSearchStats').style.display = 'none';
+        return;
+    }
+    window._csTimer = setTimeout(() => window.searchCompetitor(v), 350);
 };
+
+window.searchCompetitor = async function(q) {
+    q = (q || '').trim();
+    if (!q) return;
+    const feishuOnly = document.getElementById('feishuOnlyToggle').checked;
+    
+    // 1. 加载飞书库
+    const fsAll = await loadFeishuDocs();
+    
+    // 2. 飞书命中
+    const fsHits = fsAll
+        .map(it => ({ ...it, _score: _scoreMatch(it, q, [['title', 5], ['keywords', 3], ['summary', 1], ['owner', 2]]) }))
+        .filter(it => it._score > 0)
+        .sort((a, b) => b._score - a._score)
+        .slice(0, 10);
+    
+    // 3. 公开竞对动态命中（feishuOnly 模式下跳过）
+    let compHits = [];
+    if (!feishuOnly) {
+        const compData = (typeof window.competitorData !== 'undefined' && window.competitorData) ? window.competitorData : (typeof competitorData !== 'undefined' ? competitorData : []);
+        compHits = compData
+            .map(it => ({ ...it, _score: _scoreMatch(it, q, [['title', 5], ['sowhat', 2], ['company', 4], ['dimension', 2], ['category', 2]]) }))
+            .filter(it => it._score > 0)
+            .sort((a, b) => b._score - a._score)
+            .slice(0, 10);
+    }
+    
+    // 4. AI 总结
+    const summary = _genAISummary(q, fsHits, compHits, feishuOnly);
+    document.getElementById('compSearchSummary').innerHTML = summary;
+    
+    // 5. 飞书列
+    document.getElementById('dualCntFs').textContent = fsHits.length;
+    document.getElementById('dualBodyFs').innerHTML = fsHits.length ? fsHits.map(it => `
+        <div class="dual-card fs-card">
+            <div class="dual-card-top">
+                <span class="fs-type-badge type-${it.type}">${it.type === 'doc' ? '📄' : it.type === 'sheet' ? '📊' : it.type === 'wiki' ? '📚' : '📁'} ${it.type.toUpperCase()}</span>
+                <span class="fs-owner">${it.owner || '-'}</span>
+                <span class="fs-date">${it.updated_at}</span>
+            </div>
+            <h4 class="dual-card-title">${_highlightHtml(it.title, q)}</h4>
+            <p class="dual-card-summary">${_highlightHtml(it.summary, q)}</p>
+            <div class="dual-card-foot">
+                <div class="fs-keywords">${(it.keywords || []).slice(0, 4).map(k => `<span class="kw-chip">${_highlightHtml(k, q)}</span>`).join('')}</div>
+                <a href="${it.url}" target="_blank" rel="noopener" class="fs-open-btn">打开文档 ↗</a>
+            </div>
+        </div>
+    `).join('') : '<div class="dual-empty">📁 未命中飞书文档，可点击右上角去飞书全库搜</div>';
+    
+    // 6. 公开动态列
+    document.getElementById('dualCntComp').textContent = feishuOnly ? '-' : compHits.length;
+    const compColEl = document.getElementById('dualColCompetitors');
+    if (feishuOnly) {
+        compColEl.style.display = 'none';
+        document.getElementById('dualColFeishu').classList.add('full-width');
+    } else {
+        compColEl.style.display = '';
+        document.getElementById('dualColFeishu').classList.remove('full-width');
+        document.getElementById('dualBodyComp').innerHTML = compHits.length ? compHits.map(it => `
+            <div class="dual-card comp-card-mini">
+                <div class="dual-card-top">
+                    <span class="comp-company-pill">${it.company}</span>
+                    <span class="comp-dim-pill">${it.dimension || it.category}</span>
+                    <span class="fs-date">${it.date}</span>
+                </div>
+                <h4 class="dual-card-title">${_highlightHtml(it.title, q)}</h4>
+                <p class="dual-card-summary">${_highlightHtml(it.sowhat, q)}</p>
+                <div class="dual-card-foot">
+                    <span class="comp-source-pill">${it.data_source || '三方'}</span>
+                    ${(it.sources || []).slice(0,2).map(s => `<a href="${s.url}" target="_blank" rel="noopener" class="fs-open-btn-mini">${s.name.slice(0, 20)} ↗</a>`).join('')}
+                </div>
+            </div>
+        `).join('') : '<div class="dual-empty">🟠 公开动态未命中</div>';
+    }
+    
+    // 7. 显示结果区
+    const stats = document.getElementById('compSearchStats');
+    stats.style.display = 'block';
+    stats.innerHTML = `<span class="hit-stat">命中 <b>${fsHits.length + compHits.length}</b> 条</span> · <span>飞书 ${fsHits.length} · 公开 ${feishuOnly ? '已屏蔽' : compHits.length}</span>`;
+    document.getElementById('compSearchResult').style.display = 'block';
+    
+    // 滚动到结果区
+    document.getElementById('compSearchResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
+// AI 摘要：基于命中项生成结构化总结
+function _genAISummary(q, fsHits, compHits, feishuOnly) {
+    const total = fsHits.length + (feishuOnly ? 0 : compHits.length);
+    if (total === 0) {
+        return `<div class="ai-summary-empty">
+            <h3>🤖 AI 摘要</h3>
+            <p>未找到与「<b>${q}</b>」相关的内部资料或公开动态。建议：</p>
+            <ul>
+                <li>尝试更宽泛的关键词（如改"巨量引擎深度转化"为"巨量引擎"）</li>
+                <li>点击右上角 <a href="https://feishusearch.frontend-cloud.corp.kuaishou.com" target="_blank">📁 飞书全库</a> 搜更多内部文档</li>
+            </ul>
+        </div>`;
+    }
+    
+    // 提取关键信息
+    const companies = new Set();
+    const dims = new Set();
+    const owners = new Set();
+    fsHits.forEach(it => { (it.keywords || []).forEach(k => { if (/字节|腾讯|百度|小红书|美团|阿里|抖音|快手|Meta|Google|TikTok|OpenAI/.test(k)) companies.add(k); }); owners.add(it.owner); });
+    compHits.forEach(it => { companies.add(it.company); dims.add(it.dimension || it.category); });
+    
+    const topFs = fsHits[0];
+    const topComp = compHits[0];
+    
+    return `<div class="ai-summary-card">
+        <div class="ai-summary-head">
+            <h3>🤖 AI 摘要 <span class="ai-summary-q">"${q}"</span></h3>
+            <span class="ai-summary-meta">基于 ${total} 条命中（飞书 ${fsHits.length} · 公开 ${feishuOnly ? '已屏蔽' : compHits.length}）</span>
+        </div>
+        <div class="ai-summary-body">
+            <div class="ai-summary-row">
+                <span class="ai-summary-label">🎯 涉及主体</span>
+                <span class="ai-summary-val">${Array.from(companies).slice(0, 6).join(' · ') || '无'}</span>
+            </div>
+            ${dims.size ? `<div class="ai-summary-row">
+                <span class="ai-summary-label">🧭 业务维度</span>
+                <span class="ai-summary-val">${Array.from(dims).slice(0, 5).join(' · ')}</span>
+            </div>` : ''}
+            <div class="ai-summary-row">
+                <span class="ai-summary-label">📁 内部资料</span>
+                <span class="ai-summary-val">${owners.size ? `已沉淀于 ${Array.from(owners).slice(0,3).filter(Boolean).join(' / ')}` : '本地未沉淀，建议去飞书全库'}</span>
+            </div>
+            ${topFs ? `<div class="ai-summary-highlight">
+                <b>📌 最相关飞书文档：</b>
+                <a href="${topFs.url}" target="_blank" rel="noopener">${topFs.title}</a>
+                <p>${topFs.summary}</p>
+            </div>` : ''}
+            ${topComp && !feishuOnly ? `<div class="ai-summary-highlight comp-highlight">
+                <b>📰 最相关公开动态：</b>
+                <span>${topComp.title}</span>
+                <p>${topComp.sowhat}</p>
+            </div>` : ''}
+        </div>
+    </div>`;
+}
 window.askAssistant = window.askAssistant || function(q){
     if(!q || !q.trim()) return;
     var box = document.getElementById('assistantAnswer');
@@ -468,8 +675,8 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js"></script>
-<script src="assets/feishu-search.js"></script>
+<script src="assets/main.js?v=20260531b"></script>
+<script src="assets/feishu-search.js?v=20260531b"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){
