@@ -187,11 +187,13 @@
                 <button class="search-btn" onclick="searchCompetitor(document.getElementById('competitorSearchInput').value)">搜索</button>
             </div>
             <div class="suggested-questions">
-                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='巨量引擎深度转化';searchCompetitor('巨量引擎深度转化')">巨量引擎深度转化</button>
-                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='抖音出单宝';searchCompetitor('抖音出单宝')">抖音出单宝</button>
-                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='小红书买手分';searchCompetitor('小红书买手分')">小红书买手分</button>
-                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='腾讯医疗准入';searchCompetitor('腾讯医疗准入')">腾讯医疗准入</button>
-                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='可灵商业化';searchCompetitor('可灵商业化')">可灵商业化</button>
+                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='区域服务商';searchCompetitor('区域服务商')">区域服务商</button>
+                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='抖音林客';searchCompetitor('抖音林客')">抖音林客</button>
+                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='激励政策';searchCompetitor('激励政策')">激励政策</button>
+                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='达人合作';searchCompetitor('达人合作')">达人合作</button>
+                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='巨量本地推';searchCompetitor('巨量本地推')">巨量本地推</button>
+                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='生意经';searchCompetitor('生意经')">生意经</button>
+                <button class="suggest-q" onclick="document.getElementById('competitorSearchInput').value='直播团购';searchCompetitor('直播团购')">直播团购</button>
             </div>
             <div class="compsearch-stats" id="compSearchStats" style="display:none;"></div>
         </div>
@@ -211,9 +213,10 @@
             </div>
             <div class="dual-result-col" id="dualColFeishu">
                 <div class="dual-col-head">
-                    <h3>📁 飞书对外文档 <span class="dual-cnt" id="dualCntFs">0</span></h3>
-                    <a href="https://feishusearch.frontend-cloud.corp.kuaishou.com" target="_blank" rel="noopener" class="dual-col-deep-link">去飞书全库 ↗</a>
+                    <h3>📁 飞书内部文档 <span class="dual-cnt" id="dualCntFs">0</span></h3>
+                    <a href="https://docs.corp.kuaishou.com/s/home/fcADdie-9DQzc0MB4sCeBJorF" target="_blank" rel="noopener" class="dual-col-deep-link" title="字节对外文档库（396 条）">去字节文档库 ↗</a>
                 </div>
+                <div class="dual-col-tip">📊 已索引 <b>379</b> 条字节对外文档（覆盖区域服务商 / 营销 / 广告 / 商家 / 达人等 12 类目）</div>
                 <div class="dual-col-body" id="dualBodyFs"></div>
             </div>
         </div>
@@ -459,10 +462,20 @@ window.searchCompetitor = async function(q) {
     
     // 2. 飞书命中
     const fsHits = fsAll
-        .map(it => ({ ...it, _score: _scoreMatch(it, q, [['title', 5], ['keywords', 3], ['summary', 1], ['owner', 2]]) }))
+        .map(it => ({ ...it, _score: _scoreMatch(it, q, [
+            ['title', 5],
+            ['keywords', 3],
+            ['competitors', 4],
+            ['dimensions', 3],
+            ['category', 3],
+            ['tags', 3],
+            ['source_sheet', 2],
+            ['summary', 1],
+            ['owner', 2]
+        ]) }))
         .filter(it => it._score > 0)
         .sort((a, b) => b._score - a._score)
-        .slice(0, 10);
+        .slice(0, 12);
     
     // 3. 公开竞对动态命中（feishuOnly 模式下跳过）
     let compHits = [];
@@ -481,21 +494,26 @@ window.searchCompetitor = async function(q) {
     
     // 5. 飞书列
     document.getElementById('dualCntFs').textContent = fsHits.length;
-    document.getElementById('dualBodyFs').innerHTML = fsHits.length ? fsHits.map(it => `
+    document.getElementById('dualBodyFs').innerHTML = fsHits.length ? fsHits.map(it => {
+        const openUrl = it.url || it.source_doc || 'https://docs.corp.kuaishou.com/s/home/fcADdie-9DQzc0MB4sCeBJorF';
+        const sheetTag = it.source_sheet || it.sheet || '';
+        const compTag = (it.competitors || [])[0] || '字节';
+        const typeIcon = it.type === 'doc' ? '📄' : it.type === 'sheet' ? '📊' : it.type === 'wiki' ? '📚' : '📁';
+        return `
         <div class="dual-card fs-card">
             <div class="dual-card-top">
-                <span class="fs-type-badge type-${it.type}">${it.type === 'doc' ? '📄' : it.type === 'sheet' ? '📊' : it.type === 'wiki' ? '📚' : '📁'} ${it.type.toUpperCase()}</span>
-                <span class="fs-owner">${it.owner || '-'}</span>
-                <span class="fs-date">${it.updated_at}</span>
+                <span class="fs-type-badge type-${it.type || 'doc'}">${typeIcon} ${compTag}</span>
+                <span class="fs-owner">${sheetTag}</span>
+                <span class="fs-date">${it.updated_at_raw || it.updated_at || ''}</span>
             </div>
             <h4 class="dual-card-title">${_highlightHtml(it.title, q)}</h4>
-            <p class="dual-card-summary">${_highlightHtml(it.summary, q)}</p>
+            <p class="dual-card-summary">${_highlightHtml(it.summary || (it.category||''), q)}</p>
             <div class="dual-card-foot">
-                <div class="fs-keywords">${(it.keywords || []).slice(0, 4).map(k => `<span class="kw-chip">${_highlightHtml(k, q)}</span>`).join('')}</div>
-                <a href="${it.url}" target="_blank" rel="noopener" class="fs-open-btn">打开文档 ↗</a>
+                <div class="fs-keywords">${(it.dimensions || it.keywords || []).slice(0, 4).map(k => `<span class="kw-chip">${_highlightHtml(k, q)}</span>`).join('')}</div>
+                <a href="${openUrl}" target="_blank" rel="noopener" class="fs-open-btn">查看源表 ↗</a>
             </div>
-        </div>
-    `).join('') : '<div class="dual-empty">📁 未命中飞书文档，可点击右上角去飞书全库搜</div>';
+        </div>`;
+    }).join('') : '<div class="dual-empty">📁 未命中飞书文档，可点击右上角去飞书全库搜</div>';
     
     // 6. 公开动态列
     document.getElementById('dualCntComp').textContent = feishuOnly ? '-' : compHits.length;
@@ -550,8 +568,12 @@ function _genAISummary(q, fsHits, compHits, feishuOnly) {
     // 提取关键信息
     const companies = new Set();
     const dims = new Set();
-    const owners = new Set();
-    fsHits.forEach(it => { (it.keywords || []).forEach(k => { if (/字节|腾讯|百度|小红书|美团|阿里|抖音|快手|Meta|Google|TikTok|OpenAI/.test(k)) companies.add(k); }); owners.add(it.owner); });
+    const sheets = new Set();
+    fsHits.forEach(it => {
+        (it.competitors || []).forEach(c => companies.add(c));
+        (it.dimensions || []).forEach(d => dims.add(d));
+        if (it.source_sheet || it.sheet) sheets.add(it.source_sheet || it.sheet);
+    });
     compHits.forEach(it => { companies.add(it.company); dims.add(it.dimension || it.category); });
     
     const topFs = fsHits[0];
@@ -573,12 +595,12 @@ function _genAISummary(q, fsHits, compHits, feishuOnly) {
             </div>` : ''}
             <div class="ai-summary-row">
                 <span class="ai-summary-label">📁 内部资料</span>
-                <span class="ai-summary-val">${owners.size ? `已沉淀于 ${Array.from(owners).slice(0,3).filter(Boolean).join(' / ')}` : '本地未沉淀，建议去飞书全库'}</span>
+                <span class="ai-summary-val">${sheets.size ? `分布于「${Array.from(sheets).slice(0,4).join(' / ')}」共 ${fsHits.length} 条` : '本地未沉淀'}</span>
             </div>
             ${topFs ? `<div class="ai-summary-highlight">
                 <b>📌 最相关飞书文档：</b>
-                <a href="${topFs.url}" target="_blank" rel="noopener">${topFs.title}</a>
-                <p>${topFs.summary}</p>
+                <a href="${topFs.url || topFs.source_doc || '#'}" target="_blank" rel="noopener">${topFs.title}</a>
+                <p>${topFs.summary || (topFs.source_sheet || '') + ' · ' + (topFs.updated_at_raw || topFs.updated_at || '')}</p>
             </div>` : ''}
             ${topComp && !feishuOnly ? `<div class="ai-summary-highlight comp-highlight">
                 <b>📰 最相关公开动态：</b>
@@ -675,8 +697,8 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260531b"></script>
-<script src="assets/feishu-search.js?v=20260531b"></script>
+<script src="assets/main.js?v=20260531c"></script>
+<script src="assets/feishu-search.js?v=20260531c"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){
