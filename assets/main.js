@@ -33,9 +33,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 // ==================== 数据加载 ====================
 async function loadData() {
     try {
+        const cb = '?t=' + Date.now();
         const [intelResp, compResp] = await Promise.all([
-            fetch('assets/data/intel.json'),
-            fetch('assets/data/competitor_updates.json')
+            fetch('assets/data/intel.json' + cb),
+            fetch('assets/data/competitor_updates.json' + cb)
         ]);
         
         const intelJson = await intelResp.json();
