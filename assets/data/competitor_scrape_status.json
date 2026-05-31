@@ -1,80 +1,156 @@
 {
   "_meta": {
-    "description": "多平台竞媒官方 Changelog 抓取状态总览（每周更新）",
-    "scraped_at": "2026-05-31T16:30:00",
+    "description": "多平台竞媒官方 Changelog 深度抓取实测状态（deep_scraper.py 跑批结果）",
+    "scraped_at": "2026-05-31T16:20:00",
     "today": "2026-05-31",
     "cutoff_window_days": 14,
     "cutoff_date": "2026-05-17",
-    "method": "fetch_web (puppeteer backend)",
-    "platform_count": 5,
-    "platforms_in_window": 1,
-    "platforms_out_of_window": 4,
-    "platforms_failed": 0
+    "method": "codeflicker reader proxy (puppeteer backend)",
+    "scraper_script": "agents/scrapers/deep_scraper.py",
+    "live_data_file": "assets/data/scrape_result_live.json"
   },
   "platforms": [
     {
       "name": "小红书聚光帮助中心",
       "url": "https://ad.xiaohongshu.com/next_help/docs/7b8f7784f499295fe7a950afe679a523",
       "type": "Vue SPA",
-      "scraper": "agents/scrapers/xhs_juguang.py",
-      "seed_docs": 27,
-      "visited": 7,
+      "seed_docs": 24,
+      "visited": 24,
+      "failed": 0,
       "in_window": 1,
+      "out_of_window_with_date": 4,
+      "no_date": 19,
       "latest_in_window": {
         "date": "2026-05-29",
-        "title": "物料审核规范根目录",
-        "days_ago": 2
+        "title": "物料审核规范根目录"
       },
-      "status": "🔥 HOT"
+      "status": "🔥 HOT - 1 篇命中 14 天窗口",
+      "recent_dated_docs": [
+        {
+          "date": "2026-05-29",
+          "title": "物料审核规范根目录",
+          "in_window": true
+        },
+        {
+          "date": "2026-04-30",
+          "title": "医疗行业规则",
+          "in_window": false
+        },
+        {
+          "date": "2025-12-30",
+          "title": "互联网行业规则",
+          "in_window": false
+        },
+        {
+          "date": "2025-12-30",
+          "title": "旅游酒店行业",
+          "in_window": false
+        },
+        {
+          "date": "2025-10-11",
+          "title": "跨境广告内容规范",
+          "in_window": false
+        },
+        {
+          "date": "2025-05-12",
+          "title": "食品行业规则",
+          "in_window": false
+        },
+        {
+          "date": "2024-09-24",
+          "title": "法律服务行业规则",
+          "in_window": false
+        },
+        {
+          "date": "2024-09-18",
+          "title": "游戏行业",
+          "in_window": false
+        }
+      ],
+      "no_date_doc_list": [
+        "生服根",
+        "母婴",
+        "宠物",
+        "房地产",
+        "金融",
+        "教育",
+        "时尚",
+        "家居百货",
+        "商务服务",
+        "户外",
+        "网络工具",
+        "游戏组件",
+        "通信",
+        "出版传媒",
+        "3C电器",
+        "汽车",
+        "美妆",
+        "内容审核总则(404)",
+        "情感咨询(404)"
+      ]
     },
     {
       "name": "巨量引擎 Changelog（开放平台）",
       "url": "https://open.oceanengine.com/changelog/1",
       "type": "Vue SPA",
+      "visited": 1,
       "latest_date": "2026-04-27",
       "days_ago": 34,
-      "latest_topic": "重要通知：旧版工作台组织账户维度（bp_id）入参 6 月中上旬停止支持；诊断建议接口新增诊断分析；视频素材标签接口新增暗水印标识",
+      "latest_topic": "重要通知：bp_id 入参 6月中上旬停止支持；诊断建议新增诊断分析；视频素材新增暗水印标识",
       "in_window": false,
-      "status": "🕐 NO_RECENT_UPDATE (近 34 天无更新)",
-      "history_count_2026": 7,
-      "history_dates_2026": ["2026-04-27", "2026-04-14", "2026-03-26", "2026-03-03", "2026-02-11", "2026-01-14", "2026-01-05"],
-      "so_what": "巨量引擎开放平台 Changelog 节奏约 1-2 次/月。下次更新窗口预计 5 月底~6 月初（与 bp_id 停止支持生效时间临近）。"
+      "status": "🕐 NO_RECENT_UPDATE",
+      "history_dates_count": 244,
+      "history_2026": [
+        "2026-04-27",
+        "2026-04-14",
+        "2026-03-26",
+        "2026-03-03",
+        "2026-02-11",
+        "2026-01-14",
+        "2026-01-05"
+      ],
+      "next_window_estimate": "2026-06 上旬（与 bp_id 停止支持生效时间临近）"
     },
     {
       "name": "美团广告平台 e.meituan.com",
       "url": "https://e.meituan.com/",
       "type": "SSR",
-      "status": "⏳ PENDING（待下次抓取，本周未触发）",
-      "in_window": null
+      "status": "⏳ PENDING - 下次跑批扩展",
+      "visited": 0
     },
     {
       "name": "腾讯广告 e.qq.com",
       "url": "https://e.qq.com/",
       "type": "SSR + dynamic",
       "status": "⏳ PENDING",
-      "in_window": null
+      "visited": 0
     },
     {
       "name": "小红书蒲公英 pugongying.com",
       "url": "https://www.pugongying.com/",
       "type": "Vue SPA",
       "status": "⏳ PENDING",
-      "in_window": null
+      "visited": 0
     }
   ],
   "summary": {
     "hot_findings": [
-      "🔥 [小红书聚光] 物料审核规范根目录 2026-05-29 整体更新，27 个行业子规则可能有结构性调整"
+      "🔥 [XHS聚光] 物料审核规范根目录 2026-05-29 整体刷新（24 行业子规则统一拉齐）→ comp-105",
+      "📌 [字节巨量] Changelog 2026-04-27 预告 bp_id 入参 6 月中上旬停止支持（46 接口） → comp-106"
     ],
     "warnings": [
-      "⚠️ 巨量引擎 Changelog 近 34 天未更新，需 6 月初再确认（bp_id 停止支持 6月中上旬生效，理论上会有最后一波兼容性 patch）",
-      "⚠️ 2 篇聚光 doc (8dc5bd9c/f3dc3b21) 返回 404，可能已被聚光下线",
-      "⚠️ 3 篇聚光 doc (生服根/母婴/食品) 完全无日期标记，无法判断是否近期更新，建议下周对比正文 diff"
+      "⚠️ 聚光 19 篇 doc 无任何日期标记（主要为生服根/母婴/宠物/房地产等高优行业），需用 body_snippet diff 做兜底",
+      "⚠️ 聚光 2 篇 doc (8dc5bd9c/f3dc3b21) HTTP 404，疑似已下线",
+      "⚠️ 巨量引擎 Changelog 已 34 天无更新，6 月初需重点确认（bp_id 上线临近）"
     ],
     "next_actions": [
-      "下次跑批：补全剩余 20 篇聚光行业子文档 fetch_web",
-      "新增爬虫：美团广告 e.meituan.com/page/notice、腾讯妙问、蒲公英",
-      "建立 body_snippet diff 对比机制（用于无日期 doc）"
-    ]
+      "下次跑批：扩展美团广告/腾讯妙问/蒲公英爬虫",
+      "建立 body_snippet diff 机制（针对无日期 doc）",
+      "聚光关键无日期 doc（生服/母婴/宠物）每周强制对比 body_snippet 变化"
+    ],
+    "total_in_window": 1,
+    "total_out_of_window": 4,
+    "total_no_date": 19,
+    "total_failed": 2
   }
 }
