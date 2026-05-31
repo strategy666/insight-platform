@@ -2,7 +2,7 @@
   "_meta": {
     "description": "Part2 竞对产品/政策/行业case更新 数据源 — 由 sub-agent: competitor-tracker 维护",
     "update_frequency": "weekly",
-    "last_updated": "2026-05-29",
+    "last_updated": "2026-05-31",
     "fields": [
       "id",
       "date",
@@ -27,7 +27,9 @@
     ],
     "total_items": 21,
     "updated": "2026-05-31",
-    "total": 39
+    "total": 40,
+    "scrape_method": "fetch_web (puppeteer) for SPA docs; see agents/scrapers/xhs_juguang.py",
+    "recent_window": "past 14d (cutoff 2026-05-17)"
   },
   "items": [
     {
@@ -1131,6 +1133,53 @@
       "dimension": "营销/分账",
       "data_source": "竞媒官方",
       "tier": "T1"
+    },
+    {
+      "id": "comp-105",
+      "date": "2026-05-29",
+      "company": "小红书",
+      "category": "政策更新",
+      "dimension": "准入/政策",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "title": "聚光《物料审核规范》总目录刷新，覆盖27个行业子规则",
+      "body": "小红书聚光帮助中心物料审核规范根页 2026-05-29 整体更新，统一收纳 27 个行业的投放细则（含生服/医疗/法律/母婴/食品/家居/旅游/教育/金融/3C/汽车/跨境等）。生服细则强化：外卖券需在笔记/图片/视频全程加'优惠券使用存在限制条件'警示语；高危体育项目需加'非专业人士请勿模仿'；宠物殡葬禁投；二手奢侈品需明示'三折以上'否则卡审。",
+      "sowhat": "聚光对生服垂类风险点（外卖券警示语、高危体育、二手奢侈品）做了更细颗粒度合规要求，意味着接下来 1-2 周生服广告主在小红书的素材送审通过率会显著下降；快手生服可借机以更宽松的审核口径吸纳被卡审客户，并在销售话术中突出'审核效率'相对优势。",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "聚光帮助中心-物料审核规范根目录",
+          "url": "https://ad.xiaohongshu.com/next_help/docs/7b8f7784f499295fe7a950afe679a523",
+          "date": "2026-05-29"
+        },
+        {
+          "name": "聚光帮助中心-生活服务行业规则",
+          "url": "https://ad.xiaohongshu.com/next_help/docs/1794f60d090022444946117a9e6d5a6a",
+          "date": "2026-05-29"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2024-09-19",
+          "event": "医疗行业投放规则首次发布（独立日期标记）"
+        },
+        {
+          "date": "2024-09-24",
+          "event": "法律服务行业投放规则发布"
+        },
+        {
+          "date": "2025-05-12",
+          "event": "家居百货行业投放规则更新（章节级独立日期）"
+        },
+        {
+          "date": "2025-12-30",
+          "event": "旅游酒店行业投放规则更新"
+        },
+        {
+          "date": "2026-05-29",
+          "event": "物料审核规范总目录整体刷新（含生服强化条款）"
+        }
+      ]
     }
   ]
 }

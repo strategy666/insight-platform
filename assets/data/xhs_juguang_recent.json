@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "description": "小红书聚光帮助中心深度抓取结果（每周更新）",
+    "scraped_at": "2026-05-31T16:10:00",
+    "today": "2026-05-31",
+    "cutoff_window_days": 14,
+    "cutoff_date": "2026-05-17",
+    "source_root": "https://ad.xiaohongshu.com/next_help/docs/7b8f7784f499295fe7a950afe679a523",
+    "method": "fetch_web (puppeteer backend)",
+    "scraper": "agents/scrapers/xhs_juguang.py",
+    "total_seed_docs": 27,
+    "total_docs_visited": 7,
+    "fetch_failed_hashes": [
+      "f3dc3b2109ee60b467484b3aec438268",
+      "8dc5bd9c45c9a90cb9912f3400d43f92"
+    ],
+    "no_date_docs": [
+      "1794f60d090022444946117a9e6d5a6a",
+      "6117bf512c8fe1cd9ef71d5d7bbe759f",
+      "6e794e2bc37536b6b9207ab9afe1f44c"
+    ],
+    "recent_updates_count": 1,
+    "todo_remaining": [
+      "487806c9", "e8260d19", "1437abc0", "264651226", "1c36a1c6",
+      "df173c9b", "e1e4c4a4", "1b4e9536", "c2e9ab95", "16756bdb",
+      "60bd8fa2", "de9d18da", "7d1caa7f", "6540352e", "fd856312",
+      "763a604c", "71c37fc5", "be8301ef"
+    ]
+  },
+  "recent_updates_14d": [
+    {
+      "hash": "7b8f7784f499295fe7a950afe679a523",
+      "title": "聚光《物料审核规范》总目录",
+      "update_date": "2026-05-29",
+      "days_ago": 2,
+      "url": "https://ad.xiaohongshu.com/next_help/docs/7b8f7784f499295fe7a950afe679a523",
+      "scope": "全行业广告主（覆盖 27 个细分行业规则）",
+      "why_hot": "总目录页面 2 天前刚更新，意味着底下 27 个行业子规则有结构性调整。需对生服/医疗/法律/母婴等核心行业 diff 旧版。",
+      "child_rules_covered": [
+        "美妆", "生活服务", "法律服务", "母婴用品", "医疗", "情感咨询",
+        "房地产", "金融", "教育", "食品", "时尚", "家居百货",
+        "商务服务", "户外运动", "网络工具", "游戏", "游戏组件",
+        "旅游酒店", "通信", "出版传媒", "3C电器", "汽车", "互联网",
+        "宠物生活", "跨境广告", "内容审核总则"
+      ]
+    }
+  ],
+  "history_docs_archived": [
+    {
+      "hash": "bc02f3b463fd7ee3d7c650b6f3768b29",
+      "title": "旅游酒店行业投放规则",
+      "update_date": "2025-12-30",
+      "days_ago": 152,
+      "in_window": false
+    },
+    {
+      "hash": "65dea622e108f4c68bd4bd2479aa5e8a",
+      "title": "法律服务行业投放规则",
+      "update_date": "2024-09-24",
+      "days_ago": 615,
+      "in_window": false,
+      "note": "页内含'近期动态调整中'提示，实际可能有未标注更新"
+    },
+    {
+      "hash": "9c44232f1fa7bbfaf32ac9970ab51430",
+      "title": "医疗行业投放规则",
+      "update_date": "2024-09-19",
+      "days_ago": 620,
+      "in_window": false
+    }
+  ],
+  "no_date_high_signal": [
+    {
+      "hash": "1794f60d090022444946117a9e6d5a6a",
+      "title": "生活服务行业规则&投放规则",
+      "note": "核心生服行业文档，无顶级日期但内容含外卖券警示语等具体规则；建议人工每周巡检",
+      "key_content_signals": [
+        "外卖券需在笔记/图片/视频全程加'优惠券使用存在限制条件'警示语",
+        "高危体育项目需加'非专业人士请勿模仿'警示语",
+        "宠物殡葬不支持投放",
+        "二手奢侈品需标明'三折以上'否则卡审"
+      ]
+    },
+    {
+      "hash": "6117bf512c8fe1cd9ef71d5d7bbe759f",
+      "title": "母婴行业规则",
+      "key_content_signals": [
+        "1/2段奶粉禁投",
+        "3段及以上奶粉不得明示/暗示可代替母乳",
+        "奶粉广告不得用医生形象",
+        "槟榔、蜡瓶糖、一二段奶粉等禁投"
+      ]
+    },
+    {
+      "hash": "6e794e2bc37536b6b9207ab9afe1f44c",
+      "title": "食品行业规则",
+      "subsection_dates": [
+        {"section": "家居百货行业投放规则", "date": "2025-05-12"}
+      ]
+    }
+  ]
+}

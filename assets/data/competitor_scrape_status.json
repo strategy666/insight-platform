@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "description": "多平台竞媒官方 Changelog 抓取状态总览（每周更新）",
+    "scraped_at": "2026-05-31T16:30:00",
+    "today": "2026-05-31",
+    "cutoff_window_days": 14,
+    "cutoff_date": "2026-05-17",
+    "method": "fetch_web (puppeteer backend)",
+    "platform_count": 5,
+    "platforms_in_window": 1,
+    "platforms_out_of_window": 4,
+    "platforms_failed": 0
+  },
+  "platforms": [
+    {
+      "name": "小红书聚光帮助中心",
+      "url": "https://ad.xiaohongshu.com/next_help/docs/7b8f7784f499295fe7a950afe679a523",
+      "type": "Vue SPA",
+      "scraper": "agents/scrapers/xhs_juguang.py",
+      "seed_docs": 27,
+      "visited": 7,
+      "in_window": 1,
+      "latest_in_window": {
+        "date": "2026-05-29",
+        "title": "物料审核规范根目录",
+        "days_ago": 2
+      },
+      "status": "🔥 HOT"
+    },
+    {
+      "name": "巨量引擎 Changelog（开放平台）",
+      "url": "https://open.oceanengine.com/changelog/1",
+      "type": "Vue SPA",
+      "latest_date": "2026-04-27",
+      "days_ago": 34,
+      "latest_topic": "重要通知：旧版工作台组织账户维度（bp_id）入参 6 月中上旬停止支持；诊断建议接口新增诊断分析；视频素材标签接口新增暗水印标识",
+      "in_window": false,
+      "status": "🕐 NO_RECENT_UPDATE (近 34 天无更新)",
+      "history_count_2026": 7,
+      "history_dates_2026": ["2026-04-27", "2026-04-14", "2026-03-26", "2026-03-03", "2026-02-11", "2026-01-14", "2026-01-05"],
+      "so_what": "巨量引擎开放平台 Changelog 节奏约 1-2 次/月。下次更新窗口预计 5 月底~6 月初（与 bp_id 停止支持生效时间临近）。"
+    },
+    {
+      "name": "美团广告平台 e.meituan.com",
+      "url": "https://e.meituan.com/",
+      "type": "SSR",
+      "status": "⏳ PENDING（待下次抓取，本周未触发）",
+      "in_window": null
+    },
+    {
+      "name": "腾讯广告 e.qq.com",
+      "url": "https://e.qq.com/",
+      "type": "SSR + dynamic",
+      "status": "⏳ PENDING",
+      "in_window": null
+    },
+    {
+      "name": "小红书蒲公英 pugongying.com",
+      "url": "https://www.pugongying.com/",
+      "type": "Vue SPA",
+      "status": "⏳ PENDING",
+      "in_window": null
+    }
+  ],
+  "summary": {
+    "hot_findings": [
+      "🔥 [小红书聚光] 物料审核规范根目录 2026-05-29 整体更新，27 个行业子规则可能有结构性调整"
+    ],
+    "warnings": [
+      "⚠️ 巨量引擎 Changelog 近 34 天未更新，需 6 月初再确认（bp_id 停止支持 6月中上旬生效，理论上会有最后一波兼容性 patch）",
+      "⚠️ 2 篇聚光 doc (8dc5bd9c/f3dc3b21) 返回 404，可能已被聚光下线",
+      "⚠️ 3 篇聚光 doc (生服根/母婴/食品) 完全无日期标记，无法判断是否近期更新，建议下周对比正文 diff"
+    ],
+    "next_actions": [
+      "下次跑批：补全剩余 20 篇聚光行业子文档 fetch_web",
+      "新增爬虫：美团广告 e.meituan.com/page/notice、腾讯妙问、蒲公英",
+      "建立 body_snippet diff 对比机制（用于无日期 doc）"
+    ]
+  }
+}
