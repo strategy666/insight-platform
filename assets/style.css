@@ -4204,6 +4204,45 @@ button.nxny-external-btn {
 }
 .news-row:hover .row-cta { color: #2a6f4f; }
 
+/* ---------- 一级类型 badge（新闻/播客/推特/交易） ---------- */
+.row-kind {
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-right: 4px;
+    letter-spacing: .2px;
+    flex-shrink: 0;
+}
+.row-kind-news  { background: #eaf3ff; color: #1a56db; }
+.row-kind-pod   { background: #fef3c7; color: #92400e; }
+.row-kind-tweet { background: #ecfdf5; color: #047857; }
+.row-kind-deal  { background: #f3e8ff; color: #7e22ce; }
+
+/* podcast/tweet/deal 行是 <a> 标签，保持与 .news-row 样式一致 */
+a.news-row-link {
+    text-decoration: none;
+    color: inherit;
+}
+a.news-row-link:hover .news-title { color: #2a6f4f; }
+
+/* 一级类型 filter pill 上的计数 badge */
+.filter-pill .kind-cnt {
+    display: inline-block;
+    margin-left: 4px;
+    background: rgba(0,0,0,.08);
+    color: #555;
+    border-radius: 8px;
+    padding: 0 6px;
+    font-size: 10px;
+    line-height: 1.6;
+    font-weight: 600;
+}
+.filter-pill.active .kind-cnt {
+    background: rgba(255,255,255,.25);
+    color: #fff;
+}
+
 /* ---------- Mobile ---------- */
 @media (max-width: 700px) {
     .hero-row { flex-direction: column; align-items: stretch; }

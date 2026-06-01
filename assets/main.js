@@ -1,7 +1,10 @@
 // ==================== 全局状态 ====================
 let intelData = [];
 let competitorData = [];
+let signalsData = { podcasts: [], tweets: [], deals: [] };
+let allFlowItems = []; // 统一后的 全部动态 池（news + podcast + tweet + deal）
 let currentFilters = {
+    kind: 'all',
     priority: 'all',
     signal: 'all',
     track: 'all',
@@ -17,6 +20,8 @@ let currentCompFilters = {
 // ==================== 初始化 ====================
 document.addEventListener('DOMContentLoaded', async () => {
     await loadData();
+    await loadSignalsRadar(); // 加载后合并进 allFlowItems
+    buildAllFlowItems();
     renderKeyInsights();
     renderAINews();
     initDynamicFilters();
@@ -97,32 +102,45 @@ function renderKeyInsights() {
     document.getElementById('keyInsights').innerHTML = html;
 }
 
-// ==================== 渲染情报列表流（dcap 单行风格 · 不再按日期分组）====================
+// ==================== 渲染情报列表流（合并后的全部动态 = news + podcast + tweet + deal）====================
 function renderInsightsGrid() {
     const filtered = filterInsights();
     const meta = document.getElementById('insightsFlowMeta');
     if (meta) meta.textContent = `共 ${filtered.length} 条 · 按时间倒序 · 点击查看详情`;
+
+    // 刷新一级类型计数（基于 未被 kind 筛选过滤的原始池，仅按其他维度）
+    updateKindCounts();
 
     if (filtered.length === 0) {
         document.getElementById('insightsGrid').innerHTML = '<p class="empty-state">暂无匹配情报，试试调整筛选</p>';
         return;
     }
 
-    // 直接平铺，每行自带日期
-    const html = filtered.map(item => {
+    const html = filtered.map(item => renderFlowRow(item)).join('');
+    document.getElementById('insightsGrid').innerHTML = html;
+}
+
+function renderFlowRow(item) {
+    const kind = item._kind || 'news';
+    const priCls = item.priority === 'high' ? 'pri-high' : (item.priority === 'mid' ? 'pri-mid' : 'pri-low');
+    const dt = new Date(item.date);
+    const shortDate = isNaN(dt.getTime()) ? item.date : `${dt.getMonth()+1}/${dt.getDate()}`;
+    const weekDay = ['日','一','二','三','四','五','六'][dt.getDay()] || '';
+    const kindBadge = ({
+        news: '<span class="row-kind row-kind-news">📰 新闻</span>',
+        podcast: '<span class="row-kind row-kind-pod">🎙️ 播客</span>',
+        tweet: '<span class="row-kind row-kind-tweet">🐦 推特</span>',
+        deal: '<span class="row-kind row-kind-deal">💰 交易</span>'
+    })[kind] || '';
+
+    if (kind === 'news') {
         const isAI = (item.tracks || []).some(t => /AI|AIGC/i.test(t));
-        const priCls = item.priority === 'high' ? 'pri-high' : (item.priority === 'mid' ? 'pri-mid' : 'pri-low');
         const sigBadge = item.signal === 'opportunity' ? '<span class="sig-pill sig-opp">机会</span>'
                       : item.signal === 'threat' ? '<span class="sig-pill sig-thr">威胁</span>'
                       : item.signal === 'trend' ? '<span class="sig-pill sig-trend">趋势</span>'
                       : '<span class="sig-pill sig-neu">中性</span>';
         const companyTags = (item.company || []).slice(0, 3).map(c => `<span class="row-tag tag-company">${c}</span>`).join('');
         const trackTags = (item.tracks || []).slice(0, 2).map(t => `<span class="row-tag tag-track">${t}</span>`).join('');
-        // 把日期格式化为 5/29 这种短日期 + 周几（参考 dcap 风格）
-        const dt = new Date(item.date);
-        const shortDate = isNaN(dt.getTime()) ? item.date : `${dt.getMonth()+1}/${dt.getDate()}`;
-        const weekDay = ['日','一','二','三','四','五','六'][dt.getDay()] || '';
-
         return `
         <div class="news-row ${priCls}" data-id="${item.id}" onclick="openIntelModal('${item.id}')">
             <div class="news-row-datecol">
@@ -131,6 +149,7 @@ function renderInsightsGrid() {
             </div>
             <div class="news-row-main">
                 <div class="news-row-headline">
+                    ${kindBadge}
                     ${item.priority === 'high' ? '<span class="row-dot dot-high" title="高优先级"></span>' : ''}
                     ${isAI ? '<span class="row-ai-badge">AI</span>' : ''}
                     <span class="news-title">${item.title}</span>
@@ -146,9 +165,70 @@ function renderInsightsGrid() {
                 <span class="row-cta">详情 ›</span>
             </div>
         </div>`;
-    }).join('');
+    }
 
-    document.getElementById('insightsGrid').innerHTML = html;
+    // podcast / tweet / deal — 点击跳转原链接
+    const raw = item._raw || {};
+    const tagsHtml = (item.tags || []).slice(0, 4).map(t => `<span class="row-tag tag-track">${(t||'').replace(/^#/, '')}</span>`).join('');
+    let extra = '';
+    if (kind === 'podcast') {
+        const guests = (raw.guests||[]).join(' · ');
+        extra = `<div class="news-row-meta"><span class="row-tag">🎙️ ${raw.show||''}</span>${raw.platform?`<span class="row-tag">${raw.platform}</span>`:''}${guests?`<span class="row-tag">嘉宾：${guests}</span>`:''}${raw.duration?`<span class="row-tag">⏱ ${raw.duration}</span>`:''}${tagsHtml}</div>`;
+    } else if (kind === 'tweet') {
+        extra = `<div class="news-row-meta"><span class="row-tag">❤️ ${(raw.likes||0).toLocaleString()}</span><span class="row-tag">🔁 ${(raw.retweets||0).toLocaleString()}</span><span class="row-tag">${raw.handle||raw.author||''}</span>${tagsHtml}</div>`;
+    } else if (kind === 'deal') {
+        const leads = (raw.lead_investors||[]).join(' · ');
+        extra = `<div class="news-row-meta"><span class="row-tag">领投：${leads||'—'}</span>${raw.valuation?`<span class="row-tag">估值 ${raw.valuation}</span>`:''}${tagsHtml}</div>`;
+    }
+
+    const url = item.url || (raw.url || '');
+    const hrefAttr = url ? `href="${url}" target="_blank" rel="noopener"` : 'href="javascript:void(0)"';
+    return `
+    <a class="news-row ${priCls} news-row-link" ${hrefAttr}>
+        <div class="news-row-datecol">
+            <div class="news-row-date">${shortDate}</div>
+            <div class="news-row-week">周${weekDay}</div>
+        </div>
+        <div class="news-row-main">
+            <div class="news-row-headline">
+                ${kindBadge}
+                ${item.priority === 'high' ? '<span class="row-dot dot-high" title="高优先级"></span>' : ''}
+                <span class="news-title">${item.title}</span>
+            </div>
+            <div class="news-row-tldr">${item.tldr}</div>
+            ${extra}
+            ${raw.sowhat ? `<div class="news-row-tldr" style="color:#476;font-style:italic"><strong>So What ·</strong> ${raw.sowhat}</div>` : ''}
+        </div>
+        <div class="news-row-aside">
+            <span class="row-cta">原文 ↗</span>
+        </div>
+    </a>`;
+}
+
+function updateKindCounts() {
+    // 计数仅根据 除 kind 之外的筛选状态
+    const fakeFilters = Object.assign({}, currentFilters, { kind: 'all' });
+    const base = (allFlowItems || []).filter(item => matchesFiltersExceptKind(item, fakeFilters));
+    const cnt = { news: 0, podcast: 0, tweet: 0, deal: 0 };
+    base.forEach(it => { if (cnt[it._kind] !== undefined) cnt[it._kind]++; });
+    const set = (id, n) => { const e = document.getElementById(id); if (e) e.textContent = n; };
+    set('kindCntNews', cnt.news);
+    set('kindCntPodcast', cnt.podcast);
+    set('kindCntTweet', cnt.tweet);
+    set('kindCntDeal', cnt.deal);
+}
+
+function matchesFiltersExceptKind(item, filters) {
+    if (filters.priority !== 'all' && item.priority !== filters.priority) return false;
+    if (filters.signal !== 'all' && item.signal !== filters.signal) return false;
+    if (filters.track !== 'all' && !(item.tracks||[]).includes(filters.track)) return false;
+    if (filters.company !== 'all' && !(item.company||[]).includes(filters.company)) return false;
+    if (filters.search) {
+        const k = filters.search.toLowerCase();
+        const txt = (item.title + ' ' + (item.tldr||'') + ' ' + (item.tags||[]).join(' ')).toLowerCase();
+        if (!txt.includes(k)) return false;
+    }
+    return true;
 }
 
 // 列表内实时搜索（仅隐藏/显示已渲染元素，不重新拉取）
@@ -253,9 +333,9 @@ function renderAINews() {
 
 // ==================== 动态初始化筛选器 chip ====================
 function initDynamicFilters() {
-    // 赛道 chip
+    // 赛道 chip【基于 全部动态池 获取】
     const tracks = new Set();
-    intelData.forEach(it => (it.tracks || []).forEach(t => tracks.add(t)));
+    (allFlowItems.length ? allFlowItems : intelData).forEach(it => (it.tracks || []).forEach(t => tracks.add(t)));
     const trackOrder = ['本地生活', '电商', 'AI', 'AIGC', '线索广告', '出海'];
     const sortedTracks = Array.from(tracks).sort((a, b) => {
         const ai = trackOrder.indexOf(a), bi = trackOrder.indexOf(b);
@@ -271,7 +351,7 @@ function initDynamicFilters() {
     }
     // 公司 chip【按出现频次排序，取 Top 10】
     const compCount = {};
-    intelData.forEach(it => (it.company || []).forEach(c => { compCount[c] = (compCount[c] || 0) + 1; }));
+    (allFlowItems.length ? allFlowItems : intelData).forEach(it => (it.company || []).forEach(c => { compCount[c] = (compCount[c] || 0) + 1; }));
     const topComps = Object.entries(compCount).sort((a, b) => b[1] - a[1]).slice(0, 10).map(x => x[0]);
     const compBox = document.getElementById('companyFilterBtns');
     if (compBox) {
@@ -285,7 +365,11 @@ function toggleFilters() {
     if (panel) panel.classList.toggle('filters-collapsed');
 }
 function resetFilters() {
-    currentFilters = { priority: 'all', signal: 'all', track: 'all', company: 'all', search: '' };
+    currentFilters = { kind: 'all', priority: 'all', signal: 'all', track: 'all', company: 'all', search: '' };
+    document.querySelectorAll('.filter-pill').forEach(b => {
+        if (b.dataset && b.dataset.value === 'all') b.classList.add('active');
+        else b.classList.remove('active');
+    });
     document.querySelectorAll('.filters-panel .chip').forEach(b => {
         b.classList.toggle('active', b.dataset.value === 'all');
     });
@@ -293,7 +377,7 @@ function resetFilters() {
     updateFilterCountBadge();
 }
 function updateFilterCountBadge() {
-    const cnt = ['priority', 'signal', 'track', 'company'].filter(k => currentFilters[k] !== 'all').length;
+    const cnt = ['kind', 'priority', 'signal', 'track', 'company'].filter(k => currentFilters[k] !== 'all').length;
     const badge = document.getElementById('filterCountBadge');
     if (badge) {
         if (cnt === 0) { badge.style.display = 'none'; }
@@ -305,37 +389,13 @@ window.resetFilters = resetFilters;
 
 // ==================== 筛选逻辑 ====================
 function filterInsights() {
-    return intelData.filter(item => {
-        // 优先级筛选
-        if (currentFilters.priority !== 'all' && item.priority !== currentFilters.priority) {
-            return false;
-        }
-        
-        // 信号筛选
-        if (currentFilters.signal !== 'all' && item.signal !== currentFilters.signal) {
-            return false;
-        }
-        
-        // 赛道筛选
-        if (currentFilters.track !== 'all' && !item.tracks.includes(currentFilters.track)) {
-            return false;
-        }
-        
-        // 公司筛选
-        if (currentFilters.company !== 'all' && !item.company.includes(currentFilters.company)) {
-            return false;
-        }
-        
-        // 关键词搜索
-        if (currentFilters.search) {
-            const searchLower = currentFilters.search.toLowerCase();
-            return item.title.toLowerCase().includes(searchLower) ||
-                   item.tldr.toLowerCase().includes(searchLower) ||
-                   item.tags.some(tag => tag.toLowerCase().includes(searchLower));
-        }
-        
+    const pool = (allFlowItems && allFlowItems.length) ? allFlowItems : (intelData || []).map(it => Object.assign({}, it, { _kind: 'news' }));
+    return pool.filter(item => {
+        // 一级：类型筛选 (kind)
+        if (currentFilters.kind !== 'all' && item._kind !== currentFilters.kind) return false;
+        if (!matchesFiltersExceptKind(item, currentFilters)) return false;
         return true;
-    }).sort((a, b) => new Date(b.date) - new Date(a.date));  // 时间倒序
+    }).sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
 // ==================== 初始化筛选器 ====================
@@ -1041,28 +1101,93 @@ if (typeof window !== 'undefined') {
     window.showChangeLog = showChangeLog;
 }
 
-// ==================== 📡 信号雷达：播客 · 推特 · 融资交易 ====================
+// ==================== 📡 信号雷达数据加载（合并进全部动态） ====================
 async function loadSignalsRadar() {
     try {
         const r = await fetch('assets/data/signals_radar.json?v=' + Date.now());
         if (!r.ok) throw new Error('signals_radar.json fetch failed');
         const d = await r.json();
         window.__signals = d;
-        renderSignalPane('podcasts', d.podcasts || []);
-        renderSignalPane('tweets', d.tweets || []);
-        renderSignalPane('deals', d.deals || []);
-        const cP = document.getElementById('cntPodcasts'); if (cP) cP.textContent = (d.podcasts||[]).length;
-        const cT = document.getElementById('cntTweets'); if (cT) cT.textContent = (d.tweets||[]).length;
-        const cD = document.getElementById('cntDeals'); if (cD) cD.textContent = (d.deals||[]).length;
-        const meta = document.getElementById('signalsMeta');
-        if (meta && d._meta) meta.textContent = `更新于 ${d._meta.last_updated} · 共 ${(d.podcasts||[]).length + (d.tweets||[]).length + (d.deals||[]).length} 条信号`;
+        signalsData = {
+            podcasts: d.podcasts || [],
+            tweets: d.tweets || [],
+            deals: d.deals || []
+        };
     } catch (e) {
         console.error('[signals] load failed', e);
-        ['podcasts','tweets','deals'].forEach(t => {
-            const el = document.getElementById('signalPane-' + t);
-            if (el) el.innerHTML = '<div style="padding:20px;color:#9ca3af;text-align:center;">加载失败：' + e.message + '</div>';
-        });
+        signalsData = { podcasts: [], tweets: [], deals: [] };
     }
+}
+
+// 将三类信号统一适配为 flow 列表项（与 intel 同构）
+function buildAllFlowItems() {
+    const news = (intelData || []).map(it => Object.assign({}, it, { _kind: 'news' }));
+    const podcasts = (signalsData.podcasts || []).map(p => ({
+        id: p.id,
+        _kind: 'podcast',
+        date: p.date,
+        title: p.title,
+        tldr: (p.key_points && p.key_points[0]) || (p.sowhat || '').slice(0, 120) || ((p.show||'') + (p.guests ? ' · 嘉宾：' + p.guests.join('/') : '')),
+        company: extractCompaniesFromTags(p.tags) ,
+        tracks: extractTracksFromTags(p.tags),
+        priority: p.priority || 'mid',
+        signal: 'neutral',
+        tags: p.tags || [],
+        url: p.url,
+        _raw: p
+    }));
+    const tweets = (signalsData.tweets || []).map(t => ({
+        id: t.id,
+        _kind: 'tweet',
+        date: t.date,
+        title: (t.handle || t.author || '推特') + '：' + (t.content || '').slice(0, 60) + ((t.content||'').length > 60 ? '…' : ''),
+        tldr: t.content || '',
+        company: extractCompaniesFromTags(t.tags),
+        tracks: extractTracksFromTags(t.tags),
+        priority: t.priority || 'mid',
+        signal: 'neutral',
+        tags: t.tags || [],
+        url: t.url,
+        _raw: t
+    }));
+    const deals = (signalsData.deals || []).map(d => ({
+        id: d.id,
+        _kind: 'deal',
+        date: d.date,
+        title: (d.company || '') + ' · ' + (d.round || '') + ' ' + (d.amount || ''),
+        tldr: '领投：' + ((d.lead_investors||[]).join(' · ') || '—') + (d.valuation ? ' · 估值 ' + d.valuation : ''),
+        company: d.company ? [d.company] : [],
+        tracks: extractTracksFromTags(d.tags),
+        priority: d.priority || 'mid',
+        signal: 'opportunity',
+        tags: d.tags || [],
+        url: d.url,
+        _raw: d
+    }));
+    allFlowItems = [].concat(news, podcasts, tweets, deals);
+    window.allFlowItems = allFlowItems;
+}
+
+// 从 tags 中提取常见公司名
+function extractCompaniesFromTags(tags) {
+    if (!tags) return [];
+    const known = ['快手','字节','抖音','腾讯','微信','达摩','黑马','老鸦','小红书','百度','美团','阿里','淘宝','拼多多','OpenAI','Google','Meta','Anthropic','TikTok','Snap','Snapchat','淘天','Apple','Amazon'];
+    const found = [];
+    tags.forEach(t => {
+        const tt = (t||'').replace(/^#/, '');
+        known.forEach(k => { if (tt.includes(k) && !found.includes(k)) found.push(k); });
+    });
+    return found.slice(0, 3);
+}
+function extractTracksFromTags(tags) {
+    if (!tags) return [];
+    const known = ['AI','AIGC','本地生活','本地服务','电商','线索广告','广告','出海','社交','直播','短视频','服务业','理人行业','医美','口腔','外卖','酒旅'];
+    const found = [];
+    tags.forEach(t => {
+        const tt = (t||'').replace(/^#/, '');
+        known.forEach(k => { if (tt.includes(k) && !found.includes(k)) found.push(k); });
+    });
+    return found.slice(0, 3);
 }
 
 function priChip(p) {
@@ -1070,89 +1195,10 @@ function priChip(p) {
     return `<span class="signal-pri ${p||'low'}">${map[p]||'低'}</span>`;
 }
 
-function renderSignalPane(type, items) {
-    const el = document.getElementById('signalPane-' + type);
-    if (!el) return;
-    if (!items.length) { el.innerHTML = '<div style="padding:20px;color:#9ca3af;text-align:center;">暂无内容</div>'; return; }
+// 信号雷达 已合并进 全部动态，不再独立渲染。以下函数保留供调试或外部调用。
+function renderSignalPane() { /* deprecated - merged into allFlowItems */ }
 
-    const html = items.map(it => {
-        const tags = (it.tags||[]).map(t => `<span class="signal-tag">${t}</span>`).join('');
-        const sw = it.sowhat ? `<div class="signal-sowhat"><strong>So What ·</strong> ${it.sowhat}</div>` : '';
-
-        if (type === 'podcasts') {
-            const pts = (it.key_points||[]).map(p => `<li>${p}</li>`).join('');
-            const guests = (it.guests||[]).join(' · ');
-            return `<div class="signal-row">
-                <div class="signal-row-head">
-                    <span class="signal-date">${it.date}</span>
-                    ${priChip(it.priority)}
-                    <span class="signal-cat">${it.category||''}</span>
-                    <span class="signal-cat">${it.platform||''}</span>
-                    ${it.duration ? `<span class="signal-cat">⏱ ${it.duration}</span>` : ''}
-                </div>
-                <div class="signal-title"><a href="${it.url}" target="_blank" rel="noopener">${it.title} ↗</a></div>
-                <div class="signal-meta">🎙️ ${it.show} · 主持 ${it.host}${guests ? ' · 嘉宾 ' + guests : ''}</div>
-                ${pts ? `<ul class="signal-points">${pts}</ul>` : ''}
-                ${sw}
-                <div class="signal-tags">${tags}</div>
-            </div>`;
-        }
-
-        if (type === 'tweets') {
-            return `<div class="signal-row">
-                <div class="signal-row-head">
-                    <span class="signal-date">${it.date}</span>
-                    ${priChip(it.priority)}
-                    <span class="signal-cat">${it.category||''}</span>
-                </div>
-                <div><span class="tweet-author">${it.handle||it.author}</span><span class="tweet-handle">${it.author}</span></div>
-                <div class="tweet-content">${it.content}</div>
-                <div class="tweet-stats">
-                    <span>❤️ ${(it.likes||0).toLocaleString()}</span>
-                    <span>🔁 ${(it.retweets||0).toLocaleString()}</span>
-                    <span><a href="${it.url}" target="_blank" rel="noopener">在 X 查看 ↗</a></span>
-                </div>
-                ${sw}
-                <div class="signal-tags">${tags}</div>
-            </div>`;
-        }
-
-        if (type === 'deals') {
-            const leads = (it.lead_investors||[]).join(' · ');
-            const others = (it.other_investors||[]).join(' · ');
-            return `<div class="signal-row">
-                <div class="signal-row-head">
-                    <span class="signal-date">${it.date}</span>
-                    ${priChip(it.priority)}
-                    <span class="signal-cat">${it.category||''}</span>
-                    <span class="deal-round">${it.round||''}</span>
-                </div>
-                <div class="signal-title"><a href="${it.url}" target="_blank" rel="noopener">${it.company} ↗</a> <span class="deal-amount">${it.amount||''}</span> <span class="deal-valuation">估值 ${it.valuation||'—'}</span></div>
-                <div class="deal-investors">领投：<strong>${leads||'—'}</strong>${others ? ` · 跟投：${others}` : ''}</div>
-                ${sw}
-                <div class="signal-tags">${tags}</div>
-            </div>`;
-        }
-        return '';
-    }).join('');
-    el.innerHTML = html;
-}
-
-// 信号雷达 tab 切换
-document.addEventListener('click', function(e) {
-    const t = e.target.closest('.signal-tab');
-    if (!t) return;
-    const name = t.dataset.signalTab;
-    document.querySelectorAll('.signal-tab').forEach(x => x.classList.toggle('active', x === t));
-    document.querySelectorAll('.signal-pane').forEach(p => p.classList.toggle('active', p.id === 'signalPane-' + name));
-});
-
-// 启动加载
+// 启动加载（信号雷达 已被合并进 DOMContentLoaded 主流程，不再独立启动）
 if (typeof window !== 'undefined') {
     window.loadSignalsRadar = loadSignalsRadar;
-    if (document.readyState !== 'loading') {
-        setTimeout(loadSignalsRadar, 100);
-    } else {
-        document.addEventListener('DOMContentLoaded', () => setTimeout(loadSignalsRadar, 100));
-    }
 }

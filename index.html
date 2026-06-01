@@ -9,7 +9,7 @@
     <title>商业化洞察周报 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究 / 战分助手" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260601e" />
+    <link rel="stylesheet" href="assets/style.css?v=20260601f" />
 </head>
 <body>
 
@@ -38,7 +38,7 @@
 <!-- ===================== TAB 1: 商业化洞察周报 ===================== -->
 <div class="tab-pane active" id="tab-insights">
 
-<!-- Hero（精简紧凑版，参考 weekly.dcapapp.com）-->
+<!-- Hero（精简紧凑版）-->
 <section class="hero hero-compact">
     <div class="container">
         <div class="hero-row">
@@ -95,7 +95,7 @@
     </div>
 </section>
 
-<!-- 商业化洞察周报 主体：全部情报 list 风（参考 weekly.dcapapp.com）-->
+<!-- 商业化洞察周报 主体：全部动态（合并：新闻 + 播客 + 推特 + 交易）-->
 <section id="insights" class="section section-tight">
     <div class="container">
         <div class="section-header-mini">
@@ -106,6 +106,13 @@
         <!-- 筛选栏（横向滚动 chip 串）-->
         <div class="filter-bar-row">
             <div class="filter-chips-inline" id="filterChipsInline">
+                <!-- 一级：类型（新闻/播客/推特/交易）-->
+                <button class="filter-pill active" data-type="kind" data-value="all">全部类型</button>
+                <button class="filter-pill" data-type="kind" data-value="news">📰 新闻 <span class="kind-cnt" id="kindCntNews">0</span></button>
+                <button class="filter-pill" data-type="kind" data-value="podcast">🎙️ 播客 <span class="kind-cnt" id="kindCntPodcast">0</span></button>
+                <button class="filter-pill" data-type="kind" data-value="tweet">🐦 推特 <span class="kind-cnt" id="kindCntTweet">0</span></button>
+                <button class="filter-pill" data-type="kind" data-value="deal">💰 交易 <span class="kind-cnt" id="kindCntDeal">0</span></button>
+                <span class="pill-sep">·</span>
                 <button class="filter-pill active" data-type="priority" data-value="all">全部优先级</button>
                 <button class="filter-pill" data-type="priority" data-value="high">🔴 高优</button>
                 <button class="filter-pill" data-type="priority" data-value="mid">🟡 中优</button>
@@ -142,28 +149,6 @@
 
         <!-- 列表流（dcap 单行风格） -->
         <div class="insights-flow" id="insightsGrid"></div>
-    </div>
-</section>
-
-<!-- ===================== 📡 信号雷达：播客 · 推特 · 融资交易 ===================== -->
-<section id="signalsRadar" class="section section-tight">
-    <div class="container">
-        <div class="section-header-mini" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-            <h2>📡 信号雷达</h2>
-            <span class="section-sub-mini">播客 · 推特 · 融资交易 — 周更（参考 weekly.dcapapp.com）</span>
-            <span style="flex:1"></span>
-            <span class="section-sub-mini" id="signalsMeta">—</span>
-        </div>
-        <div class="signals-tabs">
-            <button class="signal-tab active" data-signal-tab="podcasts">🎙️ 播客 <span class="signal-count" id="cntPodcasts">0</span></button>
-            <button class="signal-tab" data-signal-tab="tweets">🐦 推特 <span class="signal-count" id="cntTweets">0</span></button>
-            <button class="signal-tab" data-signal-tab="deals">💰 融资交易 <span class="signal-count" id="cntDeals">0</span></button>
-        </div>
-        <div class="signals-content">
-            <div class="signal-pane active" id="signalPane-podcasts"></div>
-            <div class="signal-pane" id="signalPane-tweets"></div>
-            <div class="signal-pane" id="signalPane-deals"></div>
-        </div>
     </div>
 </section>
 
@@ -1495,13 +1480,13 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260601e"></script>
-<script src="assets/feishu-search.js?v=20260601e"></script>
-<script src="assets/ai-chat.js?v=20260601e"></script>
-<script src="assets/industry-research.js?v=20260601e"></script>
-<script src="assets/onboarding.js?v=20260601e"></script>
-<script src="assets/chat-widget.js?v=20260601e"></script>
-<script src="assets/assistant-tab.js?v=20260601e"></script>
+<script src="assets/main.js?v=20260601f"></script>
+<script src="assets/feishu-search.js?v=20260601f"></script>
+<script src="assets/ai-chat.js?v=20260601f"></script>
+<script src="assets/industry-research.js?v=20260601f"></script>
+<script src="assets/onboarding.js?v=20260601f"></script>
+<script src="assets/chat-widget.js?v=20260601f"></script>
+<script src="assets/assistant-tab.js?v=20260601f"></script>
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===
 (function fillStats(){
