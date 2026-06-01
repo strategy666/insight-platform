@@ -5852,3 +5852,33 @@ a.news-row-link:hover .news-title { color: #2a6f4f; }
     .ai-research-input-row { flex-direction: column; }
     .ai-research-btn { width: 100%; }
 }
+
+/* ============ 双检索栏并排布局（Tab1 竞对追踪）============ */
+.dual-search-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    align-items: start;
+}
+.dual-search-col {
+    background: #fff; border: 1px solid #e5e7eb;
+    border-radius: 12px; padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.dual-search-head {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.dual-search-icon {
+    font-size: 28px; line-height: 1;
+}
+.dual-search-title {
+    font-size: 15px; font-weight: 700; color: #111827;
+}
+.dual-search-desc {
+    font-size: 12px; color: #6b7280; margin-top: 2px;
+}
+.dual-search-input {
+    margin-bottom: 0 !important;
+}
+/* 移动端：单列堆叠 */
+@media (max-width: 900px) {
+    .dual-search-row { grid-template-columns: 1fr; }
+}
