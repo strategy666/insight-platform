@@ -133,6 +133,14 @@ def audit(filepath: Path, label: str):
             it['_verification'] = 'broken'
             stats['broken'] += 1
 
+        # ===== 日期失真强制降级（由 audit_dates.py 此前打标）=====
+        # URL 结构合格但原文发布日期与 item.date 差距 >30 天 → 强制降级
+        if it.get('_date_mismatch'):
+            if it['_verification'] == 'verified':
+                stats['verified'] -= 1
+                stats['weak'] += 1
+            it['_verification'] = 'weak'
+
         # ===== 快手主体官方源强制规则 =====
         # 涉及快手的情报必须有 kuaishou.com 官方信源；否则降级为 weak（前端不展示）。
         if is_kuaishou_subject(it):

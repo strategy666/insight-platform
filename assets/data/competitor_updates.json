@@ -70,7 +70,8 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-603",
@@ -100,7 +101,9 @@
           "event": "3D商品展示+多场景适配升级"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2026-03-17"
     },
     {
       "id": "comp-610",
@@ -130,7 +133,9 @@
           "event": "通义千问接入阿里妈妈"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2018-11-10"
     },
     {
       "id": "comp-602",
@@ -154,7 +159,9 @@
       "dimension": "电商/交易",
       "data_source": "三方媒体",
       "tier": "T0",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2022-12-22"
     },
     {
       "id": "comp-609",
@@ -180,7 +187,8 @@
           "event": "淘天618招商规则发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-604",
@@ -210,7 +218,8 @@
           "event": "直播闪购频道上线"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-606",
@@ -236,7 +245,8 @@
           "event": "UD全域通升级跨平台一站式投放"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-605",
@@ -266,7 +276,9 @@
           "event": "AI广告收入占比突破15%"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-08-20"
     },
     {
       "id": "comp-607",
@@ -292,7 +304,9 @@
           "event": "仅退款政策收缩+商家申诉机制新增"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2024-07-26"
     },
     {
       "id": "comp-608",
@@ -322,7 +336,9 @@
           "event": "ROI出价模式新增"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-05-20"
     },
     {
       "id": "comp-201",
@@ -350,7 +366,9 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T0",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2024-08-12"
     },
     {
       "id": "comp-020",
@@ -374,7 +392,8 @@
           "event": "腾讯广告发布'妙问 AI 创意工坊'，朋友圈广告一键生成"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-202",
@@ -398,7 +417,9 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2022-05-07"
     },
     {
       "id": "comp-004",
@@ -436,7 +457,8 @@
       "dimension": "财报/行业case",
       "data_source": "三方媒体",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-203",
@@ -464,7 +486,8 @@
       "dimension": "行业打法",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-204",
@@ -488,7 +511,9 @@
       "dimension": "营销/分账",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-01-08"
     },
     {
       "id": "comp-205",
@@ -518,7 +543,8 @@
           "event": "一键批量开启Max功能"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-206",
@@ -544,7 +570,9 @@
           "event": "JDS投放新通路上线ADQ"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-09-29"
     },
     {
       "id": "comp-207",
@@ -570,7 +598,9 @@
           "event": "视频号助跑计划发布最新指南"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2024-09-02"
     },
     {
       "id": "comp-208",
@@ -600,7 +630,8 @@
           "event": "智能诊断功能全面升级"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-210",
@@ -630,7 +661,8 @@
           "event": "腾讯广告收入+20%同增"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-209",
@@ -660,7 +692,8 @@
           "event": "全站智投灰度测试启动"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-501",
@@ -693,7 +726,9 @@
       "dimension": "行业打法",
       "data_source": "三方媒体",
       "tier": "T0",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2018-09-20"
     },
     {
       "id": "comp-503",
@@ -720,7 +755,9 @@
           "event": "无人机航网规模化启动"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2018-09-20"
     },
     {
       "id": "comp-505",
@@ -746,7 +783,8 @@
           "event": "美团外卖食品安全管理制度集中发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-502",
@@ -770,7 +808,8 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T2",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-506",
@@ -828,7 +867,9 @@
           "event": "美团发布算法优化声明"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2018-09-20"
     },
     {
       "id": "comp-507",
@@ -859,7 +900,9 @@
           "event": "五一查询量环比春节+89%"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2018-09-20"
     },
     {
       "id": "comp-508",
@@ -885,7 +928,9 @@
           "event": "名酒鉴真服务标签上线"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2017-03-01"
     },
     {
       "id": "comp-509",
@@ -911,7 +956,9 @@
           "event": "美团隐私政策更新"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2026-05-28"
     },
     {
       "id": "comp-510",
@@ -937,7 +984,8 @@
           "event": "美团买药商责纠纷赔付规则发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-301",
@@ -961,7 +1009,8 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-021",
@@ -989,7 +1038,8 @@
           "event": "正式实施：男科妇科广告需二级以上医院授权"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-304",
@@ -1020,7 +1070,8 @@
           "event": "在投单元配额机制全流量上线"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-005",
@@ -1058,7 +1109,9 @@
       "dimension": "财报/行业case",
       "data_source": "三方媒体",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2023-10-20"
     },
     {
       "id": "comp-302",
@@ -1082,7 +1135,9 @@
       "dimension": "行业打法",
       "data_source": "三方媒体",
       "tier": "T2",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2023-01-17"
     },
     {
       "id": "comp-305",
@@ -1113,7 +1168,8 @@
           "event": "百度搜索推广全流量上线鸿蒙应用投放"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-303",
@@ -1137,7 +1193,8 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-306",
@@ -1163,7 +1220,8 @@
           "event": "智能优选线索获取方式全流量上线"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-307",
@@ -1189,7 +1247,9 @@
           "event": "搜索推广智能匹配升级"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2026-05-31"
     },
     {
       "id": "comp-308",
@@ -1215,7 +1275,8 @@
           "event": "商家智能助手上线"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-701",
@@ -1239,7 +1300,9 @@
       "dimension": "营销/分账",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2021-06-24"
     },
     {
       "id": "comp-702",
@@ -1265,7 +1328,8 @@
           "event": "AI全自动升级"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-705",
@@ -1291,7 +1355,9 @@
           "event": "TEMU GMV突破300亿美元"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2023-09-07"
     },
     {
       "id": "comp-703",
@@ -1317,7 +1383,8 @@
           "event": "618双叠加提前启动"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-706",
@@ -1343,7 +1410,9 @@
           "event": "场景推广AI升级"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-10-10"
     },
     {
       "id": "comp-709",
@@ -1369,7 +1438,9 @@
           "event": "TEMU广告平台开放"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-01-20"
     },
     {
       "id": "comp-704",
@@ -1399,7 +1470,9 @@
           "event": "三模块一体化升级"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-08-27"
     },
     {
       "id": "comp-707",
@@ -1425,7 +1498,8 @@
           "event": "拼多多广告收入同比+60%"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-710",
@@ -1451,7 +1525,8 @@
           "event": "直播带货双列信息流改版"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-708",
@@ -1477,7 +1552,8 @@
           "event": "品牌黑标审核标准更新"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-105",
@@ -1530,7 +1606,8 @@
           "event": "物料审核规范总目录整体刷新（24 行业拉齐）"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-106",
@@ -1556,7 +1633,9 @@
           "event": "社区公约2.0发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2026-01-19"
     },
     {
       "id": "comp-107",
@@ -1582,7 +1661,8 @@
           "event": "品牌分下线，品牌信任体系建设"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-108",
@@ -1612,7 +1692,9 @@
           "event": "产品升级至新流量链路"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-03-18"
     },
     {
       "id": "comp-109",
@@ -1642,7 +1724,9 @@
           "event": "合作笔记入口迁移至创作者中心"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-12-05"
     },
     {
       "id": "comp-019",
@@ -1670,7 +1754,8 @@
           "event": "正式发布'买手分'公开规则"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-101",
@@ -1698,7 +1783,9 @@
       "dimension": "产品动态",
       "data_source": "三方媒体",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-08-08"
     },
     {
       "id": "comp-102",
@@ -1726,7 +1813,9 @@
       "dimension": "行业打法",
       "data_source": "三方媒体",
       "tier": "T0",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-09-16"
     },
     {
       "id": "comp-103",
@@ -1750,7 +1839,8 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-104",
@@ -1801,7 +1891,9 @@
           "event": "种草学618大促策略直播发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-05-07"
     },
     {
       "id": "comp-003",
@@ -1834,7 +1926,8 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-111",
@@ -1860,7 +1953,8 @@
           "event": "种草学4月多行业培训集中发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-017",
@@ -1888,7 +1982,8 @@
           "event": "36氪报道灰度名单扩到 500 家 GMV TOP 商家"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-018",
@@ -1912,7 +2007,8 @@
           "event": "巨量引擎《深度转化能力升级》白皮书发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-013",
@@ -1943,7 +2039,8 @@
           "event": "AIGC动态创意+UBMax全量上线"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-014",
@@ -1973,7 +2070,9 @@
           "event": "渠道版本投放策略发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-06-20"
     },
     {
       "id": "comp-019-new",
@@ -2003,7 +2102,8 @@
           "event": "2026年度产品资料合集发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-022",
@@ -2034,7 +2134,8 @@
           "event": "搜索营销资料合集发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-713",
@@ -2068,7 +2169,9 @@
           "event": "豆包全面接入抖音电商"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2026-03-31"
     },
     {
       "id": "comp-023",
@@ -2095,7 +2198,8 @@
           "event": "Q2代理商大赛启动"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-001",
@@ -2137,7 +2241,8 @@
       "dimension": "产品动态",
       "data_source": "三方媒体",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-015",
@@ -2175,7 +2280,8 @@
       "dimension": "产品动态",
       "data_source": "三方媒体",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-024",
@@ -2205,7 +2311,8 @@
           "event": "产品手册正式发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-025",
@@ -2235,7 +2342,9 @@
           "event": "搜索抢首屏产品上线"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-11-17"
     },
     {
       "id": "comp-016",
@@ -2273,7 +2382,8 @@
       "dimension": "数据动态",
       "data_source": "三方媒体",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-027",
@@ -2303,7 +2413,8 @@
           "event": "Q2渠道规划发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-026",
@@ -2334,7 +2445,9 @@
           "event": "Seedance 2.0发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2026-02-12"
     },
     {
       "id": "comp-007",
@@ -2364,7 +2477,9 @@
       "dimension": "产品动态",
       "data_source": "三方媒体",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2026-03-11"
     },
     {
       "id": "comp-028",
@@ -2391,7 +2506,8 @@
           "event": "火山Seedance共建方案发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-008",
@@ -2456,7 +2572,9 @@
           "event": "豆包接入巨量引擎投放后台"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2026-02-12"
     },
     {
       "id": "comp-029",
@@ -2487,7 +2605,8 @@
           "event": "PC端直播加热上线"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-031",
@@ -2513,7 +2632,9 @@
           "event": "品牌广告LBS智能投放入口开放"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2021-05-27"
     },
     {
       "id": "comp-011",
@@ -2539,7 +2660,8 @@
           "event": "三场景一体化升级"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-030",
@@ -2566,7 +2688,8 @@
           "event": "省心月卡正式上线"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-009",
@@ -2596,7 +2719,9 @@
           "event": "4月中旬Changelog发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2019-03-30"
     },
     {
       "id": "comp-012",
@@ -2622,7 +2747,9 @@
           "event": "2026目标3000亿+"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2026-01-03"
     },
     {
       "id": "comp-032",
@@ -2648,7 +2775,8 @@
           "event": "线索直播产品操作手册发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-419",
@@ -2675,7 +2803,8 @@
           "event": "TikTok×Salesforce集成宣布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-420",
@@ -2702,7 +2831,8 @@
           "event": "GMV Max正式发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-421",
@@ -2729,7 +2859,8 @@
           "event": "Symphony创意AI套件全面升级"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-422",
@@ -2760,7 +2891,8 @@
           "event": "Smart+和TopReach同时发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-425",
@@ -2787,7 +2919,8 @@
           "event": "Branded Buzz全量上线"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-425-add1",
@@ -2814,7 +2947,8 @@
           "event": "Growth Max for Mini Series发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-425-add2",
@@ -2841,7 +2975,8 @@
           "event": "Market Scope分析平台发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-425-add3",
@@ -2868,7 +3003,8 @@
           "event": "Attribution Portfolio归因套件发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-711",
@@ -2898,7 +3034,9 @@
           "event": "Lens Studio 5.0 AI生成AR滤镜"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2023-11-10"
     },
     {
       "id": "comp-712",
@@ -2924,7 +3062,8 @@
           "event": "Snap AI广告创意工具推出"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-401",
@@ -2952,7 +3091,8 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T0",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-416",
@@ -2982,7 +3122,8 @@
           "event": "被Gartner评为领导者"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-417",
@@ -3008,7 +3149,9 @@
           "event": "OpenAI×Dell混合部署合作宣布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2023-04-03"
     },
     {
       "id": "comp-418",
@@ -3038,7 +3181,8 @@
           "event": "个人理财功能上线"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-006",
@@ -3062,7 +3206,8 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T2",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-426",
@@ -3088,7 +3233,9 @@
           "event": "税务智能体案例发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2018-11-12"
     },
     {
       "id": "comp-423",
@@ -3114,7 +3261,8 @@
           "event": "前沿治理框架发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-424",
@@ -3140,7 +3288,8 @@
           "event": "AI内容溯源推进发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-425",
@@ -3166,7 +3315,8 @@
           "event": "AI推翻离散几何核心猜想"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-427",
@@ -3192,7 +3342,8 @@
           "event": "第三方评估框架发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-416-add",
@@ -3218,7 +3369,9 @@
           "event": "Ad Creative AI推出"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-06-04"
     },
     {
       "id": "comp-411",
@@ -3244,7 +3397,8 @@
           "event": "Threads广告品牌安全控制上线"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-412",
@@ -3274,7 +3428,8 @@
           "event": "Meta发布社交搜索系列指南"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-413",
@@ -3300,7 +3455,8 @@
           "event": "Meta发布效果代理商AI方向指南"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-414",
@@ -3326,7 +3482,9 @@
           "event": "Dribbleup案例发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-04-08"
     },
     {
       "id": "comp-415",
@@ -3352,7 +3510,8 @@
           "event": "Advantage+功能扩展"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-415-add",
@@ -3378,7 +3537,9 @@
           "event": "AI Creative功能推出"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-07-11"
     },
     {
       "id": "comp-416-add2",
@@ -3404,7 +3565,8 @@
           "event": "Shopping Ads 2.0升级"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-415-add2",
@@ -3434,7 +3596,8 @@
           "event": "Meta广告收入+18%同增"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-416-add3",
@@ -3460,7 +3623,9 @@
           "event": "Gemini驱动广告审核升级"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-09-21"
     },
     {
       "id": "comp-403",
@@ -3491,7 +3656,8 @@
           "event": "最终篇发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-404",
@@ -3522,7 +3688,8 @@
           "event": "Display Ads正式迁移至Demand Gen"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-405",
@@ -3553,7 +3720,8 @@
           "event": "GML 2026发布AI时代搜索广告新形态"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-406",
@@ -3584,7 +3752,8 @@
           "event": "Ask Advisor正式发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-428",
@@ -3610,7 +3779,8 @@
           "event": "UCP统一电商协议发布"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "comp-402",
@@ -3634,7 +3804,9 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-06-20"
     },
     {
       "id": "comp-407",
@@ -3665,7 +3837,8 @@
           "event": "AI出价扩展至搜索和购物广告"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-408",
@@ -3696,7 +3869,8 @@
           "event": "AI Max一周年功能升级"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-409",
@@ -3727,7 +3901,8 @@
           "event": "4月更新聚焦YouTube转化"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-410",
@@ -3754,7 +3929,8 @@
           "event": "DSA全面升级至AI Max"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     }
   ]
 }

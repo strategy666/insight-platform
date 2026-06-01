@@ -9,7 +9,7 @@
     <title>商业化洞察周报 | 市场情报追踪平台</title>
     <meta name="description" content="\u5546\u4e1a\u5316\u6218\u7565\u6d1e\u5bdf\u5e73\u53f0 - \u5e02\u573a\u60c5\u62a5 / \u7ade\u5bf9\u8ffd\u8e2a / \u884c\u4e1a\u7814\u7a76" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260601n" />
+    <link rel="stylesheet" href="assets/style.css?v=20260601o" />
 </head>
 <body>
 
@@ -577,7 +577,7 @@ let _feishuDocs = null;
 async function loadFeishuDocs() {
     if (_feishuDocs) return _feishuDocs;
     try {
-        const r = await fetch('assets/data/feishu_docs.json?v=20260601n');
+        const r = await fetch('assets/data/feishu_docs.json?v=20260601o');
         const j = await r.json();
         _feishuDocs = j.items || [];
     } catch(e) {
@@ -1250,12 +1250,12 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260601n"></script>
-<script src="assets/feishu-search.js?v=20260601n"></script>
-<script src="assets/ai-chat.js?v=20260601n"></script>
-<script src="assets/industry-research.js?v=20260601n"></script>
-<script src="assets/onboarding.js?v=20260601n"></script>
-<script src="assets/chat-widget.js?v=20260601n"></script>
+<script src="assets/main.js?v=20260601o"></script>
+<script src="assets/feishu-search.js?v=20260601o"></script>
+<script src="assets/ai-chat.js?v=20260601o"></script>
+<script src="assets/industry-research.js?v=20260601o"></script>
+<script src="assets/onboarding.js?v=20260601o"></script>
+<script src="assets/chat-widget.js?v=20260601o"></script>
 <!-- assistant-tab.js \u5df2\u968f Tab4 \u5220\u9664 -->
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===

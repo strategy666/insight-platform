@@ -82,7 +82,8 @@
           "url": "https://xueqiu.com/2663709332/371518743"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-100",
@@ -133,7 +134,8 @@
         }
       ],
       "_verification": "verified",
-      "_ks_official": true
+      "_ks_official": true,
+      "_date_unchecked": true
     },
     {
       "id": "intel-052",
@@ -160,7 +162,8 @@
           "url": "https://aigc.idigital.com.cn/djyanbao/%E3%80%90%E5%8D%8E%E5%AE%89%E8%AF%81%E5%88%B8%E3%80%91%E4%BC%A0%E5%AA%92%E4%BA%92%E8%81%94%E7%BD%91%E5%B9%B4%E5%BA%A6%E7%AD%96%E7%95%A5%EF%BC%9AMR%E5%8F%8AAI%E6%8A%80%E6%9C%AF%E5%82%AC%E5%8C%96%E5%86%85%E5%AE%B9%E7%B9%81%E8%8D%A3%EF%BC%8C%E4%BA%92%E8%81%94%E7%BD%91%E9%AB%98%E8%B4%A8%E9%87%8F%E7%BB%8F%E8%90%A5-2024-01-14.pdf"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-051",
@@ -189,7 +192,9 @@
           "url": "https://www.chinastarmarket.cn/detail/1631114"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2024-03-27"
     },
     {
       "id": "intel-050",
@@ -218,7 +223,9 @@
           "url": "http://www.paicaijing314.com/news/1359019.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2023-04-11"
     },
     {
       "id": "intel-103",
@@ -269,7 +276,8 @@
           "url": "https://www.bxtdata.com/insights/7781/%E7%BE%8E%E5%9B%A2%E9%97%AA%E8%B4%AD2025%E5%B9%B4%E9%85%92%E7%B1%BB%E5%8D%B3%E6%97%B6%E9%9B%B6%E5%94%AEGMV%E7%AA%81%E7%A0%B4500%E4%BA%BF%E7%9A%84%E4%B8%89%E5%B9%B4%E5%A2%9E%E9%95%BF%E8%B7%AF%E5%BE%84"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-102",
@@ -318,7 +326,8 @@
           "url": "https://www.ebrun.com/20250516/579714.shtml"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-056",
@@ -346,7 +355,9 @@
           "url": "https://stcn.com/article/detail/1642195.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-04-07"
     },
     {
       "id": "intel-055",
@@ -374,7 +385,9 @@
           "url": "https://developers.weixin.qq.com/community/develop/article/doc/000a6e1b988ea02ee8b1caac064c13"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2024-06-28"
     },
     {
       "id": "intel-054",
@@ -404,7 +417,8 @@
           "url": "https://hk.investing.com/news/stock-market-news/article-474293"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-053",
@@ -497,7 +511,9 @@
           "url": "https://www.reddit.com/r/waymo/comments/1pd69fh/waymo_announces_4_new_expansion_cities_baltimore/"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-12-02"
     },
     {
       "id": "intel-105",
@@ -547,7 +563,8 @@
           "url": "https://www.pingwest.com/a/277021"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-104",
@@ -597,7 +614,9 @@
           "url": "https://wallstreetcn.com/articles/3757383"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-10-17"
     },
     {
       "id": "intel-058",
@@ -625,7 +644,8 @@
           "url": "https://www.vzkoo.com/read/202510206e8d4ebc6abfc49b1ccbe120.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-057",
@@ -654,7 +674,8 @@
           "url": "https://op.jinritemai.com/docs/notice-docs/22/7628?from=list&docLabel="
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-034",
@@ -688,7 +709,8 @@
         }
       ],
       "category": "AI 速递",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-033",
@@ -722,7 +744,9 @@
         }
       ],
       "category": "AI 速递",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2022-09-06"
     },
     {
       "id": "intel-024",
@@ -755,7 +779,8 @@
           "url": "https://www.1ai.net/newsflashes/53461.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-023",
@@ -794,7 +819,9 @@
           "url": "https://cj.sina.cn/articles/view/5953740931/162dee08306703bjek?froms=ggmp"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2016-05-30"
     },
     {
       "id": "intel-200",
@@ -854,7 +881,9 @@
           "url": "https://abc7news.com/post/anthropic-san-francisco-ai-company-vaults-965-billion-valuation-new-funding-claude-demand-surges/19188579/"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-03-11"
     },
     {
       "id": "intel-107",
@@ -904,7 +933,8 @@
           "url": "https://funimg.pddpic.com/ddjb/2020-12-04/a31beb3b-33a1-4862-8f89-6ccb6f2a699a.pdf"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-106",
@@ -954,7 +984,8 @@
           "url": "https://www.qbitai.com/2026/01/372108.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-060",
@@ -982,7 +1013,8 @@
           "url": "https://zhuanlan.zhihu.com/p/2036470177332712742"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-059",
@@ -1011,7 +1043,8 @@
           "url": "https://xueqiu.com/1031080051/380687048"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-036",
@@ -1045,7 +1078,8 @@
         }
       ],
       "category": "AI 速递",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-035",
@@ -1084,7 +1118,8 @@
         }
       ],
       "category": "AI 速递",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-026",
@@ -1118,7 +1153,8 @@
           "url": "https://zhuanlan.zhihu.com/p/2043352809022689402"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-025",
@@ -1157,7 +1193,8 @@
           "url": "https://www.ifanr.com/1667281"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-015",
@@ -1227,7 +1264,8 @@
           "date": "2026-05-29"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-109",
@@ -1277,7 +1315,8 @@
           "url": "https://openai.com/zh-Hant-HK/index/sora"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-108",
@@ -1327,7 +1366,8 @@
           "url": "https://www.bilibili.com/blackboard/activity-N13czQtWTg.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-062",
@@ -1355,7 +1395,8 @@
           "url": "https://m.huxiu.com/article/3544011.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-061",
@@ -1383,7 +1424,8 @@
           "url": "https://www.stcn.com/article/detail/3923166.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-028",
@@ -1551,7 +1593,9 @@
           "url": "https://www.sfccn.com/2021/11-17/4OMDE0MDdfMTY4MDk4OA.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2020-06-30"
     },
     {
       "id": "intel-110",
@@ -1601,7 +1645,8 @@
           "url": "http://www.cb.com.cn/index/show/gs1/cv/cv12544281131"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-064",
@@ -1628,7 +1673,8 @@
           "url": "https://blog.google/products/ads-commerce/dsa-upgrade-to-ai-max-2026"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-063",
@@ -1655,7 +1701,9 @@
           "url": "https://developers.weixin.qq.com/community/personal/oCJUswxFgWdhyFIxOIK0DminJivA/fav"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2024-08-12"
     },
     {
       "id": "intel-037",
@@ -1693,7 +1741,8 @@
         }
       ],
       "category": "AI 速递",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-030",
@@ -1766,7 +1815,8 @@
           "url": "https://zhuanlan.zhihu.com/p/2043320081346822491"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-113",
@@ -1816,7 +1866,8 @@
           "url": "https://www.scribd.com/document/998784567/2026%E5%B9%B4%E4%B8%AD%E5%9B%BDGenAI-%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%8F%91%E5%B1%95%E6%8A%A5%E5%91%8A"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-112",
@@ -1866,7 +1917,8 @@
           "url": "http://qdatis.com/files/20220630/3805a385619a43ad4d6971231eb41a97.pdf"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-066",
@@ -1892,7 +1944,8 @@
           "url": "https://www.douyin.com/search/%E6%8A%96%E9%9F%B3%E7%83%AD%E6%90%9C%E6%A6%9C39%E4%B8%AA%E7%83%AD%E7%82%B9"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-065",
@@ -1920,7 +1973,8 @@
           "url": "https://m.36kr.com/p/1467107068529670"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-038",
@@ -1959,7 +2013,8 @@
         }
       ],
       "category": "AI 速递",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-031",
@@ -1992,7 +2047,8 @@
           "url": "https://openai.com/zh-Hans-CN/index/agentic-ai-foundation/"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-021",
@@ -2122,7 +2178,9 @@
           "url": "https://runwise.co/wp-content/uploads/2024/05/%E5%88%9B%E6%96%B0%E7%A0%94%E6%8A%A5%EF%BD%9C2024%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E6%B3%95%E5%BE%8B%E6%8E%A2%E7%A9%B6%E6%8A%A5%E5%91%8A_%E9%87%91%E6%9D%9C%E5%BE%8B%E5%B8%88%E4%BA%8B%E5%8A%A1%E6%89%80_2024.pdf"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2023-04-27"
     },
     {
       "id": "intel-114",
@@ -2172,7 +2230,9 @@
           "url": "https://mp.ofweek.com/ee/a756714814577"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-01-11"
     },
     {
       "id": "intel-068",
@@ -2199,7 +2259,9 @@
           "url": "https://pdf.dfcfw.com/pdf/H3_AP202106241499711394_1.pdf"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2021-06-24"
     },
     {
       "id": "intel-067",
@@ -2227,7 +2289,9 @@
           "url": "https://www.cdut.edu.cn/__local/F/C9/EB/C02614CCC4A0369B16A7EC1C52A_B628CD50_6125D1.pdf"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2026-01-03"
     },
     {
       "id": "intel-039",
@@ -2265,7 +2329,9 @@
         }
       ],
       "category": "AI 速递",
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2023-10-20"
     },
     {
       "id": "intel-032",
@@ -2313,7 +2379,9 @@
           "url": "https://zhuanlan.zhihu.com/p/670574382"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2023-10-20"
     },
     {
       "id": "intel-116",
@@ -2362,7 +2430,8 @@
           "url": "http://www.cb.com.cn/index/show/bzyc/cv/cv135231281648"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-070",
@@ -2389,7 +2458,8 @@
           "url": "https://file.retail.tencent.com/files/default/2023/2/bfc882689d884ad3a0a6d55c9647955b.pdf"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-069",
@@ -2419,7 +2489,9 @@
           "url": "http://www.xinhuanet.com/publish/20251205/68707d6db5e44f44ab1edcbe2f9f0f20/c.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-12-05"
     },
     {
       "id": "intel-118",
@@ -2469,7 +2541,8 @@
           "url": "https://podnews.net/podcast/ipe74/episodes"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-117",
@@ -2518,7 +2591,8 @@
           "url": "https://pdf.dfcfw.com/pdf/H3_AP202312121613757983_1.pdf"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-072",
@@ -2544,7 +2618,9 @@
           "url": "https://www.bilibili.com/opus/1069004062804934665?spm_id_from=333.1387.0.0"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-03-31"
     },
     {
       "id": "intel-071",
@@ -2573,7 +2649,8 @@
           "url": "https://zhuanlan.zhihu.com/p/1889650291101652413"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-040",
@@ -2607,7 +2684,8 @@
         }
       ],
       "category": "AI 速递",
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-022",
@@ -2691,7 +2769,8 @@
           "date": "2026-05-13"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-012",
@@ -2753,7 +2832,9 @@
           "date": "2026-05-22"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2023-10-20"
     },
     {
       "id": "intel-119",
@@ -2803,7 +2884,8 @@
           "url": "https://img3.gelonghui.com/pdf201812/pdf20181225151140386.pdf"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-074",
@@ -2830,7 +2912,9 @@
           "url": "https://cloud.tencent.com/developer/news/625213"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2020-05-13"
     },
     {
       "id": "intel-073",
@@ -2857,7 +2941,9 @@
           "url": "https://developers.e.qq.com/docs/guide/ads/wechatmoments"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2017-04-25"
     },
     {
       "id": "intel-202",
@@ -2920,7 +3006,8 @@
           "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/05/nvidia-earnings-preview-q1-2027"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-120",
@@ -2971,7 +3058,8 @@
           "url": "http://finance.eastmoney.com/a/202605293754470379.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-076",
@@ -2999,7 +3087,9 @@
           "url": "https://www.sohu.com/a/759518950_355140"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2024-02-23"
     },
     {
       "id": "intel-075",
@@ -3227,7 +3317,9 @@
           "url": "https://eschool.qq.com/Solution/ListDetail/pd-9055"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2023-08-11"
     },
     {
       "id": "intel-078",
@@ -3253,7 +3345,8 @@
           "url": "https://www.reddit.com/r/singularity/comments/1tezctw/openai_and_malta_partner_to_bring_chatgpt_plus_to?tl=zh-hans"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-077",
@@ -3279,7 +3372,9 @@
           "url": "https://finance.sina.com.cn/roll/2025-09-16/doc-infqsxmi5695457.shtml"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-09-16"
     },
     {
       "id": "intel-009",
@@ -3337,7 +3432,8 @@
           "url": "https://www.questmobile.com.cn/research/report/2054043425364258818"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-001",
@@ -3400,7 +3496,8 @@
           "date": "2026-05-14"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-124",
@@ -3449,7 +3546,9 @@
           "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?stockid=688365&id=10999094"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2024-05-16"
     },
     {
       "id": "intel-123",
@@ -3500,7 +3599,9 @@
           "url": "https://www.aihehuo.com/blog/8921-news-2026-05-25"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-02-19"
     },
     {
       "id": "intel-122",
@@ -3578,7 +3679,8 @@
           "url": "https://www.wenxuecity.com/news/2025/12/19/126456107.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_unchecked": true
     },
     {
       "id": "intel-079",
@@ -3605,7 +3707,8 @@
           "url": "https://m.sohu.com/a/1024620050_211762?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-007",
@@ -3669,7 +3772,9 @@
           "date": "2026-05-18"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2023-10-20"
     },
     {
       "id": "intel-204",
@@ -3728,7 +3833,9 @@
           "url": "https://www.press.bmwgroup.com/global/article/detail/T0455864EN/bmw-group-to-deploy-humanoid-robots-in-production-in-germany-for-the-first-time?language=en"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_date_mismatch": true,
+      "_source_date": "2025-10-09"
     },
     {
       "id": "intel-205",
@@ -3782,7 +3889,8 @@
           "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "intel-203",
@@ -3845,7 +3953,8 @@
           "url": "https://autonews.gasgoo.com/articles/news/ponyai-unveils-gen-7-robotaxi-at-2025-hong-kong-auto-expo-70037746"
         }
       ],
-      "_verification": "verified"
+      "_verification": "verified",
+      "_date_ok": true
     }
   ]
 }
