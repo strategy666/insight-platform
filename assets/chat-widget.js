@@ -12,7 +12,38 @@
     'use strict';
 
     const LS_HISTORY = 'insight_chat_history_v1';
+    const LS_AI_CFG = 'insight_ai_config_v1';
     const MAX_HISTORY = 16; // 8 轮 = 16 条 msg
+
+    // 内置兜底配置（与 ai-chat.js 中 BUILTIN_CFG 保持一致，独立可用，不依赖加载顺序）
+    const FALLBACK_CFG = {
+        llm_endpoint: 'https://api.deepseek.com/v1',
+        llm_key: 'sk-26d4c78e1c6b47db9213a4a8db01b2d4',
+        llm_model: 'deepseek-v4-flash'
+    };
+
+    // 统一获取配置：优先用 __getAIConfig（ai-chat.js 暴露的） → 再用 localStorage → 再用内置兜底
+    function getEffectiveCfg() {
+        let cfg = null;
+        try {
+            if (typeof window.__getAIConfig === 'function') cfg = window.__getAIConfig();
+        } catch(e) {}
+        if (!cfg || !cfg.llm_key || !cfg.llm_endpoint) {
+            // 尝试自己读 localStorage
+            try {
+                const raw = localStorage.getItem(LS_AI_CFG);
+                const stored = raw ? JSON.parse(raw) : {};
+                cfg = Object.assign({}, FALLBACK_CFG, stored);
+            } catch(e) {
+                cfg = Object.assign({}, FALLBACK_CFG);
+            }
+        }
+        // 任意关键字段为空 → 用 fallback 补齐
+        ['llm_endpoint','llm_key','llm_model'].forEach(k => {
+            if (!cfg[k]) cfg[k] = FALLBACK_CFG[k];
+        });
+        return cfg;
+    }
 
     let isOpen = false;
     let isLoading = false;
@@ -53,6 +84,7 @@
                     </div>
                 </div>
                 <div class="cw-header-right">
+                    <button class="cw-icon-btn" id="cwReset" title="重置 API 配置（恢复内置 Key）">🔄</button>
                     <button class="cw-icon-btn" id="cwClear" title="清空对话">🗑️</button>
                     <button class="cw-icon-btn" id="cwInterest" title="更新兴趣">🎯</button>
                     <button class="cw-icon-btn" id="cwClose" title="关闭 (Esc)">✕</button>
@@ -74,6 +106,7 @@
 
         document.getElementById('cwClose').addEventListener('click', close);
         document.getElementById('cwClear').addEventListener('click', clearChat);
+        document.getElementById('cwReset').addEventListener('click', resetApiConfig);
         document.getElementById('cwInterest').addEventListener('click', () => {
             if (typeof window.openInterestModal === 'function') window.openInterestModal();
         });
@@ -183,6 +216,12 @@
         renderWelcome();
     }
 
+    function resetApiConfig() {
+        if (!confirm('确定重置 API 配置？\n（将清除浏览器中保存的自定义 Key，恢复使用内置 DeepSeek Key）')) return;
+        try { localStorage.removeItem(LS_AI_CFG); } catch(e) {}
+        appendMsg('bot', '✅ <b>API 配置已重置</b>，内置 DeepSeek Key 已生效，现在可以正常提问了。');
+    }
+
     // ============ 调用 LLM ============
     async function send() {
         if (isLoading) return;
@@ -194,9 +233,9 @@
 
         appendMsg('user', escapeHtml(q));
 
-        const cfg = (typeof window.__getAIConfig === 'function') ? window.__getAIConfig() : null;
+        const cfg = getEffectiveCfg();
         if (!cfg || !cfg.llm_endpoint || !cfg.llm_key) {
-            appendMsg('bot', '⚠️ 尚未配置 LLM API。请在行业研究 Tab 中点 ⚙️ 配置。');
+            appendMsg('bot', '⚠️ <b>API 配置异常</b>。请点击右上角 🔄 <b>重置配置</b> 按钮，或前往「行业研究」Tab 点 ⚙️ 重新配置。');
             return;
         }
 
@@ -218,7 +257,16 @@
             history.push({ role: 'bot', content: finalHtml, ts: Date.now() });
             saveHistory();
         } catch (e) {
-            contentEl.innerHTML = '<span style="color:#d83a3a">❌ ' + escapeHtml(e.message || String(e)) + '</span>';
+            const msg = e.message || String(e);
+            let hint = '';
+            if (/401|invalid|unauthor|forbidden|403/i.test(msg)) {
+                hint = '<br/><br/>💡 <b>解决方案</b>：点击右上角 🔄 重置配置（恢复内置 DeepSeek Key），或前往 Tab3「行业研究」点 ⚙️ 配置一个有效的 API Key';
+            } else if (/network|failed to fetch|cors/i.test(msg)) {
+                hint = '<br/><br/>💡 <b>网络异常</b>：可能是 VPN/防火墙拦截了 api.deepseek.com，请检查网络';
+            } else {
+                hint = '<br/><br/>💡 试试右上角 🔄 重置配置';
+            }
+            contentEl.innerHTML = '<span style="color:#d83a3a">❌ ' + escapeHtml(msg) + '</span>' + hint;
         } finally {
             isLoading = false;
         }
