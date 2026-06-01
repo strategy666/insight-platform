@@ -481,6 +481,9 @@ function renderCompetitors() {
                 onclick="switchCompetitor('${c}')">${c}<sup>${count}</sup></button>`;
     }).join('');
     document.getElementById('competitorTabs').innerHTML = tabsHtml;
+
+    // 渲染本期热点 chips（基于当前动态数据动态提取）
+    renderCompHotChips();
     
     // 统计
     const ctotal = document.getElementById('compTotal');
@@ -515,6 +518,50 @@ function renderCompetitors() {
     
     if (companies.length > 0) switchCompetitor(companies[0]);
 }
+
+// ==================== Tab2 本期热点 chips ====================
+// 从本期动态中提取 Top 6 高频主题关键词，作为搜索快捷入口
+function renderCompHotChips() {
+    const box = document.getElementById('compHotChips');
+    if (!box) return;
+
+    // 候选词库（以业务主题为主，避免意义太弱的功能词）
+    const candidates = [
+        '出单宝', '本地推', '深转', '达人', '直播', '团购', '闪购', '即时零售',
+        'AI经营', '磁力星辰', '区域服务商', '服务商', '激励政策', '补贴',
+        '口播', '短剧', '达播', '蓝V', 'V任务', '商单', 'ROI', 'GMV',
+        '酒旅', '到店', '到家', '外卖', '线索广告', '大模型', 'LiveOS', '千川', 'Beacon',
+        '餐饮', '商品', '商业化', '领券', '生意经', '巨量本地推'
+    ];
+
+    // 合并所有动态的 title + sowhat + tags，统计频次
+    const text = competitorData.map(it =>
+        (it.title || '') + ' ' + (it.sowhat || '') + ' ' + ((it.tags || []).join(' '))
+    ).join(' ');
+
+    const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const counts = candidates.map(k => ({
+        k,
+        c: (text.match(new RegExp(escapeRe(k), 'g')) || []).length
+    })).filter(x => x.c >= 2).sort((a, b) => b.c - a.c);
+
+    // 取 Top 6
+    const top = counts.slice(0, 6);
+
+    if (!top.length) {
+        box.innerHTML = '<span class="suggest-label">🔥 本期热点：</span>' +
+            '<button class="suggest-q" onclick="document.getElementById(\'competitorSearchInput\').value=\'本地推\';searchCompetitor(\'本地推\')">本地推</button>';
+        return;
+    }
+
+    box.innerHTML = '<span class="suggest-label">🔥 本期热点：</span>' +
+        top.map(x => {
+            const safe = x.k.replace(/'/g, "\\'");
+            return '<button class="suggest-q" onclick="document.getElementById(\'competitorSearchInput\').value=\'' + safe + '\';searchCompetitor(\'' + safe + '\')" title="本期出现 ' + x.c + ' 次">' + x.k + '<span class="hot-cnt">' + x.c + '</span></button>';
+        }).join('');
+}
+
+window.renderCompHotChips = renderCompHotChips;
 
 function switchCompetitor(company) {
     currentCompFilters.company = company;
