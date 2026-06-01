@@ -58,6 +58,7 @@ async function loadData() {
         intelData = intelJson.items || [];
         competitorData = compJson.items || [];
         window.competitorData = competitorData;  // 暴露给 inline scripts (index.html 内的双源检索)
+        window.intelData = intelData;            // 同上：让统一检索能跨 Tab1 全量动态
         
         // 更新最后更新时间
         document.getElementById('lastUpdate').textContent = 
