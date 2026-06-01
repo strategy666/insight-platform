@@ -5404,3 +5404,68 @@ a.news-row-link:hover .news-title { color: #2a6f4f; }
 .deal-valuation { font-size: 12px; color: #6b7280; }
 .deal-investors { font-size: 12px; color: #4b5563; margin: 4px 0; }
 .deal-investors strong { color: #111827; }
+
+/* ========== 信源可信度核实 UI ========== */
+.verify-toggle {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: #555;
+    background: #fff8e6; border: 1px solid #fde68a;
+    padding: 4px 10px; border-radius: 999px;
+    cursor: pointer; margin-left: 12px;
+    transition: all 0.18s ease;
+    user-select: none;
+}
+.verify-toggle:hover { background: #fef3c7; border-color: #f59e0b; }
+.verify-toggle input { margin: 0; cursor: pointer; }
+.verify-toggle b { color: #92400e; font-weight: 600; }
+.verify-toggle:has(input:not(:checked)) {
+    background: #fef2f2; border-color: #fecaca;
+}
+.verify-toggle:has(input:not(:checked)) b { color: #b91c1c; }
+
+/* Tab2 hero 紫色背景下，verify-toggle 改成白色风 */
+#tab-competitors .verify-toggle {
+    background: rgba(255,255,255,0.95);
+    border-color: rgba(255,255,255,0.85);
+}
+
+/* 单条 item 上的核实标签 */
+.verify-tag {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    padding: 2px 7px; border-radius: 999px;
+    margin: 0 6px; vertical-align: middle;
+    line-height: 1.4;
+    cursor: help;
+}
+.verify-ok   { background: #d1fae5; color: #065f46; }
+.verify-weak { background: #fef3c7; color: #92400e; }
+.verify-bad  { background: #fee2e2; color: #991b1b; }
+
+/* 整条 item 的核实状态视觉提示 */
+.news-row.v-weak,
+.competitor-card.v-weak {
+    border-left: 3px solid #f59e0b !important;
+    background: linear-gradient(90deg, #fffbeb 0%, #fff 8%) !important;
+}
+.news-row.v-broken,
+.competitor-card.v-broken {
+    border-left: 3px solid #ef4444 !important;
+    background: linear-gradient(90deg, #fef2f2 0%, #fff 8%) !important;
+}
+.news-row.v-verified,
+.competitor-card.v-verified {
+    /* 默认样式，无额外标识 */
+}
+
+/* 隐藏提示 banner */
+.verify-banner {
+    background: #fff8e6; border: 1px solid #fde68a;
+    color: #92400e; font-size: 13px;
+    padding: 10px 14px; border-radius: 8px;
+    margin-bottom: 14px; line-height: 1.5;
+}
+.verify-banner a {
+    color: #c2410c; font-weight: 600; text-decoration: underline;
+    margin-left: 4px;
+}
+.verify-banner a:hover { color: #9a3412; }
