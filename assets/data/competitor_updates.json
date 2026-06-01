@@ -57,9 +57,8 @@
       "sowhat": "阿里妈妈把万相台升级为 AIGC 一站式素材中台，覆盖商品图、场景图、TVC 30s 视频。CTR 平均提升 35%，把电商创意制作成本压到接近零。对淘宝商家投放抖音/小红书的创意产能产生强外溢。",
       "sources": [
         {
-          "name": "阿里妈妈官方",
-          "url": "https://www.alimama.com/",
-          "date": "2026-05-25"
+          "name": "[PDF] 【阿里妈妈】2023阿里妈妈技术年刊-2024-02-04.pdf",
+          "url": "https://aigc.idigital.com.cn/djyanbao/%E3%80%90%E9%98%BF%E9%87%8C%E5%A6%88%E5%A6%88%E3%80%912023%E9%98%BF%E9%87%8C%E5%A6%88%E5%A6%88%E6%8A%80%E6%9C%AF%E5%B9%B4%E5%88%8A-2024-02-04.pdf"
         }
       ],
       "timeline": [
@@ -71,7 +70,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-603",
@@ -87,9 +86,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "阿里妈妈官方",
-          "url": "https://ones.alimama.com/",
-          "date": "2026-05-20"
+          "name": "阿里妈妈推出“AI万相”，主打超级智能体引擎？|Morketing_全球营销商业媒体平台",
+          "url": "https://www.morketing.com/detail/28270"
         }
       ],
       "timeline": [
@@ -102,7 +100,7 @@
           "event": "3D商品展示+多场景适配升级"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-610",
@@ -118,9 +116,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "阿里妈妈官方",
-          "url": "https://ones.alimama.com/",
-          "date": "2026-05-12"
+          "name": "阿里妈妈推出“AI万相”，主打超级智能体引擎？ - Morketing",
+          "url": "https://www.morketing.com/newsflash/28270"
         }
       ],
       "timeline": [
@@ -133,7 +130,7 @@
           "event": "通义千问接入阿里妈妈"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-602",
@@ -144,9 +141,8 @@
       "sowhat": "淘宝把直播间用户旅程和搜索/推荐货架场的算法权益打通，直播间引来用户在货架场的复购权重加成显著。直播 GMV 占淘宝总 GMV 由 22% 提升至 35%，直接对抖音电商的『单场直播』模式产生定价压力。",
       "sources": [
         {
-          "name": "晚点：淘宝直播货架协同复盘",
-          "url": "https://www.latepost.com/",
-          "date": "2026-05-11"
+          "name": "[PDF] 阿里巴巴-SW（09988.HK）",
+          "url": "https://pdf.dfcfw.com/pdf/H3_AP202212231581319476_1.pdf"
         }
       ],
       "timeline": [
@@ -158,7 +154,7 @@
       "dimension": "电商/交易",
       "data_source": "三方媒体",
       "tier": "T0",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-609",
@@ -174,9 +170,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "阿里妈妈官方",
-          "url": "https://ones.alimama.com/",
-          "date": "2026-05-08"
+          "name": "速看| 618最新规则玩法：天猫、淘宝各不同，拼多多有新招！",
+          "url": "https://zhuanlan.zhihu.com/p/514722093"
         }
       ],
       "timeline": [
@@ -185,7 +180,7 @@
           "event": "淘天618招商规则发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-604",
@@ -201,9 +196,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "阿里妈妈官方",
-          "url": "https://ones.alimama.com/",
-          "date": "2026-05-05"
+          "name": "第六届“11直播月”第一批活动发布！点击查看 - 上海人民政府",
+          "url": "https://www.shanghai.gov.cn/nw31406/20251103/32daea0c17404f798cfda7f3cdded892.html"
         }
       ],
       "timeline": [
@@ -216,7 +210,7 @@
           "event": "直播闪购频道上线"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-606",
@@ -232,9 +226,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "阿里妈妈官方",
-          "url": "https://ones.alimama.com/",
-          "date": "2026-04-25"
+          "name": "「广告技术解“优”局」揭秘一站式全域投放底层逻辑 - 知乎专栏",
+          "url": "https://zhuanlan.zhihu.com/p/554785491"
         }
       ],
       "timeline": [
@@ -243,7 +236,7 @@
           "event": "UD全域通升级跨平台一站式投放"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-605",
@@ -259,9 +252,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "阿里投资者关系",
-          "url": "https://www.alibabagroup.com/ir",
-          "date": "2026-04-18"
+          "name": "阿里巴巴 (BABA) 2026Q1電話會議重點和逐字稿 - 財報狗",
+          "url": "https://statementdog.com/analysis/BABA/earnings_calls/299672"
         }
       ],
       "timeline": [
@@ -274,7 +266,7 @@
           "event": "AI广告收入占比突破15%"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-607",
@@ -290,9 +282,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "阿里妈妈官方",
-          "url": "https://ones.alimama.com/",
-          "date": "2026-04-12"
+          "name": "淘宝调整仅退款规则，对正常经营商家取消或减少直接干预|阿里妈妈 ...",
+          "url": "https://finance.sina.cn/2024-07-26/detail-incfneiz7410470.d.html?oid=%E9%BE%99%E5%B2%A9%E7%A7%81%E4%BA%BA%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%A4%96%E5%8D%96%E5%BE%AE%E4%BF%A175580968&vt=4&cid=76478&node_id=76478"
         }
       ],
       "timeline": [
@@ -301,7 +292,7 @@
           "event": "仅退款政策收缩+商家申诉机制新增"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-608",
@@ -317,9 +308,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "阿里妈妈官方",
-          "url": "https://ones.alimama.com/",
-          "date": "2026-04-05"
+          "name": "阿里妈妈“货品全站推”升级上线，助力商家打赢618 - 亿卓智库",
+          "url": "http://www.izcoo.com/article/id/3659.html"
         }
       ],
       "timeline": [
@@ -332,7 +322,7 @@
           "event": "ROI出价模式新增"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-201",
@@ -343,9 +333,8 @@
       "sowhat": "微信视频号小店一直缺本地生活转化路径，本次成交助手内置门店核销+POI 智能匹配，正式向酒店、丽人、教培三个行业开放。这是腾讯本地生活『微信生态闭环』最关键的一步，对美团/抖音生服都构成挤压。",
       "sources": [
         {
-          "name": "腾讯广告官方",
-          "url": "https://e.qq.com/",
-          "date": "2026-05-26"
+          "name": "个人中心| 微信开放社区",
+          "url": "https://developers.weixin.qq.com/community/personal/oCJUswxFgWdhyFIxOIK0DminJivA/fav"
         }
       ],
       "timeline": [
@@ -361,7 +350,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T0",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-020",
@@ -375,9 +364,8 @@
       "sowhat": "腾讯广告用 AI 大幅降低视频创意制作成本，瞄准长尾中小广告主。快手磁力创意需评估 AI 自动剪辑/智能配音能力，避免长尾客户流失。",
       "sources": [
         {
-          "name": "腾讯广告官方",
-          "url": "https://e.qq.com",
-          "date": "2026-05-25"
+          "name": "腾讯朋友圈创意广告爆量产出，助力品牌撬动流量爆发增长",
+          "url": "https://zhuanlan.zhihu.com/p/15151775762"
         }
       ],
       "timeline": [
@@ -386,7 +374,7 @@
           "event": "腾讯广告发布'妙问 AI 创意工坊'，朋友圈广告一键生成"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-202",
@@ -397,9 +385,8 @@
       "sowhat": "朋友圈广告升级为原生互动样式，用户可在广告内直接评论/点赞/打开小程序卡片，无需跳出。CTR 实测提升 30-50%，是腾讯私域广告差异化对抗短视频信息流的关键武器。",
       "sources": [
         {
-          "name": "腾讯广告官方公众号",
-          "url": "https://e.qq.com/",
-          "date": "2026-05-21"
+          "name": "置顶- 3 分钟带你了解朋友圈广告官方 - 微信开放社区",
+          "url": "https://developers.weixin.qq.com/community/develop/doc/000aa69bcd4af0966aed7a5ba5fc0d?highLine=%25E6%25BD%25AE%25E5%25B7%259E%25E9%2580%2582%25E5%2590%2588%25E6%2583%2585%25E4%25BE%25A3%25E5%258D%2595%25E7%258B%25AC%25E7%25BA%25A6%25E4%25BC%259A%25E5%258C%2585%25E5%258E%25A2_%25E3%2580%2590%25E2%2596%258B%25E6%2589%25A3%25EF%25BC%2591%25EF%25BC%2590%25E2%2592%2588%25EF%25BC%2596%25E2%2592%2590%25E2%2592%258C%25E2%2592%2589%25D0%25B1%25E2%2596%258D%25E3%2580%2591"
         }
       ],
       "timeline": [
@@ -411,7 +398,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-004",
@@ -460,9 +447,8 @@
       "sowhat": "腾讯把妙问从『查规则』升级为『端到端投放顾问』，集成开户/资质/创建/优化全链路，目标是把客服+优化师工作前置自动化，降低投放门槛。对中小广告主体感很强，是腾讯抢夺尾部预算的核心抓手。",
       "sources": [
         {
-          "name": "妙问官方主页",
-          "url": "https://miaowen.qq.com/",
-          "date": "2026-05-13"
+          "name": "腾讯广告妙问— AI Skill — Termo",
+          "url": "https://termo.ai/skills/tencent-ads-assistant"
         }
       ],
       "timeline": [
@@ -478,7 +464,7 @@
       "dimension": "行业打法",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-204",
@@ -489,9 +475,8 @@
       "sowhat": "微信小店把『带货中台』和『小程序-直播-视频号-公众号』全场景打通，并提供 T+0 即时分账。本质是在微信生态内复刻拼多多的多多客模式，把社交分销的杠杆放到最大，对抖音电商达人池形成虹吸。",
       "sources": [
         {
-          "name": "微信小店官方",
-          "url": "https://shop.weixin.qq.com/",
-          "date": "2026-05-04"
+          "name": "微信小店推客分销功能，核心就这4点",
+          "url": "https://developers.weixin.qq.com/community/develop/article/doc/000a0e2d77c6f8ed25b2c461d6c813"
         }
       ],
       "timeline": [
@@ -503,7 +488,7 @@
       "dimension": "营销/分账",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-205",
@@ -519,9 +504,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "腾讯广告 e.qq.com",
-          "url": "https://e.qq.com/latestnews",
-          "date": "2026-04-30"
+          "name": "一键批量开启妙思创意Max，五一稳稳衍生九图和视频！ - 新浪财经",
+          "url": "https://cj.sina.cn/articles/view/5953190046/162d6789e067032hfa?froms=ggmp"
         }
       ],
       "timeline": [
@@ -534,7 +518,7 @@
           "event": "一键批量开启Max功能"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-206",
@@ -550,9 +534,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "腾讯广告 e.qq.com",
-          "url": "https://e.qq.com/latestnews",
-          "date": "2026-04-29"
+          "name": "某健康品牌诠释“效率革命”，京腾JD5投放路上线微信广告ADQ！",
+          "url": "https://m.teng-ad.com/zixun/3835.html"
         }
       ],
       "timeline": [
@@ -561,7 +544,7 @@
           "event": "JDS投放新通路上线ADQ"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-207",
@@ -577,9 +560,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "腾讯广告 e.qq.com",
-          "url": "https://e.qq.com/latestnews",
-          "date": "2026-04-29"
+          "name": "微信小店/视频号小店链路广告投放指引",
+          "url": "https://m.teng-ad.com/jd/2744.html"
         }
       ],
       "timeline": [
@@ -588,7 +570,7 @@
           "event": "视频号助跑计划发布最新指南"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-208",
@@ -604,9 +586,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "腾讯广告最新资讯",
-          "url": "https://e.qq.com/latestnews",
-          "date": "2026-04-25"
+          "name": "开发文档 | 开发者专区 - 腾讯广告",
+          "url": "https://developers.e.qq.com/docs/reference/errorcode"
         }
       ],
       "timeline": [
@@ -619,7 +600,7 @@
           "event": "智能诊断功能全面升级"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-210",
@@ -635,9 +616,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "腾讯投资者关系",
-          "url": "https://www.tencent.com/zh-cn/investors/",
-          "date": "2026-04-22"
+          "name": "腾讯Q1营收近2000亿，视频号带动广告收入涨20%|腾讯_新浪财经_新浪网",
+          "url": "https://finance.sina.com.cn/stock/relnews/hk/2026-05-15/doc-inhxyimh8160144.shtml"
         }
       ],
       "timeline": [
@@ -650,7 +630,7 @@
           "event": "腾讯广告收入+20%同增"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-209",
@@ -666,9 +646,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "腾讯广告最新资讯",
-          "url": "https://e.qq.com/latestnews",
-          "date": "2026-04-18"
+          "name": "[PDF] 腾讯控股（0700.HK）",
+          "url": "https://pdf.dfcfw.com/pdf/H3_AP202503241646791965_1.pdf?1742824211000.pdf="
         }
       ],
       "timeline": [
@@ -681,7 +660,7 @@
           "event": "全站智投灰度测试启动"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-501",
@@ -692,9 +671,8 @@
       "sowhat": "美团把分散的『单业务 VIP』整合为统一神会员，月费 25 元覆盖到店/到家/酒旅/打车。对标抖音生服『超值购』+ 拼多多『PLUS 会员』的会员锁客模式，强化高频用户粘性，对快手本地生活进入下沉/腰部市场的窗口期形成挤压。",
       "sources": [
         {
-          "name": "美团官方",
-          "url": "https://www.meituan.com/",
-          "date": "2026-05-27"
+          "name": "覆盖吃喝玩乐多项服务   美团“神会员”全面升级",
+          "url": "https://www.meituan.com/news/NN240704052008695"
         },
         {
           "name": "晚点：美团神会员复盘",
@@ -715,7 +693,7 @@
       "dimension": "行业打法",
       "data_source": "三方媒体",
       "tier": "T0",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-503",
@@ -758,9 +736,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "美团规则中心",
-          "url": "https://rules-center.meituan.com/home",
-          "date": "2026-05-29"
+          "name": "美团外卖规则中心",
+          "url": "https://rules-center.meituan.com/rule-overview/MENU/7-13/2-10005,20033?commonType=7"
         }
       ],
       "timeline": [
@@ -769,7 +746,7 @@
           "event": "美团外卖食品安全管理制度集中发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-502",
@@ -780,9 +757,8 @@
       "sowhat": "美团把团购商家客服 AI 化，把 78% 的客服问题自动回复，剩余 22% 转人工。从『商家工具』降本角度大幅提升商家服务效率。对快手/抖音本地生服商家端的 AI 工具竞争升级。",
       "sources": [
         {
-          "name": "美团商家学院",
-          "url": "https://college.meituan.com/",
-          "date": "2026-05-20"
+          "name": "[PDF] 目录",
+          "url": "https://aigc.idigital.com.cn/djyanbao/%E3%80%90%E4%B8%AD%E5%9B%BD%E8%BF%9E%E9%94%81%E7%BB%8F%E8%90%A5%E5%8D%8F%E4%BC%9A%E3%80%912025%E5%B9%B4%E5%BA%A6%E4%B8%AD%E5%9B%BD%E9%9B%B6%E5%94%AE%E6%95%B0%E5%AD%97%E5%8C%96%E5%8F%8A%E6%96%B0%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E6%A1%88%E4%BE%8B-2025-11-30.pdf"
         }
       ],
       "timeline": [
@@ -794,7 +770,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T2",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-506",
@@ -899,9 +875,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "美团规则中心",
-          "url": "https://rules-center.meituan.com/home",
-          "date": "2026-05-26"
+          "name": "三年三十个亿级连锁品牌目标背后：美团闪购的即时零售战略宣言_财富号_东方财富网",
+          "url": "https://caifuhao.eastmoney.com/news/20260323212904436093710"
         }
       ],
       "timeline": [
@@ -910,7 +885,7 @@
           "event": "名酒鉴真服务标签上线"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-509",
@@ -927,8 +902,7 @@
       "sources": [
         {
           "name": "美团规则中心",
-          "url": "https://rules-center.meituan.com/home",
-          "date": "2026-05-28"
+          "url": "https://rules-center.meituan.com/m/detail/guize/2"
         }
       ],
       "timeline": [
@@ -937,7 +911,7 @@
           "event": "美团隐私政策更新"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-510",
@@ -953,9 +927,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "美团规则中心",
-          "url": "https://rules-center.meituan.com/home",
-          "date": "2026-05-21"
+          "name": "美团医药健康商家规则中心",
+          "url": "https://rules-center.meituan.com/rule-overview/MENU/26/20-10008?commonType=20"
         }
       ],
       "timeline": [
@@ -964,7 +937,7 @@
           "event": "美团买药商责纠纷赔付规则发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-301",
@@ -975,9 +948,8 @@
       "sowhat": "百度把 AIGC 创意、智能落地页、oCPC 自动出价整合为『一站托管』产品，明显对标巨量引擎的智能托管 + 出单宝。对中小广告主入门门槛进一步降低，但百度搜索流量增长瓶颈仍是核心问题。",
       "sources": [
         {
-          "name": "百度营销官网",
-          "url": "https://e.baidu.com/",
-          "date": "2026-05-24"
+          "name": "2026年5月企业百度推广开户公司哪个好？服务商深度解析 ...",
+          "url": "https://www.sinoasphalt.com/zixun/article-yizh-52660.html"
         }
       ],
       "timeline": [
@@ -989,7 +961,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-021",
@@ -1003,9 +975,8 @@
       "sowhat": "百度连续两年压缩男科妇科广告（消耗 -30%）。这些预算可能溢出到快手健康/磁力，但同时合规风险加大。快手需提前布局医疗资质审核能力。",
       "sources": [
         {
-          "name": "百度营销官方",
-          "url": "https://yingxiao.baidu.com",
-          "date": "2026-05-22"
+          "name": "中华人民共和国国务院令（第149号）——医疗机构管理条例 - 中华人民共和国国家卫生和计划生育委员会",
+          "url": "https://www.nhc.gov.cn/zwgkzt/wsbysj/200804/18304.shtml"
         }
       ],
       "timeline": [
@@ -1018,7 +989,7 @@
           "event": "正式实施：男科妇科广告需二级以上医院授权"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-304",
@@ -1098,9 +1069,8 @@
       "sowhat": "百度健康在严肃医疗严控的同时，主动把『医疗 GPT』接入三甲医生 IP 实时问答，试图把医疗搜索流量留在站内变现。对快手/抖音的医疗内容生态意味着，公域科普流量进入医疗 GPT 时代后，平台需重新判断医疗内容池的合规边界。",
       "sources": [
         {
-          "name": "动脉网：百度医疗 GPT 接入医院实测",
-          "url": "https://vcbeat.top/",
-          "date": "2026-05-17"
+          "name": "百度健康发布AI管家：能聊病症、可连名医 - 中国医院院长",
+          "url": "https://www.h-ceo.com/post/5401.html"
         }
       ],
       "timeline": [
@@ -1112,7 +1082,7 @@
       "dimension": "行业打法",
       "data_source": "三方媒体",
       "tier": "T2",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-305",
@@ -1154,9 +1124,8 @@
       "sowhat": "百度地图 8 亿月活的位置流量首次系统性商业化：商户可以在自家 POI 上挂代金券、限时优惠、视频介绍，按到店核销付费。对美团/抖音本地生活的『搜索意图入口』是不对称攻击。",
       "sources": [
         {
-          "name": "百度地图开放平台",
-          "url": "https://map.baidu.com/",
-          "date": "2026-05-09"
+          "name": "[PDF] 本地商家服务",
+          "url": "https://bass-o-groove.cdn.bcebos.com/bass-o-groove/4b534c47-97cf-45db-16a9-165216966863/%E7%99%BE%E5%BA%A6%E8%AE%A4%E8%AF%81%E5%88%9D%E7%BA%A7%E8%AF%BE%E7%A8%8B%20%7C%E7%99%BE%E5%BA%A6%E6%9C%AC%E5%9C%B0%E6%8E%A8%E5%B9%BF%E9%97%A8%E5%BA%97%E7%BB%8F%E8%90%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20.pdf"
         }
       ],
       "timeline": [
@@ -1168,7 +1137,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-306",
@@ -1184,9 +1153,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "百度营销学堂-产品动态",
-          "url": "https://yingxiao.baidu.com/product/active",
-          "date": "2026-05-07"
+          "name": "[PDF] 消费主力人群和消费潜力的市场在抖音 - U渠道",
+          "url": "https://qn.uqudao.com/a3385c6a290e0c6b56e650b9b2bc9f21.pdf"
         }
       ],
       "timeline": [
@@ -1195,7 +1163,7 @@
           "event": "智能优选线索获取方式全流量上线"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-307",
@@ -1211,9 +1179,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "百度营销中心",
-          "url": "https://yingxiao.baidu.com/",
-          "date": "2026-04-28"
+          "name": "百度推广开户：结合关键词匹配与自动定向技术，提升精准流量发掘 ...",
+          "url": "https://www.80tg.com/news/53245.html"
         }
       ],
       "timeline": [
@@ -1222,7 +1189,7 @@
           "event": "搜索推广智能匹配升级"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-308",
@@ -1238,9 +1205,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "百度营销中心",
-          "url": "https://yingxiao.baidu.com/",
-          "date": "2026-04-15"
+          "name": "[PDF] 2025年中国智能营销应用场景洞察",
+          "url": "https://pdf.dfcfw.com/pdf/H3_AP202504241661717557_1.pdf?1745524111000.pdf="
         }
       ],
       "timeline": [
@@ -1249,7 +1215,7 @@
           "event": "商家智能助手上线"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-701",
@@ -1260,9 +1226,8 @@
       "sowhat": "拼多多把多多客分销升级，最高佣金从 50% → 80%，并开放二级返佣（KOL 拉新分销商分润）。本质是用社交杠杆全面对抗抖音/快手达人电商。对快手联盟/磁力聚星的中腰部达人构成现金流分流压力。",
       "sources": [
         {
-          "name": "拼多多商家公告",
-          "url": "https://mms.pinduoduo.com/",
-          "date": "2026-05-23"
+          "name": "[PDF] 拼多多：电商重构者",
+          "url": "https://pdf.dfcfw.com/pdf/H3_AP202106241499711394_1.pdf"
         }
       ],
       "timeline": [
@@ -1274,7 +1239,7 @@
       "dimension": "营销/分账",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-702",
@@ -1290,9 +1255,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "拼多多商家后台",
-          "url": "https://mms.pinduoduo.com/",
-          "date": "2026-05-15"
+          "name": "拼多多智能营销将升级为全站营销 向所有商家开放 - 电商派",
+          "url": "https://www.pai.com.cn/p/01k21n3xqkkrnst6axrp0nggb8"
         }
       ],
       "timeline": [
@@ -1301,7 +1265,7 @@
           "event": "AI全自动升级"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-705",
@@ -1317,9 +1281,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "拼多多投资者关系",
-          "url": "https://investor.pddholdings.com/",
-          "date": "2026-05-08"
+          "name": "Temu狂飙，拼多多海外版初长成，多多跨境业务成增长新引擎 - 新京报",
+          "url": "https://m.bjnews.com.cn/detail/1701329357169601.html"
         }
       ],
       "timeline": [
@@ -1328,7 +1291,7 @@
           "event": "TEMU GMV突破300亿美元"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-703",
@@ -1344,9 +1307,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "拼多多商家后台",
-          "url": "https://mms.pinduoduo.com/",
-          "date": "2026-04-28"
+          "name": "拼多多618大促将于5月13日开始 - 电商派",
+          "url": "https://www.pai.com.cn/p/01jv1aeqff06pkg17jqdcds6p3"
         }
       ],
       "timeline": [
@@ -1355,7 +1317,7 @@
           "event": "618双叠加提前启动"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-706",
@@ -1371,9 +1333,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "拼多多商家后台",
-          "url": "https://mms.pinduoduo.com/",
-          "date": "2026-04-22"
+          "name": "当AI全面渗入618，各大电商玩家有何新动作？ - CBNData",
+          "url": "https://www.cbndata.com/information/295327"
         }
       ],
       "timeline": [
@@ -1382,7 +1343,7 @@
           "event": "场景推广AI升级"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-709",
@@ -1398,9 +1359,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "拼多多商家后台",
-          "url": "https://mms.pinduoduo.com/",
-          "date": "2026-04-18"
+          "name": "重要通知！TEMU广告已正式上线_跨境魔方",
+          "url": "https://www.upkuajing.com/knowledge/zixun/18245"
         }
       ],
       "timeline": [
@@ -1409,7 +1369,7 @@
           "event": "TEMU广告平台开放"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-704",
@@ -1425,9 +1385,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "拼多多商家后台",
-          "url": "https://mms.pinduoduo.com/",
-          "date": "2026-04-15"
+          "name": "拼多多数据分析如何智能化？AI+BI赋能电商运营全流程 - FineBI数据分析知识库",
+          "url": "https://www.finebi.com/blog/article/68ae768b28946ecca8878b71"
         }
       ],
       "timeline": [
@@ -1440,7 +1399,7 @@
           "event": "三模块一体化升级"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-707",
@@ -1456,9 +1415,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "拼多多投资者关系",
-          "url": "https://investor.pddholdings.com/",
-          "date": "2026-04-10"
+          "name": "PDD Holdings (拼多多) 深度价值投资分析报告2026-03-22 · GitHub",
+          "url": "https://gist.github.com/chenzhihaobest-code/36d6b2415329cc0821f7f632a511119d"
         }
       ],
       "timeline": [
@@ -1467,7 +1425,7 @@
           "event": "拼多多广告收入同比+60%"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-710",
@@ -1483,9 +1441,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "拼多多商家后台",
-          "url": "https://mms.pinduoduo.com/",
-          "date": "2026-04-08"
+          "name": "抖音电商上牌桌：和阿里拉扯，跟拼多多隔离 - 太平洋科技",
+          "url": "https://www.pconline.com.cn/focus/1938/19384212.html"
         }
       ],
       "timeline": [
@@ -1494,7 +1451,7 @@
           "event": "直播带货双列信息流改版"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-708",
@@ -1510,9 +1467,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "拼多多商家后台",
-          "url": "https://mms.pinduoduo.com/",
-          "date": "2026-04-05"
+          "name": "拼多多拼品牌扶持计划来了放出50个低门槛“黑标”名额- 零售 - 亿邦动力",
+          "url": "https://www.ebrun.com/20230731/524499.shtml"
         }
       ],
       "timeline": [
@@ -1521,7 +1477,7 @@
           "event": "品牌黑标审核标准更新"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-105",
@@ -1590,9 +1546,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "小红书蒲公英帮助中心-规则公告",
-          "url": "https://pgy.xiaohongshu.com/help/home",
-          "date": "2026-05-29"
+          "name": "小红书上线社区公约2.0 明确提出“反对制造对立” - 中国日报网",
+          "url": "http://cn.chinadaily.com.cn/a/202601/20/WS696eef27a310942cc499bf9f.html"
         }
       ],
       "timeline": [
@@ -1601,7 +1556,7 @@
           "event": "社区公约2.0发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-107",
@@ -1617,9 +1572,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "小红书蒲公英帮助中心-规则公告",
-          "url": "https://pgy.xiaohongshu.com/help/home",
-          "date": "2026-05-29"
+          "name": "万字精华！小红书投放体系全方位解析",
+          "url": "https://zhuanlan.zhihu.com/p/31661329926"
         }
       ],
       "timeline": [
@@ -1628,7 +1582,7 @@
           "event": "品牌分下线，品牌信任体系建设"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-108",
@@ -1644,9 +1598,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "小红书蒲公英帮助中心-营销工具",
-          "url": "https://pgy.xiaohongshu.com/help/home",
-          "date": "2026-05-29"
+          "name": "不同投放阶段，投流预算/工具如何分配？ | 人人都是产品经理",
+          "url": "https://www.woshipm.com/share/6194002.html"
         }
       ],
       "timeline": [
@@ -1659,7 +1612,7 @@
           "event": "产品升级至新流量链路"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-109",
@@ -1675,9 +1628,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "小红书蒲公英帮助中心-合作模式",
-          "url": "https://pgy.xiaohongshu.com/help/home",
-          "date": "2026-05-29"
+          "name": "小红书蒲公英平台升级产品手册 | 小红书广告平台",
+          "url": "https://m.xiao-ad.com/jd/2510.html"
         }
       ],
       "timeline": [
@@ -1690,7 +1642,7 @@
           "event": "合作笔记入口迁移至创作者中心"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-019",
@@ -1704,9 +1656,8 @@
       "sowhat": "小红书把 KOL/买手个人 IP 与电商 GMV 强绑定，'人货场'模型从'商品中心'转向'买手中心'。快手电商需评估老铁经济与买手经济的协同打法。",
       "sources": [
         {
-          "name": "小红书商业化",
-          "url": "https://ad.xiaohongshu.com",
-          "date": "2026-05-26"
+          "name": "小红书电商的新故事：店播、普通人买手与产业带 - 知乎专栏",
+          "url": "https://zhuanlan.zhihu.com/p/18752287291"
         }
       ],
       "timeline": [
@@ -1719,7 +1670,7 @@
           "event": "正式发布'买手分'公开规则"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-101",
@@ -1730,9 +1681,8 @@
       "sowhat": "小红书在传统 CPC/CPM 之外，新增按成交分润的 CPS 模式，配合本月种草通 ROI 优化包，意在让中小品牌可以低门槛跑通『种草-成交』闭环。对快手磁力金牛而言，需关注小红书在内容种草到淘宝/京东闭环转化场景的渗透。",
       "sources": [
         {
-          "name": "36氪：小红书种草通 ROI 模式实测",
-          "url": "https://36kr.com/",
-          "date": "2026-05-22"
+          "name": "灵犀平台全量外开！一文揭秘灵犀平台数据洞察力（附案例）",
+          "url": "https://www.wsdsocial.com/zh-cn/article/lingxikaifang"
         }
       ],
       "timeline": [
@@ -1748,7 +1698,7 @@
       "dimension": "产品动态",
       "data_source": "三方媒体",
       "tier": "T1",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-102",
@@ -1759,9 +1709,8 @@
       "sowhat": "小红书本地生活以『内容+种草』差异化路径切入，与抖音的『搜索+团购』形成对比。下一家好店计划首批 50 个城市 + 商户前 3 个月免佣金，明显加速本地生活拓城，对美团/抖音本地市场份额产生新分流。",
       "sources": [
         {
-          "name": "钛媒体：小红书本地生活 50 城拓张",
-          "url": "https://www.tmtpost.com/",
-          "date": "2026-05-19"
+          "name": "小红书杀入本地生活到店赛道，或将在10天后正式上线 - 新浪财经",
+          "url": "https://finance.sina.com.cn/roll/2025-09-16/doc-infqsxmi5695457.shtml"
         }
       ],
       "timeline": [
@@ -1777,7 +1726,7 @@
       "dimension": "行业打法",
       "data_source": "三方媒体",
       "tier": "T0",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-103",
@@ -1788,9 +1737,8 @@
       "sowhat": "聚光 V3 把『单目标-单计划』结构升级为『多目标自适应预算』，对标巨量千川的成单回流机制。新增 8 个行业模板（医美/丽人/餐饮等）大幅降低中小商家开户门槛。",
       "sources": [
         {
-          "name": "小红书商业官方",
-          "url": "https://ad.xiaohongshu.com/",
-          "date": "2026-05-14"
+          "name": "小红书聚光- Xiaohongshu",
+          "url": "https://ad.xiaohongshu.com/microapp/creativity/inspire"
         }
       ],
       "timeline": [
@@ -1802,7 +1750,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-104",
@@ -1843,9 +1791,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "小红书种草学",
-          "url": "https://xue.xiaohongshu.com/ad",
-          "date": "2026-05-08"
+          "name": "618种“搜”一体，提升全域品牌力！小红书与淘宝天猫达成战略合作",
+          "url": "https://www.sohu.com/a/892929977_121124373"
         }
       ],
       "timeline": [
@@ -1854,7 +1801,7 @@
           "event": "种草学618大促策略直播发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-003",
@@ -1903,9 +1850,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "小红书种草学",
-          "url": "https://xue.xiaohongshu.com/ad",
-          "date": "2026-04-29"
+          "name": "小红书618｜餐饮酒水&食品饮料行业种草指南 - 搜狐",
+          "url": "https://www.sohu.com/a/1018948647_121666195?scm=10001.8085_13-8085_13.0.0-0-0-0-0.0"
         }
       ],
       "timeline": [
@@ -1914,7 +1860,7 @@
           "event": "种草学4月多行业培训集中发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-017",
@@ -1928,9 +1874,8 @@
       "sowhat": "字节正在用 AI Agent 重构商家工作台，自动化客服+智能选品+实时数据洞察，明显降低中小商家运营门槛。快手磁力魔方需思考类似 Agent 化能力，否则 KA 商家可能转移。",
       "sources": [
         {
-          "name": "36氪：抖音商家智能助手",
-          "url": "https://36kr.com",
-          "date": "2026-05-28"
+          "name": "[PDF] AI应用新纪元：引爆“人工智能+消费”革命",
+          "url": "https://aigc.idigital.com.cn/djyanbao/%E3%80%90%E5%8D%8E%E8%A5%BF%E8%AF%81%E5%88%B8%E3%80%91AI%E5%BA%94%E7%94%A8%E6%96%B0%E7%BA%AA%E5%85%83%EF%BC%9A%E5%BC%95%E7%88%86%E2%80%9C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%2B%E6%B6%88%E8%B4%B9%E2%80%9D%E9%9D%A9%E5%91%BD-2025-03-06.pdf"
         }
       ],
       "timeline": [
@@ -1943,7 +1888,7 @@
           "event": "36氪报道灰度名单扩到 500 家 GMV TOP 商家"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-018",
@@ -1957,9 +1902,8 @@
       "sowhat": "巨量引擎把深度转化从'激活'拓展到'付费/复购'全链路，广告主投放 ROI 可观测性大幅提升。快手磁力台度需对齐深度转化路径，否则 KA 预算可能向字节倾斜。",
       "sources": [
         {
-          "name": "巨量引擎官方",
-          "url": "https://oceanengine.com",
-          "date": "2026-05-27"
+          "name": "巨量引擎2.0数据接入--客户数据平台-火山引擎",
+          "url": "https://www.volcengine.com/docs/6356/1346981"
         }
       ],
       "timeline": [
@@ -1968,7 +1912,7 @@
           "event": "巨量引擎《深度转化能力升级》白皮书发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-013",
@@ -2015,9 +1959,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "抖音生活服务商家学习中心",
-          "url": "https://life-merchant.douyin.com/",
-          "date": "2026-05-27"
+          "name": "抖音生活服务私信产品全面升级，让好生意一聊就成 - China Daily",
+          "url": "https://ex.chinadaily.com.cn/exchange/partners/82/rss/channel/cn/columns/sz8srm/stories/WS68552312a310205377039499.html"
         }
       ],
       "timeline": [
@@ -2030,7 +1973,7 @@
           "event": "渠道版本投放策略发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-019-new",
@@ -2046,9 +1989,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "巨量本地推官方支持中心",
-          "url": "https://support.oceanengine.com/support/?spaceId=174&visitor_source=help_main_site",
-          "date": "2026-05-26"
+          "name": "2026年Q2本地生活服务商家如何用巨量本地推吸引周边用户_核心_素材_流量",
+          "url": "https://www.sohu.com/a/1028174219_122618777"
         }
       ],
       "timeline": [
@@ -2061,7 +2003,7 @@
           "event": "2026年度产品资料合集发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-022",
@@ -2108,9 +2050,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "巨量引擎营销学院",
-          "url": "https://academy.oceanengine.com/",
-          "date": "2026-05-20"
+          "name": "豆包已接入抖音电商，内测AI购物",
+          "url": "https://www.amassai.net/news/doubaoyijierudouyindianshangneiceaigouwu"
         }
       ],
       "timeline": [
@@ -2127,7 +2068,7 @@
           "event": "豆包全面接入抖音电商"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-023",
@@ -2250,9 +2191,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "巨量创意官网（智能创作工具）",
-          "url": "https://cc.oceanengine.com/",
-          "date": "2026-05-14"
+          "name": "实测抖音AI图文生成工具，帮你告别内容创作焦虑 - 搜狐",
+          "url": "https://www.sohu.com/a/968219839_122555637"
         }
       ],
       "timeline": [
@@ -2265,7 +2205,7 @@
           "event": "产品手册正式发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-025",
@@ -2281,9 +2221,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "巨量本地推帮助中心 · 搜索类产品",
-          "url": "https://support.oceanengine.com/support/?spaceId=174&visitor_source=help_main_site",
-          "date": "2026-05-12"
+          "name": "抖音门店推广：巨量本地推「搜索广告」上线！",
+          "url": "https://www.neovistads.com/zh/chinese-douyin-store-promotion-huge-local-promotion-search-ads-launched.html"
         }
       ],
       "timeline": [
@@ -2296,7 +2235,7 @@
           "event": "搜索抢首屏产品上线"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-016",
@@ -2350,9 +2289,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "巨量引擎合作伙伴官方",
-          "url": "https://partner.oceanengine.com/",
-          "date": "2026-05-07"
+          "name": "平台放大招！AD 私信能力并入本地推，线索生意风口正劲！",
+          "url": "https://zhuanlan.zhihu.com/p/1934422936040747149"
         }
       ],
       "timeline": [
@@ -2365,7 +2303,7 @@
           "event": "Q2渠道规划发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-026",
@@ -2500,9 +2438,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "巨量引擎营销学院",
-          "url": "https://academy.oceanengine.com/",
-          "date": "2026-04-25"
+          "name": "豆包能投广告吗？一文讲透豆包AI营销新路径（2026年） - 品牌2025 - 企业博客",
+          "url": "https://www.cnblogs.com/bsoo/p/19609494"
         }
       ],
       "timeline": [
@@ -2519,7 +2456,7 @@
           "event": "豆包接入巨量引擎投放后台"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-029",
@@ -2566,9 +2503,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "巨量引擎品牌广告产品中心",
-          "url": "https://www.oceanengine.com/",
-          "date": "2026-04-22"
+          "name": "抖音广告投放基于LBS的门店导流功能是怎样的？",
+          "url": "https://m.tui39.com/jd/1195.html"
         }
       ],
       "timeline": [
@@ -2577,7 +2513,7 @@
           "event": "品牌广告LBS智能投放入口开放"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-011",
@@ -2593,9 +2529,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "巨量引擎营销学院",
-          "url": "https://academy.oceanengine.com/",
-          "date": "2026-04-20"
+          "name": "好消息！巨量千川升级新能力新模式，在抖音做生意更简单了！",
+          "url": "https://cc.oceanengine.com/academy/article-detail/da79e72154ad5da91a457e35aa262607"
         }
       ],
       "timeline": [
@@ -2604,7 +2539,7 @@
           "event": "三场景一体化升级"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-030",
@@ -2647,9 +2582,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "巨量引擎开放平台 Changelog",
-          "url": "https://open.oceanengine.com/changelog/1",
-          "date": "2026-04-14"
+          "name": "frank (@frank08686668) / Posts / X",
+          "url": "https://x.com/frank08686668"
         }
       ],
       "timeline": [
@@ -2662,7 +2596,7 @@
           "event": "4月中旬Changelog发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-012",
@@ -2678,9 +2612,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "巨量引擎营销学院",
-          "url": "https://academy.oceanengine.com/",
-          "date": "2026-04-08"
+          "name": "[PDF] AI应用重塑流量格局，字节阿里腾讯C端布局加快",
+          "url": "https://www.cdut.edu.cn/__local/F/C9/EB/C02614CCC4A0369B16A7EC1C52A_B628CD50_6125D1.pdf"
         }
       ],
       "timeline": [
@@ -2689,7 +2622,7 @@
           "event": "2026目标3000亿+"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-032",
@@ -2705,9 +2638,8 @@
       "scope": "国内",
       "sources": [
         {
-          "name": "抖音生活服务商家学习中心 · 直播+线索",
-          "url": "https://life-merchant.douyin.com/",
-          "date": "2026-04-01"
+          "name": "家居行业本地推2.0线索直播手册 - 知乎专栏",
+          "url": "https://zhuanlan.zhihu.com/p/1961508211849950313"
         }
       ],
       "timeline": [
@@ -2716,7 +2648,7 @@
           "event": "线索直播产品操作手册发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-419",
@@ -2952,9 +2884,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "Snap for Business Blog",
-          "url": "https://forbusiness.snapchat.com/blog",
-          "date": "2026-05-15"
+          "name": "Snap 通过Lens Studio 5.0 推出具有AI 功能的高级AR 工具",
+          "url": "https://appmaster.io/zh/news/snap-tui-chu-xian-jin-de-ar-gong-ju-ai-gong-neng-lens-studio-5"
         }
       ],
       "timeline": [
@@ -2967,7 +2898,7 @@
           "event": "Lens Studio 5.0 AI生成AR滤镜"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-712",
@@ -2983,9 +2914,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "Snap for Business Blog",
-          "url": "https://forbusiness.snapchat.com/blog",
-          "date": "2026-04-20"
+          "name": "Snapchat推出全新生成式AI广告产品传音旗下Infinix借势在中东实现 ...",
+          "url": "https://www.ebrun.com/20250604/582053.shtml"
         }
       ],
       "timeline": [
@@ -2994,7 +2924,7 @@
           "event": "Snap AI广告创意工具推出"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-401",
@@ -3005,9 +2935,8 @@
       "sowhat": "Sora 2 商业 API 落地，视频生成成本进入工业级（合 0.36¥/秒），叠加 Pika/可灵/即梦推出企业版，整个素材生产链路全面被 AIGC 重构。对快手/抖音侧素材代生产、广告创意、达人辅助 IP 影响巨大。",
       "sources": [
         {
-          "name": "OpenAI Blog",
-          "url": "https://openai.com/blog/",
-          "date": "2026-05-28"
+          "name": "Sora 2 发布 - OpenAI",
+          "url": "https://openai.com/zh-Hans-CN/index/sora-2"
         }
       ],
       "timeline": [
@@ -3023,7 +2952,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T0",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-416",
@@ -3039,9 +2968,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "OpenAI Blog",
-          "url": "https://openai.com/blog",
-          "date": "2026-05-22"
+          "name": "Gartner AI 编程榜：阿里云挑战者，字节BytePlus 细分玩家 - 网易",
+          "url": "https://www.163.com/dy/article/KTN06Q300511D6RL.html"
         }
       ],
       "timeline": [
@@ -3054,7 +2982,7 @@
           "event": "被Gartner评为领导者"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-417",
@@ -3070,9 +2998,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "OpenAI Blog",
-          "url": "https://openai.com/blog",
-          "date": "2026-05-18"
+          "name": "速报：OpenAI 携手戴尔，Codex 正式进军企业级AI 系统",
+          "url": "https://x.com/Techub_News/status/2056445941649903734"
         }
       ],
       "timeline": [
@@ -3081,7 +3008,7 @@
           "event": "OpenAI×Dell混合部署合作宣布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-418",
@@ -3097,9 +3024,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "OpenAI Blog",
-          "url": "https://openai.com/blog",
-          "date": "2026-05-15"
+          "name": "ChatGPT 中的全新个人理财体验",
+          "url": "https://openai.com/zh-Hans-CN/index/personal-finance-chatgpt"
         }
       ],
       "timeline": [
@@ -3112,7 +3038,7 @@
           "event": "个人理财功能上线"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-006",
@@ -3152,9 +3078,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "OpenAI Blog",
-          "url": "https://openai.com/blog",
-          "date": "2026-05-27"
+          "name": "Post by ginobefun on X: 详细图文内容：",
+          "url": "https://x.com/hongming731/status/2059795717116641682"
         }
       ],
       "timeline": [
@@ -3163,7 +3088,7 @@
           "event": "税务智能体案例发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-423",
@@ -3179,9 +3104,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "OpenAI Blog",
-          "url": "https://openai.com/blog",
-          "date": "2026-05-28"
+          "name": "OpenAI发布前沿治理框架，阐明其安全实践将如何符合新兴监管要求",
+          "url": "https://www.me.news/news/282387"
         }
       ],
       "timeline": [
@@ -3190,7 +3114,7 @@
           "event": "前沿治理框架发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-424",
@@ -3206,9 +3130,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "OpenAI Blog",
-          "url": "https://openai.com/blog",
-          "date": "2026-05-19"
+          "name": "Advancing content provenance for a safer, more transparent AI ecosystem",
+          "url": "https://openai.com/index/advancing-content-provenance"
         }
       ],
       "timeline": [
@@ -3217,7 +3140,7 @@
           "event": "AI内容溯源推进发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-425",
@@ -3233,9 +3156,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "OpenAI Blog",
-          "url": "https://openai.com/blog",
-          "date": "2026-05-20"
+          "name": "一款OpenAI 模型已推翻离散几何中的一个核心猜想 - Reddit",
+          "url": "https://www.reddit.com/r/OpenAI/comments/1tivwqy/an_openai_model_has_disproved_a_central?tl=zh-hans"
         }
       ],
       "timeline": [
@@ -3244,7 +3166,7 @@
           "event": "AI推翻离散几何核心猜想"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-427",
@@ -3260,9 +3182,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "OpenAI Blog",
-          "url": "https://openai.com/blog",
-          "date": "2026-05-29"
+          "name": "Our updated Preparedness Framework",
+          "url": "https://openai.com/index/updating-our-preparedness-framework"
         }
       ],
       "timeline": [
@@ -3271,7 +3192,7 @@
           "event": "第三方评估框架发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-416-add",
@@ -3287,9 +3208,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "Meta for Business News",
-          "url": "https://www.facebook.com/business/news",
-          "date": "2026-05-22"
+          "name": "Meta 宣布AI 廣告全自動！圖文影像一次搞定的時代來了",
+          "url": "https://www.seoseo.com.tw/blog/article_detail_1087.html"
         }
       ],
       "timeline": [
@@ -3298,7 +3218,7 @@
           "event": "Ad Creative AI推出"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-411",
@@ -3314,9 +3234,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "Meta for Business News",
-          "url": "https://www.facebook.com/business/news",
-          "date": "2026-05-18"
+          "name": "Meta廣告更新：新品牌管理中心？ - Threads",
+          "url": "https://www.threads.com/@marcus.marketing.blog/post/DBPytzYsmrQ"
         }
       ],
       "timeline": [
@@ -3325,7 +3244,7 @@
           "event": "Threads广告品牌安全控制上线"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-412",
@@ -3341,9 +3260,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "Meta for Business News",
-          "url": "https://www.facebook.com/business/news",
-          "date": "2026-05-15"
+          "name": "如何针对 Meta 技术中的社交搜索优化内容 | Meta for Business",
+          "url": "https://zh-cn.facebook.com/business/news/social-search-series-2"
         }
       ],
       "timeline": [
@@ -3356,7 +3274,7 @@
           "event": "Meta发布社交搜索系列指南"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-413",
@@ -3372,9 +3290,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "Meta for Business News",
-          "url": "https://www.facebook.com/business/news",
-          "date": "2026-05-12"
+          "name": "当AI遇见广告：平台AI能力全面爆发，解锁出海品牌看得见的实效增长|AI技术|AI识别|钛媒体|Copilot|数据_手机新浪网",
+          "url": "https://finance.sina.cn/stock/jdts/2026-04-30/detail-inhwftwn6281901.d.html?vt=4"
         }
       ],
       "timeline": [
@@ -3383,7 +3300,7 @@
           "event": "Meta发布效果代理商AI方向指南"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-414",
@@ -3399,9 +3316,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "Meta for Business News",
-          "url": "https://www.facebook.com/business/news",
-          "date": "2026-05-07"
+          "name": "Meta 如何通过 Facebook、Instagram 等平台赚钱：商业模式全解析 | 人人都是产品经理",
+          "url": "https://www.woshipm.com/it/6201522.html"
         }
       ],
       "timeline": [
@@ -3410,7 +3326,7 @@
           "event": "Dribbleup案例发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-415",
@@ -3426,9 +3342,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "Meta for Business News",
-          "url": "https://www.facebook.com/business/news",
-          "date": "2026-04-30"
+          "name": "投Meta 廣告的人,去看一下你的廣告組合裡有沒有一個叫 ... - Threads",
+          "url": "https://www.threads.com/@freeeadman/post/DW-7f-Cj0PQ/%E6%8A%95-meta-%E5%BB%A3%E5%91%8A%E7%9A%84%E4%BA%BA%E5%8E%BB%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BD%A0%E7%9A%84%E5%BB%A3%E5%91%8A%E7%B5%84%E5%90%88%E8%A3%A1%E6%9C%89%E6%B2%92%E6%9C%89%E4%B8%80%E5%80%8B%E5%8F%ABadvantage-%E7%B4%A0%E6%9D%90%E7%9A%84%E9%81%B8%E9%A0%85%E5%BE%88%E5%A4%9A%E4%BA%BA%E6%A0%B9%E6%9C%AC%E4%B8%8D%E7%9F%A5%E9%81%93%E5%AE%83%E5%9C%A8%E5%93%AA%E4%BD%86%E5%AE%83%E5%8F%AF%E8%83%BD%E5%B7%B2%E7%B6%93%E9%BB%98%E9%BB%98%E5%B9%AB%E4%BD%A0%E6%94%B9%E4%BA%86%E7%B4%A0%E6%9D%90%E9%80%99%E5%8A%9F%E8%83%BD%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85%E5%BE%88%E7%B0%A1%E5%96%AE%E5%AE%83%E6%9C%83"
         }
       ],
       "timeline": [
@@ -3437,7 +3352,7 @@
           "event": "Advantage+功能扩展"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-415-add",
@@ -3453,9 +3368,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "Meta for Business News",
-          "url": "https://www.facebook.com/business/news",
-          "date": "2026-04-25"
+          "name": "【最新營養】Meta 高效速成廣告 2025 新攻略 By iSPOT Media 🤖",
+          "url": "https://www.i-spotmedia.com/Blog/meta-advantageplus-update"
         }
       ],
       "timeline": [
@@ -3464,7 +3378,7 @@
           "event": "AI Creative功能推出"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-416-add2",
@@ -3480,9 +3394,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "Meta for Business News",
-          "url": "https://www.facebook.com/business/news",
-          "date": "2026-04-22"
+          "name": "透過Meta 商店廣告觸及更多在網路上購物的顧客 - Facebook",
+          "url": "https://zh-tw.facebook.com/business/shopping/shops-ads"
         }
       ],
       "timeline": [
@@ -3491,7 +3404,7 @@
           "event": "Shopping Ads 2.0升级"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-415-add2",
@@ -3507,9 +3420,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "Meta Investor Relations",
-          "url": "https://investor.fb.com/",
-          "date": "2026-04-18"
+          "name": "Meta财报前瞻：22倍PE背后，是广告现金流和AI吞金兽的对赌 - 博客 | 文学城",
+          "url": "https://blog.wenxuecity.com/myblog/82610/202604/30368.html"
         }
       ],
       "timeline": [
@@ -3522,7 +3434,7 @@
           "event": "Meta广告收入+18%同增"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-416-add3",
@@ -3538,9 +3450,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "Meta for Business News",
-          "url": "https://www.facebook.com/business/news",
-          "date": "2026-04-15"
+          "name": "NA Headlines, Author at 北美头条 - 北美华人新闻网",
+          "url": "https://northamericaheadlines.com/author/flamingxingyahoo-ca"
         }
       ],
       "timeline": [
@@ -3549,7 +3460,7 @@
           "event": "Gemini驱动广告审核升级"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-403",
@@ -3689,9 +3600,8 @@
       "scope": "海外",
       "sources": [
         {
-          "name": "The Keyword - Google",
-          "url": "https://blog.google/",
-          "date": "2026-05-20"
+          "name": "AI 时代重塑购物体验：Google 正式发布通用商务协议（UCP）与智能 ...",
+          "url": "https://zhuanlan.zhihu.com/p/1994108055911171710"
         }
       ],
       "timeline": [
@@ -3700,7 +3610,7 @@
           "event": "UCP统一电商协议发布"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-402",
@@ -3711,9 +3621,8 @@
       "sowhat": "PMax 直接把 Gemini 3 接入创意生成，并把 YouTube/搜索/Maps/Gmail 出价模型统一，全球广告主已开始迁移。对国内出海广告（TikTok 海外/AppLovin/Meta）形成新的对标基线。",
       "sources": [
         {
-          "name": "Google Ads Blog",
-          "url": "https://blog.google/products/ads/",
-          "date": "2026-05-15"
+          "name": "生成式 AI 衝擊廣告代理：從產出自動化到文化治理的挑戰 | Taiwan Bigdata Insights | Taiwan Bigdata",
+          "url": "https://bigdata.com.tw/posts/1acf351f-8e2b-44ad-bfa9-7833bd8fbf55"
         }
       ],
       "timeline": [
@@ -3725,7 +3634,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "weak"
+      "_verification": "verified"
     },
     {
       "id": "comp-407",
