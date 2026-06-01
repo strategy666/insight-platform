@@ -361,7 +361,27 @@
 
         const cfg = (typeof window.__getAIConfig === 'function') ? window.__getAIConfig() : null;
         if (!cfg || !cfg.llm_key) {
-            appendMsg('bot', '⚠️ 尚未配置 LLM。');
+            appendMsg('bot', '⚠️ 尚未配置 LLM API。<br>请尝试以下操作：<br>1. 在「行业研究」Tab 中点击 ⚙️ 配置 API Key<br>2. 或点击下方「重置配置」按钮恢复内置默认 Key');
+            // 插入重置按钮
+            const btn = document.createElement('button');
+            btn.textContent = '🔄 重置配置（恢复内置 Key）';
+            btn.className = 'as-reset-btn';
+            btn.style.cssText = 'margin:8px 0;padding:8px 16px;border:1px solid #4CAF50;border-radius:8px;background:#f0faf0;color:#2e7d32;cursor:pointer;font-size:14px;';
+            btn.onclick = function() {
+                try {
+                    localStorage.removeItem('insight_ai_config_v1');
+                    appendMsg('bot', '✅ 配置已重置！内置 DeepSeek Key 已恢复，请重新提问试试。');
+                    btn.remove();
+                } catch(e) {
+                    appendMsg('bot', '❌ 重置失败：' + e.message);
+                }
+            };
+            const body = document.getElementById('asChatBody');
+            const lastBubble = body.lastElementChild;
+            if (lastBubble) {
+                const contentEl = lastBubble.querySelector('.as-msg-content') || lastBubble;
+                contentEl.appendChild(btn);
+            }
             return;
         }
 

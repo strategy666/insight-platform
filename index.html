@@ -217,7 +217,7 @@
                 <div class="dual-col-head">
                     <h3>📁 飞书内部文档 <span class="dual-cnt" id="dualCntFs">0</span></h3>
                 </div>
-                <div class="dual-col-tip">📊 本地索引 <b>517</b> 篇飞书文档（来自你飞书空间·每周可重扫更新）</div>
+                <div class="dual-col-tip">📊 本地索引 <b>419</b> 篇飞书文档（来自你飞书空间·每周可重扫更新）</div>
                 <div class="dual-col-body" id="dualBodyFs"></div>
             </div>
         </div>
@@ -827,7 +827,7 @@ window.searchCompetitor = async function(q) {
                 ${openBtn}
             </div>
         </div>`;
-    }).join('') : '<div class="dual-empty">📁 未命中飞书文档，可点击顶部「📁 飞书文档」tab 在 518 篇全库检索</div>';
+    }).join('') : '<div class="dual-empty">📁 未命中飞书文档，可点击顶部「📁 飞书文档」tab 在 419 篇全库检索</div>';
     
     // 6. 公开动态列
     document.getElementById('dualCntComp').textContent = feishuOnly ? '-' : compHits.length;
@@ -874,7 +874,7 @@ function _genAISummary(q, fsHits, compHits, feishuOnly) {
             <p>未找到与「<b>${q}</b>」相关的内部资料或公开动态。建议：</p>
             <ul>
                 <li>尝试更宽泛的关键词（如改"巨量引擎深度转化"为"巨量引擎"）</li>
-                <li>点击顶部 <a href="#feishu" onclick="switchTab('feishu');return false;"><b>📁 飞书文档</b></a> tab 去本地全库检索（517 篇·来自你飞书空间）</li>
+                <li>点击顶部 <a href="#feishu" onclick="switchTab('feishu');return false;"><b>📁 飞书文档</b></a> tab 去本地全库检索（419 篇·来自你飞书空间）</li>
             </ul>
         </div>`;
     }

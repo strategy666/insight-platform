@@ -32,10 +32,12 @@
             const raw = localStorage.getItem(LS_KEY);
             const stored = raw ? JSON.parse(raw) : {};
             // 优先级：user 的 stored 设置 > BUILTIN > DEFAULT
-            // 如果 stored 中某字段为空，用 BUILTIN 补全
+            // 如果 stored 中某字段为空串，视为用户未填写 → 回退到 BUILTIN
             const merged = Object.assign({}, DEFAULT_CFG, BUILTIN_CFG, stored);
-            // 但允许用户完全清空 key（设为空串时保留用户意愿）
-            if (raw && stored.llm_key === '') merged.llm_key = '';
+            // 修正：空串不应覆盖 BUILTIN 的真实 key（用户未填 = 用默认，不是主动清空）
+            for (const k of ['llm_key','llm_endpoint','llm_model','search_key']) {
+                if (merged[k] === '' && BUILTIN_CFG[k]) merged[k] = BUILTIN_CFG[k];
+            }
             return merged;
         } catch (e) { return Object.assign({}, DEFAULT_CFG, BUILTIN_CFG); }
     }
