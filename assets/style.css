@@ -561,8 +561,9 @@ body {
 }
 
 .competitor-updates {
-    display: grid;
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .competitor-card {
@@ -2514,15 +2515,26 @@ body {
 }
 
 /* ============ Part2 竞对追踪矩阵 ============ */
-.comp-filter-bar {
+/* ============ 竞对筛选栏（可折叠）============ */
+.comp-filter-collapse {
     background: linear-gradient(135deg, #f8fcfa 0%, #f0f7f4 100%);
     border: 1px solid #d8e8df;
     border-radius: 12px;
-    padding: 14px 18px;
     margin: 12px 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    overflow: hidden;
+}
+.comp-filter-toggle {
+    display: flex; align-items: center; gap: 8px;
+    width: 100%; padding: 10px 18px;
+    background: none; border: none; cursor: pointer;
+    font-size: 13px; font-weight: 600; color: #2d7a5f;
+    text-align: left;
+}
+.comp-filter-toggle:hover { background: rgba(45,122,95,0.05); }
+.comp-filter-summary { font-weight: 400; color: #888; font-size: 12px; margin-left: 4px; }
+.comp-filter-body {
+    padding: 0 18px 14px;
+    display: flex; flex-direction: column; gap: 10px;
 }
 .comp-filter-group {
     display: flex;
@@ -5882,3 +5894,36 @@ a.news-row-link:hover .news-title { color: #2a6f4f; }
 @media (max-width: 900px) {
     .dual-search-row { grid-template-columns: 1fr; }
 }
+
+/* ============ 竞对动态 · 紧凑行（复用 news-row）============ */
+.comp-row { cursor: default; }
+.comp-row .comp-dim-badge {
+    display: inline-block; background: #2d7a5f; color: #fff;
+    font-size: 10px; padding: 2px 8px; border-radius: 10px;
+    font-weight: 600; margin-right: 2px;
+}
+.comp-src-inline-tag {
+    display: inline-block; font-size: 10px; padding: 1px 6px;
+    border-radius: 6px; border: 1px solid #d8e8df;
+    background: #f0f7f4; color: #4a6a5c; font-weight: 600;
+}
+.comp-src-inline-tag.src-飞书内部 { background: #e3f2fd; color: #1976d2; border-color: #bbdefb; }
+.comp-src-inline-tag.src-竞媒官方 { background: #fff8e1; color: #f57c00; border-color: #ffe0b2; }
+.comp-src-inline {
+    display: inline-block; font-size: 10px; color: #999; text-decoration: none;
+    padding: 1px 4px; border-radius: 3px;
+}
+.comp-src-inline:hover { color: #2a6f4f; background: #e8f5ee; }
+.comp-tl-summary {
+    display: inline-block; font-size: 11px; color: #2a6f4f; cursor: pointer;
+    padding: 2px 6px; border: 1px dashed #b8d8c8; border-radius: 6px;
+    background: #f5fbf7;
+}
+.comp-tl-summary:hover { background: #e8f5ee; }
+.comp-tl-inline {
+    margin-top: 6px; padding: 6px 10px;
+    background: #f8fdfb; border-left: 3px solid #2d7a5f;
+    border-radius: 0 6px 6px 0; font-size: 12px; color: #555;
+}
+.comp-row .comp-tl-item { padding: 2px 0; }
+.comp-row .comp-tl-date { font-weight: 600; color: #2d7a5f; margin-right: 6px; font-size: 10px; }

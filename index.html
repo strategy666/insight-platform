@@ -9,7 +9,7 @@
     <title>商业化洞察周报 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260601p" />
+    <link rel="stylesheet" href="assets/style.css?v=20260601q" />
 </head>
 <body>
 
@@ -188,32 +188,6 @@
                            oninput="onFeishuPageInput(this.value)" />
                     <button class="search-btn" onclick="runFeishuPageSearch(document.getElementById('feishuPageInput').value)">检索</button>
                 </div>
-                <div class="feishu-filters" id="fsFiltersInline">
-                    <div class="fs-filter-group">
-                        <button class="fs-chip active" data-filter-type="all">全部</button>
-                        <button class="fs-chip" data-filter-type="docx">📄 docx</button>
-                        <button class="fs-chip" data-filter-type="wiki">📚 wiki</button>
-                        <button class="fs-chip" data-filter-type="sheet">📊 sheet</button>
-                        <button class="fs-chip" data-filter-type="file">📎 file</button>
-                        <button class="fs-chip" data-filter-type="bitable">🗃️ bitable</button>
-                    </div>
-                    <div class="fs-filter-group">
-                        <button class="fs-chip active" data-filter-comp="all">全部</button>
-                        <button class="fs-chip" data-filter-comp="字节">字节</button>
-                        <button class="fs-chip" data-filter-comp="巨量引擎">巨量引擎</button>
-                        <button class="fs-chip" data-filter-comp="腾讯">腾讯</button>
-                        <button class="fs-chip" data-filter-comp="百度">百度</button>
-                        <button class="fs-chip" data-filter-comp="美团">美团</button>
-                        <button class="fs-chip" data-filter-comp="小红书">小红书</button>
-                    </div>
-                    <div class="fs-filter-group">
-                        <label class="fs-only-url">
-                            <input type="checkbox" id="fsOnlyUrl" />
-                            <span>🔗 仅带 URL</span>
-                        </label>
-                        <span class="fs-filter-stat" id="fsResultStat">—</span>
-                    </div>
-                </div>
                 <div class="feishu-result-grid" id="fsResultList">
                     <div class="dual-empty">输入关键词查看匹配文档 · 点击快捷词快速检索（仅列出前 100 条，超出请细化关键词）</div>
                 </div>
@@ -233,10 +207,6 @@
                         <input type="text" id="competitorSearchInput" placeholder="输入关键词检索竞对动态…" autocomplete="off"
                                onkeyup="if(event.key==='Enter')searchCompetitor(this.value)"
                                oninput="onCompSearchInput(this.value)" />
-                        <label class="comp-feishu-only" title="只看飞书文档">
-                            <input type="checkbox" id="feishuOnlyToggle" onchange="searchCompetitor(document.getElementById('competitorSearchInput').value)" />
-                            <span>📁 仅飞书</span>
-                        </label>
                         <button class="search-btn" onclick="searchCompetitor(document.getElementById('competitorSearchInput').value)">检索</button>
                     </div>
                     <div class="suggested-questions" id="compHotChips">
@@ -269,35 +239,33 @@
 
 <section id="competitors" class="section">
     <div class="container">
-        <div class="section-header section-header-row">
-            <div>
-                <h2>📌 竞对动态矩阵</h2>
-                <p>双维筛选：公司 × 业务维度 · 数据源标签可追溯</p>
-            </div>
-            <div class="comp-stat-row">
-                <span class="comp-stat"><b id="compTotal">—</b> 条动态</span>
-                <span class="comp-stat-sep">·</span>
-                <span class="comp-stat"><b id="compRecent">—</b> 条本周</span>
-            </div>
-        </div>
-
-        <!-- 公司维度切换 -->
-        <div class="comp-filter-bar">
-            <div class="comp-filter-group">
-                <label>🏢 公司</label>
-                <div class="comp-tabs" id="competitorTabs"></div>
-            </div>
-            <div class="comp-filter-group">
-                <label>🧭 维度</label>
-                <div class="comp-dim-tabs" id="competitorDimTabs"></div>
-            </div>
-            <div class="comp-filter-group">
-                <label>📊 数据源</label>
-                <div class="comp-source-tabs" id="competitorSourceTabs">
-                    <button class="chip active" data-source="all">全部</button>
-                    <button class="chip" data-source="飞书内部">📁 飞书内部</button>
-                    <button class="chip" data-source="竞媒官方">🏢 竞媒官方</button>
-                    <button class="chip" data-source="三方媒体">📰 三方媒体</button>
+        <!-- 折叠式筛选栏 -->
+        <div class="comp-filter-collapse">
+            <button class="comp-filter-toggle" onclick="toggleCompFilters()">
+                <span id="compFilterToggleIcon">▶</span> 筛选 <span class="comp-filter-summary" id="compFilterSummary"></span>
+                <span class="comp-stat-row" style="margin-left:auto">
+                    <span class="comp-stat"><b id="compTotal">—</b> 条动态</span>
+                    <span class="comp-stat-sep">·</span>
+                    <span class="comp-stat"><b id="compRecent">—</b> 条本周</span>
+                </span>
+            </button>
+            <div class="comp-filter-body" id="compFilterBody" style="display:none;">
+                <div class="comp-filter-group">
+                    <label>🏢 公司</label>
+                    <div class="comp-tabs" id="competitorTabs"></div>
+                </div>
+                <div class="comp-filter-group">
+                    <label>🧭 维度</label>
+                    <div class="comp-dim-tabs" id="competitorDimTabs"></div>
+                </div>
+                <div class="comp-filter-group">
+                    <label>📊 数据源</label>
+                    <div class="comp-source-tabs" id="competitorSourceTabs">
+                        <button class="chip active" data-source="all">全部</button>
+                        <button class="chip" data-source="飞书内部">📁 飞书内部</button>
+                        <button class="chip" data-source="竞媒官方">🏢 竞媒官方</button>
+                        <button class="chip" data-source="三方媒体">📰 三方媒体</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -328,14 +296,14 @@
                 <div class="ai-research-icon">🧠</div>
                 <div class="ai-research-headtext">
                     <div class="ai-research-title">AI 行业研究 · 智能生成</div>
-                    <div class="ai-research-sub">输入任意行业 / 赛道 / 细分领域，调用 DeepSeek · 联网检索 + AI 纵同生成一份 <b>市场规模 / 竞争格局 / 头部玩家 / 用户画像 / 机会点</b> 五维度完整研报</div>
+                    <div class="ai-research-sub">输入任意行业 / 赛道 / 细分领域，即可查看包含 <b>市场规模 / 竞争格局 / 头部玩家 / 用户画像 / 机会点</b> 五维度完整研报</div>
                 </div>
             </div>
             <div class="ai-research-input-row">
                 <input type="text" id="aiResearchInput" class="ai-research-input"
-                       placeholder="🔍 输入行业 / 赛道（如：足疗 / AI虚拟人直播 / 汽车后市场），回车生成研报"
+                       placeholder="🔍 输入行业 / 赛道（如：足疗 / AI虚拟人直播 / 汽车后市场），回车查看研报"
                        onkeypress="if(event.key==='Enter')window.runAIResearch(this.value)" />
-                <button class="ai-research-btn" onclick="window.runAIResearch(document.getElementById('aiResearchInput').value)">🚀 生成研报</button>
+                <button class="ai-research-btn" onclick="window.runAIResearch(document.getElementById('aiResearchInput').value)">🚀 查看研报</button>
             </div>
             <div class="ai-research-suggest">
                 <span class="ai-research-suggest-label">🔥 热门：</span>
@@ -562,7 +530,7 @@ let _feishuDocs = null;
 async function loadFeishuDocs() {
     if (_feishuDocs) return _feishuDocs;
     try {
-        const r = await fetch('assets/data/feishu_docs.json?v=20260601p');
+        const r = await fetch('assets/data/feishu_docs.json?v=20260601q');
         const j = await r.json();
         _feishuDocs = j.items || [];
     } catch(e) {
@@ -605,7 +573,7 @@ window.onCompSearchInput = function(v) {
 window.searchCompetitor = async function(q) {
     q = (q || '').trim();
     if (!q) return;
-    const feishuOnly = document.getElementById('feishuOnlyToggle').checked;
+    const feishuOnly = false; // 仅飞书开关已删除，始终双源检索
     
     // 1. 加载飞书库
     const fsAll = await loadFeishuDocs();
@@ -1235,12 +1203,12 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260601p"></script>
-<script src="assets/feishu-search.js?v=20260601p"></script>
-<script src="assets/ai-chat.js?v=20260601p"></script>
-<script src="assets/industry-research.js?v=20260601p"></script>
-<script src="assets/onboarding.js?v=20260601p"></script>
-<script src="assets/chat-widget.js?v=20260601p"></script>
+<script src="assets/main.js?v=20260601q"></script>
+<script src="assets/feishu-search.js?v=20260601q"></script>
+<script src="assets/ai-chat.js?v=20260601q"></script>
+<script src="assets/industry-research.js?v=20260601q"></script>
+<script src="assets/onboarding.js?v=20260601q"></script>
+<script src="assets/chat-widget.js?v=20260601q"></script>
 <!-- assistant-tab.js 已随 Tab4 删除 -->
 <script>
 // === Stats 强制兜底（最高优先级，先于其他逻辑执行） ===

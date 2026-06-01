@@ -516,6 +516,7 @@ function renderCompetitors() {
             dimTabs.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
             b.classList.add('active');
             renderCompetitorList();
+            updateCompFilterSummary();
         });
     }
     const srcTabs = document.getElementById('competitorSourceTabs');
@@ -526,6 +527,7 @@ function renderCompetitors() {
             srcTabs.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
             b.classList.add('active');
             renderCompetitorList();
+            updateCompFilterSummary();
         });
     }
     
@@ -593,6 +595,7 @@ function switchCompetitor(company) {
             dims.map(d => `<button class="chip" data-dim="${d}">${d}</button>`).join('');
     }
     renderCompetitorList();
+    updateCompFilterSummary();
 }
 
 function renderCompetitorList() {
@@ -613,42 +616,83 @@ function renderCompetitorList() {
     }
 
     const html = updates.map(item => {
-        const srcBadge = item.data_source === '飞书内部' ? '📁' :
-                          item.data_source === '竞媒官方' ? '🏢' : '📰';
+        const dt = new Date(item.date);
+        const shortDate = isNaN(dt.getTime()) ? item.date : `${dt.getMonth()+1}/${dt.getDate()}`;
+        const weekDay = ['日','一','二','三','四','五','六'][dt.getDay()] || '';
+        const srcBadge = item.data_source === '飞书内部' ? '📁 飞书' :
+                          item.data_source === '竞媒官方' ? '🏢 官方' : '📰 媒体';
         const srcCls = (item.data_source || '').replace(/[\s\/]/g, '');
+        const isHigh = item.tier === 'T1' || item.priority === 'high';
+        const sourcesHtml = (item.sources || []).slice(0, 3).map(s =>
+            `<a href="${s.url}" target="_blank" rel="noopener" class="comp-src-inline" onclick="event.stopPropagation()">↗</a>`
+        ).join('');
         return `
-        <div class="competitor-card">
-            <div class="comp-card-header">
-                <span class="comp-dim-badge">${item.dimension || item.category}</span>
-                <span class="comp-source-badge src-${srcCls}">${srcBadge} ${item.data_source || '三方媒体'}</span>
-                <span class="comp-tier-badge tier-${item.tier || 'T2'}">${item.tier || 'T2'}</span>
-                <span class="comp-date">${item.date}</span>
+        <div class="news-row comp-row ${isHigh ? 'pri-high' : ''}">
+            <div class="news-row-datecol">
+                <div class="news-row-date">${shortDate}</div>
+                <div class="news-row-week">周${weekDay}</div>
             </div>
-            <h3>${item.title}</h3>
-            <p class="comp-sowhat">${item.sowhat}</p>
-            
-            ${item.timeline && item.timeline.length > 0 ? `
-            <div class="comp-timeline">
-                <div class="comp-timeline-header" onclick="toggleTimeline(this)">
-                    📅 事件时间线（${item.timeline.length}个节点）<span class="tl-toggle">▶</span>
+            <div class="news-row-main">
+                <div class="news-row-headline">
+                    <span class="comp-dim-badge">${item.dimension || item.category || ''}</span>
+                    <span class="comp-src-inline-tag src-${srcCls}">${srcBadge}</span>
+                    ${isHigh ? '<span class="row-dot dot-high" title="高优先级"></span>' : ''}
+                    <span class="news-title">${item.title}</span>
                 </div>
-                <div class="comp-timeline-body" style="display:none;">
-                    ${item.timeline.map(t => `
-                        <div class="comp-tl-item">
-                            <span class="comp-tl-date">${t.date}</span>
-                            <span class="comp-tl-event">${t.event}</span>
-                        </div>`).join('')}
+                <div class="news-row-tldr">${item.sowhat || ''}</div>
+                <div class="news-row-meta">
+                    ${sourcesHtml}
+                    ${item.timeline && item.timeline.length > 0 ? `<span class="comp-tl-summary" onclick="event.stopPropagation();toggleCompTimeline(this)">📅 ${item.timeline.length}节点</span>` : ''}
                 </div>
-            </div>` : ''}
-
-            <div class="comp-sources">
-                ${(item.sources || []).map(s => `
-                    <a href="${s.url}" target="_blank" rel="noopener" class="comp-source-link">${s.name} ↗</a>`).join('')}
+                ${item.timeline && item.timeline.length > 0 ? `
+                <div class="comp-tl-inline" style="display:none;">
+                    ${item.timeline.map(t => `<div class="comp-tl-item"><span class="comp-tl-date">${t.date}</span> ${t.event}</div>`).join('')}
+                </div>` : ''}
+            </div>
+            <div class="news-row-aside">
+                <span class="row-cta">详情 ›</span>
             </div>
         </div>`;
     }).join('');
 
     container.innerHTML = html;
+}
+
+// 竞对筛选栏折叠
+function toggleCompFilters() {
+    const body = document.getElementById('compFilterBody');
+    const icon = document.getElementById('compFilterToggleIcon');
+    if (!body || !icon) return;
+    if (body.style.display === 'none') {
+        body.style.display = 'block';
+        icon.textContent = '▼';
+    } else {
+        body.style.display = 'none';
+        icon.textContent = '▶';
+    }
+}
+window.toggleCompFilters = toggleCompFilters;
+
+// 事件时间线折叠（紧凑版）
+function toggleCompTimeline(el) {
+    const tl = el.parentElement.nextElementSibling;
+    if (!tl || !tl.classList.contains('comp-tl-inline')) return;
+    if (tl.style.display === 'none') {
+        tl.style.display = 'block';
+        el.textContent = el.textContent.replace('📅', '▲');
+    } else {
+        tl.style.display = 'none';
+        el.textContent = el.textContent.replace('▲', '📅');
+    }
+}
+window.toggleCompTimeline = toggleCompTimeline;
+
+// 更新筛选栏摘要
+function updateCompFilterSummary() {
+    const el = document.getElementById('compFilterSummary');
+    if (!el) return;
+    const { company, dimension, source } = currentCompFilters;
+    el.textContent = `${company || ''}${dimension !== 'all' ? ' · ' + dimension : ''}${source !== 'all' ? ' · ' + source : ''}`;
 }
 window.switchCompetitor = switchCompetitor;
 
