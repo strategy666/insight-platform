@@ -118,6 +118,13 @@
 
         CURRENT_INDUSTRY = { l1, l2: item, color: cat.color, icon: cat.icon };
 
+        const modal = document.getElementById('industryDetailModal');
+        if (!modal) { console.warn('[industry-research] modal \u4e22\u5931\uff0c\u8df3\u8fc7\u6253\u5f00'); return; }
+        // \u9632\u5fa1\u6027\uff1a\u786e\u4fdd modal \u6302\u5728 body \u4e0b\uff08\u9632\u6b62\u88ab tab-pane / transform \u7236\u5143\u7d20\u8c08\u7269\u5316\u5f71\u54cd\uff09
+        if (modal.parentElement !== document.body) {
+            document.body.appendChild(modal);
+        }
+
         document.getElementById('idmL1Tag').innerHTML = `${cat.icon} ${escapeHtml(l1)}`;
         document.getElementById('idmL1Tag').style.background = cat.color;
         document.getElementById('idmL2Title').textContent = item.name;
@@ -128,42 +135,43 @@
         document.getElementById('idmOnline').textContent = item.online_rate;
         document.getElementById('idmTrend').textContent = item.online_trend;
 
-        // 渲染 markdown 报告
-        document.getElementById('idmReport').innerHTML = simpleMd(item.report_md);
+        // \u6e32\u67d3 markdown \u62a5\u544a
+        document.getElementById('idmReport').innerHTML = simpleMd(item.report_md || '\u6682\u65e0\u62a5\u544a\u5185\u5bb9');
         const nxnyBtn = document.getElementById('idmNxnyLink');
-        nxnyBtn.href = 'javascript:void(0)';
-        nxnyBtn.onclick = function(e) { e.preventDefault(); if (window.openNxnyModal) window.openNxnyModal(item.name); return false; };
-        nxnyBtn.textContent = '📊 嵌入式检索本行业研报';
+        if (nxnyBtn) { nxnyBtn.style.display = 'none'; }  // \u65e7\u7248 nxny \u68c0\u7d22\u5165\u53e3\u5df2\u5e9f\u5f03
 
-        // 重置 chatbot
+        // \u91cd\u7f6e chatbot
         const body = document.getElementById('idmChatBody');
-        document.getElementById('idmChatIndustry').textContent = item.name;
         body.innerHTML = `<div class="chat-bubble bot">
-            👋 你正在咨询「<b>${escapeHtml(item.name)}</b>」行业。<br/>
-            可以问：「这个行业的快手机会点」「TOP3 玩家是谁」「线下转线上路径」「客户画像是怎样」等
+            \ud83d\udc4b \u4f60\u6b63\u5728\u54a8\u8be2\u300c<b id="idmChatIndustry">${escapeHtml(item.name)}</b>\u300d\u884c\u4e1a\u3002<br/>
+            \u53ef\u4ee5\u95ee\uff1a\u300c\u8fd9\u4e2a\u884c\u4e1a\u7684\u5feb\u624b\u673a\u4f1a\u70b9\u300d\u300cTOP3 \u73a9\u5bb6\u662f\u8c01\u300d\u300c\u7ebf\u4e0b\u8f6c\u7ebf\u4e0a\u8def\u5f84\u300d\u300c\u5ba2\u6237\u753b\u50cf\u662f\u600e\u6837\u300d\u7b49<br/>
+            <small style="color:#888">\ud83d\udca1 \u8c03\u7528 DeepSeek + Tavily \u8054\u7f51\u68c0\u7d22\uff0c\u5df2\u5185\u7f6e API Key</small>
         </div>`;
         document.getElementById('idmChatInput').value = '';
 
         const sg = document.getElementById('idmChatSuggest');
         const suggests = [
-            `${item.name} 头部玩家有哪些`,
-            `${item.name} 在快手的商业化机会`,
-            `${item.name} 客户画像`,
-            `${item.name} 2026 趋势预测`,
+            `${item.name} \u5934\u90e8\u73a9\u5bb6\u6709\u54ea\u4e9b`,
+            `${item.name} \u5728\u5feb\u624b\u7684\u5546\u4e1a\u5316\u673a\u4f1a`,
+            `${item.name} \u5ba2\u6237\u753b\u50cf`,
+            `${item.name} 2026 \u8d8b\u52bf\u9884\u6d4b`,
         ];
-        sg.innerHTML = '<span class="cs-label">试试：</span>' + suggests.map(q =>
+        sg.innerHTML = '<span class="cs-label">\u8bd5\u8bd5\uff1a</span>' + suggests.map(q =>
             `<button class="cs-pill" onclick="window.__askIndChat(${JSON.stringify(q).replace(/"/g,'&quot;')})">${escapeHtml(q.replace(item.name+' ',''))}</button>`
         ).join('');
 
-        // 显示弹窗
-        const modal = document.getElementById('industryDetailModal');
+        // \u663e\u793a\u5f39\u7a97\uff1a\u53cc\u4fdd\u9669 \u2014\u2014 \u540c\u65f6\u8bbe display + class\uff0c\u9632\u6b62\u88ab\u5176\u4ed6 CSS \u8986\u76d6
         modal.style.display = 'flex';
+        modal.style.zIndex = '99999';
+        modal.classList.add('is-open');
         document.body.style.overflow = 'hidden';
     }
 
     function closeIndustryDetail() {
         const modal = document.getElementById('industryDetailModal');
+        if (!modal) return;
         modal.style.display = 'none';
+        modal.classList.remove('is-open');
         document.body.style.overflow = '';
     }
 
@@ -258,7 +266,8 @@ ${extractFromReport(item.report_md, '商业化机会（快手生服视角）')}`
     }
 
     function simpleMd(md) {
-        // 极简 markdown 渲染（仅支持 ## ### **bold** - list）
+        if (!md || typeof md !== 'string') md = '\u6682\u65e0\u62a5\u544a\u5185\u5bb9';
+        // \u6781\u7b80 markdown \u6e32\u67d3\uff08\u4ec5\u652f\u6301 ## ### **bold** - list\uff09
         let html = md
             .replace(/^### (.+)$/gm, '<h4>$1</h4>')
             .replace(/^## (.+)$/gm, '<h3>$1</h3>')
