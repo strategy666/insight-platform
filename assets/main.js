@@ -407,11 +407,16 @@ function toggleDetails(id) {
 
 // ==================== 渲染竞对追踪（2D 矩阵）====================
 function renderCompetitors() {
-    const companies = Array.from(new Set(competitorData.map(it => it.company)));
+    // 按信息数量从多到少排序公司
+    const companyCounts = {};
+    competitorData.forEach(it => {
+        companyCounts[it.company] = (companyCounts[it.company] || 0) + 1;
+    });
+    const companies = Object.keys(companyCounts).sort((a, b) => companyCounts[b] - companyCounts[a]);
     
     // 公司 tabs
     const tabsHtml = companies.map((c, idx) => {
-        const count = competitorData.filter(it => it.company === c).length;
+        const count = companyCounts[c];
         return `<button class="chip comp-chip ${idx === 0 ? 'active' : ''}" 
                 onclick="switchCompetitor('${c}')">${c}<sup>${count}</sup></button>`;
     }).join('');
