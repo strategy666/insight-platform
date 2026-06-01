@@ -4,12 +4,8 @@ let competitorData = [];
 let signalsData = { podcasts: [], tweets: [], deals: [] };
 let allFlowItems = []; // 统一后的 全部动态 池（news + podcast + tweet + deal）
 
-// 信源可信度强制校验开关（默认 true = 仅展示 verified、隐藏 weak/broken）
-let showOnlyVerified = true;
-try {
-    const v = localStorage.getItem('insight_only_verified');
-    if (v !== null) showOnlyVerified = (v === '1' || v === 'true');
-} catch(e) {}
+// 信源可信度强制校验：永远只展示 verified，隐藏 weak / broken（不再提供用户可切换开关）
+const showOnlyVerified = true;
 
 let currentFilters = {
     kind: 'all',
@@ -116,37 +112,15 @@ function renderInsightsGrid() {
     const filtered = filterInsights();
     const meta = document.getElementById('insightsFlowMeta');
 
-    // 计算 未过滤 信源可信度的数量（其他筛选仍起作用）
-    const baseFilters = Object.assign({}, currentFilters);
-    const allMatched = (allFlowItems || []).filter(item => {
-        if (baseFilters.kind !== 'all' && item._kind !== baseFilters.kind) return false;
-        // 复制 matchesFiltersExceptKind 但跳过 verify 检查
-        if (baseFilters.priority !== 'all' && item.priority !== baseFilters.priority) return false;
-        if (baseFilters.signal !== 'all' && item.signal !== baseFilters.signal) return false;
-        if (baseFilters.track !== 'all' && !(item.tracks||[]).includes(baseFilters.track)) return false;
-        if (baseFilters.company !== 'all' && !(item.company||[]).includes(baseFilters.company)) return false;
-        if (baseFilters.search) {
-            const k = baseFilters.search.toLowerCase();
-            const txt = (item.title + ' ' + (item.tldr||'') + ' ' + (item.tags||[]).join(' ')).toLowerCase();
-            if (!txt.includes(k)) return false;
-        }
-        return true;
-    });
-    const hidden = allMatched.length - filtered.length;
-
     if (meta) {
-        const tip = hidden > 0 ? ` · 已隐藏 <b style="color:#c2410c">${hidden}</b> 条待核实` : '';
-        meta.innerHTML = `共 ${filtered.length} 条 · 按时间倒序 · 点击查看详情${tip}`;
+        meta.innerHTML = `共 ${filtered.length} 条 · 按时间倒序 · 点击查看详情`;
     }
 
     // 刷新一级类型计数（基于 未被 kind 筛选过滤的原始池，仅按其他维度）
     updateKindCounts();
 
     if (filtered.length === 0) {
-        const tip = hidden > 0
-            ? `<p class="empty-state">当前筛选下只有 <b>${hidden}</b> 条待核实信源，右上角 <b>⚠️ 显示待核实</b> 开关可查看</p>`
-            : '<p class="empty-state">暂无匹配情报，试试调整筛选</p>';
-        document.getElementById('insightsGrid').innerHTML = tip;
+        document.getElementById('insightsGrid').innerHTML = '<p class="empty-state">暂无匹配情报，试试调整筛选</p>';
         return;
     }
 
@@ -173,15 +147,10 @@ function renderFlowRow(item) {
                       : item.signal === 'threat' ? '<span class="sig-pill sig-thr">威胁</span>'
                       : item.signal === 'trend' ? '<span class="sig-pill sig-trend">趋势</span>'
                       : '<span class="sig-pill sig-neu">中性</span>';
-        const verifyBadge = item._verification === 'verified'
-            ? '<span class="verify-tag verify-ok" title="信源指向具体文章">✅</span>'
-            : item._verification === 'weak'
-            ? '<span class="verify-tag verify-weak" title="信源仅为首页/栏目，未能验证具体出处">⚠️</span>'
-            : '<span class="verify-tag verify-bad" title="信源失效">❌</span>';
         const companyTags = (item.company || []).slice(0, 3).map(c => `<span class="row-tag tag-company">${c}</span>`).join('');
         const trackTags = (item.tracks || []).slice(0, 2).map(t => `<span class="row-tag tag-track">${t}</span>`).join('');
         return `
-        <div class="news-row ${priCls} v-${item._verification || 'weak'}" data-id="${item.id}" onclick="openIntelModal('${item.id}')">
+        <div class="news-row ${priCls}" data-id="${item.id}" onclick="openIntelModal('${item.id}')">
             <div class="news-row-datecol">
                 <div class="news-row-date">${shortDate}</div>
                 <div class="news-row-week">周${weekDay}</div>
@@ -189,7 +158,6 @@ function renderFlowRow(item) {
             <div class="news-row-main">
                 <div class="news-row-headline">
                     ${kindBadge}
-                    ${verifyBadge}
                     ${item.priority === 'high' ? '<span class="row-dot dot-high" title="高优先级"></span>' : ''}
                     ${isAI ? '<span class="row-ai-badge">AI</span>' : ''}
                     <span class="news-title">${item.title}</span>
@@ -273,16 +241,8 @@ function matchesFiltersExceptKind(item, filters) {
     return true;
 }
 
-// 切换信源可信度开关
-window.toggleVerifiedOnly = function(checked) {
-    showOnlyVerified = !!checked;
-    try { localStorage.setItem('insight_only_verified', showOnlyVerified ? '1' : '0'); } catch(e) {}
-    // 同时刷新 Tab1 + Tab2
-    if (typeof renderInsightsGrid === 'function') renderInsightsGrid();
-    if (typeof renderCompetitorList === 'function') renderCompetitorList();
-    // 同步两个 Tab 的 checkbox 状态
-    document.querySelectorAll('.verify-toggle-input').forEach(c => { c.checked = showOnlyVerified; });
-};
+// 切换信源可信度开关（已废弃，仅保留空函数避免主页报错）
+window.toggleVerifiedOnly = function() { /* deprecated: 平台已锁定为仅展示已核实信源 */ };
 
 // 列表内实时搜索（仅隐藏/显示已渲染元素，不重新拉取）
 window.filterListInline = function(kw) {
@@ -641,21 +601,14 @@ function renderCompetitorList() {
     if (dimension !== 'all') updates = updates.filter(it => (it.dimension || it.category) === dimension);
     if (source !== 'all') updates = updates.filter(it => (it.data_source || '三方媒体') === source);
 
-    // 信源可信度：默认隐藏 weak/broken
-    const totalBeforeVerify = updates.length;
-    if (showOnlyVerified) {
-        updates = updates.filter(it => it._verification === 'verified');
-    }
-    const hidden = totalBeforeVerify - updates.length;
+    // 信源可信度：永远仅展示 verified
+    updates = updates.filter(it => it._verification === 'verified');
 
     updates.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     const container = document.getElementById('competitorUpdates');
     if (updates.length === 0) {
-        const tip = hidden > 0
-            ? `<p class="empty-state">当前筛选下只有 <b>${hidden}</b> 条待核实信源，点右上角 <b>⚠️ 显示待核实</b> 开关查看</p>`
-            : '<p class="empty-state">暂无匹配动态，试试其他维度/数据源</p>';
-        container.innerHTML = tip;
+        container.innerHTML = '<p class="empty-state">暂无匹配动态，试试其他维度/数据源</p>';
         return;
     }
 
@@ -663,18 +616,12 @@ function renderCompetitorList() {
         const srcBadge = item.data_source === '飞书内部' ? '📁' :
                           item.data_source === '竞媒官方' ? '🏢' : '📰';
         const srcCls = (item.data_source || '').replace(/[\s\/]/g, '');
-        const verifyTag = item._verification === 'verified'
-            ? '<span class="verify-tag verify-ok" title="信源指向具体文章">✅ 已核</span>'
-            : item._verification === 'weak'
-            ? '<span class="verify-tag verify-weak" title="信源仅为首页/栏目，未能验证具体出处">⚠️ 待核实</span>'
-            : '<span class="verify-tag verify-bad" title="信源链接失效">❌ 失效</span>';
         return `
-        <div class="competitor-card v-${item._verification || 'weak'}">
+        <div class="competitor-card">
             <div class="comp-card-header">
                 <span class="comp-dim-badge">${item.dimension || item.category}</span>
                 <span class="comp-source-badge src-${srcCls}">${srcBadge} ${item.data_source || '三方媒体'}</span>
                 <span class="comp-tier-badge tier-${item.tier || 'T2'}">${item.tier || 'T2'}</span>
-                ${verifyTag}
                 <span class="comp-date">${item.date}</span>
             </div>
             <h3>${item.title}</h3>
@@ -701,10 +648,7 @@ function renderCompetitorList() {
         </div>`;
     }).join('');
 
-    const headerTip = hidden > 0
-        ? `<div class="verify-banner">⚠️ 已隐藏 <b>${hidden}</b> 条信源未核实的动态（信源仅为首页/栏目页）。<a href="javascript:document.querySelector('.verify-toggle-input').click()">点这里打开 ⚠️ 显示待核实</a></div>`
-        : '';
-    container.innerHTML = headerTip + html;
+    container.innerHTML = html;
 }
 window.switchCompetitor = switchCompetitor;
 
