@@ -173,13 +173,12 @@
         if (!q) return;
         input.value = '';
         appendChatMsg('user', q);
-        // 路由：本地 / 联网 AI
-        const mode = (typeof window.__getChatMode === 'function') ? window.__getChatMode() : 'local';
-        if (mode === 'web' && typeof window.askIndustryChatWeb === 'function') {
+        // \u7edf\u4e00\u8d70\u8054\u7f51 AI\uff08\u5185\u7f6e DeepSeek + Tavily key\uff0c\u65e0\u9700\u7528\u6237\u914d\u7f6e\uff09
+        if (typeof window.askIndustryChatWeb === 'function') {
             window.askIndustryChatWeb(q, CURRENT_INDUSTRY);
             return;
         }
-        // 模拟 AI 回答（基于本地数据 + 模板）
+        // \u6781\u7aef fallback\uff1a\u672c\u5730\u751f\u6210\uff08askIndustryChatWeb \u672a\u52a0\u8f7d\u65f6\uff09
         setTimeout(() => {
             const ans = generateIndustryAnswer(q, CURRENT_INDUSTRY);
             appendChatMsg('bot', ans);
