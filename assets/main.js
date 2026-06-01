@@ -1187,21 +1187,22 @@ async function loadSignalsRadar() {
 // 将三类信号统一适配为 flow 列表项（与 intel 同构）
 function buildAllFlowItems() {
     const news = (intelData || []).map(it => Object.assign({}, it, { _kind: 'news' }));
-    const podcasts = (signalsData.podcasts || []).map(p => ({
+
+    const mkPodcast = (p) => ({
         id: p.id,
         _kind: 'podcast',
         date: p.date,
         title: p.title,
         tldr: (p.key_points && p.key_points[0]) || (p.sowhat || '').slice(0, 120) || ((p.show||'') + (p.guests ? ' · 嘉宾：' + p.guests.join('/') : '')),
-        company: extractCompaniesFromTags(p.tags) ,
+        company: extractCompaniesFromTags(p.tags),
         tracks: extractTracksFromTags(p.tags),
         priority: p.priority || 'mid',
         signal: 'neutral',
         tags: p.tags || [],
         url: p.url,
         _raw: p
-    }));
-    const tweets = (signalsData.tweets || []).map(t => ({
+    });
+    const mkTweet = (t) => ({
         id: t.id,
         _kind: 'tweet',
         date: t.date,
@@ -1214,8 +1215,8 @@ function buildAllFlowItems() {
         tags: t.tags || [],
         url: t.url,
         _raw: t
-    }));
-    const deals = (signalsData.deals || []).map(d => ({
+    });
+    const mkDeal = (d) => ({
         id: d.id,
         _kind: 'deal',
         date: d.date,
@@ -1228,9 +1229,37 @@ function buildAllFlowItems() {
         tags: d.tags || [],
         url: d.url,
         _raw: d
-    }));
+    });
+
+    const podcasts = (signalsData.podcasts || []).map(mkPodcast);
+    const tweets = (signalsData.tweets || []).map(mkTweet);
+    const deals = (signalsData.deals || []).map(mkDeal);
+
+    // ===== 打 _verification（podcast/tweet/deal 也要受信源规则约束）=====
+    [podcasts, tweets, deals].forEach(arr => {
+        arr.forEach(it => {
+            if (it._verification) return; // 已有则跳过
+            const isKs = isKuaishouSubject(it);
+            const hasOff = isKs && hasOfficialKuaishouUrl(it.url);
+            it._verification = (isKs && !hasOff) ? 'weak' : 'verified';
+        });
+    });
+
     allFlowItems = [].concat(news, podcasts, tweets, deals);
     window.allFlowItems = allFlowItems;
+}
+
+// ---- 快手主体+官方源判定（前端，与 audit_sources.py 保持同规则）----
+function isKuaishouSubject(item) {
+    const cs = item.company || [];
+    if (cs.some(c => (c || '').includes('快手'))) return true;
+    const txt = (item.title || '') + (item.headline || '');
+    return txt.includes('快手');
+}
+function hasOfficialKuaishouUrl(url) {
+    if (!url) return false;
+    const host = (function parse(u){try{return new URL(u).hostname}catch(e){return ''}})(url);
+    return host.endsWith('kuaishou.com') || host.endsWith('kuaishou.cn');
 }
 
 // 从 tags 中提取常见公司名

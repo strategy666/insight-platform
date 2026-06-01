@@ -116,8 +116,9 @@ def tavily_search(query: str, max_results: int = 6, timeout: int = 12):
         return []
 
 
-def pick_best(results, prefer_host: str = None):
-    """从 Tavily 候选中挑出最佳 verified 文章 URL。"""
+def pick_best(results, prefer_host: str = None, *, ks_only: bool = False):
+    """从 Tavily 候选中挑出最佳 verified 文章 URL。
+    ks_only=True 时只接受 kuaishou.com / kuaishou.cn 官方域。"""
     if not results:
         return None
     candidates = []
@@ -127,8 +128,10 @@ def pick_best(results, prefer_host: str = None):
             continue
         if classify_source(url) != 'verified':
             continue
-        score = float(r.get('score', 0))
         host = urlparse(url).netloc.lower()
+        if ks_only and not (host.endswith('kuaishou.com') or host.endswith('kuaishou.cn')):
+            continue
+        score = float(r.get('score', 0))
         same_host_bonus = 0
         if prefer_host and (host == prefer_host or host.endswith('.' + prefer_host)):
             same_host_bonus = 1.0
@@ -137,6 +140,20 @@ def pick_best(results, prefer_host: str = None):
         return None
     candidates.sort(key=lambda x: -x[0])
     return candidates[0][1]
+
+
+def is_kuaishou_subject(item: dict) -> bool:
+    """判断这条 item 是否以快手为主体/涉及快手（同 audit_sources.py 规则）。"""
+    companies = item.get('company') or []
+    if isinstance(companies, str):
+        companies = [companies]
+    if any('快手' in (c or '') for c in companies):
+        return True
+    text_fields = [item.get('title', ''), item.get('headline', ''), item.get('summary', ''), item.get('tldr', '')]
+    if any('快手' in (t or '') for t in text_fields):
+        return True
+    return False
+
 
 
 # ---- 缓存 ----
@@ -175,6 +192,7 @@ def enrich_file(filepath: Path, cache, *, limit=None, dry_run=False):
 
         title = it.get('title') or it.get('summary') or ''
         company = (it.get('company') or [None])[0] if it.get('company') else None
+        ks_subject = is_kuaishou_subject(it)
         # 取原 source 域名作 prefer_host
         prefer_host = None
         if it.get('sources'):
@@ -182,21 +200,24 @@ def enrich_file(filepath: Path, cache, *, limit=None, dry_run=False):
             if old_url:
                 prefer_host = urlparse(old_url).netloc.lower()
 
-        # query：标题 + 公司名（如果不在标题里）
+        # query：标题 + 公司名（如果不在标题里）；快手主体加官方域 site:
         q = title.strip()
         if company and company not in q:
             q = f'{company} {q}'
+        if ks_subject:
+            q = f'site:kuaishou.com OR site:kuaishou.cn {q}'
         # 过长截断
-        q = q[:120]
+        q = q[:140]
 
-        cache_key = q
+        cache_key = ('KS|' if ks_subject else '') + q
         if cache_key in cache:
             r = cache[cache_key]
         else:
-            results = tavily_search(q, max_results=6)
-            best = pick_best(results, prefer_host=prefer_host)
+            results = tavily_search(q, max_results=8)
+            best = pick_best(results, prefer_host=prefer_host, ks_only=ks_subject)
             r = {
                 'q': q,
+                'ks_only': ks_subject,
                 'best': {
                     'url': best.get('url'),
                     'title': best.get('title'),
@@ -209,7 +230,8 @@ def enrich_file(filepath: Path, cache, *, limit=None, dry_run=False):
         best = r.get('best')
         if not best:
             no_match += 1
-            print(f'  ❌ no_match: {title[:60]}')
+            tag = '🚨 KS 无官方源' if ks_subject else '❌ no_match'
+            print(f'  {tag}: {title[:60]}')
             continue
 
         # 替换 sources[0]

@@ -132,7 +132,8 @@
           "url": "https://e.kuaishou.com/"
         }
       ],
-      "_verification": "weak"
+      "_verification": "verified",
+      "_ks_official": true
     },
     {
       "id": "intel-052",
@@ -431,7 +432,8 @@
           "url": "https://finance.sina.cn/tech/csj/2026-05-12/detail-inhxqzkt0047784.d.html?oid=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%9B%B8%E5%85%B3%E4%BA%A7%E5%93%81%E5%85%B3%E8%81%94%E8%B4%AD%E4%B9%B0%E2%96%B2%E9%9C%80%E8%A6%81%E8%81%94%E7%B3%BBTG%3A%40HHCH8%E6%92%9E%E5%BA%93%E6%95%B0%E6%8D%AE%E6%B8%97%E9%80%8F%E6%95%B0%E6%8D%AE%E6%B5%B7%E5%A4%96%E6%94%AF%E4%BB%98%E9%80%9A%E9%81%93%E2%96%BCsrE8&vt=4"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_ks_no_official": true
     },
     {
       "id": "intel-201",
@@ -1428,7 +1430,8 @@
           "url": "https://daxue.taobao.com/information/detail.jhtml?id=1511"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_ks_no_official": true
     },
     {
       "id": "intel-027",
@@ -1497,7 +1500,8 @@
           "url": "https://www.tmtpost.com/8000826.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_ks_no_official": true
     },
     {
       "id": "intel-111",
@@ -1723,7 +1727,8 @@
           "url": "https://www.tmtpost.com/8000826.html"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_ks_no_official": true
     },
     {
       "id": "intel-029",
@@ -2066,7 +2071,8 @@
           "date": "2024-07-16"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_ks_no_official": true
     },
     {
       "id": "intel-115",
@@ -3021,7 +3027,8 @@
           "url": "https://www.aastocks.com/tc/stocks/news/aafn-news/NOW.1519419/2"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_ks_no_official": true
     },
     {
       "id": "intel-016",
@@ -3086,7 +3093,8 @@
           "date": "2026-05-22"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_ks_no_official": true
     },
     {
       "id": "intel-014",
@@ -3169,7 +3177,8 @@
           "date": "2026-05-20"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_ks_no_official": true
     },
     {
       "id": "intel-121",
@@ -3541,7 +3550,8 @@
           "url": "https://stock.finance.sina.com.cn/stock/view/paper.php?symbol=sh000001&reportid=802197107391"
         }
       ],
-      "_verification": "verified"
+      "_verification": "weak",
+      "_ks_no_official": true
     },
     {
       "id": "intel-080",

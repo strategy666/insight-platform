@@ -6,60 +6,66 @@
 
 之前 Tab1（信号雷达 / 全部动态）和 Tab2（竞对追踪）中，部分动态的 `sources[].url` 字段指向的只是公司主页或栏目根（如 `https://www.xiaohongshu.com/`），用户点开发现并非具体出处，等同于"幻觉"。
 
-## 解决方案：三级核实机制
+进一步发现：**快手相关动态的第三方信源（雪球/财联社/钛媒体/界面 等）经常和官方口径出入很大，不可信**——所以快手主体的情报，必须以快手官方域为信源，否则一律不展示。
 
-### 1️⃣ 数据层：每条 item 打 `_verification` 标签
+## 解决方案：三级机器审计 + 快手主体特殊规则
 
-执行 `python3 scripts/audit_sources.py`：
+### 1️⃣ 数据层：每条自动打 `_verification` 标签
 
-| 等级 | 条件 |
+`scripts/audit_sources.py` 扫 `intel.json` + `competitor_updates.json`，按规则评级：
+
+| 等级 | 判定 |
 |---|---|
-| `verified` | 至少一个 source URL 指向具体文章（路径含 4 位以上数字 ID、或 ≥ 25 字符 slug、或 ≥ 3 级路径段） |
-| `weak` | 所有 source 都只是网站首页 / 单段栏目根 |
-| `broken` | 无 source / 已知失效域（lark wiki / 内网飞书等） |
+| `verified` | URL 路径含 4+ 位数字 ID / ≥25 字符 slug / ≥3 级路径段 → 大概率是具体文章 |
+| `weak` | URL 仅指向首页/栏目根；**或** 涉及"快手"主体但无任何 `kuaishou.com` / `kuaishou.cn` 官方域信源 |
+| `broken` | 无 source 或指向已知失效域（lark/feishu/qingque/kdocs 等私域）|
 
-#### 当前数据状态
+#### 🚨 快手主体白名单规则（2026-06-01 加）
 
-| 数据集 | 总条目 | verified | weak | broken |
-|---|---|---|---|---|
-| Tab1 (intel.json) | 89 | 19 (21.3%) | 70 (78.7%) | 0 |
-| Tab2 (competitor_updates.json) | 131 | 37 (28.2%) | 94 (71.8%) | 0 |
+涉及快手的情报（`company` 列表里包含「快手」），`sources` 必须包含至少一个 `kuaishou.com` / `kuaishou.cn` 官方域，否则强制降级为 `weak`，并打 `_ks_no_official: true` 标记。
 
-> ⚠️ 当前 weak 占比偏高，是因为很多动态原本就没有公开新闻链接（来自飞书内部文档或行业共识），后续可逐步用真实文章 URL 替换。
+> 原因：快手相关的第三方报道（雪球/钛媒体/财联社/界面/智通财经 等）经常误报或夸大数据，用户希望仅依赖官方源（财报、磁力官网、官方公众号）。
 
-### 2️⃣ UI 层：默认隐藏 weak/broken
+### 2️⃣ UI 层：永远只展示 verified
 
-- Tab1「全部动态」头部 + Tab2「竞对动态矩阵」头部，各加一个 `✅ 仅看已核实信源` 复选框（**默认开启**）
-- 复选框状态保存到 `localStorage`（key: `insight_only_verified`）
-- 取消勾选 → 临时显示所有动态（含 weak）
-- 显示后每条 item 加 `✅` / `⚠️` / `❌` 角标，鼠标悬停显示 tooltip
+- Tab1「📰 全部动态」+ Tab2「🎯 竞对追踪」前端**永久锁定** `_verification === 'verified'` 才展示
+- 「仅看已核实信源」开关已删除（commit 4997fef）
+- weak / broken 条目对用户完全不可见
 
-### 3️⃣ 视觉层：weak/broken 视觉降权
+### 3️⃣ 自动补 URL：`scripts/enrich_sources.py`
 
-- weak item：左侧 3px 黄色边 + 浅黄渐变背景 + ⚠️ 角标
-- broken item：左侧 3px 红色边 + 浅红渐变背景 + ❌ 角标
+跑 Tavily 搜每条 `_verification != verified` 的标题，挑符合 audit 规则的具体文章页 URL 替换。
+- 涉及快手主体时，自动加 `site:kuaishou.com OR site:kuaishou.cn` 限定
+- 候选必须通过 `classify_source()` 才算命中
+- 内置缓存 `scripts/.enrich_cache.json`，重跑/续跑不浪费 API quota
 
 ## 使用方式
 
-### 每次更新数据后必须运行：
+### 每次更新数据后必须运行
 
 ```bash
 cd insight-platform
+
+# 1. 先审计：识别 weak/broken + 快手主体降级
+python3 scripts/audit_sources.py
+
+# 2. 自动补具体文章 URL（含快手 site: 限定）
+python3 scripts/enrich_sources.py
+
+# 3. 复审
 python3 scripts/audit_sources.py
 ```
 
-### CI 集成（可选）
+### 当前快照（2026-06-01）
 
-可在 `pre-commit` hook 中加入：
-
-```bash
-python3 scripts/audit_sources.py
-git add assets/data/intel.json assets/data/competitor_updates.json
-```
+| 文件 | 总数 | verified | weak | 备注 |
+|---|---|---|---|---|
+| Tab1 intel.json | 89 | 79 (88.8%) | 10 (11.2%) | 9 条快手相关无官方源 + 1 条原 weak |
+| Tab2 competitor_updates.json | 131 | 128 (97.7%) | 3 (2.3%) | 大众点评/小红书DAU/巨量Changelog |
 
 ## 后续优化方向
 
-1. **逐条核实并升级到 verified**：weak 条目的 sources 替换为具体新闻文章 URL（搜公司+主题关键词，找到具体文章页）
-2. **broken 检测自动化**：每周 cron 用 HEAD 请求探测所有 source URL，404 / 403 / redirect-to-login 自动降级为 broken
-3. **来源多样化要求**：单一来源不强制，但同一条动态有 2+ 独立来源（如官方公告 + 36kr 报道）才允许 verified
-4. **黑名单机制**：`scripts/source_blacklist.txt` 维护已知失效或不可信的域名，audit 时自动降级
+1. 手补 9 条快手 weak 条目的官方源（磁力官网/财报 PDF/官方公众号文章）
+2. 每周 cron HEAD 探测所有 verified URL，404 自动降级 broken
+3. `scripts/source_blacklist.txt` 维护已知不靠谱域，audit 时自动降级
+4. 同主体 2+ 独立来源才允许 verified（提高门槛）

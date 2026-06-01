@@ -75,12 +75,47 @@ def classify_source(url: str) -> str:
     return 'weak'
 
 
+# ---- 快手主体白名单规则（2026-06-01 新增）----
+# 涉及"快手"主体的情报，sources 必须至少包含一个 kuaishou.com / kuaishou.cn 官方域，
+# 否则一律降级为 weak（前端不展示），避免第三方信源失真。
+KS_OFFICIAL_DOMAINS = ('kuaishou.com', 'kuaishou.cn')
+
+
+def is_kuaishou_subject(item: dict) -> bool:
+    """判断这条 item 是否以快手为主体/涉及快手。
+    规则：
+    1. company 字段含「快手」
+    2. title / headline 明确提到「快手」
+    两者满足其一即视为快手相关，必须限定官方源。"""
+    companies = item.get('company') or item.get('companies') or []
+    if isinstance(companies, str):
+        companies = [companies]
+    if any('快手' in (c or '') for c in companies):
+        return True
+    text = ' '.join([item.get('title', ''), item.get('headline', '')])
+    if '快手' in text:
+        return True
+    return False
+
+
+def has_official_kuaishou_source(sources) -> bool:
+    for s in sources or []:
+        url = (s.get('url') or '').lower()
+        if not url:
+            continue
+        host = urlparse(url).netloc.lower()
+        if any(host == d or host.endswith('.' + d) for d in KS_OFFICIAL_DOMAINS):
+            return True
+    return False
+
+
 def audit(filepath: Path, label: str):
     with filepath.open(encoding='utf-8') as f:
         data = json.load(f)
     items = data.get('items', data) if isinstance(data, dict) else data
 
     stats = Counter()
+    ks_downgraded = 0
     for it in items:
         sources = it.get('sources', [])
         if not sources:
@@ -98,6 +133,26 @@ def audit(filepath: Path, label: str):
             it['_verification'] = 'broken'
             stats['broken'] += 1
 
+        # ===== 快手主体官方源强制规则 =====
+        # 涉及快手的情报必须有 kuaishou.com 官方信源；否则降级为 weak（前端不展示）。
+        if is_kuaishou_subject(it):
+            if has_official_kuaishou_source(sources):
+                # 有官方源 → 即使 URL 只是首页（classify_source 判 weak），官方域本身可信，
+                # 提升为 verified 以便前端展示
+                if it['_verification'] == 'weak':
+                    stats['weak'] -= 1
+                    stats['verified'] += 1
+                it['_verification'] = 'verified'
+                it['_ks_official'] = True
+            else:
+                # 无官方源 → 强制降级隐藏
+                if it['_verification'] == 'verified':
+                    stats['verified'] -= 1
+                    stats['weak'] += 1
+                it['_verification'] = 'weak'
+                it['_ks_no_official'] = True
+                ks_downgraded += 1
+
     print(f'\n=== {label} ===')
     total = len(items)
     print(f'total: {total}')
@@ -105,6 +160,8 @@ def audit(filepath: Path, label: str):
         v = stats[k]
         pct = 100.0 * v / total if total else 0
         print(f'  {k:8s}: {v:3d}  ({pct:.1f}%)')
+    if ks_downgraded:
+        print(f'  🚨 快手主体无官方源被降级: {ks_downgraded}')
 
     with filepath.open('w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
