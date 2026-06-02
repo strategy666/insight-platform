@@ -1,10 +1,11 @@
 {
   "_meta": {
-    "description": "Part1 市场信息洞察 — search-intel agent (SOURCE-FIRST)",
+    "description": "Part1 市场信息洞察 — SOURCE-FIRST v3 (direct fetch + web_fetch)",
     "last_updated": "2026-06-02",
-    "total_items": 38,
+    "total_items": 28,
     "window": "past 14d (2026-05-19 ~ 2026-06-02)",
-    "source_first": true
+    "source_first": true,
+    "fetch_method": "direct_channel_fetch + web_fetch + wechat_articles_skill"
   },
   "items": [
     {
@@ -27,82 +28,6 @@
           "name": "字节“弃子”，标价480亿",
           "url": "https://m.36kr.com/p/3708434069319817",
           "date": "2026-06-02"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-201",
-      "date": "2026-05-24",
-      "title": "2026 年 5 月技术大地震！大模型狂飙迭代，四大技术赛道迎来全面爆发_人工智能_李德没德-AtomGit AI 社区",
-      "body": "# logo AtomGit AI 社区. ### AtomGit AI 社区. AtomGit AI 社区   2026 年 5 月技术大地震！大模型狂飙迭代，四大技术赛道迎来全面爆发. # 2026 年 5 月技术大地震！大模型狂飙迭代，四大技术赛道迎来全面爆发. 793人浏览 · 2026-05-24 16:47:58. 李德没德  ·  2026-05-24 16:47:58 发布. 20",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "AI"
-      ],
-      "type": "技术发布",
-      "timeline": "2026-05-24 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "2026 年 5 月技术大地震！大模型狂飙迭代，四大技术赛道迎来全面爆发_人工智能_李德没德-Ato",
-          "url": "https://tianqi.csdn.net/6a12bb4810ee7a33f274c4d7.html",
-          "date": "2026-05-24"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-202",
-      "date": "2026-05-31",
-      "title": "2026年中国小红书推广公司_中华网",
-      "body": "首页*|*资讯*|*军事*|*汽车*|*游戏*|*科技*|*旅游*|*经济*|*娱乐*|*投资*|*文化*|*守艺中华*|*佛教*|*红木*|*韩流*|*简读*|*军事APP*|*头条APP. # 2026年中国小红书推广公司. 2026-05-31 19:15:12       来源：财讯网. 构建了覆盖洞察(灵犀策略)—内容(蒲公英达人合作)—投放(聚光广告)—转化(千帆电商/专业号)—度量(",
-      "sowhat": "",
-      "company": [
-        "小红书"
-      ],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-05-31 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "2026年中国小红书推广公司_中华网",
-          "url": "https://m.tech.china.com/redian/2026/0531/052026_1882647.html",
-          "date": "2026-05-31"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-203",
-      "date": "2026-05-22",
-      "title": "如何利用AI 创作爆款小红书内容（2026年5月） - Jenova.ai",
-      "body": "# **AI 小红书风格：如何利用 AI 创作爆款小红书内容（2026年5月）**. 这正是 AI 的用武之地。像 **Jenova** 这样的平台提供了专门的智能体——包括一个能适应特定平台格式的**社交媒体内容生成器**、一个用于封面图片创作的**平面设计师**，以及一个用于文案撰写的**写作助手**——它们帮助创作者和品牌无需多年的平台沉浸，就能制作出地道的小红书风格内容。. 在本指南中，我",
-      "sowhat": "",
-      "company": [
-        "小红书"
-      ],
-      "industry": [
-        "AI"
-      ],
-      "type": "技术发布",
-      "timeline": "2026-05-22 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "如何利用AI 创作爆款小红书内容（2026年5月） - Jenova.ai",
-          "url": "https://www.jenova.ai/zh/resources/ai-xiaohongshu-style-202605",
-          "date": "2026-05-22"
         }
       ],
       "_verification": "verified",
@@ -136,32 +61,6 @@
       "_fetched_by": "search_intel.py"
     },
     {
-      "id": "intel-205",
-      "date": "2026-05-27",
-      "title": "腾讯AI商业化再推进，腾讯控股盘中涨超3% 大模型收费落地引发市场关注 | uSMART",
-      "body": "受香港证监会认可的持牌法团（中央编号：BJA907），持有证券交易牌照（第一类），就证券提供意见牌照（第四类），就机构融资提供意见牌照（第六类），提供资产管理类牌照（第九类）牌照。. uSMART 05-19 16:08. 5月19日，港股大型科技股走势分化，但腾讯控股表现相对强势。截至15时11分，腾讯控股（00700.HK）报462.8港元，涨3.03%，盘中一度触及468.8港元高位，成交额",
-      "sowhat": "",
-      "company": [
-        "腾讯"
-      ],
-      "industry": [
-        "AI"
-      ],
-      "type": "技术发布",
-      "timeline": "2026-05-27 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "腾讯AI商业化再推进，腾讯控股盘中涨超3% 大模型收费落地引发市场关注 | uSMART",
-          "url": "https://www.usmart66.com/zh-cn/news-detail/1/7462413808397599257",
-          "date": "2026-05-27"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
       "id": "intel-206",
       "date": "2026-06-02",
       "title": "对话腾讯广告林璟骅：广告升级不仅是资源整合更是构建生态",
@@ -188,25 +87,97 @@
       "_fetched_by": "search_intel.py"
     },
     {
-      "id": "intel-207",
-      "date": "2026-05-31",
-      "title": "2026年百度电商广告与投放运营服务展望 - 多面手企业网络推广一站式服务",
-      "body": "# 2026年百度电商广告与投放运营服务展望. 广告代运营 2026-05-31 1 阅读. 在2026年，百度电商广告及投流代运营服务将全面进入智能化、精细化运营的新阶段。针对“百度电商广告及投流代运营”的需求，我们将为您梳理实操策略与服务商选择建议： 一、 百度电商广告的核心投放工具矩阵 百度电商推广已全面迈入智能化、精细化运营的新阶段。专业的代运营服务不再局限于单一渠道的投放，而是深度整合搜",
+      "id": "intel-219",
+      "date": "2026-06-02",
+      "title": "豆包推出收费：纯免费的大模型越来越少了-36氪",
+      "body": "# 豆包推出收费：纯免费的大模型越来越少了. 2026年5月4日，字节跳动旗下AI产品豆包在苹果App Store悄然更新付费订阅方案。标准版68元/月、加强版200元/月、专业版500元/月——三档价格梯度如同三枚信号弹，划破了中国AI大模型行业持续两年的“免费狂欢”。. 这不是一次普通的商业试探。豆包背后是3.5亿月活用户的国内第一AI原生应用，其商业化宣告意味着什么？当用户规模最大的玩家开始",
       "sowhat": "",
-      "company": [
-        "百度"
-      ],
+      "company": [],
       "industry": [
-        "电商"
+        "AI"
       ],
-      "type": "产品动态",
-      "timeline": "2026-05-31 本次事件",
+      "type": "技术发布",
+      "timeline": "2026-06-02 本次事件",
       "scope": "国内",
       "sources": [
         {
-          "name": "2026年百度电商广告与投放运营服务展望 - 多面手企业网络推广一站式服务",
-          "url": "https://www.80tg.com/news/53248.html",
-          "date": "2026-05-31"
+          "name": "豆包推出收费：纯免费的大模型越来越少了-36氪",
+          "url": "https://m.36kr.com/p/3802970281041408",
+          "date": "2026-06-02"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-224",
+      "date": "2026-06-02",
+      "title": "下一个美团？抖省省背后的万亿野心-36氪",
+      "body": "# 下一个美团？抖省省背后的万亿野心. 据雷峰网爆料，抖音生活服务2025年全年支付GMV超8500亿元，同比增速达59%；2026年GMV增速目标定为50%，抖音生活服务将进一步缩小与美团的GMV份额差距。. 马年春节前，抖音悄然上线一款名为“抖省省”的独立App——没有短视频、没有直播，只有极简的团购与到店服务入口。. 这一动作看似低调，但它背后，意味着**抖音正在加码布局本地生活：从“内容驱",
+      "sowhat": "",
+      "company": [
+        "美团"
+      ],
+      "industry": [
+        "综合"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-02 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "下一个美团？抖省省背后的万亿野心-36氪",
+          "url": "https://m.36kr.com/p/3709583676764294",
+          "date": "2026-06-02"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-225",
+      "date": "2026-06-02",
+      "title": "顶格罚款200万 + 吊销执照！2026民营医疗最大的罚单来了 - 医院运营管理网",
+      "body": "# 顶格罚款200万 + 吊销执照！2026民营医疗最大的罚单来了. 发布时间 2026-05-22   2719 阅读   0 评论    0 点赞. 4月22日，长沙市芙蓉区行政执法局的一纸处罚公告，将去年引发重大舆情的“长沙乐莎莎口腔跑路事件”再度拉回公众视野。处罚结果堪称严厉：****因提交虚假材料、采取欺诈手段隐瞒重要事实取得公司登记，该门诊被处以200万元罚款，并直接吊销营业执照。**",
+      "sowhat": "",
+      "company": [],
+      "industry": [
+        "医疗"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-02 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "顶格罚款200万 + 吊销执照！2026民营医疗最大的罚单来了 - 医院运营管理网",
+          "url": "https://chyyyygl.com/jingpinwenzhang/9539.html",
+          "date": "2026-06-02"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-236",
+      "date": "2026-06-02",
+      "title": "2026年国家数据专家咨询委员会全体会议召开 - 东方财富",
+      "body": "2026年国家数据专家咨询委员会全体会议5月12日在京召开。会议总结专委会2025年工作，安排部署今年重点工作，并围绕数据要素综合试验区建设优化提升，数据",
+      "sowhat": "",
+      "company": [],
+      "industry": [
+        "综合"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-02 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "2026年国家数据专家咨询委员会全体会议召开 - 东方财富",
+          "url": "https://wap.eastmoney.com/a/202605153739112717.html",
+          "date": "2026-06-02"
         }
       ],
       "_verification": "verified",
@@ -240,33 +211,6 @@
       "_fetched_by": "search_intel.py"
     },
     {
-      "id": "intel-209",
-      "date": "2026-05-26",
-      "title": "美团发布“跑腿Skill”，接上各家AI的腿-观察者网",
-      "body": "### 美团发布“跑腿Skill”，接上各家AI的腿. 2026年5月，美团正式发布“跑腿Skill”。用户对着OpenClaw、Cursor、微信、飞书等AI助手说一句“帮我买杯咖啡”，系统直接调用美团跑腿完成下单，骑手接单，咖啡送达。全程无需打开美团App。. 这不是美团去“抢”AI入口，而是AI生态自然生长出的一个缺口——物理世界闭环能力——被美团用既有重资产填补。美团最重的资产（740万骑",
-      "sowhat": "",
-      "company": [
-        "美团"
-      ],
-      "industry": [
-        "AI"
-      ],
-      "type": "技术发布",
-      "timeline": "2026-05-26 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团发布“跑腿Skill”，接上各家AI的腿-观察者网",
-          "url": "https://www.guancha.cn/economy/2026_05_27_818554.shtml",
-          "date": "2026-05-26"
-        }
-      ],
-      "_verification": "weak",
-      "_fetched_by": "search_intel.py",
-      "_date_mismatch": true,
-      "_source_date": "2023-04-11"
-    },
-    {
       "id": "intel-210",
       "date": "2026-06-01",
       "title": "美团2026年Q1财报：加速推进AI落地物理世界 - 新华网",
@@ -293,25 +237,51 @@
       "_fetched_by": "search_intel.py"
     },
     {
-      "id": "intel-211",
-      "date": "2026-05-20",
-      "title": "2026阿里云峰会",
-      "body": "一站式 AI 产品交易平台，让企业选好、买好、用好 AI 产品，更好的聚焦自身业务创新。. ## 千问云 — MaaS（模型即服务）平台 | 为 Agent 而生，驱动中国 AI 生产力！.",
+      "id": "intel-202",
+      "date": "2026-05-31",
+      "title": "2026年中国小红书推广公司_中华网",
+      "body": "首页*|*资讯*|*军事*|*汽车*|*游戏*|*科技*|*旅游*|*经济*|*娱乐*|*投资*|*文化*|*守艺中华*|*佛教*|*红木*|*韩流*|*简读*|*军事APP*|*头条APP. # 2026年中国小红书推广公司. 2026-05-31 19:15:12       来源：财讯网. 构建了覆盖洞察(灵犀策略)—内容(蒲公英达人合作)—投放(聚光广告)—转化(千帆电商/专业号)—度量(",
       "sowhat": "",
       "company": [
-        "阿里"
+        "小红书"
       ],
       "industry": [
         "综合"
       ],
       "type": "产品动态",
-      "timeline": "2026-05-20 本次事件",
+      "timeline": "2026-05-31 本次事件",
       "scope": "国内",
       "sources": [
         {
-          "name": "2026阿里云峰会",
-          "url": "https://summit.aliyun.com/2026",
-          "date": "2026-05-20"
+          "name": "2026年中国小红书推广公司_中华网",
+          "url": "https://m.tech.china.com/redian/2026/0531/052026_1882647.html",
+          "date": "2026-05-31"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-207",
+      "date": "2026-05-31",
+      "title": "2026年百度电商广告与投放运营服务展望 - 多面手企业网络推广一站式服务",
+      "body": "# 2026年百度电商广告与投放运营服务展望. 广告代运营 2026-05-31 1 阅读. 在2026年，百度电商广告及投流代运营服务将全面进入智能化、精细化运营的新阶段。针对“百度电商广告及投流代运营”的需求，我们将为您梳理实操策略与服务商选择建议： 一、 百度电商广告的核心投放工具矩阵 百度电商推广已全面迈入智能化、精细化运营的新阶段。专业的代运营服务不再局限于单一渠道的投放，而是深度整合搜",
+      "sowhat": "",
+      "company": [
+        "百度"
+      ],
+      "industry": [
+        "电商"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-05-31 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "2026年百度电商广告与投放运营服务展望 - 多面手企业网络推广一站式服务",
+          "url": "https://www.80tg.com/news/53248.html",
+          "date": "2026-05-31"
         }
       ],
       "_verification": "verified",
@@ -345,31 +315,28 @@
       "_fetched_by": "search_intel.py"
     },
     {
-      "id": "intel-213",
+      "id": "intel-232",
       "date": "2026-05-29",
-      "title": "利润换增长？拼多多正用“新拼姆”改写出海规则",
-      "body": "### 利润换增长？拼多多正用“新拼姆”改写出海规则. 5月27日晚间，拼多多发布2026年第一季度财报，1062亿元的总营收虽维持了双位数增长，但归母净利润15%的同比下滑，大幅低于资本市场预期，直接导致拼多多股价大跌约10%。. 拼多多集团联席董事长兼联席CEO赵佳臻明确表示，为换取生态的长期内生价值，主动牺牲短期财务表现，**未来季度利润率的起伏和波动将成为“常态”**。. 因此，业绩的波动",
+      "title": "政策法规- 中央网络安全和信息化委员会办公室 - 中央网信办",
+      "body": "#### 政策法规. - ##### 专家解读｜统筹高质量发展与高水平安全：从《智能体规范应用与创新发展实施意见》看AI产业新图景. - ##### 民政部 工业和信息化部 广电总局 国家新闻出版署 国家网信办关于印发《公开募捐平台服务管理办法》的通知. - ##### 民政部 工业和信息化部 国家网信办关于印发《互联网公开募捐服务平台管理办法》的通知. - ##### 专家解读｜从“建体系”到“",
       "sowhat": "",
-      "company": [
-        "拼多多"
-      ],
+      "company": [],
       "industry": [
         "综合"
       ],
-      "type": "财报数据",
+      "type": "政策更新",
       "timeline": "2026-05-29 本次事件",
       "scope": "国内",
       "sources": [
         {
-          "name": "利润换增长？拼多多正用“新拼姆”改写出海规则",
-          "url": "https://www.guancha.cn/economy/2026_05_29_818748.shtml",
+          "name": "政策法规- 中央网络安全和信息化委员会办公室 - 中央网信办",
+          "url": "https://www.cac.gov.cn/wxzw/zcfg/A093703index_1.htm",
           "date": "2026-05-29"
         }
       ],
-      "_verification": "weak",
-      "_fetched_by": "search_intel.py",
-      "_date_mismatch": true,
-      "_source_date": "2023-04-11"
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
     },
     {
       "id": "intel-214",
@@ -399,31 +366,279 @@
       "_fetched_by": "search_intel.py"
     },
     {
-      "id": "intel-215",
-      "date": "2026-05-27",
-      "title": "拼多多发布Q1财报：“千亿扶持”加码惠商助农，新拼姆助力供应链 ...",
-      "body": "安徽|北京|重庆|福建|甘肃| 贵州|广东|广西|海南|河北| 河南| 湖北|湖南|黑龙江|江苏|江西| 吉林| 辽宁|内蒙古|宁夏|青海|山东| 山西| 陕西|上海|四川|天津|新疆| 兵团| 云南|浙江. 高层*|* 人事*|* 反腐*|* 深度*|* 两岸*|* 科教*|* 军事. 中外对话*|*世界观*|*广角镜*|*Z世代*|*洋腔队*|*舆论场*|*新漫评*|*思享家*|*. 宏观*|",
+      "id": "intel-230",
+      "date": "2026-05-28",
+      "title": "三大运营商到了分道扬镳的时候了",
+      "body": "过去二十年，基本是三大运营商同质化竞争的循环过程。从基础的语音通话、宽带组网，到后续的流量业务、5G建设， ... 2026年5 月18 日，三星电子前半导体业务负责",
       "sowhat": "",
-      "company": [
-        "拼多多"
-      ],
+      "company": [],
       "industry": [
         "综合"
       ],
-      "type": "财报数据",
+      "type": "产品动态",
+      "timeline": "2026-05-28 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "三大运营商到了分道扬镳的时候了",
+          "url": "https://www.eet-china.com/mp/a498499.html",
+          "date": "2026-05-28"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-205",
+      "date": "2026-05-27",
+      "title": "腾讯AI商业化再推进，腾讯控股盘中涨超3% 大模型收费落地引发市场关注 | uSMART",
+      "body": "受香港证监会认可的持牌法团（中央编号：BJA907），持有证券交易牌照（第一类），就证券提供意见牌照（第四类），就机构融资提供意见牌照（第六类），提供资产管理类牌照（第九类）牌照。. uSMART 05-19 16:08. 5月19日，港股大型科技股走势分化，但腾讯控股表现相对强势。截至15时11分，腾讯控股（00700.HK）报462.8港元，涨3.03%，盘中一度触及468.8港元高位，成交额",
+      "sowhat": "",
+      "company": [
+        "腾讯"
+      ],
+      "industry": [
+        "AI"
+      ],
+      "type": "技术发布",
       "timeline": "2026-05-27 本次事件",
       "scope": "国内",
       "sources": [
         {
-          "name": "拼多多发布Q1财报：“千亿扶持”加码惠商助农，新拼姆助力供应链 ...",
-          "url": "https://www.chinanews.com.cn/cj/2026/05-27/10629817.shtml",
+          "name": "腾讯AI商业化再推进，腾讯控股盘中涨超3% 大模型收费落地引发市场关注 | uSMART",
+          "url": "https://www.usmart66.com/zh-cn/news-detail/1/7462413808397599257",
           "date": "2026-05-27"
         }
       ],
-      "_verification": "weak",
-      "_fetched_by": "search_intel.py",
-      "_date_mismatch": true,
-      "_source_date": "2023-03-21"
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-220",
+      "date": "2026-05-26",
+      "title": "New and planned features for Microsoft Copilot Studio, 2026 ",
+      "body": "[Sign in](https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/microsoft-copilot-studio/planned-features#). ![Image 1](https://learn.microsoft.com/en-us/power-platform/release-plan/",
+      "sowhat": "",
+      "company": [],
+      "industry": [
+        "综合"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-05-26 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "New and planned features for Microsoft Copilot Stu",
+          "url": "https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/microsoft-copilot-studio/planned-features",
+          "date": "2026-05-26"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-221",
+      "date": "2026-05-26",
+      "title": "2026年电商直播账号流量遇瓶颈，线下广告如何提升直播GMV？_腾讯新闻",
+      "body": "# 2026年电商直播账号流量遇瓶颈，线下广告如何提升直播GMV？. 2026-05-26 22:10发布于安徽六安新周报官方账号. 2026年，很多电商直播账号都会遇到一个明显瓶颈：站内流量越来越贵，直播间进房成本越来越高，老客复购增长有限，新客破圈越来越难。过去很多品牌做线下广告，容易停留在“只看热闹，不问效果”的阶段，只关心广告有没有露出，却没有真正打通后续的搜索、进房、加购和成交链路。现在",
+      "sowhat": "",
+      "company": [
+        "腾讯"
+      ],
+      "industry": [
+        "电商"
+      ],
+      "type": "财报数据",
+      "timeline": "2026-05-26 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "2026年电商直播账号流量遇瓶颈，线下广告如何提升直播GMV？_腾讯新闻",
+          "url": "https://news.qq.com/rain/a/20260526A0A8XJ00",
+          "date": "2026-05-26"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-227",
+      "date": "2026-05-26",
+      "title": "2026中国“医美+AI”产业分析：万亿级市场规模与智能化合规路径",
+      "body": "首页 > 创新纪 > 2026中国“医美+AI”产业分析：万亿级市场规模与智能化合规路径. # 2026中国“医美+AI”产业分析：万亿级市场规模与智能化合规路径. 2025年以来，围绕人工智能在医疗卫生与药品监管体系中的应用，多部委出台了具有里程碑意义的指导性文件。医美行业作为兼具医疗属性与消费属性的特殊领域，其合规化进程与AI技术的演进已深度绑定。. | 《关于深入实施“人工智能+”行动的意见",
+      "sowhat": "",
+      "company": [],
+      "industry": [
+        "AI",
+        "医疗"
+      ],
+      "type": "技术发布",
+      "timeline": "2026-05-26 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "2026中国“医美+AI”产业分析：万亿级市场规模与智能化合规路径",
+          "url": "https://openaxo.com/innovation/china-medical-aesthetics-ai-2026",
+          "date": "2026-05-26"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-228",
+      "date": "2026-05-26",
+      "title": "《解放日报》专版：长宁 “新餐饮”撬动消费升级 构建品牌出海新格局 | 媒体视野中的长宁_腾讯新闻",
+      "body": "# 《解放日报》专版：长宁 “新餐饮”撬动消费升级 构建品牌出海新格局 | 媒体视野中的长宁. 2026-05-26 14:27发布于上海上海市长宁区融媒体中心官方账号. 新餐饮是拉动消费升级、激活商圈活力、完善便民服务的重要抓手，也是长宁区打造“国际范+烟火气”商业体系的核心支撑。近年来，长宁区立足新餐饮发展方向，聚焦餐饮企业全生命周期需求，依托精准服务、制度创新、政策支撑、商圈联动，为招引优质",
+      "sowhat": "",
+      "company": [
+        "腾讯"
+      ],
+      "industry": [
+        "综合"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-05-26 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "《解放日报》专版：长宁 “新餐饮”撬动消费升级 构建品牌出海新格局 | 媒体视野中的长宁_腾讯新闻",
+          "url": "https://news.qq.com/rain/a/20260526A06HN600",
+          "date": "2026-05-26"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-233",
+      "date": "2026-05-26",
+      "title": "数字营销新闻2026年5月11日至20日：谷歌核心算法更新 - ALM Corp",
+      "body": "主页 » 博客 » 数字营销新闻：2026 年 5 月 11 日至 20 日 — 谷歌五月核心算法更新、营销直播公告、ChatGPT 自助广告等. # 数字营销新闻：2026 年 5 月 11 日至 20 日 — 谷歌五月核心算法更新、营销直播公告、ChatGPT 自助广告等. 在 Marketing Live 大会召开前夕，我们庆祝了 AI Max for Search 上线一周年，并推出了一些",
+      "sowhat": "",
+      "company": [],
+      "industry": [
+        "综合"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-05-26 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "数字营销新闻2026年5月11日至20日：谷歌核心算法更新 - ALM Corp",
+          "url": "https://almcorp.com/zh-CN/blog/digital-marketing-news-may-11-20-2026",
+          "date": "2026-05-26"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-229",
+      "date": "2026-05-25",
+      "title": "重磅定调！中央多部委联合发声，楼市重大利好全面落地",
+      "body": "## 新浪财经 正文. # 重磅定调！中央多部委联合发声，楼市重大利好全面落地. 2026 年 5 月，中国房地产市场迎来里程碑式的历史拐点。住建部、财政部、央行、税务总局、自然资源部、国家金融监督管理总局等中央多部委罕见联动、集体发声，一套涵盖需求端松绑、供给端优化、资金端加持、税费端减免的楼市 “王炸” 政策组合拳正式全面落地。这不是短期应急的微调，而是顶层设计重构楼市发展逻辑、化解行业系统性",
+      "sowhat": "",
+      "company": [],
+      "industry": [
+        "综合"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-05-25 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "重磅定调！中央多部委联合发声，楼市重大利好全面落地",
+          "url": "http://finance.sina.com.cn/roll/2026-05-25/doc-inhzchzh3497085.shtml",
+          "date": "2026-05-25"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-201",
+      "date": "2026-05-24",
+      "title": "2026 年 5 月技术大地震！大模型狂飙迭代，四大技术赛道迎来全面爆发_人工智能_李德没德-AtomGit AI 社区",
+      "body": "# logo AtomGit AI 社区. ### AtomGit AI 社区. AtomGit AI 社区   2026 年 5 月技术大地震！大模型狂飙迭代，四大技术赛道迎来全面爆发. # 2026 年 5 月技术大地震！大模型狂飙迭代，四大技术赛道迎来全面爆发. 793人浏览 · 2026-05-24 16:47:58. 李德没德  ·  2026-05-24 16:47:58 发布. 20",
+      "sowhat": "",
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "技术发布",
+      "timeline": "2026-05-24 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "2026 年 5 月技术大地震！大模型狂飙迭代，四大技术赛道迎来全面爆发_人工智能_李德没德-Ato",
+          "url": "https://tianqi.csdn.net/6a12bb4810ee7a33f274c4d7.html",
+          "date": "2026-05-24"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-203",
+      "date": "2026-05-22",
+      "title": "如何利用AI 创作爆款小红书内容（2026年5月） - Jenova.ai",
+      "body": "# **AI 小红书风格：如何利用 AI 创作爆款小红书内容（2026年5月）**. 这正是 AI 的用武之地。像 **Jenova** 这样的平台提供了专门的智能体——包括一个能适应特定平台格式的**社交媒体内容生成器**、一个用于封面图片创作的**平面设计师**，以及一个用于文案撰写的**写作助手**——它们帮助创作者和品牌无需多年的平台沉浸，就能制作出地道的小红书风格内容。. 在本指南中，我",
+      "sowhat": "",
+      "company": [
+        "小红书"
+      ],
+      "industry": [
+        "AI"
+      ],
+      "type": "技术发布",
+      "timeline": "2026-05-22 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "如何利用AI 创作爆款小红书内容（2026年5月） - Jenova.ai",
+          "url": "https://www.jenova.ai/zh/resources/ai-xiaohongshu-style-202605",
+          "date": "2026-05-22"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
+    },
+    {
+      "id": "intel-211",
+      "date": "2026-05-20",
+      "title": "2026阿里云峰会",
+      "body": "一站式 AI 产品交易平台，让企业选好、买好、用好 AI 产品，更好的聚焦自身业务创新。. ## 千问云 — MaaS（模型即服务）平台 | 为 Agent 而生，驱动中国 AI 生产力！.",
+      "sowhat": "",
+      "company": [
+        "阿里"
+      ],
+      "industry": [
+        "综合"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-05-20 本次事件",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "2026阿里云峰会",
+          "url": "https://summit.aliyun.com/2026",
+          "date": "2026-05-20"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py"
     },
     {
       "id": "intel-216",
@@ -497,475 +712,6 @@
         }
       ],
       "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-219",
-      "date": "2026-06-02",
-      "title": "豆包推出收费：纯免费的大模型越来越少了-36氪",
-      "body": "# 豆包推出收费：纯免费的大模型越来越少了. 2026年5月4日，字节跳动旗下AI产品豆包在苹果App Store悄然更新付费订阅方案。标准版68元/月、加强版200元/月、专业版500元/月——三档价格梯度如同三枚信号弹，划破了中国AI大模型行业持续两年的“免费狂欢”。. 这不是一次普通的商业试探。豆包背后是3.5亿月活用户的国内第一AI原生应用，其商业化宣告意味着什么？当用户规模最大的玩家开始",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "AI"
-      ],
-      "type": "技术发布",
-      "timeline": "2026-06-02 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "豆包推出收费：纯免费的大模型越来越少了-36氪",
-          "url": "https://m.36kr.com/p/3802970281041408",
-          "date": "2026-06-02"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-220",
-      "date": "2026-05-26",
-      "title": "New and planned features for Microsoft Copilot Studio, 2026 ",
-      "body": "[Sign in](https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/microsoft-copilot-studio/planned-features#). ![Image 1](https://learn.microsoft.com/en-us/power-platform/release-plan/",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-05-26 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "New and planned features for Microsoft Copilot Stu",
-          "url": "https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/microsoft-copilot-studio/planned-features",
-          "date": "2026-05-26"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-221",
-      "date": "2026-05-26",
-      "title": "2026年电商直播账号流量遇瓶颈，线下广告如何提升直播GMV？_腾讯新闻",
-      "body": "# 2026年电商直播账号流量遇瓶颈，线下广告如何提升直播GMV？. 2026-05-26 22:10发布于安徽六安新周报官方账号. 2026年，很多电商直播账号都会遇到一个明显瓶颈：站内流量越来越贵，直播间进房成本越来越高，老客复购增长有限，新客破圈越来越难。过去很多品牌做线下广告，容易停留在“只看热闹，不问效果”的阶段，只关心广告有没有露出，却没有真正打通后续的搜索、进房、加购和成交链路。现在",
-      "sowhat": "",
-      "company": [
-        "腾讯"
-      ],
-      "industry": [
-        "电商"
-      ],
-      "type": "财报数据",
-      "timeline": "2026-05-26 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "2026年电商直播账号流量遇瓶颈，线下广告如何提升直播GMV？_腾讯新闻",
-          "url": "https://news.qq.com/rain/a/20260526A0A8XJ00",
-          "date": "2026-05-26"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-222",
-      "date": "2026-05-28",
-      "title": "快手可灵AI全球用户规模已突破6000万 - 证券时报",
-      "body": "要闻   金融   评论   产经   创投   滚动. A股   公司   新股   基金   港美股. 京   津   冀   晋   蒙   辽   吉   黑   沪   苏   浙   皖   闽   赣   鲁   豫   鄂   湘   粤   桂   琼   渝   川   黔   滇   藏   陕   甘   青   宁   新   鹏. 来源：证券日报作者：袁传玺2026-0",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "AI"
-      ],
-      "type": "技术发布",
-      "timeline": "2026-05-28 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "快手可灵AI全球用户规模已突破6000万 - 证券时报",
-          "url": "https://www.stcn.com/article/detail/3930980.html",
-          "date": "2026-05-28"
-        }
-      ],
-      "_verification": "weak",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py",
-      "_ks_no_official": true
-    },
-    {
-      "id": "intel-223",
-      "date": "2026-05-29",
-      "title": "小红书“爆冷”世界杯，种草社区能接住这泼天的“直男流量”吗？ | CBNData",
-      "body": "足球是充满冷门的运动。2026年美加墨世界杯还没开踢，但是在中国市场，最大的冷门已经出现：小红书官方宣布，成为2026世界杯持权转播商，中央广播电视总台顶级赛事直播战略合作伙伴。2026美加墨世界杯全部赛事直播、回看和精彩瞬间可在小红书免费观看。. 对于普通人而言，最直观的理解是，小红书扮演了2022年世界杯抖音的角色。至今，咪咕体育已经很难再找到2022年世界杯的比赛回放，但是在抖音平台，如果你",
-      "sowhat": "",
-      "company": [
-        "小红书"
-      ],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-05-29 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "小红书“爆冷”世界杯，种草社区能接住这泼天的“直男流量”吗？ | CBNData",
-          "url": "https://www.cbndata.com/information/295372",
-          "date": "2026-05-29"
-        }
-      ],
-      "_verification": "weak",
-      "_fetched_by": "search_intel.py",
-      "_date_mismatch": true,
-      "_source_date": "2022-11-15"
-    },
-    {
-      "id": "intel-224",
-      "date": "2026-06-02",
-      "title": "下一个美团？抖省省背后的万亿野心-36氪",
-      "body": "# 下一个美团？抖省省背后的万亿野心. 据雷峰网爆料，抖音生活服务2025年全年支付GMV超8500亿元，同比增速达59%；2026年GMV增速目标定为50%，抖音生活服务将进一步缩小与美团的GMV份额差距。. 马年春节前，抖音悄然上线一款名为“抖省省”的独立App——没有短视频、没有直播，只有极简的团购与到店服务入口。. 这一动作看似低调，但它背后，意味着**抖音正在加码布局本地生活：从“内容驱",
-      "sowhat": "",
-      "company": [
-        "美团"
-      ],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-06-02 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "下一个美团？抖省省背后的万亿野心-36氪",
-          "url": "https://m.36kr.com/p/3709583676764294",
-          "date": "2026-06-02"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-225",
-      "date": "2026-06-02",
-      "title": "顶格罚款200万 + 吊销执照！2026民营医疗最大的罚单来了 - 医院运营管理网",
-      "body": "# 顶格罚款200万 + 吊销执照！2026民营医疗最大的罚单来了. 发布时间 2026-05-22   2719 阅读   0 评论    0 点赞. 4月22日，长沙市芙蓉区行政执法局的一纸处罚公告，将去年引发重大舆情的“长沙乐莎莎口腔跑路事件”再度拉回公众视野。处罚结果堪称严厉：****因提交虚假材料、采取欺诈手段隐瞒重要事实取得公司登记，该门诊被处以200万元罚款，并直接吊销营业执照。**",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "医疗"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-06-02 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "顶格罚款200万 + 吊销执照！2026民营医疗最大的罚单来了 - 医院运营管理网",
-          "url": "https://chyyyygl.com/jingpinwenzhang/9539.html",
-          "date": "2026-06-02"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-226",
-      "date": "2026-06-01",
-      "title": "新闻周报 - 中国医院协会信息专业委员会",
-      "body": "* 医疗信息化周报 第535期 | 国家卫生健康委规范紧密型县域医共体四大资源共享中心建设 2026-06-01. · 国家卫生健康委规范紧密型县域医共体四大资源共享中心建设5月27日，国家卫生健康委办公厅印发《紧密型县域医共体医学影像中心建设与服务指南（试行）》等4项指南，指导各地规范建设医学影像、医学检验、心电诊断、消毒供应等资源共享中心，提高服务规范化、同质化水平。此四项指南均在基本建设标准",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-06-01 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "新闻周报 - 中国医院协会信息专业委员会",
-          "url": "https://www.chima.org.cn/Html/News/Columns/45/Index0.html",
-          "date": "2026-06-01"
-        }
-      ],
-      "_verification": "weak",
-      "_fetched_by": "search_intel.py",
-      "_date_mismatch": true,
-      "_source_date": "2026-04-20"
-    },
-    {
-      "id": "intel-227",
-      "date": "2026-05-26",
-      "title": "2026中国“医美+AI”产业分析：万亿级市场规模与智能化合规路径",
-      "body": "首页 > 创新纪 > 2026中国“医美+AI”产业分析：万亿级市场规模与智能化合规路径. # 2026中国“医美+AI”产业分析：万亿级市场规模与智能化合规路径. 2025年以来，围绕人工智能在医疗卫生与药品监管体系中的应用，多部委出台了具有里程碑意义的指导性文件。医美行业作为兼具医疗属性与消费属性的特殊领域，其合规化进程与AI技术的演进已深度绑定。. | 《关于深入实施“人工智能+”行动的意见",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "AI",
-        "医疗"
-      ],
-      "type": "技术发布",
-      "timeline": "2026-05-26 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "2026中国“医美+AI”产业分析：万亿级市场规模与智能化合规路径",
-          "url": "https://openaxo.com/innovation/china-medical-aesthetics-ai-2026",
-          "date": "2026-05-26"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-228",
-      "date": "2026-05-26",
-      "title": "《解放日报》专版：长宁 “新餐饮”撬动消费升级 构建品牌出海新格局 | 媒体视野中的长宁_腾讯新闻",
-      "body": "# 《解放日报》专版：长宁 “新餐饮”撬动消费升级 构建品牌出海新格局 | 媒体视野中的长宁. 2026-05-26 14:27发布于上海上海市长宁区融媒体中心官方账号. 新餐饮是拉动消费升级、激活商圈活力、完善便民服务的重要抓手，也是长宁区打造“国际范+烟火气”商业体系的核心支撑。近年来，长宁区立足新餐饮发展方向，聚焦餐饮企业全生命周期需求，依托精准服务、制度创新、政策支撑、商圈联动，为招引优质",
-      "sowhat": "",
-      "company": [
-        "腾讯"
-      ],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-05-26 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "《解放日报》专版：长宁 “新餐饮”撬动消费升级 构建品牌出海新格局 | 媒体视野中的长宁_腾讯新闻",
-          "url": "https://news.qq.com/rain/a/20260526A06HN600",
-          "date": "2026-05-26"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-229",
-      "date": "2026-05-25",
-      "title": "重磅定调！中央多部委联合发声，楼市重大利好全面落地",
-      "body": "## 新浪财经 正文. # 重磅定调！中央多部委联合发声，楼市重大利好全面落地. 2026 年 5 月，中国房地产市场迎来里程碑式的历史拐点。住建部、财政部、央行、税务总局、自然资源部、国家金融监督管理总局等中央多部委罕见联动、集体发声，一套涵盖需求端松绑、供给端优化、资金端加持、税费端减免的楼市 “王炸” 政策组合拳正式全面落地。这不是短期应急的微调，而是顶层设计重构楼市发展逻辑、化解行业系统性",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-05-25 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "重磅定调！中央多部委联合发声，楼市重大利好全面落地",
-          "url": "http://finance.sina.com.cn/roll/2026-05-25/doc-inhzchzh3497085.shtml",
-          "date": "2026-05-25"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-230",
-      "date": "2026-05-28",
-      "title": "三大运营商到了分道扬镳的时候了",
-      "body": "过去二十年，基本是三大运营商同质化竞争的循环过程。从基础的语音通话、宽带组网，到后续的流量业务、5G建设， ... 2026年5 月18 日，三星电子前半导体业务负责",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-05-28 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "三大运营商到了分道扬镳的时候了",
-          "url": "https://www.eet-china.com/mp/a498499.html",
-          "date": "2026-05-28"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-231",
-      "date": "2026-05-27",
-      "title": "数据",
-      "body": "*   [![Image 6](https://www.stats.gov.cn/images/gtj2023_header-icon3.png)](javascript:; \"无障碍\"). *   [首页](https://www.stats.gov.cn/). *   [数据](https://www.stats.gov.cn/sj/). [数据发布](https://www.stats.go",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-05-27 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "数据",
-          "url": "https://www.stats.gov.cn/sj",
-          "date": "2026-05-27"
-        }
-      ],
-      "_verification": "weak",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-232",
-      "date": "2026-05-29",
-      "title": "政策法规- 中央网络安全和信息化委员会办公室 - 中央网信办",
-      "body": "#### 政策法规. - ##### 专家解读｜统筹高质量发展与高水平安全：从《智能体规范应用与创新发展实施意见》看AI产业新图景. - ##### 民政部 工业和信息化部 广电总局 国家新闻出版署 国家网信办关于印发《公开募捐平台服务管理办法》的通知. - ##### 民政部 工业和信息化部 国家网信办关于印发《互联网公开募捐服务平台管理办法》的通知. - ##### 专家解读｜从“建体系”到“",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "综合"
-      ],
-      "type": "政策更新",
-      "timeline": "2026-05-29 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "政策法规- 中央网络安全和信息化委员会办公室 - 中央网信办",
-          "url": "https://www.cac.gov.cn/wxzw/zcfg/A093703index_1.htm",
-          "date": "2026-05-29"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-233",
-      "date": "2026-05-26",
-      "title": "数字营销新闻2026年5月11日至20日：谷歌核心算法更新 - ALM Corp",
-      "body": "主页 » 博客 » 数字营销新闻：2026 年 5 月 11 日至 20 日 — 谷歌五月核心算法更新、营销直播公告、ChatGPT 自助广告等. # 数字营销新闻：2026 年 5 月 11 日至 20 日 — 谷歌五月核心算法更新、营销直播公告、ChatGPT 自助广告等. 在 Marketing Live 大会召开前夕，我们庆祝了 AI Max for Search 上线一周年，并推出了一些",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-05-26 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "数字营销新闻2026年5月11日至20日：谷歌核心算法更新 - ALM Corp",
-          "url": "https://almcorp.com/zh-CN/blog/digital-marketing-news-may-11-20-2026",
-          "date": "2026-05-26"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-234",
-      "date": "2026-06-02",
-      "title": "宏观_财经_中国网",
-      "body": "原创|宏观|产经|科技|汽车|能源|医药|房产|消费|公司|港股|美股|科创板|金融|基金|银行|保险|金融科技|文旅|家居|专题|滚动. # 财经首页 > 宏观. * 2026-06-02 13:57促消费贵在精准惠民“接地气”. * 2026-06-02 13:44坚持化债与发展相辅相成. * 2026-06-02 09:51政策红利转化为退税便利 网上离境退税商店让境外游客“买买买”更便捷.",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-06-02 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "宏观_财经_中国网",
-          "url": "http://finance.china.com.cn/news/index.shtml",
-          "date": "2026-06-02"
-        }
-      ],
-      "_verification": "weak",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-235",
-      "date": "2026-05-31",
-      "title": "2026年5月中国采购经理指数运行情况 - 国家统计局",
-      "body": "5月份，制造业采购经理指数（PMI）为50.0%，比上月下降0.3个百分点，位于临界点。. 从企业规模看，大型企业PMI为51.1%，比上月上升0.9个百分点，高于临界点；中、小型企业PMI分别为48.6%和48.5%，比上月下降1.9个和1.6个百分点，均低于临界点。. 从分类指数看，构成制造业PMI的5个分类指数中，生产指数高于临界点，新订单指数、原材料库存指数、从业人员指数和供应商配送时间指",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-05-31 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "2026年5月中国采购经理指数运行情况 - 国家统计局",
-          "url": "https://www.stats.gov.cn/sj/zxfb/202605/t20260531_1963824.html",
-          "date": "2026-05-31"
-        }
-      ],
-      "_verification": "weak",
-      "_fetched_by": "search_intel.py",
-      "_date_mismatch": true,
-      "_source_date": "2024-06-07"
-    },
-    {
-      "id": "intel-236",
-      "date": "2026-06-02",
-      "title": "2026年国家数据专家咨询委员会全体会议召开 - 东方财富",
-      "body": "2026年国家数据专家咨询委员会全体会议5月12日在京召开。会议总结专委会2025年工作，安排部署今年重点工作，并围绕数据要素综合试验区建设优化提升，数据",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-06-02 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "2026年国家数据专家咨询委员会全体会议召开 - 东方财富",
-          "url": "https://wap.eastmoney.com/a/202605153739112717.html",
-          "date": "2026-06-02"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
-    },
-    {
-      "id": "intel-237",
-      "date": "2026-05-31",
-      "title": "数据发布 - 国家统计局",
-      "body": "* 2026年5月中国采购经理指数运行情况   2026年5月中国采购经理指数运行情况   2026年5月中国采购经理指数运行情况   2026-05-31. * 2026年1—4月份全国规模以上工业企业利润增长18.2%   2026年1—4月份全国规模以上工业企业利润增长18.2%   2026年1—4月份全国规模以上工业企业利... * 2025年全国1%人口抽样调查主要数据公报   202",
-      "sowhat": "",
-      "company": [],
-      "industry": [
-        "综合"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-05-31 本次事件",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "数据发布 - 国家统计局",
-          "url": "https://www.stats.gov.cn/sj/zxfb",
-          "date": "2026-05-31"
-        }
-      ],
-      "_verification": "weak",
       "_date_ok": true,
       "_fetched_by": "search_intel.py"
     }

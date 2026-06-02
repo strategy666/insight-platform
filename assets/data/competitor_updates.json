@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "description": "Part2 竞对动态 — competitor-tracker agent v2 (SOURCE-FIRST)",
+    "description": "Part2 竞对动态 — SOURCE-FIRST v3 (direct fetch + web_fetch)",
     "last_updated": "2026-06-02",
-    "total_items": 31,
+    "total_items": 23,
     "recent_window": "past 14d (cutoff 2026-05-19)",
     "companies_tracked": [
       "字节",
@@ -13,68 +13,10 @@
       "阿里",
       "拼多多"
     ],
-    "source_first": true
+    "source_first": true,
+    "fetch_method": "direct_channel_fetch + web_fetch + wechat_articles_skill"
   },
   "items": [
-    {
-      "id": "comp-700",
-      "date": "2026-06-01",
-      "company": "美团",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "美团2026年Q1营收910亿元，环比减亏96亿元 - 中国日报网",
-      "body": "# 美团2026年Q1营收910亿元，环比减亏96亿元. ## 6月1日，美团发布2026年第一季度业绩。. 来源：中国日报  2026-06-01 17:59. 中国日报6月1日电（记者 程钰）6月1日，美团发布2026年第一季度业绩。本季度，美团实现收入910亿元（人民币，下同），同比增长5.6",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团2026年Q1营收910亿元，环比减亏96亿元 - 中国日报网",
-          "url": "https://cn.chinadaily.com.cn/a/202606/01/WS6a1d5800a310942cc49af741.html",
-          "date": "2026-06-01"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-01",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py"
-    },
-    {
-      "id": "comp-701",
-      "date": "2026-06-01",
-      "company": "美团",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地",
-      "body": "安徽|北京|重庆|福建|甘肃| 贵州|广东|广西|海南|河北| 河南| 湖北|湖南|黑龙江|江苏|江西| 吉林| 辽宁|内蒙古|宁夏|青海|山东| 山西| 陕西|上海|四川|天津|新疆| 兵团| 云南|浙江. 高层*|* 人事*|* 反腐*|* 深度*|* 两岸*|* 科教*|* 军事. 中外对话*",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地",
-          "url": "https://www.chinanews.com.cn/cj/2026/06-01/10632293.shtml",
-          "date": "2026-06-01"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-01",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "weak",
-      "_fetched_by": "competitor_tracker.py",
-      "_date_mismatch": true,
-      "_source_date": "2023-03-21"
-    },
     {
       "id": "comp-702",
       "date": "2026-06-02",
@@ -105,34 +47,91 @@
       "_fetched_by": "competitor_tracker.py"
     },
     {
-      "id": "comp-703",
-      "date": "2026-06-20",
+      "id": "comp-705",
+      "date": "2026-06-02",
       "company": "字节",
       "category": "产品动态",
-      "dimension": "AI/技术",
+      "dimension": "产品/接入",
       "data_source": "三方媒体",
       "tier": "T1",
-      "title": "传字节跳动2026年资本支出为1600 亿元，超半数用于购买AI处理器",
-      "body": "##### 闪存市场APP. ##### 手机网页版. ##### 微信小程序. ## CFM闪存市场. # 传字节跳动2026年资本支出为1600 亿元，超半数用于购买AI处理器. 据业界消息称，字节跳动已初步计划 2026 年的资本支出为 1600 亿元人民币，较今年 1500 亿元人民币的人工",
+      "title": "字节跳动 - 财联社",
+      "body": "## 首页## 电报## 话题## 盯盘## VIP## FM## 投研## 下载. 2026-05-29 18:48来自 澎湃新闻. **【字节跳动AI4S团队调整 由杨震原负责管理】**财联社5月29日电，有传言称，字节Seed旗下AI4S团队，正在讨论新一轮组织调整，包括从字节分拆的可能性。5",
       "sowhat": "",
       "scope": "国内",
       "sources": [
         {
-          "name": "传字节跳动2026年资本支出为1600 亿元，超半数用于购买AI处理器",
-          "url": "https://www.chinaflashmarket.com/a/183475",
-          "date": "2026-06-20"
+          "name": "字节跳动 - 财联社",
+          "url": "https://cls.cn/subject/2254",
+          "date": "2026-06-02"
         }
       ],
       "timeline": [
         {
-          "date": "2026-06-20",
+          "date": "2026-06-02",
           "event": "本次动态"
         }
       ],
-      "_verification": "weak",
-      "_fetched_by": "competitor_tracker.py",
-      "_date_mismatch": true,
-      "_source_date": "2025-12-23"
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-726",
+      "date": "2026-06-02",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地-36氪",
+      "body": "6月1日起，《网络餐饮服务经营者落实食品安全主体责任监督管理规定》正式施行，对网络餐饮服务经营者落实主体责任提出了全面、系统的规定和指引，标志着餐饮外卖食品安全治理迈入新阶段。. 据美团介绍，平台已全面落地“放心外卖”十大举措，覆盖商家准入、透明经营、社会共治三大环节，确保新规要求逐条落地。. 在商",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地-36氪",
+          "url": "https://m.36kr.com/p/3834246290990984",
+          "date": "2026-06-02"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-02",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-700",
+      "date": "2026-06-01",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "美团2026年Q1营收910亿元，环比减亏96亿元 - 中国日报网",
+      "body": "# 美团2026年Q1营收910亿元，环比减亏96亿元. ## 6月1日，美团发布2026年第一季度业绩。. 来源：中国日报  2026-06-01 17:59. 中国日报6月1日电（记者 程钰）6月1日，美团发布2026年第一季度业绩。本季度，美团实现收入910亿元（人民币，下同），同比增长5.6",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "美团2026年Q1营收910亿元，环比减亏96亿元 - 中国日报网",
+          "url": "https://cn.chinadaily.com.cn/a/202606/01/WS6a1d5800a310942cc49af741.html",
+          "date": "2026-06-01"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-01",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
     },
     {
       "id": "comp-704",
@@ -156,35 +155,6 @@
       "timeline": [
         {
           "date": "2026-05-31",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py"
-    },
-    {
-      "id": "comp-705",
-      "date": "2026-06-02",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "字节跳动 - 财联社",
-      "body": "## 首页## 电报## 话题## 盯盘## VIP## FM## 投研## 下载. 2026-05-29 18:48来自 澎湃新闻. **【字节跳动AI4S团队调整 由杨震原负责管理】**财联社5月29日电，有传言称，字节Seed旗下AI4S团队，正在讨论新一轮组织调整，包括从字节分拆的可能性。5",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "字节跳动 - 财联社",
-          "url": "https://cls.cn/subject/2254",
-          "date": "2026-06-02"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-02",
           "event": "本次动态"
         }
       ],
@@ -309,21 +279,21 @@
       "_fetched_by": "competitor_tracker.py"
     },
     {
-      "id": "comp-710",
+      "id": "comp-720",
       "date": "2026-05-28",
-      "company": "拼多多",
+      "company": "字节",
       "category": "产品动态",
       "dimension": "产品/接入",
       "data_source": "三方媒体",
       "tier": "T1",
-      "title": "重仓供应链战略进入实质落地期 拼多多一季度营收1062亿元-经济参考网 _ 新华社《经济参考报》官方网站",
-      "body": "## 首页 >> 正文. 2026-05-28   记者 陆宇安   来源：经济参考网. 5月27日，拼多多发布2026年第一季度财报。数据显示，公司一季度实现总营收1062亿元，同比增长11%；归属于普通股股东的净利润为125亿元，同比下降15%。公司方面表示，利润下滑主要源于“千亿扶持”计划及重",
+      "title": "通知公告_全国数据标准化技术委员会",
+      "body": "国家数据局数字经济司2026年课题委托研究征集公告 · 关于发布《全国数据标准化技术委员会标准化研究项目清单》的通知 · 关于下达15项数据领域推荐性国家标准/规范类指导性",
       "sowhat": "",
       "scope": "国内",
       "sources": [
         {
-          "name": "重仓供应链战略进入实质落地期 拼多多一季度营收1062亿元-经济参考网 _ 新华社《经济参考报》官方",
-          "url": "http://jjckb.xinhuanet.com/20260528/7f2562341f894f3c9bc03c82d697548f/c.html",
+          "name": "通知公告_全国数据标准化技术委员会",
+          "url": "https://www.tc609.org.cn/tc609/tzgg/zylist.shtml",
           "date": "2026-05-28"
         }
       ],
@@ -333,10 +303,38 @@
           "event": "本次动态"
         }
       ],
-      "_verification": "weak",
-      "_fetched_by": "competitor_tracker.py",
-      "_date_mismatch": true,
-      "_source_date": "2015-07-02"
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-724",
+      "date": "2026-05-28",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "2026最新美团18会员日优惠测评 - 城市攻略宝",
+      "body": "🎁 官方实测门店优惠每日更新✨ 探索最新城市生活攻略🔥 发现最火热的本地生活趋势💡 掌握独家吃喝玩乐秘籍🎁 官方实测门店优惠每日更新✨ 探索最新城市生活攻略🔥 发现最火热的本地生活趋势💡 掌握独家吃喝玩乐秘籍. # 2026最新美团18会员日优惠测评. ## 美团. :   美团 · 本地生活服务平",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "2026最新美团18会员日优惠测评 - 城市攻略宝",
+          "url": "https://source.meituan.com/q/2026%E6%9C%80%E6%96%B0%E7%BE%8E%E5%9B%A218%E4%BC%9A%E5%91%98-20260528113039",
+          "date": "2026-05-28"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-28",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
     },
     {
       "id": "comp-711",
@@ -368,21 +366,21 @@
       "_fetched_by": "competitor_tracker.py"
     },
     {
-      "id": "comp-712",
+      "id": "comp-721",
       "date": "2026-05-27",
-      "company": "拼多多",
+      "company": "腾讯",
       "category": "产品动态",
-      "dimension": "财报/数据",
+      "dimension": "产品/接入",
       "data_source": "三方媒体",
       "tier": "T1",
-      "title": "拼多多发布Q1财报：“千亿扶持”加码惠商助农，新拼姆助力供应链 ...",
-      "body": "安徽|北京|重庆|福建|甘肃| 贵州|广东|广西|海南|河北| 河南| 湖北|湖南|黑龙江|江苏|江西| 吉林| 辽宁|内蒙古|宁夏|青海|山东| 山西| 陕西|上海|四川|天津|新疆| 兵团| 云南|浙江. 高层*|* 人事*|* 反腐*|* 深度*|* 两岸*|* 科教*|* 军事. 中外对话*",
+      "title": "5月158款游戏获得版号 腾讯网易旗下产品在列",
+      "body": "### 问财摘要. 1、国家新闻出版署公布了2026年5月国产和进口网络游戏审批信息，共有158款游戏获得版号，其中包括国产网络游戏154款和进口网络游戏4款。其中，有不少知名公司作品，如三七互娱的《斗破苍穹：觉醒》、电魂网络《星愿之冠》以及莉莉丝游戏的《小冰冰斗蛐蛐》等。 2、恺英网络、腾讯、网易",
       "sowhat": "",
       "scope": "国内",
       "sources": [
         {
-          "name": "拼多多发布Q1财报：“千亿扶持”加码惠商助农，新拼姆助力供应链 ...",
-          "url": "https://www.chinanews.com.cn/cj/2026/05-27/10629817.shtml",
+          "name": "5月158款游戏获得版号 腾讯网易旗下产品在列",
+          "url": "https://m.10jqka.com.cn/20260527/c676992340.shtml",
           "date": "2026-05-27"
         }
       ],
@@ -392,10 +390,9 @@
           "event": "本次动态"
         }
       ],
-      "_verification": "weak",
-      "_fetched_by": "competitor_tracker.py",
-      "_date_mismatch": true,
-      "_source_date": "2023-03-21"
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
     },
     {
       "id": "comp-713",
@@ -423,8 +420,8 @@
         }
       ],
       "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py"
+      "_fetched_by": "competitor_tracker.py",
+      "_date_unchecked": true
     },
     {
       "id": "comp-714",
@@ -477,6 +474,122 @@
       "timeline": [
         {
           "date": "2026-05-26",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-727",
+      "date": "2026-05-26",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "美团从“份额防御”到“盈利兑现” 2026年外卖业务 ...",
+      "body": "+ 报道类 最新原创 电商快讯 融资事件 电商访谈 大咖观点. + 研究类 组织架构 信息图 投融参谋 图书连载 投融榜单 投资盘点. + 短视频矩阵 网经社抖音号 网经社视频号  网经社微博 网经社头条 网经社网易视频 直播电商抖音号 跨境电商抖音号 小红书 快手 懂车帝 西瓜视频 bilibil",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "美团从“份额防御”到“盈利兑现” 2026年外卖业务 ...",
+          "url": "https://www.100ec.cn/detail--6657354.html",
+          "date": "2026-05-26"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-26",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_fetched_by": "competitor_tracker.py",
+      "_date_unchecked": true
+    },
+    {
+      "id": "comp-730",
+      "date": "2026-05-26",
+      "company": "拼多多",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "拼多多上线2026年“春节不打烊”活动支持流量与物流保障 - 网经社",
+      "body": "+ 报道类 最新原创 电商快讯 融资事件 电商访谈 大咖观点. + 评价类 电商快评 电商榜单 电商评测 电商评级 观察家. + 研究类 组织架构 信息图 投融参谋 图书连载 投融榜单 投资盘点. + 权益类 投诉榜 曝光台 调查行动 评级数据 榜单报告 APP通报. + 上市类 招股下载 路演PP",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "拼多多上线2026年“春节不打烊”活动支持流量与物流保障 - 网经社",
+          "url": "https://www.100ec.cn/detail--6656448.html",
+          "date": "2026-05-26"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-26",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_fetched_by": "competitor_tracker.py",
+      "_date_unchecked": true
+    },
+    {
+      "id": "comp-729",
+      "date": "2026-05-25",
+      "company": "阿里",
+      "category": "准入政策",
+      "dimension": "AI/技术",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "AI行业正在经历一场“大洗牌”：合规门槛抬高、大厂疯狂砸钱，企业如何安全上车？_智能_资本开支_应用",
+      "body": "# AI行业正在经历一场“大洗牌”：合规门槛抬高、大厂疯狂砸钱，企业如何安全上车？. **一边是政策端史无前例地收紧。** 5月8日，国家网信办、国家发改委、工信部三部门联合印发《智能体规范应用与创新发展实施意见》——这是中国首份针对智能体领域的系统性顶层设计文件。《意见》明确提出智能体发展必须坚持",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "AI行业正在经历一场“大洗牌”：合规门槛抬高、大厂疯狂砸钱，企业如何安全上车？_智能_资本开支_应用",
+          "url": "https://www.sohu.com/a/1025961760_122796069",
+          "date": "2026-05-25"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-25",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-723",
+      "date": "2026-05-22",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "【2026 美團使用攻略】美團怎麼用？如何註冊、點餐、付款一篇搞懂！",
+      "body": "2026 年 5 月 22 日. 美團是大陸最熱門的外送 App，來到大陸旅遊想叫外送，一定要試看看美團！以下 Trip.com 教你從註冊、綁定手機、點餐到付款，文中也會解答「台灣手機能註冊美團嗎？」、「能用台灣信用卡支付嗎？」等常見問題，以及人氣必點餐廳推薦，帶你輕鬆掌握美團使用攻略！. 6 月",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "【2026 美團使用攻略】美團怎麼用？如何註冊、點餐、付款一篇搞懂！",
+          "url": "https://tw.trip.com/guide/info/%E7%BE%8E%E5%9C%98.html",
+          "date": "2026-05-22"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-22",
           "event": "本次动态"
         }
       ],
@@ -543,299 +656,6 @@
       "_fetched_by": "competitor_tracker.py"
     },
     {
-      "id": "comp-718",
-      "date": "2026-05-20",
-      "company": "阿里",
-      "category": "准入政策",
-      "dimension": "准入/政策",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "2026年5月智能体合规管理规则发布，智能体备案可以做的公司",
-      "body": "# 2026年5月智能体合规管理规则发布，智能体备案可以做的公司. 2026-05-20 14:26:23 来源：界面新闻. 2026 年 5 月 8 日，《智能体规范应用与创新发展实施意见》的发布，标志着我国智能体产业正式迈入合规化、标准化、规范化发展新阶段。文件明确智能体备案为核心合规要求，构建",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "2026年5月智能体合规管理规则发布，智能体备案可以做的公司",
-          "url": "https://henan.china.com/news/roll/2026/0520/052026_728338.html",
-          "date": "2026-05-20"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-20",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "weak",
-      "_fetched_by": "competitor_tracker.py",
-      "_date_mismatch": true,
-      "_source_date": "2025-01-15"
-    },
-    {
-      "id": "comp-719",
-      "date": "2026-06-20",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "应对算力需求增长，传字节跳动明年将采购超400亿元华为昇腾芯片",
-      "body": "据业界消息，为应对算力需求增长，字节跳动正加速推进与华为的昇腾芯片合作。预计到2026年，其向华为采购的昇腾芯片订单总额可能超过400亿元，而今年相关",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "应对算力需求增长，传字节跳动明年将采购超400亿元华为昇腾芯片",
-          "url": "https://www.chinaflashmarket.com/a/183486",
-          "date": "2026-06-20"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-20",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "weak",
-      "_fetched_by": "competitor_tracker.py",
-      "_date_mismatch": true,
-      "_source_date": "2025-12-29"
-    },
-    {
-      "id": "comp-720",
-      "date": "2026-05-28",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "通知公告_全国数据标准化技术委员会",
-      "body": "国家数据局数字经济司2026年课题委托研究征集公告 · 关于发布《全国数据标准化技术委员会标准化研究项目清单》的通知 · 关于下达15项数据领域推荐性国家标准/规范类指导性",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "通知公告_全国数据标准化技术委员会",
-          "url": "https://www.tc609.org.cn/tc609/tzgg/zylist.shtml",
-          "date": "2026-05-28"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-28",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py"
-    },
-    {
-      "id": "comp-721",
-      "date": "2026-05-27",
-      "company": "腾讯",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "5月158款游戏获得版号 腾讯网易旗下产品在列",
-      "body": "### 问财摘要. 1、国家新闻出版署公布了2026年5月国产和进口网络游戏审批信息，共有158款游戏获得版号，其中包括国产网络游戏154款和进口网络游戏4款。其中，有不少知名公司作品，如三七互娱的《斗破苍穹：觉醒》、电魂网络《星愿之冠》以及莉莉丝游戏的《小冰冰斗蛐蛐》等。 2、恺英网络、腾讯、网易",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "5月158款游戏获得版号 腾讯网易旗下产品在列",
-          "url": "https://m.10jqka.com.cn/20260527/c676992340.shtml",
-          "date": "2026-05-27"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-27",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py"
-    },
-    {
-      "id": "comp-722",
-      "date": "2026-05-26",
-      "company": "美团",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "美团发布“跑腿Skill”，接上各家AI的腿-观察者网",
-      "body": "### 美团发布“跑腿Skill”，接上各家AI的腿. 2026年5月，美团正式发布“跑腿Skill”。用户对着OpenClaw、Cursor、微信、飞书等AI助手说一句“帮我买杯咖啡”，系统直接调用美团跑腿完成下单，骑手接单，咖啡送达。全程无需打开美团App。. 这不是美团去“抢”AI入口，而是A",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团发布“跑腿Skill”，接上各家AI的腿-观察者网",
-          "url": "https://www.guancha.cn/economy/2026_05_27_818554.shtml",
-          "date": "2026-05-26"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-26",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "weak",
-      "_fetched_by": "competitor_tracker.py",
-      "_date_mismatch": true,
-      "_source_date": "2023-04-11"
-    },
-    {
-      "id": "comp-723",
-      "date": "2026-05-22",
-      "company": "美团",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "【2026 美團使用攻略】美團怎麼用？如何註冊、點餐、付款一篇搞懂！",
-      "body": "2026 年 5 月 22 日. 美團是大陸最熱門的外送 App，來到大陸旅遊想叫外送，一定要試看看美團！以下 Trip.com 教你從註冊、綁定手機、點餐到付款，文中也會解答「台灣手機能註冊美團嗎？」、「能用台灣信用卡支付嗎？」等常見問題，以及人氣必點餐廳推薦，帶你輕鬆掌握美團使用攻略！. 6 月",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "【2026 美團使用攻略】美團怎麼用？如何註冊、點餐、付款一篇搞懂！",
-          "url": "https://tw.trip.com/guide/info/%E7%BE%8E%E5%9C%98.html",
-          "date": "2026-05-22"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-22",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py"
-    },
-    {
-      "id": "comp-724",
-      "date": "2026-05-28",
-      "company": "美团",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "2026最新美团18会员日优惠测评 - 城市攻略宝",
-      "body": "🎁 官方实测门店优惠每日更新✨ 探索最新城市生活攻略🔥 发现最火热的本地生活趋势💡 掌握独家吃喝玩乐秘籍🎁 官方实测门店优惠每日更新✨ 探索最新城市生活攻略🔥 发现最火热的本地生活趋势💡 掌握独家吃喝玩乐秘籍. # 2026最新美团18会员日优惠测评. ## 美团. :   美团 · 本地生活服务平",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "2026最新美团18会员日优惠测评 - 城市攻略宝",
-          "url": "https://source.meituan.com/q/2026%E6%9C%80%E6%96%B0%E7%BE%8E%E5%9B%A218%E4%BC%9A%E5%91%98-20260528113039",
-          "date": "2026-05-28"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-28",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py"
-    },
-    {
-      "id": "comp-725",
-      "date": "2026-06-01",
-      "company": "美团",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地 - 新浪财经",
-      "body": "# 6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地. 6月1日起，《网络餐饮服务经营者落实食品安全主体责任监督管理规定》正式施行，对网络餐饮服务经营者落实主体责任提出了全面、系统的规定和指引，标志着餐饮外卖食品安全治理迈入新阶段。. 记者从美团获悉，美团已全面落地“放心外卖”十大举措，覆",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地 - 新浪财经",
-          "url": "https://finance.sina.com.cn/jjxw/2026-06-01/doc-inhzwyqm5166311.shtml",
-          "date": "2026-06-01"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-01",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py"
-    },
-    {
-      "id": "comp-726",
-      "date": "2026-06-02",
-      "company": "美团",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地-36氪",
-      "body": "6月1日起，《网络餐饮服务经营者落实食品安全主体责任监督管理规定》正式施行，对网络餐饮服务经营者落实主体责任提出了全面、系统的规定和指引，标志着餐饮外卖食品安全治理迈入新阶段。. 据美团介绍，平台已全面落地“放心外卖”十大举措，覆盖商家准入、透明经营、社会共治三大环节，确保新规要求逐条落地。. 在商",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地-36氪",
-          "url": "https://m.36kr.com/p/3834246290990984",
-          "date": "2026-06-02"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-02",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py"
-    },
-    {
-      "id": "comp-727",
-      "date": "2026-05-26",
-      "company": "美团",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "美团从“份额防御”到“盈利兑现” 2026年外卖业务 ...",
-      "body": "+ 报道类 最新原创 电商快讯 融资事件 电商访谈 大咖观点. + 研究类 组织架构 信息图 投融参谋 图书连载 投融榜单 投资盘点. + 短视频矩阵 网经社抖音号 网经社视频号  网经社微博 网经社头条 网经社网易视频 直播电商抖音号 跨境电商抖音号 小红书 快手 懂车帝 西瓜视频 bilibil",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团从“份额防御”到“盈利兑现” 2026年外卖业务 ...",
-          "url": "https://www.100ec.cn/detail--6657354.html",
-          "date": "2026-05-26"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-26",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "verified",
-      "_fetched_by": "competitor_tracker.py",
-      "_date_unchecked": true
-    },
-    {
       "id": "comp-728",
       "date": "2026-05-20",
       "company": "阿里",
@@ -863,64 +683,6 @@
       "_verification": "verified",
       "_date_ok": true,
       "_fetched_by": "competitor_tracker.py"
-    },
-    {
-      "id": "comp-729",
-      "date": "2026-05-25",
-      "company": "阿里",
-      "category": "准入政策",
-      "dimension": "AI/技术",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "AI行业正在经历一场“大洗牌”：合规门槛抬高、大厂疯狂砸钱，企业如何安全上车？_智能_资本开支_应用",
-      "body": "# AI行业正在经历一场“大洗牌”：合规门槛抬高、大厂疯狂砸钱，企业如何安全上车？. **一边是政策端史无前例地收紧。** 5月8日，国家网信办、国家发改委、工信部三部门联合印发《智能体规范应用与创新发展实施意见》——这是中国首份针对智能体领域的系统性顶层设计文件。《意见》明确提出智能体发展必须坚持",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "AI行业正在经历一场“大洗牌”：合规门槛抬高、大厂疯狂砸钱，企业如何安全上车？_智能_资本开支_应用",
-          "url": "https://www.sohu.com/a/1025961760_122796069",
-          "date": "2026-05-25"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-25",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py"
-    },
-    {
-      "id": "comp-730",
-      "date": "2026-05-26",
-      "company": "拼多多",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "拼多多上线2026年“春节不打烊”活动支持流量与物流保障 - 网经社",
-      "body": "+ 报道类 最新原创 电商快讯 融资事件 电商访谈 大咖观点. + 评价类 电商快评 电商榜单 电商评测 电商评级 观察家. + 研究类 组织架构 信息图 投融参谋 图书连载 投融榜单 投资盘点. + 权益类 投诉榜 曝光台 调查行动 评级数据 榜单报告 APP通报. + 上市类 招股下载 路演PP",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "拼多多上线2026年“春节不打烊”活动支持流量与物流保障 - 网经社",
-          "url": "https://www.100ec.cn/detail--6656448.html",
-          "date": "2026-05-26"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-26",
-          "event": "本次动态"
-        }
-      ],
-      "_verification": "verified",
-      "_fetched_by": "competitor_tracker.py",
-      "_date_unchecked": true
     }
   ]
 }

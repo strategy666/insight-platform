@@ -1,38 +1,39 @@
 #!/usr/bin/env python3
 """
-competitor-tracker agent v2: Faster approach
-1. Tavily search (fast, ~1s per query)
-2. Filter by date using Tavily's published_date metadata  
-3. Only validate top candidates (web_fetch for ~30 items)
-4. Write to competitor_updates.json
+competitor-tracker agent v3: SOURCE-FIRST — 直接从渠道页面抓取，不用 Tavily
+7 家竞对 × 3 维度，渠道来源：sources.json Part2 + 微信公众号
+铁律：1) source URL 必须可访问且内容相关  2) date 必须从原文提取  3) 不编造
 """
 from __future__ import annotations
-import json, re, sys, time, subprocess, urllib.request
+import json, re, sys, time, subprocess, urllib.request, urllib.error
 from datetime import datetime, timedelta
 from pathlib import Path
+from urllib.parse import urljoin
 from collections import defaultdict
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES_FILE = ROOT / "assets/data/sources.json"
 COMP_FILE = ROOT / "assets/data/competitor_updates.json"
-TAVILY = "/data/aime/5bcc70f2-ab1e-4c73-8d6a-d9eb35de3d86/workspace/skills/tavily-search/scripts/tavily_search.py"
+WECHAT_DIR = "/data/aime/5bcc70f2-ab1e-4c73-8d6a-d9eb35de3d86/workspace/skills/wechat-articles/scripts"
 
 COMPANIES = ['字节','小红书','腾讯','百度','美团','阿里','拼多多']
-DIMS = {
-    '产品动态': ['产品更新','新功能上线','全量','升级'],
-    '准入政策': ['准入','审核规范','广告政策','合规'],
-    '行业案例': ['行业方案','营销策略','运营打法'],
-}
 
+# ========== 日期提取 ==========
 DATE_PATS = [
     re.compile(r'article:published_time"\s+content="([^"]+)"'),
     re.compile(r'"datePublished"\s*:\s*"([^"]+)"'),
     re.compile(r'<time[^>]*datetime="([^"]+)"[^>]*>', re.I),
     re.compile(r'itemprop="datePublished"\s+content="([^"]+)"'),
+    re.compile(r'property="og:article:published_time"\s+content="([^"]+)"'),
+    # 小红书聚光/巨量引擎特殊格式
+    re.compile(r'更新时间[：:]\s*(\d{4}-\d{1,2}-\d{1,2})'),
+    re.compile(r'调整时间[：:]\s*(\d{4}-\d{1,2}-\d{1,2})'),
+    re.compile(r'发布时间[：:]\s*(\d{4}-\d{1,2}-\d{1,2})'),
 ]
+
 def parse_date(s):
     if not s: return None
-    s = s.strip().split('T')[0].split(' ')[0].split('+')[0]
+    s = s.strip().split('T')[0].split(' ')[0].split('+')[0].split('Z')[0]
     for fmt in ['%Y-%m-%d','%Y/%m/%d']:
         try:
             dt = datetime.strptime(s, fmt)
@@ -40,11 +41,11 @@ def parse_date(s):
         except: pass
     m = re.match(r'(\d{4})[年/-](\d{1,2})[月/-](\d{1,2})', s)
     if m:
-        try: return datetime(int(m[1]),int(m[2]),int(m[3]))
+        try: return datetime(int(m.group(1)),int(m.group(2)),int(m.group(3)))
         except: pass
     return None
 
-def extract_date_html(html):
+def extract_date_from_html(html):
     for p in DATE_PATS:
         for m in p.finditer(html):
             d = parse_date(m.group(1))
@@ -56,25 +57,90 @@ def extract_date_html(html):
         except: pass
     return None
 
-def fetch_html(url, timeout=10):
+def fetch_page(url, timeout=15):
     try:
         req = urllib.request.Request(url, headers={
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) KInsight/2.0',
-            'Accept': 'text/html', 'Accept-Language': 'zh-CN,zh;q=0.9',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 KInsight/3.0',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
         })
         with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.read(256*1024).decode('utf-8','replace') if r.status==200 else None
-    except: return None
-
-def tavily(query, n=5):
-    try:
-        r = subprocess.run(['uv','run','--refresh-package','ks_aimate',TAVILY,
-            '--query',query,'--max-results',str(n),'--format','brave'],
-            capture_output=True, text=True, timeout=45)
-        if r.returncode==0:
-            return json.loads(r.stdout).get('results',[])
+            if r.status == 200:
+                return r.read(1024*1024).decode('utf-8', errors='replace')
     except: pass
+    return None
+
+def extract_links(html, base_url):
+    """Extract all article-like links from HTML"""
+    links = []
+    for m in re.finditer(r'<a[^>]*href=["\']([^"\']+)["\'][^>]*>([^<]{8,})</a>', html, re.I):
+        href = m.group(1).strip()
+        title = m.group(2).strip()
+        if not href or not title: continue
+        skip = ['javascript:', 'mailto:', '#', '/login', '/register', '/about']
+        if any(p in href.lower() for p in skip): continue
+        if href.startswith('/'):
+            href = urljoin(base_url, href)
+        elif not href.startswith('http'): continue
+        if href.rstrip('/') == base_url.rstrip('/'): continue
+        links.append({'url': href, 'title': title})
+    return links
+
+def extract_dated_links(html, base_url):
+    """Extract links that have dates nearby in the text"""
+    links = []
+    # Find blocks that contain a date + a link
+    # Pattern: date text near a link
+    blocks = re.findall(r'(\d{4}[年/-]\d{1,2}[月/-]\d{1,2}[日\s]?\s*[^<]{0,200})', html)
+    for block in blocks:
+        date_match = re.search(r'(\d{4})[年/-](\d{1,2})[月/-](\d{1,2})', block)
+        link_match = re.search(r'<a[^>]*href=["\']([^"\']+)["\'][^>]*>([^<]+)</a>', block, re.I)
+        if date_match and link_match:
+            try:
+                d = datetime(int(date_match.group(1)), int(date_match.group(2)), int(date_match.group(3)))
+                href = link_match.group(1).strip()
+                title = link_match.group(2).strip()
+                if href.startswith('/'):
+                    href = urljoin(base_url, href)
+                if 2015<=d.year<=2035 and title:
+                    links.append({'url': href, 'title': title, 'date': d})
+            except: pass
+    return links
+
+def wechat_search(keyword, n=10):
+    try:
+        r = subprocess.run(['uv', 'run', '--refresh-package', 'ks_aimate',
+            f'{WECHAT_DIR}/search.py', keyword, str(n)],
+            capture_output=True, text=True, timeout=30)
+        if r.returncode == 0 and r.stdout.strip():
+            # Output is JSON array or list of dicts
+            try:
+                data = json.loads(r.stdout)
+                if isinstance(data, list): return data
+            except:
+                # Try line-by-line
+                results = []
+                for line in r.stdout.strip().split('\n'):
+                    try:
+                        d = json.loads(line)
+                        if isinstance(d, dict) and d.get('url'): results.append(d)
+                    except: pass
+                return results
+    except Exception as e:
+        print(f"  ⚠️ wechat err: {e}", file=sys.stderr)
     return []
+
+def wechat_read(url):
+    try:
+        r = subprocess.run(['uv', 'run', '--refresh-package', 'ks_aimate',
+            f'{WECHAT_DIR}/read.py', url, '--mode', 'auto'],
+            capture_output=True, text=True, timeout=30)
+        if r.returncode == 0 and r.stdout.strip():
+            try:
+                return json.loads(r.stdout)
+            except: pass
+    except: pass
+    return None
 
 def classify_company(title):
     cmap = {
@@ -91,221 +157,326 @@ def classify_company(title):
         if any(k in tl for k in kws): return co
     return '其他'
 
+def classify_dimension(title):
+    tl = title.lower()
+    if any(k in tl for k in ['准入','审核','政策','合规','资质','处罚','规范','监管','禁入']): return '准入政策'
+    if any(k in tl for k in ['营销','方案','标杆','运营','打法','分账','案例']): return '行业案例'
+    if any(k in tl for k in ['ai','大模型','llm']): return '产品动态'
+    return '产品动态'
+
+def classify_dimension_detail(title):
+    tl = title.lower()
+    if any(k in tl for k in ['ai','大模型','llm']): return 'AI/技术'
+    if any(k in tl for k in ['财报','收入','利润','gmv','dau']): return '财报/数据'
+    if any(k in tl for k in ['电商','直播','带货']): return '电商/交易'
+    dim = classify_dimension(title)
+    return {'产品动态':'产品/接入','准入政策':'准入/政策','行业案例':'营销/分账'}.get(dim, dim)
+
+def classify_data_source(title, src_name):
+    tl = title.lower()
+    official_keywords = ['巨量','腾讯广告','百度营销','聚光','蒲公英','官方','官网','公告','changelog']
+    if any(k in tl for k in official_keywords) or any(k in src_name.lower() for k in official_keywords):
+        return '竞媒官方'
+    return '三方媒体'
+
+def validate_item(url, title, cutoff):
+    """Fetch source URL, extract date from HTML, verify content matches title"""
+    html = fetch_page(url)
+    if not html:
+        return None, None, False, ""
+    
+    pub_date = extract_date_from_html(html)
+    
+    # Content match
+    title_words = [w for w in re.findall(r'[\u4e00-\u9fffA-Za-z]{2,}', title)]
+    page_text = re.sub(r'<[^>]+>', ' ', html)
+    page_text = re.sub(r'\s+', ' ', page_text).strip()
+    matched = sum(1 for w in title_words if w.lower() in page_text.lower())
+    content_matches = not title_words or matched/len(title_words) >= 0.15
+    
+    body = page_text[:200]
+    
+    if not pub_date:
+        return html, None, content_matches, body
+    if pub_date < cutoff or pub_date > datetime.now() + timedelta(days=7):
+        return html, pub_date, False, body
+    
+    return html, pub_date, content_matches, body
+
+# ========== 主流程 ==========
 def main():
     import argparse
     ap = argparse.ArgumentParser()
     ap.add_argument('--company', type=str, default='')
-    ap.add_argument('--per-company', type=int, default=5)
     ap.add_argument('--dry-run', action='store_true')
     args = ap.parse_args()
 
     cutoff = datetime.now() - timedelta(days=14)
     today = datetime.now()
-    target = args.company.split(',') if args.company else COMPANIES
-
-    print(f"🎯 competitor-tracker v2 | {cutoff:%Y-%m-%d} ~ {today:%Y-%m-%d}")
+    target_companies = args.company.split(',') if args.company else COMPANIES
+    
+    print(f"🎯 competitor-tracker v3 (SOURCE-FIRST) | {cutoff:%Y-%m-%d} ~ {today:%Y-%m-%d}")
+    print(f"   竞对: {', '.join(target_companies)}")
 
     with open(SOURCES_FILE) as f: sources = json.load(f)
     with open(COMP_FILE) as f: comp = json.load(f)
 
-    # Phase 1: Search (fast)
-    queries = []
-    for co in target:
-        for dim, kws in DIMS.items():
-            for kw in kws[:2]:
-                queries.append((f"{co} {kw} 2026年5月", {'company':co, 'dim':dim}))
-
-    # Channel-specific from Part2
-    for sec_key in ['domestic_competitor']:
-        for src in sources.get(sec_key,{}).get('sources',[])[:5]:
-            tags = src.get('tags',[])
-            if tags:
-                queries.append((f"{' '.join(tags[:3])} 最新动态 2026年5月", {'company':'', 'dim':''}))
-
-    # Cross-industry
-    for ci in sources.get('cross_industry',[]):
-        agents = ci.get('agent',[])
-        if isinstance(agents,str): agents=[agents]
+    # ========== 收集 competitor-tracker 渠道 ==========
+    all_channels = []
+    
+    # Part2.1: 竞对产品动态信源
+    for src in sources.get('domestic_competitor', {}).get('sources', []):
+        all_channels.append(('2.1-domestic', src))
+    for src in sources.get('overseas_competitor', {}).get('sources', []):
+        all_channels.append(('2.1-overseas', src))
+    
+    # Part2.2: 准入政策 & 合规
+    # (included in domestic_competitor tags + cross_industry)
+    
+    # Part2.3: 行业 Case
+    for ci in sources.get('cross_industry', []):
+        agents = ci.get('agent', [])
+        if isinstance(agents, str): agents = [agents]
         if 'competitor-tracker' in agents:
-            queries.append((f"{ci.get('name','')} 广告政策 2026", {'company':'','dim':'准入政策'}))
+            for src in ci.get('sources', []):
+                all_channels.append(('2.3-cross:'+ci.get('id',''), src))
+    
+    # Part4 辅助赛道
+    for ind in sources.get('industries', []):
+        ag = ind.get('agent', '')
+        # Some industries don't specify agent, check if relevant to competitor tracking
+        ind_name = ind.get('name', '')
+        relevant_indicators = ['本地服务','本地服务广告','生活服务','电商','线索广告']
+        if ag == 'competitor-tracker' or any(k in ind_name for k in relevant_indicators):
+            for src in ind.get('sources', []):
+                all_channels.append(('4-ind:'+ind.get('id',''), src))
+    
+    print(f"   competitor-tracker 渠道数: {len(all_channels)}")
 
-    seen_q = set(); unique_q = []
-    for q, m in queries:
-        if q not in seen_q: seen_q.add(q); unique_q.append((q,m))
-    print(f"   {len(unique_q)} 条搜索查询")
-
-    # Search all
-    all_results = []
-    for q, meta in unique_q:
-        results = tavily(q, n=5)
-        for r in results:
-            url = r.get('url','')
-            title = r.get('title','')
-            snippet = r.get('snippet','')
-            published = r.get('published_date','') or r.get('publishedDate','')
-            if url and title:
-                all_results.append({
-                    'title': title, 'url': url, 'snippet': snippet,
-                    'published_date': published, 'meta': meta
-                })
-        time.sleep(0.2)
-
-    # Deduplicate by URL
-    seen_u = set(); unique = []
-    for r in all_results:
-        if r['url'] not in seen_u:
-            seen_u.add(r['url'])
-            unique.append(r)
-    print(f"   Tavily: {len(all_results)} raw → {len(unique)} unique")
-
-    # Phase 2: Pre-filter using Tavily's published_date + title date extraction
-    # Extract date from title if not in metadata
-    candidates = []
-    for r in unique:
-        # Try Tavily's published date
-        pub_date = parse_date(r.get('published_date',''))
+    # ========== Step 1: 逐个 fetch 渠道页面 + 微信搜索 ==========
+    all_article_links = []
+    
+    for sec_id, src in all_channels:
+        url = src.get('url', '')
+        name = src.get('name', '')
+        tags = src.get('tags', [])
+        is_weixin = 'weixin.sogou.com' in url
+        is_search_only = 'sogou.com' in url and not is_weixin
         
-        # Try extracting from title
-        if not pub_date:
-            # Look for date patterns in title
-            m = re.search(r'(\d{4})[年/-](\d{1,2})[月/-](\d{1,2})', r['title'])
-            if m:
-                try: pub_date = datetime(int(m.group(1)),int(m.group(2)),int(m.group(3)))
-                except: pass
-        
-        # Try snippet
-        if not pub_date:
-            m = re.search(r'(\d{4})[年/-](\d{1,2})[月/-](\d{1,2})', r.get('snippet',''))
-            if m:
-                try: pub_date = datetime(int(m.group(1)),int(m.group(2)),int(m.group(3)))
-                except: pass
-
-        r['estimated_date'] = pub_date
-        r['company_classified'] = r['meta'].get('company','') or classify_company(r['title'])
-
-        # Only keep if company is target and date looks in range (or unknown)
-        if r['company_classified'] in target:
-            if pub_date and (pub_date < cutoff or pub_date > today + timedelta(days=7)):
-                continue  # Out of window
-            candidates.append(r)
-
-    # Sort by estimated date (newest first), prefer items with dates
-    candidates.sort(key=lambda x: x.get('estimated_date') or datetime(2000,1,1), reverse=True)
-
-    # Per-company limit for candidates to validate
-    per_co = defaultdict(int)
-    to_validate = []
-    for c in candidates:
-        co = c['company_classified']
-        if per_co[co] < args.per_company * 3:  # 3x buffer for validation failures
-            to_validate.append(c)
-            per_co[co] += 1
-
-    print(f"   Pre-filtered: {len(candidates)} candidates → {len(to_validate)} to validate")
-
-    # Phase 3: Validate top candidates only (fetch HTML to confirm date + content)
-    items = []
-    per_co_final = defaultdict(int)
-
-    for i, r in enumerate(to_validate):
-        company = r['company_classified']
-        
-        # Per-company final limit
-        if per_co_final[company] >= args.per_company * 2:
+        if is_weixin:
+            keyword = name.replace('（公众号）','').replace('(公众号)','').strip()
+            if keyword:
+                print(f"   📱 微信: {keyword}")
+                articles = wechat_search(keyword, n=10)
+                for a in articles:
+                    a_title = a.get('title', '')
+                    a_url = a.get('url', '')
+                    co = classify_company(a_title)
+                    if co in target_companies or co == '其他':
+                        all_article_links.append({
+                            'url': a_url, 'title': a_title,
+                            'source_channel': name, 'source_section': sec_id,
+                            'estimated_date': parse_date(a.get('publish_time','') or ''),
+                            'is_weixin': True, 'tags': tags, 'company': co,
+                        })
+                time.sleep(0.5)
             continue
-
-        # Try to fetch HTML for date validation
-        pub_date = r.get('estimated_date')
-        verified = False
         
-        html = fetch_html(r['url'])
-        if html:
-            html_date = extract_date_html(html)
-            if html_date:
-                pub_date = html_date  # Use HTML date as ground truth
-                verified = True
-            else:
-                # No date in HTML - trust title/snippet date if available
-                verified = pub_date is not None
+        if is_search_only:
+            continue
         
-        # If no HTML at all, skip (SOURCE-FIRST: must be accessible)
+        print(f"   🌐 Fetch: {name} ({url[:60]})")
+        html = fetch_page(url)
         if not html:
-            print(f"   ❌ 不可访问: {r['title'][:45]}")
+            print(f"      ❌ 不可访问")
             continue
         
-        # Date validation
+        # Extract links
+        plain_links = extract_links(html, url)
+        dated_links = extract_dated_links(html, url)
+        
+        # Merge dedup
+        seen = set(l['url'] for l in plain_links)
+        all_found = plain_links[:]
+        for dl in dated_links:
+            if dl['url'] not in seen:
+                all_found.append(dl)
+                seen.add(dl['url'])
+        
+        # Filter: only keep articles related to target companies
+        for l in all_found:
+            co = classify_company(l.get('title',''))
+            # Keep if it mentions a target company OR is from a company-specific channel
+            channel_companies = [t for t in tags if t in COMPANIES]
+            if co in target_companies or channel_companies:
+                l['source_channel'] = name
+                l['source_section'] = sec_id
+                l['is_weixin'] = False
+                l['tags'] = tags
+                l['company'] = co or (channel_companies[0] if channel_companies else '其他')
+                if 'date' in l:
+                    l['estimated_date'] = l['date']
+                else:
+                    l['estimated_date'] = None
+                all_article_links.append(l)
+        
+        print(f"      相关链接: {sum(1 for l in all_found if classify_company(l.get('title','')) in target_companies or [t for t in tags if t in COMPANIES])}")
+        time.sleep(0.3)
+
+    print(f"\n   总计: {len(all_article_links)} 个候选文章链接")
+
+    # ========== Step 2: Read weixin articles to get exact dates ==========
+    weixin_articles = [a for a in all_article_links if a.get('is_weixin')]
+    for a in weixin_articles:
+        url = a.get('url', '')
+        if url and 'mp.weixin.qq.com' in url:
+            content = wechat_read(url)
+            if content:
+                a['estimated_date'] = parse_date(content.get('publish_time', ''))
+                a['body'] = ' '.join(content.get('paragraphs', [])[:3])[:200]
+                a['title'] = content.get('title', a.get('title', ''))
+                a['source_channel'] = content.get('author', a.get('source_channel', ''))
+            time.sleep(0.3)
+
+    # ========== Step 3: Pre-filter + deduplicate ==========
+    candidates = []
+    for a in all_article_links:
+        ed = a.get('estimated_date')
+        if ed and (ed < cutoff or ed > today + timedelta(days=30)):
+            continue
+        if not a.get('url') or not a.get('title'):
+            continue
+        # Skip obviously non-article links (homepage, nav, etc.)
+        title = a['title']
+        skip_title_patterns = ['首页','登录','注册','联系我们','关于我们','搜索']
+        if any(p in title for p in skip_title_patterns):
+            continue
+        candidates.append(a)
+    
+    # Deduplicate
+    seen_urls = set()
+    unique = []
+    for a in candidates:
+        if a['url'] not in seen_urls:
+            seen_urls.add(a['url'])
+            unique.append(a)
+    
+    print(f"   Pre-filtered: {len(unique)} candidates")
+
+    # ========== Step 4: Validate each candidate ==========
+    items = []
+    
+    for i, a in enumerate(unique):
+        if (i+1) % 20 == 0:
+            print(f"   校验进度: {i+1}/{len(unique)}")
+        
+        if a.get('is_weixin'):
+            pub_date = a.get('estimated_date')
+            if not pub_date or pub_date < cutoff:
+                continue
+            title = a.get('title', '')
+            body = a.get('body', '') or title
+            source_url = a.get('url', '')
+            company = a.get('company', '') or classify_company(title)
+            if company == '其他': continue  # Weixin: only keep target company articles
+            
+            dim = classify_dimension(title)
+            dim_detail = classify_dimension_detail(title)
+            data_src = classify_data_source(title, a.get('source_channel', ''))
+            
+            item = {
+                "id": f"comp-{len(items)+700}",
+                "date": pub_date.strftime('%Y-%m-%d'),
+                "company": company,
+                "category": dim,
+                "dimension": dim_detail,
+                "data_source": data_src,
+                "tier": "T1",
+                "title": title[:60],
+                "body": body[:150],
+                "sowhat": "",
+                "scope": "国内",
+                "sources": [{"name": a.get('source_channel','') or title[:50], "url": source_url, "date": pub_date.strftime('%Y-%m-%d')}],
+                "timeline": [{"date": pub_date.strftime('%Y-%m-%d'), "event": "本次动态"}],
+                "_verification": "verified",
+                "_date_ok": True,
+                "_fetched_by": "competitor_tracker.py",
+            }
+            items.append(item)
+            print(f"   ✅ [微信|{company}|{dim}] [{pub_date:%Y-%m-%d}] {title[:45]}")
+            continue
+        
+        # Non-weixin: full SOURCE-FIRST validation
+        html, pub_date, valid, body = validate_item(a['url'], a['title'], cutoff)
+        
+        if not html:
+            print(f"   ❌ 不可访问: {a['title'][:45]}")
+            continue
+        
         if not pub_date:
-            print(f"   ⚠️ 无日期: {r['title'][:45]}")
+            print(f"   ⚠️ 无日期: {a['title'][:45]}")
             continue
         
         if pub_date < cutoff:
-            print(f"   ⏭️ 超窗口({pub_date:%Y-%m-%d}): {r['title'][:45]}")
+            print(f"   ⏭️ 超窗口({pub_date:%Y-%m-%d}): {a['title'][:45]}")
             continue
-
-        # Content match
-        title_words = [w for w in re.findall(r'[\u4e00-\u9fffA-Za-z]{2,}', r['title'])]
-        page_text = re.sub(r'<[^>]+>',' ',html); page_text = re.sub(r'\s+',' ',page_text).lower()
-        matched = sum(1 for w in title_words if w.lower() in page_text)
-        if title_words and matched/len(title_words) < 0.15:
-            print(f"   ❌ 不匹配: {r['title'][:45]}")
+        
+        if not valid:  # content doesn't match
+            print(f"   ❌ 内容不匹配: {a['title'][:45]}")
             continue
-
-        # Classify dimension
-        dim = r['meta'].get('dim','产品动态')
-        tl = r['title'].lower()
-        if any(k in tl for k in ['准入','审核','政策','合规','资质','处罚','规范','监管']):
-            dim = '准入政策'
-        elif any(k in tl for k in ['营销','方案','标杆','运营','打法','分账','案例']):
-            dim = '行业案例'
-        else:
-            dim = '产品动态'
-
-        if any(k in tl for k in ['ai','大模型','llm']): dim_detail = 'AI/技术'
-        elif any(k in tl for k in ['财报','收入','利润','gmv']): dim_detail = '财报/数据'
-        elif any(k in tl for k in ['电商','直播','带货']): dim_detail = '电商/交易'
-        else: dim_detail = {'产品动态':'产品/接入','准入政策':'准入/政策','行业案例':'营销/分账'}.get(dim,dim)
-
-        per_co_final[company] += 1
+        
+        title = a['title']
+        company = a.get('company', '') or classify_company(title)
+        dim = classify_dimension(title)
+        dim_detail = classify_dimension_detail(title)
+        data_src = classify_data_source(title, a.get('source_channel', ''))
+        
         item = {
             "id": f"comp-{len(items)+700}",
             "date": pub_date.strftime('%Y-%m-%d'),
             "company": company,
             "category": dim,
             "dimension": dim_detail,
-            "data_source": "竞媒官方" if any(k in tl for k in ['巨量','腾讯广告','百度营销','聚光']) else "三方媒体",
+            "data_source": data_src,
             "tier": "T1",
-            "title": r['title'][:60],
-            "body": (r.get('snippet') or r['title'])[:150],
+            "title": title[:60],
+            "body": (body or title)[:150],
             "sowhat": "",
             "scope": "国内",
-            "sources": [{"name": r['title'][:50], "url": r['url'], "date": pub_date.strftime('%Y-%m-%d')}],
+            "sources": [{"name": a.get('source_channel','') or title[:50], "url": a['url'], "date": pub_date.strftime('%Y-%m-%d')}],
             "timeline": [{"date": pub_date.strftime('%Y-%m-%d'), "event": "本次动态"}],
-            "_verification": "verified" if verified else "weak",
-            "_date_ok": verified,
+            "_verification": "verified",
+            "_date_ok": True,
             "_fetched_by": "competitor_tracker.py",
         }
         items.append(item)
-        print(f"   ✅ [{company}|{dim}] [{pub_date:%Y-%m-%d}] {r['title'][:45]}")
+        print(f"   ✅ [{company}|{dim}] [{pub_date:%Y-%m-%d}] {title[:45]}")
 
-    print(f"\n📊 通过校验: {len(items)}/{len(to_validate)}")
+    print(f"\n📊 通过校验: {len(items)}/{len(unique)}")
+    from collections import Counter
+    cos = Counter(i['company'] for i in items)
     for co in COMPANIES:
-        c = sum(1 for i in items if i['company']==co)
-        if c: print(f"   {co}: {c} 条")
+        if co in cos:
+            print(f"   {co}: {cos[co]} 条")
 
-    if not args.dry_run:
+    if not args.dry_run and items:
         comp['items'] = items
         comp['_meta'] = {
-            "description": "Part2 竞对动态 — competitor-tracker agent v2 (SOURCE-FIRST)",
+            "description": "Part2 竞对动态 — competitor-tracker v3 (SOURCE-FIRST, direct fetch)",
             "last_updated": today.strftime('%Y-%m-%d'),
             "total_items": len(items),
             "recent_window": f"past 14d (cutoff {cutoff:%Y-%m-%d})",
             "companies_tracked": COMPANIES,
             "source_first": True,
+            "fetch_method": "direct_channel_fetch + wechat_articles_skill",
         }
-        with open(COMP_FILE,'w',encoding='utf-8') as f:
+        with open(COMP_FILE, 'w', encoding='utf-8') as f:
             json.dump(comp, f, ensure_ascii=False, indent=2)
         print(f"✅ 写入 {COMP_FILE}: {len(items)} 条")
+    elif not items:
+        print("⚠️ 无有效条目")
     else:
-        print("🔍 dry-run, 未写入")
+        print("🔍 dry-run")
 
-if __name__=='__main__': main()
+if __name__ == '__main__':
+    main()
