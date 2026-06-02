@@ -1,3936 +1,926 @@
 {
   "_meta": {
-    "description": "Part2 竞对产品/政策/行业case更新 数据源 — 由 sub-agent: competitor-tracker 维护",
-    "update_frequency": "weekly",
-    "last_updated": "2026-06-01",
-    "fields": [
-      "id",
-      "date",
-      "company",
-      "category",
-      "title",
-      "sowhat",
-      "sources"
-    ],
-    "dimensions": [
-      "AI/技术",
-      "产品/接入",
-      "产品发布",
-      "准入/政策",
-      "广告产品",
-      "政策更新",
-      "数据动态",
-      "电商/交易",
-      "营销/分账",
-      "行业打法",
-      "财报/行业case"
-    ],
-    "total_items": 131,
-    "updated": "2026-05-31",
-    "total": 131,
-    "scrape_method": "deep_scraper.py via codeflicker reader proxy (puppeteer)",
-    "recent_window": "past 14d (cutoff 2026-05-17)",
-    "live_scrape_file": "assets/data/scrape_result_live.json",
-    "window": "past 2 months (2026-04-01 ~ 2026-06-01)",
-    "note": "每家竞对 10-20 条，数据4-5月，含飞书内部文档+竞媒官方。Timeline已清理2025年4月前节点。",
+    "description": "Part2 竞对动态 — competitor-tracker agent v2 (SOURCE-FIRST)",
+    "last_updated": "2026-06-02",
+    "total_items": 31,
+    "recent_window": "past 14d (cutoff 2026-05-19)",
     "companies_tracked": [
-      "美团",
-      "小红书",
       "字节",
-      "Meta",
-      "拼多多",
-      "OpenAI",
-      "百度",
-      "Google",
+      "小红书",
       "腾讯",
+      "百度",
+      "美团",
       "阿里",
-      "TikTok"
-    ]
+      "拼多多"
+    ],
+    "source_first": true
   },
   "items": [
     {
-      "id": "comp-601",
-      "date": "2026-05-25",
-      "company": "阿里",
+      "id": "comp-700",
+      "date": "2026-06-01",
+      "company": "美团",
       "category": "产品动态",
-      "title": "淘宝『AI 万相台』全量：广告主可一键生成场景图+短视频，CTR+35%",
-      "sowhat": "阿里妈妈把万相台升级为 AIGC 一站式素材中台，覆盖商品图、场景图、TVC 30s 视频。CTR 平均提升 35%，把电商创意制作成本压到接近零。对淘宝商家投放抖音/小红书的创意产能产生强外溢。",
-      "sources": [
-        {
-          "name": "[PDF] 【阿里妈妈】2023阿里妈妈技术年刊-2024-02-04.pdf",
-          "url": "https://aigc.idigital.com.cn/djyanbao/%E3%80%90%E9%98%BF%E9%87%8C%E5%A6%88%E5%A6%88%E3%80%912023%E9%98%BF%E9%87%8C%E5%A6%88%E5%A6%88%E6%8A%80%E6%9C%AF%E5%B9%B4%E5%88%8A-2024-02-04.pdf"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-25",
-          "event": "万相台 AIGC 版全量"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-603",
-      "date": "2026-05-20",
-      "company": "阿里",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "阿里妈妈「万相台」AI创意能力升级：支持3D商品展示+多场景自动适配",
-      "body": "阿里妈妈万相台AI创意能力升级，新增3D商品展示生成和多场景自动适配功能，广告主可一键生成适配搜索/推荐/直播的差异化素材。",
-      "sowhat": "万相台作为阿里广告AI化的核心产品，持续强化创意生成能力。快手金牛的AI创意工具需对标万相台的多场景适配能力。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "阿里妈妈推出“AI万相”，主打超级智能体引擎？|Morketing_全球营销商业媒体平台",
-          "url": "https://www.morketing.com/detail/28270"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-05-01",
-          "event": "万相台AI全量上线"
-        },
-        {
-          "date": "2026-05-20",
-          "event": "3D商品展示+多场景适配升级"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2026-03-17"
-    },
-    {
-      "id": "comp-610",
-      "date": "2026-05-12",
-      "company": "阿里",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "阿里「通义千问」接入阿里妈妈广告系统：AI驱动的智能投放助手",
-      "body": "阿里将通义千问大模型接入阿里妈妈广告系统，广告主可通过对话式交互完成投放策略设置、素材生成和效果分析。",
-      "sowhat": "阿里在AI×广告的融合上走对话式交互路线，降低广告主使用门槛。快手磁力引擎的AI助手需关注对话式投放体验。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "阿里妈妈推出“AI万相”，主打超级智能体引擎？ - Morketing",
-          "url": "https://www.morketing.com/newsflash/28270"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-09-01",
-          "event": "通义千问发布"
-        },
-        {
-          "date": "2026-05-12",
-          "event": "通义千问接入阿里妈妈"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2018-11-10"
-    },
-    {
-      "id": "comp-602",
-      "date": "2026-05-11",
-      "company": "阿里",
-      "category": "电商/交易",
-      "title": "淘宝直播『内容场+货架场』权益打通：直播间引流月 GMV 占比破 35%",
-      "sowhat": "淘宝把直播间用户旅程和搜索/推荐货架场的算法权益打通，直播间引来用户在货架场的复购权重加成显著。直播 GMV 占淘宝总 GMV 由 22% 提升至 35%，直接对抖音电商的『单场直播』模式产生定价压力。",
-      "sources": [
-        {
-          "name": "[PDF] 阿里巴巴-SW（09988.HK）",
-          "url": "https://pdf.dfcfw.com/pdf/H3_AP202212231581319476_1.pdf"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-11",
-          "event": "权益打通全量上线"
-        }
-      ],
-      "dimension": "电商/交易",
-      "data_source": "三方媒体",
-      "tier": "T0",
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2022-12-22"
-    },
-    {
-      "id": "comp-609",
-      "date": "2026-05-08",
-      "company": "阿里",
-      "category": "行业动态",
-      "dimension": "电商/交易",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "淘宝天猫618招商规则发布：跨店满减+品类券+直播专属权益",
-      "body": "淘天发布618招商规则，跨店满减300-50，叠加品类券和直播专属流量权益，商家参与门槛较去年降低。",
-      "sowhat": "淘天618规则影响全电商行业竞争格局，跨店满减力度和直播权益是关键变量。快手电商618需差异化竞争。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "速看| 618最新规则玩法：天猫、淘宝各不同，拼多多有新招！",
-          "url": "https://zhuanlan.zhihu.com/p/514722093"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-08",
-          "event": "淘天618招商规则发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-604",
-      "date": "2026-05-05",
-      "company": "阿里",
-      "category": "产品动态",
-      "dimension": "电商/交易",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "淘宝直播「闪购」频道上线：限时折扣+直播融合新场景",
-      "body": "淘宝直播推出闪购频道，融合限时折扣与直播带货，创造FOMO式的购买冲动场景。",
-      "sowhat": "限时折扣+直播是电商直播的进化方向，创造更强的即时转化驱动力。快手电商直播可探索类似的限时场景产品。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "第六届“11直播月”第一批活动发布！点击查看 - 上海人民政府",
-          "url": "https://www.shanghai.gov.cn/nw31406/20251103/32daea0c17404f798cfda7f3cdded892.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-10-01",
-          "event": "淘工厂限时折扣上线"
-        },
-        {
-          "date": "2026-05-05",
-          "event": "直播闪购频道上线"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-606",
-      "date": "2026-04-25",
-      "company": "阿里",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "阿里妈妈「UD全域通」升级：淘系+外部流量一站式投放",
-      "body": "阿里妈妈UD全域通完成升级，打通淘系内流量与外部媒体流量的一站式投放，支持跨平台的统一频控和归因。",
-      "sowhat": "阿里持续强化跨平台投放的一站式能力，UD全域通是其在站外流量采买上的核心产品。快手需关注与外部媒体平台的流量合作模式。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "「广告技术解“优”局」揭秘一站式全域投放底层逻辑 - 知乎专栏",
-          "url": "https://zhuanlan.zhihu.com/p/554785491"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-25",
-          "event": "UD全域通升级跨平台一站式投放"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-605",
-      "date": "2026-04-18",
-      "company": "阿里",
-      "category": "行业动态",
-      "dimension": "财报/行业case",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "阿里2026Q1财报：淘天GMV同比+8%，AI广告收入占比突破15%",
-      "body": "阿里2026Q1财报显示淘天GMV同比增长8%，AI驱动的广告收入（万相台+全站推广）占比突破15%。",
-      "sowhat": "AI广告收入占比成为衡量广告平台AI化程度的核心指标。快手需关注磁力引擎中AI驱动的广告收入占比，将其作为内部KPI。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "阿里巴巴 (BABA) 2026Q1電話會議重點和逐字稿 - 財報狗",
-          "url": "https://statementdog.com/analysis/BABA/earnings_calls/299672"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-Q4",
-          "event": "AI广告收入占比首次突破10%"
-        },
-        {
-          "date": "2026-Q1",
-          "event": "AI广告收入占比突破15%"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-08-20"
-    },
-    {
-      "id": "comp-607",
-      "date": "2026-04-12",
-      "company": "阿里",
-      "category": "政策更新",
-      "dimension": "准入/政策",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "淘宝天猫「仅退款」政策收缩：增加商家申诉机制",
-      "body": "淘宝天猫对仅退款政策进行收缩调整，新增商家申诉机制，平衡消费者权益与商家利益。",
-      "sowhat": "仅退款政策调整是电商平台在消费者权益和商家利益之间的再平衡，可能影响中小商家信心和平台供给。快手电商需关注商家端政策稳定性。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "淘宝调整仅退款规则，对正常经营商家取消或减少直接干预|阿里妈妈 ...",
-          "url": "https://finance.sina.cn/2024-07-26/detail-incfneiz7410470.d.html?oid=%E9%BE%99%E5%B2%A9%E7%A7%81%E4%BA%BA%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%A4%96%E5%8D%96%E5%BE%AE%E4%BF%A175580968&vt=4&cid=76478&node_id=76478"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-12",
-          "event": "仅退款政策收缩+商家申诉机制新增"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2024-07-26"
-    },
-    {
-      "id": "comp-608",
-      "date": "2026-04-05",
-      "company": "阿里",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "阿里妈妈「全站推广」支持ROI出价：电商广告投放进一步简化",
-      "body": "阿里妈妈全站推广新增ROI出价模式，广告主只需设定目标ROI，系统自动优化出价和人群。",
-      "sowhat": "ROI出价是电商广告自动化的终极形态，阿里与拼多多都在推进此方向。快手金牛的全站推广需尽快支持ROI出价。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "阿里妈妈“货品全站推”升级上线，助力商家打赢618 - 亿卓智库",
-          "url": "http://www.izcoo.com/article/id/3659.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-08-01",
-          "event": "全站推广上线"
-        },
-        {
-          "date": "2026-04-05",
-          "event": "ROI出价模式新增"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-05-20"
-    },
-    {
-      "id": "comp-201",
-      "date": "2026-05-26",
-      "company": "腾讯",
-      "category": "产品动态",
-      "title": "视频号「成交助手」开放给本地生活商户：交易闭环跑通酒店/教培",
-      "sowhat": "微信视频号小店一直缺本地生活转化路径，本次成交助手内置门店核销+POI 智能匹配，正式向酒店、丽人、教培三个行业开放。这是腾讯本地生活『微信生态闭环』最关键的一步，对美团/抖音生服都构成挤压。",
-      "sources": [
-        {
-          "name": "个人中心| 微信开放社区",
-          "url": "https://developers.weixin.qq.com/community/personal/oCJUswxFgWdhyFIxOIK0DminJivA/fav"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-26",
-          "event": "成交助手向三行业开放灰度"
-        },
-        {
-          "date": "2026-03-12",
-          "event": "视频号小店本地生活类目首次开放"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T0",
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2024-08-12"
-    },
-    {
-      "id": "comp-020",
-      "date": "2026-05-25",
-      "company": "腾讯",
-      "category": "AI/技术",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "腾讯广告 AI 创意：朋友圈视频广告生成成本降至 1/10，扶持中小广告主",
-      "sowhat": "腾讯广告用 AI 大幅降低视频创意制作成本，瞄准长尾中小广告主。快手磁力创意需评估 AI 自动剪辑/智能配音能力，避免长尾客户流失。",
-      "sources": [
-        {
-          "name": "腾讯朋友圈创意广告爆量产出，助力品牌撬动流量爆发增长",
-          "url": "https://zhuanlan.zhihu.com/p/15151775762"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-25",
-          "event": "腾讯广告发布'妙问 AI 创意工坊'，朋友圈广告一键生成"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-202",
-      "date": "2026-05-21",
-      "company": "腾讯",
-      "category": "产品动态",
-      "title": "微信广告『朋友圈原生互动样式』上线：点赞/评论/卡片三合一",
-      "sowhat": "朋友圈广告升级为原生互动样式，用户可在广告内直接评论/点赞/打开小程序卡片，无需跳出。CTR 实测提升 30-50%，是腾讯私域广告差异化对抗短视频信息流的关键武器。",
-      "sources": [
-        {
-          "name": "置顶- 3 分钟带你了解朋友圈广告官方 - 微信开放社区",
-          "url": "https://developers.weixin.qq.com/community/develop/doc/000aa69bcd4af0966aed7a5ba5fc0d?highLine=%25E6%25BD%25AE%25E5%25B7%259E%25E9%2580%2582%25E5%2590%2588%25E6%2583%2585%25E4%25BE%25A3%25E5%258D%2595%25E7%258B%25AC%25E7%25BA%25A6%25E4%25BC%259A%25E5%258C%2585%25E5%258E%25A2_%25E3%2580%2590%25E2%2596%258B%25E6%2589%25A3%25EF%25BC%2591%25EF%25BC%2590%25E2%2592%2588%25EF%25BC%2596%25E2%2592%2590%25E2%2592%258C%25E2%2592%2589%25D0%25B1%25E2%2596%258D%25E3%2580%2591"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-21",
-          "event": "原生互动样式全量"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2022-05-07"
-    },
-    {
-      "id": "comp-004",
-      "date": "2026-05-14",
-      "company": "腾讯",
-      "category": "财报/行业case",
-      "title": "腾讯 2026Q1 广告增长 20%，视频号+搜一搜成核心驱动",
-      "sowhat": "腾讯广告生态从朋友圈单点转向多触点组合，本地生活成新增长极。视频号广告扩容将与快手争夺同一批客户预算。",
-      "sources": [
-        {
-          "name": "新浪财经：腾讯Q1营收近2000亿",
-          "url": "https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxvyei6840426.shtml",
-          "date": "2026-05-14"
-        },
-        {
-          "name": "澎湃新闻：腾讯Q1财报",
-          "url": "https://m.thepaper.cn/newsDetail_forward_33197379",
-          "date": "2026-05-19"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-01-01",
-          "event": "视频号广告正式并入腾讯广告统一平台"
-        },
-        {
-          "date": "2026-03-01",
-          "event": "搜一搜月活用户突破5亿，本地生活成重要搜索场景"
-        },
-        {
-          "date": "2026-05-14",
-          "event": "2026Q1财报：广告收入同比增长20%，视频号+搜一搜成双核驱动，本地生活服务广告同比增长超40%"
-        }
-      ],
-      "dimension": "财报/行业case",
+      "dimension": "产品/接入",
       "data_source": "三方媒体",
       "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-203",
-      "date": "2026-05-13",
-      "company": "腾讯",
-      "category": "行业打法",
-      "title": "腾讯广告『妙问 AI 助手』2.0：投放问答覆盖到 100+ 业务场景",
-      "sowhat": "腾讯把妙问从『查规则』升级为『端到端投放顾问』，集成开户/资质/创建/优化全链路，目标是把客服+优化师工作前置自动化，降低投放门槛。对中小广告主体感很强，是腾讯抢夺尾部预算的核心抓手。",
-      "sources": [
-        {
-          "name": "腾讯广告妙问— AI Skill — Termo",
-          "url": "https://termo.ai/skills/tencent-ads-assistant"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-13",
-          "event": "妙问 2.0 全量"
-        },
-        {
-          "date": "2026-02",
-          "event": "1.0 上线，仅支持基础规则查询"
-        }
-      ],
-      "dimension": "行业打法",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-204",
-      "date": "2026-05-04",
-      "company": "腾讯",
-      "category": "营销/分账",
-      "title": "微信小店『一键带货』+ 全民推官计划：达人佣金即时分账",
-      "sowhat": "微信小店把『带货中台』和『小程序-直播-视频号-公众号』全场景打通，并提供 T+0 即时分账。本质是在微信生态内复刻拼多多的多多客模式，把社交分销的杠杆放到最大，对抖音电商达人池形成虹吸。",
-      "sources": [
-        {
-          "name": "微信小店推客分销功能，核心就这4点",
-          "url": "https://developers.weixin.qq.com/community/develop/article/doc/000a0e2d77c6f8ed25b2c461d6c813"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-04",
-          "event": "全民推官 + T+0 分账上线"
-        }
-      ],
-      "dimension": "营销/分账",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-01-08"
-    },
-    {
-      "id": "comp-205",
-      "date": "2026-04-30",
-      "company": "腾讯",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "腾讯广告「一键批量开启妙思创意Max」：五一期间自动衍生九图和视频",
-      "body": "腾讯广告推出一键批量开启妙思创意Max功能，支持五一期间自动衍生九图和视频素材，降低广告主创意生产成本。",
-      "sowhat": "腾讯广告的AI创意工具在假期营销场景中发挥实际价值，自动衍生多尺寸素材降低广告主操作成本。快手磁力引擎的AI创意工具需强化节假日的自动化能力。",
+      "title": "美团2026年Q1营收910亿元，环比减亏96亿元 - 中国日报网",
+      "body": "# 美团2026年Q1营收910亿元，环比减亏96亿元. ## 6月1日，美团发布2026年第一季度业绩。. 来源：中国日报  2026-06-01 17:59. 中国日报6月1日电（记者 程钰）6月1日，美团发布2026年第一季度业绩。本季度，美团实现收入910亿元（人民币，下同），同比增长5.6",
+      "sowhat": "",
       "scope": "国内",
       "sources": [
         {
-          "name": "一键批量开启妙思创意Max，五一稳稳衍生九图和视频！ - 新浪财经",
-          "url": "https://cj.sina.cn/articles/view/5953190046/162d6789e067032hfa?froms=ggmp"
+          "name": "美团2026年Q1营收910亿元，环比减亏96亿元 - 中国日报网",
+          "url": "https://cn.chinadaily.com.cn/a/202606/01/WS6a1d5800a310942cc49af741.html",
+          "date": "2026-06-01"
         }
       ],
       "timeline": [
         {
-          "date": "2025-12-01",
-          "event": "妙思创意工具上线"
-        },
-        {
-          "date": "2026-04-30",
-          "event": "一键批量开启Max功能"
+          "date": "2026-06-01",
+          "event": "本次动态"
         }
       ],
       "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-206",
-      "date": "2026-04-29",
-      "company": "腾讯",
-      "category": "产品动态",
-      "dimension": "电商/交易",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "京腾JDS投放新通路上线ADQ：京东数据+腾讯广告深度打通",
-      "body": "京腾合作新里程碑：JDS投放新通路正式上线ADQ（腾讯广告投放平台），京东商品数据可在腾讯广告平台直接用于投放定向。",
-      "sowhat": "京腾数据打通是电商广告的重要突破，数据闭环能力是腾讯广告的核心竞争力。快手需关注与电商平台的类似深度合作机会。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "某健康品牌诠释“效率革命”，京腾JD5投放路上线微信广告ADQ！",
-          "url": "https://m.teng-ad.com/zixun/3835.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-29",
-          "event": "JDS投放新通路上线ADQ"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-09-29"
-    },
-    {
-      "id": "comp-207",
-      "date": "2026-04-29",
-      "company": "腾讯",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "视频号助跑计划：微信小店广告+送礼广告+直播广告最新投放指南",
-      "body": "视频号助跑计划发布最新产品能力解读，涵盖微信小店广告、送礼广告、直播广告的最新投放策略和建议。",
-      "sowhat": "视频号商业化产品矩阵持续丰富，小店+送礼+直播三条线并行推进。快手需关注视频号在社交电商广告方面的创新，尤其是送礼广告场景。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "微信小店/视频号小店链路广告投放指引",
-          "url": "https://m.teng-ad.com/jd/2744.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-29",
-          "event": "视频号助跑计划发布最新指南"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2024-09-02"
-    },
-    {
-      "id": "comp-208",
-      "date": "2026-04-25",
-      "company": "腾讯",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "腾讯广告ADQ「智能诊断」功能升级：自动识别账户投放问题",
-      "body": "ADQ投放平台智能诊断功能升级，可自动识别账户投放问题并给出优化建议，覆盖出价、定向、创意三大维度。",
-      "sowhat": "智能诊断是广告平台AI化重要一环，降低广告主自主优化门槛。快手磁力引擎投放诊断能力需对标升级。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "开发文档 | 开发者专区 - 腾讯广告",
-          "url": "https://developers.e.qq.com/docs/reference/errorcode"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-08-01",
-          "event": "ADQ智能诊断1.0上线"
-        },
-        {
-          "date": "2026-04-25",
-          "event": "智能诊断功能全面升级"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-210",
-      "date": "2026-04-22",
-      "company": "腾讯",
-      "category": "行业动态",
-      "dimension": "财报/行业case",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "腾讯2026Q1广告收入+20%：AI推荐算法驱动朋友圈+视频号广告效率提升",
-      "body": "腾讯Q1广告收入同比增长20%，视频号广告收入同比增长超100%。AI推荐算法在朋友圈和视频号广告中的效率提升是核心增长驱动。",
-      "sowhat": "AI推荐算法在微信生态广告中的效果验证了AI对广告收入的直接拉动。快手磁力引擎的AI推荐算法优化需持续投入。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "腾讯Q1营收近2000亿，视频号带动广告收入涨20%|腾讯_新浪财经_新浪网",
-          "url": "https://finance.sina.com.cn/stock/relnews/hk/2026-05-15/doc-inhxyimh8160144.shtml"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-Q4",
-          "event": "腾讯广告收入+15%同增"
-        },
-        {
-          "date": "2026-Q1",
-          "event": "腾讯广告收入+20%同增"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-209",
-      "date": "2026-04-18",
-      "company": "腾讯",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "腾讯广告「全站智投」灰度：一个计划覆盖搜一搜+朋友圈+视频号",
-      "body": "腾讯广告开始灰度测试全站智投，广告主创建一个计划即可覆盖搜一搜、朋友圈、视频号三大流量场景。",
-      "sowhat": "全站智投是腾讯广告超级APP流量整合关键一步，简化广告主多场景投放操作。快手需关注信息流+搜索+直播的多场景统一投放方案。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "[PDF] 腾讯控股（0700.HK）",
-          "url": "https://pdf.dfcfw.com/pdf/H3_AP202503241646791965_1.pdf?1742824211000.pdf="
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-12-01",
-          "event": "腾讯广告提出全站智投概念"
-        },
-        {
-          "date": "2026-04-18",
-          "event": "全站智投灰度测试启动"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-501",
-      "date": "2026-05-27",
-      "company": "美团",
-      "category": "产品动态",
-      "title": "美团神会员 V2 升级：到店+到家+酒旅全场景通刷，月活破 1.2 亿",
-      "sowhat": "美团把分散的『单业务 VIP』整合为统一神会员，月费 25 元覆盖到店/到家/酒旅/打车。对标抖音生服『超值购』+ 拼多多『PLUS 会员』的会员锁客模式，强化高频用户粘性，对快手本地生活进入下沉/腰部市场的窗口期形成挤压。",
-      "sources": [
-        {
-          "name": "覆盖吃喝玩乐多项服务   美团“神会员”全面升级",
-          "url": "https://www.meituan.com/news/NN240704052008695"
-        },
-        {
-          "name": "晚点：美团神会员复盘",
-          "url": "https://www.latepost.com/",
-          "date": "2026-05-27"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-27",
-          "event": "神会员 V2 上线"
-        },
-        {
-          "date": "2026-03",
-          "event": "试点 8 城跑通"
-        }
-      ],
-      "dimension": "行业打法",
-      "data_source": "三方媒体",
-      "tier": "T0",
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2018-09-20"
-    },
-    {
-      "id": "comp-503",
-      "date": "2026-05-21",
-      "company": "美团",
-      "category": "行业动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "美团外卖无人机航网迈出规模化第一步：打造城市低空新基建",
-      "body": "美团宣布外卖无人机航网进入规模化阶段，打造城市低空配送新基建，外卖配送时效有望大幅提升。",
-      "sowhat": "无人机配送的规模化将降低美团外卖履约成本，长期可能传导至商家佣金和广告定价。快手本地推的到店/到家场景需关注履约成本变化对商家预算的影响。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团新闻中心",
-          "url": "https://www.meituan.com/news/NN260522185005269",
-          "date": "2026-05-21"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-21",
-          "event": "无人机航网规模化启动"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2018-09-20"
-    },
-    {
-      "id": "comp-505",
-      "date": "2026-05-21",
-      "company": "美团",
-      "category": "政策更新",
-      "dimension": "准入/政策",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "美团外卖食品安全风险管控机制发布",
-      "body": "美团规则中心发布食品安全风险管控机制和信息公示制度，强化外卖食品安全管理规范。",
-      "sowhat": "外卖平台食品安全制度持续完善，商家合规成本提升。快手需关注本地生活商家的合规成本变化对广告预算的挤出效应。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团外卖规则中心",
-          "url": "https://rules-center.meituan.com/rule-overview/MENU/7-13/2-10005,20033?commonType=7"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-29",
-          "event": "美团外卖食品安全管理制度集中发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-502",
-      "date": "2026-05-20",
-      "company": "美团",
-      "category": "产品动态",
-      "title": "美团团购『AI 客服』全量：商家咨询自动回复率达 78%",
-      "sowhat": "美团把团购商家客服 AI 化，把 78% 的客服问题自动回复，剩余 22% 转人工。从『商家工具』降本角度大幅提升商家服务效率。对快手/抖音本地生服商家端的 AI 工具竞争升级。",
-      "sources": [
-        {
-          "name": "[PDF] 目录",
-          "url": "https://aigc.idigital.com.cn/djyanbao/%E3%80%90%E4%B8%AD%E5%9B%BD%E8%BF%9E%E9%94%81%E7%BB%8F%E8%90%A5%E5%8D%8F%E4%BC%9A%E3%80%912025%E5%B9%B4%E5%BA%A6%E4%B8%AD%E5%9B%BD%E9%9B%B6%E5%94%AE%E6%95%B0%E5%AD%97%E5%8C%96%E5%8F%8A%E6%96%B0%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E6%A1%88%E4%BE%8B-2025-11-30.pdf"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-20",
-          "event": "团购 AI 客服全量"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-506",
-      "date": "2026-05-15",
-      "company": "美团",
-      "category": "平台动态",
-      "dimension": "营销/分账",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "2026年大众点评必吃榜规则发布：评价诚信管理同步更新",
-      "body": "大众点评发布2026年必吃榜规则，同步更新商户评价诚信管理总则和违规评价管理分则。",
-      "sowhat": "必吃榜是到店餐饮核心流量场景，评价诚信管理直接关联商户评分和推荐排名。快手本地生活需建立类似的商户信用体系。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团规则中心",
-          "url": "https://rules-center.meituan.com/home",
-          "date": "2026-05-15"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-15",
-          "event": "大众点评2026必吃榜规则+评价诚信管理更新"
-        }
-      ],
-      "_verification": "weak"
-    },
-    {
-      "id": "comp-504",
-      "date": "2026-05-08",
-      "company": "美团",
-      "category": "公司动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "美团将持续优化算法机制，服务生态各方共赢发展",
-      "body": "美团官方发布声明，将持续优化算法机制，在商家、骑手、消费者三方之间寻求更平衡的生态共赢。",
-      "sowhat": "外卖平台算法治理是监管重点方向，美团的算法优化声明反映其对外卖生态利益平衡的重视。快手需关注本地生活领域的算法治理趋势。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团新闻中心",
-          "url": "https://www.meituan.com/news/NN260508192002553",
-          "date": "2026-05-08"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-09-01",
-          "event": "外卖平台算法治理引发监管关注"
-        },
-        {
-          "date": "2026-05-08",
-          "event": "美团发布算法优化声明"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2018-09-20"
-    },
-    {
-      "id": "comp-507",
-      "date": "2026-05-05",
-      "company": "美团",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "美团AI客服「小团」五一查询量环比春节涨89%",
-      "body": "美团AI客服小团在五一期间查询量环比春节增长89%，成为最忙AI客服。",
-      "sowhat": "美团AI客服在高峰期经受住考验，验证了AI在客服场景的实际价值。快手需关注AI客服在本地生活商户服务中的落地效果。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团新闻中心",
-          "url": "https://www.meituan.com/news/NN260512192003591",
-          "date": "2026-05-05"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-11-01",
-          "event": "美团AI客服小团上线"
-        },
-        {
-          "date": "2026-05-05",
-          "event": "五一查询量环比春节+89%"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2018-09-20"
-    },
-    {
-      "id": "comp-508",
-      "date": "2026-04-25",
-      "company": "美团",
-      "category": "产品动态",
-      "dimension": "电商/交易",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "美团闪购「名酒鉴真」服务标签上线：即时零售品质化升级",
-      "body": "美团闪购推出名酒鉴真服务标签，强化即时零售商品的品质信任体系，提升高客单价品类转化。",
-      "sowhat": "即时零售从效率竞争转向品质竞争，鉴真标签提升用户信任。快手需关注即时零售的品质化趋势对广告主投放品类的影响。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "三年三十个亿级连锁品牌目标背后：美团闪购的即时零售战略宣言_财富号_东方财富网",
-          "url": "https://caifuhao.eastmoney.com/news/20260323212904436093710"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-26",
-          "event": "名酒鉴真服务标签上线"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2017-03-01"
-    },
-    {
-      "id": "comp-509",
-      "date": "2026-04-18",
-      "company": "美团",
-      "category": "政策更新",
-      "dimension": "准入/政策",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "美团基本功能隐私政策更新：数据合规持续强化",
-      "body": "美团更新基本功能隐私政策，强化用户数据保护和隐私合规要求。",
-      "sowhat": "数据隐私合规是所有平台持续面临的监管要求，快手也需持续关注数据合规对广告精准定向的潜在影响。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团规则中心",
-          "url": "https://rules-center.meituan.com/m/detail/guize/2"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-28",
-          "event": "美团隐私政策更新"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2026-05-28"
-    },
-    {
-      "id": "comp-510",
-      "date": "2026-04-15",
-      "company": "美团",
-      "category": "产品动态",
-      "dimension": "营销/分账",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "美团买药即时零售业务商责纠纷赔付规则发布",
-      "body": "美团买药发布即时零售和快递电商业务的商责纠纷赔付规则，完善商家服务质量管控体系。",
-      "sowhat": "服务质量管控规则的完善提升平台生态稳定性，但也增加了商家运营成本。快手需平衡好商家体验与服务质量管控。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团医药健康商家规则中心",
-          "url": "https://rules-center.meituan.com/rule-overview/MENU/26/20-10008?commonType=20"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-21",
-          "event": "美团买药商责纠纷赔付规则发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-301",
-      "date": "2026-05-24",
-      "company": "百度",
-      "category": "产品动态",
-      "title": "百度营销「AI 一站托管」公测：素材生成+落地页+出价全自动",
-      "sowhat": "百度把 AIGC 创意、智能落地页、oCPC 自动出价整合为『一站托管』产品，明显对标巨量引擎的智能托管 + 出单宝。对中小广告主入门门槛进一步降低，但百度搜索流量增长瓶颈仍是核心问题。",
-      "sources": [
-        {
-          "name": "2026年5月企业百度推广开户公司哪个好？服务商深度解析 ...",
-          "url": "https://www.sinoasphalt.com/zixun/article-yizh-52660.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-24",
-          "event": "AI 一站托管公测"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-021",
-      "date": "2026-05-22",
-      "company": "百度",
-      "category": "准入/政策",
-      "dimension": "准入/政策",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "百度严肃医疗类目准入再收紧：男科妇科需提供二级以上医院授权",
-      "sowhat": "百度连续两年压缩男科妇科广告（消耗 -30%）。这些预算可能溢出到快手健康/磁力，但同时合规风险加大。快手需提前布局医疗资质审核能力。",
-      "sources": [
-        {
-          "name": "中华人民共和国国务院令（第149号）——医疗机构管理条例 - 中华人民共和国国家卫生和计划生育委员会",
-          "url": "https://www.nhc.gov.cn/zwgkzt/wsbysj/200804/18304.shtml"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-01",
-          "event": "百度更新医疗准入规则征求意见稿"
-        },
-        {
-          "date": "2026-05-22",
-          "event": "正式实施：男科妇科广告需二级以上医院授权"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-304",
-      "date": "2026-05-21",
-      "company": "百度",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "信息流新增「在投单元配额」机制及「清理助手」工具",
-      "body": "5月14日先上线清理助手工具，支持一键识别并清理低效/空耗单元；5月底上线在投单元配额机制，基于消费体量和素材质量为每个账户设定在投单元数量上限。",
-      "sowhat": "百度通过工具化手段提升信息流投放效率，降低账户管理成本。快手需关注磁力引擎是否提供类似低效单元识别与自动清理能力，中小广告主对此类工具有强需求。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "百度营销学堂-产品动态",
-          "url": "http://yingxiao.baidu.com/product/active/detail?detailId=3129",
-          "date": "2026-05-21"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-14",
-          "event": "清理助手工具先行上线"
-        },
-        {
-          "date": "2026-05-21",
-          "event": "在投单元配额机制全流量上线"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-005",
-      "date": "2026-05-18",
-      "company": "百度",
-      "category": "财报/行业case",
-      "title": "百度 2026Q1：广告收入同比降 22%，AI云首次超过广告占比",
-      "sowhat": "百度广告主盘正被AI搜索自我替代——文心AI搜索减少展示广告位，但AI原生营销服务尚未填补缺口。对快手：线索广告主（医疗/教育/金融）一部分预算可能因百度搜索广告走弱而向短视频平台迁移，是增量机会窗口。",
-      "sources": [
-        {
-          "name": "钛媒体：百度Q1广告跌破半壁江山",
-          "url": "https://www.tmtpost.com/7992627.html",
-          "date": "2026-05-18"
-        },
-        {
-          "name": "华尔街见闻：百度Q1营收320.8亿",
-          "url": "https://wallstreetcn.com/articles/3772526",
-          "date": "2026-05-18"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-Q4",
-          "event": "百度AI搜索渗透率提升，传统展示广告位持续收缩"
-        },
-        {
-          "date": "2026-Q1",
-          "event": "AI云收入高速增长，首次超越广告收入占比"
-        },
-        {
-          "date": "2026-05-18",
-          "event": "2026Q1财报：广告收入同比降22%，AI云收入占比反超广告，线索广告（医疗/教育）客户开始向短视频平台迁移"
-        }
-      ],
-      "dimension": "财报/行业case",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2023-10-20"
-    },
-    {
-      "id": "comp-302",
-      "date": "2026-05-17",
-      "company": "百度",
-      "category": "行业打法",
-      "title": "百度健康『医疗 GPT』接入医院端：搜索结果直接挂三甲医生问答",
-      "sowhat": "百度健康在严肃医疗严控的同时，主动把『医疗 GPT』接入三甲医生 IP 实时问答，试图把医疗搜索流量留在站内变现。对快手/抖音的医疗内容生态意味着，公域科普流量进入医疗 GPT 时代后，平台需重新判断医疗内容池的合规边界。",
-      "sources": [
-        {
-          "name": "百度健康发布AI管家：能聊病症、可连名医 - 中国医院院长",
-          "url": "https://www.h-ceo.com/post/5401.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-17",
-          "event": "医疗 GPT 接入三甲医生问答"
-        }
-      ],
-      "dimension": "行业打法",
-      "data_source": "三方媒体",
-      "tier": "T2",
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2023-01-17"
-    },
-    {
-      "id": "comp-305",
-      "date": "2026-05-11",
-      "company": "百度",
-      "category": "产品动态",
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "搜索推广应用推广支持鸿蒙应用投放",
-      "body": "2026年5月13日起搜索推广全流量上线鸿蒙应用投放能力，新增应用类型选择，支持广告主投放鸿蒙应用。",
-      "sowhat": "鸿蒙生态商业化加速，百度率先在搜索推广中适配。快手需关注鸿蒙用户增长趋势，评估磁力引擎是否需要接入鸿蒙应用推广能力。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "百度营销学堂-产品动态",
-          "url": "http://yingxiao.baidu.com/product/active/detail?detailId=3127",
-          "date": "2026-05-11"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-10-01",
-          "event": "华为鸿蒙NEXT正式商用"
-        },
-        {
-          "date": "2026-05-13",
-          "event": "百度搜索推广全流量上线鸿蒙应用投放"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-303",
-      "date": "2026-05-09",
-      "company": "百度",
-      "category": "产品动态",
-      "title": "百度地图『POI 营销』面向本地商户开放：搜地点直接广告+优惠券",
-      "sowhat": "百度地图 8 亿月活的位置流量首次系统性商业化：商户可以在自家 POI 上挂代金券、限时优惠、视频介绍，按到店核销付费。对美团/抖音本地生活的『搜索意图入口』是不对称攻击。",
-      "sources": [
-        {
-          "name": "[PDF] 本地商家服务",
-          "url": "https://bass-o-groove.cdn.bcebos.com/bass-o-groove/4b534c47-97cf-45db-16a9-165216966863/%E7%99%BE%E5%BA%A6%E8%AE%A4%E8%AF%81%E5%88%9D%E7%BA%A7%E8%AF%BE%E7%A8%8B%20%7C%E7%99%BE%E5%BA%A6%E6%9C%AC%E5%9C%B0%E6%8E%A8%E5%B9%BF%E9%97%A8%E5%BA%97%E7%BB%8F%E8%90%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%20.pdf"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-09",
-          "event": "POI 营销面向商户开放"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-306",
-      "date": "2026-05-07",
-      "company": "百度",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "信息流新增「智能优选」线索获取方式：普通落地页+百家号私信双链路并行",
-      "body": "在销售线索和百家号推广营销目标下新增智能优选线索获取方式，支持普通落地页+百家号私信双链路并行投放，系统基于用户偏好智能选择最优转化路径。",
-      "sowhat": "百度信息流线索获取从单一链路升级为双链路智能分发，直接提升转化效率。快手线索广告（本地推/磁力智投）在表单+私信双链路方面可对标学习。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "[PDF] 消费主力人群和消费潜力的市场在抖音 - U渠道",
-          "url": "https://qn.uqudao.com/a3385c6a290e0c6b56e650b9b2bc9f21.pdf"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-07",
-          "event": "智能优选线索获取方式全流量上线"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-307",
-      "date": "2026-04-28",
-      "company": "百度",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "百度搜索推广「智能匹配」升级：AI拓展关键词匹配范围",
-      "body": "百度搜索推广智能匹配模式升级，利用AI语义理解自动拓展关键词匹配范围，提升长尾搜索流量的广告覆盖率。",
-      "sowhat": "百度在搜索广告中持续深化AI应用，智能匹配升级将提升搜索广告的填充率和eCPM。快手搜索广告的AI匹配能力可对标优化。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "百度推广开户：结合关键词匹配与自动定向技术，提升精准流量发掘 ...",
-          "url": "https://www.80tg.com/news/53245.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-28",
-          "event": "搜索推广智能匹配升级"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2026-05-31"
-    },
-    {
-      "id": "comp-308",
-      "date": "2026-04-15",
-      "company": "百度",
-      "category": "产品动态",
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "百度营销「商家智能助手」上线：AI客服+数据分析+投放建议一体化",
-      "body": "百度营销推出商家智能助手，整合AI客服、数据分析、投放建议三大功能，面向中小广告主降低使用门槛。",
-      "sowhat": "商家智能助手是百度在中小广告主服务上的重要布局，对标字节的商家智能助手。快手需加速本地推/磁力智投的商家AI工具建设。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "[PDF] 2025年中国智能营销应用场景洞察",
-          "url": "https://pdf.dfcfw.com/pdf/H3_AP202504241661717557_1.pdf?1745524111000.pdf="
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-15",
-          "event": "商家智能助手上线"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
     },
     {
       "id": "comp-701",
-      "date": "2026-05-23",
-      "company": "拼多多",
-      "category": "营销/分账",
-      "title": "拼多多『多多客』分销系统升级：佣金最高 80%、二级返佣放开",
-      "sowhat": "拼多多把多多客分销升级，最高佣金从 50% → 80%，并开放二级返佣（KOL 拉新分销商分润）。本质是用社交杠杆全面对抗抖音/快手达人电商。对快手联盟/磁力聚星的中腰部达人构成现金流分流压力。",
+      "date": "2026-06-01",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地",
+      "body": "安徽|北京|重庆|福建|甘肃| 贵州|广东|广西|海南|河北| 河南| 湖北|湖南|黑龙江|江苏|江西| 吉林| 辽宁|内蒙古|宁夏|青海|山东| 山西| 陕西|上海|四川|天津|新疆| 兵团| 云南|浙江. 高层*|* 人事*|* 反腐*|* 深度*|* 两岸*|* 科教*|* 军事. 中外对话*",
+      "sowhat": "",
+      "scope": "国内",
       "sources": [
         {
-          "name": "[PDF] 拼多多：电商重构者",
-          "url": "https://pdf.dfcfw.com/pdf/H3_AP202106241499711394_1.pdf"
+          "name": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地",
+          "url": "https://www.chinanews.com.cn/cj/2026/06-01/10632293.shtml",
+          "date": "2026-06-01"
         }
       ],
       "timeline": [
         {
-          "date": "2026-05-23",
-          "event": "多多客二级返佣放开"
+          "date": "2026-06-01",
+          "event": "本次动态"
         }
       ],
-      "dimension": "营销/分账",
-      "data_source": "竞媒官方",
-      "tier": "T1",
       "_verification": "weak",
+      "_fetched_by": "competitor_tracker.py",
       "_date_mismatch": true,
-      "_source_date": "2021-06-24"
+      "_source_date": "2023-03-21"
     },
     {
       "id": "comp-702",
-      "date": "2026-05-15",
-      "company": "拼多多",
+      "date": "2026-06-02",
+      "company": "美团",
       "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
       "tier": "T1",
-      "title": "拼多多「全站推广」AI升级：流量分配完全自动化，人工定向逐步弱化",
-      "body": "拼多多全站推广完成AI升级，流量分配实现完全自动化，逐步弱化人工定向功能，广告主仅需设置预算和ROI目标。",
-      "sowhat": "拼多多在全自动投放上走得最激进，完全弱化人工定向意味着广告主对平台的信任度要求极高。快手需评估全自动投放的产品节奏和市场接受度。",
+      "title": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地 _ 东方财富网",
+      "body": "指数 期指 期权 个股 板块 排行 新股 基金 港股 美股 期货 外汇 黄金 自选股 自选基金. 资金流向 主力排名 板块资金 个股研报 新股申购 转债申购 北交所申购 AH股比价 年报大全 融资融券 龙虎榜 限售解禁 IPO审核 大宗交易 估值分析. 6月1日起，《网络餐饮服务经营者落实食品安全主",
+      "sowhat": "",
       "scope": "国内",
       "sources": [
         {
-          "name": "拼多多智能营销将升级为全站营销 向所有商家开放 - 电商派",
-          "url": "https://www.pai.com.cn/p/01k21n3xqkkrnst6axrp0nggb8"
+          "name": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地 _ 东方财富网",
+          "url": "https://finance.eastmoney.com/a/202606013756107018.html",
+          "date": "2026-06-02"
         }
       ],
       "timeline": [
         {
-          "date": "2026-05-15",
-          "event": "AI全自动升级"
+          "date": "2026-06-02",
+          "event": "本次动态"
         }
       ],
       "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-705",
-      "date": "2026-05-08",
-      "company": "拼多多",
-      "category": "产品动态",
-      "dimension": "电商/交易",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "拼多多「跨境出海」TEMU加速：2026Q1 GMV突破300亿美元",
-      "body": "TEMU 2026年Q1 GMV突破300亿美元，同比增90%+，半托管模式在北美和欧洲快速推进。",
-      "sowhat": "TEMU的高速增长持续冲击全球电商格局，其半托管模式降低商家出海门槛。快手出海业务可借鉴TEMU的供应链整合模式。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Temu狂飙，拼多多海外版初长成，多多跨境业务成增长新引擎 - 新京报",
-          "url": "https://m.bjnews.com.cn/detail/1701329357169601.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-Q1",
-          "event": "TEMU GMV突破300亿美元"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2023-09-07"
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
     },
     {
       "id": "comp-703",
-      "date": "2026-04-28",
-      "company": "拼多多",
-      "category": "行业动态",
-      "dimension": "电商/交易",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "拼多多百亿补贴618提前启动：跨店满减+百亿补贴双叠加",
-      "body": "拼多多618大促提前至4月底启动，百亿补贴与跨店满减双叠加，商家报名门槛降低至历史最低。",
-      "sowhat": "拼多多大促前置化策略压缩其他平台的618预热空间。快手电商618策略需关注拼多多的低价心智对用户注意力的抢占。",
+      "date": "2026-06-20",
+      "company": "字节",
+      "category": "产品动态",
+      "dimension": "AI/技术",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "传字节跳动2026年资本支出为1600 亿元，超半数用于购买AI处理器",
+      "body": "##### 闪存市场APP. ##### 手机网页版. ##### 微信小程序. ## CFM闪存市场. # 传字节跳动2026年资本支出为1600 亿元，超半数用于购买AI处理器. 据业界消息称，字节跳动已初步计划 2026 年的资本支出为 1600 亿元人民币，较今年 1500 亿元人民币的人工",
+      "sowhat": "",
       "scope": "国内",
       "sources": [
         {
-          "name": "拼多多618大促将于5月13日开始 - 电商派",
-          "url": "https://www.pai.com.cn/p/01jv1aeqff06pkg17jqdcds6p3"
+          "name": "传字节跳动2026年资本支出为1600 亿元，超半数用于购买AI处理器",
+          "url": "https://www.chinaflashmarket.com/a/183475",
+          "date": "2026-06-20"
         }
       ],
       "timeline": [
         {
-          "date": "2026-04-28",
-          "event": "618双叠加提前启动"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-706",
-      "date": "2026-04-22",
-      "company": "拼多多",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "拼多多「场景推广」AI升级：商品自动匹配最优投放场景",
-      "body": "拼多多场景推广完成AI升级，系统可自动为每个商品匹配最优投放场景（搜索/推荐/社交），广告主无需手动选择。",
-      "sowhat": "场景自动匹配降低了广告主运营门槛，拼多多在极致简化投放操作。快手金牛的自动化程度可对标此方向。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "当AI全面渗入618，各大电商玩家有何新动作？ - CBNData",
-          "url": "https://www.cbndata.com/information/295327"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-22",
-          "event": "场景推广AI升级"
+          "date": "2026-06-20",
+          "event": "本次动态"
         }
       ],
       "_verification": "weak",
+      "_fetched_by": "competitor_tracker.py",
       "_date_mismatch": true,
-      "_source_date": "2025-10-10"
-    },
-    {
-      "id": "comp-709",
-      "date": "2026-04-18",
-      "company": "拼多多",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "TEMU广告平台开放：跨境商家可自助投放Meta/Google/TikTok广告",
-      "body": "TEMU开放广告投放平台，跨境商家可通过TEMU后台自助投放Meta、Google、TikTok等外部渠道广告，TEMU统一管理跨平台投放。",
-      "sowhat": "TEMU自建广告投放平台直接对标亚马逊广告，跨平台投放能力是其核心差异化。快手出海广告需关注TEMU广告对海外流量格局的影响。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "重要通知！TEMU广告已正式上线_跨境魔方",
-          "url": "https://www.upkuajing.com/knowledge/zixun/18245"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-18",
-          "event": "TEMU广告平台开放"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-01-20"
+      "_source_date": "2025-12-23"
     },
     {
       "id": "comp-704",
-      "date": "2026-04-15",
-      "company": "拼多多",
+      "date": "2026-05-31",
+      "company": "小红书",
       "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "拼多多「多多AI」商家工具升级：智能客服+智能定价+智能投放一体化",
-      "body": "拼多多多多AI商家工具完成一体化升级，打通智能客服、智能定价、智能投放三大模块，商家可通过统一AI入口管理店铺运营。",
-      "sowhat": "拼多多在商家AI工具的一体化整合上领先，降低了中小商家运营门槛。快手磁力引擎+快手小店的商家AI工具需加速整合。",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "2026年中国小红书推广公司 - 中华网",
+      "body": "首页*|*资讯*|*军事*|*汽车*|*游戏*|*科技*|*旅游*|*经济*|*娱乐*|*投资*|*文化*|*守艺中华*|*佛教*|*红木*|*韩流*|*简读*|*军事APP*|*头条APP. # 2026年中国小红书推广公司. 2026-05-31 19:15:12       来源：财讯网. 构",
+      "sowhat": "",
       "scope": "国内",
       "sources": [
         {
-          "name": "拼多多数据分析如何智能化？AI+BI赋能电商运营全流程 - FineBI数据分析知识库",
-          "url": "https://www.finebi.com/blog/article/68ae768b28946ecca8878b71"
+          "name": "2026年中国小红书推广公司 - 中华网",
+          "url": "https://m.tech.china.com/redian/2026/0531/052026_1882647.html",
+          "date": "2026-05-31"
         }
       ],
       "timeline": [
         {
-          "date": "2025-06-01",
-          "event": "多多AI工具上线"
-        },
-        {
-          "date": "2026-04-15",
-          "event": "三模块一体化升级"
+          "date": "2026-05-31",
+          "event": "本次动态"
         }
       ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-08-27"
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-705",
+      "date": "2026-06-02",
+      "company": "字节",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "字节跳动 - 财联社",
+      "body": "## 首页## 电报## 话题## 盯盘## VIP## FM## 投研## 下载. 2026-05-29 18:48来自 澎湃新闻. **【字节跳动AI4S团队调整 由杨震原负责管理】**财联社5月29日电，有传言称，字节Seed旗下AI4S团队，正在讨论新一轮组织调整，包括从字节分拆的可能性。5",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "字节跳动 - 财联社",
+          "url": "https://cls.cn/subject/2254",
+          "date": "2026-06-02"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-02",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-706",
+      "date": "2026-05-29",
+      "company": "拼多多",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "拼多多推动生态治理常态化上半年主动出台40余项举措--经济 - 人民网",
+      "body": "### 人民日报报系. 人民日报 人民日报海外版 中国汽车报 中国能源报 健康时报 证券时报 国际金融报网 讽刺与幽默 中国城市报 新闻战线 人民论坛 环球人物 中国经济周刊 民生周刊 国家人文历史 人民周刊 人民数字. ### 旗下网站. 全国重点实验室 环球网 海外网 人民图片 人民网研究院 人",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "拼多多推动生态治理常态化上半年主动出台40余项举措--经济 - 人民网",
+          "url": "http://finance.people.com.cn/n1/2026/0529/c1004-40729788.html",
+          "date": "2026-05-29"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-29",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
     },
     {
       "id": "comp-707",
-      "date": "2026-04-10",
-      "company": "拼多多",
-      "category": "行业动态",
-      "dimension": "财报/行业case",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "拼多多2026Q1财报：营收同比+55%，广告收入(在线营销)增长超预期",
-      "body": "拼多多Q1营收同比增长55%，其中在线营销服务收入（即广告收入）同比增长超60%，AI驱动的广告效率提升是核心驱动。",
-      "sowhat": "拼多多广告收入高增长再次验证AI+电商广告的变现效率。快手电商广告需对标拼多多的AI化程度，关注广告收入增速。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "PDD Holdings (拼多多) 深度价值投资分析报告2026-03-22 · GitHub",
-          "url": "https://gist.github.com/chenzhihaobest-code/36d6b2415329cc0821f7f632a511119d"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-Q1",
-          "event": "拼多多广告收入同比+60%"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-710",
-      "date": "2026-04-08",
-      "company": "拼多多",
-      "category": "产品动态",
-      "dimension": "电商/交易",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "拼多多「直播带货」改版：商品卡片+直播双列信息流升级",
-      "body": "拼多多直播带货页面改版，采用商品卡片和直播间双列信息流，强化AI推荐分发能力和商品-直播联动。",
-      "sowhat": "拼多多持续强化直播带货的产品体验，双列信息流提升内容分发效率。快手直播电商是核心优势，需关注拼多多直播的产品演进。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "抖音电商上牌桌：和阿里拉扯，跟拼多多隔离 - 太平洋科技",
-          "url": "https://www.pconline.com.cn/focus/1938/19384212.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-08",
-          "event": "直播带货双列信息流改版"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-708",
-      "date": "2026-04-05",
-      "company": "拼多多",
-      "category": "政策更新",
-      "dimension": "准入/政策",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "拼多多「品牌黑标」审核标准更新：品牌商家准入门槛提高",
-      "body": "拼多多更新品牌黑标审核标准，提高品牌商家准入门槛，强化品牌化战略。",
-      "sowhat": "拼多多品牌化战略持续推进，品牌商家门槛提高将影响低价白牌商家的广告投放策略。快手电商的品牌化进程可参考拼多多的策略路径。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "拼多多拼品牌扶持计划来了放出50个低门槛“黑标”名额- 零售 - 亿邦动力",
-          "url": "https://www.ebrun.com/20230731/524499.shtml"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-05",
-          "event": "品牌黑标审核标准更新"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-105",
-      "date": "2026-05-29",
-      "company": "小红书",
-      "category": "政策更新",
-      "dimension": "准入/政策",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "聚光《物料审核规范》总目录刷新 · 覆盖24个行业子规则",
-      "body": "聚光帮助中心物料审核规范根页 2026-05-29 整体更新（实测 deep_scraper.py 抓取确认），统一收纳 24 个行业投放细则。本次同步发现医疗行业规则于 2026-04-30 单独刷新，互联网行业 2025-12-30 更新，跨境广告 2025-10-11 更新，旅游酒店 2025-12-30 更新。生服细则关键条款：外卖券需在笔记/图片/视频全程加'优惠券使用存在限制条件'警示语；高危体育项目需加'非专业人士请勿模仿'；宠物殡葬禁投；二手奢侈品需明示'三折以上'否则卡审。",
-      "sowhat": "聚光以根目录滚动刷新形式拉齐全行业审核口径，2-3 周内生服/医疗类素材送审通过率会明显波动。快手生服可借机以稳定审核口径吸纳被卡审客户，并对销售强化'审核效率/确定性'卖点话术。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "聚光帮助中心-物料审核规范根目录",
-          "url": "https://ad.xiaohongshu.com/next_help/docs/7b8f7784f499295fe7a950afe679a523",
-          "date": "2026-05-29"
-        },
-        {
-          "name": "聚光帮助中心-医疗行业规则",
-          "url": "https://ad.xiaohongshu.com/next_help/docs/9c44232f1fa7bbfaf32ac9970ab51430",
-          "date": "2026-04-30"
-        },
-        {
-          "name": "聚光帮助中心-生活服务行业规则",
-          "url": "https://ad.xiaohongshu.com/next_help/docs/1794f60d090022444946117a9e6d5a6a",
-          "date": "2026-05-29"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-05-12",
-          "event": "食品行业投放规则更新"
-        },
-        {
-          "date": "2025-10-11",
-          "event": "跨境广告内容规范刷新"
-        },
-        {
-          "date": "2025-12-30",
-          "event": "互联网行业 + 旅游酒店行业规则更新"
-        },
-        {
-          "date": "2026-04-30",
-          "event": "医疗行业规则独立刷新"
-        },
-        {
-          "date": "2026-05-29",
-          "event": "物料审核规范总目录整体刷新（24 行业拉齐）"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-106",
-      "date": "2026-05-29",
-      "company": "小红书",
-      "category": "政策更新",
-      "dimension": "准入/政策",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "小红书社区公约2.0发布：新增AI辅助工具标明要求、虚假人设禁止",
-      "body": "蒲公英帮助中心发布社区公约2.0，新增AI辅助创作需明确标注、禁止虚假人设、要求有序经营等核心章节。",
-      "sowhat": "社区公约2.0直接影响达人内容创作规范，AI标注要求将改变种草内容生产模式。快手需关注社区治理对达人生态和商业内容的传导影响。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "小红书上线社区公约2.0 明确提出“反对制造对立” - 中国日报网",
-          "url": "http://cn.chinadaily.com.cn/a/202601/20/WS696eef27a310942cc499bf9f.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-29",
-          "event": "社区公约2.0发布"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2026-01-19"
-    },
-    {
-      "id": "comp-107",
-      "date": "2026-05-29",
-      "company": "小红书",
-      "category": "产品动态",
-      "dimension": "营销/分账",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "蒲公英下线品牌分体系，新建品牌信任体系",
-      "body": "小红书蒲公英宣布下线品牌分体系，同步建设全新的品牌信任体系，重构品牌在平台的信用评估机制。",
-      "sowhat": "品牌信用评估体系的重构将影响品牌在蒲公英的投放权益和流量分配。快手磁力引擎的品牌评级体系可关注这一趋势变化。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "万字精华！小红书投放体系全方位解析",
-          "url": "https://zhuanlan.zhihu.com/p/31661329926"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-29",
-          "event": "品牌分下线，品牌信任体系建设"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-108",
-      "date": "2026-05-29",
-      "company": "小红书",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "蒲公英内容加热产品升级：迁移至更稳定流量链路",
-      "body": "蒲公英内容加热产品升级，迁移至更稳定的流量链路，带来更优的互动成本与投放体验。",
-      "sowhat": "内容加热是种草广告的核心产品，链路稳定性升级直接影响广告主投放效果。快手磁力聚星/快接单的内容加热产品需对标升级。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "不同投放阶段，投流预算/工具如何分配？ | 人人都是产品经理",
-          "url": "https://www.woshipm.com/share/6194002.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-06-01",
-          "event": "蒲公英内容加热功能上线"
-        },
-        {
-          "date": "2026-05-29",
-          "event": "产品升级至新流量链路"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-03-18"
-    },
-    {
-      "id": "comp-109",
-      "date": "2026-05-29",
-      "company": "小红书",
-      "category": "产品动态",
-      "dimension": "营销/分账",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "蒲公英合作广场升级：合作笔记入口迁移至创作者中心",
-      "body": "蒲公英合作广场功能升级，合作笔记入口统一迁移至创作者中心，优化品牌与创作者的撮合体验。",
-      "sowhat": "合作撮合入口迁移反映小红书在强化创作者侧的产品体验。快手磁力聚星的撮合效率提升可参考此方向。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "小红书蒲公英平台升级产品手册 | 小红书广告平台",
-          "url": "https://m.xiao-ad.com/jd/2510.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-01-07",
-          "event": "合作广场首次上线"
-        },
-        {
-          "date": "2026-05-29",
-          "event": "合作笔记入口迁移至创作者中心"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-12-05"
-    },
-    {
-      "id": "comp-019",
-      "date": "2026-05-26",
-      "company": "小红书",
-      "category": "电商/交易",
-      "dimension": "电商/交易",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "小红书电商「买手分」机制上线：买手影响力直接挂钩流量分发",
-      "sowhat": "小红书把 KOL/买手个人 IP 与电商 GMV 强绑定，'人货场'模型从'商品中心'转向'买手中心'。快手电商需评估老铁经济与买手经济的协同打法。",
-      "sources": [
-        {
-          "name": "小红书电商的新故事：店播、普通人买手与产业带 - 知乎专栏",
-          "url": "https://zhuanlan.zhihu.com/p/18752287291"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-20",
-          "event": "小红书内测买手等级体系"
-        },
-        {
-          "date": "2026-05-26",
-          "event": "正式发布'买手分'公开规则"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-101",
-      "date": "2026-05-22",
-      "company": "小红书",
-      "category": "产品动态",
-      "title": "小红书「灵犀」种草通推出 ROI 优化模式：CPS 计费 + 闭环转化追踪",
-      "sowhat": "小红书在传统 CPC/CPM 之外，新增按成交分润的 CPS 模式，配合本月种草通 ROI 优化包，意在让中小品牌可以低门槛跑通『种草-成交』闭环。对快手磁力金牛而言，需关注小红书在内容种草到淘宝/京东闭环转化场景的渗透。",
-      "sources": [
-        {
-          "name": "灵犀平台全量外开！一文揭秘灵犀平台数据洞察力（附案例）",
-          "url": "https://www.wsdsocial.com/zh-cn/article/lingxikaifang"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-22",
-          "event": "灵犀种草通 ROI 优化版本灰度"
-        },
-        {
-          "date": "2026-05-15",
-          "event": "前期内测开放 200 个品牌账户"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-08-08"
-    },
-    {
-      "id": "comp-102",
-      "date": "2026-05-19",
-      "company": "小红书",
-      "category": "行业打法",
-      "title": "小红书本地生活『下一家好店』计划：覆盖 50 城 + 商户冷启动免佣",
-      "sowhat": "小红书本地生活以『内容+种草』差异化路径切入，与抖音的『搜索+团购』形成对比。下一家好店计划首批 50 个城市 + 商户前 3 个月免佣金，明显加速本地生活拓城，对美团/抖音本地市场份额产生新分流。",
-      "sources": [
-        {
-          "name": "小红书杀入本地生活到店赛道，或将在10天后正式上线 - 新浪财经",
-          "url": "https://finance.sina.com.cn/roll/2025-09-16/doc-infqsxmi5695457.shtml"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-19",
-          "event": "下一家好店计划官宣"
-        },
-        {
-          "date": "2026-04-10",
-          "event": "广州/成都试点城市跑通模型"
-        }
-      ],
-      "dimension": "行业打法",
-      "data_source": "三方媒体",
-      "tier": "T0",
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-09-16"
-    },
-    {
-      "id": "comp-103",
-      "date": "2026-05-14",
-      "company": "小红书",
-      "category": "产品动态",
-      "title": "小红书广告平台『聚光』V3：新增多目标智能预算 + 行业模板",
-      "sowhat": "聚光 V3 把『单目标-单计划』结构升级为『多目标自适应预算』，对标巨量千川的成单回流机制。新增 8 个行业模板（医美/丽人/餐饮等）大幅降低中小商家开户门槛。",
-      "sources": [
-        {
-          "name": "小红书聚光- Xiaohongshu",
-          "url": "https://ad.xiaohongshu.com/microapp/creativity/inspire"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-14",
-          "event": "聚光 V3 全量上线"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-104",
-      "date": "2026-05-08",
-      "company": "小红书",
-      "category": "数据动态",
-      "title": "小红书 2026Q1 DAU 突破 1.5 亿，电商 GMV 同比+82%",
-      "sowhat": "Q1 财报后内部数据曝光：DAU 1.5 亿（+25% YoY），电商 GMV +82%，买手生态贡献超 60%。小红书的『内容→种草→闭环』飞轮已经初步跑通，对快手电商「短视频+直播」的非泛娱乐人群构成新竞争。",
-      "sources": [
-        {
-          "name": "晚点 LatePost：小红书 Q1 数据复盘",
-          "url": "https://www.latepost.com/",
-          "date": "2026-05-08"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-08",
-          "event": "Q1 经营数据流出"
-        }
-      ],
-      "dimension": "数据动态",
-      "data_source": "三方媒体",
-      "tier": "T0",
-      "_verification": "weak"
-    },
-    {
-      "id": "comp-110",
-      "date": "2026-05-08",
-      "company": "小红书",
-      "category": "行业打法",
-      "dimension": "电商/交易",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "小红书种草学618大促：全域电商增长产品锦囊+种搜一体策略",
-      "body": "小红书种草学5月直播发布618大促策略，涵盖全域电商增长产品锦囊和种搜一体产品共振方法论。",
-      "sowhat": "小红书强化种搜一体的商业闭环，搜索广告与种草内容的联动是其核心差异化策略。快手需关注种草内容→搜索广告→转化的商业链路完整度。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "618种“搜”一体，提升全域品牌力！小红书与淘宝天猫达成战略合作",
-          "url": "https://www.sohu.com/a/892929977_121124373"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-08",
-          "event": "种草学618大促策略直播发布"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-05-07"
-    },
-    {
-      "id": "comp-003",
-      "date": "2026-05-01",
-      "company": "小红书",
-      "category": "产品动态",
-      "title": "小红书整合三大业务，成立 AI 一级部门 Dots + 海外部 Rednote",
-      "sowhat": "组织整合标志商业化提速，AI升格一级战略。种草广告+AI投放赛道竞争将加剧。",
-      "sources": [
-        {
-          "name": "21经济网：小红书重大调整",
-          "url": "https://www.21jingji.com/article/20260501/herald/c73ecfc8194b4ed9a0323ad835e4e84e.html",
-          "date": "2026-05-01"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-10-01",
-          "event": "小红书日活突破1亿，电商GMV同比增长200%"
-        },
-        {
-          "date": "2026-04-01",
-          "event": "小红书电商、社区、商业化三大业务整合重组"
-        },
-        {
-          "date": "2026-05-01",
-          "event": "正式成立AI一级部门Dots，海外部门更名Rednote，同步启动AI投放能力建设"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-111",
-      "date": "2026-04-29",
-      "company": "小红书",
-      "category": "行业打法",
-      "dimension": "行业打法",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "小红书种草学4月密集培训：教育赛道618+餐饮酒水+创作者增长指南",
-      "body": "小红书种草学4月密集发布多场直播培训，覆盖教育赛道618玩法、餐饮酒水种草指南、创作者618增长指南等。",
-      "sowhat": "小红书通过种草学体系化输出行业营销方法论，强化平台对广告主的策略牵引力。快手需加强类似行业营销知识体系的建设。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "小红书618｜餐饮酒水&食品饮料行业种草指南 - 搜狐",
-          "url": "https://www.sohu.com/a/1018948647_121666195?scm=10001.8085_13-8085_13.0.0-0-0-0-0.0"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-29",
-          "event": "种草学4月多行业培训集中发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-017",
       "date": "2026-05-28",
-      "company": "字节",
-      "category": "产品/接入",
-      "dimension": "产品动态",
+      "company": "腾讯",
+      "category": "产品动态",
+      "dimension": "AI/技术",
       "data_source": "三方媒体",
       "tier": "T1",
-      "title": "抖音生服「商家智能助手」灰度：客服/选品/分析一体化，对标拼多多多多AI",
-      "sowhat": "字节正在用 AI Agent 重构商家工作台，自动化客服+智能选品+实时数据洞察，明显降低中小商家运营门槛。快手磁力魔方需思考类似 Agent 化能力，否则 KA 商家可能转移。",
-      "sources": [
-        {
-          "name": "[PDF] AI应用新纪元：引爆“人工智能+消费”革命",
-          "url": "https://aigc.idigital.com.cn/djyanbao/%E3%80%90%E5%8D%8E%E8%A5%BF%E8%AF%81%E5%88%B8%E3%80%91AI%E5%BA%94%E7%94%A8%E6%96%B0%E7%BA%AA%E5%85%83%EF%BC%9A%E5%BC%95%E7%88%86%E2%80%9C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%2B%E6%B6%88%E8%B4%B9%E2%80%9D%E9%9D%A9%E5%91%BD-2025-03-06.pdf"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-15",
-          "event": "字节灰度测试'商家智能助手' Beta 版"
-        },
-        {
-          "date": "2026-05-28",
-          "event": "36氪报道灰度名单扩到 500 家 GMV TOP 商家"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-018",
-      "date": "2026-05-27",
-      "company": "字节",
-      "category": "营销/分账",
-      "dimension": "营销/分账",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "巨量引擎深转能力升级：行为预估到点击-激活-付费全链路打通",
-      "sowhat": "巨量引擎把深度转化从'激活'拓展到'付费/复购'全链路，广告主投放 ROI 可观测性大幅提升。快手磁力台度需对齐深度转化路径，否则 KA 预算可能向字节倾斜。",
-      "sources": [
-        {
-          "name": "巨量引擎2.0数据接入--客户数据平台-火山引擎",
-          "url": "https://www.volcengine.com/docs/6356/1346981"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-27",
-          "event": "巨量引擎《深度转化能力升级》白皮书发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-013",
-      "date": "2026-05-27",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "抖音短剧UBMax×AIGC动态创意：短剧投放全面AI化",
-      "body": "字节推出短剧UBMax自动化投放产品，结合AIGC动态创意生成，广告主只需上传短剧内容，系统自动生成多版本素材并智能投放。",
-      "sowhat": "短剧行业是快手生服重点赛道，字节将短剧投放全面AI化将大幅降低短剧客户投放门槛。快手需加速短剧广告的AI化进程，尤其素材自动生成和投放自动化。",
+      "title": "2026腾讯游戏发布会：超40款游戏最新动态，多项游戏AI应用新进展",
+      "body": "# 2026腾讯游戏发布会：超40款游戏最新动态，多项游戏AI应用新进展. 2026-05-28 07:07发布于广东腾讯游戏官方账号. **5月27日，****SPARK 2026腾讯游戏发布会**在线上举行。发布会上，在**“制作”“发行”“投资”**三大篇章，共计**42款海内外游戏**分享了",
+      "sowhat": "",
       "scope": "国内",
       "sources": [
         {
-          "name": "巨量营销 · UBMAX×AIGC动态创意",
-          "url": "https://support.oceanengine.com/support/cc/article/6839571842055258126?spaceId=195",
-          "date": "2026-05-27"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-01-01",
-          "event": "短剧UBMax启动内测"
-        },
-        {
-          "date": "2026-05-27",
-          "event": "AIGC动态创意+UBMax全量上线"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-014",
-      "date": "2026-05-27",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "抖音生活服「私信意向自采」投放策略：打通线索经营闭环",
-      "body": "字节发布渠道版私信意向自采投放及接待策略，广告主可通过私信场景直接获取用户意向并进行智能接待跟进。",
-      "sowhat": "私信意向自采将线索获取与即时沟通打通，缩短生服商家从曝光到转化的路径。快手线索广告（磁力智投/本地推）在私信场景的闭环能力需对标。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "抖音生活服务私信产品全面升级，让好生意一聊就成 - China Daily",
-          "url": "https://ex.chinadaily.com.cn/exchange/partners/82/rss/channel/cn/columns/sz8srm/stories/WS68552312a310205377039499.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-03-01",
-          "event": "私信意向自采开始内测"
-        },
-        {
-          "date": "2026-05-27",
-          "event": "渠道版本投放策略发布"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-06-20"
-    },
-    {
-      "id": "comp-019-new",
-      "date": "2026-05-26",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "巨量本地推2026产品资料合集发布：本地生意一推就来",
-      "body": "字节发布「本地生意 一推就来」2026本地推产品资料合集，涵盖本地推全系产品的最新功能、投放策略和行业案例。",
-      "sowhat": "本地推是字节本地生活广告的核心产品，年度资料合集发布说明其产品矩阵趋于成熟。快手需系统化建设本地推的对标体系和竞争情报库。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "2026年Q2本地生活服务商家如何用巨量本地推吸引周边用户_核心_素材_流量",
-          "url": "https://www.sohu.com/a/1028174219_122618777"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-06-01",
-          "event": "巨量本地推上线"
-        },
-        {
-          "date": "2026-05-26",
-          "event": "2026年度产品资料合集发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-022",
-      "date": "2026-05-25",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "抖音生活服务×巨量本地推：搜索营销资料合集发布",
-      "body": "字节发布本地推搜索营销资料合集，系统阐述搜索广告在本地生活场景的投放策略和案例。",
-      "sowhat": "字节在本地生活搜索广告上持续加码，搜索是本地生活的高意图流量入口。快手需强化本地推/搜索广告的能力建设。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "巨量本地推搜索能力 · 巨量学院",
-          "url": "https://school.oceanengine.com/premium/course/7336028836495361840",
-          "date": "2026-05-25"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-03-01",
-          "event": "本地推上线搜索广告能力"
-        },
-        {
-          "date": "2026-05-25",
-          "event": "搜索营销资料合集发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-713",
-      "date": "2026-05-20",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "抖音「豆包AI」全面接入抖音电商：智能导购+AI客服+素材生成三位一体",
-      "body": "字节将豆包AI全面接入抖音电商场景，覆盖智能导购（商品推荐问答）、AI客服（售前售后自动回复）、素材生成（直播切片+商品讲解视频）。",
-      "sowhat": "字节在AI×电商的融合上持续领先，豆包从对话工具升级为电商全链路AI底座。快手可灵AI与快手电商的融合程度需对标加速。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "豆包已接入抖音电商，内测AI购物",
-          "url": "https://www.amassai.net/news/doubaoyijierudouyindianshangneiceaigouwu"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-08-01",
-          "event": "豆包AI发布"
-        },
-        {
-          "date": "2026-04-01",
-          "event": "豆包付费版推出"
-        },
-        {
-          "date": "2026-05-20",
-          "event": "豆包全面接入抖音电商"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2026-03-31"
-    },
-    {
-      "id": "comp-023",
-      "date": "2026-05-19",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "抖音「AI即用+私信意向线索」Q2代理商大赛：推动AI广告工具规模化",
-      "body": "字节启动Q2季度代理商大赛，以AI即用工具和私信意向线索为核心赛道，激励代理商使用AI广告工具提升投放效率。",
-      "sowhat": "字节通过代理商竞赛机制推动AI广告工具的规模化使用。快手需关注类似的代理商激励和AI工具推广策略。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "巨量引擎商业开放平台 · UBMax",
-          "url": "https://open.oceanengine.com/labels/34/docs/1740868093375503",
-          "date": "2026-05-19"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-19",
-          "event": "Q2代理商大赛启动"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-001",
-      "date": "2026-05-18",
-      "company": "字节",
-      "category": "产品动态",
-      "title": "字节本地生活战略：抖省省上线→五一团购爆发→出单宝发布，三步连贯布局",
-      "sowhat": "字节本地生活Q1-Q2连续出招：抖省省（3月）主打搜索工具属性切美团大众点评；五一团购同比大涨60%（5月）验证本地生活消费回暖；出单宝（5月18日）主打中小商家零门槛托管、按核销计费，精准打击快手本地推的增量市场。快手需在中小商家侧提供更清晰的托管+按效果付费方案。",
-      "sources": [
-        {
-          "name": "36氪：抖音【分家】干美团",
-          "url": "https://m.36kr.com/p/3709581605580932",
-          "date": "2026-03-05"
-        },
-        {
-          "name": "澎湃新闻：抖音生活服务推出智能托管产品出单宝",
-          "url": "https://www.thepaper.cn/newsDetail_forward_33193631",
-          "date": "2026-05-18"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-03-05",
-          "event": "抖省省独立App上线，主打搜索逻辑对标美团/大众点评"
-        },
-        {
-          "date": "2026-04-07",
-          "event": "清明假期\"赏花+\"团购订单量环比节前增长超88%"
-        },
-        {
-          "date": "2026-05-07",
-          "event": "五一文旅沉浸游和就近休闲游双向升温，酒店宾馆、地方菜抖音团购增长超6成"
-        },
-        {
-          "date": "2026-05-18",
-          "event": "正式发布智能托管产品\"出单宝\"，出单全托管、核销才计费，首期定向单体中小商家开放"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-015",
-      "date": "2026-05-18",
-      "company": "字节",
-      "category": "产品发布",
-      "title": "抖音生活服务推出「出单宝」：出单全托管+核销才计费，精准切中小商家",
-      "sowhat": "出单宝是字节在本地生活商家侧的重大产品突破：一键托管（AI自动投放）+按核销结果计费，彻底解决中小商家「不会投、不敢投」的痛点。这个模式与快手本地推现有产品存在直接竞争，且字节首期定向单体中小商家，这正是快手在下沉市场的核心阵地。快手本地推是否有同类「零门槛+效果付费」产品迫在眉睫。",
-      "timeline": [
-        {
-          "date": "2026-03-01",
-          "event": "字节内部开始测试本地生活智能托管产品"
-        },
-        {
-          "date": "2026-05-07",
-          "event": "五一假期本地团购数据验证需求爆发，加速产品上线"
-        },
-        {
-          "date": "2026-05-18",
-          "event": "出单宝正式发布，首期定向单体中小商家开放，出单全托管核销才计费"
-        }
-      ],
-      "sources": [
-        {
-          "name": "澎湃新闻：抖音生活服务推出智能托管产品出单宝",
-          "url": "https://www.thepaper.cn/newsDetail_forward_33193631",
-          "date": "2026-05-18"
-        },
-        {
-          "name": "节点财经：抖音生活服务推出出单宝-出单全托管核销才计费",
-          "url": "https://www.jiediancj.com/archives/42093",
-          "date": "2026-05-19"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-024",
-      "date": "2026-05-14",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "抖音「智能创作工具」产品手册发布：AI视频+图文生成一体化",
-      "body": "字节发布智能创作工具产品手册（视频+图文），为广告主提供AI视频生成和AI图文创作的一站式工具。",
-      "sowhat": "字节在AI创意工具上持续投入，从手动制作到AI自动生成的转变将改变素材生产模式。快手「可灵」在广告素材场景的商业化落地需对标。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "实测抖音AI图文生成工具，帮你告别内容创作焦虑 - 搜狐",
-          "url": "https://www.sohu.com/a/968219839_122555637"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-03-01",
-          "event": "智能创作工具内测"
-        },
-        {
-          "date": "2026-05-14",
-          "event": "产品手册正式发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-025",
-      "date": "2026-05-12",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "巨量本地推「搜索抢首屏」产品上线：门店全域调控新工具",
-      "body": "字节推出本地推搜索抢首屏产品，广告主可在门店全域推广中设置搜索关键词抢占搜索结果首屏位置。",
-      "sowhat": "搜索抢首屏是本地生活搜索广告的杀器级产品，直接抢占高意图搜索流量。快手需评估是否提供类似搜索广告优先展示能力。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "抖音门店推广：巨量本地推「搜索广告」上线！",
-          "url": "https://www.neovistads.com/zh/chinese-douyin-store-promotion-huge-local-promotion-search-ads-launched.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-01",
-          "event": "门店全域推广上线"
-        },
-        {
-          "date": "2026-05-12",
-          "event": "搜索抢首屏产品上线"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-11-17"
-    },
-    {
-      "id": "comp-016",
-      "date": "2026-05-07",
-      "company": "字节",
-      "category": "数据动态",
-      "title": "五一假期抖音本地生活团购爆发：酒店/地方菜订单增长超6成，丽人消费升温",
-      "sowhat": "五一假期抖音本地生活团购增长超60%，且4月28日就已有报道「出游变美丽人消费迎来增长」。这说明字节本地生活GMV在旺季节点已形成显著规模，且丽人/美容行业是旺季核心受益赛道。快手在五一假期本地生活是否有可比数据？节假日流量承接能力和商家备货组品能力是差距所在。",
-      "timeline": [
-        {
-          "date": "2026-04-28",
-          "event": "出游变美需求升温，丽人消费迎来增长（五一前夕）"
-        },
-        {
-          "date": "2026-05-07",
-          "event": "五一假期数据：文旅沉浸游和就近休闲游双向升温，酒店宾馆、地方菜抖音团购增长超6成"
-        },
-        {
-          "date": "2026-05-18",
-          "event": "顺势推出出单宝，将节假日流量红利转化为商家广告增量"
-        }
-      ],
-      "sources": [
-        {
-          "name": "中经网：五一文旅沉浸游和就近休闲游双向升温，抖音团购增长超6成",
-          "url": "https://finance.ce.cn/home/jrzq/dc/index.shtml",
-          "date": "2026-05-07"
-        },
-        {
-          "name": "中经网：五一前夕出游变美需求升温丽人消费迎来增长",
-          "url": "https://finance.ce.cn/home/jrzq/dc/index.shtml",
-          "date": "2026-04-28"
-        }
-      ],
-      "dimension": "数据动态",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-027",
-      "date": "2026-05-07",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "本地推线索业务Q2渠道规划：全量推进私信+线索一体化",
-      "body": "字节发布本地推线索业务Q2渠道规划，重点推进私信场景与线索经营的一体化，覆盖招商加盟、家居、教育等线索行业。",
-      "sowhat": "字节在本地推线索业务上的策略性推进将直接竞争快手本地推的线索广告市场。快手需明确本地推线索业务的产品路线图。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "平台放大招！AD 私信能力并入本地推，线索生意风口正劲！",
-          "url": "https://zhuanlan.zhihu.com/p/1934422936040747149"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-01-01",
-          "event": "本地推线索业务启动"
-        },
-        {
-          "date": "2026-05-07",
-          "event": "Q2渠道规划发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-026",
-      "date": "2026-05-06",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "即梦Seedance 2.0发布：全新多模态AI创作体验",
-      "body": "字节即梦发布Seedance 2.0，支持全新的多模态创作体验，包括AI视频生成、人物口播、智能剪辑等功能。",
-      "sowhat": "即梦是字节在AI创意工具矩阵中的重要一环，Seedance 2.0的发布将加速AI素材在广告投放中的应用。快手可灵需保持技术迭代节奏。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "ByteDance Seed · Seedance 2.0 正式发布",
-          "url": "https://seed.bytedance.com/zh/blog/official-launch-of-seedance-2-0",
-          "date": "2026-05-06"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-11-01",
-          "event": "即梦Seedance 1.0发布"
-        },
-        {
-          "date": "2026-05-06",
-          "event": "Seedance 2.0发布"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2026-02-12"
-    },
-    {
-      "id": "comp-007",
-      "date": "2026-05-04",
-      "company": "字节",
-      "category": "产品动态",
-      "title": "豆包推出付费版（68元/月），字节 AI 商业化路径明确化",
-      "sowhat": "豆包从免费到付费的跃迁意味着字节开始正式将AI转化为独立商业体。更值得关注的是字节AI+广告的双轮闭环路径：豆包作为流量入口，最终通过巨量引擎广告变现。若这条路径跑通，字节的广告算法和投放精准度将进一步领先，对快手广告产品形成更大压力。",
-      "sources": [
-        {
-          "name": "新华网：豆包收费，国产大模型会全面付费吗",
-          "url": "http://www.xinhuanet.com/globe/20260526/8761919cbaa54cb0b8b95c0d38f87e80/c.html",
-          "date": "2026-05-26"
-        },
-        {
-          "name": "钛媒体：用户越多，字节越穷",
-          "url": "https://www.tmtpost.com/7976994.html",
-          "date": "2026-05-06"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-04",
-          "event": "豆包推出付费版（68元/月），字节AI正式商业化，AI+广告双轮闭环路径成型"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2026-03-11"
-    },
-    {
-      "id": "comp-028",
-      "date": "2026-04-28",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "巨量代理×火山Seedance：视频生成大模型共建方案及激励政策",
-      "body": "巨量引擎代理与火山引擎Seedance团队推出视频生成大模型共建方案，为代理商提供AI视频生成能力和激励政策。",
-      "sowhat": "字节在推动代理商体系拥抱AI视频生成，通过激励政策加速AI素材在广告中的渗透。快手需建立代理商AI赋能体系。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "火山引擎 · 即梦 AI Seedance 2.0 教程",
-          "url": "https://www.volcengine.com/article/41574",
-          "date": "2026-04-28"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-28",
-          "event": "火山Seedance共建方案发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-008",
-      "date": "2026-04-27",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "巨量引擎Changelog：部分接口6月停止支持旧版bp_id入参+诊断建议接口新增内容",
-      "body": "巨量引擎开放平台发布4月更新：部分接口将于6月中上旬停止支持旧版工作台组织账户维度(bp_id)入参；诊断建议接口新增诊断分析内容；视频素材标签接口新增暗水印搬运素材标识字段。",
-      "sowhat": "巨量引擎API持续迭代，组织账户维度迁移影响代理和大型广告主的API对接。快手Marketing API需对标巨量引擎的接口演进节奏。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "巨量引擎开放平台 Changelog",
-          "url": "https://open.oceanengine.com/changelog/1",
-          "date": "2026-04-27"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-27",
-          "event": "4月Changelog发布：bp_id迁移通知+诊断接口+水印标识"
-        },
-        {
-          "date": "2026-06-01",
-          "event": "bp_id入参停止支持生效"
-        }
-      ],
-      "_verification": "weak"
-    },
-    {
-      "id": "comp-010",
-      "date": "2026-04-25",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "豆包AI全面接入巨量引擎投放后台：广告主可直接用豆包生成素材",
-      "body": "字节将豆包AI能力深度集成到巨量引擎投放后台，广告主可在创建广告时直接调用豆包生成文案和图片素材。",
-      "sowhat": "字节在打通AI与广告投放的闭环上领先一步，豆包→巨量引擎的素材生成链路将大幅降低广告主创意成本。快手可灵与磁力引擎的深度整合需对标加速。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "豆包能投广告吗？一文讲透豆包AI营销新路径（2026年） - 品牌2025 - 企业博客",
-          "url": "https://www.cnblogs.com/bsoo/p/19609494"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-08-01",
-          "event": "豆包AI正式发布"
-        },
-        {
-          "date": "2026-04-01",
-          "event": "豆包付费版推出"
-        },
-        {
-          "date": "2026-04-25",
-          "event": "豆包接入巨量引擎投放后台"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2026-02-12"
-    },
-    {
-      "id": "comp-029",
-      "date": "2026-04-22",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "巨量本地推PC端「直播加热」产品上线：直播间引流工具升级",
-      "body": "字节在巨量本地推PC端上线直播加热产品，广告主可在PC端对直播间进行加热推广，提升直播间的曝光和转化。",
-      "sowhat": "直播加热是本地生活直播场景的核心投流工具，PC端上线降低大客户操作门槛。快手需关注直播投流工具的PC端体验。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "巨量本地推 PC 端操作指引 · 巨量学院",
-          "url": "https://school.oceanengine.com/premium/course/7336028836495361840/7436028846495360235",
-          "date": "2026-04-22"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-10-01",
-          "event": "直播加热移动端上线"
-        },
-        {
-          "date": "2026-04-22",
-          "event": "PC端直播加热上线"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-031",
-      "date": "2026-04-22",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "抖音品牌广告支持LBS智能投放：基于来客门店+生服落地页",
-      "body": "字节品牌广告升级，抖音推荐信息流和TopView广告本地场景支持基于LBS智能投放，可定向到来客门店和生活服务落地页。",
-      "sowhat": "品牌广告与本地LBS的结合是字节本地生活广告的重要升级，打通品牌预算与本地投放。快手需关注品牌广告在本地场景的投放能力。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "抖音广告投放基于LBS的门店导流功能是怎样的？",
-          "url": "https://m.tui39.com/jd/1195.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-22",
-          "event": "品牌广告LBS智能投放入口开放"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2021-05-27"
-    },
-    {
-      "id": "comp-011",
-      "date": "2026-04-20",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "巨量千川「全域推广」升级：直播+短视频+搜索三场景一体化",
-      "body": "巨量千川全域推广能力升级，支持直播、短视频、搜索三个场景的一体化投放，广告主可在一个计划中覆盖所有流量场景。",
-      "sowhat": "三场景一体化投放是电商广告的终局方向，简化广告主操作的同时提升平台流量利用效率。快手金牛电商需关注场景整合能力。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "好消息！巨量千川升级新能力新模式，在抖音做生意更简单了！",
-          "url": "https://cc.oceanengine.com/academy/article-detail/da79e72154ad5da91a457e35aa262607"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-20",
-          "event": "三场景一体化升级"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-030",
-      "date": "2026-04-20",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "巨量本地推「省心月卡」上线：中小商家按月付费的托管投放方案",
-      "body": "字节推出本地推省心月卡，中小商家可按月付费获得托管投放服务，降低本地推使用门槛。",
-      "sowhat": "省心月卡是字节在中小商家本地推投放上的关键策略，月付托管降低决策门槛。快手需评估中小商家托管投放的定价策略。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "巨量本地推 App 端操作指引 · 巨量学院",
-          "url": "https://school.oceanengine.com/premium/course/7336028836495361840/7436028846495360229",
-          "date": "2026-04-20"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-20",
-          "event": "省心月卡正式上线"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-009",
-      "date": "2026-04-14",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "巨量引擎Changelog 4月更新：自动化投放能力持续增强",
-      "body": "巨量引擎4月中旬更新涵盖自动化投放多项能力增强，包括创意优化、出价策略、人群定向的AI化升级。",
-      "sowhat": "巨量引擎保持约每两周一次的Changelog更新频率，自动化投放能力持续迭代。快手磁力引擎需维持类似的公开透明更新机制。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "frank (@frank08686668) / Posts / X",
-          "url": "https://x.com/frank08686668"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-03-26",
-          "event": "巨量引擎3月Changelog发布"
-        },
-        {
-          "date": "2026-04-14",
-          "event": "4月中旬Changelog发布"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2019-03-30"
-    },
-    {
-      "id": "comp-012",
-      "date": "2026-04-08",
-      "company": "字节",
-      "category": "行业动态",
-      "dimension": "财报/行业case",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "字节2026年广告收入目标3000亿+：AI驱动的自动化投放是核心策略",
-      "body": "据媒体报道，字节2026年广告收入目标超过3000亿元，AI驱动的自动化投放和豆包AI赋能被列为支撑该目标的核心策略。",
-      "sowhat": "字节广告收入的超大规模和AI驱动策略为行业树立标杆。快手需关注自身广告收入增速与字节的差距，评估AI投放能力的对标准线。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "[PDF] AI应用重塑流量格局，字节阿里腾讯C端布局加快",
-          "url": "https://www.cdut.edu.cn/__local/F/C9/EB/C02614CCC4A0369B16A7EC1C52A_B628CD50_6125D1.pdf"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-08",
-          "event": "2026目标3000亿+"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2026-01-03"
-    },
-    {
-      "id": "comp-032",
-      "date": "2026-04-01",
-      "company": "字节",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "本地推「线索直播」产品操作手册发布：直播+线索双场景打通",
-      "body": "字节发布本地推线索直播产品操作手册，广告主可在直播间直接收集用户线索，打通直播场景与线索经营的闭环。",
-      "sowhat": "线索直播是本地生活直播的新方向，将直播带货逻辑平移到线索收集场景。快手的线索广告与直播场景的结合能力需对标。",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "家居行业本地推2.0线索直播手册 - 知乎专栏",
-          "url": "https://zhuanlan.zhihu.com/p/1961508211849950313"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-01",
-          "event": "线索直播产品操作手册发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-419",
-      "date": "2026-05-27",
-      "company": "TikTok",
-      "category": "产品动态",
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "TikTok与Salesforce合作：CRM数据无缝集成广告平台",
-      "body": "TikTok广告主可实时将潜在客户数据传输至Salesforce Marketing Cloud，实现广告投放与CRM系统的深度打通。",
-      "sowhat": "TikTok在推动广告数据闭环，与头部CRM打通是关键一步。快手需关注磁力引擎与主流CRM/SCRM的集成程度，这是争抢预算型广告主的核心能力。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "TikTok for Business Blog",
-          "url": "https://www.tiktok.com/business/en/blog",
-          "date": "2026-05-27"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-27",
-          "event": "TikTok×Salesforce集成宣布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-420",
-      "date": "2026-05-13",
-      "company": "TikTok",
-      "category": "产品发布",
-      "dimension": "电商/交易",
-      "data_source": "竞媒官方",
-      "tier": "T0",
-      "title": "TikTok Shop推出GMV Max：电商自动化增长引擎",
-      "body": "GMV Max是TikTok Shop的全新电商自动化解决方案，通过AI驱动的全链路优化最大化整体ROI。",
-      "sowhat": "TikTok电商广告从手动优化走向AI全自动，GMV Max直接对标Google AI Max/PMax。快手磁力金牛/金牛电商的AI自动化程度需对标加速。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "TikTok for Business Blog",
-          "url": "https://www.tiktok.com/business/en/blog",
-          "date": "2026-05-13"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-13",
-          "event": "GMV Max正式发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-421",
-      "date": "2026-05-13",
-      "company": "TikTok",
-      "category": "产品发布",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "TikTok推出Symphony创意AI套件：生成式AI赋能全链路创作",
-      "body": "Symphony是基于生成式AI的创意解决方案套件，覆盖TikTok内容创作的脚本、素材生成、剪辑优化等环节。",
-      "sowhat": "TikTok在AI创意工具上持续投入，Symphony对标Google Asset Studio。快手可灵/即梦等AI创意工具在广告素材场景的落地需加速。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "TikTok for Business Blog",
-          "url": "https://www.tiktok.com/business/en/blog",
-          "date": "2026-05-13"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-13",
-          "event": "Symphony创意AI套件全面升级"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-422",
-      "date": "2026-05-13",
-      "company": "TikTok",
-      "category": "产品发布",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "TikTok推出Smart+和TopReach：AI自动化+最大化触达双策略",
-      "body": "Smart+是AI自动化广告方案，TopReach整合TopView和Top Feed实现最大化触达。两项产品同时发布，覆盖自动化投放和品牌曝光两大场景。",
-      "sowhat": "TikTok在效果和品牌两条线上同步推进AI化。快手需关注品牌广告（开屏/TopView）的AI化程度，以及效果广告自动化与TikTok Smart+的差距。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "TikTok for Business Blog",
-          "url": "https://www.tiktok.com/business/en/blog",
-          "date": "2026-05-13"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-06-01",
-          "event": "TikTok推出Smart Performance Campaign"
-        },
-        {
-          "date": "2026-05-13",
-          "event": "Smart+和TopReach同时发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-425",
-      "date": "2026-05-13",
-      "company": "TikTok",
-      "category": "产品发布",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "TikTok「Branded Buzz」品牌内容广告全量：品牌+达人内容一体化",
-      "body": "Branded Buzz是TikTok全新的品牌内容广告产品，将品牌曝光与达人内容营销一体化，广告主可同时投放品牌广告和达人种草内容。",
-      "sowhat": "品牌+达人内容一体化是内容广告的新形态，TikTok在此方向上持续创新。快手需关注品牌广告与磁力聚星的达人内容联动能力。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "TikTok for Business Blog",
-          "url": "https://www.tiktok.com/business/en/blog",
-          "date": "2026-05-13"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-13",
-          "event": "Branded Buzz全量上线"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-425-add1",
-      "date": "2026-05-13",
-      "company": "TikTok",
-      "category": "产品发布",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "TikTok「Growth Max for Mini Series」短剧增长方案：内容+广告一体化",
-      "body": "TikTok推出面向短剧的Growth Max方案，将短剧内容运营与广告投放一体化，帮助短剧创作者和平台实现双赢增长。",
-      "sowhat": "短剧是内容广告的新兴场景，TikTok率先推出系统化增长方案。快手在短剧广告方面的产品化程度可对标此方案。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "TikTok for Business Blog",
-          "url": "https://www.tiktok.com/business/en/blog",
-          "date": "2026-05-13"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-13",
-          "event": "Growth Max for Mini Series发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-425-add2",
-      "date": "2026-05-13",
-      "company": "TikTok",
-      "category": "产品发布",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "TikTok「Market Scope」第一方分析平台：全漏斗用户洞察",
-      "body": "TikTok推出Market Scope第一方分析平台，帮助广告主识别、理解和激活全漏斗用户群体，提供可落地的受众洞察。",
-      "sowhat": "第一方分析平台是广告平台数据能力的重要体现。快手需关注磁力引擎的数据分析工具是否提供类似的全漏斗用户洞察。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "TikTok for Business Blog",
-          "url": "https://www.tiktok.com/business/en/blog",
-          "date": "2026-05-13"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-13",
-          "event": "Market Scope分析平台发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-425-add3",
-      "date": "2026-05-13",
-      "company": "TikTok",
-      "category": "产品发布",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "TikTok「Attribution Portfolio」归因套件：更完整的ROI视角",
-      "body": "TikTok推出全新归因衡量套件Attribution Portfolio，提供更完整的多触点ROI视角，帮助广告主准确评估TikTok广告效果。",
-      "sowhat": "广告归因是广告主预算分配的核心依据。TikTok在归因能力上的升级将增强其对效果广告主的吸引力。快手需持续优化广告归因精度。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "TikTok for Business Blog",
-          "url": "https://www.tiktok.com/business/en/blog",
-          "date": "2026-05-13"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-13",
-          "event": "Attribution Portfolio归因套件发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-711",
-      "date": "2026-05-15",
-      "company": "Snap",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "Snap AR广告升级：Lens Studio 5.0支持AI生成AR滤镜",
-      "body": "Snap发布Lens Studio 5.0，利用AI能力降低AR滤镜创作门槛，广告主可用AI快速生成品牌AR互动体验。",
-      "sowhat": "AR广告是差异化广告形态，Snap在AI+AR的融合上领先。快手需关注AR特效在广告场景的创新应用机会。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Snap 通过Lens Studio 5.0 推出具有AI 功能的高级AR 工具",
-          "url": "https://appmaster.io/zh/news/snap-tui-chu-xian-jin-de-ar-gong-ju-ai-gong-neng-lens-studio-5"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-06-01",
-          "event": "Lens Studio 4.0发布"
-        },
-        {
-          "date": "2026-05-15",
-          "event": "Lens Studio 5.0 AI生成AR滤镜"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2023-11-10"
-    },
-    {
-      "id": "comp-712",
-      "date": "2026-04-20",
-      "company": "Snap",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "Snap推出「Snap AI」广告创意工具：自动生成竖屏视频广告",
-      "body": "Snap推出Snap AI广告创意工具，广告主输入产品信息即可自动生成适配竖屏格式的视频广告。",
-      "sowhat": "竖屏视频广告AI生成是所有内容平台的共性需求。快手的AI创意工具对标Snap AI和TikTok Symphony。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Snapchat推出全新生成式AI广告产品传音旗下Infinix借势在中东实现 ...",
-          "url": "https://www.ebrun.com/20250604/582053.shtml"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-20",
-          "event": "Snap AI广告创意工具推出"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-401",
-      "date": "2026-05-28",
-      "company": "OpenAI",
-      "category": "产品动态",
-      "title": "OpenAI Sora 2 商用 API 开放：1080P 60s 视频生成 0.05$/秒",
-      "sowhat": "Sora 2 商业 API 落地，视频生成成本进入工业级（合 0.36¥/秒），叠加 Pika/可灵/即梦推出企业版，整个素材生产链路全面被 AIGC 重构。对快手/抖音侧素材代生产、广告创意、达人辅助 IP 影响巨大。",
-      "sources": [
-        {
-          "name": "Sora 2 发布 - OpenAI",
-          "url": "https://openai.com/zh-Hans-CN/index/sora-2"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-28",
-          "event": "Sora 2 API 开放"
-        },
-        {
-          "date": "2026-04",
-          "event": "Sora 2 模型发布"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T0",
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-416",
-      "date": "2026-05-22",
-      "company": "OpenAI",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "OpenAI被Gartner评为企业级编程智能体领导者",
-      "body": "OpenAI的Codex被Gartner评为企业级编程智能体领导者，标志着AI编程从辅助工具进入企业级应用阶段。",
-      "sowhat": "AI编程智能体的企业级认可将加速AI在商业应用中的渗透。快手商业化内部开发效率提升可关注类似工具的应用。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Gartner AI 编程榜：阿里云挑战者，字节BytePlus 细分玩家 - 网易",
-          "url": "https://www.163.com/dy/article/KTN06Q300511D6RL.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-08-01",
-          "event": "Codex首次发布"
-        },
-        {
-          "date": "2026-05-22",
-          "event": "被Gartner评为领导者"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-417",
-      "date": "2026-05-18",
-      "company": "OpenAI",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "OpenAI与Dell合作：Codex引入混合和本地部署企业环境",
-      "body": "OpenAI与Dell Technologies合作，将Codex引入混合云和本地部署企业环境，突破纯云端限制。",
-      "sowhat": "OpenAI开始布局企业本地部署市场，AI基础设施合作模式逐渐清晰。快手在AI基建方面的布局可关注混合部署趋势。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "速报：OpenAI 携手戴尔，Codex 正式进军企业级AI 系统",
-          "url": "https://x.com/Techub_News/status/2056445941649903734"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-18",
-          "event": "OpenAI×Dell混合部署合作宣布"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2023-04-03"
-    },
-    {
-      "id": "comp-418",
-      "date": "2026-05-15",
-      "company": "OpenAI",
-      "category": "产品发布",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "ChatGPT推出全新个人理财体验",
-      "body": "ChatGPT新增个人理财功能，用户可通过对话管理预算、分析支出、获得理财建议。",
-      "sowhat": "ChatGPT正从通用对话工具向垂直场景渗透，金融/理财场景是其商业化变现的重要方向。快手需关注AI在垂直场景（如本地生活、金融）的渗透趋势。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "ChatGPT 中的全新个人理财体验",
-          "url": "https://openai.com/zh-Hans-CN/index/personal-finance-chatgpt"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-11-01",
-          "event": "ChatGPT推出插件生态"
-        },
-        {
-          "date": "2026-05-15",
-          "event": "个人理财功能上线"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-006",
-      "date": "2026-05-07",
-      "company": "OpenAI",
-      "category": "产品动态",
-      "title": "OpenAI 正式在 ChatGPT 中测试广告，开放新广告购买方式",
-      "sowhat": "AI对话产品商业化进入新阶段，ChatGPT广告或重构【对话即广告】模式。国内AI应用（豆包/Kimi）面临跟进压力。对快手：对话式广告入口开始与短视频内容广告竞争品牌主预算，需关注AI广告生态对现有广告投放逻辑的颠覆时间窗。",
-      "sources": [
-        {
-          "name": "OpenAI官方：在ChatGPT中测试广告",
-          "url": "https://openai.com/zh-Hans-CN/index/testing-ads-in-chatgpt/",
-          "date": "2026-05-07"
-        },
-        {
-          "name": "OpenAI官方：New ways to buy ChatGPT ads",
-          "url": "https://openai.com/index/new-ways-to-buy-chatgpt-ads/",
-          "date": "2026-05-05"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-426",
-      "date": "2026-04-27",
-      "company": "OpenAI",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "OpenAI Codex构建可自我改进的税务智能体：AI Agent企业应用案例",
-      "body": "OpenAI发布用Codex构建可自我改进的税务智能体案例，展示AI Agent在企业垂直场景中的自主学习和优化能力。",
-      "sowhat": "AI Agent在垂直场景（税务、法律、营销等）的落地案例增多，将加速企业级AI应用的普及。快手商业化内部效率提升可关注AI Agent应用。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Post by ginobefun on X: 详细图文内容：",
-          "url": "https://x.com/hongming731/status/2059795717116641682"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-27",
-          "event": "税务智能体案例发布"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2018-11-12"
-    },
-    {
-      "id": "comp-423",
-      "date": "2026-04-22",
-      "company": "OpenAI",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "OpenAI发布前沿治理框架：AI安全治理制度化",
-      "body": "OpenAI发布前沿治理框架，系统化阐述AI安全评估、风险管控、外部审计等制度化安排。",
-      "sowhat": "OpenAI在安全治理上的制度化领先将影响行业标准制定。快手需关注AI治理框架对其AI产品商业化节奏的潜在影响。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "OpenAI发布前沿治理框架，阐明其安全实践将如何符合新兴监管要求",
-          "url": "https://www.me.news/news/282387"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-28",
-          "event": "前沿治理框架发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-424",
-      "date": "2026-04-19",
-      "company": "OpenAI",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "OpenAI推进内容溯源：构建更安全透明的AI生态",
-      "body": "OpenAI推进AI内容溯源技术，帮助区分AI生成内容和人类创作内容，提升AI生态透明度。",
-      "sowhat": "AI内容溯源是广告行业关注的重点方向，影响AI生成广告素材的合规使用。快手需关注AI内容溯源对广告素材审核的影响。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Advancing content provenance for a safer, more transparent AI ecosystem",
-          "url": "https://openai.com/index/advancing-content-provenance"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-19",
-          "event": "AI内容溯源推进发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-425",
-      "date": "2026-04-15",
-      "company": "OpenAI",
-      "category": "公司动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "OpenAI模型推翻离散几何核心猜想：基础研究能力展示",
-      "body": "OpenAI发布研究论文，其AI模型推翻了离散几何领域的一个核心猜想，展示了AI在基础科学研究中的突破能力。",
-      "sowhat": "AI在基础科学研究中的突破将加速各行业的AI应用创新。快手需关注AI研究前沿对广告算法和推荐系统的长期影响。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "一款OpenAI 模型已推翻离散几何中的一个核心猜想 - Reddit",
-          "url": "https://www.reddit.com/r/OpenAI/comments/1tivwqy/an_openai_model_has_disproved_a_central?tl=zh-hans"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-20",
-          "event": "AI推翻离散几何核心猜想"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-427",
-      "date": "2026-04-10",
-      "company": "OpenAI",
-      "category": "公司动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "OpenAI发布第三方评估可信赖框架：推动AI安全评测标准化",
-      "body": "OpenAI发布第三方AI评估的可信赖框架，推动行业建立统一的AI安全评测标准。",
-      "sowhat": "AI安全评测标准化将影响AI产品的商业化部署节奏和合规要求。快手需关注行业评测标准对广告AI产品的适用性。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Our updated Preparedness Framework",
-          "url": "https://openai.com/index/updating-our-preparedness-framework"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-29",
-          "event": "第三方评估框架发布"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-416-add",
-      "date": "2026-05-22",
-      "company": "Meta",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "Meta推出「Ad Creative AI」：AI驱动广告素材自动优化",
-      "body": "Meta推出Ad Creative AI工具，利用AI自动优化广告素材的文案、图片和视频组合，提升广告创意效率。",
-      "sowhat": "Meta在AI创意工具上与Google Asset Studio、TikTok Symphony展开竞争。快手需加速磁力引擎AI创意工具的建设。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Meta 宣布AI 廣告全自動！圖文影像一次搞定的時代來了",
-          "url": "https://www.seoseo.com.tw/blog/article_detail_1087.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-22",
-          "event": "Ad Creative AI推出"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-06-04"
-    },
-    {
-      "id": "comp-411",
-      "date": "2026-05-18",
-      "company": "Meta",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "Threads广告推出品牌安全与适宜性控制",
-      "body": "Meta为Threads平台广告推出全新的品牌安全与适宜性控制功能，广告主可控制广告出现在何种内容旁边。",
-      "sowhat": "Threads广告商业化加速，品牌安全控制是其吸引大广告主的关键一步。快手海外版Kwai的广告品牌安全能力可对标。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Meta廣告更新：新品牌管理中心？ - Threads",
-          "url": "https://www.threads.com/@marcus.marketing.blog/post/DBPytzYsmrQ"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-18",
-          "event": "Threads广告品牌安全控制上线"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-412",
-      "date": "2026-05-15",
-      "company": "Meta",
-      "category": "行业打法",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "Meta发布社交搜索优化指南：社交搜索与传统搜索共存趋势",
-      "body": "Meta连续发布三篇文章探讨社交搜索趋势：如何在Meta平台优化内容以适配社交搜索、社交搜索与传统搜索的共存关系、重塑搜索格局的趋势。",
-      "sowhat": "社交搜索正成为独立于传统搜索引擎的流量入口。快手App内搜索商业化（搜索广告+内容分发）需重视社交搜索趋势，强化种草-搜索-转化的闭环。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "如何针对 Meta 技术中的社交搜索优化内容 | Meta for Business",
-          "url": "https://zh-cn.facebook.com/business/news/social-search-series-2"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-09-01",
-          "event": "TikTok成为GenZ首选搜索引擎引发行业关注"
-        },
-        {
-          "date": "2026-05-15",
-          "event": "Meta发布社交搜索系列指南"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-413",
-      "date": "2026-05-12",
-      "company": "Meta",
-      "category": "行业打法",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "Meta发布效果代理商AI时代新方向：AI驱动营销创新",
-      "body": "面向效果代理商发布AI时代营销创新指南，探讨代理商如何利用AI工具提升广告效果和运营效率。",
-      "sowhat": "Meta在推动代理商体系向AI化转型，这会影响整个广告代理生态。快手代理体系如何融入AI工具链是重要课题。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "当AI遇见广告：平台AI能力全面爆发，解锁出海品牌看得见的实效增长|AI技术|AI识别|钛媒体|Copilot|数据_手机新浪网",
-          "url": "https://finance.sina.cn/stock/jdts/2026-04-30/detail-inhwftwn6281901.d.html?vt=4"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-12",
-          "event": "Meta发布效果代理商AI方向指南"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-414",
-      "date": "2026-05-07",
-      "company": "Meta",
-      "category": "行业case",
-      "dimension": "行业打法",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "Meta案例：Dribbleup如何通过Meta广告实现增长引擎转型",
-      "body": "体育科技品牌Dribbleup分享其全面押注Meta广告的增长策略，利用Advantage+实现规模化增长。",
-      "sowhat": "Meta的Advantage+ AI广告产品在中小品牌中效果显著。快手需关注磁力智投/本地推的AI能力如何帮助中小商家实现类似增长。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Meta 如何通过 Facebook、Instagram 等平台赚钱：商业模式全解析 | 人人都是产品经理",
-          "url": "https://www.woshipm.com/it/6201522.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-05-07",
-          "event": "Dribbleup案例发布"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-04-08"
-    },
-    {
-      "id": "comp-415",
-      "date": "2026-04-30",
-      "company": "Meta",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "Meta Advantage+ AI广告持续迭代：更多广告主接入",
-      "body": "Meta持续扩展Advantage+ AI广告的覆盖范围，新增更多受众定向和创意优化功能。",
-      "sowhat": "Meta的AI广告产品持续迭代，覆盖面和功能深度同步提升。快手磁力引擎的AI投放需保持高频迭代节奏。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "投Meta 廣告的人,去看一下你的廣告組合裡有沒有一個叫 ... - Threads",
-          "url": "https://www.threads.com/@freeeadman/post/DW-7f-Cj0PQ/%E6%8A%95-meta-%E5%BB%A3%E5%91%8A%E7%9A%84%E4%BA%BA%E5%8E%BB%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BD%A0%E7%9A%84%E5%BB%A3%E5%91%8A%E7%B5%84%E5%90%88%E8%A3%A1%E6%9C%89%E6%B2%92%E6%9C%89%E4%B8%80%E5%80%8B%E5%8F%ABadvantage-%E7%B4%A0%E6%9D%90%E7%9A%84%E9%81%B8%E9%A0%85%E5%BE%88%E5%A4%9A%E4%BA%BA%E6%A0%B9%E6%9C%AC%E4%B8%8D%E7%9F%A5%E9%81%93%E5%AE%83%E5%9C%A8%E5%93%AA%E4%BD%86%E5%AE%83%E5%8F%AF%E8%83%BD%E5%B7%B2%E7%B6%93%E9%BB%98%E9%BB%98%E5%B9%AB%E4%BD%A0%E6%94%B9%E4%BA%86%E7%B4%A0%E6%9D%90%E9%80%99%E5%8A%9F%E8%83%BD%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85%E5%BE%88%E7%B0%A1%E5%96%AE%E5%AE%83%E6%9C%83"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-30",
-          "event": "Advantage+功能扩展"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-415-add",
-      "date": "2026-04-25",
-      "company": "Meta",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "Meta推出「Advantage+ AI Creative」：AI自动生成和优化广告创意组合",
-      "body": "Meta在Advantage+基础上推出AI Creative功能，系统自动为每个广告组生成和测试多个创意组合，找出最优素材搭配。",
-      "sowhat": "Meta在AI创意优化上持续加码，自动测试多创意组合降低广告主A/B测试成本。快手光速投的AI创意测试能力可对标升级。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "【最新營養】Meta 高效速成廣告 2025 新攻略 By iSPOT Media 🤖",
-          "url": "https://www.i-spotmedia.com/Blog/meta-advantageplus-update"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-25",
-          "event": "AI Creative功能推出"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-07-11"
-    },
-    {
-      "id": "comp-416-add2",
-      "date": "2026-04-22",
-      "company": "Meta",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "Meta推出「Shopping Ads 2.0」：视频号购物广告升级",
-      "body": "Meta升级Shopping Ads至2.0版本，支持动态商品展示、AI个性化推荐和跨平台购物车同步。",
-      "sowhat": "社交电商广告是Meta与TikTok竞争的焦点。快手需关注社交电商广告的产品形态迭代。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "透過Meta 商店廣告觸及更多在網路上購物的顧客 - Facebook",
-          "url": "https://zh-tw.facebook.com/business/shopping/shops-ads"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-22",
-          "event": "Shopping Ads 2.0升级"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-415-add2",
-      "date": "2026-04-18",
-      "company": "Meta",
-      "category": "行业动态",
-      "dimension": "财报/行业case",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "Meta 2026Q1财报：广告收入同比+18%，AI驱动广告效率持续提升",
-      "body": "Meta Q1广告收入同比增长18%，AI驱动的广告定向和创意优化（Advantage+）是核心增长引擎，覆盖广告主数量同比增长40%。",
-      "sowhat": "AI化程度成为衡量广告平台增长能力的核心指标。快手需关注磁力引擎中AI驱动的广告收入占比，作为内部增长评估指标。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Meta财报前瞻：22倍PE背后，是广告现金流和AI吞金兽的对赌 - 博客 | 文学城",
-          "url": "https://blog.wenxuecity.com/myblog/82610/202604/30368.html"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-Q4",
-          "event": "Meta广告收入+22%同增"
-        },
-        {
-          "date": "2026-Q1",
-          "event": "Meta广告收入+18%同增"
-        }
-      ],
-      "_verification": "verified",
-      "_date_unchecked": true
-    },
-    {
-      "id": "comp-416-add3",
-      "date": "2026-04-15",
-      "company": "Meta",
-      "category": "政策更新",
-      "dimension": "准入/政策",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "Meta广告审核AI升级：Gemini替代规则引擎提升审核效率",
-      "body": "Meta将AI广告审核系统升级为Gemini驱动，替代传统规则引擎，提升广告审核速度和准确率。",
-      "sowhat": "AI广告审核是平台规模化处理广告内容的必然方向。快手需关注AI审核对广告过审率和审核时效的影响。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "NA Headlines, Author at 北美头条 - 北美华人新闻网",
-          "url": "https://northamericaheadlines.com/author/flamingxingyahoo-ca"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-15",
-          "event": "Gemini驱动广告审核升级"
-        }
-      ],
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-09-21"
-    },
-    {
-      "id": "comp-403",
-      "date": "2026-05-28",
-      "company": "Google",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "Google Ads Decoded播客最终篇：AI重塑现代营销底层基础",
-      "body": "Ads Decoded系列播客最终篇，探讨AI如何从底层重构广告投放、效果衡量和创意生产三大环节。",
-      "sowhat": "Google正系统性地将AI嵌入广告全链路——从出价到创意到衡量。快手商业化需加速AI在投放端的系统性整合，而非单点功能。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Google Ads Blog",
-          "url": "https://blog.google/products/ads-commerce/ads-decoded-finale/",
+          "name": "2026腾讯游戏发布会：超40款游戏最新动态，多项游戏AI应用新进展",
+          "url": "http://news.qq.com/rain/a/20260527A0ANT900",
           "date": "2026-05-28"
         }
       ],
       "timeline": [
         {
-          "date": "2026-04-01",
-          "event": "Ads Decoded播客系列启动"
-        },
-        {
           "date": "2026-05-28",
-          "event": "最终篇发布"
+          "event": "本次动态"
         }
       ],
       "_verification": "verified",
-      "_date_ok": true
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
     },
     {
-      "id": "comp-404",
-      "date": "2026-05-26",
-      "company": "Google",
+      "id": "comp-708",
+      "date": "2026-05-28",
+      "company": "阿里",
       "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
       "tier": "T1",
-      "title": "Google Display Ads迁移至Demand Gen：展示广告产品线整合",
-      "body": "Google展示广告正式迁移至Demand Gen产品线，原Display Ads广告主需迁移至新平台。这是Google近年最大规模的广告产品线整合之一。",
-      "sowhat": "Google广告产品线持续精简整合，AI Max/Demand Gen成主推方向。快手商业化需关注产品线简化趋势，避免功能碎片化导致广告主选择困难。",
-      "scope": "海外",
+      "title": "规则专题首页 - 一达通",
+      "body": "145浏览. 【平台通知】阿里巴巴国际站上线纠正商品订单运费免补缴规则（预计生效日期：2026年5月28日） ... 出口综合服务（3+N）准入代办退税备案优化. FDA注册合规服务",
+      "sowhat": "",
+      "scope": "国内",
       "sources": [
         {
-          "name": "Google Ads Blog",
-          "url": "https://blog.google/products/ads-commerce/google-display-ads-demand-gen/",
+          "name": "规则专题首页 - 一达通",
+          "url": "https://onetouch.alibaba.com/moBasedata/luyou/home/act/icbu_rules/index",
+          "date": "2026-05-28"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-28",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_fetched_by": "competitor_tracker.py",
+      "_date_unchecked": true
+    },
+    {
+      "id": "comp-709",
+      "date": "2026-05-28",
+      "company": "拼多多",
+      "category": "准入政策",
+      "dimension": "准入/政策",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "拼多多推动生态治理常态化：上半年出台40余项举措主动筑牢合规防线",
+      "body": "# 拼多多推动生态治理常态化：上半年出台40余项举措 主动筑牢合规防线. 2026-05-28 16:59:52  来源：新华网. AI技术应用越广泛，越要守住合规底线。近日，拼多多发布公告称，禁止平台商家发布及售卖AI押题、AI数据投毒、AI托管网络账号、AI起号、转售AI虚拟账号等相关服务、课程",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "拼多多推动生态治理常态化：上半年出台40余项举措主动筑牢合规防线",
+          "url": "http://www.news.cn/tech/20260528/a778f89d278146a795967c37da2ffb7b/c.html",
+          "date": "2026-05-28"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-28",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-710",
+      "date": "2026-05-28",
+      "company": "拼多多",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "重仓供应链战略进入实质落地期 拼多多一季度营收1062亿元-经济参考网 _ 新华社《经济参考报》官方网站",
+      "body": "## 首页 >> 正文. 2026-05-28   记者 陆宇安   来源：经济参考网. 5月27日，拼多多发布2026年第一季度财报。数据显示，公司一季度实现总营收1062亿元，同比增长11%；归属于普通股股东的净利润为125亿元，同比下降15%。公司方面表示，利润下滑主要源于“千亿扶持”计划及重",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "重仓供应链战略进入实质落地期 拼多多一季度营收1062亿元-经济参考网 _ 新华社《经济参考报》官方",
+          "url": "http://jjckb.xinhuanet.com/20260528/7f2562341f894f3c9bc03c82d697548f/c.html",
+          "date": "2026-05-28"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-28",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "weak",
+      "_fetched_by": "competitor_tracker.py",
+      "_date_mismatch": true,
+      "_source_date": "2015-07-02"
+    },
+    {
+      "id": "comp-711",
+      "date": "2026-05-27",
+      "company": "美团",
+      "category": "行业案例",
+      "dimension": "营销/分账",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "随笔档案「2026年5月27日」：美团淘宝闪购外卖代运营服务解析",
+      "body": "# hygc. 摘要： 在餐饮行业竞争日益激烈的背景下，越来越多的商家开始寻求专业的外卖代运营服务，以应对复杂的平台规则和运营挑战。本文将系统解析以“成都一棵大树”为代表的一站式餐饮品牌增长方案，探讨其如何助力商家，特别是新商家，在外卖领域实现稳健发展。 品牌概述：扎根运营，向上生长 成都市一棵大树",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "随笔档案「2026年5月27日」：美团淘宝闪购外卖代运营服务解析",
+          "url": "https://www.cnblogs.com/hygc/p/archive/2026/05/27",
+          "date": "2026-05-27"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-27",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-712",
+      "date": "2026-05-27",
+      "company": "拼多多",
+      "category": "产品动态",
+      "dimension": "财报/数据",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "拼多多发布Q1财报：“千亿扶持”加码惠商助农，新拼姆助力供应链 ...",
+      "body": "安徽|北京|重庆|福建|甘肃| 贵州|广东|广西|海南|河北| 河南| 湖北|湖南|黑龙江|江苏|江西| 吉林| 辽宁|内蒙古|宁夏|青海|山东| 山西| 陕西|上海|四川|天津|新疆| 兵团| 云南|浙江. 高层*|* 人事*|* 反腐*|* 深度*|* 两岸*|* 科教*|* 军事. 中外对话*",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "拼多多发布Q1财报：“千亿扶持”加码惠商助农，新拼姆助力供应链 ...",
+          "url": "https://www.chinanews.com.cn/cj/2026/05-27/10629817.shtml",
+          "date": "2026-05-27"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-27",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "weak",
+      "_fetched_by": "competitor_tracker.py",
+      "_date_mismatch": true,
+      "_source_date": "2023-03-21"
+    },
+    {
+      "id": "comp-713",
+      "date": "2026-05-26",
+      "company": "拼多多",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "拼多多(PDD)股票5月26日盘中上涨3.07%：原因全解读 - TradingKey",
+      "body": "# 拼多多(PDD)股票5月26日盘中上涨3.07%：原因全解读. • 拼多多（PDD Holdings）股价在2026财年第一季度财报发布前在波动中走高。 • 投资者预期其营收将录得增长，但同时也注意到支出增加带来的利润率压力。 • 分析师维持对PDD的“买入”评级，并指出该股具备上行空间。. 拼",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "拼多多(PDD)股票5月26日盘中上涨3.07%：原因全解读 - TradingKey",
+          "url": "https://www.tradingkey.com/zh-hans/news/market-movers/261929173-market-movers-pdd-20260526",
           "date": "2026-05-26"
         }
       ],
       "timeline": [
         {
-          "date": "2025-10-01",
-          "event": "Google推出Demand Gen广告系列"
-        },
+          "date": "2026-05-26",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-714",
+      "date": "2026-05-26",
+      "company": "字节",
+      "category": "准入政策",
+      "dimension": "准入/政策",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "合规检查 - Cape.io",
+      "body": "借助 Cape.io 的人工智能合规工具，确保积极的广告体验并保护您的品牌。即时检查分镜、脚本和视频——轻松提前发现问题，避免延误和冗长的审核周期。. # 轻松应对全球广告法规。. ##### 智能检测。减少延误。极速上线。. ## 掌握日益复杂的全球广告规则. 广告规则正变得越来越严格。它们因国家",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "合规检查 - Cape.io",
+          "url": "https://cape.io/zh/solutions/compliance",
+          "date": "2026-05-26"
+        }
+      ],
+      "timeline": [
         {
           "date": "2026-05-26",
-          "event": "Display Ads正式迁移至Demand Gen"
+          "event": "本次动态"
         }
       ],
       "_verification": "verified",
-      "_date_ok": true
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
     },
     {
-      "id": "comp-405",
-      "date": "2026-05-20",
-      "company": "Google",
-      "category": "产品发布",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T0",
-      "title": "Google Marketing Live 2026：AI时代搜索广告新一代产品发布",
-      "body": "GML 2026大会集中发布：Asset Studio AI创意升级、Ask Advisor AI协作工具、搜索广告AI时代新形态、AI Max覆盖更多广告主。",
-      "sowhat": "Google年度营销大会释放明确信号：AI正从辅助工具变为广告平台底层操作系统。快手需关注AI在搜索广告、创意生成、投放顾问三条线的系统性布局。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Google Ads Blog - GML 2026 Collection",
-          "url": "https://blog.google/products/ads-commerce/google-marketing-live-2026-collection/",
-          "date": "2026-05-20"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2025-05-01",
-          "event": "GML 2025发布AI Overviews广告"
-        },
-        {
-          "date": "2026-05-20",
-          "event": "GML 2026发布AI时代搜索广告新形态"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-406",
-      "date": "2026-05-20",
-      "company": "Google",
-      "category": "产品发布",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
+      "id": "comp-715",
+      "date": "2026-05-26",
+      "company": "阿里",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
       "tier": "T1",
-      "title": "Google推出Ask Advisor：AI驱动的广告协作顾问",
-      "body": "Ask Advisor是全新的AI协作工具，帮助广告主在投放策略、素材优化、预算分配等方面获得实时AI建议。",
-      "sowhat": "Google将AI从自动化执行升级为策略顾问角色。快手磁力引擎的AI助手可对标此方向，从「帮我投」升级为「教我投」。",
-      "scope": "海外",
+      "title": "2026-05-26版本-实时计算Flink版(Flink) - 阿里云文档",
+      "body": "# 2026-05-26版本. 本文介绍阿里云流存储 Fluss 于 2026 年 05 月 26 日发布的功能变更与缺陷修复。. 引擎版本升级至 **0.9-ali-3.0**。本次发布重点解决用户在磁盘使用率达到瓶颈后易出现数据异常的问题,新增磁盘写入保护能力。. 本次升级计划在全网分步骤完成灰",
+      "sowhat": "",
+      "scope": "国内",
       "sources": [
         {
-          "name": "Google Ads Blog",
-          "url": "https://blog.google/products/ads-commerce/ask-advisor/",
+          "name": "2026-05-26版本-实时计算Flink版(Flink) - 阿里云文档",
+          "url": "https://help.aliyun.com/zh/flink/realtime-fluss/product-overview/may-26-2026",
+          "date": "2026-05-26"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-26",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-716",
+      "date": "2026-05-21",
+      "company": "腾讯",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "腾讯亮相2026中国网络文明大会，多维度展示网络文明建设的“腾讯 ...",
+      "body": "# 腾讯亮相2026中国网络文明大会，多维度展示网络文明建设的“腾讯方案”. 2026-05-21 13:06:44  来源：新华网. 5月19日至20日，以“文明网络空间 昂扬奋进力量”为主题的2026年中国网络文明大会在广西南宁举行。腾讯围绕AI驱动的未成年人保护体系建设、AI赋能正能量创作传播",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "腾讯亮相2026中国网络文明大会，多维度展示网络文明建设的“腾讯 ...",
+          "url": "http://www.news.cn/tech/20260521/cf3b16c197cb40edb787cfe95d925dcc/c.html",
+          "date": "2026-05-21"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-21",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-717",
+      "date": "2026-05-20",
+      "company": "阿里",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "阿里云大数据工程师ACA认证（2026版）发布公告",
+      "body": "# 阿里云大数据工程师ACA认证（2026版）发布公告. ## **变更内容**. 感谢您对阿里云的支持，阿里云大数据工程师ACA认证将于2026年05月20日完成内容升级，新版（以下统称2026版）正式上线，与旧版本并行在售1个月。升级后认证内容将有如下变化：. **2026年05月20日起：**",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "阿里云大数据工程师ACA认证（2026版）发布公告",
+          "url": "https://help.aliyun.com/zh/document_detail/3034787.html",
           "date": "2026-05-20"
         }
       ],
       "timeline": [
         {
-          "date": "2026-04-21",
-          "event": "Ads Advisor三项新功能发布"
-        },
-        {
           "date": "2026-05-20",
-          "event": "Ask Advisor正式发布"
+          "event": "本次动态"
         }
       ],
       "_verification": "verified",
-      "_date_ok": true
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
     },
     {
-      "id": "comp-428",
+      "id": "comp-718",
       "date": "2026-05-20",
-      "company": "Google",
+      "company": "阿里",
+      "category": "准入政策",
+      "dimension": "准入/政策",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "2026年5月智能体合规管理规则发布，智能体备案可以做的公司",
+      "body": "# 2026年5月智能体合规管理规则发布，智能体备案可以做的公司. 2026-05-20 14:26:23 来源：界面新闻. 2026 年 5 月 8 日，《智能体规范应用与创新发展实施意见》的发布，标志着我国智能体产业正式迈入合规化、标准化、规范化发展新阶段。文件明确智能体备案为核心合规要求，构建",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "2026年5月智能体合规管理规则发布，智能体备案可以做的公司",
+          "url": "https://henan.china.com/news/roll/2026/0520/052026_728338.html",
+          "date": "2026-05-20"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-20",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "weak",
+      "_fetched_by": "competitor_tracker.py",
+      "_date_mismatch": true,
+      "_source_date": "2025-01-15"
+    },
+    {
+      "id": "comp-719",
+      "date": "2026-06-20",
+      "company": "字节",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "应对算力需求增长，传字节跳动明年将采购超400亿元华为昇腾芯片",
+      "body": "据业界消息，为应对算力需求增长，字节跳动正加速推进与华为的昇腾芯片合作。预计到2026年，其向华为采购的昇腾芯片订单总额可能超过400亿元，而今年相关",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "应对算力需求增长，传字节跳动明年将采购超400亿元华为昇腾芯片",
+          "url": "https://www.chinaflashmarket.com/a/183486",
+          "date": "2026-06-20"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-20",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "weak",
+      "_fetched_by": "competitor_tracker.py",
+      "_date_mismatch": true,
+      "_source_date": "2025-12-29"
+    },
+    {
+      "id": "comp-720",
+      "date": "2026-05-28",
+      "company": "字节",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "通知公告_全国数据标准化技术委员会",
+      "body": "国家数据局数字经济司2026年课题委托研究征集公告 · 关于发布《全国数据标准化技术委员会标准化研究项目清单》的通知 · 关于下达15项数据领域推荐性国家标准/规范类指导性",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "通知公告_全国数据标准化技术委员会",
+          "url": "https://www.tc609.org.cn/tc609/tzgg/zylist.shtml",
+          "date": "2026-05-28"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-28",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-721",
+      "date": "2026-05-27",
+      "company": "腾讯",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "5月158款游戏获得版号 腾讯网易旗下产品在列",
+      "body": "### 问财摘要. 1、国家新闻出版署公布了2026年5月国产和进口网络游戏审批信息，共有158款游戏获得版号，其中包括国产网络游戏154款和进口网络游戏4款。其中，有不少知名公司作品，如三七互娱的《斗破苍穹：觉醒》、电魂网络《星愿之冠》以及莉莉丝游戏的《小冰冰斗蛐蛐》等。 2、恺英网络、腾讯、网易",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "5月158款游戏获得版号 腾讯网易旗下产品在列",
+          "url": "https://m.10jqka.com.cn/20260527/c676992340.shtml",
+          "date": "2026-05-27"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-27",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-722",
+      "date": "2026-05-26",
+      "company": "美团",
       "category": "产品动态",
       "dimension": "AI/技术",
-      "data_source": "竞媒官方",
+      "data_source": "三方媒体",
       "tier": "T1",
-      "title": "Google推出Universal Commerce Protocol：统一电商数据协议",
-      "body": "Google发布Universal Commerce Protocol (UCP)，打通Google搜索、购物、YouTube等产品的电商数据，实现跨场景统一购物体验。",
-      "sowhat": "Google在电商数据协议上的统一化将提升跨场景广告归因精度。快手需关注电商数据在信息流+直播+搜索间的统一打通。",
-      "scope": "海外",
+      "title": "美团发布“跑腿Skill”，接上各家AI的腿-观察者网",
+      "body": "### 美团发布“跑腿Skill”，接上各家AI的腿. 2026年5月，美团正式发布“跑腿Skill”。用户对着OpenClaw、Cursor、微信、飞书等AI助手说一句“帮我买杯咖啡”，系统直接调用美团跑腿完成下单，骑手接单，咖啡送达。全程无需打开美团App。. 这不是美团去“抢”AI入口，而是A",
+      "sowhat": "",
+      "scope": "国内",
       "sources": [
         {
-          "name": "AI 时代重塑购物体验：Google 正式发布通用商务协议（UCP）与智能 ...",
-          "url": "https://zhuanlan.zhihu.com/p/1994108055911171710"
+          "name": "美团发布“跑腿Skill”，接上各家AI的腿-观察者网",
+          "url": "https://www.guancha.cn/economy/2026_05_27_818554.shtml",
+          "date": "2026-05-26"
         }
       ],
       "timeline": [
         {
-          "date": "2026-05-20",
-          "event": "UCP统一电商协议发布"
+          "date": "2026-05-26",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "weak",
+      "_fetched_by": "competitor_tracker.py",
+      "_date_mismatch": true,
+      "_source_date": "2023-04-11"
+    },
+    {
+      "id": "comp-723",
+      "date": "2026-05-22",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "【2026 美團使用攻略】美團怎麼用？如何註冊、點餐、付款一篇搞懂！",
+      "body": "2026 年 5 月 22 日. 美團是大陸最熱門的外送 App，來到大陸旅遊想叫外送，一定要試看看美團！以下 Trip.com 教你從註冊、綁定手機、點餐到付款，文中也會解答「台灣手機能註冊美團嗎？」、「能用台灣信用卡支付嗎？」等常見問題，以及人氣必點餐廳推薦，帶你輕鬆掌握美團使用攻略！. 6 月",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "【2026 美團使用攻略】美團怎麼用？如何註冊、點餐、付款一篇搞懂！",
+          "url": "https://tw.trip.com/guide/info/%E7%BE%8E%E5%9C%98.html",
+          "date": "2026-05-22"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-22",
+          "event": "本次动态"
         }
       ],
       "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-724",
+      "date": "2026-05-28",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "2026最新美团18会员日优惠测评 - 城市攻略宝",
+      "body": "🎁 官方实测门店优惠每日更新✨ 探索最新城市生活攻略🔥 发现最火热的本地生活趋势💡 掌握独家吃喝玩乐秘籍🎁 官方实测门店优惠每日更新✨ 探索最新城市生活攻略🔥 发现最火热的本地生活趋势💡 掌握独家吃喝玩乐秘籍. # 2026最新美团18会员日优惠测评. ## 美团. :   美团 · 本地生活服务平",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "2026最新美团18会员日优惠测评 - 城市攻略宝",
+          "url": "https://source.meituan.com/q/2026%E6%9C%80%E6%96%B0%E7%BE%8E%E5%9B%A218%E4%BC%9A%E5%91%98-20260528113039",
+          "date": "2026-05-28"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-28",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-725",
+      "date": "2026-06-01",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地 - 新浪财经",
+      "body": "# 6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地. 6月1日起，《网络餐饮服务经营者落实食品安全主体责任监督管理规定》正式施行，对网络餐饮服务经营者落实主体责任提出了全面、系统的规定和指引，标志着餐饮外卖食品安全治理迈入新阶段。. 记者从美团获悉，美团已全面落地“放心外卖”十大举措，覆",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地 - 新浪财经",
+          "url": "https://finance.sina.com.cn/jjxw/2026-06-01/doc-inhzwyqm5166311.shtml",
+          "date": "2026-06-01"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-01",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-726",
+      "date": "2026-06-02",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地-36氪",
+      "body": "6月1日起，《网络餐饮服务经营者落实食品安全主体责任监督管理规定》正式施行，对网络餐饮服务经营者落实主体责任提出了全面、系统的规定和指引，标志着餐饮外卖食品安全治理迈入新阶段。. 据美团介绍，平台已全面落地“放心外卖”十大举措，覆盖商家准入、透明经营、社会共治三大环节，确保新规要求逐条落地。. 在商",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "6月1日外卖新规施行，美团外卖“放心外卖”十大举措全面落地-36氪",
+          "url": "https://m.36kr.com/p/3834246290990984",
+          "date": "2026-06-02"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-02",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
+    },
+    {
+      "id": "comp-727",
+      "date": "2026-05-26",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "美团从“份额防御”到“盈利兑现” 2026年外卖业务 ...",
+      "body": "+ 报道类 最新原创 电商快讯 融资事件 电商访谈 大咖观点. + 研究类 组织架构 信息图 投融参谋 图书连载 投融榜单 投资盘点. + 短视频矩阵 网经社抖音号 网经社视频号  网经社微博 网经社头条 网经社网易视频 直播电商抖音号 跨境电商抖音号 小红书 快手 懂车帝 西瓜视频 bilibil",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "美团从“份额防御”到“盈利兑现” 2026年外卖业务 ...",
+          "url": "https://www.100ec.cn/detail--6657354.html",
+          "date": "2026-05-26"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-26",
+          "event": "本次动态"
+        }
+      ],
+      "_verification": "verified",
+      "_fetched_by": "competitor_tracker.py",
       "_date_unchecked": true
     },
     {
-      "id": "comp-402",
-      "date": "2026-05-15",
-      "company": "Google",
+      "id": "comp-728",
+      "date": "2026-05-20",
+      "company": "阿里",
       "category": "产品动态",
-      "title": "Google Performance Max 升级：接入 Gemini 创意 + 跨渠道 AI 出价",
-      "sowhat": "PMax 直接把 Gemini 3 接入创意生成，并把 YouTube/搜索/Maps/Gmail 出价模型统一，全球广告主已开始迁移。对国内出海广告（TikTok 海外/AppLovin/Meta）形成新的对标基线。",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "2026阿里云峰会-主论坛",
+      "body": "### 为什么选择阿里云. ### 大模型. ### 产品和定价. ### 技术内容. ### 关注阿里云. ### 友情链接. © 2009-现在 Aliyun.com 版权所有 增值电信业务经营许可证： 浙B2-20080101 域名注册服务机构许可： 浙D3-20210002. 浙公网安备 3",
+      "sowhat": "",
+      "scope": "国内",
       "sources": [
         {
-          "name": "生成式 AI 衝擊廣告代理：從產出自動化到文化治理的挑戰 | Taiwan Bigdata Insights | Taiwan Bigdata",
-          "url": "https://bigdata.com.tw/posts/1acf351f-8e2b-44ad-bfa9-7833bd8fbf55"
+          "name": "2026阿里云峰会-主论坛",
+          "url": "https://summit.aliyun.com/2026/keynote",
+          "date": "2026-05-20"
         }
       ],
       "timeline": [
         {
-          "date": "2026-05-15",
-          "event": "PMax 全球升级"
+          "date": "2026-05-20",
+          "event": "本次动态"
         }
       ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_mismatch": true,
-      "_source_date": "2025-06-20"
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
     },
     {
-      "id": "comp-407",
-      "date": "2026-05-07",
-      "company": "Google",
-      "category": "产品动态",
+      "id": "comp-729",
+      "date": "2026-05-25",
+      "company": "阿里",
+      "category": "准入政策",
       "dimension": "AI/技术",
-      "data_source": "竞媒官方",
+      "data_source": "三方媒体",
       "tier": "T1",
-      "title": "Google搜索和购物广告推出AI驱动出价与预算创新",
-      "body": "搜索和购物广告中新增AI驱动出价与预算创新功能，自动优化跨渠道预算分配。",
-      "sowhat": "AI出价从单渠道走向跨渠道自动分配预算，这是广告投放自动化的关键跃迁。快手需关注磁力引擎是否具备跨产品线的统一预算优化能力。",
-      "scope": "海外",
+      "title": "AI行业正在经历一场“大洗牌”：合规门槛抬高、大厂疯狂砸钱，企业如何安全上车？_智能_资本开支_应用",
+      "body": "# AI行业正在经历一场“大洗牌”：合规门槛抬高、大厂疯狂砸钱，企业如何安全上车？. **一边是政策端史无前例地收紧。** 5月8日，国家网信办、国家发改委、工信部三部门联合印发《智能体规范应用与创新发展实施意见》——这是中国首份针对智能体领域的系统性顶层设计文件。《意见》明确提出智能体发展必须坚持",
+      "sowhat": "",
+      "scope": "国内",
       "sources": [
         {
-          "name": "Google Ads Blog",
-          "url": "https://blog.google/products/ads-commerce/bidding-budgeting-google-marketing-live-2026/",
-          "date": "2026-05-07"
+          "name": "AI行业正在经历一场“大洗牌”：合规门槛抬高、大厂疯狂砸钱，企业如何安全上车？_智能_资本开支_应用",
+          "url": "https://www.sohu.com/a/1025961760_122796069",
+          "date": "2026-05-25"
         }
       ],
       "timeline": [
         {
-          "date": "2025-09-01",
-          "event": "Performance Max推出AI出价"
-        },
-        {
-          "date": "2026-05-07",
-          "event": "AI出价扩展至搜索和购物广告"
+          "date": "2026-05-25",
+          "event": "本次动态"
         }
       ],
       "_verification": "verified",
-      "_date_ok": true
+      "_date_ok": true,
+      "_fetched_by": "competitor_tracker.py"
     },
     {
-      "id": "comp-408",
-      "date": "2026-04-30",
-      "company": "Google",
+      "id": "comp-730",
+      "date": "2026-05-26",
+      "company": "拼多多",
       "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
       "tier": "T1",
-      "title": "AI Max一周年：新增控制功能并扩展至更多广告主",
-      "body": "AI Max产品上线一周年，推出新控制功能（投放偏好设置、排除项管理等），并扩展至购物广告和旅游广告场景。",
-      "sowhat": "Google的AI Max（原Performance Max升级版）正成为统一的AI广告入口。快手需关注「统一AI投放产品线」策略，避免多产品线分散AI能力。",
-      "scope": "海外",
+      "title": "拼多多上线2026年“春节不打烊”活动支持流量与物流保障 - 网经社",
+      "body": "+ 报道类 最新原创 电商快讯 融资事件 电商访谈 大咖观点. + 评价类 电商快评 电商榜单 电商评测 电商评级 观察家. + 研究类 组织架构 信息图 投融参谋 图书连载 投融榜单 投资盘点. + 权益类 投诉榜 曝光台 调查行动 评级数据 榜单报告 APP通报. + 上市类 招股下载 路演PP",
+      "sowhat": "",
+      "scope": "国内",
       "sources": [
         {
-          "name": "Google Ads Blog",
-          "url": "https://blog.google/products/ads-commerce/ai-max-new-features/",
-          "date": "2026-04-30"
+          "name": "拼多多上线2026年“春节不打烊”活动支持流量与物流保障 - 网经社",
+          "url": "https://www.100ec.cn/detail--6656448.html",
+          "date": "2026-05-26"
         }
       ],
       "timeline": [
         {
-          "date": "2025-05-01",
-          "event": "AI Max首次发布"
-        },
-        {
-          "date": "2026-04-30",
-          "event": "AI Max一周年功能升级"
+          "date": "2026-05-26",
+          "event": "本次动态"
         }
       ],
       "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-409",
-      "date": "2026-04-23",
-      "company": "Google",
-      "category": "产品动态",
-      "dimension": "电商/交易",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "title": "YouTube Demand Gen月度更新：聚焦转化效率提升",
-      "body": "4月Demand Gen Drop更新，重点优化YouTube广告的转化效率，包括更精准的受众定向和更快的转化归因。",
-      "sowhat": "YouTube作为内容平台的广告变现效率持续提升，视频广告转化路径缩短。快手需关注短视频/直播广告的转化效率优化。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Google Ads Blog",
-          "url": "https://blog.google/products/ads-commerce/demand-gen-drop-april-2026/",
-          "date": "2026-04-23"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-01-01",
-          "event": "Demand Gen月度更新机制启动"
-        },
-        {
-          "date": "2026-04-23",
-          "event": "4月更新聚焦YouTube转化"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-410",
-      "date": "2026-04-15",
-      "company": "Google",
-      "category": "产品动态",
-      "dimension": "广告产品",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "动态搜索广告(DSA)升级至AI Max：搜索广告自动化里程碑",
-      "body": "Google将动态搜索广告(DSA)全面升级迁移至AI Max，原有DSA广告主需迁移。这是搜索广告自动化的重要里程碑。",
-      "sowhat": "Google在持续推进广告产品线的AI化整合，DSA→AI Max的迁移意味着传统搜索广告也在被AI重塑。快手搜索广告的AI化程度可对标评估。",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Google Ads Blog",
-          "url": "https://blog.google/products/ads-commerce/dsa-upgrade-to-ai-max-2026/",
-          "date": "2026-04-15"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-04-15",
-          "event": "DSA全面升级至AI Max"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true
+      "_fetched_by": "competitor_tracker.py",
+      "_date_unchecked": true
     }
   ]
 }
