@@ -168,20 +168,24 @@ def fetch_and_extract_date(url: str, timeout: int = 8) -> datetime | None:
     if not dates:
         # 兜底：尝试页面文本中匹配 "202X年...月...日" 等模式（只取第一个匹配）
         fallback = re.findall(r'(\d{4})[年/-](\d{1,2})[月/-](\d{1,2})\s*日?', html)
-        for m in fallback[:5]:
-            d = try_parse_date(f'{m[0]}-{m[1].zfill(2)}-{m[2].zfill(2)}')
-            if d:
-                dates.append(d)
+        for m in fallback:
+            try:
+                candidate = datetime(int(m[0]), int(m[1]), int(m[2]))
+                if 2025 <= candidate.year <= 2035:
+                    dates.append(candidate)
+            except ValueError:
+                continue
 
     if not dates:
         return None
-
-    # 去掉极端离谱的（2000 年前 / 2030 年后）
-    dates = [d for d in dates if 2015 <= d.year <= 2035]
-    if not dates:
+    # 取最新日期（降序排列），避免 footer 版权年份干扰
+    dates.sort(reverse=True)
+    d = dates[0]
+    if d.year < 2025:
         return None
+    return d
 
-    # 取最早日期（文章发布时间通常最早出现）
+# ========== 日期比对逻辑 ==========
     dates.sort()
     return dates[0]
 
