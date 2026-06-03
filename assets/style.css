@@ -3512,7 +3512,7 @@ body {
     background: linear-gradient(135deg, #f0f5f2 0%, #fff 100%);
 }
 #tab-research .hero.hero-sub h1 {
-    font-size: 24px !important;
+    font-size: 22px !important;
     margin-bottom: 6px !important;
 }
 #tab-research .hero.hero-sub .hero-subtitle {
@@ -5302,12 +5302,12 @@ a.news-row-link:hover .news-title { color: #2a6f4f; }
     padding: 24px 0 16px !important;
 }
 .hero.hero-sub.hero-compact-tab2 h1 {
-    font-size: 16px !important;
+    font-size: 22px !important;
     margin: 0 !important;
     white-space: nowrap;
 }
 .hero.hero-sub.hero-compact-tab2 .hero-subtitle {
-    font-size: 11px !important;
+    font-size: 13px !important;
     margin: 0 0 0 0 !important;
     white-space: nowrap;
     overflow: hidden;
