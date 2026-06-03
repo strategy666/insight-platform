@@ -2,7 +2,7 @@
   "_meta": {
     "description": "Part2 竞对动态 — SOURCE-FIRST v3 (direct fetch + web_fetch)",
     "last_updated": "2026-06-03",
-    "total_items": 23,
+    "total_items": 19,
     "recent_window": "past 14d (cutoff 2026-05-19)",
     "companies_tracked": [
       "字节",
@@ -34,8 +34,9 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
+      "_verification": "weak",
+      "_date_ok": true,
+      "_ks_no_official": true
     },
     {
       "id": "comp-057",
@@ -72,68 +73,9 @@
       "dimension": "财报/行业case",
       "data_source": "三方媒体",
       "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-056",
-      "date": "2026-05-08",
-      "company": "拼多多",
-      "category": "产品动态",
-      "title": "拼多多跨境出海Temu加速：2026Q1 GMV突破300亿美元，已在50+国家上线",
-      "sowhat": "Temu Q1 GMV突破300亿美元，增速远超国内电商。但DSA 2亿欧元罚单+美国关税双重压力下，Temu海外狂飙模式面临合规瓶颈。快手出海可借鉴Temu速度但需提前规避合规风险。",
-      "sources": [
-        {
-          "name": "36氪：拼多多出海Temu",
-          "url": "https://36kr.com/",
-          "date": "2026-05-08"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "三方媒体",
-      "tier": "T2",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-055",
-      "date": "2026-05-15",
-      "company": "拼多多",
-      "category": "产品动态",
-      "title": "拼多多「全站推广」AI升级：流量分配完全自动化，人工定向逐步弱化，平台算法全面接管",
-      "sowhat": "拼多多全站推广AI化意味着广告主预算完全交给算法分配，平台货币化能力提升但广告主控制权下降。快手需审慎观察：AI全托管投放是行业趋势，但过快替代人工可能导致中小广告主流失。",
-      "sources": [
-        {
-          "name": "拼多多广告平台更新",
-          "url": "https://mms.pinduoduo.com/",
-          "date": "2026-05-15"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-054",
-      "date": "2026-05-23",
-      "company": "拼多多",
-      "category": "产品动态",
-      "title": "拼多多「多多客」分销系统升级：佣金最高80%+二级返佣放开，社交裂变能力大幅提升",
-      "sowhat": "多多客佣金提升至80%+开放二级返佣，拼多多社交裂变能力回归升级。对快手电商的达人分销模式构成竞争：多多客激励力度远超快手达人佣金体系，可能导致部分达人向拼多多倾斜。",
-      "sources": [
-        {
-          "name": "拼多多商家后台公告",
-          "url": "https://mms.pinduoduo.com/",
-          "date": "2026-05-23"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
+      "_verification": "weak",
+      "_date_ok": true,
+      "_ks_no_official": true
     },
     {
       "id": "comp-053",
@@ -145,12 +87,7 @@
       "sources": [
         {
           "name": "DW：Temu被欧盟重罚2亿欧元",
-          "url": "https://www.dw.com/zh/被指销售不合规商品-temu被欧盟重罚2亿欧元/a-77332285",
-          "date": "2026-05-28"
-        },
-        {
-          "name": "RFI：欧盟罚拼多多Temu 2亿欧元",
-          "url": "https://www.rfi.fr/cn/国际/20260528-欧盟罚拼多多-temu-2亿欧元",
+          "url": "https://www.dw.com/zh/%E8%A2%AB%E6%8C%87%E9%94%80%E5%94%AE%E4%B8%8D%E5%90%88%E8%A7%84%E5%95%86%E5%93%81-temu%E8%A2%AB%E6%AC%A7%E7%9B%9F%E9%87%8D%E7%BD%9A2%E4%BA%BF%E6%AC%A7%E5%85%83/a-77332285",
           "date": "2026-05-28"
         }
       ],
@@ -195,86 +132,6 @@
       "_date_ok": true
     },
     {
-      "id": "comp-051",
-      "date": "2026-05-12",
-      "company": "阿里",
-      "category": "产品动态",
-      "title": "阿里「通义千问」接入阿里妈妈广告系统：AI驱动的智能投放助手覆盖创意/定向/出价全链路",
-      "sowhat": "通义千问从C端对话助手延伸至B端广告系统，标志阿里AI从'对外服务'向'对内赋能'的战略升级。广告系统接入自研大模型可提升竞价效率+降低代理依赖。快手可灵/磁力金牛也可探索大模型赋能智能投放的可能性。",
-      "sources": [
-        {
-          "name": "阿里妈妈官方公告",
-          "url": "https://one.alimama.com/",
-          "date": "2026-05-12"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-050",
-      "date": "2026-05-20",
-      "company": "阿里",
-      "category": "产品动态",
-      "title": "阿里妈妈万相台AI创意能力再升级：支持3D商品展示+多场景自动适配，覆盖全部电商行业",
-      "sowhat": "阿里妈妈AIGC覆盖全电商行业，3D商品展示是多场景适配的关键差异化能力——实现'一图多用'降低商家运营成本。快手需在AIGC素材多样性（3D+视频+动态模板）上加速迭代。",
-      "sources": [
-        {
-          "name": "万相台产品更新日志",
-          "url": "https://one.alimama.com/",
-          "date": "2026-05-20"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-049",
-      "date": "2026-05-25",
-      "company": "阿里",
-      "category": "产品动态",
-      "title": "淘宝「AI万相台」全量：广告主可一键生成场景图+短视频，CTR+35%，创意产能提升10倍",
-      "sowhat": "阿里妈妈AI万相台全量开放，AIGC电商素材产能提升10倍+CTR+35%，大幅降低商家创意门槛。快手磁力金牛AIGC素材日均消耗3000万+需加速追平此能力差距（尤其在3D展示+多场景适配维度）。",
-      "sources": [
-        {
-          "name": "阿里妈妈官方通告",
-          "url": "https://one.alimama.com/",
-          "date": "2026-05-25"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-048",
-      "date": "2026-05-21",
-      "company": "美团",
-      "category": "产品动态",
-      "title": "美团外卖无人机航网迈出规模化第一步：打造城市低空新基建，配送成本有望降40%",
-      "sowhat": "美团无人机配送规模化是即时配送底层能力的重大升级，若配送成本降40%将大幅提升UE。快手本地生活缺乏自有配送网络，在履约效率上与美团差距将进一步拉大。",
-      "sources": [
-        {
-          "name": "美团无人机官方公告",
-          "url": "https://www.meituan.com/news/",
-          "date": "2026-05-21"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
       "id": "comp-047",
       "date": "2026-05-30",
       "company": "美团",
@@ -290,26 +147,6 @@
       ],
       "dimension": "产品动态",
       "data_source": "三方媒体",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-046",
-      "date": "2026-05-27",
-      "company": "美团",
-      "category": "产品动态",
-      "title": "美团神会员V2升级：到店+到家+酒旅全场景通刷，月活破1.2亿，核销率提升40%",
-      "sowhat": "美团神会员V2打通三大场景后月活1.2亿，这是美团从外卖平台升级到'本地生活超级App'的标志。全场景通刷+高核销率形成强大的用户粘性壁垒，对手难以复制。快手本地推需差异化会员体系。",
-      "sources": [
-        {
-          "name": "美团官方公告",
-          "url": "https://www.meituan.com/news/",
-          "date": "2026-05-27"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
       "tier": "T1",
       "_verification": "verified",
       "_date_ok": true
@@ -349,46 +186,6 @@
       "dimension": "财报/行业case",
       "data_source": "三方媒体",
       "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-044",
-      "date": "2026-05-22",
-      "company": "百度",
-      "category": "准入政策",
-      "title": "百度严肃医疗类目准入再收紧：男科/妇科需二级以上医院授权，医美资质门槛同步提高",
-      "sowhat": "百度医疗准入收紧将迫使部分医疗广告主转向其他平台（含快手）。快手需提前做好医疗广告合规预案，避免劣质医疗广告主涌入带来平台合规风险。",
-      "sources": [
-        {
-          "name": "百度推广政策更新公告",
-          "url": "https://e.baidu.com/",
-          "date": "2026-05-22"
-        }
-      ],
-      "dimension": "准入政策",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-043",
-      "date": "2026-05-24",
-      "company": "百度",
-      "category": "产品动态",
-      "title": "百度营销「AI一站托管」公测：素材生成+落地页+出价全自动，对标巨量出单宝核销计费模式",
-      "sowhat": "百度AI一站托管对标字节出单宝的全托管模式，降低中小广告主投放门槛。AI营销从平台差异化能力变为标配，快手磁力金牛需加速AI全托管能力建设以追赶。",
-      "sources": [
-        {
-          "name": "百度营销官方公告",
-          "url": "https://e.baidu.com/",
-          "date": "2026-05-24"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T2",
       "_verification": "verified",
       "_date_ok": true
     },
@@ -448,7 +245,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified",
+      "_verification": "weak",
       "_date_ok": true
     },
     {
@@ -468,7 +265,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified",
+      "_verification": "weak",
       "_date_ok": true
     },
     {
@@ -531,26 +328,6 @@
       "_date_ok": true
     },
     {
-      "id": "comp-037",
-      "date": "2026-05-22",
-      "company": "小红书",
-      "category": "产品动态",
-      "title": "小红书「灵犀」种草通推出ROI优化模式：CPS计费+闭环转化追踪，品牌广告效果可量化",
-      "sowhat": "小红书灵犀种草通CPS计费模式打通'种草到拔草'闭环，品牌广告效果可量化为实际GMV。快手磁力金牛需关注这一ROI验证能力的建设，否则品牌广告主在小红书可验证效果而在快手只能看曝光。",
-      "sources": [
-        {
-          "name": "小红书灵犀官方产品更新",
-          "url": "https://school.xiaohongshu.com/",
-          "date": "2026-05-22"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
       "id": "comp-036",
       "date": "2026-05-29",
       "company": "小红书",
@@ -567,7 +344,7 @@
       "dimension": "准入政策",
       "data_source": "竞媒官方",
       "tier": "T2",
-      "_verification": "verified",
+      "_verification": "weak",
       "_date_ok": true
     },
     {
@@ -607,7 +384,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified",
+      "_verification": "weak",
       "_date_ok": true
     },
     {
@@ -627,7 +404,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified",
+      "_verification": "weak",
       "_date_ok": true
     },
     {
@@ -647,7 +424,7 @@
       "dimension": "产品动态",
       "data_source": "竞媒官方",
       "tier": "T1",
-      "_verification": "verified",
+      "_verification": "weak",
       "_date_ok": true
     },
     {
@@ -679,45 +456,6 @@
         }
       ],
       "dimension": "产品动态",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-025",
-      "date": "2026-05-28",
-      "company": "拼多多",
-      "category": "准入政策",
-      "title": "Temu被欧盟以DSA罚2亿欧元：非法商品+商业模式透明度遭双重质疑，电商平台商品安全首张罚单",
-      "sowhat": "电商平台商品安全领域首张DSA罚单，Temu欧洲1.3亿用户面临合规高压。欧盟指出婴儿玩具含超标有害化学物质、电子设备未过安全测试、推荐系统不透明等多项问题。要求8月28日前提交整改计划，Shein也面临类似调查。中国跨境电商出海合规成本将持续上升。",
-      "sources": [
-        {
-          "name": "DW：Temu被欧盟重罚2亿欧元",
-          "url": "https://www.dw.com/zh/被指销售不合规商品-temu被欧盟重罚2亿欧元/a-77332285",
-          "date": "2026-05-28"
-        },
-        {
-          "name": "RFI：欧盟罚拼多多Temu 2亿欧元",
-          "url": "https://www.rfi.fr/cn/国际/20260528-欧盟罚拼多多-temu-2亿欧元-指其放任非法商品销售",
-          "date": "2026-05-28"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2024-H2",
-          "event": "欧盟对Temu启动DSA调查"
-        },
-        {
-          "date": "2025-12-01",
-          "event": "欧盟首次依据DSA对社交平台X开出罚单"
-        },
-        {
-          "date": "2026-05-28",
-          "event": "欧盟对Temu处以2亿欧元罚款，要求8月28日前提交整改计划"
-        }
-      ],
-      "dimension": "准入政策",
       "data_source": "三方媒体",
       "tier": "T1",
       "_verification": "verified",
@@ -796,8 +534,9 @@
       "dimension": "财报/行业case",
       "data_source": "三方媒体",
       "tier": "T1",
-      "_verification": "verified",
-      "_date_ok": true
+      "_verification": "weak",
+      "_date_ok": true,
+      "_ks_no_official": true
     }
   ]
 }

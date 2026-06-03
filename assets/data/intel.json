@@ -66,8 +66,9 @@
           "date": "2026-05-29"
         }
       ],
-      "_verification": "verified",
-      "_date_ok": true
+      "_verification": "weak",
+      "_date_ok": true,
+      "_ks_no_official": true
     },
     {
       "id": "intel-131",
@@ -128,8 +129,9 @@
           "date": "2026-05-31"
         }
       ],
-      "_verification": "verified",
-      "_date_ok": true
+      "_verification": "weak",
+      "_date_ok": true,
+      "_ks_no_official": true
     },
     {
       "id": "intel-130",
@@ -264,8 +266,9 @@
           "date": "2026-05-28"
         }
       ],
-      "_verification": "verified",
-      "_date_ok": true
+      "_verification": "weak",
+      "_date_ok": true,
+      "_ks_no_official": true
     },
     {
       "id": "intel-128",
@@ -333,8 +336,9 @@
           "date": "2026-06-02"
         }
       ],
-      "_verification": "verified",
-      "_date_ok": true
+      "_verification": "weak",
+      "_date_ok": true,
+      "_ks_no_official": true
     },
     {
       "id": "intel-127",
@@ -406,8 +410,9 @@
           "date": "2026-05-29"
         }
       ],
-      "_verification": "verified",
-      "_date_ok": true
+      "_verification": "weak",
+      "_date_ok": true,
+      "_ks_no_official": true
     },
     {
       "id": "intel-126",
@@ -538,8 +543,9 @@
           "date": "2026-05-28"
         }
       ],
-      "_verification": "verified",
-      "_date_ok": true
+      "_verification": "weak",
+      "_date_ok": true,
+      "_ks_no_official": true
     },
     {
       "id": "intel-106",
@@ -685,8 +691,9 @@
           "date": "2026-05-29"
         }
       ],
-      "_verification": "verified",
-      "_date_ok": true
+      "_verification": "weak",
+      "_date_ok": true,
+      "_ks_no_official": true
     }
   ]
 }
