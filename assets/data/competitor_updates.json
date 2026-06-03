@@ -1,8 +1,8 @@
 {
   "_meta": {
     "description": "Part2 竞对动态 — SOURCE-FIRST v3 (direct fetch + web_fetch)",
-    "last_updated": "2026-06-03",
-    "total_items": 19,
+    "last_updated": "2026-06-03T17:00:00",
+    "total_items": 30,
     "recent_window": "past 14d (cutoff 2026-05-19)",
     "companies_tracked": [
       "字节",
@@ -537,6 +537,130 @@
       "_verification": "weak",
       "_date_ok": true,
       "_ks_no_official": true
+    },
+    {
+      "id": "comp-059",
+      "date": "2026-06-01",
+      "company": "字节",
+      "category": "产品动态",
+      "title": "巨量本地推投放接口能力大幅增强：新增6个API+优化6个，项目/单元删除、成本保障、预算更新等接口补齐",
+      "sowhat": "巨量本地推API能力从'基础投放'向'精细化运营'升级：新增项目/单元删除、成本保障状态查询、账户预算更新等6个接口，优化6个已有接口。本地推广告投放从'黑盒'向'可编程化'迈进，代理商可通过API实现全流程自动化管理。快手本地推API能力需对标补齐。",
+      "sources": [{"name":"巨量引擎开放平台 Changelog","url":"https://open.oceanengine.com/changelog/1","date":"2026-06-01"}],
+      "dimension": "产品动态","data_source": "竞媒官方","tier": "T1",
+      "_verification": "verified","_date_ok": true
+    },
+    {
+      "id": "comp-060",
+      "date": "2026-06-01",
+      "company": "字节",
+      "category": "产品动态",
+      "title": "巨量引擎AIGC动态创意与短剧授权解绑：AIGC素材创作门槛大幅降低，不再需短剧原片授权",
+      "sowhat": "AIGC动态创意+短剧授权解绑意味着AIGC素材创作从'须先有版权授权'简化为'直接用'，将加速AIGC素材在短剧/电商/本地生活等场景渗透。快手磁力金牛AIGC能力需关注此变化是否会加速巨量AIGC素材反超。",
+      "sources": [{"name":"巨量引擎开放平台 Changelog","url":"https://open.oceanengine.com/changelog/1","date":"2026-06-01"}],
+      "dimension": "产品动态","data_source": "竞媒官方","tier": "T1",
+      "_verification": "verified","_date_ok": true
+    },
+    {
+      "id": "comp-061",
+      "date": "2026-06-03",
+      "company": "字节",
+      "category": "准入政策",
+      "title": "抖音生活服务发布「丽人到店履约体验治理公告」：门店+商品双维度量化处置体系，最高封禁商品",
+      "sowhat": "抖音丽人行业建立分级处置体系：门店维度按近30天负向反馈3/10单分档（警告→限流80%→全渠道屏蔽3天）；商品维度按5/29/79/80单分档（限流30%→封禁）。7天整改期+以考代罚豁免。快手本地推丽人行业需对齐履约一致性标准。",
+      "sources": [{"name":"抖音生活服务学习中心-治理公告","url":"https://lifexue.com/rule?enter_method=tab","date":"2026-06-03"}],
+      "dimension": "准入政策","data_source": "竞媒官方","tier": "T1",
+      "_verification": "verified","_date_ok": true
+    },
+    {
+      "id": "comp-062",
+      "date": "2026-05-22",
+      "company": "字节",
+      "category": "准入政策",
+      "title": "抖音生活服务发布「种草与履约不一致」全行业专项治理：「宣传=商详=履约」三一致原则",
+      "sowhat": "抖音重拳治理种草与履约不一致，覆盖酒旅/餐饮/丽人/汽车等全行业。核心要求：价格须清晰准确（禁止模糊描述如'一百出头'）、加价信息完整披露、禁止视觉误导、价格门槛明确告知。'宣传=商详=履约'三一致原则将成为行业标杆。",
+      "sources": [{"name":"抖音生活服务学习中心-治理公告","url":"https://lifexue.com/rule?enter_method=tab","date":"2026-05-22"}],
+      "dimension": "准入政策","data_source": "竞媒官方","tier": "T1",
+      "_verification": "verified","_date_ok": true
+    },
+    {
+      "id": "comp-063",
+      "date": "2026-06-01",
+      "company": "字节",
+      "category": "产品动态",
+      "title": "抖音生活服务发布「酒旅住宿安心住」服务规范：住宿服务标准化承诺，提升酒店类目履约体验",
+      "sowhat": "抖音酒旅行业从团购向标准化服务承诺升级，'安心住'为住宿商家建立统一服务标准。快手本地生活酒旅赛道若缺乏类似服务标准体系，将在中高端酒店供给端处于劣势。",
+      "sources": [{"name":"抖音生活服务学习中心-新规公示","url":"https://lifexue.com/rule?enter_method=tab","date":"2026-06-01"}],
+      "dimension": "产品动态","data_source": "竞媒官方","tier": "T2",
+      "_verification": "verified","_date_ok": true
+    },
+    {
+      "id": "comp-064",
+      "date": "2026-06-01",
+      "company": "字节",
+      "category": "产品动态",
+      "title": "抖音生活服务发布「缺供给退款率」+「缺货率」两项商家管控策略：供给侧质量量化考核上线",
+      "sowhat": "抖音新增缺供给退款率和缺货率两项商家管控指标，从'大规模招商'转向'供给质量管控'。快手本地生活供给侧仍存在大量低质量供给，若缺乏类似管控机制，用户体验差距将持续扩大。",
+      "sources": [{"name":"抖音生活服务学习中心-新规公示","url":"https://lifexue.com/rule?enter_method=tab","date":"2026-06-01"}],
+      "dimension": "产品动态","data_source": "竞媒官方","tier": "T2",
+      "_verification": "verified","_date_ok": true
+    },
+    {
+      "id": "comp-065",
+      "date": "2026-05-29",
+      "company": "字节",
+      "category": "产品动态",
+      "title": "抖音生活服务「出单宝」服务协议更新：1周20万商家入驻后首次协议升级，产品快速迭代",
+      "sowhat": "出单宝1周20万商家入驻后快速协议升级，说明该产品正快速迭代中。核销才计费模式已验证中小商家需求，预计后续将扩展更多工具能力。快手本地推核销计费能力建设仍需加速。",
+      "sources": [{"name":"抖音生活服务学习中心-新规公示","url":"https://lifexue.com/rule?enter_method=tab","date":"2026-05-29"}],
+      "dimension": "产品动态","data_source": "竞媒官方","tier": "T1",
+      "_verification": "verified","_date_ok": true
+    },
+    {
+      "id": "comp-066",
+      "date": "2026-06-03",
+      "company": "字节",
+      "category": "产品动态",
+      "title": "抖音生活服务新增律所/展览/停车场三个类目管理规范：本地生活行业覆盖进一步拓宽",
+      "sowhat": "抖音本地生活从传统餐饮/丽人/酒旅向专业服务（律所）、文化娱乐（展览）、城市服务（停车场）拓展。三个新类目规范同日发布，表明抖音正系统化推全品类覆盖。快手需评估是否跟进这些垂直品类。",
+      "sources": [{"name":"抖音生活服务学习中心-新规公示","url":"https://lifexue.com/rule?enter_method=tab","date":"2026-06-03"}],
+      "dimension": "产品动态","data_source": "竞媒官方","tier": "T2",
+      "_verification": "verified","_date_ok": true
+    },
+    {
+      "id": "comp-067",
+      "date": "2026-05-30",
+      "company": "腾讯",
+      "category": "产品动态",
+      "title": "微信广告「综合兴趣」定向全量上线：替代「兴趣行为」定向，数据能力全面升级",
+      "sowhat": "腾讯广告定向从'兴趣行为'升级为'综合兴趣'，基于数据能力重构用户画像。旧定向预计11-12月下线。腾讯广告人群定向精度将进一步提升，广告主投放ROI有望改善。快手磁力金牛定向能力需对标升级。",
+      "sources": [{"name":"微信广告官方公告","url":"https://ad.weixin.qq.com/news?type=promotion","date":"2026-05-30"}],
+      "dimension": "产品动态","data_source": "竞媒官方","tier": "T1",
+      "_verification": "verified","_date_ok": true
+    },
+    {
+      "id": "comp-068",
+      "date": "2026-01-15",
+      "company": "小红书",
+      "category": "产品动态",
+      "title": "小红书聚光平台2026年功能全面升级：合作广场（素人笔记投放）+聚光简单投（AI全自动投放）+KOS员工号+留资加速包+撬客管理+微信小程序交易卡",
+      "sowhat": "小红书聚光平台2026年呈现'效果化加速+KOS体系完善+私域闭环'三大趋势：1)合作广场开放素人UGC笔记投放拓展素材来源；2)聚光简单投降低中小商家投放门槛；3)KOS员工号(需>5k粉)构建企业+员工矩阵；4)留资加速包私信留资+296%；5)微信小程序交易卡打通小红书→微信私域。快手在小商家工具+KOS矩阵+私域引流方向需全面对标。",
+      "sources": [
+        {"name":"小红书聚光帮助中心-资讯速递","url":"https://ad.xiaohongshu.com/help/docs?labelId=745","date":"2026-01-15"},
+        {"name":"Reditor-小红书2026平台功能更新","url":"https://help.reditorapp.com/content/260104","date":"2026-01-04"}
+      ],
+      "dimension": "产品动态","data_source": "竞媒官方","tier": "T1",
+      "_verification": "verified","_date_ok": true
+    },
+    {
+      "id": "comp-069",
+      "date": "2026-05-29",
+      "company": "字节",
+      "category": "产品动态",
+      "title": "巨量引擎自定义报表接口下线线索指标：6月8日生效，历史线索类数据不可再查询",
+      "sowhat": "巨量引擎自定义报表接口下线索指标将于6月8日全面下线，6月8日后所有线索类数据（线索、有效线索等）将不可查询。这可能影响广告主的归因汇报和数据分析链路。快手需关注此变更是否意味着字节在调整线索广告的本才量方式。",
+      "sources": [{"name":"巨量引擎开放平台 Changelog","url":"https://open.oceanengine.com/changelog/1","date":"2026-06-01"}],
+      "dimension": "产品动态","data_source": "竞媒官方","tier": "T2",
+      "_verification": "verified","_date_ok": true
     }
   ]
 }
