@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Part2 竞对动态 — SOURCE-FIRST v3 (direct fetch + web_fetch)",
-    "last_updated": "2026-06-02",
+    "last_updated": "2026-06-03",
     "total_items": 23,
     "recent_window": "past 14d (cutoff 2026-05-19)",
     "companies_tracked": [
@@ -17,6 +17,121 @@
     "fetch_method": "direct_channel_fetch + web_fetch + wechat_articles_skill"
   },
   "items": [
+    {
+      "id": "comp-025",
+      "date": "2026-05-28",
+      "company": "拼多多",
+      "category": "准入政策",
+      "title": "Temu被欧盟以DSA罚2亿欧元：非法商品+商业模式透明度遭双重质疑，电商平台商品安全首张罚单",
+      "sowhat": "电商平台商品安全领域首张DSA罚单，Temu欧洲1.3亿用户面临合规高压。欧盟指出婴儿玩具含超标有害化学物质、电子设备未过安全测试、推荐系统不透明等多项问题。要求8月28日前提交整改计划，Shein也面临类似调查。中国跨境电商出海合规成本将持续上升。",
+      "sources": [
+        {
+          "name": "DW：Temu被欧盟重罚2亿欧元",
+          "url": "https://www.dw.com/zh/被指销售不合规商品-temu被欧盟重罚2亿欧元/a-77332285",
+          "date": "2026-05-28"
+        },
+        {
+          "name": "RFI：欧盟罚拼多多Temu 2亿欧元",
+          "url": "https://www.rfi.fr/cn/国际/20260528-欧盟罚拼多多-temu-2亿欧元-指其放任非法商品销售",
+          "date": "2026-05-28"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2024-H2",
+          "event": "欧盟对Temu启动DSA调查"
+        },
+        {
+          "date": "2025-12-01",
+          "event": "欧盟首次依据DSA对社交平台X开出罚单"
+        },
+        {
+          "date": "2026-05-28",
+          "event": "欧盟对Temu处以2亿欧元罚款，要求8月28日前提交整改计划"
+        }
+      ],
+      "dimension": "准入政策",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-024",
+      "date": "2026-06-01",
+      "company": "美团",
+      "category": "财报/行业case",
+      "title": "美团2026Q1：营收910亿亏损收窄超预期，外卖4-5月已盈利，大摩瑞银齐看多",
+      "sowhat": "外卖大战降温信号明确：Q1经调整净亏49.7亿（Q4为151亿），UE大幅改善。管理层透露4-5月外卖已实现盈利，竞争格局趋稳。美团相对阿里外卖单均优势扩至3元，30元以上订单份额维持70%。到店仍面临抖音补贴压力但利润率稳定在25%。大摩维持120港元目标价，瑞银看128港元。",
+      "sources": [
+        {
+          "name": "新浪财经：外卖大战降温，美团重回正轨",
+          "url": "https://finance.sina.cn/stock/jdts/2026-06-02/detail-inhzzcpr1622455.d.html",
+          "date": "2026-06-02"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2025-Q4",
+          "event": "外卖大战白热化，经调整净亏151亿"
+        },
+        {
+          "date": "2026-02-10",
+          "event": "抖音「抖省省」独立App上线"
+        },
+        {
+          "date": "2026-05-01",
+          "event": "外卖4-5月UE转正，补贴收窄"
+        },
+        {
+          "date": "2026-06-01",
+          "event": "Q1财报：营收910亿+5.6%，亏损收窄至49.7亿，大摩瑞银看多"
+        }
+      ],
+      "dimension": "财报/行业case",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-023",
+      "date": "2026-05-27",
+      "company": "快手",
+      "category": "财报/行业case",
+      "title": "快手2026Q1：收入337亿+3.4%，可灵ARR 5亿美元，广告196亿+9.3%，净利下滑26%押注AI",
+      "sowhat": "快手Q1收入增速降至3.4%为近年最低，可灵贡献收入6.5亿但占比不足2%。广告仍为增长支柱（+9.3%），漫剧日耗峰值突破2000万。但AI算力成本侵蚀利润（净利-26%），可灵计划分拆以200亿美元估值独立融资，但模型优势正被Seedance 2.0/HappyHorse抹平，海外即梦Dreamina访问量已反超Kling AI。",
+      "sources": [
+        {
+          "name": "澎湃新闻：ARR 5亿美元，可灵真正的考验才开始",
+          "url": "https://m.thepaper.cn/newsDetail_forward_33255989",
+          "date": "2026-05-28"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-01-01",
+          "event": "Kling AI推出Motion Control，C端收入从120万→250万美元"
+        },
+        {
+          "date": "2026-05-12",
+          "event": "快手确认可灵分拆计划，以约200亿美元估值接触Pre-IPO投资者"
+        },
+        {
+          "date": "2026-05-14",
+          "event": "Kling AI登顶42个国家App Store总榜第一"
+        },
+        {
+          "date": "2026-05-27",
+          "event": "Q1财报：收入337亿+3.4%，广告196亿+9.3%，可灵ARR 5亿美元，净利-26.1%"
+        }
+      ],
+      "dimension": "财报/行业case",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
     {
       "id": "comp-702",
       "date": "2026-06-02",
