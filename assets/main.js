@@ -617,50 +617,85 @@ function renderCompetitorList() {
 
     const html = updates.map(item => {
         const dt = new Date(item.date);
-        const shortDate = isNaN(dt.getTime()) ? item.date : `${dt.getMonth()+1}/${dt.getDate()}`;
-        const weekDay = ['日','一','二','三','四','五','六'][dt.getDay()] || '';
-        const srcBadge = item.data_source === '飞书内部' ? '📁 飞书' :
-                          item.data_source === '竞媒官方' ? '🏢 官方' : '📰 媒体';
-        const srcCls = (item.data_source || '').replace(/[\s\/]/g, '');
+        const monthDay = isNaN(dt.getTime()) ? item.date : `${dt.getMonth()+1}/${dt.getDate()}`;
+        const fullDate = isNaN(dt.getTime()) ? item.date : `${dt.getFullYear()}/${dt.getMonth()+1}/${dt.getDate()}`;
+        const dimLabel = item.dimension || item.category || '动态';
+        const srcLabel = item.data_source === '竞媒官方' ? '官方' :
+                         item.data_source === '飞书内部' ? '飞书' : '媒体';
         const isHigh = item.tier === 'T1' || item.priority === 'high';
-        const sourcesHtml = (item.sources || []).slice(0, 3).map(s =>
-            `<a href="${s.url}" target="_blank" rel="noopener" class="comp-src-inline" onclick="event.stopPropagation()">↗</a>`
-        ).join('');
-        const fullSourcesHtml = (item.sources || []).map(s =>
-            `<a href="${s.url}" target="_blank" rel="noopener" class="comp-src-full">${s.name}${s.date ? ' ('+s.date+')' : ''}</a>`
-        ).join(' · ');
+
+        // 关键数据指标
+        const hasMetrics = item.metrics && Object.keys(item.metrics).length > 0;
+        const metricsHtml = hasMetrics ? `
+        <div class="cd-metrics">
+            ${Object.entries(item.metrics).map(([k,v]) => `<span class="cd-metric"><b>${v}</b><small>${k}</small></span>`).join('')}
+        </div>` : '';
+
+        // 时间线
+        const hasTimeline = item.timeline && item.timeline.length > 0;
+        const timelineHtml = hasTimeline ? `
+        <div class="cd-timeline">
+            ${item.timeline.map(t => `
+                <div class="cd-tl-node">
+                    <span class="cd-tl-dot"></span>
+                    <span class="cd-tl-date">${t.date}</span>
+                    <span class="cd-tl-text">${t.event}</span>
+                </div>`).join('')}
+        </div>` : '';
+
+        // 来源列表
+        const hasSources = item.sources && item.sources.length > 0;
+
         return `
-        <div class="news-row comp-row ${isHigh ? 'pri-high' : ''}" onclick="toggleCompRow(this)">
-            <div class="news-row-datecol">
-                <div class="news-row-date">${shortDate}</div>
-                <div class="news-row-week">周${weekDay}</div>
-            </div>
-            <div class="news-row-main">
-                <div class="news-row-headline">
-                    <span class="comp-dim-badge">${item.dimension || item.category || ''}</span>
-                    <span class="comp-src-inline-tag src-${srcCls}">${srcBadge}</span>
-                    ${isHigh ? '<span class="row-dot dot-high" title="高优先级"></span>' : ''}
-                    <span class="news-title">${item.title}</span>
+        <div class="comp-card dcap-card ${isHigh ? 'comp-card-t1' : ''}" data-id="${item.id}">
+            <div class="cc-header" onclick="toggleDcapCard(this.closest('.comp-card'))">
+                <div class="cc-title-row">
+                    <span class="cc-dim-tag cc-dim-${dimLabel.replace(/[\s\/]/g,'')}">${dimLabel}</span>
+                    <span class="cc-src-tag">${srcLabel}</span>
+                    ${isHigh ? '<span class="cc-t1-dot" title="重要动态"></span>' : ''}
+                    <h3 class="cc-title">${item.title}</h3>
                 </div>
-                <div class="news-row-tldr">${item.sowhat || ''}</div>
-                <div class="comp-detail-inline" style="display:none;">
-                    <div class="comp-detail-section">
-                        <strong>💡 So What</strong>
-                        <p>${item.sowhat || '暂无分析'}</p>
-                    </div>
-                    ${item.timeline && item.timeline.length > 0 ? `
-                    <div class="comp-detail-section">
-                        <strong>📅 事件时间线</strong>
-                        ${item.timeline.map(t => `<div class="comp-tl-item"><span class="comp-tl-date">${t.date}</span> ${t.event}</div>`).join('')}
-                    </div>` : ''}
-                    <div class="comp-detail-section">
-                        <strong>🔗 信息源</strong>
-                        <div>${fullSourcesHtml || '暂无来源'}</div>
-                    </div>
+                <div class="cc-meta-row">
+                    <span class="cc-date">${fullDate}</span>
+                    <span class="cc-company-tag">${item.company}</span>
+                    ${item.tags ? item.tags.slice(0,3).map(t => `<span class="cc-keyword-tag">${(t||'').replace(/^#/,'')}</span>`).join('') : ''}
+                    <span class="cc-expand-icon">▸</span>
                 </div>
             </div>
-            <div class="news-row-aside">
-                <span class="row-cta comp-row-toggle">详情 ›</span>
+            ${hasSources ? `
+            <div class="cc-summary-row">
+                <p class="cc-summary-text">${item.sowhat ? item.sowhat.slice(0, 120) + '…' : item.title}</p>
+            </div>` : ''}
+            <div class="cc-detail" style="display:none;">
+                <div class="cd-section cd-summary">
+                    <div class="cd-section-label">📋 事件分析</div>
+                    <p>${item.sowhat || '暂无深度分析'}</p>
+                </div>
+                ${hasMetrics ? `
+                <div class="cd-section cd-data">
+                    <div class="cd-section-label">📊 关键数据</div>
+                    ${metricsHtml}
+                </div>` : ''}
+                ${hasTimeline ? `
+                <div class="cd-section cd-history">
+                    <div class="cd-section-label">📅 时序回溯</div>
+                    ${timelineHtml}
+                </div>` : ''}
+                <div class="cd-section cd-sowhat">
+                    <div class="cd-section-label">💡 对快手 So What</div>
+                    <p>${item.sowhat || '暂无分析'}</p>
+                </div>
+                ${hasSources ? `
+                <div class="cd-section cd-sources">
+                    <button class="cd-src-toggle" onclick="event.stopPropagation();toggleSourcePanel(this)">🔗 数据来源 (${item.sources.length}) ▾</button>
+                    <div class="cd-src-panel" style="display:none;">
+                        <ul class="cd-src-list">
+                            ${item.sources.map((s, idx) => `
+                                <li><a href="${s.url}" target="_blank" rel="noopener" class="cd-src-link">${s.name}</a>${s.date ? `<span class="cd-src-date"> · ${s.date}</span>` : ''}</li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                </div>` : ''}
             </div>
         </div>`;
     }).join('');
@@ -668,49 +703,28 @@ function renderCompetitorList() {
     container.innerHTML = html;
 }
 
-// 竞对筛选栏折叠
-function toggleCompFilters() {
-    const body = document.getElementById('compFilterBody');
-    const icon = document.getElementById('compFilterToggleIcon');
-    if (!body || !icon) return;
-    if (body.style.display === 'none') {
-        body.style.display = 'block';
-        icon.textContent = '▼';
-    } else {
-        body.style.display = 'none';
-        icon.textContent = '▶';
-    }
-}
-window.toggleCompFilters = toggleCompFilters;
-
-// 竞对行展开/折叠详情
-function toggleCompRow(row) {
-    const detail = row.querySelector('.comp-detail-inline');
-    const cta = row.querySelector('.comp-row-toggle');
+// dcap-style 展开/折叠
+function toggleDcapCard(card) {
+    const detail = card.querySelector('.cc-detail');
+    const icon = card.querySelector('.cc-expand-icon');
+    const summary = card.querySelector('.cc-summary-row');
     if (!detail) return;
-    if (detail.style.display === 'none' || !detail.style.display) {
-        detail.style.display = 'block';
-        if (cta) cta.textContent = '收起 ▲';
-    } else {
-        detail.style.display = 'none';
-        if (cta) cta.textContent = '详情 ›';
-    }
+    const isOpen = detail.style.display === 'block';
+    detail.style.display = isOpen ? 'none' : 'block';
+    if (icon) icon.textContent = isOpen ? '▸' : '▾';
+    if (summary) summary.style.display = isOpen ? '' : 'none';
 }
-window.toggleCompRow = toggleCompRow;
+window.toggleDcapCard = toggleDcapCard;
 
-// 事件时间线折叠（紧凑版）
-function toggleCompTimeline(el) {
-    const tl = el.parentElement.nextElementSibling;
-    if (!tl || !tl.classList.contains('comp-tl-inline')) return;
-    if (tl.style.display === 'none') {
-        tl.style.display = 'block';
-        el.textContent = el.textContent.replace('📅', '▲');
-    } else {
-        tl.style.display = 'none';
-        el.textContent = el.textContent.replace('▲', '📅');
-    }
+// 来源面板切换
+function toggleSourcePanel(btn) {
+    const panel = btn.nextElementSibling;
+    if (!panel) return;
+    const isOpen = panel.style.display === 'block';
+    panel.style.display = isOpen ? 'none' : 'block';
+    btn.textContent = btn.textContent.replace(isOpen ? '▴' : '▾', isOpen ? '▾' : '▴');
 }
-window.toggleCompTimeline = toggleCompTimeline;
+window.toggleSourcePanel = toggleSourcePanel;
 
 // 更新筛选栏摘要
 function updateCompFilterSummary() {
