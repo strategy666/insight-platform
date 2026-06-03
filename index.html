@@ -618,7 +618,7 @@ window.searchCompetitor = async function(q) {
         const typeIcon = it.type === 'docx' ? '📄' : it.type === 'wiki' ? '📚' : it.type === 'sheet' ? '📊' : it.type === 'file' ? '📎' : it.type === 'bitable' ? '🗃️' : '📝';
         const hasUrl = !!(it.url && it.url.startsWith('http'));
         const openBtn = hasUrl
-            ? `<a href="${it.url}" target="_blank" rel="noopener" class="fs-open-btn">${it._access === 'restricted' ? '打开全文（需登录）↗' : it._access === 'internal' ? '打开全文（内网）↗' : '打开全文 ↗'}</a>`
+            ? `<a href="${it.url}" target="_blank" rel="noopener" class="fs-open-btn">${it._access === 'restricted' ? '打开全文（需内网SSO登录）↗' : it._access === 'internal' ? '打开全文（内网文档）↗' : '打开全文 ↗'}</a>`
             : `<span class="fs-open-btn fs-open-btn-disabled" title="此条仅有标题元信息，无飞书直链">仅元数据</span>`;
         return `
         <div class="dual-card fs-card">
@@ -674,7 +674,7 @@ function _genAISummary(q, fsHits, compHits, feishuOnly) {
     const total = fsHits.length + (feishuOnly ? 0 : compHits.length);
     if (total === 0) {
         return `<div class="ai-summary-empty">
-            <h3>🤖 AI 摘要</h3>
+            <h3>🤖 当前本地情报库中未找到相关内容</h3>
             <p>未找到与「<b>${q}</b>」相关的内部资料或公开动态。建议：</p>
             <ul>
                 <li>尝试更宽泛的关键词（如改"巨量引擎深度转化"为"巨量引擎"）</li>
@@ -699,7 +699,7 @@ function _genAISummary(q, fsHits, compHits, feishuOnly) {
     
     return `<div class="ai-summary-card">
         <div class="ai-summary-head">
-            <h3>🤖 AI 摘要 <span class="ai-summary-q">"${q}"</span></h3>
+            <h3>🤖 基于 <b>${total}</b> 条命中结果，简单总结如下 <span class="ai-summary-q">"${q}"</span></h3>
             <span class="ai-summary-meta">基于 ${total} 条命中（飞书 ${fsHits.length} · 公开 ${feishuOnly ? '已屏蔽' : compHits.length}）</span>
         </div>
         <div class="ai-summary-body">
@@ -760,7 +760,7 @@ function renderFeishuList(list, q) {
         const compTag = (it.competitors || ['字节'])[0];
         const sheetTag = it.source_sheet || it.sheet || '';
         const openBtn = hasUrl
-            ? `<a href="${it.url}" target="_blank" rel="noopener" class="fs-open-btn">${it._access === 'restricted' ? '打开全文（需登录）↗' : it._access === 'internal' ? '打开全文（内网）↗' : '打开全文 ↗'}</a>`
+            ? `<a href="${it.url}" target="_blank" rel="noopener" class="fs-open-btn">${it._access === 'restricted' ? '打开全文（需内网SSO登录）↗' : it._access === 'internal' ? '打开全文（内网文档）↗' : '打开全文 ↗'}</a>`
             : `<span class="fs-open-btn fs-open-btn-disabled" title="此条仅有标题元信息，无飞书直链">仅元数据</span>`;
         return `
         <div class="dual-card fs-card fs-page-card">
@@ -1182,7 +1182,7 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260603i"></script>
+<script src="assets/main.js?v=20260603l"></script>
 <script src="assets/feishu-search.js?v=20260601q"></script>
 <script src="assets/ai-chat.js?v=20260601q"></script>
 <script src="assets/industry-research.js?v=20260601q"></script>

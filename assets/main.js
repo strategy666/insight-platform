@@ -694,7 +694,7 @@ function renderCompetitorList() {
             </div>` : ''}
             <div class="cc-detail" style="display:none;">
                 <div class="cd-section cd-summary">
-                    <div class="cd-section-label">📋 事件分析</div>
+                    <div class="cd-section-label">📋 事件分析与快手启示</div>
                     <p>${item.sowhat || '暂无深度分析'}</p>
                 </div>
                 ${hasMetrics ? `
@@ -707,10 +707,6 @@ function renderCompetitorList() {
                     <div class="cd-section-label">📅 时序回溯</div>
                     ${timelineHtml}
                 </div>` : ''}
-                <div class="cd-section cd-sowhat">
-                    <div class="cd-section-label">💡 对快手 So What</div>
-                    <p>${item.sowhat || '暂无分析'}</p>
-                </div>
                 ${hasSources ? `
                 <div class="cd-section cd-sources">
                     <button class="cd-src-toggle" onclick="event.stopPropagation();toggleSourcePanel(this)">🔗 数据来源 (${item.sources.length}) ▾</button>
