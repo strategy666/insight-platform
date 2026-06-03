@@ -5925,5 +5925,29 @@ a.news-row-link:hover .news-title { color: #2a6f4f; }
     background: #f8fdfb; border-left: 3px solid #2d7a5f;
     border-radius: 0 6px 6px 0; font-size: 12px; color: #555;
 }
+.comp-detail-inline {
+    margin-top: 10px; padding: 12px 14px;
+    background: #f9fafb; border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+.comp-detail-section {
+    margin-bottom: 10px; font-size: 13px; color: #444; line-height: 1.7;
+}
+.comp-detail-section:last-child { margin-bottom: 0; }
+.comp-detail-section strong {
+    display: block; margin-bottom: 4px; color: #1a1a2e; font-size: 13px;
+}
+.comp-detail-section p { margin: 4px 0 0 0; }
+.comp-src-full {
+    color: #2d7a5f; text-decoration: none; font-size: 12px;
+}
+.comp-src-full:hover { text-decoration: underline; }
+.comp-row-toggle {
+    cursor: pointer; user-select: none;
+    transition: color 0.2s;
+}
+.competitor-updates .comp-row {
+    cursor: pointer;
+}
 .comp-row .comp-tl-item { padding: 2px 0; }
 .comp-row .comp-tl-date { font-weight: 600; color: #2d7a5f; margin-right: 6px; font-size: 10px; }

@@ -626,8 +626,11 @@ function renderCompetitorList() {
         const sourcesHtml = (item.sources || []).slice(0, 3).map(s =>
             `<a href="${s.url}" target="_blank" rel="noopener" class="comp-src-inline" onclick="event.stopPropagation()">↗</a>`
         ).join('');
+        const fullSourcesHtml = (item.sources || []).map(s =>
+            `<a href="${s.url}" target="_blank" rel="noopener" class="comp-src-full">${s.name}${s.date ? ' ('+s.date+')' : ''}</a>`
+        ).join(' · ');
         return `
-        <div class="news-row comp-row ${isHigh ? 'pri-high' : ''}">
+        <div class="news-row comp-row ${isHigh ? 'pri-high' : ''}" onclick="toggleCompRow(this)">
             <div class="news-row-datecol">
                 <div class="news-row-date">${shortDate}</div>
                 <div class="news-row-week">周${weekDay}</div>
@@ -640,17 +643,24 @@ function renderCompetitorList() {
                     <span class="news-title">${item.title}</span>
                 </div>
                 <div class="news-row-tldr">${item.sowhat || ''}</div>
-                <div class="news-row-meta">
-                    ${sourcesHtml}
-                    ${item.timeline && item.timeline.length > 0 ? `<span class="comp-tl-summary" onclick="event.stopPropagation();toggleCompTimeline(this)">📅 ${item.timeline.length}节点</span>` : ''}
+                <div class="comp-detail-inline" style="display:none;">
+                    <div class="comp-detail-section">
+                        <strong>💡 So What</strong>
+                        <p>${item.sowhat || '暂无分析'}</p>
+                    </div>
+                    ${item.timeline && item.timeline.length > 0 ? `
+                    <div class="comp-detail-section">
+                        <strong>📅 事件时间线</strong>
+                        ${item.timeline.map(t => `<div class="comp-tl-item"><span class="comp-tl-date">${t.date}</span> ${t.event}</div>`).join('')}
+                    </div>` : ''}
+                    <div class="comp-detail-section">
+                        <strong>🔗 信息源</strong>
+                        <div>${fullSourcesHtml || '暂无来源'}</div>
+                    </div>
                 </div>
-                ${item.timeline && item.timeline.length > 0 ? `
-                <div class="comp-tl-inline" style="display:none;">
-                    ${item.timeline.map(t => `<div class="comp-tl-item"><span class="comp-tl-date">${t.date}</span> ${t.event}</div>`).join('')}
-                </div>` : ''}
             </div>
             <div class="news-row-aside">
-                <span class="row-cta">详情 ›</span>
+                <span class="row-cta comp-row-toggle">详情 ›</span>
             </div>
         </div>`;
     }).join('');
@@ -672,6 +682,21 @@ function toggleCompFilters() {
     }
 }
 window.toggleCompFilters = toggleCompFilters;
+
+// 竞对行展开/折叠详情
+function toggleCompRow(row) {
+    const detail = row.querySelector('.comp-detail-inline');
+    const cta = row.querySelector('.comp-row-toggle');
+    if (!detail) return;
+    if (detail.style.display === 'none' || !detail.style.display) {
+        detail.style.display = 'block';
+        if (cta) cta.textContent = '收起 ▲';
+    } else {
+        detail.style.display = 'none';
+        if (cta) cta.textContent = '详情 ›';
+    }
+}
+window.toggleCompRow = toggleCompRow;
 
 // 事件时间线折叠（紧凑版）
 function toggleCompTimeline(el) {
