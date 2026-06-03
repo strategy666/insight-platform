@@ -5533,6 +5533,76 @@ a.news-row-link:hover .news-title { color: #2a6f4f; }
     .hero-search-hints { font-size: 11px; }
 }
 
+/* ============== Tab1 双检索栏内嵌 Hero ============== */
+.tab1-dual-search-wrap {
+    flex: 0 0 auto;
+    min-width: 460px;
+    max-width: 560px;
+}
+.hero-dual-search {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.hero-search-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    background: rgba(255,255,255,0.96);
+    border-radius: 22px;
+    padding: 3px 3px 3px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.hero-search-label {
+    font-size: 14px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+.hero-search-item input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 12px;
+    color: #333;
+    min-width: 0;
+    padding: 4px 0;
+}
+.hero-search-item input::placeholder {
+    color: #aaa;
+    font-size: 11.5px;
+}
+.hero-search-btn-sm {
+    flex-shrink: 0;
+    padding: 4px 12px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+}
+.hero-search-btn-sm:hover {
+    opacity: 0.85;
+}
+@media (max-width: 900px) {
+    .tab1-dual-search-wrap {
+        min-width: 0;
+        width: 100%;
+        max-width: none;
+    }
+    .hero-dual-search {
+        flex-direction: column;
+    }
+    .hero-search-item {
+        width: 100%;
+    }
+}
+
 /* ============ 信号雷达 · Signals Radar (Podcasts/Tweets/Deals) ============ */
 #signalsRadar { margin-top: 32px; }
 .signals-tabs {

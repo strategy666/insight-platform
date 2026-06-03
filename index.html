@@ -9,7 +9,7 @@
     <title>商业化洞察周报 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260603f" />
+    <link rel="stylesheet" href="assets/style.css?v=20260603g" />
 </head>
 <body>
 
@@ -163,49 +163,41 @@
                 <h1>🎯 竞对追踪</h1>
                 <p class="hero-subtitle">字节 / 小红书 / 腾讯 / 百度 / 美团 / 阿里 / 拼多多 / OpenAI / Google · 产品动态 · 准入政策 · 营销策略</p>
             </div>
+            <div class="hero-search-wrap tab1-dual-search-wrap">
+                <div class="hero-dual-search">
+                    <div class="hero-search-item">
+                        <span class="hero-search-label">📁</span>
+                        <input type="text" id="feishuPageInput" placeholder="检索飞书文档…" autocomplete="off"
+                               onkeyup="if(event.key==='Enter')runFeishuPageSearch(this.value)"
+                               oninput="onFeishuPageInput(this.value)" />
+                        <button class="hero-search-btn-sm" onclick="runFeishuPageSearch(document.getElementById('feishuPageInput').value)" title="检索飞书">检索</button>
+                    </div>
+                    <div class="hero-search-item">
+                        <span class="hero-search-label">🔍</span>
+                        <input type="text" id="competitorSearchInput" placeholder="检索竞对动态…" autocomplete="off"
+                               onkeyup="if(event.key==='Enter')searchCompetitor(this.value)"
+                               oninput="onCompSearchInput(this.value)" />
+                        <button class="hero-search-btn-sm" onclick="searchCompetitor(document.getElementById('competitorSearchInput').value)" title="检索竞对">检索</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- =========================================================================
-     Part 1 · 📁 飞书文档检索  ─  信息源：仅飞书文档 · 全量检索
+     Part 1 · 检索结果面板（检索时动态展示，初始隐藏）
      ========================================================================= -->
-<section id="feishuInline" class="section section-tight">
+<section id="feishuInline" class="section section-tight" style="display:none;">
     <div class="container">
         <div class="dual-search-row">
-            <!-- 左：飞书文档检索 -->
+            <!-- 左：飞书文档检索结果 -->
             <div class="dual-search-col">
-                <div class="dual-search-head">
-                    <span class="dual-search-icon">📁</span>
-                    <div class="dual-search-title">飞书文档检索</div>
-                </div>
-                <div class="search-input-wrapper dual-search-input">
-                    <input type="text" id="feishuPageInput" placeholder="输入关键词检索飞书文档…" autocomplete="off"
-                           onkeyup="if(event.key==='Enter')runFeishuPageSearch(this.value)"
-                           oninput="onFeishuPageInput(this.value)" />
-                    <button class="search-btn" onclick="runFeishuPageSearch(document.getElementById('feishuPageInput').value)">检索</button>
-                </div>
-                <div class="feishu-result-grid" id="fsResultList">
-                    <div class="dual-empty">输入关键词查看匹配文档</div>
-                </div>
+                <div class="feishu-result-grid" id="fsResultList"></div>
             </div>
-
-            <!-- 右：竞对动态检索 -->
+            <!-- 右：竞对动态检索结果 -->
             <div class="dual-search-col">
-                <div class="dual-search-head">
-                    <span class="dual-search-icon">🔍</span>
-                    <div class="dual-search-title">竞对动态检索</div>
-                </div>
-                <div class="ai-search-container compsearch-v2" style="margin:0">
-                    <div class="search-input-wrapper dual-search-input">
-                        <input type="text" id="competitorSearchInput" placeholder="输入关键词检索竞对动态…" autocomplete="off"
-                               onkeyup="if(event.key==='Enter')searchCompetitor(this.value)"
-                               oninput="onCompSearchInput(this.value)" />
-                        <button class="search-btn" onclick="searchCompetitor(document.getElementById('competitorSearchInput').value)">检索</button>
-                    </div>
-                </div>
-                <!-- 检索结果面板 -->
-                <div id="compSearchResult" style="display:none; margin-top:14px">
+                <div id="compSearchResult">
                     <div id="compSearchSummary" class="ai-summary-block"></div>
                     <div class="dual-result-grid">
                         <div class="dual-result-col" id="dualColCompetitors">
@@ -551,8 +543,7 @@ window.onCompSearchInput = function(v) {
     // 简单防抖：300ms 触发；按 Enter 仍立即触发
     clearTimeout(window._csTimer);
     if (!v || !v.trim()) {
-        document.getElementById('compSearchResult').style.display = 'none';
-        document.getElementById('compSearchStats').style.display = 'none';
+        document.getElementById('feishuInline').style.display = 'none';
         return;
     }
     window._csTimer = setTimeout(() => window.searchCompetitor(v), 350);
@@ -672,10 +663,10 @@ window.searchCompetitor = async function(q) {
     }
     
     // 7. 显示结果区
-    document.getElementById('compSearchResult').style.display = 'block';
+    document.getElementById('feishuInline').style.display = 'block';
     
     // 滚动到结果区
-    document.getElementById('compSearchResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('feishuInline').scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
 // AI 摘要：基于命中项生成结构化总结
@@ -829,6 +820,9 @@ async function applyFeishuFilters() {
 
 window.runFeishuPageSearch = function(v) {
     _fsState.q = (v || '').trim();
+    // 有查询词时显示结果面板
+    var inline = document.getElementById('feishuInline');
+    if (_fsState.q && inline) inline.style.display = 'block';
     applyFeishuFilters();
 };
 window.onFeishuPageInput = function(v) {
