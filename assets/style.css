@@ -808,6 +808,10 @@ body {
     font-weight: 500;
 }
 .cd-src-link:hover { text-decoration: underline; }
+.cd-src-broken {
+    color: #c0392b;
+    cursor: not-allowed;
+}
 .cd-src-date {
     color: #aaa;
     font-size: 11px;
@@ -4146,7 +4150,7 @@ button.nxny-external-btn {
 
 /* ---------- Section 紧凑标题 ---------- */
 .section.section-tight {
-    padding: 16px 0 !important;
+    padding: 4px 0 !important;
 }
 .section-header-mini {
     display: flex; align-items: baseline; gap: 10px;
@@ -5295,15 +5299,20 @@ a.news-row-link:hover .news-title { color: #2a6f4f; }
 
 /* Tab2 紧凑版 hero（与 Tab1 hero-compact 尺寸对齐） */
 .hero.hero-sub.hero-compact-tab2 {
-    padding: 24px 0 18px !important;
+    padding: 8px 0 4px !important;
 }
 .hero.hero-sub.hero-compact-tab2 h1 {
-    font-size: 22px !important;
-    margin: 0 0 4px 0 !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+    white-space: nowrap;
 }
 .hero.hero-sub.hero-compact-tab2 .hero-subtitle {
-    font-size: 13px !important;
-    margin: 0 0 12px 0 !important;
+    font-size: 11px !important;
+    margin: 0 0 0 0 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 600px;
 }
 .hero.hero-sub.hero-compact-tab2 .ai-search-container {
     margin-top: 8px !important;

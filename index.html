@@ -9,7 +9,7 @@
     <title>商业化洞察周报 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260603e" />
+    <link rel="stylesheet" href="assets/style.css?v=20260603f" />
 </head>
 <body>
 
@@ -479,7 +479,9 @@
 </footer>
 
 <script>
-// ==== Tab 切换（在 main.js 之前注入，确保即使 main.js 失败也能切换）====
+// ==== Tab 切换（独立 script 标签，不受后续 JS 错误影响）====
+// 注意：此 script 标签必须在内容 script 之前，且彼此独立
+// 这样即使下方主逻辑 JS 有运行时报错，Tab 切换依然可用
 (function(){
     function switchTab(tabId){
         document.querySelectorAll('.tab-link').forEach(function(el){
@@ -488,9 +490,7 @@
         document.querySelectorAll('.tab-pane').forEach(function(el){
             el.classList.toggle('active', el.id === 'tab-' + tabId);
         });
-        // 切换时滚动到顶
         window.scrollTo({top:0, behavior:'smooth'});
-        // hash
         try { history.replaceState(null, '', '#' + tabId); } catch(e){}
     }
     window.switchTab = switchTab;
@@ -501,20 +501,18 @@
             switchTab(a.dataset.tab);
         }
     });
-    // 启动时根据 hash 自动切（三重兜底）
     function _bootTab(){
         var h = (location.hash || '').replace('#','');
         if (h && document.getElementById('tab-' + h)) switchTab(h);
     }
-    // inline script 在 body 底部，DOM 已就绪，直接立即切
     _bootTab();
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', _bootTab);
     }
-    // hashchange 也响应
     window.addEventListener('hashchange', _bootTab);
 })();
-
+</script>
+<script>
 // ==== Part2 双源检索：公开竞对动态 + 飞书对外文档 + AI 摘要 ====
 let _feishuDocs = null;
 async function loadFeishuDocs() {
@@ -790,6 +788,7 @@ function renderFeishuList(list, q) {
             </div>
         </div>`;
     }).join('') + (list.length > 200 ? `<div class="dual-empty" style="grid-column: 1/-1;">… 还有 ${list.length - 200} 条未显示，请加更多筛选条件</div>` : '');
+}
 
 async function applyFeishuFilters() {
     const all = await ensureFeishuLoaded();
@@ -1189,7 +1188,7 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260603d"></script>
+<script src="assets/main.js?v=20260603e"></script>
 <script src="assets/feishu-search.js?v=20260601q"></script>
 <script src="assets/ai-chat.js?v=20260601q"></script>
 <script src="assets/industry-research.js?v=20260601q"></script>

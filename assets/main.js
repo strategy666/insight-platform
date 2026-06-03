@@ -498,10 +498,10 @@ function renderCompetitors() {
     });
     const companies = Object.keys(companyCounts).sort((a, b) => companyCounts[b] - companyCounts[a]);
     
-    // 公司 tabs
-    const tabsHtml = companies.map((c, idx) => {
+    // 公司 tabs（第一个加「全部」）
+    const tabsHtml = '<button class="chip comp-chip active" onclick="switchCompetitor(\'all\')">全部</button>' + companies.map((c, idx) => {
         const count = companyCounts[c];
-        return `<button class="chip comp-chip ${idx === 0 ? 'active' : ''}" 
+        return `<button class="chip comp-chip ${idx === 0 ? '' : ''}" 
                 onclick="switchCompetitor('${c}')">${c}<sup>${count}</sup></button>`;
     }).join('');
     const compTabs = document.getElementById('competitorTabs');
@@ -542,7 +542,7 @@ function renderCompetitors() {
         });
     }
     
-    if (companies.length > 0) switchCompetitor(companies[0]);
+    if (companies.length > 0) switchCompetitor('all');
 }
 
 // ==================== Tab2 本期热点 chips ====================
@@ -592,14 +592,25 @@ window.renderCompHotChips = renderCompHotChips;
 function switchCompetitor(company) {
     currentCompFilters.company = company;
     currentCompFilters.dimension = 'all';
+    
+    // 更新公司 tabs 高亮
     document.querySelectorAll('#competitorTabs .chip').forEach(t => {
-        t.classList.toggle('active', t.textContent.startsWith(company));
+        if (company === 'all') {
+            t.classList.toggle('active', t.textContent.trim().startsWith('全部'));
+        } else {
+            t.classList.toggle('active', t.textContent.startsWith(company));
+        }
     });
     
-    // 重新计算该公司的维度
-    const dims = Array.from(new Set(
-        competitorData.filter(it => it.company === company).map(it => it.dimension || it.category)
-    ));
+    // 重新计算该公司的维度（全部时显示所有维度）
+    let dims;
+    if (company === 'all') {
+        dims = Array.from(new Set(competitorData.map(it => it.dimension || it.category)));
+    } else {
+        dims = Array.from(new Set(
+            competitorData.filter(it => it.company === company).map(it => it.dimension || it.category)
+        ));
+    }
     const dimTabs = document.getElementById('competitorDimTabs');
     if (dimTabs) {
         dimTabs.innerHTML = '<button class="chip active" data-dim="all">全部</button>' +
@@ -611,12 +622,16 @@ function switchCompetitor(company) {
 
 function renderCompetitorList() {
     const { company, dimension, source } = currentCompFilters;
-    let updates = competitorData.filter(it => it.company === company);
+    let updates = competitorData;
+    if (company !== 'all') updates = updates.filter(it => it.company === company);
     if (dimension !== 'all') updates = updates.filter(it => (it.dimension || it.category) === dimension);
     if (source !== 'all') updates = updates.filter(it => (it.data_source || '三方媒体') === source);
 
     // 信源可信度：永远仅展示 verified
     updates = updates.filter(it => it._verification === 'verified');
+
+    // 相似内容去重：基于标题相似度+同公司+同日期，避免展示近乎相同的条目
+    updates = deduplicateSimilarItems(updates);
 
     updates.sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -701,9 +716,13 @@ function renderCompetitorList() {
                     <button class="cd-src-toggle" onclick="event.stopPropagation();toggleSourcePanel(this)">🔗 数据来源 (${item.sources.length}) ▾</button>
                     <div class="cd-src-panel" style="display:none;">
                         <ul class="cd-src-list">
-                            ${item.sources.map((s, idx) => `
-                                <li><a href="${s.url}" target="_blank" rel="noopener" class="cd-src-link">${s.name}</a>${s.date ? `<span class="cd-src-date"> · ${s.date}</span>` : ''}</li>
-                            `).join('')}
+                            ${item.sources.map((s, idx) => {
+                                const broken = isWeixinUrlBroken(s.url);
+                                if (broken) {
+                                    return `<li><span class="cd-src-link cd-src-broken" title="公众号链接不完整，无法直接打开">${s.name}</span>${s.date ? `<span class="cd-src-date"> · ${s.date}</span>` : ''} <small style="color:#c0392b">⚠️ 链接不完整</small></li>`;
+                                }
+                                return `<li><a href="${s.url}" target="_blank" rel="noopener" class="cd-src-link">${s.name}</a>${s.date ? `<span class="cd-src-date"> · ${s.date}</span>` : ''}</li>`;
+                            }).join('')}
                         </ul>
                     </div>
                 </div>` : ''}
@@ -712,6 +731,65 @@ function renderCompetitorList() {
     }).join('');
 
     container.innerHTML = html;
+}
+
+function isWeixinUrlBroken(url) {
+    // 公众号链接必须有 mid/sn/chksm 等参数才是完整可访问的
+    if (!url || !url.includes('mp.weixin.qq.com')) return false;
+    if (!url.includes('mid=') && !url.includes('sn=') && !url.includes('chksm=')) return true;
+    // 如果只有 __biz 参数，缺少其他关键参数也视为无效
+    if (url.includes('__biz=') && !url.includes('mid=') && !url.includes('sn=') && !url.includes('chksm=')) return true;
+    return false;
+}
+
+// 相似内容去重：同公司+同日期，标题编辑距离较近 → 去重保留第一个
+function deduplicateSimilarItems(items) {
+    if (!items || items.length < 2) return items;
+    var result = [];
+    var seen = [];
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var isDup = false;
+        for (var j = 0; j < seen.length; j++) {
+            var s = seen[j];
+            if ((s.company || '') !== (item.company || '')) continue;
+            if ((s.date || '') !== (item.date || '')) continue;
+            var sim = titleSimilarity(s.title || '', item.title || '');
+            if (sim > 0.35) { isDup = true; break; }
+        }
+        if (!isDup) {
+            seen.push(item);
+            result.push(item);
+        }
+    }
+    return result;
+}
+function titleSimilarity(a, b) {
+    if (!a || !b) return 0;
+    // 关键 token：数字、英文词、中文 2-3 gram
+    var ts = {};
+    function tokens(s, set) {
+        // 数字
+        var nums = s.match(/\d+/g);
+        if (nums) for (var i = 0; i < nums.length; i++) set[nums[i]] = true;
+        // 英文词
+        var words = s.match(/[A-Za-z]+/g);
+        if (words) for (var i = 0; i < words.length; i++) set[words[i]] = true;
+        // 中文 2-3 gram
+        var cn = s.replace(/[^\u4e00-\u9fff]/g, '');
+        for (var i = 0; i < cn.length - 1; i++) set[cn.slice(i, i+2)] = true;
+        for (var i = 0; i < cn.length - 2; i++) set[cn.slice(i, i+3)] = true;
+    }
+    var sa = {}, sb = {};
+    tokens(a, sa); tokens(b, sb);
+    var keysA = Object.keys(sa), keysB = Object.keys(sb);
+    if (keysA.length === 0 || keysB.length === 0) return 0;
+    var intersect = 0;
+    for (var i = 0; i < keysA.length; i++) {
+        if (sb[keysA[i]]) intersect++;
+    }
+    // symmetric Jaccard: intersection / min(|A|, |B|)
+    return intersect / Math.min(keysA.length, keysB.length);
 }
 
 // dcap-style 展开/折叠
@@ -742,7 +820,7 @@ function updateCompFilterSummary() {
     const el = document.getElementById('compFilterSummary');
     if (!el) return;
     const { company, dimension, source } = currentCompFilters;
-    el.textContent = `${company || ''}${dimension !== 'all' ? ' · ' + dimension : ''}${source !== 'all' ? ' · ' + source : ''}`;
+    el.textContent = `${company === 'all' ? '全部公司' : (company || '')}${dimension !== 'all' ? ' · ' + dimension : ''}${source !== 'all' ? ' · ' + source : ''}`;
 }
 window.switchCompetitor = switchCompetitor;
 
