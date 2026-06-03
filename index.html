@@ -646,17 +646,31 @@ window.searchCompetitor = async function(q) {
         compColEl.style.display = '';
         document.getElementById('dualColFeishu').classList.remove('full-width');
         document.getElementById('dualBodyComp').innerHTML = compHits.length ? compHits.map(it => `
-            <div class="dual-card comp-card-mini">
+            <div class="dual-card comp-card-mini dcap-card" onclick="toggleDcapCard(this)" style="cursor:pointer;">
                 <div class="dual-card-top">
                     <span class="comp-company-pill">${it.company}</span>
                     <span class="comp-dim-pill">${it.dimension || it.category}</span>
                     <span class="fs-date">${it.date}</span>
+                    <span class="cc-expand-icon" style="margin-left:auto;">▸</span>
                 </div>
                 <h4 class="dual-card-title">${_highlightHtml(it.title, q)}</h4>
-                <p class="dual-card-summary">${_highlightHtml(it.sowhat, q)}</p>
+                <p class="dual-card-summary">${_highlightHtml((it.sowhat || '').slice(0, 150) + (it.sowhat && it.sowhat.length > 150 ? '…' : ''), q)}</p>
                 <div class="dual-card-foot">
                     <span class="comp-source-pill">${it.data_source || '三方'}</span>
-                    ${(it.sources || []).slice(0,2).map(s => `<a href="${s.url}" target="_blank" rel="noopener" class="fs-open-btn-mini">${s.name.slice(0, 20)} ↗</a>`).join('')}
+                    ${(it.sources || []).slice(0,2).map(s => `<a href="${s.url}" target="_blank" rel="noopener" class="fs-open-btn-mini" onclick="event.stopPropagation();">${s.name.slice(0, 20)} ↗</a>`).join('')}
+                </div>
+                <div class="cc-detail" style="display:none;">
+                    <div class="cd-section cd-summary">
+                        <div class="cd-section-label">💡 对快手 So What</div>
+                        <p>${it.sowhat || '暂无分析'}</p>
+                    </div>
+                    ${(it.sources || []).length > 0 ? `
+                    <div class="cd-section cd-sources">
+                        <div class="cd-section-label">🔗 数据来源</div>
+                        <ul class="cd-src-list">
+                            ${it.sources.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener" class="cd-src-link">${s.name}</a>${s.date ? `<span class="cd-src-date"> · ${s.date}</span>` : ''}</li>`).join('')}
+                        </ul>
+                    </div>` : ''}
                 </div>
             </div>
         `).join('') : '<div class="dual-empty">🟠 公开动态未命中</div>';
@@ -1182,7 +1196,7 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260603m"></script>
+<script src="assets/main.js?v=20260603n"></script>
 <script src="assets/feishu-search.js?v=20260601q"></script>
 <script src="assets/ai-chat.js?v=20260601q"></script>
 <script src="assets/industry-research.js?v=20260601q"></script>
