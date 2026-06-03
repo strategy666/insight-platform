@@ -74,28 +74,30 @@
         const panel = document.createElement('div');
         panel.id = 'cwPanel';
         panel.className = 'cw-panel';
+        const intelCnt = (window.intelData || []).length;
+        const compCnt = (window.competitorData || []).length;
+        const subText = 'DeepSeek · 实时联动 ' + intelCnt + ' 条情报 + ' + compCnt + ' 条竞对';
         panel.innerHTML = `
             <div class="cw-header">
                 <div class="cw-header-left">
                     <span class="cw-avatar">🤖</span>
                     <div class="cw-header-text">
                         <div class="cw-title">portal 小助手</div>
-                        <div class="cw-sub">DeepSeek · 实时联动 27 条情报 + 39 条竞对</div>
+                        <div class="cw-sub" id="cwSub">${subText}</div>
                     </div>
                 </div>
                 <div class="cw-header-right">
-                    <button class="cw-icon-btn" id="cwReset" title="重置 API 配置（恢复内置 Key）">🔄</button>
+                    <button class="cw-icon-btn" id="cwConfig" title="配置 API">⚙️</button>
                     <button class="cw-icon-btn" id="cwClear" title="清空对话">🗑️</button>
-                    <button class="cw-icon-btn" id="cwInterest" title="更新兴趣">🎯</button>
                     <button class="cw-icon-btn" id="cwClose" title="关闭 (Esc)">✕</button>
                 </div>
             </div>
             <div class="cw-body" id="cwBody"></div>
             <div class="cw-quick">
                 <button class="cw-q" data-q="portal 有哪些功能？怎么用？">portal 怎么用</button>
-                <button class="cw-q" data-q="最近一周字节有什么动作？">字节最近动作</button>
-                <button class="cw-q" data-q="帮我找飞书里关于巨量本地推的文档">查飞书文档</button>
-                <button class="cw-q" data-q="本地生活赛道现在的竞争格局是什么样的？">本地生活格局</button>
+                <button class="cw-q" data-q="帮我总结最近一周字节的重要动态">字节最近动态</button>
+                <button class="cw-q" data-q="帮我找飞书里关于本地推的文档">查本地推文档</button>
+                <button class="cw-q" data-q="抖音出单宝对快手本地推有什么影响？">出单宝 vs 本地推</button>
             </div>
             <div class="cw-input-wrap">
                 <textarea id="cwInput" class="cw-input" placeholder="问 AI 任何问题，回车发送，Shift+回车换行…" rows="1"></textarea>
@@ -106,9 +108,9 @@
 
         document.getElementById('cwClose').addEventListener('click', close);
         document.getElementById('cwClear').addEventListener('click', clearChat);
-        document.getElementById('cwReset').addEventListener('click', resetApiConfig);
-        document.getElementById('cwInterest').addEventListener('click', () => {
-            if (typeof window.openInterestModal === 'function') window.openInterestModal();
+        document.getElementById('cwConfig').addEventListener('click', () => {
+            if (typeof window.openAISettings === 'function') window.openAISettings();
+            else alert('请前往「行业研究」Tab 底部的 ⚙️ 设置按钮配置 API');
         });
         document.getElementById('cwSend').addEventListener('click', send);
         const input = document.getElementById('cwInput');
@@ -153,9 +155,12 @@
     function renderWelcome() {
         const body = document.getElementById('cwBody');
         const interests = (typeof window.getUserInterests === 'function') ? window.getUserInterests() : [];
+        const intelCnt = (window.intelData || []).length;
+        const compCnt = (window.competitorData || []).length;
+        const infoLine = intelCnt || compCnt ? `<br/><small style="color:#888">📊 当前库容：${intelCnt} 条情报 + ${compCnt} 条竞对动态</small>` : '';
         const greeting = interests.length
-            ? `你好👋 我注意到你关注 <b>${interests.slice(0, 3).join('、')}</b>${interests.length > 3 ? ` 等 ${interests.length} 个话题` : ''}，有什么想了解的吗？`
-            : '你好👋 我是 portal 小助手。可以帮你<b>解读市场情报、检索竞对动态、查飞书文档</b>。试试下面的快速问题，或直接打字提问。';
+            ? `你好👋 我注意到你关注 <b>${interests.slice(0, 3).join('、')}</b>${interests.length > 3 ? ` 等 ${interests.length} 个话题` : ''}，有什么想了解的吗？${infoLine}`
+            : `你好👋 我是 portal 小助手。可以帮你<b>解读市场情报、检索竞对动态、查飞书文档</b>。试试下面的快速问题，或直接打字提问。${infoLine}`;
         body.innerHTML = `
             <div class="cw-msg cw-msg-bot cw-welcome">
                 <div class="cw-msg-avatar">🤖</div>
@@ -216,11 +221,7 @@
         renderWelcome();
     }
 
-    function resetApiConfig() {
-        if (!confirm('确定重置 API 配置？\n（将清除浏览器中保存的自定义 Key，恢复使用内置 DeepSeek Key）')) return;
-        try { localStorage.removeItem(LS_AI_CFG); } catch(e) {}
-        appendMsg('bot', '✅ <b>API 配置已重置</b>，内置 DeepSeek Key 已生效，现在可以正常提问了。');
-    }
+    // resetApiConfig 已移除，改为 ⚙️ 按钮打开 AI 设置面板
 
     // ============ 调用 LLM ============
     async function send() {
@@ -287,15 +288,17 @@
             t: d.title, u: d.url || '', type: d.type || ''
         }));
 
+        const intelCnt = (window.intelData || []).length;
+        const compCnt = (window.competitorData || []).length;
         const sysPrompt = `你是「portal 小助手」，一个嵌入在快手生服商业化洞察 portal 右下角的 AI 助手。你的职责：
 
 1. **回答用户问题**：基于 portal 已有的「情报库」「竞对库」「飞书文档库」回答，引用具体数据
 2. **帮助使用 portal**：当用户问 portal 怎么用时，介绍：
-   - Tab1「商业化洞察周报」：每周关键情报 + 全部动态列表，顶部 AI 问答
-   - Tab2「竞对追踪」：9 家公司 39 条动态，按公司/维度/数据源筛选
-   - Tab3「行业研究」：36 个一级行业 + 245 个二级行业脑图，点卡片进 AI 问答
-   - Tab4「问答助手」：本 widget 同款，全屏体验
-   - 右上角 🎯 可以更新兴趣标签
+   - Tab1「🎯 竞对追踪」：${compCnt} 条竞对动态，按公司/维度/数据源筛选，顶部双源检索（飞书文档 + 竞对动态）
+   - Tab2「📊 商业化洞察周报」：${intelCnt} 条市场情报，每周关键情报 + 全部动态列表
+   - Tab3「📚 行业研究」：36 个一级行业 + 245 个二级行业脑图，点卡片进 AI 问答 + 联网研报生成
+   - 右下角 💬 就是本助手（快捷键 Alt+/ 打开）
+   - 顶部 🎯 可以更新兴趣标签
 3. **资料检索**：从下方数据库中找相关条目，列出 [日期-公司-标题] 形式，飞书文档给出 URL
 4. **风格**：简洁专业，2-5 段，关键观点 **加粗**，必要时用 - 要点列表
 

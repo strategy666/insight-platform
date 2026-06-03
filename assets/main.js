@@ -478,6 +478,17 @@ function toggleDetails(id) {
     }
 }
 
+// 竞对筛选栏折叠
+function toggleCompFilters() {
+    const body = document.getElementById('compFilterBody');
+    const icon = document.getElementById('compFilterToggleIcon');
+    if (!body || !icon) return;
+    const isVisible = body.style.display === 'block';
+    body.style.display = isVisible ? 'none' : 'block';
+    icon.textContent = isVisible ? '▶' : '▼';
+}
+window.toggleCompFilters = toggleCompFilters;
+
 // ==================== 渲染竞对追踪（2D 矩阵）====================
 function renderCompetitors() {
     // 按信息数量从多到少排序公司
@@ -493,11 +504,9 @@ function renderCompetitors() {
         return `<button class="chip comp-chip ${idx === 0 ? 'active' : ''}" 
                 onclick="switchCompetitor('${c}')">${c}<sup>${count}</sup></button>`;
     }).join('');
-    document.getElementById('competitorTabs').innerHTML = tabsHtml;
+    const compTabs = document.getElementById('competitorTabs');
+    if (compTabs) compTabs.innerHTML = tabsHtml;
 
-    // 渲染本期热点 chips（基于当前动态数据动态提取）
-    renderCompHotChips();
-    
     // 统计
     const ctotal = document.getElementById('compTotal');
     const crecent = document.getElementById('compRecent');
@@ -507,9 +516,10 @@ function renderCompetitors() {
         crecent.textContent = competitorData.filter(it => new Date(it.date) >= weekAgo).length;
     }
     
-    // 维度事件委托
+    // 确保事件委托只绑定一次
     const dimTabs = document.getElementById('competitorDimTabs');
-    if (dimTabs) {
+    if (dimTabs && !dimTabs._bound) {
+        dimTabs._bound = true;
         dimTabs.addEventListener('click', e => {
             const b = e.target.closest('.chip'); if (!b) return;
             currentCompFilters.dimension = b.dataset.dim;
@@ -520,7 +530,8 @@ function renderCompetitors() {
         });
     }
     const srcTabs = document.getElementById('competitorSourceTabs');
-    if (srcTabs) {
+    if (srcTabs && !srcTabs._bound) {
+        srcTabs._bound = true;
         srcTabs.addEventListener('click', e => {
             const b = e.target.closest('.chip'); if (!b) return;
             currentCompFilters.source = b.dataset.source;

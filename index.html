@@ -9,7 +9,7 @@
     <title>商业化洞察周报 | 市场情报追踪平台</title>
     <meta name="description" content="商业化战略洞察平台 - 市场情报 / 竞对追踪 / 行业研究" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
-    <link rel="stylesheet" href="assets/style.css?v=20260603c" />
+    <link rel="stylesheet" href="assets/style.css?v=20260603d" />
 </head>
 <body>
 
@@ -177,10 +177,7 @@
             <div class="dual-search-col">
                 <div class="dual-search-head">
                     <span class="dual-search-icon">📁</span>
-                    <div>
-                        <div class="dual-search-title">飞书文档检索</div>
-                        <div class="dual-search-desc">信息源：飞书文档（<b id="fsInlineCount2">1539</b> 篇）· 全量检索</div>
-                    </div>
+                    <div class="dual-search-title">飞书文档检索</div>
                 </div>
                 <div class="search-input-wrapper dual-search-input">
                     <input type="text" id="feishuPageInput" placeholder="输入关键词检索飞书文档…" autocomplete="off"
@@ -189,7 +186,7 @@
                     <button class="search-btn" onclick="runFeishuPageSearch(document.getElementById('feishuPageInput').value)">检索</button>
                 </div>
                 <div class="feishu-result-grid" id="fsResultList">
-                    <div class="dual-empty">输入关键词查看匹配文档 · 点击快捷词快速检索（仅列出前 100 条，超出请细化关键词）</div>
+                    <div class="dual-empty">输入关键词查看匹配文档</div>
                 </div>
             </div>
 
@@ -197,10 +194,7 @@
             <div class="dual-search-col">
                 <div class="dual-search-head">
                     <span class="dual-search-icon">🔍</span>
-                    <div>
-                        <div class="dual-search-title">竞对动态检索</div>
-                        <div class="dual-search-desc">信息源：飞书文档 + 竞对动态 · 全量检索</div>
-                    </div>
+                    <div class="dual-search-title">竞对动态检索</div>
                 </div>
                 <div class="ai-search-container compsearch-v2" style="margin:0">
                     <div class="search-input-wrapper dual-search-input">
@@ -209,10 +203,6 @@
                                oninput="onCompSearchInput(this.value)" />
                         <button class="search-btn" onclick="searchCompetitor(document.getElementById('competitorSearchInput').value)">检索</button>
                     </div>
-                    <div class="suggested-questions" id="compHotChips">
-                        <span class="suggest-label">🔥 本期热点：</span>
-                    </div>
-                    <div class="compsearch-stats" id="compSearchStats" style="display:none;"></div>
                 </div>
                 <!-- 检索结果面板 -->
                 <div id="compSearchResult" style="display:none; margin-top:14px">
@@ -684,9 +674,6 @@ window.searchCompetitor = async function(q) {
     }
     
     // 7. 显示结果区
-    const stats = document.getElementById('compSearchStats');
-    stats.style.display = 'block';
-    stats.innerHTML = `<span class="hit-stat">命中 <b>${fsHits.length + compHits.length}</b> 条</span> · <span>飞书 ${fsHits.length} · 公开 ${feishuOnly ? '已屏蔽' : compHits.length}</span>`;
     document.getElementById('compSearchResult').style.display = 'block';
     
     // 滚动到结果区
@@ -1203,7 +1190,7 @@ window.askResearchChat = function(q){
     </div>
 </div>
 
-<script src="assets/main.js?v=20260603c"></script>
+<script src="assets/main.js?v=20260603d"></script>
 <script src="assets/feishu-search.js?v=20260601q"></script>
 <script src="assets/ai-chat.js?v=20260601q"></script>
 <script src="assets/industry-research.js?v=20260601q"></script>
