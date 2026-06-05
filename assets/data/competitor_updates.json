@@ -1,8 +1,8 @@
 {
   "_meta": {
     "description": "Part2 竞对动态 — SOURCE-FIRST v3 (direct fetch + web_fetch)",
-    "last_updated": "2026-06-03T17:00:00",
-    "total_items": 30,
+    "last_updated": "2026-06-03T22:45:00",
+    "total_items": 32,
     "recent_window": "past 14d (cutoff 2026-05-19)",
     "companies_tracked": [
       "字节",
@@ -14,69 +14,9 @@
       "拼多多"
     ],
     "source_first": true,
-    "fetch_method": "direct_channel_fetch + web_fetch + wechat_articles_skill"
+    "fetch_method": "P0全渠道:OCE_Changelog+微信广告动态+钛媒体+第一财经+华尔街见闻+澎湃新闻+21经济网+虎嗅+界面新闻"
   },
   "items": [
-    {
-      "id": "comp-058",
-      "date": "2026-05-31",
-      "company": "快手",
-      "category": "产品动态",
-      "title": "快手磁力星辰AI经营官全量：商家自动起号+智能选品，新商7天起量+180%",
-      "sowhat": "磁力星辰AI经营官全量是快手本地推最重要的AI产品升级，新商7天起量+180%的增速可观。但需与抖音出单宝（1周20万商家入驻）对比：快手在商家扩展速度上仍有差距。需加速中小商家覆盖。",
-      "sources": [
-        {
-          "name": "快手磁力大会官方公告",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzI2NjE2MzYxNQ",
-          "date": "2026-05-31"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_ok": true,
-      "_ks_no_official": true
-    },
-    {
-      "id": "comp-057",
-      "date": "2026-05-27",
-      "company": "快手",
-      "category": "财报/行业case",
-      "title": "快手2026Q1：收入337亿+3.4%，广告196亿+9.3%，可灵ARR 5亿美元，净利-26%押注AI",
-      "sowhat": "快手Q1收入增速降至3.4%为近年最低。可灵收入6.5亿占比不足2%但分拆估值200亿美元。广告仍为增长支柱(+9.3%)，但AI算力成本侵蚀利润。关键风险：可灵模型优势被Seedance 2.0/HappyHorse抹平，即梦Dreamina海外访问量已反超Kling AI。",
-      "sources": [
-        {
-          "name": "澎湃新闻：ARR 5亿美元，可灵真正的考验才开始",
-          "url": "https://m.thepaper.cn/newsDetail_forward_33255989",
-          "date": "2026-05-28"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-01",
-          "event": "Kling AI Motion Control引爆Baby Dance"
-        },
-        {
-          "date": "2026-05-12",
-          "event": "快手确认可灵分拆，估值200亿美元"
-        },
-        {
-          "date": "2026-05-14",
-          "event": "Kling AI登顶42国App Store"
-        },
-        {
-          "date": "2026-05-27",
-          "event": "Q1财报：收入337亿+3.4%，净利-26%"
-        }
-      ],
-      "dimension": "财报/行业case",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_ok": true,
-      "_ks_no_official": true
-    },
     {
       "id": "comp-053",
       "date": "2026-05-28",
@@ -226,47 +166,7 @@
       "data_source": "三方媒体",
       "tier": "T1",
       "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-041",
-      "date": "2026-05-30",
-      "company": "腾讯",
-      "category": "产品动态",
-      "title": "微信视频号小店「一店多平台」开放：商品可同步发布至公众号+朋友圈广告，流量池打通",
-      "sowhat": "微信'一店多平台'打通视频号+公众号+朋友圈三大场景，实现微信内全域流量协同。快手需对标建设快手号+快手小店+磁力金牛的互通能力，减少商家的多渠道运营成本。",
-      "sources": [
-        {
-          "name": "腾讯广告官方公告",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDU1MzA3NQ",
-          "date": "2026-05-30"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-040",
-      "date": "2026-05-26",
-      "company": "腾讯",
-      "category": "产品动态",
-      "title": "视频号「成交助手」开放本地生活商户：酒店/教培/丽人三大行业率先接入交易闭环",
-      "sowhat": "视频号成交助手切入本地生活商户，酒店/教培/丽人三个行业恰好是快手本地生活的重点关注方向。腾讯以交易闭环+品牌广告组合拳切入本地生活，对快手本地推形成侧面竞争。",
-      "sources": [
-        {
-          "name": "微信广告官方公众号",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDU1MzA3NQ",
-          "date": "2026-05-26"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_ok": true
+      "_date_ok": false
     },
     {
       "id": "comp-039",
@@ -325,27 +225,7 @@
       "data_source": "三方媒体",
       "tier": "T1",
       "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-036",
-      "date": "2026-05-29",
-      "company": "小红书",
-      "category": "准入政策",
-      "title": "小红书社区公约2.0发布：新增AI辅助工具标明要求、虚假人设禁止，平台治理全面升级",
-      "sowhat": "小红书社区公约2.0新增AI生成内容标明的强制要求，这对所有内容平台的AI内容治理都有示范效应。快手需跟进AI内容标注制度，否则可能在广告合规审计中处劣势。",
-      "sources": [
-        {
-          "name": "小红书官方社区公约公告",
-          "url": "https://www.xiaohongshu.com/protocols/community",
-          "date": "2026-05-29"
-        }
-      ],
-      "dimension": "准入政策",
-      "data_source": "竞媒官方",
-      "tier": "T2",
-      "_verification": "weak",
-      "_date_ok": true
+      "_date_ok": false
     },
     {
       "id": "comp-035",
@@ -365,66 +245,6 @@
       "data_source": "三方媒体",
       "tier": "T1",
       "_verification": "verified",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-034",
-      "date": "2026-06-02",
-      "company": "字节",
-      "category": "产品动态",
-      "title": "抖音618首日GMV同比+62%，AI经营助手贡献18%增量，AIGC素材占比首超30%",
-      "sowhat": "抖音618首日GMV+62%，AI经营助手贡献18%增量说明AI驱动电商效率提升已从'锦上添花'变为'核心增长引擎'。AIGC素材占比超30%标志AI内容生成已进入电商主战场，快手需加速磁力金牛AIGC能力建设。",
-      "sources": [
-        {
-          "name": "抖音电商官方数据",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzkzNjE2MzYxNQ",
-          "date": "2026-06-02"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-033",
-      "date": "2026-05-27",
-      "company": "字节",
-      "category": "产品动态",
-      "title": "巨量引擎深转能力升级：行为预估到点击-激活-付费全链路打通，广告主ROI可追踪至付费转化",
-      "sowhat": "巨量引擎深转能力从行为预估延伸至付费转化，广告主可直接追踪最终付费ROI。快手磁力金牛需对标此能力升级，否则效果广告预算将加速流向巨量引擎（尤其电商+游戏行业）。",
-      "sources": [
-        {
-          "name": "巨量引擎官方公告",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzI2NjE2MzYxNQ",
-          "date": "2026-05-27"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_ok": true
-    },
-    {
-      "id": "comp-032",
-      "date": "2026-05-25",
-      "company": "字节",
-      "category": "产品动态",
-      "title": "字节本地生活「出单宝」上线1周中小商家入驻破20万家，核销才计费模式大受欢迎",
-      "sowhat": "出单宝核销计费模式大幅降低中小商家投放门槛，1周20万商家入驻的速度远超快手本地推。快手需关注核销计费模式是否跟进，否则中小商家增量将加速流向抖音。",
-      "sources": [
-        {
-          "name": "巨量本地推官方公众号",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzI2NjE2MzYxNQ",
-          "date": "2026-05-25"
-        }
-      ],
-      "dimension": "产品动态",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "_verification": "weak",
       "_date_ok": true
     },
     {
@@ -500,54 +320,24 @@
       "_date_ok": true
     },
     {
-      "id": "comp-023",
-      "date": "2026-05-27",
-      "company": "快手",
-      "category": "财报/行业case",
-      "title": "快手2026Q1：收入337亿+3.4%，可灵ARR 5亿美元，广告196亿+9.3%，净利下滑26%押注AI",
-      "sowhat": "快手Q1收入增速降至3.4%为近年最低，可灵贡献收入6.5亿但占比不足2%。广告仍为增长支柱（+9.3%），漫剧日耗峰值突破2000万。但AI算力成本侵蚀利润（净利-26%），可灵计划分拆以200亿美元估值独立融资，但模型优势正被Seedance 2.0/HappyHorse抹平，海外即梦Dreamina访问量已反超Kling AI。",
-      "sources": [
-        {
-          "name": "澎湃新闻：ARR 5亿美元，可灵真正的考验才开始",
-          "url": "https://m.thepaper.cn/newsDetail_forward_33255989",
-          "date": "2026-05-28"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-01-01",
-          "event": "Kling AI推出Motion Control，C端收入从120万→250万美元"
-        },
-        {
-          "date": "2026-05-12",
-          "event": "快手确认可灵分拆计划，以约200亿美元估值接触Pre-IPO投资者"
-        },
-        {
-          "date": "2026-05-14",
-          "event": "Kling AI登顶42个国家App Store总榜第一"
-        },
-        {
-          "date": "2026-05-27",
-          "event": "Q1财报：收入337亿+3.4%，广告196亿+9.3%，可灵ARR 5亿美元，净利-26.1%"
-        }
-      ],
-      "dimension": "财报/行业case",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "_verification": "weak",
-      "_date_ok": true,
-      "_ks_no_official": true
-    },
-    {
       "id": "comp-059",
       "date": "2026-06-01",
       "company": "字节",
       "category": "产品动态",
       "title": "巨量本地推投放接口能力大幅增强：新增6个API+优化6个，项目/单元删除、成本保障、预算更新等接口补齐",
       "sowhat": "巨量本地推API能力从'基础投放'向'精细化运营'升级：新增项目/单元删除、成本保障状态查询、账户预算更新等6个接口，优化6个已有接口。本地推广告投放从'黑盒'向'可编程化'迈进，代理商可通过API实现全流程自动化管理。快手本地推API能力需对标补齐。",
-      "sources": [{"name":"巨量引擎开放平台 Changelog","url":"https://open.oceanengine.com/changelog/1","date":"2026-06-01"}],
-      "dimension": "产品动态","data_source": "竞媒官方","tier": "T1",
-      "_verification": "verified","_date_ok": true
+      "sources": [
+        {
+          "name": "巨量引擎开放平台 Changelog",
+          "url": "https://open.oceanengine.com/changelog/1",
+          "date": "2026-06-01"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-060",
@@ -556,9 +346,18 @@
       "category": "产品动态",
       "title": "巨量引擎AIGC动态创意与短剧授权解绑：AIGC素材创作门槛大幅降低，不再需短剧原片授权",
       "sowhat": "AIGC动态创意+短剧授权解绑意味着AIGC素材创作从'须先有版权授权'简化为'直接用'，将加速AIGC素材在短剧/电商/本地生活等场景渗透。快手磁力金牛AIGC能力需关注此变化是否会加速巨量AIGC素材反超。",
-      "sources": [{"name":"巨量引擎开放平台 Changelog","url":"https://open.oceanengine.com/changelog/1","date":"2026-06-01"}],
-      "dimension": "产品动态","data_source": "竞媒官方","tier": "T1",
-      "_verification": "verified","_date_ok": true
+      "sources": [
+        {
+          "name": "巨量引擎开放平台 Changelog",
+          "url": "https://open.oceanengine.com/changelog/1",
+          "date": "2026-06-01"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-061",
@@ -567,9 +366,18 @@
       "category": "准入政策",
       "title": "抖音生活服务发布「丽人到店履约体验治理公告」：门店+商品双维度量化处置体系，最高封禁商品",
       "sowhat": "抖音丽人行业建立分级处置体系：门店维度按近30天负向反馈3/10单分档（警告→限流80%→全渠道屏蔽3天）；商品维度按5/29/79/80单分档（限流30%→封禁）。7天整改期+以考代罚豁免。快手本地推丽人行业需对齐履约一致性标准。",
-      "sources": [{"name":"抖音生活服务学习中心-治理公告","url":"https://lifexue.com/rule?enter_method=tab","date":"2026-06-03"}],
-      "dimension": "准入政策","data_source": "竞媒官方","tier": "T1",
-      "_verification": "verified","_date_ok": true
+      "sources": [
+        {
+          "name": "抖音生活服务学习中心-治理公告",
+          "url": "https://lifexue.com/rule?enter_method=tab",
+          "date": "2026-06-03"
+        }
+      ],
+      "dimension": "准入政策",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-062",
@@ -578,9 +386,18 @@
       "category": "准入政策",
       "title": "抖音生活服务发布「种草与履约不一致」全行业专项治理：「宣传=商详=履约」三一致原则",
       "sowhat": "抖音重拳治理种草与履约不一致，覆盖酒旅/餐饮/丽人/汽车等全行业。核心要求：价格须清晰准确（禁止模糊描述如'一百出头'）、加价信息完整披露、禁止视觉误导、价格门槛明确告知。'宣传=商详=履约'三一致原则将成为行业标杆。",
-      "sources": [{"name":"抖音生活服务学习中心-治理公告","url":"https://lifexue.com/rule?enter_method=tab","date":"2026-05-22"}],
-      "dimension": "准入政策","data_source": "竞媒官方","tier": "T1",
-      "_verification": "verified","_date_ok": true
+      "sources": [
+        {
+          "name": "抖音生活服务学习中心-治理公告",
+          "url": "https://lifexue.com/rule?enter_method=tab",
+          "date": "2026-05-22"
+        }
+      ],
+      "dimension": "准入政策",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-063",
@@ -589,9 +406,18 @@
       "category": "产品动态",
       "title": "抖音生活服务发布「酒旅住宿安心住」服务规范：住宿服务标准化承诺，提升酒店类目履约体验",
       "sowhat": "抖音酒旅行业从团购向标准化服务承诺升级，'安心住'为住宿商家建立统一服务标准。快手本地生活酒旅赛道若缺乏类似服务标准体系，将在中高端酒店供给端处于劣势。",
-      "sources": [{"name":"抖音生活服务学习中心-新规公示","url":"https://lifexue.com/rule?enter_method=tab","date":"2026-06-01"}],
-      "dimension": "产品动态","data_source": "竞媒官方","tier": "T2",
-      "_verification": "verified","_date_ok": true
+      "sources": [
+        {
+          "name": "抖音生活服务学习中心-新规公示",
+          "url": "https://lifexue.com/rule?enter_method=tab",
+          "date": "2026-06-01"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "竞媒官方",
+      "tier": "T2",
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-064",
@@ -600,9 +426,18 @@
       "category": "产品动态",
       "title": "抖音生活服务发布「缺供给退款率」+「缺货率」两项商家管控策略：供给侧质量量化考核上线",
       "sowhat": "抖音新增缺供给退款率和缺货率两项商家管控指标，从'大规模招商'转向'供给质量管控'。快手本地生活供给侧仍存在大量低质量供给，若缺乏类似管控机制，用户体验差距将持续扩大。",
-      "sources": [{"name":"抖音生活服务学习中心-新规公示","url":"https://lifexue.com/rule?enter_method=tab","date":"2026-06-01"}],
-      "dimension": "产品动态","data_source": "竞媒官方","tier": "T2",
-      "_verification": "verified","_date_ok": true
+      "sources": [
+        {
+          "name": "抖音生活服务学习中心-新规公示",
+          "url": "https://lifexue.com/rule?enter_method=tab",
+          "date": "2026-06-01"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "竞媒官方",
+      "tier": "T2",
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-065",
@@ -611,9 +446,18 @@
       "category": "产品动态",
       "title": "抖音生活服务「出单宝」服务协议更新：1周20万商家入驻后首次协议升级，产品快速迭代",
       "sowhat": "出单宝1周20万商家入驻后快速协议升级，说明该产品正快速迭代中。核销才计费模式已验证中小商家需求，预计后续将扩展更多工具能力。快手本地推核销计费能力建设仍需加速。",
-      "sources": [{"name":"抖音生活服务学习中心-新规公示","url":"https://lifexue.com/rule?enter_method=tab","date":"2026-05-29"}],
-      "dimension": "产品动态","data_source": "竞媒官方","tier": "T1",
-      "_verification": "verified","_date_ok": true
+      "sources": [
+        {
+          "name": "抖音生活服务学习中心-新规公示",
+          "url": "https://lifexue.com/rule?enter_method=tab",
+          "date": "2026-05-29"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-066",
@@ -622,9 +466,18 @@
       "category": "产品动态",
       "title": "抖音生活服务新增律所/展览/停车场三个类目管理规范：本地生活行业覆盖进一步拓宽",
       "sowhat": "抖音本地生活从传统餐饮/丽人/酒旅向专业服务（律所）、文化娱乐（展览）、城市服务（停车场）拓展。三个新类目规范同日发布，表明抖音正系统化推全品类覆盖。快手需评估是否跟进这些垂直品类。",
-      "sources": [{"name":"抖音生活服务学习中心-新规公示","url":"https://lifexue.com/rule?enter_method=tab","date":"2026-06-03"}],
-      "dimension": "产品动态","data_source": "竞媒官方","tier": "T2",
-      "_verification": "verified","_date_ok": true
+      "sources": [
+        {
+          "name": "抖音生活服务学习中心-新规公示",
+          "url": "https://lifexue.com/rule?enter_method=tab",
+          "date": "2026-06-03"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "竞媒官方",
+      "tier": "T2",
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-067",
@@ -633,9 +486,18 @@
       "category": "产品动态",
       "title": "微信广告「综合兴趣」定向全量上线：替代「兴趣行为」定向，数据能力全面升级",
       "sowhat": "腾讯广告定向从'兴趣行为'升级为'综合兴趣'，基于数据能力重构用户画像。旧定向预计11-12月下线。腾讯广告人群定向精度将进一步提升，广告主投放ROI有望改善。快手磁力金牛定向能力需对标升级。",
-      "sources": [{"name":"微信广告官方公告","url":"https://ad.weixin.qq.com/news?type=promotion","date":"2026-05-30"}],
-      "dimension": "产品动态","data_source": "竞媒官方","tier": "T1",
-      "_verification": "verified","_date_ok": true
+      "sources": [
+        {
+          "name": "微信广告官方公告",
+          "url": "https://ad.weixin.qq.com/news?type=promotion",
+          "date": "2026-05-30"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
     },
     {
       "id": "comp-068",
@@ -645,11 +507,22 @@
       "title": "小红书聚光平台2026年功能全面升级：合作广场（素人笔记投放）+聚光简单投（AI全自动投放）+KOS员工号+留资加速包+撬客管理+微信小程序交易卡",
       "sowhat": "小红书聚光平台2026年呈现'效果化加速+KOS体系完善+私域闭环'三大趋势：1)合作广场开放素人UGC笔记投放拓展素材来源；2)聚光简单投降低中小商家投放门槛；3)KOS员工号(需>5k粉)构建企业+员工矩阵；4)留资加速包私信留资+296%；5)微信小程序交易卡打通小红书→微信私域。快手在小商家工具+KOS矩阵+私域引流方向需全面对标。",
       "sources": [
-        {"name":"小红书聚光帮助中心-资讯速递","url":"https://ad.xiaohongshu.com/help/docs?labelId=745","date":"2026-01-15"},
-        {"name":"Reditor-小红书2026平台功能更新","url":"https://help.reditorapp.com/content/260104","date":"2026-01-04"}
+        {
+          "name": "小红书聚光帮助中心-资讯速递",
+          "url": "https://ad.xiaohongshu.com/help/docs?labelId=745",
+          "date": "2026-01-15"
+        },
+        {
+          "name": "Reditor-小红书2026平台功能更新",
+          "url": "https://help.reditorapp.com/content/260104",
+          "date": "2026-01-04"
+        }
       ],
-      "dimension": "产品动态","data_source": "竞媒官方","tier": "T1",
-      "_verification": "verified","_date_ok": true
+      "dimension": "产品动态",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": false
     },
     {
       "id": "comp-069",
@@ -658,9 +531,263 @@
       "category": "产品动态",
       "title": "巨量引擎自定义报表接口下线线索指标：6月8日生效，历史线索类数据不可再查询",
       "sowhat": "巨量引擎自定义报表接口下线索指标将于6月8日全面下线，6月8日后所有线索类数据（线索、有效线索等）将不可查询。这可能影响广告主的归因汇报和数据分析链路。快手需关注此变更是否意味着字节在调整线索广告的本才量方式。",
-      "sources": [{"name":"巨量引擎开放平台 Changelog","url":"https://open.oceanengine.com/changelog/1","date":"2026-06-01"}],
-      "dimension": "产品动态","data_source": "竞媒官方","tier": "T2",
-      "_verification": "verified","_date_ok": true
+      "sources": [
+        {
+          "name": "巨量引擎开放平台 Changelog",
+          "url": "https://open.oceanengine.com/changelog/1",
+          "date": "2026-06-01"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "竞媒官方",
+      "tier": "T2",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-070",
+      "date": "2026-06-02",
+      "company": "字节",
+      "category": "产品动态",
+      "title": "豆包APP打通抖音生活服务团购：3.45亿月活AI入口切入本地生活，用自然语言搜索+下单绕过美团搜索",
+      "sowhat": "豆包与抖音生活服务打通，用户可用自然语言搜索美食/电影票/民宿等团购并直接下单。豆包月活3.45亿（QuestMobile 2026年3月），作为字节核心AI入口承接主动需求（消费意愿强于被动种草）。这是字节'AI生活服务平台'战略的关键一步：用AI'去搜索化'绕开美团搜索壁垒，抢占新一代交易心智。目前豆包团购暂不享受抖音主站补贴，价格可能高于抖音。快手需关注AI入口对本地生活流量入口的重构——快手尚未在AI产品（可灵/快意）中布局本地生活入口。",
+      "sources": [
+        {
+          "name": "36氪：电商之后是团购，豆包不想只陪用户聊天",
+          "url": "https://m.36kr.com/p/3835941302580354",
+          "date": "2026-06-02"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-071",
+      "date": "2026-06-02",
+      "company": "美团",
+      "category": "财报/行业case",
+      "title": "美团Q1收入口径重大变更：佣金+广告合并为'商家服务收入'模糊竞争观测；小象超市成第一增长业务覆盖55+城",
+      "sowhat": "美团Q1起将'佣金收入'+'在线营销服务收入'合并为'商家服务收入'，使take rate、广告投放意愿等关键指标不再透明，到店与到家竞争态势更难追踪。同时小象超市成内部第一增长业务：前置仓覆盖55+城市，自有品牌占比大幅提升。歪马送酒突破2600家，松鼠便利覆盖79+城市。美团正从'外卖公司'向'零售+科技公司'转型。快手需关注即时零售赛道竞争态势——美团正在非餐零售品类全速扩张。",
+      "sources": [
+        {
+          "name": "36氪：美团在竞争中看清自己",
+          "url": "https://m.36kr.com/p/3835814792492416",
+          "date": "2026-06-02"
+        }
+      ],
+      "dimension": "财报/行业case",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-072",
+      "date": "2026-06-02",
+      "company": "字节",
+      "category": "产品动态",
+      "title": "豆包6月下旬正式上线付费订阅：标准版$9.9锚定ChatGPT，专注复杂任务生产力场景",
+      "sowhat": "豆包6月下旬上线付费，标准版约$9.9/月锚定ChatGPT Plus定价区间，专业版约$73/月。付费功能专注PPT生成/数据分析/影视制作等复杂生产力场景。5月初曾因App Store页面泄露引发市场讨论。豆包从'免费AI助手'向'生产力工具'转型，标志着字节AI商业化从B端API向C端订阅拓展。快手可灵AI(ARR 5亿美元)同样面临C端付费转化挑战——豆包定价策略值得参考。",
+      "sources": [
+        {
+          "name": "36氪：豆包6月下旬正式付费丨独家",
+          "url": "https://m.36kr.com/p/3834544830721671",
+          "date": "2026-06-01"
+        },
+        {
+          "name": "36氪8点1氪：豆包付费或专注复杂任务",
+          "url": "https://m.36kr.com/p/3836703946257542",
+          "date": "2026-06-02"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-073",
+      "date": "2026-06-02",
+      "company": "美团",
+      "category": "产品动态",
+      "title": "美团AI助手'小美'+腾讯元宝达成合作：用户可在元宝中用自然语言调用外卖等本地生活服务",
+      "sowhat": "美团CEO王兴在Q1财报电话会上披露，美团AI助手'小美'与腾讯元宝的合作将于近期上线。用户可在腾讯元宝中输入诉求，通过'小美'一站式调用外卖等本地生活服务完成交易。这是'AI入口+本地生活交易闭环'的第二组联盟（继豆包+抖音生活服务之后）。两大阵营已成型：字节系(豆包+抖省省) vs 腾讯系(元宝+美团小美)。快手目前无AI+本地生活联盟，需关注是否与可灵/快意或其他AI产品形成类似绑定。",
+      "sources": [
+        {
+          "name": "界面新闻/红星新闻：美团小美+腾讯元宝合作",
+          "url": "https://m.36kr.com/p/3836703946257542",
+          "date": "2026-06-02"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-074",
+      "date": "2026-06-01",
+      "company": "字节",
+      "category": "产品动态",
+      "title": "巨量本地推API重大升级：新增项目/单元删除、账户预算更新、定向包管理等12个接口能力",
+      "sowhat": "本地推开放平台6月1日新增6个接口+优化6个存量接口，是本地推API能力最大的单次升级。新增能力包括：批量删除项目/单元（单次10个）、更新账户日预算（立即/次日生效）、获取单元成本保障状态及赔付金额、创建/更新定向包。同时存量接口新增预估覆盖人数、视频标签、定向包ID等字段。这意味着竞对服务商和ISV可以通过API实现对本地推投放的全生命周期自动化管理——快手磁力本地推目前API开放程度远不及此，服务商工具生态差距在拉大。",
+      "sources": [
+        {
+          "name": "巨量引擎开放平台Changelog",
+          "url": "https://open.oceanengine.com/changelog/1",
+          "date": "2026-06-01"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-075",
+      "date": "2026-05-30",
+      "company": "腾讯",
+      "category": "产品动态",
+      "title": "腾讯广告「综合兴趣」定向全量上线，预计11-12月完全替代「兴趣行为」定向",
+      "sowhat": "腾讯广告投放平台(ad.qq.com)全面上线新版「综合兴趣」定向，基于腾讯广告数据能力升级。投放端目前双定向并存（二选一），11-12月旧版「兴趣行为」定向将从投放端下线。这意味着腾讯广告的定向能力从「标签匹配」升级为「综合意图识别」，数据整合能力进一步增强。快手需关注：腾讯广告定向升级后，广告主在微信/视频号生态的投放效率提升，可能分流本地推广告主的预算。",
+      "sources": [
+        {
+          "name": "微信广告动态",
+          "url": "https://ad.weixin.qq.com/news?type=promotion",
+          "date": "2026-05-30"
+        }
+      ],
+      "dimension": "产品动态",
+      "data_source": "竞媒官方",
+      "tier": "T2",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-076",
+      "date": "2026-06-02",
+      "company": "字节",
+      "category": "战略方向",
+      "title": "字节跳动力压腾讯阿里成中国互联网盈利王：2025年利润500亿美元，2026年资本支出1600亿加码AI",
+      "sowhat": "华尔街见闻综述：字节跳动2025年盈利达500亿美元远超腾讯（360亿）和阿里（150亿）。2026年1月全员会把关键词定为'勇攀高峰'，计划资本支出1600亿元（其中一半用于AI芯片采购）。字节在AI基础设施上的投入规模已远超竞对，其AI能力（豆包+云雀+AI基础设施）正从C端应用渗透到广告/电商/本地生活等B端产品。快手需评估字节AI基础设施领先优势对广告竞价系统、内容推荐效率、本地生活匹配精准度的影响差距。",
+      "sources": [
+        {
+          "name": "华尔街见闻：2026年中国互联网字节AI入口争夺战",
+          "url": "https://wallstreetcn.com/articles/3763622",
+          "date": "2026-01-19"
+        },
+        {
+          "name": "21经济网：字节CEO梁汝波2026勇攀高峰",
+          "url": "https://www.21jingji.com/article/20260131/herald/2fff8881537cfa130c5d0090d11afce4.html",
+          "date": "2026-01-31"
+        },
+        {
+          "name": "华尔街见闻：字节计划2026资本支出1600亿",
+          "url": "https://wallstreetcn.com/articles/3761890",
+          "date": "2025-12-22"
+        }
+      ],
+      "dimension": "战略方向",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-077",
+      "date": "2026-06-02",
+      "company": "阿里",
+      "category": "财报/行业case",
+      "title": "淘宝闪购Q1订单量同比增长2.7倍站稳45%份额：阿里即时零售路径明确——2027UE转正/2028万亿/2029盈利",
+      "sowhat": "钛媒体深度分析指出阿里在外卖大战中投入857亿（利润减少），但换来三大战略资产：①即时零售入场券——淘宝闪购+盒马（GMV超1000亿）+天猫超市构成版图，订单同比增2.7倍；②淘宝超级App心智——闪购DAU稳定1亿+，MAU近3亿，帮助淘宝获高频入口；③对潜在同量级零售竞争对手的战略压制。阿里2027财年UE转正目标超出预期。快手若涉足即时零售或本地生活，需考虑淘宝已从'货架电商'向'远场+近场即时零售'完整消费体系推进的竞争压力。",
+      "sources": [
+        {
+          "name": "钛媒体：外卖大战一年美团回不去阿里停不下",
+          "url": "https://www.tmtpost.com/8011985.html",
+          "date": "2026-06-02"
+        }
+      ],
+      "dimension": "财报/行业case",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-078",
+      "date": "2026-06-02",
+      "company": "京东",
+      "category": "财报/行业case",
+      "title": "京东外卖Q1新业务亏损环比收窄但UE修复困难：小份额玩家多面受限",
+      "sowhat": "钛媒体分析京东外卖从零到个位数至低双位数份额，证明了流量调动能力。但现有份额不足以支撑稳定UE改善，每单多亏几块钱。补贴下降可能影响份额扩张，份额不足又会限制履约密度和商家供给。Q1亏损环比收窄是积极信号但距离彻底扭亏仍有很长的路。对比美团花600亿守住份额+阿里花857亿买到战略资产，京东的投入性价比相对较低。快手需注意：外卖战场三家格局趋于稳定，短期不会出现第四家搅局者，但即时零售品类竞争仍激烈。",
+      "sources": [
+        {
+          "name": "钛媒体：外卖大战一年美团回不去阿里停不下",
+          "url": "https://www.tmtpost.com/8011985.html",
+          "date": "2026-06-02"
+        }
+      ],
+      "dimension": "财报/行业case",
+      "data_source": "三方媒体",
+      "tier": "T2",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-079",
+      "date": "2026-06-02",
+      "company": "美团",
+      "category": "财报/行业case",
+      "title": "钛媒体外卖大战复盘：美团多线作战困境——外卖防阿里京东、到店防抖音高德、AI缺资源、国际化放缓",
+      "sowhat": "钛媒体深度分析美团从'高确定性本地生活利润机器'变为'多线作战的本地消费平台'：①外卖大战烧掉大几百亿，长期UE从2元降至1元，年利润预计少300-400亿；②外卖守城导致主业被牵制，抖音生服抓住窗口期实现8500亿支付GMV，抖省省日活近1600万，大众点评月活增速降11.4%；③AI投入仅百亿级别(对比字节/腾讯/阿里千亿)，LongCat大模型业界声量小，CatPaw仅更新4次；④国际化放缓。对快手而言——美团多线作战提供窗口期，快手在本地生活可学习抖音打法加速渗透。",
+      "sources": [
+        {
+          "name": "钛媒体：外卖大战一年美团回不去阿里停不下",
+          "url": "https://www.tmtpost.com/8011985.html",
+          "date": "2026-06-02"
+        },
+        {
+          "name": "第一财经：美团业绩超预期",
+          "url": "https://www.yicai.com/news/103210666.html",
+          "date": "2026-06-02"
+        },
+        {
+          "name": "华尔街见闻：美团Q1核心本地商业亏损收窄至20亿",
+          "url": "https://wallstreetcn.com/livenews/3112335",
+          "date": "2026-06-01"
+        }
+      ],
+      "dimension": "财报/行业case",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-080",
+      "date": "2026-05-20",
+      "company": "字节",
+      "category": "行业趋势",
+      "title": "QuestMobile《2026本地生活消费洞察报告》：综合电商月活10.95亿+本地生活5.69亿，即时零售走向'综合消费'",
+      "sowhat": "澎湃新闻摘要QM报告关键数据：截止2026年3月，综合电商月活10.95亿（淘宝9.57亿领先）、本地生活5.69亿。外卖业务深度渗透重塑电商用户行为——淘宝与京东主站用户使用频次均维持10%以上同比增长。抖省省日活持续增长至1600万，大众点评月活增速下滑11.4%。报告核心结论：即时零售正从'外卖补充'走向'综合消费入口'，高频外卖习惯反哺电商主站。快手需关注自身本地生活月活数据与抖音/美团的差距趋势，以及即时零售对电商用户频次的带动效应能否迁移。",
+      "sources": [
+        {
+          "name": "澎湃新闻：2026本地生活消费洞察报告",
+          "url": "https://m.thepaper.cn/newsDetail_forward_33199248",
+          "date": "2026-05-20"
+        }
+      ],
+      "dimension": "行业趋势",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": false
     }
   ]
 }
