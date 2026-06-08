@@ -1,9 +1,9 @@
 {
   "_meta": {
     "description": "Part2 竞对动态 — SOURCE-FIRST v3 (direct fetch + web_fetch)",
-    "last_updated": "2026-06-03T22:45:00",
-    "total_items": 32,
-    "recent_window": "past 14d (cutoff 2026-05-19)",
+    "last_updated": "2026-06-08T12:00:00",
+    "total_items": 35,
+    "recent_window": "past 14d (cutoff 2026-05-25)",
     "companies_tracked": [
       "字节",
       "小红书",
@@ -764,6 +764,84 @@
         }
       ],
       "dimension": "财报/行业case",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-081",
+      "date": "2026-06-02",
+      "company": "腾讯",
+      "category": "战略方向",
+      "title": "微信AI Agent完成收尾测试即将上线：右滑唤醒+108行业小程序API调用，腾讯市值单日暴涨3600亿",
+      "sowhat": "微信AI Agent若上线将是中国互联网最大的产品变革之一：交互入口为微信主界面右滑调出对话窗口，不进入独立App。AI可调用108个行业数百万小程序完成挂号/点餐/购票/缴费等闭环服务，微信支付补齐交易最后一环。腾讯AI战略路径复盘：元宝被微信封杀(2月)→AI Lab撤销(3月)→混元3.0发布(4月)→元宝降为微信组件→微信原生AI Agent收口。微信已与华为/荣耀/小米/OPPO/vivo合作A2A能力。快手需关注微信AI Agent对本地生活流量入口的重构——用户直接从微信AI一句话完成服务交易，可能分流快手本地推视频种草到团购的转化路径。",
+      "sources": [
+        {
+          "name": "钛媒体：封了自家元宝，微信AI亲自下场",
+          "url": "https://www.tmtpost.com/8014103.html",
+          "date": "2026-06-02"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-02-04",
+          "event": "微信封杀元宝春节红包活动链接"
+        },
+        {
+          "date": "2026-03",
+          "event": "腾讯撤销AI Lab并入混元体系"
+        },
+        {
+          "date": "2026-04",
+          "event": "混元3.0发布(295B参数)"
+        },
+        {
+          "date": "2026-06-02",
+          "event": "外媒报道微信AI Agent收尾测试，腾讯市值+3600亿"
+        }
+      ],
+      "dimension": "战略方向",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-082",
+      "date": "2026-06-03",
+      "company": "字节",
+      "category": "战略方向",
+      "title": "可灵AI正式启动Pre-IPO轮融资：投前估值180亿美元，内部按2027年初港股申报推进",
+      "sowhat": "快手旗下可灵AI分拆后首轮融资投前估值180亿美元(此前5月11日传200亿)，内部按2027年初港股申报推进。可灵Q1收入超6.5亿元(+300%)，ARR近5亿美元(YoY+4x)。快手Q1利润同比下降27%至29.05亿元，全年资本开支260亿。分拆本质是快手减轻AI资本开支压力、把AI成本中心变成独立融资实体的理性财务选择。可灵估值已逼近快手自身市值(2027亿港元≈260亿美元)，分拆上市是释放快手AI资产价值的最优路径。",
+      "sources": [
+        {
+          "name": "科创板日报：可灵AI启动Pre-IPO轮融资 估值180亿美元",
+          "url": "https://www.cls.cn/detail/2389790",
+          "date": "2026-06-03"
+        }
+      ],
+      "dimension": "战略方向",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "comp-083",
+      "date": "2026-06-02",
+      "company": "腾讯",
+      "category": "产品动态",
+      "title": "腾讯元宝+微信AI Agent双架构成型：元宝降为微信组件，混元3.0+14亿用户+小程序API直调构建完整AI闭环",
+      "sowhat": "钛媒体深度拆解腾讯AI架构演变：元宝从独立App(MAU峰值1.14亿含微信内嵌版，回落至5735万)降级为微信组件，微信AI Agent收口所有C端AI需求。微信的护城河在于108个行业数百万小程序的标准化API——Agent通过接口直接调用(效率远超豆包的GUI屏幕模拟)，加之14亿用户实名认证+微信支付实现身份→意图→支付完整闭环。但面临三大挑战：混元3.0与头部模型差距/14亿用户推理成本极庞大/开发者利益重新分配(Agent直达支付跳过浏览中间页)。快手应关注：微信AI Agent上线后是否进一步挤压快手本地生活/电商的流量入口。",
+      "sources": [
+        {
+          "name": "钛媒体：封了自家元宝，微信AI亲自下场",
+          "url": "https://www.tmtpost.com/8014103.html",
+          "date": "2026-06-02"
+        }
+      ],
+      "dimension": "产品动态",
       "data_source": "三方媒体",
       "tier": "T1",
       "_verification": "verified",

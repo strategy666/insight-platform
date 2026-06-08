@@ -2,14 +2,14 @@
   "_meta": {
     "description": "信号雷达 · 播客/推特/融资交易 三维信源",
     "version": "1.0",
-    "last_updated": "2026-06-04T10:33:27.143881",
-    "today": "2026-05-31",
+    "last_updated": "2026-06-08T12:00:00",
+    "today": "2026-06-08",
     "window_days": 14,
     "sources_doc": "agents/signals-radar.md",
     "total_podcasts": 0,
     "total_tweets": 0,
-    "total_deals": 7,
-    "note": "真实Deals数据 · 2026-06-04更新 · 窗口14天"
+    "total_deals": 8,
+    "note": "真实Deals数据 · 2026-06-08更新 · 窗口14天"
   },
   "podcasts": [],
   "tweets": [],
@@ -176,6 +176,30 @@
         "#基础设施",
         "#字节",
         "#算力"
+      ],
+      "priority": "mid",
+      "_verification": "verified"
+    },
+    {
+      "id": "deal-2026-010",
+      "date": "2026-06-03",
+      "company": "可灵AI（快手旗下）",
+      "round": "Pre-IPO轮",
+      "amount": "未披露",
+      "valuation": "180亿美元（投前）",
+      "lead_investors": [
+        "未披露"
+      ],
+      "sector": "AI / 视频生成",
+      "url": "https://www.cls.cn/detail/2389790",
+      "source": "科创板日报",
+      "summary": "快手旗下可灵AI正式启动分拆后首轮Pre-IPO融资，投前估值180亿美元，内部按2027年初递交港股上市申报推进。ARR近5亿美元(YoY+4x)，Q1收入6.5亿元(+300%)",
+      "tags": [
+        "#AI",
+        "#视频生成",
+        "#可灵",
+        "#快手",
+        "#Pre-IPO"
       ],
       "priority": "mid",
       "_verification": "verified"
