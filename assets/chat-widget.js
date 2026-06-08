@@ -74,9 +74,7 @@
         const panel = document.createElement('div');
         panel.id = 'cwPanel';
         panel.className = 'cw-panel';
-        const intelCnt = (window.intelData || []).length;
-        const compCnt = (window.competitorData || []).length;
-        const subText = 'DeepSeek · 实时联动 ' + intelCnt + ' 条情报 + ' + compCnt + ' 条竞对';
+        const subText = '问竞对动态 · 搜飞书文档 · AI 生成行业研报';
         panel.innerHTML = `
             <div class="cw-header">
                 <div class="cw-header-left">
