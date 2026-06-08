@@ -232,12 +232,26 @@
         {
           "name": "机器之心（公众号）",
           "url": "https://weixin.sogou.com/weixin?type=2&query=机器之心",
-          "desc": "AI学术/技术深度解读 — 论文解读/SOTA刷新/产业分析"
+          "desc": "AI学术/技术深度解读 — 论文解读/SOTA刷新/产业分析",
+          "search_keywords": [
+            "AI",
+            "论文",
+            "SOTA",
+            "大模型",
+            "解读"
+          ]
         },
         {
           "name": "量子位论文解读（公众号）",
           "url": "https://weixin.sogou.com/weixin?type=2&query=量子位",
-          "desc": "AI科技媒体 — 论文解读/学术突破追踪"
+          "desc": "AI科技媒体 — 论文解读/学术突破追踪",
+          "search_keywords": [
+            "AI",
+            "论文",
+            "量子位",
+            "SOTA",
+            "突破"
+          ]
         },
         {
           "name": "Anthropic Research Blog",
@@ -845,46 +859,6 @@
           "name": "刺猬公社",
           "url": "https://www.ciweigongshe.net/",
           "desc": "内容行业案例"
-        },
-        {
-          "name": "巨量引擎营销观察（公众号）",
-          "url": "https://weixin.sogou.com/weixin?type=2&query=巨量引擎营销观察",
-          "desc": "字节商业化官方公众号 — 营销方法论/案例/产品发布"
-        },
-        {
-          "name": "小红书商业动态（公众号）",
-          "url": "https://weixin.sogou.com/weixin?type=2&query=小红书商业动态",
-          "desc": "小红书商业化官方公众号"
-        },
-        {
-          "name": "腾讯广告（公众号）",
-          "url": "https://weixin.sogou.com/weixin?type=2&query=腾讯广告",
-          "desc": "腾讯广告官方公众号 — 营销趋势/产品/案例"
-        },
-        {
-          "name": "阿里妈妈（公众号）",
-          "url": "https://weixin.sogou.com/weixin?type=2&query=阿里妈妈",
-          "desc": "阿里妈妈官方公众号 — 阿里营销产品/方法论"
-        },
-        {
-          "name": "百度营销（公众号）",
-          "url": "https://weixin.sogou.com/weixin?type=2&query=百度营销",
-          "desc": "百度营销官方公众号"
-        },
-        {
-          "name": "快手磁力引擎（公众号）",
-          "url": "https://weixin.sogou.com/weixin?type=2&query=快手磁力引擎",
-          "desc": "快手商业化官方公众号 — 磁力引擎/磁力金牛/产品动态"
-        },
-        {
-          "name": "微信广告助手（公众号）",
-          "url": "https://weixin.sogou.com/weixin?type=2&query=微信广告助手",
-          "desc": "微信广告官方公众号 — 视频号互选/微信小店"
-        },
-        {
-          "name": "B站商业动态（公众号）",
-          "url": "https://weixin.sogou.com/weixin?type=2&query=B站商业动态",
-          "desc": "B站商业化/花火平台官方公众号"
         },
         {
           "name": "巨量引擎营销观察",
