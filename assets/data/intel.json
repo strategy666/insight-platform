@@ -1,13 +1,139 @@
 {
   "_meta": {
-    "description": "Part1 市场信息洞察 + gap-fill from 互联网公共战略参考232期 / 营销早咖Vol.12 / 腾讯研究院AI速递",
+    "description": "Part1 +10 items from Anthropic Research + Xinhua Tech (web_fetch verified)",
     "last_updated": "2026-06-08",
-    "total_items": 38,
+    "total_items": 48,
     "window": "past 14d (2026-05-25 ~ 2026-06-08) + 重点回溯(Tech星球2026-03)",
     "source_first": true,
     "fetch_method": "P0全渠道:OCE_Changelog+微信广告动态+钛媒体+第一财经+华尔街见闻+澎湃新闻+21经济网+虎嗅+界面新闻 + P1科技媒体:36氪+Tech星球+铅笔道+财新+MBA智库"
   },
   "items": [
+    {
+      "id": "intel-w1-x1",
+      "date": "2026-06-08",
+      "priority": "high",
+      "signal": "trend",
+      "title": "未来产业获政策加码 重点赛道将培育更多'独角兽'",
+      "body": "国家层面加码未来产业政策，明确重点赛道并设定独角兽企业培育目标。",
+      "sowhat": "政策明确加码未来产业(含AI)，对快手AI业务发展和政府合作有窗口期机会",
+      "tags": [
+        "#政策",
+        "#未来产业",
+        "#独角兽"
+      ],
+      "company": [],
+      "industry": [
+        "AI",
+        "政策"
+      ],
+      "type": "准入政策",
+      "timeline": "2026-06-08 政策加码",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "新华网科技频道",
+          "url": "https://www.news.cn/tech/",
+          "date": "2026-06-08"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
+    },
+    {
+      "id": "intel-w1-x2",
+      "date": "2026-06-08",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "AI应用加速渗透三大产业 场景与规模优势显现",
+      "body": "新华网报道AI应用在三大产业领域加速渗透，AI落地场景与规模效应开始显现。",
+      "sowhat": "AI应用从试点走向规模化渗透，快手各业务线AI化进程需提速以保持竞争力",
+      "tags": [
+        "#AI应用",
+        "#产业化",
+        "#数字经济"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-08 三大产业AI渗透",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "新华网科技频道",
+          "url": "https://www.news.cn/tech/",
+          "date": "2026-06-08"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
+    },
+    {
+      "id": "intel-w1-x3",
+      "date": "2026-06-08",
+      "priority": "mid",
+      "signal": "threat",
+      "title": "AI热潮背后是昂贵的地球资源账单",
+      "body": "新华网关注AI产业发展带来的能源/水资源/芯片等资源消耗问题，呼吁绿色AI发展。",
+      "sowhat": "AI能耗争议可能影响数据中心审批和政策走向，快手乌兰察布数据中心节能优势凸显",
+      "tags": [
+        "#AI能耗",
+        "#绿色AI",
+        "#数据中心"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "准入政策",
+      "timeline": "2026-06-08 资源账单",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "新华网科技频道",
+          "url": "https://www.news.cn/tech/",
+          "date": "2026-06-08"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
+    },
+    {
+      "id": "intel-w1-x4",
+      "date": "2026-06-08",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "从玩具到伙伴 AI玩具'玩'出新赛道",
+      "body": "报告关注AI玩具赛道崛起，从教育到陪伴AI正在打开消费级硬件新市场。",
+      "sowhat": "AI消费硬件赛道快速增长，快手可灵等AI工具可与AI硬件形成内容+硬件联动",
+      "tags": [
+        "#AI硬件",
+        "#消费赛道",
+        "#AI玩具"
+      ],
+      "company": [],
+      "industry": [
+        "AI",
+        "消费"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-08 AI玩具",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "新华网科技频道",
+          "url": "https://www.news.cn/tech/",
+          "date": "2026-06-08"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
+    },
     {
       "id": "intel-161",
       "date": "2026-06-07",
@@ -346,6 +472,104 @@
       ],
       "_verification": "verified",
       "_date_ok": true
+    },
+    {
+      "id": "intel-w1-a1",
+      "date": "2026-06-05",
+      "priority": "high",
+      "signal": "trend",
+      "title": "Anthropic: Making Claude a Chemist",
+      "body": "Anthropic研究团队发布Claude化学能力论文，探索AI在科学发现中的应用边界。",
+      "sowhat": "AI从代码/文本向硬科学(化学)渗透加速，对快手AI应用场景扩展有启示",
+      "tags": [
+        "#Anthropic",
+        "#AI+Science",
+        "#Claude"
+      ],
+      "company": [
+        "Anthropic"
+      ],
+      "industry": [
+        "AI"
+      ],
+      "type": "技术发布",
+      "timeline": "2026-06-05 Claude化学能力论文",
+      "scope": "海外",
+      "sources": [
+        {
+          "name": "Anthropic Research",
+          "url": "https://www.anthropic.com/research",
+          "date": "2026-06-05"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
+    },
+    {
+      "id": "intel-w1-x5",
+      "date": "2026-06-05",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "差异化布局 AI发展'一盘棋'初具雏形",
+      "body": "省级十五五规划纲要中AI差异化布局明显，各省根据产业优势制定AI发展路线图。",
+      "sowhat": "地方AI产业政策差异化对快手AI业务的区域布局和人才战略有影响",
+      "tags": [
+        "#AI政策",
+        "#十五五",
+        "#区域布局"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "准入政策",
+      "timeline": "2026-06-05 十五五AI布局",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "新华网科技频道",
+          "url": "https://www.news.cn/tech/",
+          "date": "2026-06-05"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
+    },
+    {
+      "id": "intel-w1-x6",
+      "date": "2026-06-05",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "2026台铃高端快充电摩发布会 + 高通汽车技术与合作峰会 — AI汽车新图景",
+      "body": "新华网报道台铃电摩发布和高通汽车峰会，高通孟樸称汽车将演进为智能体AI最重要的移动载体之一。",
+      "sowhat": "AI+汽车融合加速，智能座舱和自动驾驶成为AI落地核心场景，快手需关注车载媒体内容生态",
+      "tags": [
+        "#AI汽车",
+        "#高通",
+        "#智能座舱"
+      ],
+      "company": [
+        "高通"
+      ],
+      "industry": [
+        "AI",
+        "汽车"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-05 AI汽车峰会",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "新华网科技频道",
+          "url": "https://www.news.cn/tech/",
+          "date": "2026-06-05"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
     },
     {
       "id": "intel-2026-06-08-03",
@@ -1021,6 +1245,39 @@
       ],
       "_verification": "verified",
       "_date_ok": true
+    },
+    {
+      "id": "intel-w1-a2",
+      "date": "2026-06-03",
+      "priority": "high",
+      "signal": "trend",
+      "title": "Anthropic: What we learned mapping a year's worth of AI-enabled cyber threats",
+      "body": "Anthropic发布年度AI网络安全威胁地图报告，系统性梳理了AI在网络安全攻防中的威胁面。",
+      "sowhat": "AI安全从理论进入实证研究阶段，国内监管可能跟进类似标准",
+      "tags": [
+        "#Anthropic",
+        "#AI安全",
+        "#网络安全"
+      ],
+      "company": [
+        "Anthropic"
+      ],
+      "industry": [
+        "AI"
+      ],
+      "type": "技术发布",
+      "timeline": "2026-06-03 AI网络安全威胁地图",
+      "scope": "海外",
+      "sources": [
+        {
+          "name": "Anthropic Research",
+          "url": "https://www.anthropic.com/research",
+          "date": "2026-06-03"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
     },
     {
       "id": "intel-146",
@@ -1811,6 +2068,72 @@
       ],
       "_verification": "verified",
       "_date_ok": true
+    },
+    {
+      "id": "intel-w1-a3",
+      "date": "2026-05-27",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "Anthropic: Coding agents in the social sciences",
+      "body": "Anthropic研究AI编程Agent在社会科学研究中的应用，将AI Agent能力扩展到学术研究方法论。",
+      "sowhat": "Agent能力从软件工程扩展到科学研究方法论，Agent范式正在跨领域渗透",
+      "tags": [
+        "#Anthropic",
+        "#Agent",
+        "#AI+Research"
+      ],
+      "company": [
+        "Anthropic"
+      ],
+      "industry": [
+        "AI"
+      ],
+      "type": "技术发布",
+      "timeline": "2026-05-27 编程Agent社会科学应用",
+      "scope": "海外",
+      "sources": [
+        {
+          "name": "Anthropic Research",
+          "url": "https://www.anthropic.com/research",
+          "date": "2026-05-27"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
+    },
+    {
+      "id": "intel-w1-a4",
+      "date": "2026-05-22",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "Anthropic: Project Glasswing Initial Update",
+      "body": "Anthropic发布Project Glasswing阶段性更新——联合AWS/Apple/Google/Microsoft/NVIDIA等保障关键软件安全。",
+      "sowhat": "全球顶级科技公司首次在AI安全领域形成产业联盟，对行业安全标准有标杆意义",
+      "tags": [
+        "#Anthropic",
+        "#AI安全",
+        "#产业联盟"
+      ],
+      "company": [
+        "Anthropic"
+      ],
+      "industry": [
+        "AI"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-05-22 Glasswing建设更新 · 2026-04 项目启动",
+      "scope": "海外",
+      "sources": [
+        {
+          "name": "Anthropic Research",
+          "url": "https://www.anthropic.com/research",
+          "date": "2026-05-22"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
     },
     {
       "id": "intel-142",

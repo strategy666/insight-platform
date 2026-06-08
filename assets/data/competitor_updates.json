@@ -2,7 +2,7 @@
   "_meta": {
     "description": "Part2 竞对动态 + gap-fill 拼多多/小红书世界杯/百度DAA/抖音小星AI",
     "last_updated": "2026-06-08",
-    "total_items": 42,
+    "total_items": 45,
     "recent_window": "past 14d (cutoff 2026-05-25)",
     "companies_tracked": [
       "字节",
@@ -17,6 +17,35 @@
     "fetch_method": "P0全渠道:OCE_Changelog+微信广告动态+钛媒体+第一财经+华尔街见闻+澎湃新闻+21经济网+虎嗅+界面新闻"
   },
   "items": [
+    {
+      "id": "comp-w1-1",
+      "date": "2026-06-08",
+      "company": "字节",
+      "category": "产品动态",
+      "dimension": "AI/技术",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "AI应用加速渗透三大产业：从玩具到伙伴催生消费新赛道",
+      "body": "新华网科技频道报道AI应用在三大产业加速渗透，AI玩具/教育/陪伴等消费级AI硬件新赛道兴起。",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "新华网科技频道",
+          "url": "https://www.news.cn/tech/",
+          "date": "2026-06-08"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-08",
+          "event": "三大产业AI渗透"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
+    },
     {
       "id": "comp-084",
       "date": "2026-06-05",
@@ -61,6 +90,68 @@
       "tier": "T1",
       "_verification": "verified",
       "_date_ok": true
+    },
+    {
+      "id": "comp-w1-2",
+      "date": "2026-06-05",
+      "company": "其他",
+      "category": "产品动态",
+      "dimension": "AI/技术",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "高通：汽车将演进为智能体AI最重要的移动载体",
+      "body": "高通孟樸在2026汽车技术与合作峰会上表示汽车将演进为智能体AI最重要的移动载体之一，AI汽车新图景展开。",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "新华网科技频道",
+          "url": "https://www.news.cn/tech/",
+          "date": "2026-06-05"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-05",
+          "event": "高通汽车峰会"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
+    },
+    {
+      "id": "comp-w1-3",
+      "date": "2026-06-05",
+      "company": "其他",
+      "category": "产品动态",
+      "dimension": "AI/技术",
+      "data_source": "竞媒官方",
+      "tier": "T1",
+      "title": "Anthropic发布Claude化学能力研究 + 年度AI网络威胁地图",
+      "body": "Anthropic Research公布Claude化学能力论文和年度AI网络安全威胁研究报告，AI从代码向硬科学+安全实证延伸。",
+      "sowhat": "",
+      "scope": "海外",
+      "sources": [
+        {
+          "name": "Anthropic Research",
+          "url": "https://www.anthropic.com/research",
+          "date": "2026-06-05"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-05",
+          "event": "Claude化学论文"
+        },
+        {
+          "date": "2026-06-03",
+          "event": "网络威胁地图"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "web_fetch"
     },
     {
       "id": "comp-086",
