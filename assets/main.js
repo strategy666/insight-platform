@@ -69,6 +69,7 @@ function renderKeyInsights() {
     // 合并 AI 速递 + 高优先级情报：high priority 或 AI 赛道，取近 7 天内 top 6
     const sevenDaysAgo = Date.now() - 7 * 86400000;
     const merged = intelData
+        .filter(it => it._date_ok !== false)  // 仅展示窗口内条目
         .filter(it => {
             const isHigh = it.priority === 'high';
             const isAI = (it.tracks || []).some(t => /AI|AIGC/i.test(t));
@@ -136,8 +137,6 @@ function renderFlowRow(item) {
     const weekDay = ['日','一','二','三','四','五','六'][dt.getDay()] || '';
     const kindBadge = ({
         news: '<span class="row-kind row-kind-news">📰 新闻</span>',
-        podcast: '<span class="row-kind row-kind-pod">🎙️ 播客</span>',
-        tweet: '<span class="row-kind row-kind-tweet">🐦 推特</span>',
         deal: '<span class="row-kind row-kind-deal">💰 交易</span>'
     })[kind] || '';
 
@@ -217,12 +216,10 @@ function updateKindCounts() {
     // 计数仅根据 除 kind 之外的筛选状态
     const fakeFilters = Object.assign({}, currentFilters, { kind: 'all' });
     const base = (allFlowItems || []).filter(item => matchesFiltersExceptKind(item, fakeFilters));
-    const cnt = { news: 0, podcast: 0, tweet: 0, deal: 0 };
+    const cnt = { news: 0, deal: 0 };
     base.forEach(it => { if (cnt[it._kind] !== undefined) cnt[it._kind]++; });
     const set = (id, n) => { const e = document.getElementById(id); if (e) e.textContent = n; };
     set('kindCntNews', cnt.news);
-    set('kindCntPodcast', cnt.podcast);
-    set('kindCntTweet', cnt.tweet);
     set('kindCntDeal', cnt.deal);
 }
 
@@ -623,6 +620,8 @@ function switchCompetitor(company) {
 function renderCompetitorList() {
     const { company, dimension, source } = currentCompFilters;
     let updates = competitorData;
+    // 仅展示窗口内条目（_date_ok !== false）
+    updates = updates.filter(it => it._date_ok !== false);
     if (company !== 'all') updates = updates.filter(it => it.company === company);
     if (dimension !== 'all') updates = updates.filter(it => (it.dimension || it.category) === dimension);
     if (source !== 'all') updates = updates.filter(it => (it.data_source || '三方媒体') === source);
@@ -844,7 +843,8 @@ function updateStats() {
         return;
     }
     const t = document.getElementById('statTotal');
-    if (t) t.textContent = intelData.length;
+    const inWindowItems = intelData.filter(it => it._date_ok !== false);
+    if (t) t.textContent = inWindowItems.length;
     const h = document.getElementById('statHigh');
     if (h) h.textContent = intelData.filter(item => item.priority === 'high').length;
 
@@ -1358,7 +1358,9 @@ async function loadSignalsRadar() {
 
 // 将三类信号统一适配为 flow 列表项（与 intel 同构）
 function buildAllFlowItems() {
-    const news = (intelData || []).map(it => Object.assign({}, it, { _kind: 'news' }));
+    const news = (intelData || [])
+        .filter(it => it._date_ok !== false)  // 仅展示窗口内条目
+        .map(it => Object.assign({}, it, { _kind: 'news' }));
 
     const mkPodcast = (p) => ({
         id: p.id,
