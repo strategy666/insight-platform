@@ -4,7 +4,7 @@
     "kim_doc_url": "https://docs.corp.kuaishou.com/d/home/fcAAoE2eWZ9oZFNrZB9qJaYpz?channel=kim-cloud",
     "last_updated": "2026-06-08",
     "update_rule": "渠道列表在此 JSON 维护；Kim Doc 是人工编辑入口。每次更新 portal 时读取本文件获取渠道 URL，逐渠道抓取每一篇子网页。",
-    "update_note": "V1.1: +8 channels — DeepSeek/极客公园/InfoQ/腾讯云/猎云网/拼多多/广电总局/DataPipe公众号 — 覆盖AI技术+融资+政策盲区"
+    "update_note": "V1.2: +8营销公众号 +3论文学术追踪渠道 — 覆盖营销案例/AI论文/行业峰会三类盲区"
   },
   "part1_search_intel": {
     "description": "市场信息洞察信源（search-intel agent 使用 → Tab2 商业化洞察周报）",
@@ -223,6 +223,21 @@
           "name": "InfoQ 中文",
           "url": "https://www.infoq.cn/",
           "desc": "AI架构/工程实践/技术决策深度内容"
+        },
+        {
+          "name": "PapersWithCode Trending",
+          "url": "https://paperswithcode.com/",
+          "desc": "全球AI论文SOTA基准排行榜 — 按task/数据集/paper追踪最新突破"
+        },
+        {
+          "name": "机器之心（公众号）",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=机器之心",
+          "desc": "AI学术/技术深度解读 — 论文解读/SOTA刷新/产业分析"
+        },
+        {
+          "name": "量子位论文解读（公众号）",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=量子位",
+          "desc": "AI科技媒体 — 论文解读/学术突破追踪"
         }
       ],
       "1.4_头部科技公司": [
@@ -757,6 +772,46 @@
           "name": "刺猬公社",
           "url": "https://www.ciweigongshe.net/",
           "desc": "内容行业案例"
+        },
+        {
+          "name": "巨量引擎营销观察（公众号）",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=巨量引擎营销观察",
+          "desc": "字节商业化官方公众号 — 营销方法论/案例/产品发布"
+        },
+        {
+          "name": "小红书商业动态（公众号）",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=小红书商业动态",
+          "desc": "小红书商业化官方公众号"
+        },
+        {
+          "name": "腾讯广告（公众号）",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=腾讯广告",
+          "desc": "腾讯广告官方公众号 — 营销趋势/产品/案例"
+        },
+        {
+          "name": "阿里妈妈（公众号）",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=阿里妈妈",
+          "desc": "阿里妈妈官方公众号 — 阿里营销产品/方法论"
+        },
+        {
+          "name": "百度营销（公众号）",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=百度营销",
+          "desc": "百度营销官方公众号"
+        },
+        {
+          "name": "快手磁力引擎（公众号）",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=快手磁力引擎",
+          "desc": "快手商业化官方公众号 — 磁力引擎/磁力金牛/产品动态"
+        },
+        {
+          "name": "微信广告助手（公众号）",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=微信广告助手",
+          "desc": "微信广告官方公众号 — 视频号互选/微信小店"
+        },
+        {
+          "name": "B站商业动态（公众号）",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=B站商业动态",
+          "desc": "B站商业化/花火平台官方公众号"
         }
       ]
     }
