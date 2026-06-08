@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "crawled_at": "2026-06-03T21:19:29.744374",
+    "total_hits": 4,
+    "recent_window_days": 30,
+    "keyword_matrix": {
+      "字节": 5,
+      "腾讯": 4,
+      "小红书": 4,
+      "百度": 2,
+      "美团": 3
+    }
+  },
+  "results": {
+    "字节": [
+      {
+        "title": "「出单宝-商家全托管经营利器」专题分享-周五解锁课程,轻松获取订单!",
+        "snippet": "抖音生活服务南部大区每周固定开展商家经营能力培养课程,配套... 《出单宝-商家全托管经营利器》 尊敬的商家朋友,平台上了个新...",
+        "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1780492753&ver=6760&signature=2nR0VM6F1mol-gdEyJ1h31u-CztBhcNX534HilOuh-Mgp4VenztjoGg1afm7aZaors86NyezzVVOt7jg-IdzDrbPn4Oe9*jSwoJ*w2w2h1XpDeSLNYr4rG5qcBgMvLjY&new=1",
+        "source": "抖音生活服务商业观察",
+        "date": "2026-05-28 18:06:13",
+        "_company": "字节",
+        "_query": "抖音 出单宝"
+      },
+      {
+        "title": "为什么说抖音来客+本地推是本地商家的“王炸组合”?",
+        "snippet": "2026年开年,抖音本地推进行了升级,全面迁移巨量AD的【销售线索】功能,全部迁移至本地推.包括婚纱摄影、心理咨询、医疗医...",
+        "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1780492752&ver=6760&signature=KYzeA5leQIQp4msoZgz12K*NGebekGK29TvcTt6nEviyVCHQE8EzVcZkfyI9OS4qOmyEcRCc0mE2f2EUcbtKqqYvkDi14u8cx9FmbZdn0Q9bbTScWo6eZYP0lfkEC6fD&new=1",
+        "source": "螳螂科技SaaS",
+        "date": "2026-05-25 15:18:03",
+        "_company": "字节",
+        "_query": "巨量AD 本地推 迁移"
+      }
+    ],
+    "腾讯": [
+      {
+        "title": "微信怎么开通小店",
+        "snippet": "另一种是企业/个体户才能开的「微信小店」 功能更全但需要营业... 可能是微信版本太旧 去应用商店更新到最新版再试 第三步 填信息 ...",
+        "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1780492758&ver=6760&signature=mhr7kutQE6z9ynnE4xuJtZ51kqnoaGQfVjUi2PUJdmT68khWTXFNqyUSSgZwH5dZ19z84TZVO3lmjn45DlHrHU0ZbU1uYafEISvn-FYl4c4bs0iVk4EPyOT2bmeSt4RP&new=1",
+        "source": "心灵鸡汤经典名言",
+        "date": "2026-05-31 12:31:52",
+        "_company": "腾讯",
+        "_query": "微信小店 功能 更新"
+      }
+    ],
+    "小红书": [],
+    "百度": [],
+    "美团": [
+      {
+        "title": "3年超80亿即时零售增量,美团闪购为什么敢“基建化”重构酒饮?",
+        "snippet": "美团闪购仅为酒类连锁品牌带来的即时零售增量就超过在80亿元,它将如何实现?在市场需求已明确变革风向的今天,美团闪购酒饮新...",
+        "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1780492768&ver=6760&signature=CCGEneRM7cjUTjJOS7YsKOcFf*eyMFD9RimjtfHeKCfPROvtm0sx7AfZF5zwBLwkNeIDKp-mTanwGDSd6JOeQlv27fGM20lPUKfp4xSRdVZ9r*q9lk7CwRR0jlX7PpL6&new=1",
+        "source": "云酒头条",
+        "date": "2026-06-02 15:24:30",
+        "_company": "美团",
+        "_query": "美团 闪购 即时零售"
+      }
+    ]
+  }
+}

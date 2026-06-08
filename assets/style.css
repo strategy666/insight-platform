@@ -6147,7 +6147,7 @@ a.news-row-link:hover .news-title { color: #2a6f4f; }
 
 /* ============ 双检索栏并排布局（Tab1 竞对追踪）============ */
 .dual-search-row {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    display: grid; grid-template-columns: 1fr; gap: 20px;
     align-items: start;
 }
 .dual-search-col {

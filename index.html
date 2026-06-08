@@ -674,7 +674,13 @@ window.searchCompetitor = async function(q) {
         `).join('') : '<div class="dual-empty">🟠 公开动态未命中</div>';
     }
     
-    // 7. 显示结果区
+    // 7. 隐藏左侧飞书列，右侧竞对列占满全宽
+    var leftCol = document.querySelector('#feishuInline .dual-search-col:first-child');
+    if (leftCol) leftCol.style.display = 'none';
+    var rightCol = document.querySelector('#feishuInline .dual-search-col:last-child');
+    if (rightCol) rightCol.style.display = '';
+
+    // 8. 显示结果区
     document.getElementById('feishuInline').style.display = 'block';
     
     // 滚动到结果区
@@ -835,6 +841,11 @@ window.runFeishuPageSearch = function(v) {
     // 有查询词时显示结果面板
     var inline = document.getElementById('feishuInline');
     if (_fsState.q && inline) inline.style.display = 'block';
+    // 隐藏右侧竞对列，左侧飞书列占满全宽
+    var leftCol = document.querySelector('#feishuInline .dual-search-col:first-child');
+    if (leftCol) leftCol.style.display = '';
+    var rightCol = document.querySelector('#feishuInline .dual-search-col:last-child');
+    if (rightCol) rightCol.style.display = 'none';
     applyFeishuFilters();
 };
 window.onFeishuPageInput = function(v) {

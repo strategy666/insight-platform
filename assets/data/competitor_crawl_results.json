@@ -1,0 +1,148 @@
+{
+  "_meta": {
+    "crawled_at": "2026-06-03T21:30:00",
+    "method": "P0官网直采 + 搜狗微信搜索",
+    "note": "Google site:mp.weixin.qq.com 搜不到，搜狗网页版可获取列表但无日期。公众号文章日期需 read_article 获取"
+  },
+  "sources": {
+    "p0_official": [
+      {
+        "source": "OCE Changelog",
+        "url": "https://open.oceanengine.com/changelog/1",
+        "method": "fetch_web",
+        "status": "success"
+      },
+      {
+        "source": "微信广告最新动态",
+        "url": "https://ad.weixin.qq.com/news?type=promotion",
+        "method": "fetch_web",
+        "status": "success"
+      },
+      {
+        "source": "小红书聚光帮助中心",
+        "url": "https://ad.xiaohongshu.com/help/docs?labelId=745",
+        "method": "fetch_web",
+        "status": "404 - URL 已失效"
+      }
+    ],
+    "wechat_sogou": {
+      "method": "搜狗微信搜索 type=2 (直接网页抓取，非 miku_ai API)",
+      "note": "可通过 https://weixin.sogou.com/weixin?type=2&query=关键词 获取文章列表，但无日期字段",
+      "status": "可行但质量受限 - 返回大量第三方营销号文章，官方号内容少"
+    },
+    "wechat_miku_ai": {
+      "method": "miku_ai.spider.get_wexin_article (Python API)",
+      "note": "可返回带日期的结构化数据，但反爬严重 (proxy error 302)，命中率低",
+      "status": "部分可用"
+    },
+    "google_site_search": {
+      "method": "site:mp.weixin.qq.com",
+      "note": "完全搜不到微信公众号文章",
+      "status": "不可用"
+    }
+  },
+  "results": {
+    "字节": {
+      "p0_official": [
+        {
+          "date": "2026-06-01",
+          "title": "巨量引擎开放平台更新日志 (2026年6月)",
+          "source": "OCE Changelog",
+          "url": "https://open.oceanengine.com/changelog/1",
+          "category": "产品动态",
+          "summary": "4项变更：①订阅服务排查工具上线 ②短剧AIGC素材授权逻辑更新 ③本地推6个新接口+6个存量接口优化 ④6月8日起下线9个线索报表指标",
+          "details": [
+            {"type": "功能新增", "content": "开放平台官网新增订阅服务排查工具，支持开发者自助排查SPI/RDS相关问题"},
+            {"type": "功能优化", "content": "短剧场景AIGC动态创意素材开关与授权逻辑更新，无原片授权也可开启AIGC能力"},
+            {"type": "功能新增", "content": "本地推新增6个接口：删除项目/单元、获取成本保障状态、更新账户日预算、获取/更新定向包"},
+            {"type": "功能优化", "content": "本地推存量接口优化6个：人群包预估覆盖人数、视频标签、抖音号授权逻辑、项目列表新增定向包ID等"},
+            {"type": "重要通知", "content": "6月8日起自定义报表接口下线9个线索相关指标（clue_connected_*等），传入会导致报错"}
+          ],
+          "sowhat": "本地推API能力大幅增强（日预算、定向包管理），自动化投放能力进一步成熟，快手的本地推产品需加速补齐缺口。线索指标下线影响较大，说明字节在调整线索广告的评估体系。"
+        }
+      ],
+      "wechat": [
+        {
+          "date": "2026-05-28",
+          "title": "「出单宝-商家全托管经营利器」专题分享",
+          "source": "抖音生活服务商业观察（微信公众号）",
+          "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1780492753&ver=6760&signature=2nR0VM6F1mol-gdEyJ1h31u-CztBhcNX534HilOuh-Mgp4VenztjoGg1afm7aZaors86NyezzVVOt7jg-IdzDrbPn4Oe9*jSwoJ*w2w2h1XpDeSLNYr4rG5qcBgMvLjY&new=1",
+          "category": "产品动态",
+          "summary": "出单宝商家全托管经营课程推广，商家经营能力培养",
+          "sowhat": "字节在本地生活侧持续加码「出单宝」智能托管产品，降低商家投放门槛。快手需关注本地推智能投放能力的差异化。"
+        },
+        {
+          "date": "2026-05-25",
+          "title": "为什么说抖音来客+本地推是本地商家的「王炸组合」?",
+          "source": "螳螂科技SaaS（微信公众号）",
+          "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1780492752&ver=6760&signature=KYzeA5leQIQp4msoZgz12K*NGebekGK29TvcTt6nEviyVCHQE8EzVcZkfyI9OS4qOmyEcRCc0mE2f2EUcbtKqqYvkDi14u8cx9FmbZdn0Q9bbTScWo6eZYP0lfkEC6fD&new=1",
+          "category": "行业分析",
+          "summary": "2026年抖音本地推升级，全面迁移巨量AD的销售线索功能至本地推，覆盖婚纱摄影、心理咨询、医疗医美等行业",
+          "sowhat": "字节将线索广告全面整合到本地推，意味着本地推不仅是到店引流，更是全链路线索转化平台。快手的本地推产品在「线索广告×本地推」融合上需要加速跟进。"
+        }
+      ]
+    },
+    "腾讯": {
+      "p0_official": [
+        {
+          "date": "2026-06-03",
+          "title": "腾讯广告「综合兴趣」定向上线",
+          "source": "微信广告最新动态 (ad.weixin.qq.com)",
+          "url": "https://ad.weixin.qq.com/news?type=promotion",
+          "category": "产品动态",
+          "summary": "全新「综合兴趣」定向全量开放，逐步替代「兴趣行为」定向。预计11~12月兴趣行为定向下线，综合兴趣成为唯一兴趣定向。",
+          "details": [
+            "综合兴趣定向全量开放使用，投放端同时存在综合兴趣与兴趣行为定向，二选一",
+            "兴趣行为定向预计11~12月从投放端下线"
+          ],
+          "sowhat": "腾讯广告数据能力升维，用「综合兴趣」替换老旧的「兴趣行为」定向，本质是人群画像更精准。快手需关注自身DMP定向能力的竞争力差距。"
+        }
+      ],
+      "wechat": [
+        {
+          "date": "2026-05-31",
+          "title": "微信怎么开通小店",
+          "source": "心灵鸡汤经典名言（微信公众号）",
+          "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1780492758&ver=6760&signature=mhr7kutQE6z9ynnE4xuJtZ51kqnoaGQfVjUi2PUJdmT68khWTXFNqyUSSgZwH5dZ19z84TZVO3lmjn45DlHrHU0ZbU1uYafEISvn-FYl4c4bs0iVk4EPyOT2bmeSt4RP&new=1",
+          "category": "信息提及",
+          "summary": "微信小店开通教程（非官方内容，质量低）",
+          "sowhat": "非官方号，无分析价值。说明搜狗搜索结果噪声大，需要过滤非官方来源。"
+        }
+      ]
+    },
+    "小红书": {
+      "p0_official": [],
+      "wechat": [],
+      "note": "小红书聚光帮助中心 URL (labelId=745) 已失效，需要更新 Part 2 文档。公众号搜索无结果。"
+    },
+    "百度": {
+      "p0_official": [],
+      "wechat": [],
+      "note": "百度营销中心和爱番番可通过 fetch_web 采集，本次未覆盖。公众号搜索无结果。"
+    },
+    "美团": {
+      "p0_official": [],
+      "wechat": [
+        {
+          "date": "2026-06-02",
+          "title": "3年超80亿即时零售增量，美团闪购为什么敢「基建化」重构酒饮?",
+          "source": "云酒头条（微信公众号）",
+          "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1780492768&ver=6760&signature=CCGEneRM7cjUTjJOS7YsKOcFf*eyMFD9RimjtfHeKCfPROvtm0sx7AfZF5zwBLwkNeIDKp-mTanwGDSd6JOeQlv27fGM20lPUKfp4xSRdVZ9r*q9lk7CwRR0jlX7PpL6&new=1",
+          "category": "行业分析",
+          "summary": "美团闪购酒饮类连锁品牌即时零售增量超80亿，美团闪购以基建化方式重构垂直品类",
+          "sowhat": "美团闪购在酒饮品类取得显著增长，即时零售从「打车」升级为「基建」。快手需关注本地生活×即时零售的结合机会。"
+        }
+      ]
+    }
+  },
+  "conclusions": {
+    "p0_official_channels": {
+      "verdict": "OCE Changelog 效果好，数据质量高、时效性强、结构化。微信广告动态页面太简单（只有一句话）。小红书聚光URL失效需更新。",
+      "recommendation": "保持每周一次 OCE Changelog + 微信广告动态 + 抖音生活服务学习中心规则的 fetch。补充 fetch_web 对百度营销中心、爱番番、美团商家中心的采集。"
+    },
+    "wechat_public_accounts": {
+      "verdict": "搜狗微信搜索可用（type=2关键词搜索），但三个缺陷：①不返回日期（需额外 read_article 获取）②返回大量第三方营销号噪声 ③miku_ai API反爬严重。Google 完全搜不到。",
+      "recommendation": "放弃「替代搜狗」的想法。当前唯一可行的公众号监测路径是：搜狗网页搜索 → 手工筛选官方号来源 → read_article 获取全文。建议在 Part 2 文档中为每个公众号增加「搜狗搜索关键词」列，帮助搜索定位。长期看，如果预算允许，应考虑接入新榜/西瓜数据等第三方公众号数据平台。"
+    }
+  }
+}
