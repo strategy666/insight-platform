@@ -238,6 +238,26 @@
           "name": "量子位论文解读（公众号）",
           "url": "https://weixin.sogou.com/weixin?type=2&query=量子位",
           "desc": "AI科技媒体 — 论文解读/学术突破追踪"
+        },
+        {
+          "name": "Anthropic Research Blog",
+          "url": "https://www.anthropic.com/research",
+          "desc": "Anthropic研究长文 — RSI自进化/Claude能力等"
+        },
+        {
+          "name": "Google AI Blog",
+          "url": "https://ai.googleblog.com/",
+          "desc": "谷歌AI研究 — Gemma/Gemini等"
+        },
+        {
+          "name": "掘金-技术社区",
+          "url": "https://juejin.cn/",
+          "desc": "技术社区 — AI日报/NVIDIA/开源跟踪"
+        },
+        {
+          "name": "CSDN AI专栏",
+          "url": "https://blog.csdn.net/",
+          "desc": "AI新闻/Anthropic/DeepSeek等融资跟踪"
         }
       ],
       "1.4_头部科技公司": [
@@ -402,6 +422,36 @@
           "name": "DataPipe AI日报（公众号）",
           "url": "https://weixin.sogou.com/weixin?type=2&query=DataPipe",
           "desc": "每日AI行业动态汇总"
+        },
+        {
+          "name": "新华网科技频道",
+          "url": "https://www.news.cn/tech/",
+          "desc": "官方媒体科技频道 — 大公司财报/政策/行业数据"
+        },
+        {
+          "name": "经济参考报",
+          "url": "http://www.jjckb.cn/",
+          "desc": "大公司/AI公司产品发布等"
+        },
+        {
+          "name": "北京商报",
+          "url": "http://www.bbtnews.com.cn/",
+          "desc": "互联网公司动态"
+        },
+        {
+          "name": "新浪财经科技",
+          "url": "https://finance.sina.com.cn/tech/",
+          "desc": "科技财经 — 腾讯/大厂AI动态"
+        },
+        {
+          "name": "搜狐科技",
+          "url": "https://m.sohu.com/",
+          "desc": "AI行业月报/数据整合"
+        },
+        {
+          "name": "百度百家号-科技",
+          "url": "https://baijiahao.baidu.com/",
+          "desc": "海外AI动态聚合"
         }
       ],
       "1.6_行业媒体": {
@@ -720,6 +770,29 @@
           "name": "广电总局 网络视听管理",
           "url": "https://www.nrta.gov.cn/",
           "desc": "广电总局推行的政策规范、网络视听管理规定"
+        },
+        {
+          "name": "国家版权局",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=国家版权",
+          "search_keywords": [
+            "剑网",
+            "版权",
+            "AI",
+            "整治"
+          ],
+          "desc": "剑网行动/AI版权整治"
+        },
+        {
+          "name": "中央网信办",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=网信中国",
+          "search_keywords": [
+            "互联网",
+            "管理",
+            "未成年",
+            "算法",
+            "数据"
+          ],
+          "desc": "互联网管理新规"
         }
       ],
       "2.3_行业Case与营销案例信源": [
@@ -812,6 +885,93 @@
           "name": "B站商业动态（公众号）",
           "url": "https://weixin.sogou.com/weixin?type=2&query=B站商业动态",
           "desc": "B站商业化/花火平台官方公众号"
+        },
+        {
+          "name": "巨量引擎营销观察",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=巨量引擎营销观察",
+          "search_keywords": [
+            "巨量引擎",
+            "星图",
+            "达人",
+            "618",
+            "大促",
+            "小星AI",
+            "千川"
+          ],
+          "desc": "字节商业化官方公众号"
+        },
+        {
+          "name": "小红书商业动态",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=小红书商业动态",
+          "search_keywords": [
+            "小红书",
+            "世界杯",
+            "灵犀",
+            "种草",
+            "KOS",
+            "聚光"
+          ],
+          "desc": "小红书商业化官方公众号"
+        },
+        {
+          "name": "腾讯广告",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=腾讯广告",
+          "search_keywords": [
+            "腾讯广告",
+            "视频号",
+            "微信小店",
+            "互选",
+            "元宝"
+          ],
+          "desc": "腾讯广告官方公众号"
+        },
+        {
+          "name": "阿里妈妈",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=阿里妈妈",
+          "search_keywords": [
+            "阿里妈妈",
+            "万相台",
+            "淘宝",
+            "天猫",
+            "618"
+          ],
+          "desc": "阿里营销官方公众号"
+        },
+        {
+          "name": "百度营销",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=百度营销",
+          "search_keywords": [
+            "百度营销",
+            "DAA",
+            "智能体",
+            "爱番番",
+            "Create"
+          ],
+          "desc": "百度营销官方公众号"
+        },
+        {
+          "name": "微信广告助手",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=微信广告助手",
+          "search_keywords": [
+            "微信广告",
+            "视频号",
+            "互选",
+            "房产",
+            "小店"
+          ],
+          "desc": "微信广告官方公众号"
+        },
+        {
+          "name": "B站商业动态",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=B站商业动态",
+          "search_keywords": [
+            "B站",
+            "花火",
+            "心智通",
+            "UP主",
+            "商单"
+          ],
+          "desc": "B站商业化官方公众号"
         }
       ]
     }
@@ -878,6 +1038,16 @@
           "name": "猎云网",
           "url": "https://www.lieyunwang.com/",
           "desc": "AI融资快讯"
+        },
+        {
+          "name": "快手Tech",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=快手Tech",
+          "search_keywords": [
+            "可灵",
+            "快手",
+            "AI"
+          ],
+          "desc": "快手官方技术动态"
         }
       ],
       "电商": [

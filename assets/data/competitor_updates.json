@@ -2,7 +2,7 @@
   "_meta": {
     "description": "Part2 竞对动态 + gap-fill 拼多多/小红书世界杯/百度DAA/抖音小星AI",
     "last_updated": "2026-06-08",
-    "total_items": 47,
+    "total_items": 42,
     "recent_window": "past 14d (cutoff 2026-05-25)",
     "companies_tracked": [
       "字节",
@@ -17,110 +17,6 @@
     "fetch_method": "P0全渠道:OCE_Changelog+微信广告动态+钛媒体+第一财经+华尔街见闻+澎湃新闻+21经济网+虎嗅+界面新闻"
   },
   "items": [
-    {
-      "id": "comp-2026-06-08-03",
-      "date": "2026-06-06",
-      "company": "百度",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "百度AI收入占比首次过半：提出DAA新度量衡 四款智能体产品发布",
-      "body": "李彦宏在Create2026百度开发者大会提出DAA(日活智能体数)新行业指标，2026年Q1百度AI业务收入136亿元占比52%首次过半，DuMate多项Agent评测达SOTA水平。",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "营销早咖 Vol.12",
-          "url": "https://docs.corp.kuaishou.com/d/home/fcAAitTrZTidDfwVGN_9IVlt8",
-          "date": "2026-06-07"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-04",
-          "event": "Create2026 DAA+AI收入过半"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py (gap-fill)"
-    },
-    {
-      "id": "comp-2026-06-08-04",
-      "date": "2026-06-06",
-      "company": "小红书",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "世界杯专区升级App一级入口：冲击2亿日活+撬动男性用户增长",
-      "body": "小红书将世界杯专区正式上线为与关注/发现并列的一级入口，全部104场赛事直播/回看/短视频版权。小红书将世界杯定位为今年最重要社区项目，两大目标：冲击2亿日活+撬动男性用户群体。",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "互联网公共战略参考 232期",
-          "url": "https://docs.corp.kuaishou.com/d/home/fcABv55ShA0IYeAgZFpXIPu5a",
-          "date": "2026-06-07"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-05",
-          "event": "世界杯一级入口上线"
-        },
-        {
-          "date": "2026-05",
-          "event": "小红书成为世界杯持权转播商"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py (gap-fill)"
-    },
-    {
-      "id": "comp-2026-06-08-05",
-      "date": "2026-06-05",
-      "company": "美团",
-      "category": "行业案例",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "百度DAA新指标落地 + 腾讯效率智能体工具集 + 美团Q1研发70亿",
-      "body": "三家竞媒AI商业化加速：百度用DAA替代Token定价、腾讯20+垂直Agent覆盖全职能、美团Q1研发投入70亿(+22%)持续加码AI Agent和大模型。国内AI竞争已从模型转向Agent应用层。",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "营销早咖 Vol.12",
-          "url": "https://docs.corp.kuaishou.com/d/home/fcAAitTrZTidDfwVGN_9IVlt8",
-          "date": "2026-06-07"
-        },
-        {
-          "name": "互联网公共战略参考 232期",
-          "url": "https://docs.corp.kuaishou.com/d/home/fcABv55ShA0IYeAgZFpXIPu5a",
-          "date": "2026-06-07"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-05",
-          "event": "腾讯AI产业应用大会"
-        },
-        {
-          "date": "2026-06-04",
-          "event": "百度Create2026"
-        },
-        {
-          "date": "2026-06-01",
-          "event": "美团Q1财报"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py (gap-fill)"
-    },
     {
       "id": "comp-084",
       "date": "2026-06-05",
@@ -165,64 +61,6 @@
       "tier": "T1",
       "_verification": "verified",
       "_date_ok": true
-    },
-    {
-      "id": "comp-2026-06-08-01",
-      "date": "2026-06-04",
-      "company": "拼多多",
-      "category": "产品动态",
-      "dimension": "产品/接入",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "拼多多Q1营收1062亿增速电商第一：AI搜索购物+千亿扶持重仓供应链",
-      "body": "拼多多Q1营收1062亿(+11%)增速电商第一，上线AI搜索购物功能，千亿扶持计划重仓供应链，40余项AI治理举措，年销10万个人店需执照。",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "营销早咖 Vol.12",
-          "url": "https://docs.corp.kuaishou.com/d/home/fcAAitTrZTidDfwVGN_9IVlt8",
-          "date": "2026-06-07"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-04",
-          "event": "Q1营收1062亿上线AI搜索"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py (gap-fill)"
-    },
-    {
-      "id": "comp-2026-06-08-02",
-      "date": "2026-06-04",
-      "company": "字节",
-      "category": "行业案例",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "抖音上线小星AI重塑达人营销：人力降50%+选人通过率100%",
-      "body": "巨量引擎推出小星AI工具，基于对话式AI为品牌提供趋势洞察、创意方向、达人推荐一站式策略生成。案例显示人力投入下降50%初选通过率100%。",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "营销早咖 Vol.12",
-          "url": "https://docs.corp.kuaishou.com/d/home/fcAAitTrZTidDfwVGN_9IVlt8",
-          "date": "2026-06-07"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-04",
-          "event": "小星AI上线"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "competitor_tracker.py (gap-fill)"
     },
     {
       "id": "comp-086",

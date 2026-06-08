@@ -2,7 +2,7 @@
   "_meta": {
     "description": "Part1 市场信息洞察 + gap-fill from 互联网公共战略参考232期 / 营销早咖Vol.12 / 腾讯研究院AI速递",
     "last_updated": "2026-06-08",
-    "total_items": 41,
+    "total_items": 38,
     "window": "past 14d (2026-05-25 ~ 2026-06-08) + 重点回溯(Tech星球2026-03)",
     "source_first": true,
     "fetch_method": "P0全渠道:OCE_Changelog+微信广告动态+钛媒体+第一财经+华尔街见闻+澎湃新闻+21经济网+虎嗅+界面新闻 + P1科技媒体:36氪+Tech星球+铅笔道+财新+MBA智库"
@@ -65,44 +65,6 @@
       ],
       "_verification": "verified",
       "_date_ok": true
-    },
-    {
-      "id": "intel-2026-06-08-01",
-      "date": "2026-06-06",
-      "priority": "high",
-      "signal": "trend",
-      "title": "可灵AI两周年：全球用户破1亿，发布原生4K直出视频大模型",
-      "body": "可灵AI两周年，ARR近5亿美元，26次版本更新推出14个大模型版本。AI产品榜5月双榜夺冠MAU 1318万(+41.9%)，高盛维持买入评级，估值区间100-260亿美元。",
-      "sowhat": "可灵ARR逼近5亿美元支撑高估值为快手贡献估值定价锚；原生4K能力拉开与竞品视频模型差距",
-      "tags": [
-        "#可灵",
-        "#AI视频",
-        "#ARR",
-        "#快手"
-      ],
-      "company": [],
-      "industry": [
-        "AI",
-        "内容"
-      ],
-      "type": "技术发布",
-      "timeline": "2026-06-06 可灵两周年 · 03 可灵3.0发布 ARR达5亿 · 05 可灵AI登顶全球双榜",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "互联网公共战略参考 232期",
-          "url": "https://docs.corp.kuaishou.com/d/home/fcABv55ShA0IYeAgZFpXIPu5a",
-          "date": "2026-06-06"
-        },
-        {
-          "name": "高盛研报",
-          "url": "https://mbd.baidu.com/newspage/data/landingsuper?rs=1795963683",
-          "date": "2026-06-03"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py"
     },
     {
       "id": "intel-162",
@@ -232,46 +194,6 @@
           "name": "营销早咖 Vol.12",
           "url": "https://docs.corp.kuaishou.com/d/home/fcAAitTrZTidDfwVGN_9IVlt8",
           "date": "2026-06-07"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py (Tavily gap-fill)"
-    },
-    {
-      "id": "intel-2026-06-08-05",
-      "date": "2026-06-05",
-      "priority": "high",
-      "signal": "trend",
-      "title": "腾讯云首发效率智能体工具集：覆盖20+垂直场景 从卖模型转向卖Agent",
-      "body": "腾讯云AI产业应用大会上首发效率智能体工具集，覆盖搜索/写作/研究/营销/客服/研发/财务/法务/HR等20+个垂直Agent岗位。同步升级智能体开发平台和大模型知识引擎，混元/DeepSeek等多模型同一平台调用。汤道生披露腾讯大部分代码由AI生成。",
-      "sowhat": "国内云大厂集体从'卖Token'转向'卖Agent'——阿里百炼、字节扣子、百度千帆之后腾讯入局。Agent层竞争加剧利好B端AI服务采购方，但对快手这类自研为主的平台需评估接入Agent生态的机会窗口。",
-      "tags": [
-        "#腾讯云",
-        "#AI Agent",
-        "#智能体",
-        "#代码生成"
-      ],
-      "company": [
-        "腾讯"
-      ],
-      "industry": [
-        "AI",
-        "云计算"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-06-05 腾讯云AI产业应用大会 · 2025-10 90%腾讯工程师用CodeBuddy",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "互联网公共战略参考 232期",
-          "url": "https://docs.corp.kuaishou.com/d/home/fcABv55ShA0IYeAgZFpXIPu5a",
-          "date": "2026-06-07"
-        },
-        {
-          "name": "新华网",
-          "url": "http://www.news.cn/tech/20260605/e410f96e4f594ec0b92a4054faed70de/c.html",
-          "date": "2026-06-05"
         }
       ],
       "_verification": "verified",
@@ -1523,44 +1445,6 @@
           "name": "营销早咖 Vol.12",
           "url": "https://docs.corp.kuaishou.com/d/home/fcAAitTrZTidDfwVGN_9IVlt8",
           "date": "2026-06-07"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py (Tavily gap-fill)"
-    },
-    {
-      "id": "intel-2026-06-08-08",
-      "date": "2026-06-01",
-      "priority": "mid",
-      "signal": "threat",
-      "title": "中国收紧对外投资新规：可审查海外AI投资 限制技术外流 7月1日生效",
-      "body": "国务院发布对外投资规定：可对影响国家安全海外投资审查，禁止以派遣技术人员/跨境培训为由转移限制出口技术和数据。已进行未经批准投资可责令停止并处分资产，最高罚款投资额1%。",
-      "sowhat": "直接影响中国AI企业海外布局(尤其AI基础设施/数据/人才出海)，对快手可灵/AI模型海外扩张增加合规成本。同时可能限制海外AI公司进入中国市场的数据流通。",
-      "tags": [
-        "#对外投资",
-        "#出口管制",
-        "#AI数据",
-        "#合规"
-      ],
-      "company": [],
-      "industry": [
-        "AI",
-        "出海"
-      ],
-      "type": "准入政策",
-      "timeline": "2026-06-01 规定公布 · 07-01 正式施行",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "互联网公共战略参考 232期",
-          "url": "https://docs.corp.kuaishou.com/d/home/fcABv55ShA0IYeAgZFpXIPu5a",
-          "date": "2026-06-07"
-        },
-        {
-          "name": "新华网",
-          "url": "https://www.news.cn/politics/20260601/c501b3cd78034669a8dd442f659f2a20/c.html",
-          "date": "2026-06-01"
         }
       ],
       "_verification": "verified",
