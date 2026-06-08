@@ -74,7 +74,7 @@
         const panel = document.createElement('div');
         panel.id = 'cwPanel';
         panel.className = 'cw-panel';
-        const subText = '问竞对动态 · 搜飞书文档 · AI 生成行业研报';
+        const subText = '问竞对动态 · 搜飞书文档 · 查询行业研报';
         panel.innerHTML = `
             <div class="cw-header">
                 <div class="cw-header-left">
@@ -94,8 +94,8 @@
             <div class="cw-quick">
                 <button class="cw-q" data-q="portal 有哪些功能？怎么用？">portal 怎么用</button>
                 <button class="cw-q" data-q="帮我总结最近一周字节的重要动态">字节最近动态</button>
-                <button class="cw-q" data-q="帮我找飞书里关于本地推的文档">查本地推文档</button>
-                <button class="cw-q" data-q="抖音出单宝对快手本地推有什么影响？">出单宝 vs 本地推</button>
+                <button class="cw-q" data-q="帮我检索飞书文档中关于本地推的内容">查询飞书文档</button>
+                <button class="cw-q" data-q="本地生活服务行业的市场规模有多大？">查询行业市场规模</button>
             </div>
             <div class="cw-input-wrap">
                 <textarea id="cwInput" class="cw-input" placeholder="问 AI 任何问题，回车发送，Shift+回车换行…" rows="1"></textarea>
