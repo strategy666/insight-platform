@@ -137,18 +137,17 @@ def tavily_search(query, n=5):
 
 
 def wechat_search(keywords, n=5):
-    """Search wechat articles via Tavily domain search (搜狗微信被反爬，改用Tavily)"""
+    """Search wechat articles via Tavily (搜狗微信被反爬，改用Tavily全局搜索)
+    Tavily doesn't support site: filter, so we search keywords directly.
+    Results may include non-wechat URLs that repost wechat content — these are valid sources.
+    """
     all_results = []
     kw_list = keywords if isinstance(keywords, list) else [keywords]
     for kw in kw_list[:3]:  # cap at 3 keywords per channel
-        query = f"site:mp.weixin.qq.com {kw}"
-        results = tavily_search(query, n=min(n, 5))
+        results = tavily_search(kw, n=min(n, 5))
         for r in results:
-            url = r.get('url', '')
-            if 'mp.weixin.qq.com' in url:
-                r['title'] = r.get('title', '')
-                if r['title']:  # Only keep results with titles
-                    all_results.append(r)
+            if r.get('url') and r.get('title'):
+                all_results.append(r)
         if all_results:
             time.sleep(0.3)
     # Deduplicate by URL
@@ -372,7 +371,9 @@ def main():
     print(f"\n   总计找到 {len(all_article_links)} 个文章链接")
 
     # ========== Step 2: For weixin articles, read and get date ==========
+    # Only mp.weixin.qq.com URLs go through wechat_read; others go through normal validate_item
     weixin_articles = [a for a in all_article_links if a.get('is_weixin')]
+    non_wx_urls = []  # Tavily results that aren't actually wechat URLs
     for a in weixin_articles:
         url = a.get('url', '')
         if url and 'mp.weixin.qq.com' in url:
@@ -382,6 +383,10 @@ def main():
                 a['body'] = ' '.join(content.get('paragraphs', [])[:3])[:200]
                 a['title'] = content.get('title', a.get('title', ''))
             time.sleep(0.3)
+        else:
+            # Tavily returned non-wechat URL — validate normally
+            a['is_weixin'] = False
+            non_wx_urls.append(a)
 
     # ========== Step 3: Validate non-weixin articles ==========
     # Pre-filter by estimated date

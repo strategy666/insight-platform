@@ -82,15 +82,13 @@ def tavily_search(query, n=5):
     return []
 
 def wechat_search(kws, n=5):
-    """Search wechat via Tavily domain search"""
+    """Search wechat via Tavily global search (no site: filter support)"""
     all_results = []
     kw_list = kws if isinstance(kws, list) else [kws]
     for kw in kw_list[:3]:
-        query = f"site:mp.weixin.qq.com {kw}"
-        results = tavily_search(query, n=n)
+        results = tavily_search(kw, n=n)
         for r in results:
-            url = r.get('url', '')
-            if 'mp.weixin.qq.com' in url and r.get('title'):
+            if r.get('url') and r.get('title'):
                 all_results.append(r)
         if all_results:
             time.sleep(0.3)

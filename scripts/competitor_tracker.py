@@ -109,20 +109,20 @@ def extract_dated_links(html, base_url):
     return links
 
 def wechat_search(keywords, n=10):
-    """Search wechat articles via Tavily domain search (搜狗微信被反爬)"""
+    """Search wechat articles via Tavily global search (搜狗微信被反爬)"""
     all_results = []
     kw_list = keywords if isinstance(keywords, list) else [keywords]
     for kw in kw_list[:3]:
-        query = f"site:mp.weixin.qq.com {kw}"
         try:
             r = subprocess.run(
-                ['uv', 'run', '--refresh-package', 'ks_aimate', TAVILY, query, str(n), '--json'],
+                ['uv', 'run', '--refresh-package', 'ks_aimate', TAVILY, '--query', kw,
+                 '--max-results', str(n), '--format', 'raw'],
                 capture_output=True, text=True, timeout=30
             )
             if r.returncode == 0 and r.stdout.strip():
                 try:
                     data = json.loads(r.stdout)
-                    items = data if isinstance(data, list) else []
+                    items = data if isinstance(data, list) else data.get('results', [])
                 except:
                     items = []
                     for line in r.stdout.strip().split('\n'):
@@ -131,8 +131,7 @@ def wechat_search(keywords, n=10):
                             if isinstance(d, dict) and d.get('url'): items.append(d)
                         except: pass
                 for item in items:
-                    url = item.get('url', '')
-                    if 'mp.weixin.qq.com' in url and item.get('title'):
+                    if item.get('url') and item.get('title'):
                         all_results.append(item)
         except Exception as e:
             print(f"  ⚠️ wechat err: {e}", file=sys.stderr)
@@ -351,8 +350,10 @@ def main():
                 a['estimated_date'] = parse_date(content.get('publish_time', ''))
                 a['body'] = ' '.join(content.get('paragraphs', [])[:3])[:200]
                 a['title'] = content.get('title', a.get('title', ''))
-                a['source_channel'] = content.get('author', a.get('source_channel', ''))
             time.sleep(0.3)
+        else:
+            # Tavily returned non-wechat URL — validate normally later
+            a['is_weixin'] = False
 
     # ========== Step 3: Pre-filter + deduplicate ==========
     candidates = []
