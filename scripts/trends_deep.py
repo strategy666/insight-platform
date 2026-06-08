@@ -81,21 +81,24 @@ def tavily_search(query, n=5):
         print(f"  ⚠️ tavily error: {e}", file=sys.stderr)
     return []
 
-def wechat_search(kw, n=5):
-    try:
-        r = subprocess.run(
-            ['uv', 'run', '--refresh-package', 'ks_aimate',
-             f'{WECHAT_DIR}/search.py', kw, str(n)],
-            capture_output=True, text=True, timeout=30
-        )
-        results = []
-        for line in r.stdout.strip().split('\n'):
-            try:
-                d = json.loads(line)
-                if d.get('url'): results.append(d)
-            except: pass
-        return results
-    except: return []
+def wechat_search(kws, n=5):
+    """Search wechat via Tavily domain search"""
+    all_results = []
+    kw_list = kws if isinstance(kws, list) else [kws]
+    for kw in kw_list[:3]:
+        query = f"site:mp.weixin.qq.com {kw}"
+        results = tavily_search(query, n=n)
+        for r in results:
+            url = r.get('url', '')
+            if 'mp.weixin.qq.com' in url and r.get('title'):
+                all_results.append(r)
+        if all_results:
+            time.sleep(0.3)
+    seen = set(); unique = []
+    for r in all_results:
+        u = r.get('url', '')
+        if u not in seen: seen.add(u); unique.append(r)
+    return unique
 
 def wechat_read(url):
     try:

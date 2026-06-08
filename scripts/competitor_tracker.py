@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SOURCES_FILE = ROOT / "assets/data/sources.json"
 COMP_FILE = ROOT / "assets/data/competitor_updates.json"
 WECHAT_DIR = "/data/aime/5bcc70f2-ab1e-4c73-8d6a-d9eb35de3d86/workspace/skills/wechat-articles/scripts"
+TAVILY = "/data/aime/5bcc70f2-ab1e-4c73-8d6a-d9eb35de3d86/workspace/skills/tavily-search/scripts/tavily_search.py"
 
 COMPANIES = ['字节','小红书','腾讯','百度','美团','阿里','拼多多']
 
@@ -107,28 +108,40 @@ def extract_dated_links(html, base_url):
             except: pass
     return links
 
-def wechat_search(keyword, n=10):
-    try:
-        r = subprocess.run(['uv', 'run', '--refresh-package', 'ks_aimate',
-            f'{WECHAT_DIR}/search.py', keyword, str(n)],
-            capture_output=True, text=True, timeout=30)
-        if r.returncode == 0 and r.stdout.strip():
-            # Output is JSON array or list of dicts
-            try:
-                data = json.loads(r.stdout)
-                if isinstance(data, list): return data
-            except:
-                # Try line-by-line
-                results = []
-                for line in r.stdout.strip().split('\n'):
-                    try:
-                        d = json.loads(line)
-                        if isinstance(d, dict) and d.get('url'): results.append(d)
-                    except: pass
-                return results
-    except Exception as e:
-        print(f"  ⚠️ wechat err: {e}", file=sys.stderr)
-    return []
+def wechat_search(keywords, n=10):
+    """Search wechat articles via Tavily domain search (搜狗微信被反爬)"""
+    all_results = []
+    kw_list = keywords if isinstance(keywords, list) else [keywords]
+    for kw in kw_list[:3]:
+        query = f"site:mp.weixin.qq.com {kw}"
+        try:
+            r = subprocess.run(
+                ['uv', 'run', '--refresh-package', 'ks_aimate', TAVILY, query, str(n), '--json'],
+                capture_output=True, text=True, timeout=30
+            )
+            if r.returncode == 0 and r.stdout.strip():
+                try:
+                    data = json.loads(r.stdout)
+                    items = data if isinstance(data, list) else []
+                except:
+                    items = []
+                    for line in r.stdout.strip().split('\n'):
+                        try:
+                            d = json.loads(line)
+                            if isinstance(d, dict) and d.get('url'): items.append(d)
+                        except: pass
+                for item in items:
+                    url = item.get('url', '')
+                    if 'mp.weixin.qq.com' in url and item.get('title'):
+                        all_results.append(item)
+        except Exception as e:
+            print(f"  ⚠️ wechat err: {e}", file=sys.stderr)
+        if all_results: time.sleep(0.3)
+    seen = set(); unique = []
+    for r in all_results:
+        u = r.get('url', '')
+        if u not in seen: seen.add(u); unique.append(r)
+    return unique
 
 def wechat_read(url):
     try:
@@ -264,10 +277,13 @@ def main():
         is_search_only = 'sogou.com' in url and not is_weixin
         
         if is_weixin:
-            keyword = name.replace('（公众号）','').replace('(公众号)','').strip()
-            if keyword:
-                print(f"   📱 微信: {keyword}")
-                articles = wechat_search(keyword, n=10)
+            # Use Tavily domain search for weixin accounts (搜狗微信被反爬)
+            keywords = src.get('search_keywords')
+            if not keywords:
+                keywords = [name.replace('（公众号）','').replace('(公众号)','').strip()]
+            if keywords:
+                print(f"   📱 微信(Tavily): {name} → {keywords[:2]}")
+                articles = wechat_search(keywords, n=10)
                 for a in articles:
                     a_title = a.get('title', '')
                     a_url = a.get('url', '')

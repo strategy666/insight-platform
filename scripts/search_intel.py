@@ -111,33 +111,55 @@ def extract_articles_rss_like(html, base_url):
     
     return articles
 
-def wechat_search(keyword, n=5):
-    """Search wechat articles via the skill"""
+def tavily_search(query, n=5):
+    """Tavily global search — also used for wechat domain search"""
     try:
-        r = subprocess.run(['uv', 'run', '--refresh-package', 'ks_aimate',
-            f'{WECHAT_DIR}/search.py', keyword, str(n)],
-            capture_output=True, text=True, timeout=30)
+        r = subprocess.run(
+            ['uv', 'run', '--refresh-package', 'ks_aimate', TAVILY, query, str(n), '--json'],
+            capture_output=True, text=True, timeout=30
+        )
         if r.returncode == 0:
-            # Parse output - it's a list of dicts
-            lines = r.stdout.strip().split('\n')
             results = []
-            for line in lines:
+            for line in r.stdout.strip().split('\n'):
                 try:
                     d = json.loads(line)
-                    if isinstance(d, dict) and d.get('url'):
-                        results.append(d)
+                    if isinstance(d, dict) and d.get('url'): results.append(d)
                 except: pass
             if not results:
-                # Try parsing as JSON array
                 try:
                     data = json.loads(r.stdout)
-                    if isinstance(data, list):
-                        results = data
+                    if isinstance(data, list): results = data
                 except: pass
-            return results
+            return results if isinstance(results, list) else []
     except Exception as e:
-        print(f"  ⚠️ wechat search error: {e}", file=sys.stderr)
+        print(f"  ⚠️ tavily search error: {e}", file=sys.stderr)
     return []
+
+
+def wechat_search(keywords, n=5):
+    """Search wechat articles via Tavily domain search (搜狗微信被反爬，改用Tavily)"""
+    all_results = []
+    kw_list = keywords if isinstance(keywords, list) else [keywords]
+    for kw in kw_list[:3]:  # cap at 3 keywords per channel
+        query = f"site:mp.weixin.qq.com {kw}"
+        results = tavily_search(query, n=min(n, 5))
+        for r in results:
+            url = r.get('url', '')
+            if 'mp.weixin.qq.com' in url:
+                r['title'] = r.get('title', '')
+                if r['title']:  # Only keep results with titles
+                    all_results.append(r)
+        if all_results:
+            time.sleep(0.3)
+    # Deduplicate by URL
+    seen = set()
+    unique = []
+    for r in all_results:
+        u = r.get('url', '')
+        if u not in seen:
+            seen.add(u)
+            unique.append(r)
+    return unique
 
 def wechat_read(url):
     """Read a wechat article and extract date + content"""
@@ -288,18 +310,21 @@ def main():
         is_search = 'sogou.com' in url and 'weixin' not in url
         
         if is_weixin:
-            # Use wechat-articles skill for weixin accounts
-            keyword = name.replace('（公众号）','').replace('(公众号)','').strip()
-            if keyword:
-                print(f"   📱 微信搜索: {keyword}")
-                articles = wechat_search(keyword, n=10)
+            # Use Tavily domain search for weixin accounts (搜狗微信被反爬)
+            keywords = src.get('search_keywords')
+            if not keywords:
+                # Fallback: use channel name as keyword
+                keywords = [name.replace('（公众号）','').replace('(公众号)','').strip()]
+            if keywords:
+                print(f"   📱 微信搜索(Tavily): {name} → {keywords[:2]}")
+                articles = wechat_search(keywords, n=10)
                 for a in articles:
                     all_article_links.append({
                         'url': a.get('url',''),
                         'title': a.get('title',''),
                         'source_channel': name,
                         'source_section': sec_id,
-                        'estimated_date': parse_date(a.get('publish_time','') or a.get('digest','')),
+                        'estimated_date': parse_date(a.get('publish_time','') or a.get('published_date','')),
                         'is_weixin': True,
                         'tags': tags,
                     })
