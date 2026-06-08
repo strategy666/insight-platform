@@ -2,7 +2,7 @@
   "_meta": {
     "description": "Part2 竞对动态 + gap-fill 拼多多/小红书世界杯/百度DAA/抖音小星AI",
     "last_updated": "2026-06-08",
-    "total_items": 45,
+    "total_items": 53,
     "recent_window": "past 14d (cutoff 2026-05-25)",
     "companies_tracked": [
       "字节",
@@ -18,33 +18,62 @@
   },
   "items": [
     {
-      "id": "comp-w1-1",
+      "id": "comp-bulk-900",
       "date": "2026-06-08",
-      "company": "字节",
+      "company": "小红书",
       "category": "产品动态",
-      "dimension": "AI/技术",
+      "dimension": "产品/接入",
       "data_source": "三方媒体",
       "tier": "T1",
-      "title": "AI应用加速渗透三大产业：从玩具到伙伴催生消费新赛道",
-      "body": "新华网科技频道报道AI应用在三大产业加速渗透，AI玩具/教育/陪伴等消费级AI硬件新赛道兴起。",
+      "title": "小红书为什么要买世界杯？-36氪",
+      "body": "# 小红书为什么要买世界杯？. 《晚点LatePost》独家报道称，小红书已经确定成为2026年美加墨世界杯持权转播商，也是除中央广播电视总台、咪咕之外，唯一拥有直播、转播、短视频版权的持权方。. 小红书的关键词一直是女性、种草、穿搭、美妆这些生活方式关键词。世界杯则是激烈对抗的体育运动，显然是偏向男性的。. 也有人说世界杯是男女通吃的中性运动，这点有待商榷。因为真正愿意看球的女性比例肯定不高，更",
       "sowhat": "",
       "scope": "国内",
       "sources": [
         {
-          "name": "新华网科技频道",
-          "url": "https://www.news.cn/tech/",
+          "name": "小红书为什么要买世界杯？-36氪",
+          "url": "https://m.36kr.com/p/3827553244176393",
           "date": "2026-06-08"
         }
       ],
       "timeline": [
         {
           "date": "2026-06-08",
-          "event": "三大产业AI渗透"
+          "event": "小红书为什么要买世界杯？-36氪"
         }
       ],
       "_verification": "verified",
       "_date_ok": true,
-      "_fetched_by": "web_fetch"
+      "_fetched_by": "bulk_fetch.py"
+    },
+    {
+      "id": "comp-bulk-901",
+      "date": "2026-06-06",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "美团2026年Q1营收910亿元，环比减亏96亿元|王兴|零售|总营收|知名企业_网易订阅",
+      "body": "### 科技. ### 手机 / 数码. ### 房产 / 家居. # 美团2026年Q1营收910亿元，环比减亏96亿元. 6月1日，美团（股票代码：3690.HK）发布2026年第一季度业绩。本季度，美团实现收入910亿元，同比增长5.6%，经营亏损由上季度的161亿元减少至65亿元。. 其中，核心本地商业经营亏损20亿元，较上季度的100亿元大幅减亏；新业务亏损21亿元，较上季度的46亿元显",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "美团2026年Q1营收910亿元，环比减亏96亿元|王兴|零售|总营收|知名企业",
+          "url": "https://www.163.com/dy/article/KUC8BL4C051481US.html",
+          "date": "2026-06-06"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-06",
+          "event": "美团2026年Q1营收910亿元，环比减亏96亿元|王兴|零"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py"
     },
     {
       "id": "comp-084",
@@ -90,68 +119,6 @@
       "tier": "T1",
       "_verification": "verified",
       "_date_ok": true
-    },
-    {
-      "id": "comp-w1-2",
-      "date": "2026-06-05",
-      "company": "其他",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "三方媒体",
-      "tier": "T1",
-      "title": "高通：汽车将演进为智能体AI最重要的移动载体",
-      "body": "高通孟樸在2026汽车技术与合作峰会上表示汽车将演进为智能体AI最重要的移动载体之一，AI汽车新图景展开。",
-      "sowhat": "",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "新华网科技频道",
-          "url": "https://www.news.cn/tech/",
-          "date": "2026-06-05"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-05",
-          "event": "高通汽车峰会"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "web_fetch"
-    },
-    {
-      "id": "comp-w1-3",
-      "date": "2026-06-05",
-      "company": "其他",
-      "category": "产品动态",
-      "dimension": "AI/技术",
-      "data_source": "竞媒官方",
-      "tier": "T1",
-      "title": "Anthropic发布Claude化学能力研究 + 年度AI网络威胁地图",
-      "body": "Anthropic Research公布Claude化学能力论文和年度AI网络安全威胁研究报告，AI从代码向硬科学+安全实证延伸。",
-      "sowhat": "",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Anthropic Research",
-          "url": "https://www.anthropic.com/research",
-          "date": "2026-06-05"
-        }
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-05",
-          "event": "Claude化学论文"
-        },
-        {
-          "date": "2026-06-03",
-          "event": "网络威胁地图"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "web_fetch"
     },
     {
       "id": "comp-086",
@@ -753,6 +720,64 @@
       "_date_ok": true
     },
     {
+      "id": "comp-bulk-902",
+      "date": "2026-06-01",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "美团2026年Q1财报：核心业务亏损显著收窄，科技创新持续推进_公司_方面_商业",
+      "body": "# 美团2026年Q1财报：核心业务亏损显著收窄，科技创新持续推进. 6月1日，美团（3690.HK）发布了2026年第一季度财报，显示出公司在核心本地商业和科技创新方面的显著进展。本季度，美团实现收入910亿元人民币，同比增长5.6%。经营亏损从上季度的161亿元大幅减至65亿元，核心本地商业的经营亏损收窄至20亿元，较上季度的100亿元有明显改善。. 美团的财报揭示了其在“零售+科技”战略下的",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "美团2026年Q1财报：核心业务亏损显著收窄，科技创新持续推进_公司_方面_商业",
+          "url": "https://www.sohu.com/a/1030667857_122066678",
+          "date": "2026-06-01"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-01",
+          "event": "美团2026年Q1财报：核心业务亏损显著收窄，科技创新持续推"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py"
+    },
+    {
+      "id": "comp-bulk-903",
+      "date": "2026-06-01",
+      "company": "美团",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "美团2026年Q1财报：加速推进AI落地物理世界，核心本地商业经营亏损收窄至20亿元_新浪科技_新浪网",
+      "body": "# 美团2026年Q1财报：加速推进AI落地物理世界，核心本地商业经营亏损收窄至20亿元. ﻿6月1日，美团（股票代码：3690.HK）发布2026年第一季度业绩。本季度，美团实现收入910亿元（人民币，下同），同比增长5.6%，经营亏损由上季度的161亿元减少至65亿元。其中，核心本地商业经营亏损20亿元，较上季度的100亿元大幅减亏；新业务亏损21亿元，较上季度的46亿元显著收窄。. 一季度，",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "美团2026年Q1财报：加速推进AI落地物理世界，核心本地商业经营亏损收窄至20",
+          "url": "https://finance.sina.com.cn/tech/roll/2026-06-01/doc-inhzwyqm5181979.shtml",
+          "date": "2026-06-01"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-01",
+          "event": "美团2026年Q1财报：加速推进AI落地物理世界，核心本地商"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py"
+    },
+    {
       "id": "comp-031",
       "date": "2026-05-31",
       "company": "字节",
@@ -959,6 +984,209 @@
       "tier": "T1",
       "_verification": "verified",
       "_date_ok": true
+    },
+    {
+      "id": "comp-bulk-904",
+      "date": "2026-05-28",
+      "company": "小红书",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "拿下世界杯版权，小红书进入增长冲刺期|小红书|直播_新浪科技_新浪网",
+      "body": "# 拿下世界杯版权，小红书进入增长冲刺期. 5月28日，小红书正式宣布成为2026年美加墨世界杯持权转播商、中央广播电视总台顶级赛事直播战略合作伙伴。用户将可以在小红书免费观看2026美加墨世界杯全部赛事直播、回看等内容。而小红书也成为除中央广播电视总台、中国移动旗下咪咕视频之外，唯一的直播、转播、短视频版权持权方。. 无论是世界杯还是中长视频战略的发力，都指向长远的平台增长目标：更大的用户规模和",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "拿下世界杯版权，小红书进入增长冲刺期|小红书|直播_新浪科技_新浪网",
+          "url": "https://finance.sina.com.cn/tech/roll/2026-05-28/doc-inhzmyeq1411212.shtml",
+          "date": "2026-05-28"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-28",
+          "event": "拿下世界杯版权，小红书进入增长冲刺期|小红书|直播_新浪科技"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py"
+    },
+    {
+      "id": "comp-bulk-905",
+      "date": "2026-05-28",
+      "company": "小红书",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "消息称小红书拿下 2026 世界杯独家转播权，冲击 2 亿日活新纪录、撬动男性用户增长_搜狐网",
+      "body": "## 消息称小红书拿下 2026 世界杯独家转播权，冲击 2 亿日活新纪录、撬动男性用户增长. 据《晚点 LatePost》今日报道，小红书已经确定成为今年美加墨世界杯持权转播商，**也是除中央广播电视总台、咪咕之外，唯一的直播、转播、短视频版权的持权方**。. 报道称，小红书此次拿下相关权益的**价格并未高于往届**。作为参照，《时代财经》曾在 2022 年卡塔尔世界杯期间援引业内人士分析称，咪",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "消息称小红书拿下 2026 世界杯独家转播权，冲击 2 亿日活新纪录、撬动男性用",
+          "url": "https://m.sohu.com/a/1028714324_121925623?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+          "date": "2026-05-28"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-28",
+          "event": "消息称小红书拿下 2026 世界杯独家转播权，冲击 2 亿日"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py"
+    },
+    {
+      "id": "comp-bulk-906",
+      "date": "2026-05-27",
+      "company": "字节",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "抖音、B站、视频号三面围堵，利润跌27%：快手只剩“可灵”这张牌？|快手-W|网易公司|财报|电商|收入_手机新浪网",
+      "body": "## 新浪财经 股票. # 抖音、B站、视频号三面围堵，利润跌27%：快手只剩“可灵”这张牌？. 市场资讯  05.28 15:58. 2026年5月27日，快手;)科技交出了2026年一季度成绩单。财报显示，公司实现营收337亿元，同比增长3.4%；期内利润29.05亿元，同比下滑27%；经调整净利润33.74亿元，同比下降26.3%。. 快手营收主要分为线上营销服务、直播和其他服务三个部分。本",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "抖音、B站、视频号三面围堵，利润跌27%：快手只剩“可灵”这张牌？|快手-W|网",
+          "url": "https://finance.sina.cn/stock/jdts/2026-05-28/detail-inhzmtwn7910630.d.html?oid=%E4%B8%9C%E8%8E%9E%E5%90%8C%E5%9F%8E%E7%BA%A6%28%E5%90%8C%E5%9F%8E%E7%BE%8E%E5%A5%B3%E7%BA%A6%E7%82%AE%E4%B8%8A%E9%97%A8%EF%BC%89%7B%E7%94%B5%E8%AF%9D%E5%BE%AE%E4%BF%A1157-7563-5983%7D%E6%8F%90%E4%BE%9B%E9%AB%98%E7%AB%AF%E5%A4%96%E5%9B%B4%E5%A5%B3%E4%B8%8A%E9%97%A8+%E9%A1%B6%E7%BA%A7%E8%B5%84%E6%BA%90+%E5%BF%AB%E9%80%9F%E5%AE%89%E6%8E%92+%E5%90%8C%E5%9F%8E15%E5%88%86%E9%92%9F%E5%86%85%E5%88%B0%E8%BE%BE+%E9%9D%A2%E5%88%B0%E4%BB%98%E6%AC%BEmosw&vt=4",
+          "date": "2026-05-27"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-27",
+          "event": "抖音、B站、视频号三面围堵，利润跌27%：快手只剩“可灵”这"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py"
+    },
+    {
+      "id": "comp-bulk-907",
+      "date": "2026-05-27",
+      "company": "小红书",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "小红书拿下2026世界杯转播权，吸引男性用户剑指2亿日活大关",
+      "body": "# 小红书拿下2026世界杯转播权，吸引男性用户剑指2亿日活大关. 据《晚点LatePost》独家获悉，小红书已正式成为2026年美加墨世界杯持权转播商，是除中央广播电视总台、咪咕之外，国内唯一同时拥有世界杯直播、转播及短视频全版权的内容平台，正式入局顶级体育赛事赛道。. 据了解，小红书此次拿下相关权益的价格并未高于往届。作为参照，2022年卡塔尔世界杯期间，咪咕和抖音从央视获得持权转播权的价格曾",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "小红书拿下2026世界杯转播权，吸引男性用户剑指2亿日活大关",
+          "url": "https://h5.ifeng.com/c/vivoArticle/v002f5BqLWa--4--Ip245FSe2G6xEPTd6P1PFCmaKS6nUDd2w__?vivoBusiness=hiboardnews",
+          "date": "2026-05-27"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-27",
+          "event": "小红书拿下2026世界杯转播权，吸引男性用户剑指2亿日活大关"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py"
+    },
+    {
+      "id": "comp-bulk-908",
+      "date": "2026-05-27",
+      "company": "拼多多",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "拼多多2026年Q1营收同比增长11%，净利下滑15% - 购物攻略",
+      "body": "2026年5月27日，拼多多发布2026年第一季度财报，数据显示期内营收1062亿元，同比增长11%；归属于普通股股东的净利润为125亿元，同比下降15%。该季度是“三年再造拼多多”战略",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "拼多多2026年Q1营收同比增长11%，净利下滑15% - 购物攻略",
+          "url": "https://post.smzdm.com/p/a70xnmr9",
+          "date": "2026-05-27"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-27",
+          "event": "拼多多2026年Q1营收同比增长11%，净利下滑15% - "
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py"
+    },
+    {
+      "id": "comp-bulk-909",
+      "date": "2026-05-27",
+      "company": "拼多多",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "拼多多2026年Q1营收1062亿元，净利润125亿元，同比下降15%_腾讯新闻",
+      "body": "# 拼多多2026年Q1营收1062亿元，净利润125亿元，同比下降15%. 2026-05-27 18:44发布于北京三言财经官方账号. 2026年第一季度，拼多多总营收为1062亿元（约合154亿美元），同比增长11%。其中，交易服务收入563亿元，同比增长20%。在线营销服务及其他收入499亿元，同比基本持平。. 经营利润为196亿元（约合28亿美元），同比增长22%。Non-GAAP经营利",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "拼多多2026年Q1营收1062亿元，净利润125亿元，同比下降15%_腾讯新闻",
+          "url": "https://news.qq.com/rain/a/20260527A09HJG00?adChannelId=news",
+          "date": "2026-05-27"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-27",
+          "event": "拼多多2026年Q1营收1062亿元，净利润125亿元，同比"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py"
+    },
+    {
+      "id": "comp-bulk-910",
+      "date": "2026-05-27",
+      "company": "拼多多",
+      "category": "产品动态",
+      "dimension": "产品/接入",
+      "data_source": "三方媒体",
+      "tier": "T1",
+      "title": "全文|拼多多Q1业绩会实录：继续关注供应链，推动供应链下阶段的高质量发展_新浪财经_新浪网",
+      "body": "# 全文|拼多多Q1业绩会实录：继续关注供应链，推动供应链下阶段的高质量发展. 今日，拼多多发布截至3月31日的2026年第一季度财报。财报显示，拼多多一季度营收1062亿元，同比增长11%；净利润125亿元，同比下降15%，这主要源于“千亿扶持”以及重仓供应链的持续投入，一定程度上影响了短期的业绩表现。. 财报发布后，拼多多董事长兼联席CEO陈磊、执行董事兼联席CEO赵佳臻、集团财务总监李炯出席",
+      "sowhat": "",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "全文|拼多多Q1业绩会实录：继续关注供应链，推动供应链下阶段的高质量发展_新浪财",
+          "url": "https://finance.sina.com.cn/tech/2026-05-27/doc-inhzizpk9155086.shtml",
+          "date": "2026-05-27"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-27",
+          "event": "全文|拼多多Q1业绩会实录：继续关注供应链，推动供应链下阶段"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py"
     },
     {
       "id": "comp-062",

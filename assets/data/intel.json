@@ -1,138 +1,215 @@
 {
   "_meta": {
-    "description": "Part1 +10 items from Anthropic Research + Xinhua Tech (web_fetch verified)",
+    "description": "Part1 市场信息洞察 + gap-fill from 互联网公共战略参考232期 / 营销早咖Vol.12 / 腾讯研究院AI速递",
     "last_updated": "2026-06-08",
-    "total_items": 48,
+    "total_items": 67,
     "window": "past 14d (2026-05-25 ~ 2026-06-08) + 重点回溯(Tech星球2026-03)",
     "source_first": true,
     "fetch_method": "P0全渠道:OCE_Changelog+微信广告动态+钛媒体+第一财经+华尔街见闻+澎湃新闻+21经济网+虎嗅+界面新闻 + P1科技媒体:36氪+Tech星球+铅笔道+财新+MBA智库"
   },
   "items": [
     {
-      "id": "intel-w1-x1",
-      "date": "2026-06-08",
+      "id": "intel-bulk-900",
+      "date": "2026-07-01",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "IP架构即合规：对外投资新规下AI产品出海的关注要点",
+      "body": "# IP架构即合规：对外投资新规下AI产品出海的关注要点. 2026.06.08 刘佳迪 汤伟洋 王丝雨. 国务院日前公布《关于对外投资的规定》（下称“《新规》”），**将于2026年7月1日起施行。对于谋求产品出海的AI企业而言，《新规》第十三条是核心红线：“投资者开展对外投资活动，不得出口、使用国家禁止出口的货物、技术、服务及相关数据，或者未经许可出口、使用国家限制出口的货物、技术、服务及相关",
+      "sowhat": "",
+      "tags": [
+        "#policy"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "准入政策",
+      "timeline": "2026-07-01",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "IP架构即合规：对外投资新规下AI产品出海的关注要点",
+          "url": "https://junhe.com/legal-updates/3024",
+          "date": "2026-07-01"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-901",
+      "date": "2026-07-01",
       "priority": "high",
       "signal": "trend",
-      "title": "未来产业获政策加码 重点赛道将培育更多'独角兽'",
-      "body": "国家层面加码未来产业政策，明确重点赛道并设定独角兽企业培育目标。",
-      "sowhat": "政策明确加码未来产业(含AI)，对快手AI业务发展和政府合作有窗口期机会",
+      "title": "中国公布《国务院关于对外投资的规定》 7月1日起施行 - RFI - 法国国际广播电台",
+      "body": "# 中国公布《国务院关于对外投资的规定》 7月1日起施行. 官媒新华社报导指，中国国务院总理李强日前签署国务院令，公布《国务院关于对外投资的规定》（以下简称《规定》），自2026年7月1日起施行。《规定》旨在推进高水平对外开放，促进对外投资高质量发展，有效实施对外投资管理，保护投资者及其对外投资合法权益，维护国家主权、安全、发展利益。. 报导指，《规定》共34条，主要规定了以下内容：一是明确适用范",
+      "sowhat": "",
       "tags": [
-        "#政策",
-        "#未来产业",
-        "#独角兽"
-      ],
-      "company": [],
-      "industry": [
-        "AI",
-        "政策"
-      ],
-      "type": "准入政策",
-      "timeline": "2026-06-08 政策加码",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "新华网科技频道",
-          "url": "https://www.news.cn/tech/",
-          "date": "2026-06-08"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "web_fetch"
-    },
-    {
-      "id": "intel-w1-x2",
-      "date": "2026-06-08",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "AI应用加速渗透三大产业 场景与规模优势显现",
-      "body": "新华网报道AI应用在三大产业领域加速渗透，AI落地场景与规模效应开始显现。",
-      "sowhat": "AI应用从试点走向规模化渗透，快手各业务线AI化进程需提速以保持竞争力",
-      "tags": [
-        "#AI应用",
-        "#产业化",
-        "#数字经济"
-      ],
-      "company": [],
-      "industry": [
-        "AI"
-      ],
-      "type": "产品动态",
-      "timeline": "2026-06-08 三大产业AI渗透",
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "新华网科技频道",
-          "url": "https://www.news.cn/tech/",
-          "date": "2026-06-08"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "web_fetch"
-    },
-    {
-      "id": "intel-w1-x3",
-      "date": "2026-06-08",
-      "priority": "mid",
-      "signal": "threat",
-      "title": "AI热潮背后是昂贵的地球资源账单",
-      "body": "新华网关注AI产业发展带来的能源/水资源/芯片等资源消耗问题，呼吁绿色AI发展。",
-      "sowhat": "AI能耗争议可能影响数据中心审批和政策走向，快手乌兰察布数据中心节能优势凸显",
-      "tags": [
-        "#AI能耗",
-        "#绿色AI",
-        "#数据中心"
+        "#policy"
       ],
       "company": [],
       "industry": [
         "AI"
       ],
       "type": "准入政策",
-      "timeline": "2026-06-08 资源账单",
+      "timeline": "2026-07-01",
       "scope": "国内",
       "sources": [
         {
-          "name": "新华网科技频道",
-          "url": "https://www.news.cn/tech/",
-          "date": "2026-06-08"
+          "name": "中国公布《国务院关于对外投资的规定》 7月1日起施行 - RFI - 法国国际广",
+          "url": "https://www.rfi.fr/cn/%E7%BB%8F%E8%B4%B8/20260601-%E4%B8%AD%E5%9B%BD%E5%85%AC%E5%B8%83-%E5%9B%BD%E5%8A%A1%E9%99%A2%E5%85%B3%E4%BA%8E%E5%AF%B9%E5%A4%96%E6%8A%95%E8%B5%84%E7%9A%84%E8%A7%84%E5%AE%9A-7%E6%9C%881%E6%97%A5%E8%B5%B7%E6%96%BD%E8%A1%8C",
+          "date": "2026-07-01"
         }
       ],
       "_verification": "verified",
       "_date_ok": true,
-      "_fetched_by": "web_fetch"
+      "_fetched_by": "bulk_fetch.py (Tavily)"
     },
     {
-      "id": "intel-w1-x4",
-      "date": "2026-06-08",
-      "priority": "mid",
+      "id": "intel-bulk-902",
+      "date": "2026-07-01",
+      "priority": "high",
       "signal": "trend",
-      "title": "从玩具到伙伴 AI玩具'玩'出新赛道",
-      "body": "报告关注AI玩具赛道崛起，从教育到陪伴AI正在打开消费级硬件新市场。",
-      "sowhat": "AI消费硬件赛道快速增长，快手可灵等AI工具可与AI硬件形成内容+硬件联动",
+      "title": "《国务院关于对外投资的规定》公布，2026年7月1日起施行 - 21经济网",
+      "body": "首页 宏观 公司 金融 证券 全球 观点 汽车 新健康 人文 智库 更多). 大湾区 一带一路 文旅 理财 投资通 21视频 直播 品牌活动. # 《国务院关于对外投资的规定》公布，2026年7月1日起施行. ###### 2026年06月01日 10:02   中国政府网. 第一条　为了推进高水平对外开放，促进对外投资高质量发展，有效实施对外投资管理，保护投资者及其对外投资合法权益，维护国家主权",
+      "sowhat": "",
       "tags": [
-        "#AI硬件",
-        "#消费赛道",
-        "#AI玩具"
+        "#policy"
       ],
       "company": [],
       "industry": [
-        "AI",
-        "消费"
+        "AI"
       ],
-      "type": "产品动态",
-      "timeline": "2026-06-08 AI玩具",
+      "type": "准入政策",
+      "timeline": "2026-07-01",
       "scope": "国内",
       "sources": [
         {
-          "name": "新华网科技频道",
-          "url": "https://www.news.cn/tech/",
+          "name": "《国务院关于对外投资的规定》公布，2026年7月1日起施行 - 21经济网",
+          "url": "https://www.21jingji.com/article/20260601/herald/5b23e43fdccacedc678e1fde7f758e36.html",
+          "date": "2026-07-01"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-903",
+      "date": "2026-06-08",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "2026巨量引擎品星云618营销全景图谱发布、小红书「双C计划」上线、快手磁力金牛个护日百行业618大促备战指南发布｜商业市场WEEKLY228|阿里妈妈|电商",
+      "body": "### 手机 / 数码. ### 房产 / 家居. # 2026巨量引擎品星云618营销全景图谱发布、小红书「双C计划」上线、快手磁力金牛个护日百行业618大促备战指南发布｜商业市场WEEKLY228. 广告主、平台方、服务商亦或是关注营销的你，绝不能错过的商业市场资讯，就在**新营销[商业市场WEEKLY]**！. 阿里妈妈以「AI行业合作伙伴」身份加入2026金瞳奖，双方将在AI营销、数智经营",
+      "sowhat": "",
+      "tags": [
+        "#marketing"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-08",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "2026巨量引擎品星云618营销全景图谱发布、小红书「双C计划」上线、快手磁力金",
+          "url": "https://www.163.com/dy/article/KSQEMIUO05562ISM.html",
           "date": "2026-06-08"
         }
       ],
       "_verification": "verified",
       "_date_ok": true,
-      "_fetched_by": "web_fetch"
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-904",
+      "date": "2026-06-08",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "突发！Anthropic呼吁全员停止AI研究-36氪",
+      "body": "# 突发！Anthropic呼吁全员停止AI研究. Jay 发自 凹非寺量子位 | 公众号 QbitAI. 我们的内部数据显示，Claude正在加速AI发展，这可能是一条递归自我提升（RSI）的路径。. 截止今年5月，**80%以上**的Anthropic代码，都是Claude写的。. 在最开放、最模糊、连答案长什么样都不确定的编程任务上，Claude的成功率现在是76%，六个月前才26%。. 这",
+      "sowhat": "",
+      "tags": [
+        "#ai"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "技术发布",
+      "timeline": "2026-06-08",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "突发！Anthropic呼吁全员停止AI研究-36氪",
+          "url": "https://m.36kr.com/p/3839532802132489",
+          "date": "2026-06-08"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-905",
+      "date": "2026-06-08",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "ARR达2.4亿美元，可灵能带快手起飞吗？-36氪",
+      "body": "# ARR达2.4亿美元，可灵能带快手起飞吗？. 踏入2026年，快手股价开启了一轮强劲上涨。在去年10月阶段性高点回撤近25%后，今年至今，快手股价已上涨超过23%。过去一年，快手股价更飙升近88%。. 资本市场青睐的依然是快手可灵，其最新推出的“Motion Control”功能在海外市场爆发式走红，在多个国家的相关应用下载榜单狠狠“屠榜”。. 乘着这股东风，快手在近日宣布可灵AI 在2025",
+      "sowhat": "",
+      "tags": [
+        "#ai"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "技术发布",
+      "timeline": "2026-06-08",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "ARR达2.4亿美元，可灵能带快手起飞吗？-36氪",
+          "url": "https://m.36kr.com/p/3645658968617475",
+          "date": "2026-06-08"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-906",
+      "date": "2026-06-08",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "小红书为什么要买世界杯？-36氪",
+      "body": "# 小红书为什么要买世界杯？. 《晚点LatePost》独家报道称，小红书已经确定成为2026年美加墨世界杯持权转播商，也是除中央广播电视总台、咪咕之外，唯一拥有直播、转播、短视频版权的持权方。. 小红书的关键词一直是女性、种草、穿搭、美妆这些生活方式关键词。世界杯则是激烈对抗的体育运动，显然是偏向男性的。. 也有人说世界杯是男女通吃的中性运动，这点有待商榷。因为真正愿意看球的女性比例肯定不高，更",
+      "sowhat": "",
+      "tags": [
+        "#competitor"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-08",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "小红书为什么要买世界杯？-36氪",
+          "url": "https://m.36kr.com/p/3827553244176393",
+          "date": "2026-06-08"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
     },
     {
       "id": "intel-161",
@@ -252,6 +329,35 @@
       ],
       "_verification": "verified",
       "_date_ok": true
+    },
+    {
+      "id": "intel-bulk-907",
+      "date": "2026-06-06",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "美团2026年Q1营收910亿元，环比减亏96亿元|王兴|零售|总营收|知名企业_网易订阅",
+      "body": "### 科技. ### 手机 / 数码. ### 房产 / 家居. # 美团2026年Q1营收910亿元，环比减亏96亿元. 6月1日，美团（股票代码：3690.HK）发布2026年第一季度业绩。本季度，美团实现收入910亿元，同比增长5.6%，经营亏损由上季度的161亿元减少至65亿元。. 其中，核心本地商业经营亏损20亿元，较上季度的100亿元大幅减亏；新业务亏损21亿元，较上季度的46亿元显",
+      "sowhat": "",
+      "tags": [
+        "#competitor"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-06",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "美团2026年Q1营收910亿元，环比减亏96亿元|王兴|零售|总营收|知名企业",
+          "url": "https://www.163.com/dy/article/KUC8BL4C051481US.html",
+          "date": "2026-06-06"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
     },
     {
       "id": "intel-2026-06-08-02",
@@ -474,102 +580,178 @@
       "_date_ok": true
     },
     {
-      "id": "intel-w1-a1",
-      "date": "2026-06-05",
-      "priority": "high",
-      "signal": "trend",
-      "title": "Anthropic: Making Claude a Chemist",
-      "body": "Anthropic研究团队发布Claude化学能力论文，探索AI在科学发现中的应用边界。",
-      "sowhat": "AI从代码/文本向硬科学(化学)渗透加速，对快手AI应用场景扩展有启示",
-      "tags": [
-        "#Anthropic",
-        "#AI+Science",
-        "#Claude"
-      ],
-      "company": [
-        "Anthropic"
-      ],
-      "industry": [
-        "AI"
-      ],
-      "type": "技术发布",
-      "timeline": "2026-06-05 Claude化学能力论文",
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Anthropic Research",
-          "url": "https://www.anthropic.com/research",
-          "date": "2026-06-05"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "web_fetch"
-    },
-    {
-      "id": "intel-w1-x5",
+      "id": "intel-bulk-908",
       "date": "2026-06-05",
       "priority": "mid",
       "signal": "trend",
-      "title": "差异化布局 AI发展'一盘棋'初具雏形",
-      "body": "省级十五五规划纲要中AI差异化布局明显，各省根据产业优势制定AI发展路线图。",
-      "sowhat": "地方AI产业政策差异化对快手AI业务的区域布局和人才战略有影响",
+      "title": "ChatGPT Memory Dreaming Update: OpenAI Rewrites ... - Tech Times",
+      "body": "OpenAI began rolling out Dreaming V3 on June 4, 2026, a new ChatGPT memory architecture that replaces the manually curated saved-memories list with a background synthesis process that reads across yea",
+      "sowhat": "",
       "tags": [
-        "#AI政策",
-        "#十五五",
-        "#区域布局"
+        "#ai"
       ],
       "company": [],
       "industry": [
         "AI"
       ],
-      "type": "准入政策",
-      "timeline": "2026-06-05 十五五AI布局",
+      "type": "技术发布",
+      "timeline": "2026-06-05",
       "scope": "国内",
       "sources": [
         {
-          "name": "新华网科技频道",
-          "url": "https://www.news.cn/tech/",
+          "name": "ChatGPT Memory Dreaming Update: OpenAI R",
+          "url": "https://www.techtimes.com/articles/317840/20260605/chatgpt-memory-dreaming-update-openai-rewrites-personalization-engine-limits-audit-trail.htm",
           "date": "2026-06-05"
         }
       ],
       "_verification": "verified",
       "_date_ok": true,
-      "_fetched_by": "web_fetch"
+      "_fetched_by": "bulk_fetch.py (Tavily)"
     },
     {
-      "id": "intel-w1-x6",
+      "id": "intel-bulk-909",
       "date": "2026-06-05",
       "priority": "mid",
       "signal": "trend",
-      "title": "2026台铃高端快充电摩发布会 + 高通汽车技术与合作峰会 — AI汽车新图景",
-      "body": "新华网报道台铃电摩发布和高通汽车峰会，高通孟樸称汽车将演进为智能体AI最重要的移动载体之一。",
-      "sowhat": "AI+汽车融合加速，智能座舱和自动驾驶成为AI落地核心场景，快手需关注车载媒体内容生态",
+      "title": "Your ChatGPT memory just got an upgrade. OpenAI calls it 'Dreaming'",
+      "body": "## OpenAI said the new system helps ChatGPT keep memories relevant over time, improves the use of preferences from past conversations, and will begin rolling out to Free users after reducing computing",
+      "sowhat": "",
       "tags": [
-        "#AI汽车",
-        "#高通",
-        "#智能座舱"
+        "#ai"
       ],
-      "company": [
-        "高通"
-      ],
+      "company": [],
       "industry": [
-        "AI",
-        "汽车"
+        "AI"
       ],
-      "type": "产品动态",
-      "timeline": "2026-06-05 AI汽车峰会",
+      "type": "技术发布",
+      "timeline": "2026-06-05",
       "scope": "国内",
       "sources": [
         {
-          "name": "新华网科技频道",
-          "url": "https://www.news.cn/tech/",
+          "name": "Your ChatGPT memory just got an upgrade.",
+          "url": "https://www.storyboard18.com/brand-marketing/your-chatgpt-memory-just-got-an-upgrade-openai-calls-it-dreaming-100264.htm",
           "date": "2026-06-05"
         }
       ],
       "_verification": "verified",
       "_date_ok": true,
-      "_fetched_by": "web_fetch"
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-910",
+      "date": "2026-06-05",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "ChatGPT's New 'Dreaming' Memory, Explained | FindSkill.ai",
+      "body": "Here's what 'dreaming' changes, what it remembers, and how to control it. If you opened ChatGPT this week and it suddenly seemed to know you a little too well — or, for a noisy handful of people, sudd",
+      "sowhat": "",
+      "tags": [
+        "#ai"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "技术发布",
+      "timeline": "2026-06-05",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "ChatGPT's New 'Dreaming' Memory, Explain",
+          "url": "https://findskill.ai/blog/chatgpt-dreaming-memory-explained",
+          "date": "2026-06-05"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-911",
+      "date": "2026-06-05",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "腾讯混元的Stem算法：稀疏注意力的新突破_搜狐网",
+      "body": "## 腾讯混元的Stem算法：稀疏注意力的新突破. 引言 在大语言模型的推理过程中，用户常常会遭遇长时间的等待，特别是在处理数万字的文档时。这一过程中的延迟，主要源于Transformer架构自注意力机制的计算复杂度。随着输入长度的增加，预填充阶段的等待时间呈平方级增长，成为推理效率的瓶颈。为了解决这一问题，稀疏注意力（Sparse Attention）作为一种重要的研究方向，逐渐受到关注。. 腾",
+      "sowhat": "",
+      "tags": [
+        "#ai"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "技术发布",
+      "timeline": "2026-06-05",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "腾讯混元的Stem算法：稀疏注意力的新突破_搜狐网",
+          "url": "https://m.sohu.com/a/1032799720_122066678?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+          "date": "2026-06-05"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-912",
+      "date": "2026-06-05",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "腾讯混元提出Stem 稀疏注意力算法，首字延迟降低3.6 倍 - 新浪财经",
+      "body": "IT之家 6 月5 日消息，腾讯混元今日宣布提出Stem 稀疏注意力算法，已被机器学习顶会ICML-26 收录。 官方表示，Stem 稀疏注意力算法从“因果信息流”重新审视块",
+      "sowhat": "",
+      "tags": [
+        "#ai"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "技术发布",
+      "timeline": "2026-06-05",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "腾讯混元提出Stem 稀疏注意力算法，首字延迟降低3.6 倍 - 新浪财经",
+          "url": "https://finance.sina.com.cn/tech/digi/2026-06-05/doc-iniakmqn8279218.shtml",
+          "date": "2026-06-05"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-913",
+      "date": "2026-06-05",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "腾讯混元提出Stem稀疏注意力算法，长文推理加速新SOTA - 新浪财经",
+      "body": "腾讯混元宣布提出Stem稀疏注意力算法，已被机器学习顶会ICML-26收录。根据Stem算法×HPC算子的全栈加速方案，算法层面，Stem通过Token位置衰减（TPD）和输出",
+      "sowhat": "",
+      "tags": [
+        "#ai"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "技术发布",
+      "timeline": "2026-06-05",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "腾讯混元提出Stem稀疏注意力算法，长文推理加速新SOTA - 新浪财经",
+          "url": "https://finance.sina.com.cn/7x24/2026-06-05/doc-iniakfhm9539059.shtml",
+          "date": "2026-06-05"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
     },
     {
       "id": "intel-2026-06-08-03",
@@ -1013,6 +1195,35 @@
       "_date_ok": true
     },
     {
+      "id": "intel-bulk-914",
+      "date": "2026-06-04",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "全球AI治理新闻No.30丨2026.05.25-2026.06.01 - 复旦发展研究院",
+      "body": "## 全球AI治理新闻No.30丨2026.05.25-2026.06.01. 作者：王奕博、栗子宜 发布时间：2026-06-04 来源：全球人工智能创新治理中心+收藏本文. 《国务院关于对外投资的规定》共34条，旨在推进中国高水平对外开放，促进对外投资高质量发展，有效实施对外投资管理，保护投资者及其对外投资合法权益，维护国家主权、安全、发展利益。据中国司法部、国家发展改革委、商务部负责人答记者",
+      "sowhat": "",
+      "tags": [
+        "#policy"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "准入政策",
+      "timeline": "2026-06-04",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "全球AI治理新闻No.30丨2026.05.25-2026.06.01 - 复旦",
+          "url": "https://fddi.fudan.edu.cn/ef/2f/c21253a782127/page.htm",
+          "date": "2026-06-04"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
       "id": "intel-144",
       "date": "2026-06-03",
       "priority": "high",
@@ -1247,37 +1458,33 @@
       "_date_ok": true
     },
     {
-      "id": "intel-w1-a2",
+      "id": "intel-bulk-915",
       "date": "2026-06-03",
-      "priority": "high",
-      "signal": "trend",
-      "title": "Anthropic: What we learned mapping a year's worth of AI-enabled cyber threats",
-      "body": "Anthropic发布年度AI网络安全威胁地图报告，系统性梳理了AI在网络安全攻防中的威胁面。",
-      "sowhat": "AI安全从理论进入实证研究阶段，国内监管可能跟进类似标准",
+      "priority": "mid",
+      "signal": "threat",
+      "title": "四部门联手启动“剑网2026”专项行动，6至11月集中整治网络侵权盗版乱象_搜狐网",
+      "body": "## 四部门联手启动“剑网2026”专项行动，6至11月集中整治网络侵权盗版乱象. 国家版权局联合工业和信息化部、公安部及国家互联网信息办公室，共同启动了“剑网2026”专项整治行动。此次行动是四部门第22次针对网络版权领域开展专项治理，将持续至今年11月，覆盖整个下半年。. 专项行动的核心目标是解决网络侵权盗版问题，进一步规范网络版权传播秩序，为新质生产力的发展提供有力支撑。行动将重点打击四大领",
+      "sowhat": "",
       "tags": [
-        "#Anthropic",
-        "#AI安全",
-        "#网络安全"
+        "#policy"
       ],
-      "company": [
-        "Anthropic"
-      ],
+      "company": [],
       "industry": [
         "AI"
       ],
-      "type": "技术发布",
-      "timeline": "2026-06-03 AI网络安全威胁地图",
-      "scope": "海外",
+      "type": "准入政策",
+      "timeline": "2026-06-03",
+      "scope": "国内",
       "sources": [
         {
-          "name": "Anthropic Research",
-          "url": "https://www.anthropic.com/research",
+          "name": "四部门联手启动“剑网2026”专项行动，6至11月集中整治网络侵权盗版乱象_搜狐",
+          "url": "https://m.sohu.com/a/1031305287_362225?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
           "date": "2026-06-03"
         }
       ],
       "_verification": "verified",
       "_date_ok": true,
-      "_fetched_by": "web_fetch"
+      "_fetched_by": "bulk_fetch.py (Tavily)"
     },
     {
       "id": "intel-146",
@@ -1674,6 +1881,122 @@
       "_date_ok": true
     },
     {
+      "id": "intel-bulk-916",
+      "date": "2026-06-02",
+      "priority": "high",
+      "signal": "trend",
+      "title": "国务院关于对外投资的规定 - 商务部",
+      "body": "# 国务院关于对外投资的规定. [首页](https://www.mofcom.gov.cn/index.html)_>_[新闻发布](https://www.mofcom.gov.cn/xwfb/index.html)_>_[日常新闻发布](https://www.mofcom.gov.cn/xwfb/rcxwfb/index.html). 来源：新华社  类型：转载 分类：新闻 2026-06",
+      "sowhat": "",
+      "tags": [
+        "#policy"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "准入政策",
+      "timeline": "2026-06-02",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "国务院关于对外投资的规定 - 商务部",
+          "url": "https://www.mofcom.gov.cn/xwfb/rcxwfb/art/2026/art_a19be62e79f04d72adef2945b20e9247.html",
+          "date": "2026-06-02"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-917",
+      "date": "2026-06-02",
+      "priority": "mid",
+      "signal": "threat",
+      "title": "四部门启动打击网络侵权盗版专项行动，聚焦AI领域版权整治等重点领域|专项行动_新浪财经_新浪网",
+      "body": "# 四部门启动打击网络侵权盗版专项行动，聚焦AI领域版权整治等重点领域. 国家版权局、工业和信息化部、公安部、国家互联网信息办公室四部门联合启动打击网络侵权盗版“剑网2026”专项行动，这是四部门第22次聚焦重点作品领域及重点网络平台开展专项治理工作。. 本次专项行动于6月至11月开展，重点关注人民群众反映强烈的网络侵权盗版问题和经济社会发展需求，持续深化网络版权专项整治，规范网络版权传播秩序，赋",
+      "sowhat": "",
+      "tags": [
+        "#policy"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "准入政策",
+      "timeline": "2026-06-02",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "四部门启动打击网络侵权盗版专项行动，聚焦AI领域版权整治等重点领域|专项行动_新",
+          "url": "https://finance.sina.com.cn/roll/2026-06-02/doc-inhzzivs1558385.shtml",
+          "date": "2026-06-02"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-918",
+      "date": "2026-06-02",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "四部门开展专项治理：剑指网盘、浏览器传播盗版，AI魔改等 - 腾讯新闻",
+      "body": "... 版权局获悉，“剑网2026 ”专项行动于6月至11月开展，聚焦影视剧版权、文创版权、图书版权、人工智能版权等4个重点领域。 据了解，国家版权局、工业和",
+      "sowhat": "",
+      "tags": [
+        "#policy"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "准入政策",
+      "timeline": "2026-06-02",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "四部门开展专项治理：剑指网盘、浏览器传播盗版，AI魔改等 - 腾讯新闻",
+          "url": "https://view.inews.qq.com/a/20260602A05HKE00",
+          "date": "2026-06-02"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-919",
+      "date": "2026-06-02",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "国家版权局等四部门启动“剑网2026”专项行动--社会·法治--人民网",
+      "body": "### 人民日报报系. 人民日报 人民日报海外版 中国汽车报 中国能源报 健康时报 证券时报 国际金融报网 讽刺与幽默 中国城市报 新闻战线 人民论坛 环球人物 中国经济周刊 民生周刊 国家人文历史 人民周刊 人民数字. ### 旗下网站. 全国重点实验室 环球网 海外网 人民图片 人民网研究院 人民慕课. ### 创新服务平台. # 国家版权局等四部门启动“剑网2026”专项行动. **2026",
+      "sowhat": "",
+      "tags": [
+        "#policy"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "准入政策",
+      "timeline": "2026-06-02",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "国家版权局等四部门启动“剑网2026”专项行动--社会·法治--人民网",
+          "url": "http://society.people.com.cn/n1/2026/0602/c1008-40732583.html",
+          "date": "2026-06-02"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
       "id": "intel-2026-06-08-06",
       "date": "2026-06-01",
       "priority": "high",
@@ -1912,6 +2235,122 @@
       "_date_ok": true
     },
     {
+      "id": "intel-bulk-920",
+      "date": "2026-06-01",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "2026年618电商大促新趋势：极简玩法落地，AI重塑电商新格局|AI_新浪财经_新浪网",
+      "body": "* [新浪首页](http://www.sina.com.cn/). * [新闻](http://news.sina.com.cn/). * [体育](http://sports.sina.com.cn/). * [财经](http://finance.sina.com.cn/). * [娱乐](http://ent.sina.com.cn/). * [科技](http://tech.sina.c",
+      "sowhat": "",
+      "tags": [
+        "#marketing"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-01",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "2026年618电商大促新趋势：极简玩法落地，AI重塑电商新格局|AI_新浪财经",
+          "url": "https://finance.sina.com.cn/roll/2026-06-01/doc-inhzwist5291232.shtml",
+          "date": "2026-06-01"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-921",
+      "date": "2026-06-01",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "2026年618电商大促新趋势：极简玩法落地，AI重塑电商新格局_搜狐网",
+      "body": "## 2026年618电商大促新趋势：极简玩法落地，AI重塑电商新格局. 距离6月18日还有十余天，但2026年电商年中大促的战火，早已全面点燃。这届618，消费者日益理性，“做数学题式购物”终于退场，各大电商平台集体按下了“简化键”。此外，这届618被业内广泛称为“首个AI原生大促元年”。. 分别来看，面对消费者日益回归理性的决策心态，各大电商平台集体按下了“简化键”。从跨店满减的复杂算式，到“",
+      "sowhat": "",
+      "tags": [
+        "#marketing"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-01",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "2026年618电商大促新趋势：极简玩法落地，AI重塑电商新格局_搜狐网",
+          "url": "https://m.sohu.com/a/1030448247_490805?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+          "date": "2026-06-01"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-922",
+      "date": "2026-06-01",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "美团2026年Q1财报：核心业务亏损显著收窄，科技创新持续推进_公司_方面_商业",
+      "body": "# 美团2026年Q1财报：核心业务亏损显著收窄，科技创新持续推进. 6月1日，美团（3690.HK）发布了2026年第一季度财报，显示出公司在核心本地商业和科技创新方面的显著进展。本季度，美团实现收入910亿元人民币，同比增长5.6%。经营亏损从上季度的161亿元大幅减至65亿元，核心本地商业的经营亏损收窄至20亿元，较上季度的100亿元有明显改善。. 美团的财报揭示了其在“零售+科技”战略下的",
+      "sowhat": "",
+      "tags": [
+        "#competitor"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-01",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "美团2026年Q1财报：核心业务亏损显著收窄，科技创新持续推进_公司_方面_商业",
+          "url": "https://www.sohu.com/a/1030667857_122066678",
+          "date": "2026-06-01"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-923",
+      "date": "2026-06-01",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "美团2026年Q1财报：加速推进AI落地物理世界，核心本地商业经营亏损收窄至20亿元_新浪科技_新浪网",
+      "body": "# 美团2026年Q1财报：加速推进AI落地物理世界，核心本地商业经营亏损收窄至20亿元. ﻿6月1日，美团（股票代码：3690.HK）发布2026年第一季度业绩。本季度，美团实现收入910亿元（人民币，下同），同比增长5.6%，经营亏损由上季度的161亿元减少至65亿元。其中，核心本地商业经营亏损20亿元，较上季度的100亿元大幅减亏；新业务亏损21亿元，较上季度的46亿元显著收窄。. 一季度，",
+      "sowhat": "",
+      "tags": [
+        "#competitor"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-06-01",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "美团2026年Q1财报：加速推进AI落地物理世界，核心本地商业经营亏损收窄至20",
+          "url": "https://finance.sina.com.cn/tech/roll/2026-06-01/doc-inhzwyqm5181979.shtml",
+          "date": "2026-06-01"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
       "id": "intel-135",
       "date": "2026-05-30",
       "priority": "medium",
@@ -2070,70 +2509,149 @@
       "_date_ok": true
     },
     {
-      "id": "intel-w1-a3",
-      "date": "2026-05-27",
+      "id": "intel-bulk-924",
+      "date": "2026-05-28",
       "priority": "mid",
       "signal": "trend",
-      "title": "Anthropic: Coding agents in the social sciences",
-      "body": "Anthropic研究AI编程Agent在社会科学研究中的应用，将AI Agent能力扩展到学术研究方法论。",
-      "sowhat": "Agent能力从软件工程扩展到科学研究方法论，Agent范式正在跨领域渗透",
+      "title": "拿下世界杯版权，小红书进入增长冲刺期|小红书|直播_新浪科技_新浪网",
+      "body": "# 拿下世界杯版权，小红书进入增长冲刺期. 5月28日，小红书正式宣布成为2026年美加墨世界杯持权转播商、中央广播电视总台顶级赛事直播战略合作伙伴。用户将可以在小红书免费观看2026美加墨世界杯全部赛事直播、回看等内容。而小红书也成为除中央广播电视总台、中国移动旗下咪咕视频之外，唯一的直播、转播、短视频版权持权方。. 无论是世界杯还是中长视频战略的发力，都指向长远的平台增长目标：更大的用户规模和",
+      "sowhat": "",
       "tags": [
-        "#Anthropic",
-        "#Agent",
-        "#AI+Research"
+        "#competitor"
       ],
-      "company": [
-        "Anthropic"
-      ],
+      "company": [],
       "industry": [
         "AI"
       ],
-      "type": "技术发布",
-      "timeline": "2026-05-27 编程Agent社会科学应用",
-      "scope": "海外",
+      "type": "产品动态",
+      "timeline": "2026-05-28",
+      "scope": "国内",
       "sources": [
         {
-          "name": "Anthropic Research",
-          "url": "https://www.anthropic.com/research",
+          "name": "拿下世界杯版权，小红书进入增长冲刺期|小红书|直播_新浪科技_新浪网",
+          "url": "https://finance.sina.com.cn/tech/roll/2026-05-28/doc-inhzmyeq1411212.shtml",
+          "date": "2026-05-28"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-925",
+      "date": "2026-05-28",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "消息称小红书拿下 2026 世界杯独家转播权，冲击 2 亿日活新纪录、撬动男性用户增长_搜狐网",
+      "body": "## 消息称小红书拿下 2026 世界杯独家转播权，冲击 2 亿日活新纪录、撬动男性用户增长. 据《晚点 LatePost》今日报道，小红书已经确定成为今年美加墨世界杯持权转播商，**也是除中央广播电视总台、咪咕之外，唯一的直播、转播、短视频版权的持权方**。. 报道称，小红书此次拿下相关权益的**价格并未高于往届**。作为参照，《时代财经》曾在 2022 年卡塔尔世界杯期间援引业内人士分析称，咪",
+      "sowhat": "",
+      "tags": [
+        "#competitor"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-05-28",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "消息称小红书拿下 2026 世界杯独家转播权，冲击 2 亿日活新纪录、撬动男性用",
+          "url": "https://m.sohu.com/a/1028714324_121925623?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+          "date": "2026-05-28"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-926",
+      "date": "2026-05-27",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "抖音、B站、视频号三面围堵，利润跌27%：快手只剩“可灵”这张牌？|快手-W|网易公司|财报|电商|收入_手机新浪网",
+      "body": "## 新浪财经 股票. # 抖音、B站、视频号三面围堵，利润跌27%：快手只剩“可灵”这张牌？. 市场资讯  05.28 15:58. 2026年5月27日，快手;)科技交出了2026年一季度成绩单。财报显示，公司实现营收337亿元，同比增长3.4%；期内利润29.05亿元，同比下滑27%；经调整净利润33.74亿元，同比下降26.3%。. 快手营收主要分为线上营销服务、直播和其他服务三个部分。本",
+      "sowhat": "",
+      "tags": [
+        "#competitor"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-05-27",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "抖音、B站、视频号三面围堵，利润跌27%：快手只剩“可灵”这张牌？|快手-W|网",
+          "url": "https://finance.sina.cn/stock/jdts/2026-05-28/detail-inhzmtwn7910630.d.html?oid=%E4%B8%9C%E8%8E%9E%E5%90%8C%E5%9F%8E%E7%BA%A6%28%E5%90%8C%E5%9F%8E%E7%BE%8E%E5%A5%B3%E7%BA%A6%E7%82%AE%E4%B8%8A%E9%97%A8%EF%BC%89%7B%E7%94%B5%E8%AF%9D%E5%BE%AE%E4%BF%A1157-7563-5983%7D%E6%8F%90%E4%BE%9B%E9%AB%98%E7%AB%AF%E5%A4%96%E5%9B%B4%E5%A5%B3%E4%B8%8A%E9%97%A8+%E9%A1%B6%E7%BA%A7%E8%B5%84%E6%BA%90+%E5%BF%AB%E9%80%9F%E5%AE%89%E6%8E%92+%E5%90%8C%E5%9F%8E15%E5%88%86%E9%92%9F%E5%86%85%E5%88%B0%E8%BE%BE+%E9%9D%A2%E5%88%B0%E4%BB%98%E6%AC%BEmosw&vt=4",
           "date": "2026-05-27"
         }
       ],
       "_verification": "verified",
       "_date_ok": true,
-      "_fetched_by": "web_fetch"
+      "_fetched_by": "bulk_fetch.py (Tavily)"
     },
     {
-      "id": "intel-w1-a4",
-      "date": "2026-05-22",
+      "id": "intel-bulk-927",
+      "date": "2026-05-27",
       "priority": "mid",
       "signal": "trend",
-      "title": "Anthropic: Project Glasswing Initial Update",
-      "body": "Anthropic发布Project Glasswing阶段性更新——联合AWS/Apple/Google/Microsoft/NVIDIA等保障关键软件安全。",
-      "sowhat": "全球顶级科技公司首次在AI安全领域形成产业联盟，对行业安全标准有标杆意义",
+      "title": "小红书拿下2026世界杯转播权，吸引男性用户剑指2亿日活大关",
+      "body": "# 小红书拿下2026世界杯转播权，吸引男性用户剑指2亿日活大关. 据《晚点LatePost》独家获悉，小红书已正式成为2026年美加墨世界杯持权转播商，是除中央广播电视总台、咪咕之外，国内唯一同时拥有世界杯直播、转播及短视频全版权的内容平台，正式入局顶级体育赛事赛道。. 据了解，小红书此次拿下相关权益的价格并未高于往届。作为参照，2022年卡塔尔世界杯期间，咪咕和抖音从央视获得持权转播权的价格曾",
+      "sowhat": "",
       "tags": [
-        "#Anthropic",
-        "#AI安全",
-        "#产业联盟"
+        "#competitor"
       ],
-      "company": [
-        "Anthropic"
-      ],
+      "company": [],
       "industry": [
         "AI"
       ],
       "type": "产品动态",
-      "timeline": "2026-05-22 Glasswing建设更新 · 2026-04 项目启动",
-      "scope": "海外",
+      "timeline": "2026-05-27",
+      "scope": "国内",
       "sources": [
         {
-          "name": "Anthropic Research",
-          "url": "https://www.anthropic.com/research",
-          "date": "2026-05-22"
+          "name": "小红书拿下2026世界杯转播权，吸引男性用户剑指2亿日活大关",
+          "url": "https://h5.ifeng.com/c/vivoArticle/v002f5BqLWa--4--Ip245FSe2G6xEPTd6P1PFCmaKS6nUDd2w__?vivoBusiness=hiboardnews",
+          "date": "2026-05-27"
         }
       ],
       "_verification": "verified",
       "_date_ok": true,
-      "_fetched_by": "web_fetch"
+      "_fetched_by": "bulk_fetch.py (Tavily)"
+    },
+    {
+      "id": "intel-bulk-928",
+      "date": "2026-05-27",
+      "priority": "mid",
+      "signal": "trend",
+      "title": "拼多多2026年Q1营收同比增长11%，净利下滑15% - 购物攻略",
+      "body": "2026年5月27日，拼多多发布2026年第一季度财报，数据显示期内营收1062亿元，同比增长11%；归属于普通股股东的净利润为125亿元，同比下降15%。该季度是“三年再造拼多多”战略",
+      "sowhat": "",
+      "tags": [
+        "#competitor"
+      ],
+      "company": [],
+      "industry": [
+        "AI"
+      ],
+      "type": "产品动态",
+      "timeline": "2026-05-27",
+      "scope": "国内",
+      "sources": [
+        {
+          "name": "拼多多2026年Q1营收同比增长11%，净利下滑15% - 购物攻略",
+          "url": "https://post.smzdm.com/p/a70xnmr9",
+          "date": "2026-05-27"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "bulk_fetch.py (Tavily)"
     },
     {
       "id": "intel-142",
