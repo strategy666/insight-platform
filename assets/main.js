@@ -493,7 +493,9 @@ function renderCompetitors() {
     competitorData.forEach(it => {
         companyCounts[it.company] = (companyCounts[it.company] || 0) + 1;
     });
-    const companies = Object.keys(companyCounts).sort((a, b) => companyCounts[b] - companyCounts[a]);
+    const companies = Object.keys(companyCounts)
+        .filter(c => c && c !== 'undefined' && c !== 'null')
+        .sort((a, b) => companyCounts[b] - companyCounts[a]);
     
     // 公司 tabs（第一个加「全部」）
     const tabsHtml = '<button class="chip comp-chip active" onclick="switchCompetitor(\'all\')">全部</button>' + companies.map((c, idx) => {
