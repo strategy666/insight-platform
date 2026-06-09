@@ -2,7 +2,7 @@
   "_meta": {
     "description": "Part1 市场信息洞察 + gap-fill from 互联网公共战略参考232期 / 营销早咖Vol.12 / 腾讯研究院AI速递",
     "last_updated": "2026-06-09",
-    "total_items": 44,
+    "total_items": 41,
     "window": "past 14d (2026-05-25 ~ 2026-06-08) + 重点回溯(Tech星球2026-03)",
     "source_first": true,
     "fetch_method": "P0全渠道:OCE_Changelog+微信广告动态+钛媒体+第一财经+华尔街见闻+澎湃新闻+21经济网+虎嗅+界面新闻 + P1科技媒体:36氪+Tech星球+铅笔道+财新+MBA智库",
@@ -302,7 +302,7 @@
       "date": "2026-06-06",
       "priority": "mid",
       "signal": "trend",
-      "title": "美团2026年Q1营收910亿元，环比减亏96亿元|王兴|零售|总营收|知名企业",
+      "title": "美团2026年Q1营收910亿元，环比减亏96亿元",
       "company": [],
       "timeline": [
         {
@@ -512,44 +512,11 @@
       ]
     },
     {
-      "id": "intel-bulk-908",
-      "date": "2026-06-05",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "ChatGPT Memory Dreaming Update: OpenAI Rewrites ... - Tech Times",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-06-05",
-          "event": "2026-06-05"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "ChatGPT Memory Dreaming Update: OpenAI R",
-          "url": "https://www.techtimes.com/articles/317840/20260605/chatgpt-memory-dreaming-update-openai-rewrites-personalization-engine-limits-audit-trail.htm",
-          "date": "2026-06-05"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "OpenAI began rolling out Dreaming V3 on June 4, 2026, a new ChatGPT memory architecture that replaces the manually curated saved-memories list with a background synthesis process that reads across yea",
-      "sowhat_for_kuaishou": "AI行业动态影响快手AI战略布局与研发资源分配",
-      "takeaway": [
-        "ChatGPT Memory Dreaming Update: OpenAI Rewrites ... - Tech Times"
-      ],
-      "tracks": [
-        "AI"
-      ]
-    },
-    {
       "id": "intel-bulk-910",
       "date": "2026-06-05",
       "priority": "mid",
       "signal": "trend",
-      "title": "ChatGPT's New 'Dreaming' Memory, Explained | FindSkill.ai",
+      "title": "ChatGPT's New 'Dreaming' Memory, Explained",
       "company": [],
       "timeline": [
         {
@@ -1600,50 +1567,6 @@
       ]
     },
     {
-      "id": "intel-141",
-      "date": "2026-06-01",
-      "priority": "high",
-      "signal": "opportunity",
-      "title": "巨量本地推API全面开放：12个新接口解锁全生命周期自动化投放，竞对工具生态实现又一次跃升",
-      "tldr": "6月1日OCE Changelog发布了本地推API最大单次升级：新增项目/单元删除、账户预算更新、成本保障状态查询、定向包管理等6个接口，同时优化6个存量接口（新增预估覆盖人数、视频标签等字段）。这意味着第三方服务商和ISV可以实现对本地推投放的完整自动化管理——从创建→优化→删除→预算调整→赔付查询→定向组合的全流程。本地推API开放程度已达到与巨量引擎主站相当的水平。",
-      "company": [
-        "字节"
-      ],
-      "tracks": [
-        "广告",
-        "本地生活",
-        "SaaS工具"
-      ],
-      "metrics": {
-        "新增接口": "6个",
-        "存量优化": "6个",
-        "覆盖能力": "项目/单元删除+预算更新+定向包+成本保障"
-      },
-      "takeaway": [
-        "本地推API能力从'只读'升级为'全生命周期管理'，服务商自动化空间翻倍",
-        "新增删除/预算接口意味着投手可以完全通过API操作，无需登录后台",
-        "定向包管理能力让服务商可沉淀投放经验为可复用模板",
-        "快手磁力本地推API开放程度差距显著，需加速追赶"
-      ],
-      "sowhat_for_kuaishou": "本地推API的全面开放让字节生态服务商可以通过代码实现规模化、自动化投放管理。快手磁力本地推目前API能力聚焦于创建和查询，缺失项目删除、预算批量更新、定向包等关键管理能力。这意味着：①字节服务商可开发更智能的SaaS工具吸引头腰部客户 ②快手本地推在工具生态层面的竞争劣势加深 ③建议加速补齐磁力本地推API能力（优先：项目删除、预算批量更新、定向包管理）。",
-      "sources": [
-        {
-          "name": "巨量引擎开放平台Changelog 2026-06-01",
-          "url": "https://open.oceanengine.com/changelog/1",
-          "date": "2026-06-01"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "scope": "国内",
-      "timeline": [
-        {
-          "date": "2026-06-01",
-          "event": "巨量本地推API全面开放：12个新接口解锁全生命周期自动化投放，竞对工具生态实现又一次跃升"
-        }
-      ]
-    },
-    {
       "id": "intel-bulk-920",
       "date": "2026-06-01",
       "priority": "mid",
@@ -1676,47 +1599,6 @@
         "体育",
         "AI",
         "电商"
-      ]
-    },
-    {
-      "id": "intel-135",
-      "date": "2026-05-30",
-      "priority": "medium",
-      "signal": "trend",
-      "title": "腾讯广告「综合兴趣」定向全量上线：数据能力重构，旧定向11-12月下线",
-      "tldr": "腾讯广告投放平台正式全量上线'综合兴趣'定向，基于数据能力升级替代'兴趣行为'定向。目前两套定向并存（二选一），旧定向预计2026年11-12月下线。新定向有望提升广告主人群精准度和投放ROI。",
-      "company": [
-        "腾讯"
-      ],
-      "tracks": [
-        "广告",
-        "数据能力"
-      ],
-      "metrics": {
-        "旧定向下线": "2026年11-12月",
-        "定向切换": "二选一，综合兴趣推荐"
-      },
-      "takeaway": [
-        "腾讯广告人群定向精度进一步提升，电商/本地生活广告主投放ROI有望改善",
-        "定向升级对快手磁力金牛形成技术竞争压力",
-        "微信生态（视频号+朋友圈+公众号）广告产品矩阵持续强化"
-      ],
-      "sowhat_for_kuaishou": "腾讯广告定向升级意味着微信生态广告竞争力进一步增强。快手需加速磁力金牛人群定向能力建设，特别是结合快手电商+本地生活数据优势构建差异化定向能力。",
-      "sources": [
-        {
-          "name": "微信广告官方公告",
-          "url": "https://ad.weixin.qq.com/news?type=promotion",
-          "date": "2026-05-30"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "scope": "国内",
-      "timeline": [
-        {
-          "date": "2026-05-30",
-          "event": "腾讯广告「综合兴趣」定向全量上线：数据能力重构，旧定向11-12月下线"
-        }
       ]
     },
     {
