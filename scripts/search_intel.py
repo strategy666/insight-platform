@@ -66,6 +66,93 @@ def fetch_page(url, timeout=15):
     except: pass
     return None
 
+# ========== DIGEST DETECTION & EXPLOSION ==========
+def is_digest(title, body=""):
+    """Detect multi-topic digest/weekly articles that should be split into individual events"""
+    text = title + ' ' + (body or '')[:200]
+    
+    # Strongest signal: known weekly/digest markers
+    if re.search(r'(?:WEEKLY|周刊|周报|日报|早咖|快报|速递|一周大事|本周大事|今日大事|一周AI|每日AI|AI速览|情报速递|行业周报|商业市场|头条大事|公司动态)', text):
+        return True
+    
+    # Multiple distinct entities (companies/projects) joined by "+"
+    entities = re.findall(r'(?:美团|字节|抖音|快手|阿里|淘宝|腾讯|微信|小红书|拼多多|京东|百度|网易|滴滴|可灵|豆包|混元|DeepSeek|OpenAI|Anthropic|Claude|ChatGPT|Gemini|宇树|文远|英伟达|NVIDIA|Meta|Google|Microsoft|Apple|Tesla|字节跳动|B站|知乎|搜狐|新浪|SHEIN|Temu|速卖通|霸王茶姬|上汽|滴滴|美团)', title)
+    unique_count = len(set(entities))
+    if unique_count >= 3:
+        return True
+    
+    # 3+ "+" operators joining distinct clauses (likely different events)
+    plus_count = len(re.findall(r'\+', title))
+    if plus_count >= 3:
+        return True
+    
+    return False
+
+def extract_sub_topics(title, body=""):
+    """Extract individual sub-topics from a digest article, returning search keywords for each"""
+    keywords_list = []
+    
+    # Split by "+" to get individual event segments
+    # Remove leading text before ":" (the theme)
+    segments = []
+    colon_at = title.find('：')
+    if colon_at == -1: colon_at = title.find(':')
+    main_text = title[colon_at+1:] if colon_at > 0 else title
+    
+    # Split by "+" 
+    raw_segs = re.split(r'\s*\+\s*', main_text)
+    for seg in raw_segs:
+        seg = seg.strip()
+        if len(seg) >= 8:
+            # Extract key entities as search keywords
+            entities = re.findall(r'([\u4e00-\u9fff]{2,6}(?:科技|智能|机器人|AI|IPO|融资|财报|发布|上市|融资|收购|合作|下线|上线|升级|改版|裁员|盈利|亏损))', seg)
+            if entities:
+                kw = ' '.join(entities[:3])
+            else:
+                # Use first 20 chars as keyword
+                kw = seg[:20]
+            if kw and kw not in keywords_list:
+                keywords_list.append(kw)
+    
+    # If no segments found from "+", try to extract from body paragraphs
+    if not keywords_list:
+        # Look for patterns like "###" or numbered items
+        body_items = re.findall(r'(?:#{1,3}|^\d+[\.、])\s*([\u4e00-\u9fffA-Za-z0-9\s]+?)(?=$|\n)', body[:1000], re.M)
+        for bi in body_items[:5]:
+            kw = bi.strip()[:30]
+            if kw and kw not in keywords_list:
+                keywords_list.append(kw)
+    
+    return keywords_list[:5]  # Cap at 5 sub-topics
+
+def explode_digest(title, body, source_url):
+    """Explode a digest article: for each sub-topic, search Tavily for a dedicated article.
+    Returns list of (topic_kw, search_url, search_title) tuples."""
+    sub_topics = extract_sub_topics(title, body)
+    if not sub_topics:
+        return []
+    
+    results = []
+    for i, kw in enumerate(sub_topics[:5]):
+        search_results = tavily_search(kw, n=3)
+        for sr in search_results:
+            sr_url = sr.get('url', '')
+            sr_title = sr.get('title', '')
+            if not sr_url or not sr_title:
+                continue
+            # Skip if the search result IS the digest itself
+            if sr_url == source_url:
+                continue
+            # Skip if title looks like a digest
+            if is_digest(sr_title):
+                continue
+            results.append((kw, sr_url, sr_title))
+            break  # Take first valid result per sub-topic
+        if i < len(sub_topics) - 1:
+            time.sleep(0.3)
+    
+    return results
+
 def extract_articles_from_html(html, base_url):
     """Extract article links with titles and dates from a page HTML"""
     articles = []
@@ -427,28 +514,53 @@ def main():
             body = a.get('body', '') or title
             source_url = a.get('url', '')
             
-            item = {
-                "id": f"intel-{len(items)+200}",
-                "date": pub_date.strftime('%Y-%m-%d'),
-                "priority": "mid",
-                "signal": "trend",
-                "title": title[:60],
-                "body": body[:200],
-                "sowhat": "",
-                "tags": ["#" + t for t in a.get('tags', [])[:3]],
-                "company": classify_company(title),
-                "industry": classify_industry(title),
-                "type": classify_type(title),
-                "timeline": pub_date.strftime('%Y-%m-%d') + " 本次事件",
-                "scope": "国内",
-                "sources": [{"name": a.get('source_channel',''), "url": source_url, "date": pub_date.strftime('%Y-%m-%d')}],
-                "_verification": "verified",
-                "_date_ok": True,
-                "_fetched_by": "search_intel.py",
-            }
-            items.append(item)
-            validated_count += 1
-            print(f"   ✅ [微信] [{pub_date:%Y-%m-%d}] {title[:50]}")
+            # ===== DIGEST CHECK for WeChat articles =====
+            if is_digest(title, body):
+                print(f"   🔀 [微信大杂烩] {title[:50]}")
+                sub_results = explode_digest(title, body, source_url)
+                for kw, sub_url, sub_title in sub_results:
+                    sub_html, sub_date, sub_valid = validate_item(sub_url, sub_title, cutoff)
+                    if not sub_valid: continue
+                    sub_body = re.sub(r'<[^>]+>', ' ', sub_html)
+                    sub_body = re.sub(r'\s+', ' ', sub_body).strip()[:200]
+                    sub_item = {
+                        "id": f"intel-{len(items)+400}",
+                        "date": sub_date.strftime('%Y-%m-%d'),
+                        "priority": "mid", "signal": "trend",
+                        "title": sub_title[:80], "body": sub_body, "sowhat": "",
+                        "tags": ["#" + t for t in a.get('tags', [])[:3]],
+                        "company": classify_company(sub_title),
+                        "industry": classify_industry(sub_title),
+                        "type": classify_type(sub_title),
+                        "timeline": sub_date.strftime('%Y-%m-%d') + " 本次事件",
+                        "scope": "国内",
+                        "sources": [{"name": a.get('source_channel',''), "url": sub_url, "date": sub_date.strftime('%Y-%m-%d'),
+                                     "note": f"拆自微信聚合文章: {title[:50]}（搜索词: {kw}）"}],
+                        "_verification": "verified", "_date_ok": True,
+                        "_fetched_by": "search_intel.py (wechat-digest-explode)",
+                    }
+                    items.append(sub_item)
+                    validated_count += 1
+                    print(f"      ✅ [{sub_date:%Y-%m-%d}] {sub_title[:50]}")
+            else:
+                item = {
+                    "id": f"intel-{len(items)+200}",
+                    "date": pub_date.strftime('%Y-%m-%d'),
+                    "priority": "mid", "signal": "trend",
+                    "title": title[:80], "body": body[:200], "sowhat": "",
+                    "tags": ["#" + t for t in a.get('tags', [])[:3]],
+                    "company": classify_company(title),
+                    "industry": classify_industry(title),
+                    "type": classify_type(title),
+                    "timeline": pub_date.strftime('%Y-%m-%d') + " 本次事件",
+                    "scope": "国内",
+                    "sources": [{"name": a.get('source_channel',''), "url": source_url, "date": pub_date.strftime('%Y-%m-%d')}],
+                    "_verification": "verified", "_date_ok": True,
+                    "_fetched_by": "search_intel.py",
+                }
+                items.append(item)
+                validated_count += 1
+                print(f"   ✅ [微信] [{pub_date:%Y-%m-%d}] {title[:50]}")
             continue
         
         # Non-weixin: full validation
@@ -471,28 +583,67 @@ def main():
         # Get first 200 chars as body
         body = page_text[:200]
         
-        item = {
-            "id": f"intel-{len(items)+200}",
-            "date": pub_date.strftime('%Y-%m-%d'),
-            "priority": "mid",
-            "signal": "trend",
-            "title": title[:60],
-            "body": body,
-            "sowhat": "",
-            "tags": ["#" + t for t in a.get('tags', [])[:3]],
-            "company": classify_company(title),
-            "industry": classify_industry(title),
-            "type": classify_type(title),
-            "timeline": pub_date.strftime('%Y-%m-%d') + " 本次事件",
-            "scope": "国内",
-            "sources": [{"name": a.get('source_channel','') or title[:50], "url": a['url'], "date": pub_date.strftime('%Y-%m-%d')}],
-            "_verification": "verified",
-            "_date_ok": True,
-            "_fetched_by": "search_intel.py",
-        }
-        items.append(item)
-        validated_count += 1
-        print(f"   ✅ [{pub_date:%Y-%m-%d}] {title[:50]}")
+        # ===== DIGEST CHECK: explode multi-topic articles into individual events =====
+        if is_digest(title, body):
+            print(f"   🔀 检测到大杂烩: {title[:50]}")
+            print(f"      拆分为子事件，逐个搜索独立文章...")
+            sub_results = explode_digest(title, body, a['url'])
+            for kw, sub_url, sub_title in sub_results:
+                sub_html, sub_date, sub_valid = validate_item(sub_url, sub_title, cutoff)
+                if not sub_valid:
+                    print(f"      ⏭️ 子事件不可用: {sub_title[:40]}")
+                    continue
+                sub_body = re.sub(r'<[^>]+>', ' ', sub_html)
+                sub_body = re.sub(r'\s+', ' ', sub_body).strip()[:200]
+                sub_item = {
+                    "id": f"intel-{len(items)+300}",
+                    "date": sub_date.strftime('%Y-%m-%d'),
+                    "priority": "mid",
+                    "signal": "trend",
+                    "title": sub_title[:80],
+                    "body": sub_body,
+                    "sowhat": "",
+                    "tags": ["#" + t for t in a.get('tags', [])[:3]],
+                    "company": classify_company(sub_title),
+                    "industry": classify_industry(sub_title),
+                    "type": classify_type(sub_title),
+                    "timeline": sub_date.strftime('%Y-%m-%d') + " 本次事件",
+                    "scope": "国内",
+                    "sources": [
+                        {"name": a.get('source_channel','') or title[:50], "url": sub_url, "date": sub_date.strftime('%Y-%m-%d'),
+                         "note": f"拆自聚合文章: {title[:50]}（搜索词: {kw}）"}
+                    ],
+                    "_verification": "verified",
+                    "_date_ok": True,
+                    "_fetched_by": "search_intel.py (digest-explode)",
+                }
+                items.append(sub_item)
+                validated_count += 1
+                print(f"      ✅ [{sub_date:%Y-%m-%d}] {sub_title[:50]}")
+            print(f"   拆出 {len([1 for kw,_,_ in sub_results if any(i['title']==_ for i in items)])} 个子事件")
+        else:
+            item = {
+                "id": f"intel-{len(items)+200}",
+                "date": pub_date.strftime('%Y-%m-%d'),
+                "priority": "mid",
+                "signal": "trend",
+                "title": title[:80],
+                "body": body,
+                "sowhat": "",
+                "tags": ["#" + t for t in a.get('tags', [])[:3]],
+                "company": classify_company(title),
+                "industry": classify_industry(title),
+                "type": classify_type(title),
+                "timeline": pub_date.strftime('%Y-%m-%d') + " 本次事件",
+                "scope": "国内",
+                "sources": [{"name": a.get('source_channel','') or title[:50], "url": a['url'], "date": pub_date.strftime('%Y-%m-%d')}],
+                "_verification": "verified",
+                "_date_ok": True,
+                "_fetched_by": "search_intel.py",
+            }
+            items.append(item)
+            validated_count += 1
+            print(f"   ✅ [{pub_date:%Y-%m-%d}] {title[:50]}")
 
     print(f"\n📊 通过校验: {validated_count}/{len(unique_candidates)}")
 
