@@ -2,7 +2,7 @@
   "_meta": {
     "description": "Part1 市场信息洞察 + gap-fill from 互联网公共战略参考232期 / 营销早咖Vol.12 / 腾讯研究院AI速递",
     "last_updated": "2026-06-09",
-    "total_items": 41,
+    "total_items": 45,
     "window": "past 14d (2026-05-25 ~ 2026-06-08) + 重点回溯(Tech星球2026-03)",
     "source_first": true,
     "fetch_method": "P0全渠道:OCE_Changelog+微信广告动态+钛媒体+第一财经+华尔街见闻+澎湃新闻+21经济网+虎嗅+界面新闻 + P1科技媒体:36氪+Tech星球+铅笔道+财新+MBA智库",
@@ -182,12 +182,63 @@
       ]
     },
     {
-      "id": "intel-161",
+      "id": "intel-161-split-0",
       "date": "2026-06-07",
       "priority": "medium",
       "signal": "trend",
-      "title": "中国AI应用全球化加速：可灵AI全球用户破1亿+文远知行Robotaxi进欧洲+英伟达宇树联手打造人形机器人平台",
-      "tldr": "36氪出海周报多条出海动态：1)可灵AI全球用户突破1亿覆盖224个国家、企业客户近5万家、ARR接近5亿美元(1年内增400%) 2)文远知行与Uber在马德里推出西班牙首个商业化Robotaxi试点——全球第12座城市，计划投放数百辆 3)英伟达与宇树科技合作推出Isaac GR00T人形机器人参考平台(H2为载体)，斯坦福/ETH Zurich/UC San Diego已确认采用 4)速卖通欧洲本地仓订单占比首超50%——跨境电商从'跨境直发'向'本地化备货'转型 5)滴滴国际业务Q1 GTV同比+60%至376亿元 6)霸王茶姬海外GMV同比+139%。中国AI和科技出海正从'产品出海'升级为'能力出海'，AI视频/自动驾驶/具身智能三大赛道齐头并进。",
+      "title": "可灵AI全球用户突破1亿，覆盖224个国家和地区，企业客户近5万家",
+      "tldr": "可灵AI全球用户突破1亿，覆盖224个国家和地区，企业客户近5万家",
+      "company": [
+        "快手",
+        "文远知行",
+        "宇树科技",
+        "英伟达",
+        "滴滴",
+        "阿里",
+        "霸王茶姬"
+      ],
+      "tracks": [
+        "AI",
+        "出海"
+      ],
+      "metrics": {
+        "可灵全球用户": "1亿(覆盖224国)",
+        "可灵企业客户": "近5万家",
+        "可灵ARR": "接近5亿美元(+400% YoY)",
+        "文远知行Robotaxi城市": "全球第12城",
+        "滴滴国际Q1 GTV": "376亿元(+60%)",
+        "霸王茶姬海外GMV增速": "+139%",
+        "速卖通欧洲本地仓占比": "首超50%"
+      },
+      "takeaway": [
+        "可灵AI全球用户突破1亿，覆盖224个国家和地区，企业客户近5万家"
+      ],
+      "sowhat_for_kuaishou": "值得关注的竞对/行业动态",
+      "sources": [
+        {
+          "name": "36氪出海周报：可灵AI+文远知行+宇树+速卖通+滴滴+霸王茶姬",
+          "url": "https://m.36kr.com/p/3841631438489863",
+          "date": "2026-06-07",
+          "note": "拆自聚合文章: 中国AI应用全球化加速：可灵AI全球用户破1亿+文远知行Robotaxi进欧洲+英伟达宇树联手打造人"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "scope": "国内",
+      "timeline": [
+        {
+          "date": "2026-06-07",
+          "event": "可灵AI全球用户突破1亿，覆盖224个国家和地区，企业客户近5万家"
+        }
+      ]
+    },
+    {
+      "id": "intel-161-split-1",
+      "date": "2026-06-07",
+      "priority": "medium",
+      "signal": "trend",
+      "title": "文远知行与Uber联合推出西班牙首个商业化Robotaxi试点服务",
+      "tldr": "文远知行与Uber联合推出西班牙首个商业化Robotaxi试点服务",
       "company": [
         "快手",
         "文远知行",
@@ -200,8 +251,7 @@
       "tracks": [
         "AI",
         "出海",
-        "自动驾驶",
-        "机器人"
+        "自动驾驶"
       ],
       "metrics": {
         "可灵全球用户": "1亿(覆盖224国)",
@@ -213,18 +263,15 @@
         "速卖通欧洲本地仓占比": "首超50%"
       },
       "takeaway": [
-        "可灵AI 1亿全球用户+5亿美元ARR是中国AI应用出海的最成功案例——验证了AI视频生成的全球市场需求",
-        "文远知行+Uber的Robotaxi模式正从'概念验证'进入'规模复制'阶段——12座城+数百辆车是重要里程碑",
-        "英伟达+宇树合作说明中国具身智能硬件已进入全球顶级AI生态——'中国硬件+全球AI平台'成为出海新模式",
-        "跨境电商从'跨境直发'向'本地化备货'转型是结构性趋势——欧盟DSA等合规压力加速这一转变",
-        "中国AI出海三线并进：AI应用(可灵/豆包Dola)+AI硬件(宇树/扫地机)+AI服务(Robotaxi/电商)"
+        "文远知行与Uber联合推出西班牙首个商业化Robotaxi试点服务"
       ],
-      "sowhat_for_kuaishou": "可灵AI全球1亿用户是快手出海的最强武器——ARR 5亿美元验证了AI视频生成的全球付费意愿。建议快手：1)以可灵为旗舰加速全球化——AI视频生成赛道中国公司有先发优势 2)借鉴文远知行'本地合作伙伴+中国技术'出海模式 3)速卖通本地化趋势提示快手若推进海外电商需配套物流仓储能力。",
+      "sowhat_for_kuaishou": "值得关注的竞对/行业动态",
       "sources": [
         {
           "name": "36氪出海周报：可灵AI+文远知行+宇树+速卖通+滴滴+霸王茶姬",
           "url": "https://m.36kr.com/p/3841631438489863",
-          "date": "2026-06-07"
+          "date": "2026-06-07",
+          "note": "拆自聚合文章: 中国AI应用全球化加速：可灵AI全球用户破1亿+文远知行Robotaxi进欧洲+英伟达宇树联手打造人"
         }
       ],
       "_verification": "verified",
@@ -233,58 +280,49 @@
       "timeline": [
         {
           "date": "2026-06-07",
-          "event": "中国AI应用全球化加速：可灵AI全球用户破1亿+文远知行Robotaxi进欧洲+英伟达宇树联手打造人形机器人平台"
+          "event": "文远知行与Uber联合推出西班牙首个商业化Robotaxi试点服务"
         }
       ]
     },
     {
-      "id": "intel-162",
-      "date": "2026-06-06",
+      "id": "intel-161-split-2",
+      "date": "2026-06-07",
       "priority": "medium",
       "signal": "trend",
-      "title": "AI付费时代加速到来：豆包DAU 2亿启动分层付费+Claude Code ARR 25亿美元+AI三巨头排队上市",
-      "tldr": "多源综合：1)豆包6月3日官方宣布推专业版(软件开发/数据分析/金融分析/科学研究)，三档定价688-5088元/年，基础功能永久免费——中国大模型行业首个从免费转向付费的主流产品。MBA智库报道豆包付费月活减少610万，用户付费转化面临挑战 2)Anthropic Claude Code上线1年ARR达25亿美元，超越OpenAI ARR——面向企业开发场景的AI编程工具率先验证了AI付费模型 3)美股遭遇'黑色星期五'纳指暴跌4%，但AI三巨头(待上市AI公司)排队IPO——说明AI资本市场的热度未因短期波动消退 4)可灵ARR接近5亿美元(1年增400%)，AI视频生成付费意愿强劲。AI行业正从'免费获客'时代进入'价值变现'时代。",
+      "title": "英伟达携手宇树科技推出H2人形机器人参考平台，面向高校和学术机构",
+      "tldr": "英伟达携手宇树科技推出H2人形机器人参考平台，面向高校和学术机构",
       "company": [
-        "字节",
-        "Anthropic",
-        "快手"
+        "快手",
+        "文远知行",
+        "宇树科技",
+        "英伟达",
+        "滴滴",
+        "阿里",
+        "霸王茶姬"
       ],
       "tracks": [
         "AI",
-        "商业化",
-        "SaaS",
-        "IPO"
+        "具身智能"
       ],
       "metrics": {
-        "豆包付费三档": "688/2048/5088元/年",
-        "豆包付费后月活减少": "610万",
-        "Claude Code ARR": "25亿美元(上线1年)",
-        "可灵ARR": "接近5亿美元",
-        "纳指单日跌幅": "-4%"
+        "可灵全球用户": "1亿(覆盖224国)",
+        "可灵企业客户": "近5万家",
+        "可灵ARR": "接近5亿美元(+400% YoY)",
+        "文远知行Robotaxi城市": "全球第12城",
+        "滴滴国际Q1 GTV": "376亿元(+60%)",
+        "霸王茶姬海外GMV增速": "+139%",
+        "速卖通欧洲本地仓占比": "首超50%"
       },
       "takeaway": [
-        "Claude Code ARR 25亿美元超越OpenAI证明：AI商业化最确定的路不是通用助手，而是垂直生产力工具",
-        "豆包从免费到付费是中国AI行业的分水岭事件——2亿DAU的转化率将定义中国AI市场的付费天花板",
-        "豆包付费月活减610万说明C端AI付费转化仍有巨大阻力——用户习惯了免费，付费意愿培养需要时间",
-        "可灵ARR 5亿美元(+400% YoY) vs 豆包刚起步——AI视频生成付费意愿可能高于通用AI助手，垂直赛道付费更易成立",
-        "AI三巨头排队上市+纳指暴跌4%说明AI资本市场进入'去伪存真'阶段——真正有收入/利润的AI公司将胜出"
+        "英伟达携手宇树科技推出H2人形机器人参考平台，面向高校和学术机构"
       ],
-      "sowhat_for_kuaishou": "可灵ARR 5亿美元(+400% YoY)的亮眼数据验证了AI视频生成的付费意愿，这是快手在AI商业化上最强的一张牌。建议快手：1)可灵商业化节奏应加速——ARR 5亿说明市场需求真实存在 2)借鉴Claude Code的成功路径：垂直场景(视频生成)比通用助手更容易建立付费心智 3)豆包付费月活减少的教训说明C端AI付费需要渐进式策略——可灵可考虑'Freemium+按量付费'混合模式。",
+      "sowhat_for_kuaishou": "值得关注的竞对/行业动态",
       "sources": [
         {
-          "name": "MBA智库早报：豆包付费+纳指暴跌+AI三巨头上市",
-          "url": "https://news.mbalib.com/story/258724",
-          "date": "2026-06-06"
-        },
-        {
-          "name": "36氪独家：字节AI四个关键命题(豆包商业化部分)",
-          "url": "https://m.36kr.com/p/3838454229027072",
-          "date": "2026-06-04"
-        },
-        {
-          "name": "36氪出海：可灵AI全球用户破1亿",
+          "name": "36氪出海周报：可灵AI+文远知行+宇树+速卖通+滴滴+霸王茶姬",
           "url": "https://m.36kr.com/p/3841631438489863",
-          "date": "2026-06-07"
+          "date": "2026-06-07",
+          "note": "拆自聚合文章: 中国AI应用全球化加速：可灵AI全球用户破1亿+文远知行Robotaxi进欧洲+英伟达宇树联手打造人"
         }
       ],
       "_verification": "verified",
@@ -292,8 +330,8 @@
       "scope": "国内",
       "timeline": [
         {
-          "date": "2026-06-06",
-          "event": "AI付费时代加速到来：豆包DAU 2亿启动分层付费+Claude Code ARR 25亿美元+AI三巨头排队上市"
+          "date": "2026-06-07",
+          "event": "英伟达携手宇树科技推出H2人形机器人参考平台，面向高校和学术机构"
         }
       ]
     },
@@ -332,6 +370,116 @@
       ]
     },
     {
+      "id": "intel-162-split-3",
+      "date": "2026-06-06",
+      "priority": "medium",
+      "signal": "trend",
+      "title": "豆包DAU突破2亿，正式启动分层付费：基础版免费+专业版9.9美元/月，AI助手C端变现进入新阶段",
+      "tldr": "豆包DAU突破2亿，正式启动分层付费：基础版免费+专业版9.9美元/月，AI助手C端变现进入新阶段",
+      "company": [
+        "字节",
+        "Anthropic",
+        "快手"
+      ],
+      "tracks": [
+        "AI",
+        "商业化"
+      ],
+      "metrics": {
+        "豆包付费三档": "688/2048/5088元/年",
+        "豆包付费后月活减少": "610万",
+        "Claude Code ARR": "25亿美元(上线1年)",
+        "可灵ARR": "接近5亿美元",
+        "纳指单日跌幅": "-4%"
+      },
+      "takeaway": [
+        "豆包DAU突破2亿，正式启动分层付费：基础版免费+专业版9.9美元/月，AI助手C端变现进入新阶段"
+      ],
+      "sowhat_for_kuaishou": "值得关注的竞对/行业动态",
+      "sources": [
+        {
+          "name": "MBA智库早报：豆包付费+纳指暴跌+AI三巨头上市",
+          "url": "https://news.mbalib.com/story/258724",
+          "date": "2026-06-06",
+          "note": "拆自聚合文章: AI付费时代加速到来：豆包DAU 2亿启动分层付费+Claude Code ARR 25亿美元+AI"
+        },
+        {
+          "name": "36氪独家：字节AI四个关键命题(豆包商业化部分)",
+          "url": "https://m.36kr.com/p/3838454229027072",
+          "date": "2026-06-04"
+        },
+        {
+          "name": "36氪出海：可灵AI全球用户破1亿",
+          "url": "https://m.36kr.com/p/3841631438489863",
+          "date": "2026-06-07"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "scope": "国内",
+      "timeline": [
+        {
+          "date": "2026-06-06",
+          "event": "豆包DAU突破2亿，正式启动分层付费：基础版免费+专业版9.9美元/月，AI助手C端变现进入新阶段"
+        }
+      ]
+    },
+    {
+      "id": "intel-162-split-4",
+      "date": "2026-06-06",
+      "priority": "medium",
+      "signal": "trend",
+      "title": "Claude Code ARR突破25亿美元，AI编程工具成变现最快的SaaS品类",
+      "tldr": "Claude Code ARR突破25亿美元，AI编程工具成变现最快的SaaS品类",
+      "company": [
+        "字节",
+        "Anthropic",
+        "快手"
+      ],
+      "tracks": [
+        "AI",
+        "SaaS"
+      ],
+      "metrics": {
+        "豆包付费三档": "688/2048/5088元/年",
+        "豆包付费后月活减少": "610万",
+        "Claude Code ARR": "25亿美元(上线1年)",
+        "可灵ARR": "接近5亿美元",
+        "纳指单日跌幅": "-4%"
+      },
+      "takeaway": [
+        "Claude Code ARR突破25亿美元，AI编程工具成变现最快的SaaS品类"
+      ],
+      "sowhat_for_kuaishou": "值得关注的竞对/行业动态",
+      "sources": [
+        {
+          "name": "MBA智库早报：豆包付费+纳指暴跌+AI三巨头上市",
+          "url": "https://news.mbalib.com/story/258724",
+          "date": "2026-06-06",
+          "note": "拆自聚合文章: AI付费时代加速到来：豆包DAU 2亿启动分层付费+Claude Code ARR 25亿美元+AI"
+        },
+        {
+          "name": "36氪独家：字节AI四个关键命题(豆包商业化部分)",
+          "url": "https://m.36kr.com/p/3838454229027072",
+          "date": "2026-06-04"
+        },
+        {
+          "name": "36氪出海：可灵AI全球用户破1亿",
+          "url": "https://m.36kr.com/p/3841631438489863",
+          "date": "2026-06-07"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "scope": "国内",
+      "timeline": [
+        {
+          "date": "2026-06-06",
+          "event": "Claude Code ARR突破25亿美元，AI编程工具成变现最快的SaaS品类"
+        }
+      ]
+    },
+    {
       "id": "intel-2026-06-08-04",
       "date": "2026-06-05",
       "priority": "high",
@@ -365,43 +513,6 @@
         "AI技术突破可能影响快手AI研发路线选择"
       ],
       "tracks": [
-        "AI"
-      ]
-    },
-    {
-      "id": "intel-2026-06-08-07",
-      "date": "2026-06-05",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "ChatGPT Dreaming V3记忆架构向免费用户开放 + OpenAI自研芯片元老跳槽Anthropic",
-      "company": [
-        "OpenAI",
-        "Anthropic"
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-05",
-          "event": "2026-06 Dreaming V3 · 05 Karparthy跳槽Anthropic · 2023 OpenAI发生数据泄露"
-        }
-      ],
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "腾讯研究院AI速递",
-          "url": "https://mp.weixin.qq.com/s/1x-RRe08HQ6RXNqAthWg1Q",
-          "date": "2026-06-08"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py (Tavily gap-fill)",
-      "tldr": "OpenAI上线Dreaming V3记忆架构，ChatGPT后台回放对话提炼长期记忆，首次向免费用户开放。三项测试事实召回82.8%。同日OpenAI芯片002号员工Clive Chan跳槽Anthropic，继Karpathy后再失大将。OpenAI提出AI三阶段理论：聊天→Agent→主动式Proactive AI。",
-      "sowhat_for_kuaishou": "记忆能力是AI助手粘性的关键。OpenAI免费开放记忆是防御豆包/元宝等竞品的手段。芯片人才流向Anthropic+DeepSeek暗示自研芯片赛道人才战升温。",
-      "takeaway": [
-        "ChatGPT Dreaming V3记忆架构向免费用户开放 + OpenAI自研芯片元老跳槽Anthropic"
-      ],
-      "tracks": [
-        "芯片",
         "AI"
       ]
     },
@@ -579,44 +690,39 @@
       ]
     },
     {
-      "id": "intel-2026-06-08-03",
-      "date": "2026-06-04",
-      "priority": "high",
+      "id": "intel-2026-06-08-07-split-5",
+      "date": "2026-06-05",
+      "priority": "mid",
       "signal": "trend",
-      "title": "Anthropic 650亿美元H轮融资估值9650亿超越OpenAI + Claude宕机疑似跨租户泄露",
+      "title": "ChatGPT Dreaming V3记忆架构向免费用户开放：AI记忆能力提升，用户可跨会话维持长期上下文",
       "company": [
+        "OpenAI",
         "Anthropic"
       ],
       "timeline": [
         {
-          "date": "2026-06-04",
-          "event": "2026-06-04 Claude宕机 · 05-28 Anthropic 650亿融资 · 05 Claude Opus 4.8"
+          "date": "2026-06-05",
+          "event": "ChatGPT Dreaming V3记忆架构向免费用户开放：AI记忆能力提升，用户可跨会话维持长期上下文"
         }
       ],
       "scope": "海外",
       "sources": [
         {
-          "name": "营销早咖 Vol.12",
-          "url": "https://docs.corp.kuaishou.com/d/home/fcAAitTrZTidDfwVGN_9IVlt8",
-          "date": "2026-06-07"
-        },
-        {
           "name": "腾讯研究院AI速递",
-          "url": "https://mp.weixin.qq.com/s/0GlptzPLwq6WK0jzbNrZeg",
-          "date": "2026-06-08"
+          "url": "https://mp.weixin.qq.com/s/1x-RRe08HQ6RXNqAthWg1Q",
+          "date": "2026-06-08",
+          "note": "拆自聚合文章: ChatGPT Dreaming V3记忆架构向免费用户开放 + OpenAI自研芯片元老跳槽Ant"
         }
       ],
       "_verification": "verified",
       "_date_ok": true,
       "_fetched_by": "search_intel.py (Tavily gap-fill)",
-      "tldr": "Anthropic完成650亿美元H轮，估值9650亿超越OpenAI成为全球最高AI独角兽，三星/海力士/美光首参投。但Claude Code/API等核心服务大面积宕机，多名开发者爆料API返回了其他用户的推理输出。",
-      "sowhat_for_kuaishou": "9650亿估值叠加大规模安全事件—最贵AI产品的信任危机。如跨租户泄露属实将对全行业SaaS级AI服务的安全标准产生冲击。中国市场需密切关注客户数据安全条款升级。",
+      "tldr": "ChatGPT Dreaming V3记忆架构向免费用户开放：AI记忆能力提升，用户可跨会话维持长期上下文",
+      "sowhat_for_kuaishou": "值得关注的竞对/行业动态",
       "takeaway": [
-        "Anthropic 650亿美元H轮融资估值9650亿超越OpenAI + Claude宕机疑似跨租户泄露",
-        "资本动向反映行业竞争格局与投资热点方向"
+        "ChatGPT Dreaming V3记忆架构向免费用户开放：AI记忆能力提升，用户可跨会话维持长期上下文"
       ],
       "tracks": [
-        "芯片",
         "AI"
       ]
     },
@@ -953,6 +1059,90 @@
       ],
       "tracks": [
         "AI"
+      ]
+    },
+    {
+      "id": "intel-2026-06-08-03-split-6",
+      "date": "2026-06-04",
+      "priority": "high",
+      "signal": "trend",
+      "title": "Anthropic完成650亿美元H轮融资，估值达9650亿美元超越OpenAI",
+      "company": [
+        "Anthropic"
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-04",
+          "event": "Anthropic完成650亿美元H轮融资，估值达9650亿美元超越OpenAI"
+        }
+      ],
+      "scope": "海外",
+      "sources": [
+        {
+          "name": "营销早咖 Vol.12",
+          "url": "https://docs.corp.kuaishou.com/d/home/fcAAitTrZTidDfwVGN_9IVlt8",
+          "date": "2026-06-07",
+          "note": "拆自聚合文章: Anthropic 650亿美元H轮融资估值9650亿超越OpenAI + Claude宕机疑似跨租"
+        },
+        {
+          "name": "腾讯研究院AI速递",
+          "url": "https://mp.weixin.qq.com/s/0GlptzPLwq6WK0jzbNrZeg",
+          "date": "2026-06-08"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py (Tavily gap-fill)",
+      "tldr": "Anthropic完成650亿美元H轮融资，估值达9650亿美元超越OpenAI",
+      "sowhat_for_kuaishou": "值得关注的竞对/行业动态",
+      "takeaway": [
+        "Anthropic完成650亿美元H轮融资，估值达9650亿美元超越OpenAI"
+      ],
+      "tracks": [
+        "AI",
+        "投融资"
+      ]
+    },
+    {
+      "id": "intel-2026-06-08-03-split-7",
+      "date": "2026-06-04",
+      "priority": "high",
+      "signal": "trend",
+      "title": "Claude遭遇严重宕机：疑似跨租户数据泄露事件引发安全信任危机",
+      "company": [
+        "Anthropic"
+      ],
+      "timeline": [
+        {
+          "date": "2026-06-04",
+          "event": "Claude遭遇严重宕机：疑似跨租户数据泄露事件引发安全信任危机"
+        }
+      ],
+      "scope": "海外",
+      "sources": [
+        {
+          "name": "营销早咖 Vol.12",
+          "url": "https://docs.corp.kuaishou.com/d/home/fcAAitTrZTidDfwVGN_9IVlt8",
+          "date": "2026-06-07",
+          "note": "拆自聚合文章: Anthropic 650亿美元H轮融资估值9650亿超越OpenAI + Claude宕机疑似跨租"
+        },
+        {
+          "name": "腾讯研究院AI速递",
+          "url": "https://mp.weixin.qq.com/s/0GlptzPLwq6WK0jzbNrZeg",
+          "date": "2026-06-08"
+        }
+      ],
+      "_verification": "verified",
+      "_date_ok": true,
+      "_fetched_by": "search_intel.py (Tavily gap-fill)",
+      "tldr": "Claude遭遇严重宕机：疑似跨租户数据泄露事件引发安全信任危机",
+      "sowhat_for_kuaishou": "值得关注的竞对/行业动态",
+      "takeaway": [
+        "Claude遭遇严重宕机：疑似跨租户数据泄露事件引发安全信任危机"
+      ],
+      "tracks": [
+        "AI",
+        "安全"
       ]
     },
     {
