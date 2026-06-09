@@ -2,7 +2,7 @@
   "_meta": {
     "description": "Part1 市场信息洞察 + gap-fill from 互联网公共战略参考232期 / 营销早咖Vol.12 / 腾讯研究院AI速递",
     "last_updated": "2026-06-09",
-    "total_items": 66,
+    "total_items": 44,
     "window": "past 14d (2026-05-25 ~ 2026-06-08) + 重点回溯(Tech星球2026-03)",
     "source_first": true,
     "fetch_method": "P0全渠道:OCE_Changelog+微信广告动态+钛媒体+第一财经+华尔街见闻+澎湃新闻+21经济网+虎嗅+界面新闻 + P1科技媒体:36氪+Tech星球+铅笔道+财新+MBA智库",
@@ -43,75 +43,6 @@
         "合规",
         "AI",
         "出海"
-      ]
-    },
-    {
-      "id": "intel-bulk-901",
-      "date": "2026-07-01",
-      "priority": "high",
-      "signal": "trend",
-      "title": "中国公布《国务院关于对外投资的规定》 7月1日起施行",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-07-01",
-          "event": "2026-07-01"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "中国公布《国务院关于对外投资的规定》 7月1日起施行 - RFI - 法国国际广",
-          "url": "https://www.rfi.fr/cn/%E7%BB%8F%E8%B4%B8/20260601-%E4%B8%AD%E5%9B%BD%E5%85%AC%E5%B8%83-%E5%9B%BD%E5%8A%A1%E9%99%A2%E5%85%B3%E4%BA%8E%E5%AF%B9%E5%A4%96%E6%8A%95%E8%B5%84%E7%9A%84%E8%A7%84%E5%AE%9A-7%E6%9C%881%E6%97%A5%E8%B5%B7%E6%96%BD%E8%A1%8C",
-          "date": "2026-07-01"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "中国公布《国务院关于对外投资的规定》 7月1日起施行. 官媒新华社报导指，中国国务院总理李强日前签署国务院令，公布《国务院关于对外投资的规定》（以下简称《规定》），自2026年7月1日起施行。《规定》旨在推进高水平对外开放，促进对外投资高质量发展，有效实施对外投资管理，保护投资者及其对外投资合法权益，维护国家主权、安全、发展利益。. 报导指，《规定》共34条，主要规定了以下内容：一是明确适用范",
-      "sowhat_for_kuaishou": "政策变化可能影响AI业务出海与合规成本，建议法务/公共事务团队评估影响",
-      "takeaway": [
-        "中国公布《国务院关于对外投资的规定》 7月1日起施行 - RFI - 法国国际广播电台",
-        "政策变化可能影响业务合规成本与出海节奏"
-      ],
-      "tracks": [
-        "内容"
-      ]
-    },
-    {
-      "id": "intel-bulk-902",
-      "date": "2026-07-01",
-      "priority": "high",
-      "signal": "trend",
-      "title": "《国务院关于对外投资的规定》公布，2026年7月1日起施行",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-07-01",
-          "event": "2026-07-01"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "《国务院关于对外投资的规定》公布，2026年7月1日起施行 - 21经济网",
-          "url": "https://www.21jingji.com/article/20260601/herald/5b23e43fdccacedc678e1fde7f758e36.html",
-          "date": "2026-07-01"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "大湾区 一带一路 文旅 理财 投资通 21视频 直播 品牌活动. 《国务院关于对外投资的规定》公布，2026年7月1日起施行. 2026年06月01日 10:02 中国政府网. 第一条 为了推进高水平对外开放，促进对外投资高质量发展，有效实施对外投资管理，保护投资者及其对外投资合法权益，维护国家主权",
-      "sowhat_for_kuaishou": "政策变化可能影响AI业务出海与合规成本，建议法务/公共事务团队评估影响",
-      "takeaway": [
-        "《国务院关于对外投资的规定》公布，2026年7月1日起施行 - 21经济网",
-        "政策变化可能影响业务合规成本与出海节奏"
-      ],
-      "tracks": [
-        "内容",
-        "出行"
       ]
     },
     {
@@ -401,46 +332,6 @@
       ]
     },
     {
-      "id": "intel-2026-06-08-02",
-      "date": "2026-06-05",
-      "priority": "high",
-      "signal": "trend",
-      "title": "Anthropic呼吁全球放慢AI发展：80%代码由Claude撰写，递归自我改进即将到来",
-      "company": [
-        "Anthropic"
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-05",
-          "event": "2026-06-05 Anthropic呼吁减速 · 05-28 Anthropic 650亿融资9650亿估值 · 05 Claude Opus 4.8发布"
-        }
-      ],
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "Anthropic Blog",
-          "url": "https://www.anthropic.com/news",
-          "date": "2026-06-05"
-        },
-        {
-          "name": "腾讯研究院AI速递",
-          "url": "https://mp.weixin.qq.com/s/wsvrOW2wW8tsM_tQ-BfF8A",
-          "date": "2026-06-08"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py (Tavily gap-fill)",
-      "tldr": "Anthropic长文披露Claude正加速AI发展，80%代码由Claude编写(工程师季度交付量8倍)，开放任务成功率半年26%→76%，独立任务时长翻倍速度从7个月缩至4个月，最新Mythos可连续工作16小时。呼吁有验证机制前提下减速。",
-      "sowhat_for_kuaishou": "递归自我改进(RSI)是AI安全的分水岭。Anthropic作为全球AI安全旗手主动呼吁减速，将对行业监管节奏和公众舆论产生重大影响。对快手而言需关注国内是否跟进类似安全标准。",
-      "takeaway": [
-        "Anthropic呼吁全球放慢AI发展：80%代码由Claude撰写，递归自我改进即将到来"
-      ],
-      "tracks": [
-        "AI"
-      ]
-    },
-    {
       "id": "intel-2026-06-08-04",
       "date": "2026-06-05",
       "priority": "high",
@@ -654,39 +545,6 @@
       ]
     },
     {
-      "id": "intel-bulk-909",
-      "date": "2026-06-05",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "Your ChatGPT memory just got an upgrade. OpenAI calls it 'Dreaming'",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-06-05",
-          "event": "2026-06-05"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "Your ChatGPT memory just got an upgrade.",
-          "url": "https://www.storyboard18.com/brand-marketing/your-chatgpt-memory-just-got-an-upgrade-openai-calls-it-dreaming-100264.htm",
-          "date": "2026-06-05"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "OpenAI said the new system helps ChatGPT keep memories relevant over time, improves the use of preferences from past conversations, and will begin rolling out to Free users after reducing computing",
-      "sowhat_for_kuaishou": "AI行业动态影响快手AI战略布局与研发资源分配",
-      "takeaway": [
-        "Your ChatGPT memory just got an upgrade. OpenAI calls it 'Dreaming'"
-      ],
-      "tracks": [
-        "AI"
-      ]
-    },
-    {
       "id": "intel-bulk-910",
       "date": "2026-06-05",
       "priority": "mid",
@@ -754,72 +612,6 @@
       ]
     },
     {
-      "id": "intel-bulk-912",
-      "date": "2026-06-05",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "腾讯混元提出Stem 稀疏注意力算法，首字延迟降低3.6 倍",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-06-05",
-          "event": "2026-06-05"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "腾讯混元提出Stem 稀疏注意力算法，首字延迟降低3.6 倍 - 新浪财经",
-          "url": "https://finance.sina.com.cn/tech/digi/2026-06-05/doc-iniakmqn8279218.shtml",
-          "date": "2026-06-05"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "IT之家 6 月5 日消息，腾讯混元今日宣布提出Stem 稀疏注意力算法，已被机器学习顶会ICML-26 收录。 官方表示，Stem 稀疏注意力算法从“因果信息流”重新审视块",
-      "sowhat_for_kuaishou": "行业动态值得关注，快手应保持跟踪以捕捉机会或风险",
-      "takeaway": [
-        "腾讯混元提出Stem 稀疏注意力算法，首字延迟降低3.6 倍 - 新浪财经"
-      ],
-      "tracks": [
-        "AI"
-      ]
-    },
-    {
-      "id": "intel-bulk-913",
-      "date": "2026-06-05",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "腾讯混元提出Stem稀疏注意力算法，长文推理加速新SOTA",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-06-05",
-          "event": "2026-06-05"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "腾讯混元提出Stem稀疏注意力算法，长文推理加速新SOTA - 新浪财经",
-          "url": "https://finance.sina.com.cn/7x24/2026-06-05/doc-iniakfhm9539059.shtml",
-          "date": "2026-06-05"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "腾讯混元宣布提出Stem稀疏注意力算法，已被机器学习顶会ICML-26收录。根据Stem算法×HPC算子的全栈加速方案，算法层面，Stem通过Token位置衰减（TPD）和输出",
-      "sowhat_for_kuaishou": "行业动态值得关注，快手应保持跟踪以捕捉机会或风险",
-      "takeaway": [
-        "腾讯混元提出Stem稀疏注意力算法，长文推理加速新SOTA - 新浪财经"
-      ],
-      "tracks": [
-        "AI"
-      ]
-    },
-    {
       "id": "intel-2026-06-08-03",
       "date": "2026-06-04",
       "priority": "high",
@@ -858,42 +650,6 @@
       ],
       "tracks": [
         "芯片",
-        "AI"
-      ]
-    },
-    {
-      "id": "intel-2026-06-08-09",
-      "date": "2026-06-04",
-      "priority": "high",
-      "signal": "trend",
-      "title": "谷歌Gemma 4量化版发布：手机/轻薄本可本地运行 + 腾讯混元Stem稀疏注意力被ICML-26收录",
-      "company": [
-        "谷歌",
-        "腾讯"
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-04",
-          "event": "2026-06 Gemma 4 QAT · 05 Stem被ICML收录"
-        }
-      ],
-      "scope": "海外",
-      "sources": [
-        {
-          "name": "腾讯研究院AI速递",
-          "url": "https://mp.weixin.qq.com/s/1x-RRe08HQ6RXNqAthWg1Q",
-          "date": "2026-06-08"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py (Tavily gap-fill)",
-      "tldr": "谷歌发布Gemma 4全系QAT量化检查点，E2B内存1GB/12B约8GB/26B MoE约16GB，已对接llama.cpp等工具。腾讯混元Stem稀疏注意力仅25%算力逼近稠密精度，128K上下文下首字延迟降低3.7倍，被ICML-26收录。",
-      "sowhat_for_kuaishou": "端侧大模型能力持续突破，AI从云向端迁移趋势加速。快手需关注Gemma 4在移动端AI场景对可灵移动版本的竞争压力。腾讯混元的稀疏注意力技术在长文推理场景全面领先。",
-      "takeaway": [
-        "谷歌Gemma 4量化版发布：手机/轻薄本可本地运行 + 腾讯混元Stem稀疏注意力被ICML-26收录"
-      ],
-      "tracks": [
         "AI"
       ]
     },
@@ -1199,56 +955,6 @@
       ]
     },
     {
-      "id": "intel-159",
-      "date": "2026-06-04",
-      "priority": "high",
-      "signal": "trend",
-      "title": "字节2026 AI四大命题独家曝光：世界模型对标Google Genie 3+豆包DAU破2亿启动付费+Seedance探索动态生成+Coding强推Dogfooding",
-      "tldr": "36氪《智能涌现》独家：字节AI 2026年四大命题——1)世界模型：年底前性能对标Google Genie 3(全球SOTA)，数据预算数千万元达其他厂商3-4倍，新设范浩奇(前Meta FAIR)带队3D仿真路线、李航+王文千VLA组合并向周畅汇报；2)Coding：业务部门被强制使用Seed模型做Dogfooding，目标打数据飞轮提升Agent能力；3)Seedance：预训练已到天花板转向精细化后训练，探索'动态生成'(互动视频，对标Vivix AI估值13.2亿美元)；4)豆包商业化：DAU已破2亿，6月下旬上线付费(三档688-5088元/年)，推'豆包专业版'+企业版，Dola海外版目标年底3000万DAU。字节Seed粗放高薪招聘时代结束，转向内部培养+从DeepSeek/OpenAI/DeepMind等定向挖角。",
-      "company": [
-        "字节"
-      ],
-      "tracks": [
-        "AI",
-        "大模型",
-        "商业化",
-        "视频生成"
-      ],
-      "metrics": {
-        "豆包DAU": "2亿(春节后)",
-        "世界模型数据预算": "数千万元(其他厂商3-4倍)",
-        "豆包付费": "688-5088元/年",
-        "Dola海外目标": "3000万DAU(年底)",
-        "Claude Code ARR(参考)": "25亿美元(上线1年)",
-        "Vivix AI估值": "13.2亿美元",
-        "Seedance评测团队": "2000+人"
-      },
-      "takeaway": [
-        "字节AI战略从'多点开花'进入'聚焦突破'——世界模型是第一优先级，资金投入是文本/Coding/视频中最高",
-        "豆包2亿DAU但推进付费说明字节AI面临'增长vs造血'的关键转折——C端AI变现路径开始清晰化",
-        "字节世界模型仍有10%差距(对标Genie 3)，吴永辉多次表示效果不及预期——世界模型赛道尚无绝对领先者",
-        "Seedance从预训练转向后训练+动态生成说明视频生成Scaling Law已现天花板，精细化成为新方向",
-        "字节强制业务方使用Seed模型做Coding Dogfooding——大厂正从'开放生态'转向'封闭自研'以打数据飞轮"
-      ],
-      "sowhat_for_kuaishou": "1)字节世界模型投入千万元级数据预算，快手可灵需明确是否跟进世界模型路线——可灵视频生成技术与世界模型高度相关 2)豆包2亿DAU启动付费，为可灵商业化提供行业参考——AI视频付费意愿可能高于通用AI助手 3)字节Coding强推Dogfooding形成数据飞轮，快手应在Trae/可灵中构建类似闭环。",
-      "sources": [
-        {
-          "name": "36氪独家：2026年字节AI的四个关键命题",
-          "url": "https://m.36kr.com/p/3838454229027072",
-          "date": "2026-06-04"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "scope": "国内",
-      "timeline": [
-        {
-          "date": "2026-06-04",
-          "event": "字节2026 AI四大命题独家曝光：世界模型对标Google Genie 3+豆包DAU破2亿启动付费+Seedance探索动态生成+Coding强推Dogfo"
-        }
-      ]
-    },
-    {
       "id": "intel-bulk-914",
       "date": "2026-06-04",
       "priority": "mid",
@@ -1280,52 +986,6 @@
       ],
       "tracks": [
         "AI"
-      ]
-    },
-    {
-      "id": "intel-144",
-      "date": "2026-06-03",
-      "priority": "high",
-      "signal": "trend",
-      "title": "豆包官方回应付费争议：基础功能永久免费，专业版专注生产力场景，三档会员688-5088元/年",
-      "tldr": "6月3日豆包官方发布《关于豆包即将推出专业版的说明》：基础功能（搜索问答/写作生图/语音视频对话）永久免费，专业版覆盖软件开发/数据分析/专业设计/金融分析/科学研究等生产力场景，且专业版服务也有一定免费额度。否认「降低基础体验推动付费」传言。三档会员价曝光：标准版688元/年、加强版2048元/年、专业版5088元/年。豆包可联动抖音电商/本地生活/广告生态，订阅收入仅为商业化布局一部分。",
-      "company": [
-        "字节"
-      ],
-      "tracks": [
-        "AI",
-        "商业化",
-        "本地生活"
-      ],
-      "metrics": {
-        "标准版年费": "688元",
-        "加强版年费": "2048元",
-        "专业版年费": "5088元",
-        "豆包月活": "3.45亿",
-        "免费用户功能": "搜索问答/写作生图/语音视频"
-      },
-      "takeaway": [
-        "豆包明确'基础免费+专业付费'双轨制，与ChatGPT Plus策略一致",
-        "三档定价（688-5088元/年）对标生产力软件，非纯AI Token计价",
-        "字节AI商业化三线并进：C端订阅（豆包）+B端广告（巨量引擎）+交易端抽佣（团购/电商）",
-        "豆包声明否认'降低免费体验逼付费'的传闻，但C端付费转化仍是核心挑战"
-      ],
-      "sowhat_for_kuaishou": "豆包定价体系为可灵AI(ARR 5亿美元)提供行业价格锚点。豆包免费策略声明显示字节对AI入口的长期重视（不急于收割C端），快手可灵需在AI视频赛道找准差异化定价——AI视频付费意愿可能高于通用AI助手。",
-      "sources": [
-        {
-          "name": "21经济网：豆包回应'收费'",
-          "url": "https://www.21jingji.com/article/20260603/herald/77a722bb46b2da0f256fa97d5d1db604.html",
-          "date": "2026-06-03"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "scope": "国内",
-      "timeline": [
-        {
-          "date": "2026-06-03",
-          "event": "豆包官方回应付费争议：基础功能永久免费，专业版专注生产力场景，三档会员688-5088元/年"
-        }
       ]
     },
     {
@@ -1537,63 +1197,6 @@
       ],
       "tracks": [
         "合规"
-      ]
-    },
-    {
-      "id": "intel-146",
-      "date": "2026-06-02",
-      "priority": "high",
-      "signal": "threat",
-      "title": "字节跳动2025盈利500亿美元碾压腾讯阿里：AI基建年投1600亿元，可灵ARR 5亿美元竞品格局",
-      "tldr": "华尔街见闻/钛媒体/21经济网多源确认：字节跳动2025年利润达500亿美元远超腾讯(360亿)和阿里(150亿)，成中国互联网盈利王。梁汝波2026年1月全员会定调'勇攀高峰'，计划资本支出1600亿元（半数用于AI芯片采购）。字节AI商业化三线并进：可灵ARR已达5亿美元+豆包即将C端付费+火山引擎B端API。AI基建投入规模远超快手，广告竞价系统/内容推荐/本地生活匹配精准度的能力差距正在拉大。",
-      "company": [
-        "字节"
-      ],
-      "tracks": [
-        "AI",
-        "广告",
-        "商业化"
-      ],
-      "metrics": {
-        "字节2025利润": "500亿美元",
-        "腾讯2025利润": "360亿美元",
-        "阿里2025利润": "150亿美元",
-        "字节2026资本支出": "1600亿元",
-        "AI芯片占比": "50%（800亿）",
-        "可灵ARR": "5亿美元"
-      },
-      "takeaway": [
-        "字节盈利相当于腾讯+阿里之和的98%，资本支出碾压中国所有互联网公司",
-        "500亿美元利润反哺AI基建（千亿级投入），广告/电商/本地生活AI竞争力将持续拉大",
-        "可灵ARR 5亿美元说明AI视频生成赛道商业模型已验证",
-        "快手与字节的AI基础设施投入差距达数量级，需聚焦差异化而非全面追赶"
-      ],
-      "sowhat_for_kuaishou": "字节AI投入1600亿 vs 快手资本开支260亿（2026年计划），差距达6倍。快手在AI军备竞赛中需聚焦：1)可灵AI视频生成（ARR 5亿已验证）作为核心差异化武器 2)广告AI（磁力金牛）和本地生活AI作为防御阵地 3)放弃全面对标，聚焦AI视频+电商+本地生活三大AI场景。",
-      "sources": [
-        {
-          "name": "华尔街见闻：字节跳动2025年利润500亿美元",
-          "url": "https://wallstreetcn.com/articles/3763622",
-          "date": "2026-01-19"
-        },
-        {
-          "name": "21经济网：字节CEO梁汝波2026勇攀高峰",
-          "url": "https://www.21jingji.com/article/20260131/herald/2fff8881537cfa130c5d0090d11afce4.html",
-          "date": "2026-01-31"
-        },
-        {
-          "name": "钛媒体：字节AI投资布局",
-          "url": "https://www.tmtpost.com/8011985.html",
-          "date": "2026-06-02"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "scope": "国内",
-      "timeline": [
-        {
-          "date": "2026-06-02",
-          "event": "字节跳动2025盈利500亿美元碾压腾讯阿里：AI基建年投1600亿元，可灵ARR 5亿美元竞品格局"
-        }
       ]
     },
     {
@@ -1918,74 +1521,6 @@
       ]
     },
     {
-      "id": "intel-bulk-916",
-      "date": "2026-06-02",
-      "priority": "high",
-      "signal": "trend",
-      "title": "国务院关于对外投资的规定",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-06-02",
-          "event": "2026-06-02"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "国务院关于对外投资的规定 - 商务部",
-          "url": "https://www.mofcom.gov.cn/xwfb/rcxwfb/art/2026/art_a19be62e79f04d72adef2945b20e9247.html",
-          "date": "2026-06-02"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "国务院关于对外投资的规定. 首页_>_新闻发布_>_日常新闻发布. 来源：新华社 类型：转载 分类：新闻 2026-06",
-      "sowhat_for_kuaishou": "政策变化可能影响AI业务出海与合规成本，建议法务/公共事务团队评估影响",
-      "takeaway": [
-        "国务院关于对外投资的规定 - 商务部",
-        "政策变化可能影响业务合规成本与出海节奏"
-      ],
-      "tracks": [
-        "AI"
-      ]
-    },
-    {
-      "id": "intel-bulk-917",
-      "date": "2026-06-02",
-      "priority": "mid",
-      "signal": "threat",
-      "title": "四部门启动打击网络侵权盗版专项行动，聚焦AI领域版权整治等重点领域",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-06-02",
-          "event": "2026-06-02"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "四部门启动打击网络侵权盗版专项行动，聚焦AI领域版权整治等重点领域|专项行动_新",
-          "url": "https://finance.sina.com.cn/roll/2026-06-02/doc-inhzzivs1558385.shtml",
-          "date": "2026-06-02"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "四部门启动打击网络侵权盗版专项行动，聚焦AI领域版权整治等重点领域. 国家版权局、工业和信息化部、公安部、国家互联网信息办公室四部门联合启动打击网络侵权盗版“剑网2026”专项行动，这是四部门第22次聚焦重点作品领域及重点网络平台开展专项治理工作。. 本次专项行动于6月至11月开展，重点关注人民群众反映强烈的网络侵权盗版问题和经济社会发展需求，持续深化网络版权专项整治，规范网络版权传播秩序，赋",
-      "sowhat_for_kuaishou": "政策变化可能影响AI业务出海与合规成本，建议法务/公共事务团队评估影响",
-      "takeaway": [
-        "四部门启动打击网络侵权盗版专项行动，聚焦AI领域版权整治等重点领域|专项行动_新浪财经_新浪网"
-      ],
-      "tracks": [
-        "合规",
-        "AI"
-      ]
-    },
-    {
       "id": "intel-bulk-918",
       "date": "2026-06-02",
       "priority": "mid",
@@ -2018,141 +1553,6 @@
         "合规",
         "AI"
       ]
-    },
-    {
-      "id": "intel-bulk-919",
-      "date": "2026-06-02",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "国家版权局等四部门启动“剑网2026”专项行动--社会·法治",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-06-02",
-          "event": "2026-06-02"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "国家版权局等四部门启动“剑网2026”专项行动--社会·法治--人民网",
-          "url": "http://society.people.com.cn/n1/2026/0602/c1008-40732583.html",
-          "date": "2026-06-02"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "人民日报报系. 人民日报 人民日报海外版 中国汽车报 中国能源报 健康时报 证券时报 国际金融报网 讽刺与幽默 中国城市报 新闻战线 人民论坛 环球人物 中国经济周刊 民生周刊 国家人文历史 人民周刊 人民数字. 旗下网站. 全国重点实验室 环球网 海外网 人民图片 人民网研究院 人民慕课. 创新服务平台. 国家版权局等四部门启动“剑网2026”专项行动. **2026",
-      "sowhat_for_kuaishou": "行业动态值得关注，快手应保持跟踪以捕捉机会或风险",
-      "takeaway": [
-        "国家版权局等四部门启动“剑网2026”专项行动--社会·法治--人民网"
-      ],
-      "tracks": [
-        "合规",
-        "出行"
-      ]
-    },
-    {
-      "id": "intel-2026-06-08-06",
-      "date": "2026-06-01",
-      "priority": "high",
-      "signal": "trend",
-      "title": "宇树科技科创板IPO过会：A股具身智能第一股 募资42亿 营收17亿毛利率60%",
-      "company": [
-        "宇树"
-      ],
-      "timeline": [
-        {
-          "date": "2026-06-01",
-          "event": "2026-06-01 宇树IPO过会 · 2025 宇树全球规模化盈利"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "营销早咖 Vol.12",
-          "url": "https://docs.corp.kuaishou.com/d/home/fcAAitTrZTidDfwVGN_9IVlt8",
-          "date": "2026-06-07"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "search_intel.py (Tavily gap-fill)",
-      "tldr": "宇树科技科创板IPO成功过会，从受理到过会仅70余天。计划募资42.02亿元，其中一半投向机器人大脑研发。2025年营收17.08亿元、净利2.88亿元、毛利率60.27%，全球少数实现规模化盈利的机器人公司。",
-      "sowhat_for_kuaishou": "具身智能第一股诞生标志着国内机器人赛道进入资本退出通道验证期。宇树60%毛利率证明供应链能力，对快手可灵等AI内容创作工具而言需关注机器人+AI视频的融合场景。",
-      "takeaway": [
-        "宇树科技科创板IPO过会：A股具身智能第一股 募资42亿 营收17亿毛利率60%",
-        "财务数据反映竞对经营健康度与战略重点"
-      ],
-      "tracks": [
-        "AI"
-      ]
-    },
-    {
-      "id": "intel-106",
-      "date": "2026-06-01",
-      "priority": "high",
-      "signal": "opportunity",
-      "title": "外卖大战降温：美团Q1亏损大幅收窄，4-5月外卖已盈利，竞争格局趋稳",
-      "tldr": "美团Q1营收910亿+5.6%，经调整净亏49.7亿（Q4为151亿），亏损收窄超预期。外卖4-5月UE已转正，美团vs阿里外卖单均优势扩至3元。大摩瑞银看多，预计Q2外卖接近盈亏平衡。到店仍面临抖音补贴压力但品类差异化竞争策略日趋明显。",
-      "company": [
-        "美团",
-        "阿里",
-        "京东",
-        "抖音"
-      ],
-      "tracks": [
-        "外卖",
-        "即时零售",
-        "本地生活"
-      ],
-      "metrics": {
-        "美团Q1营收": "910亿+5.6%",
-        "经调整净亏": "49.7亿（Q4为151亿）",
-        "外卖订单量增速": "+8%",
-        "vs阿里单均优势": "3元",
-        "到店利润率": "约25%"
-      },
-      "timeline": [
-        {
-          "date": "2025-Q4",
-          "event": "外卖大战白热化，美团经调整净亏151亿"
-        },
-        {
-          "date": "2026-Q1",
-          "event": "外卖大战降温，亏损收窄至49.7亿，UE改善"
-        },
-        {
-          "date": "2026-04",
-          "event": "外卖UE 4月转正"
-        },
-        {
-          "date": "2026-05",
-          "event": "外卖UE 5月持续盈利"
-        },
-        {
-          "date": "2026-06-01",
-          "event": "Q1财报发布，大摩瑞银齐看多"
-        }
-      ],
-      "takeaway": [
-        "外卖大战烧钱阶段基本结束，竞争格局趋稳",
-        "美团会员+品牌广告投入留存核心用户",
-        "抖音抖省省独立App持续增长，到店竞争仍是长期变量",
-        "Keeta海外UE改善，沙特预计2026年内盈亏平衡"
-      ],
-      "sowhat_for_kuaishou": "外卖大战降温有利于行业盈利恢复，但抖音「抖省省」独立App日活增长迅猛，本地生活战场从外卖延伸到团购/到店。快手需关注抖音本地生活全场景作战能力对快手本地推业务的竞争挤压。",
-      "sources": [
-        {
-          "name": "新浪财经：外卖大战降温，美团重回正轨",
-          "url": "https://finance.sina.cn/stock/jdts/2026-06-02/detail-inhzzcpr1622455.d.html",
-          "date": "2026-06-02"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "scope": "国内"
     },
     {
       "id": "intel-133",
@@ -2196,50 +1596,6 @@
         {
           "date": "2026-06-01",
           "event": "巨量本地推API大幅增强：6个新接口+6个优化，投放从黑盒走向可编程化"
-        }
-      ]
-    },
-    {
-      "id": "intel-139",
-      "date": "2026-06-01",
-      "priority": "medium",
-      "signal": "trend",
-      "title": "豆包6月下旬正式付费：AI助手C端变现进入'订阅制'时代，定价锚定ChatGPT",
-      "tldr": "豆包6月下旬上线付费订阅，标准版约$9.9/月（锚定ChatGPT Plus $8-20区间），专业版约$73/月。付费专注PPT生成/数据分析/影视制作等复杂生产力场景。腾讯研究院数据显示AI高频用户付费比例仅9.8%，C端AI付费转化仍是行业难题。字节同步推进AI商业化：豆包付费(C端) + 巨量引擎AI广告(B端) + 豆包电商/团购抽佣(交易端)。",
-      "company": [
-        "字节"
-      ],
-      "tracks": [
-        "AI",
-        "商业化"
-      ],
-      "metrics": {
-        "豆包标准版": "约$9.9/月",
-        "豆包专业版": "约$73/月",
-        "AI用户付费率": "9.8%（腾讯研究院）",
-        "豆包月活": "3.45亿"
-      },
-      "takeaway": [
-        "豆包付费标志着中国AI助手从'免费获客'进入'订阅变现'阶段",
-        "定价锚定ChatGPT说明字节在AI全球化定价体系中定位中端",
-        "AI用户付费率仅9.8%，豆包3.45亿月活转化空间巨大但也挑战重重",
-        "字节AI商业化三线并进：C端订阅+B端广告+交易抽佣"
-      ],
-      "sowhat_for_kuaishou": "可灵AI(ARR 5亿美元)的C端付费模式可参考豆包定价策略。豆包付费锚定ChatGPT的中端定价为行业建立了价格锚点，快手可灵在AI视频生成领域可参考此定价体系。但AI视频赛道付费意愿可能高于通用AI助手（生产力属性更强）。",
-      "sources": [
-        {
-          "name": "36氪：豆包6月下旬正式付费丨独家",
-          "url": "https://m.36kr.com/p/3834544830721671",
-          "date": "2026-06-01"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "scope": "国内",
-      "timeline": [
-        {
-          "date": "2026-06-01",
-          "event": "豆包6月下旬正式付费：AI助手C端变现进入'订阅制'时代，定价锚定ChatGPT"
         }
       ]
     },
@@ -2320,75 +1676,6 @@
         "体育",
         "AI",
         "电商"
-      ]
-    },
-    {
-      "id": "intel-bulk-922",
-      "date": "2026-06-01",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "美团2026年Q1财报：核心业务亏损显著收窄，科技创新持续推进_公司_方面_商业",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-06-01",
-          "event": "2026-06-01"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团2026年Q1财报：核心业务亏损显著收窄，科技创新持续推进_公司_方面_商业",
-          "url": "https://www.sohu.com/a/1030667857_122066678",
-          "date": "2026-06-01"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "美团2026年Q1财报：核心业务亏损显著收窄，科技创新持续推进. 6月1日，美团（3690.HK）发布了2026年第一季度财报，显示出公司在核心本地商业和科技创新方面的显著进展。本季度，美团实现收入910亿元人民币，同比增长5.6%。经营亏损从上季度的161亿元大幅减至65亿元，核心本地商业的经营亏损收窄至20亿元，较上季度的100亿元有明显改善。. 美团的财报揭示了其在“零售+科技”战略下的",
-      "sowhat_for_kuaishou": "竞对财务数据反映行业竞争格局变化，对快手商业化策略有参考价值",
-      "takeaway": [
-        "美团2026年Q1财报：核心业务亏损显著收窄，科技创新持续推进_公司_方面_商业",
-        "财务数据反映竞对经营健康度与战略重点"
-      ],
-      "tracks": [
-        "本地生活"
-      ]
-    },
-    {
-      "id": "intel-bulk-923",
-      "date": "2026-06-01",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "美团2026年Q1财报：加速推进AI落地物理世界，核心本地商业经营亏损收窄至20亿元",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-06-01",
-          "event": "2026-06-01"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "美团2026年Q1财报：加速推进AI落地物理世界，核心本地商业经营亏损收窄至20",
-          "url": "https://finance.sina.com.cn/tech/roll/2026-06-01/doc-inhzwyqm5181979.shtml",
-          "date": "2026-06-01"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "美团2026年Q1财报：加速推进AI落地物理世界，核心本地商业经营亏损收窄至20亿元. ﻿6月1日，美团（股票代码：3690.HK）发布2026年第一季度业绩。本季度，美团实现收入910亿元（人民币，下同），同比增长5.6%，经营亏损由上季度的161亿元减少至65亿元。其中，核心本地商业经营亏损20亿元，较上季度的100亿元大幅减亏；新业务亏损21亿元，较上季度的46亿元显著收窄。. 一季度，",
-      "sowhat_for_kuaishou": "竞对财务数据反映行业竞争格局变化，对快手商业化策略有参考价值",
-      "takeaway": [
-        "美团2026年Q1财报：加速推进AI落地物理世界，核心本地商业经营亏损收窄至20亿元_新浪科技_新浪网",
-        "财务数据反映竞对经营健康度与战略重点"
-      ],
-      "tracks": [
-        "AI",
-        "本地生活"
       ]
     },
     {
@@ -2543,76 +1830,6 @@
       ]
     },
     {
-      "id": "intel-bulk-924",
-      "date": "2026-05-28",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "拿下世界杯版权，小红书进入增长冲刺期",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-05-28",
-          "event": "2026-05-28"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "拿下世界杯版权，小红书进入增长冲刺期|小红书|直播_新浪科技_新浪网",
-          "url": "https://finance.sina.com.cn/tech/roll/2026-05-28/doc-inhzmyeq1411212.shtml",
-          "date": "2026-05-28"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "拿下世界杯版权，小红书进入增长冲刺期. 5月28日，小红书正式宣布成为2026年美加墨世界杯持权转播商、中央广播电视总台顶级赛事直播战略合作伙伴。用户将可以在小红书免费观看2026美加墨世界杯全部赛事直播、回看等内容。而小红书也成为除中央广播电视总台、中国移动旗下咪咕视频之外，唯一的直播、转播、短视频版权持权方。. 无论是世界杯还是中长视频战略的发力，都指向长远的平台增长目标：更大的用户规模和",
-      "sowhat_for_kuaishou": "行业动态值得关注，快手应保持跟踪以捕捉机会或风险",
-      "takeaway": [
-        "拿下世界杯版权，小红书进入增长冲刺期|小红书|直播_新浪科技_新浪网"
-      ],
-      "tracks": [
-        "体育",
-        "合规",
-        "内容"
-      ]
-    },
-    {
-      "id": "intel-bulk-925",
-      "date": "2026-05-28",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "消息称小红书拿下 2026 世界杯独家转播权，冲击 2 亿日活新纪录、撬动男性用户增长",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-05-28",
-          "event": "2026-05-28"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "消息称小红书拿下 2026 世界杯独家转播权，冲击 2 亿日活新纪录、撬动男性用",
-          "url": "https://m.sohu.com/a/1028714324_121925623?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
-          "date": "2026-05-28"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "消息称小红书拿下 2026 世界杯独家转播权，冲击 2 亿日活新纪录、撬动男性用户增长. 据《晚点 LatePost》今日报道，小红书已经确定成为今年美加墨世界杯持权转播商，也是除中央广播电视总台、咪咕之外，唯一的直播、转播、短视频版权的持权方。. 报道称，小红书此次拿下相关权益的价格并未高于往届。作为参照，《时代财经》曾在 2022 年卡塔尔世界杯期间援引业内人士分析称，咪",
-      "sowhat_for_kuaishou": "行业动态值得关注，快手应保持跟踪以捕捉机会或风险",
-      "takeaway": [
-        "消息称小红书拿下 2026 世界杯独家转播权，冲击 2 亿日活新纪录、撬动男性用户增长_搜狐网"
-      ],
-      "tracks": [
-        "体育",
-        "合规",
-        "内容"
-      ]
-    },
-    {
       "id": "intel-bulk-926",
       "date": "2026-05-27",
       "priority": "mid",
@@ -2645,75 +1862,6 @@
       "tracks": [
         "营销",
         "内容",
-        "电商"
-      ]
-    },
-    {
-      "id": "intel-bulk-927",
-      "date": "2026-05-27",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "小红书拿下2026世界杯转播权，吸引男性用户剑指2亿日活大关",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-05-27",
-          "event": "2026-05-27"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "小红书拿下2026世界杯转播权，吸引男性用户剑指2亿日活大关",
-          "url": "https://h5.ifeng.com/c/vivoArticle/v002f5BqLWa--4--Ip245FSe2G6xEPTd6P1PFCmaKS6nUDd2w__?vivoBusiness=hiboardnews",
-          "date": "2026-05-27"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "小红书拿下2026世界杯转播权，吸引男性用户剑指2亿日活大关. 据《晚点LatePost》独家获悉，小红书已正式成为2026年美加墨世界杯持权转播商，是除中央广播电视总台、咪咕之外，国内唯一同时拥有世界杯直播、转播及短视频全版权的内容平台，正式入局顶级体育赛事赛道。. 据了解，小红书此次拿下相关权益的价格并未高于往届。作为参照，2022年卡塔尔世界杯期间，咪咕和抖音从央视获得持权转播权的价格曾",
-      "sowhat_for_kuaishou": "行业动态值得关注，快手应保持跟踪以捕捉机会或风险",
-      "takeaway": [
-        "小红书拿下2026世界杯转播权，吸引男性用户剑指2亿日活大关"
-      ],
-      "tracks": [
-        "体育",
-        "合规",
-        "内容"
-      ]
-    },
-    {
-      "id": "intel-bulk-928",
-      "date": "2026-05-27",
-      "priority": "mid",
-      "signal": "trend",
-      "title": "拼多多2026年Q1营收同比增长11%，净利下滑15% - 购物攻略",
-      "company": [],
-      "timeline": [
-        {
-          "date": "2026-05-27",
-          "event": "2026-05-27"
-        }
-      ],
-      "scope": "国内",
-      "sources": [
-        {
-          "name": "拼多多2026年Q1营收同比增长11%，净利下滑15% - 购物攻略",
-          "url": "https://post.smzdm.com/p/a70xnmr9",
-          "date": "2026-05-27"
-        }
-      ],
-      "_verification": "verified",
-      "_date_ok": true,
-      "_fetched_by": "bulk_fetch.py (Tavily)",
-      "tldr": "2026年5月27日，拼多多发布2026年第一季度财报，数据显示期内营收1062亿元，同比增长11%；归属于普通股股东的净利润为125亿元，同比下降15%。该季度是“三年再造拼多多”战略",
-      "sowhat_for_kuaishou": "竞对财务数据反映行业竞争格局变化，对快手商业化策略有参考价值",
-      "takeaway": [
-        "拼多多2026年Q1营收同比增长11%，净利下滑15% - 购物攻略",
-        "财务数据反映竞对经营健康度与战略重点"
-      ],
-      "tracks": [
         "电商"
       ]
     },
