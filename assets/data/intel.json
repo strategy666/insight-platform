@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "description": "Part1 市场信息洞察 + gap-fill from 互联网公共战略参考232期 / 营销早咖Vol.12 / 腾讯研究院AI速递",
-    "last_updated": "2026-06-09",
-    "total_items": 33,
-    "window": "past 14d (2026-05-25 ~ 2026-06-08) + 重点回溯(Tech星球2026-03)",
+    "description": "Part1 市场信息洞察 — SOURCE-FIRST v3 (direct fetch + web_fetch) + AI行业全景",
+    "last_updated": "2026-06-09T15:00:00",
+    "total_items": 37,
+    "window": "past 14d (2026-05-25 ~ 2026-06-08) + 重点回溯(Tech星球2026-03) + AI前沿(腾讯研究院AI速递2026-06-08)",
     "source_first": true,
-    "fetch_method": "P0全渠道:OCE_Changelog+微信广告动态+钛媒体+第一财经+华尔街见闻+澎湃新闻+21经济网+虎嗅+界面新闻 + P1科技媒体:36氪+Tech星球+铅笔道+财新+MBA智库",
+    "fetch_method": "P0全渠道:OCE_Changelog+微信广告动态+钛媒体+第一财经+华尔街见闻+澎湃新闻+21经济网+虎嗅+界面新闻 + P1科技媒体:36氪+Tech星球+铅笔道+财新+MBA智库 + P2 AI前沿:腾讯研究院AI速递+机器之心",
     "cleaned": true
   },
   "items": [
@@ -1586,6 +1586,120 @@
           "event": "小红书聚光平台2026年全面升级：合作广场+聚光简单投+KOS体系+私域交易闭环四大方向"
         }
       ]
+    },
+    {
+      "id": "intel-168",
+      "date": "2026-06-08",
+      "priority": "high",
+      "signal": "threat",
+      "title": "京东开源JoyAI-Echo长视频生成框架：角色+声音+速度三项SOTA全开源，直接切入可灵AI赛道",
+      "tldr": "腾讯研究院AI速递/机器之心报道：京东开源长音视频生成框架JoyAI-Echo，直击长视频三个核心难题——1)角色一致性：跨模态音视频记忆库保角色不崩 2)声音稳定性：记忆驱动后训练提速约7.5倍 3)生成速度：Director Agent导演智能体支持局部重绘+轻量化实时超分至1472×2560。代码与模型权重全部开源。覆盖虚拟动漫/数字人直播/品牌营销/影视预演/互动教育。京东从电商跨界开源AI视频框架，意图降低AI视频创作门槛构建开发者生态。结合京东已有JoyStreamer数字人直播(7万商家)，'AI视频+电商营销'闭环初现。",
+      "tags": ["#京东", "#JoyAI", "#开源", "#AI视频", "#数字人", "#可灵竞品", "#视频生成"],
+      "company": ["京东"],
+      "tracks": ["AI", "视频生成", "开源", "数字人"],
+      "metrics": {
+        "后训练提速": "约7.5倍",
+        "最高分辨率": "1472×2560",
+        "开源策略": "代码+模型权重全开源",
+        "应用场景": "虚拟动漫/数字人直播/品牌营销/影视预演/互动教育"
+      },
+      "takeaway": [
+        "京东开源长视频框架直接切入可灵AI赛道——技术路线不同(京东聚焦角色一致性+声音，可灵聚焦文生视频)，但开源策略可能分流开发者生态",
+        "JoyAI-Echo全开源 vs 可灵API闭源是两种生态模式的对决——开源利于开发者社区，闭源利于商业化变现",
+        "京东从电商跨界AI视频说明'AI视频+电商/营销'交叉场景被看好——数字人直播+品牌营销是直接变现路径",
+        "Director Agent导演智能体(局部重绘+超分)代表AI视频编辑从'整体生成'走向'精细化控制'趋势"
+      ],
+      "sowhat_for_kuaishou": "京东JoyAI-Echo开源直接切入AI视频生成赛道，对可灵构成差异化竞争。快手需关注：1)京东聚焦'角色一致性+声音稳定性'是可灵目前未重点突出的差异化维度 2)开源vs闭源策略——可灵闭源API有利于商业化(ARR 5亿)，但京东开源可能吸引成本敏感开发者和中小企业 3)京东数字人直播(JoyStreamer 7万商家+JoyAI-Echo)组合可能蚕食快手数字人直播市场。建议可灵在保持商业化优势同时，考虑部分开源或开放轻量版应对生态竞争。",
+      "sources": [
+        {"name": "腾讯研究院AI速递 20260608：京东开源长视频框架JoyAI-Echo", "url": "https://mp.weixin.qq.com/s/1x-RRe08HQ6RXNqAthWg1Q", "date": "2026-06-08"},
+        {"name": "机器之心：京东开源JoyAI-Echo", "url": "https://mp.weixin.qq.com/s/-qNQbQJc5ySqLNWHHFUrxw", "date": "2026-06-08"}
+      ],
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "intel-169",
+      "date": "2026-06-08",
+      "priority": "medium",
+      "signal": "trend",
+      "title": "OpenAI人才持续流失+Claude安全危机：芯片002号元老跳槽Anthropic+Claude宕机跨租户数据泄露，AI安全信任遭动摇",
+      "tldr": "腾讯研究院AI速递综合两条高危信号：1)OpenAI自研芯片'002号员工'Clive Chan宣布跳槽Anthropic——继5月Karpathy后第二位核心人才流失，曾任职特斯拉/谷歌/SpaceX，Anthropic H轮融资650亿美元估值9650亿美元逼近万亿 2)Claude API/Code/.ai大面积宕机，开发者爆料故障期间API返回'其他用户'推理输出——疑似跨租户隔离失效引发数据泄露恐慌，官方仅以'错误率升高'轻描淡写，同日OpenAI也因系统故障误封大量账号。安全研究者指共享缓存/连接复用等均可能为泄漏点。2023年OpenAI曾发生类似事故。",
+      "tags": ["#OpenAI", "#Anthropic", "#人才流动", "#宕机", "#数据泄露", "#AI安全"],
+      "company": ["OpenAI", "Anthropic"],
+      "tracks": ["AI", "安全", "人才", "投融资"],
+      "metrics": {
+        "Anthropic估值": "9650亿美元",
+        "H轮融资": "650亿美元",
+        "OpenAI→Anthropic人才流": "Karpathy(5月)+Clive Chan(6月)"
+      },
+      "takeaway": [
+        "OpenAI核心芯片人才连续流向Anthropic，Anthropic人才引力已超越薪资层面——使命感和技术愿景成为更强磁铁",
+        "Claude跨租户数据泄露是AI行业迄今最严重的安全信任危机之一——当代码+数据都在AI平台，一次隔离失效就是灾难级",
+        "Anthropic估值9650亿美元逼近万亿+OpenAI人才流入，双巨头格局下的AI安全治理成为行业共同挑战",
+        "同日OpenAI误封大量账号+Claude宕机——AI服务可靠性+安全性的系统性风险正在暴露"
+      ],
+      "sowhat_for_kuaishou": "本条为AI前沿动态追踪。OpenAI人才流动和Claude安全事件是全球AI行业重要信号，与快手AI栈(推荐算法+可灵+广告AI)直接关联度较低。但需关注：Claude宕机泄露事件可能加速企业对AI服务自建/私有化部署的需求——长期看利好开源模型路线。纳入为AI行业全景阅读参考。",
+      "sources": [
+        {"name": "腾讯研究院AI速递 20260608：OpenAI芯片元老+Claude宕机", "url": "https://mp.weixin.qq.com/s/1x-RRe08HQ6RXNqAthWg1Q", "date": "2026-06-08"}
+      ],
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "intel-170",
+      "date": "2026-06-08",
+      "priority": "medium",
+      "signal": "trend",
+      "title": "谷歌Gemma 4量化版发布：手机轻薄本可本地运行，端侧AI从概念验证进入可用阶段",
+      "tldr": "腾讯研究院AI速递：Google发布Gemma 4全系量化感知训练(QAT)检查点，目标让模型在手机/笔记本等消费硬件运行、质量几乎持平量化前。2B模型内存仅1GB、12B约8GB、26B MoE约16GB，已对接llama.cpp/Ollama/LM Studio等主流工具。QAT将量化嵌入训练阶段，质量优于传统训练后量化。移动端方案采用静态激活值、通道级量化、2位定向量化及嵌入层与KV缓存优化。端侧AI正从概念验证进入可用阶段。",
+      "tags": ["#Gemma", "#量化", "#端侧AI", "#Google", "#模型效率"],
+      "company": ["Google"],
+      "tracks": ["AI", "大模型", "端侧", "推理优化"],
+      "metrics": {
+        "Gemma 2B内存": "1GB",
+        "Gemma 12B内存": "8GB",
+        "Gemma 26B MoE": "16GB",
+        "对接工具": "llama.cpp/Ollama/LM Studio"
+      },
+      "takeaway": [
+        "Gemma 4量化让AI模型在手机运行成为现实——端侧AI从概念验证进入可用阶段，对移动端AI应用生态有深远影响",
+        "QAT质量优于传统PTQ意味着端侧AI体验正逐步逼近云端——'离线也能用AI'将成为产品竞争力",
+        "AI推理成本持续结构性下降——利好所有以AI为核心的应用公司"
+      ],
+      "sowhat_for_kuaishou": "本条为AI前沿动态追踪。端侧AI部署是底层技术方向，快手可灵等AI产品长期受模型效率提升的间接利好。需关注：端侧AI普及后用户生成AI视频可能从云端迁移至本地——对可灵云端API模式的影响待观察。纳入为AI行业全景阅读参考。",
+      "sources": [
+        {"name": "腾讯研究院AI速递 20260608：Gemma量化", "url": "https://mp.weixin.qq.com/s/1x-RRe08HQ6RXNqAthWg1Q", "date": "2026-06-08"}
+      ],
+      "_verification": "verified",
+      "_date_ok": true
+    },
+    {
+      "id": "intel-171",
+      "date": "2026-06-08",
+      "priority": "medium",
+      "signal": "trend",
+      "title": "腾讯AI下半场战略全景：WorkBuddy+腾讯文档'人机双写'定义AI原生办公+汤道生姚顺雨对谈Agent演进",
+      "tldr": "腾讯研究院AI速递/腾讯云AI产业应用大会综合：1)腾讯文档发布行业首创AI原生编辑能力'人机双写'——AI从旁挂助手变为'文档里的同事'，与用户同一文件实时协同操作，原生接入WorkBuddy Agent内核，覆盖文档/表格/PPT/智能表全品类，通过Skill+MCP+OpenAPI开放百余项接口 2)汤道生+姚顺雨万字对谈：腾讯AI核心'实用、好用、可规模化'扎根真实场景，姚顺雨阐释AI下半场重在寻找好问题——腾讯优势在丰富产品场景提供的context，强调模型与产品Co-Design须建立互信。双方探讨Agent演进/Token效率/组织扁平化。",
+      "tags": ["#腾讯", "#WorkBuddy", "#腾讯文档", "#人机双写", "#Agent", "#AI办公", "#汤道生", "#姚顺雨"],
+      "company": ["腾讯"],
+      "tracks": ["AI", "办公", "Agent", "协同"],
+      "metrics": {
+        "开放API接口": "百余项",
+        "专业Skill": "十余项",
+        "覆盖品类": "文档/表格/PPT/智能表"
+      },
+      "takeaway": [
+        "腾讯'人机双写'重新定义AI办公——AI从'聊天窗问答助手'升级为'文档里的同事'，是AI产品形态重要进化",
+        "WorkBuddy+腾讯文档深度融合说明腾讯AI战略是'场景渗透'而非'超级App'——用AI增强亿级用户产品而非新建入口",
+        "姚顺雨'模型与产品Co-Design'理念——最好AI产品不是先做模型再找场景，是场景和模型同步迭代",
+        "腾讯AI定位'务实派'不追求炫技聚焦实用可规模化，与字节'追求SOTA'形成鲜明对比"
+      ],
+      "sowhat_for_kuaishou": "本条为AI前沿动态追踪。腾讯AI办公+Agent战略对快手有一定参考价值（快手也有文档/协同办公场景），但直接竞争关系较弱——快手核心在短视频/直播/电商/本地生活。纳入为AI行业全景阅读参考。",
+      "sources": [
+        {"name": "腾讯研究院AI速递 20260608：WorkBuddy人机双写+汤道生姚顺雨对谈", "url": "https://mp.weixin.qq.com/s/1x-RRe08HQ6RXNqAthWg1Q", "date": "2026-06-08"}
+      ],
+      "_verification": "verified",
+      "_date_ok": true
     }
   ]
 }
