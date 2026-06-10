@@ -439,7 +439,7 @@ ${ctxBlock}`;
             d: it.date, c: (it.company||[]).join('/'), t: it.title, w: it.tldr, s: it.signal, p: it.priority
         }));
         const comp = (window.competitorData || []).map(it => ({
-            d: it.date, c: it.company, t: it.title, w: (it.sowhat||'').slice(0, 200), dim: it.dimension
+            d: it.date, c: it.company, t: it.title, w: (it.sowhat_for_kuaishou || it.sowhat || '').slice(0, 200), dim: it.dimension
         }));
 
         summaryEl.innerHTML = '<div class="llm-progress">🤖 <b>正在调用 ' + (cfg.llm_model||'AI') + ' 综合分析…</b> <span class="cursor-blink">▍</span></div>';
@@ -487,7 +487,7 @@ ${JSON.stringify(comp.slice(0, 40), null, 0)}`;
                 };
                 const all = [
                     ...(window.intelData||[]).map(x => ({...x, _kind:'intel', _txt: x.title+' '+x.tldr+' '+(x.company||[]).join(' ')+' '+(x.tags||[]).join(' ')})),
-                    ...(window.competitorData||[]).map(x => ({...x, _kind:'comp', _txt: x.title+' '+(x.sowhat||'')+' '+x.company}))
+                    ...(window.competitorData||[]).map(x => ({...x, _kind:'comp', _txt: x.title+' '+(x.sowhat_for_kuaishou || x.sowhat || '')+' '+x.company}))
                 ].map(x => ({...x, _s: score(x._txt)})).filter(x => x._s > 0).sort((a,b) => b._s - a._s).slice(0, 6);
                 if (all.length) {
                     relatedEl.innerHTML = '<h4>📰 portal 中的相关动态</h4>' + all.map(x => `

@@ -561,7 +561,7 @@ function renderCompHotChips() {
 
     // 合并所有动态的 title + sowhat + tags，统计频次
     const text = competitorData.map(it =>
-        (it.title || '') + ' ' + (it.sowhat || '') + ' ' + ((it.tags || []).join(' '))
+        (it.title || '') + ' ' + (it.sowhat_for_kuaishou || it.sowhat || '') + ' ' + ((it.tags || []).join(' '))
     ).join(' ');
 
     const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -691,7 +691,7 @@ function renderCompetitorList() {
             </div>
             ${hasSources ? `
             <div class="cc-summary-row">
-                <p class="cc-summary-text">${item.sowhat ? item.sowhat.slice(0, 120) + '…' : item.title}</p>
+                <p class="cc-summary-text">${(item.sowhat_for_kuaishou || item.sowhat) ? (item.sowhat_for_kuaishou || item.sowhat).slice(0, 120) + '…' : item.title}</p>
             </div>` : ''}
             <div class="cc-detail" style="display:none;">
                 <div class="cd-section cd-summary">
@@ -710,7 +710,7 @@ function renderCompetitorList() {
                 </div>` : ''}
                 <div class="cd-section cd-sowhat">
                     <div class="cd-section-label">💡 对快手 So What</div>
-                    <p>${item.sowhat || '暂无分析'}</p>
+                    <p>${item.sowhat_for_kuaishou || item.sowhat || '暂无分析'}</p>
                 </div>
                 ${hasSources ? `
                 <div class="cd-section cd-sources">
@@ -964,7 +964,7 @@ function searchAllData(query) {
     
     // 搜索竞对数据
     const matchedCompetitors = competitorData.filter(item => {
-        const text = `${item.title || ''} ${item.sowhat || ''} ${item.company || ''} ${item.category || ''}`.toLowerCase();
+        const text = `${item.title || ''} ${item.sowhat_for_kuaishou || item.sowhat || ''} ${item.company || ''} ${item.category || ''}`.toLowerCase();
         return queryKeywords.some(kw => text.includes(kw));
     });
     

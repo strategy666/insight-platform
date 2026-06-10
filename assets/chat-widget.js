@@ -277,7 +277,7 @@
             d: it.date, c: (it.company||[]).join('/'), t: it.title, w: (it.tldr||'').slice(0,120)
         }));
         const comp = (window.competitorData || []).slice(0, 40).map(it => ({
-            d: it.date, c: it.company, t: it.title, w: (it.sowhat||'').slice(0,150), dim: it.dimension
+            d: it.date, c: it.company, t: it.title, w: (it.sowhat_for_kuaishou || it.sowhat || '').slice(0,150), dim: it.dimension
         }));
         // 飞书文档（仅取最相关的，title 含问题关键词）
         const fs = (window.feishuDocs || window.feishuDB || []);
