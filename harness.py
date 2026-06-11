@@ -668,7 +668,7 @@ def main():
         elif s == "report":
             results["report"] = stage_report()
         elif s == "publish":
-            actual_publish = args.publish and not args.skip_fetch
+            actual_publish = args.publish
             results["publish"] = stage_publish(dry_run=not actual_publish)
 
     # 最终总结
